@@ -1,0 +1,61 @@
+{
+  "question_id": "b5559b53-cb66-4779-a6a7-5fb24cb24417",
+  "short_text": "List Indexing",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to print the element at the given index location.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the list element at the given index.<hr><b>Explanation</b><br/><br/>For example, if the given index location is 4, the element at index 4 in the list is &quot;Green&quot;. So the output should be &quot;Green&quot;.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "f4545303-e35f-4319-b488-327171f9e50e",
+      "code_content": "color_list = [\"Red\", \"Orange\", \"Yellow\", \"Pink\", \"Green\", \"Blue\", \"Purple\", \"Black\", \"White\"]\n\nindex = int(input())\nprint(color_list[index])\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b22d395-4e7f-49a9-b8bd-4fd49b062015",
+      "input": "6",
+      "output": "Purple\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "41bf1196-580a-4c5f-a9cc-66ff39fb1cc0",
+      "input": "4",
+      "output": "Green\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5249cc26-e0aa-41c7-9a9c-16f43cf172db",
+      "input": "5",
+      "output": "Blue\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "61ebad43-b1ec-4b54-9a51-f46ea05856fa",
+      "input": "2",
+      "output": "Yellow\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b27bfe13-3f5f-4d5f-bf13-dbf796d0be7d",
+      "input": "0",
+      "output": "Red\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,33 @@
+{
+  "question_id": "d5c709f8-701a-4af8-9c28-00e04e93aff7",
+  "short_text": "Hello World",
+  "content": "Write a program that prints `Hello World` as output.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c614202f-1cb7-4c2d-8148-a538e3177e0c",
+      "code_content": "print(\"Hello World\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "92281e8c-d4a6-4525-a593-10c632002f56",
+      "input": "",
+      "output": "Hello World",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "81959e79-ceeb-448c-af0e-7e0e7f5447f0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "90c7b574-bd25-4a14-b4ce-8c1bab181236",
+  "topic_name": "Introduction to Python",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "2629c221-44f7-43be-95d7-80702abdf743",
+  "short_text": "Even or Odd",
+  "content": "Write a program that reads a line of space-separated integers and labels each integer as `Even` or `Odd`. The program should output each integer labeled accordingly.\n\n---\n\n#### Input\n\nThe input contains a single line of integers separated by space.\n\n---\n\n#### Output\n\nThe output should be a space-separated sequence of `Even` or `Odd` corresponding to each integer.\n\n---\n\n#### Explanation\n\nIf the input is:\n\n```\n1 2 3 4\n```\n\nThe output should be:\n\n```\nOdd Even Odd Even\n```\n\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b7b82b60-1bde-4340-a434-d9142ae54c61",
+      "code_content": "def label_even_odd(numbers):\n    return [\"Even\" if num % 2 == 0 else \"Odd\" for num in numbers]\n\ninput_line = input().split()\nnumbers = [int(x) for x in input_line]\nlabels = label_even_odd(numbers)\nprint(\" \".join(labels))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "040778bd-8167-4a0a-956b-42bbb95c5222",
+      "input": "4 5 6",
+      "output": "Even Odd Even",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5707422f-d8e8-452a-bba9-6b1f628ba78c",
+      "input": "10 15 20",
+      "output": "Even Odd Even",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b1f38dc0-3305-4d64-b469-54761a76cc55",
+      "input": "1 2 3 4",
+      "output": "Odd Even Odd Even",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c265d117-0d8f-4e8d-9f0f-4d831d96da03",
+      "input": "3 6 9 12",
+      "output": "Odd Even Odd Even",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f721931e-655c-4b62-9a5c-259b5981f175",
+      "input": "14 17 22",
+      "output": "Even Odd Even",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ff3937a5-9976-421d-9a9b-9643f744cac3",
+      "input": "5 8 13",
+      "output": "Odd Even Odd",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7ced6467-af22-4d7c-96ae-bcdeb3364094",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

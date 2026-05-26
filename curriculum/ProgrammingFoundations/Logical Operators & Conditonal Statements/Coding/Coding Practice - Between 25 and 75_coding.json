@@ -1,0 +1,377 @@
+{
+  "question_id": "4b970c5f-dc6e-4b78-a7a9-e1a4a120c2a4",
+  "short_text": "Between 25 and 75",
+  "content": "Write a program that reads a number, and checks if the given number is between **25** and **75**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if the given number is between **25** and **75**, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is **35**,\r\n\r\n- The number **35** is greater than **25**.\r\n- The number **35** is less than **75**.\r\n- So, the number **35** is between **25** and **75**.\r\n\r\nThe output should be **True**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2d35c31a-c830-42d0-b9a4-779c2e1b1309",
+      "code_content": "n = int(input())\nis_between = ((n > 25) and (n < 75))\nprint(is_between)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "63d628a4-95f2-48c2-98c0-c669243b611d",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n25\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **25**,\n\n- The number **25** is equal to **25**.\n\n- The number **25** is less than **75**.\n\n- So, the number **25** is not between **25** and **75**.\n\nThe output should be **False**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "be0c8724-9612-450d-a1ca-b5f24923a1c2",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n45\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **45**,  \n\n- The number **45** is greater than **25**. \n\n- The number **45** is less than **75**.\n\n- So, the number **45** is between **25** and **75**, \n\nThe output should be **True**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d25a92f6-b8ff-4213-9ae1-401cc52c142d",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n16\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **16**,\n\n- The number **16** is less than **25**.\n\n- The number **16** is less than **75**.\n\n- So, the number **16** is not between **25** and **75**.\n\nThe output should be **False**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0a641cff-4c74-45f4-8040-55d20be47069",
+          "short_text": "",
+          "content": "According to the problem description, what is the minimum value required for the output to be `True`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "27f46ea9-b73c-4d10-bf8a-d818e49bdffd",
+              "content": "20",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "66e2b335-c00d-41b0-8822-0e48572ce1f4",
+              "content": "45",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "73f2293a-4c84-4fe9-94a2-e8aa32b3a6a4",
+              "content": "25",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e755a09e-c5a1-4bfa-9198-107409c89e29",
+              "content": "65",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the minimum value required for the output to be `True` is **25**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "359812f9-f1a6-41db-b3a7-54e191322d23",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0c9be8b4-c5e4-4e8e-8561-33d76aa557a0",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2a99da1a-bdf0-4ab1-b4dd-a5e008861de2",
+              "content": "The input will be multiple lines containing two integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c1263af2-08e7-469d-a9a8-6d64108ebc0d",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d969a9fb-ba29-4af1-805a-808e7e30eba7",
+              "content": "The input will be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer.\n\nFor example, **48**\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "534f3f29-b7bc-4d63-880f-de45780f15af",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n67\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "08aac286-089e-4880-beec-9fc249b9e89c",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8d663d6c-f187-4c8d-bbf0-3a2570ce38c2",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c840abc7-d7bf-4063-a865-ed5ed14b4947",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d51a48a1-d647-4368-9582-d843b01e989a",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **67**,\n\n- The number **67** is greater than **25**.\n\n- The number **67** is less than **75**.\n\nSo, the number **67** is between **25** and **75**.\n\nThe output should be **True**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "54feca25-b8d6-4fc6-9d76-3402e7c792b4",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0347ae48-5194-4c17-b9ab-59ccce60751c",
+              "content": "The output should be a single line containing string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "64439950-be47-4893-9440-f8c1d84e3af3",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c3905f13-1c99-4502-b87d-cbc8bf35461b",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ed8da50d-3358-4d1d-8ed5-d5d4a4354fb2",
+              "content": "The output should be a single line containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean value.\n\n- **True** should be printed if the given number is between **25** and **75**.\n- Otherwise **False** should be printed.\n\nFor example,\n\nIf the given number is **52**,\n\n- The number **52** is greater than **25**.\n\n- The number **52** is less than **75**.\n\nSo, the number **52** is between **25** and **75**.\n\nThe output should be **True**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "660739d9-1c5a-4971-a2d9-075e84db8a40",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "008c1dad-fde9-4c51-9381-e57787af1239",
+              "content": "To check if the given number is between **60** and **90**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "76df4774-454c-4653-80f0-a11dd23b4b8d",
+              "content": "To check if the given number is between **25** and **75**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7aa7e8fb-00ec-4374-adf9-1ebde074b64f",
+              "content": "To check if the given number is between **15** and **45**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fad00de7-3eb7-4264-b892-426d2fe6afaf",
+              "content": "To check if the given number is between **20** and **70**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of this program is to read a number and check if the given number is between **25** and **75**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7669ded8-6a25-45ab-8f9c-04ca3084773d",
+          "short_text": "",
+          "content": "According to the problem description, for the output to be `True`, the given number must be between?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3d181a68-203c-43d2-93a7-ea369313c558",
+              "content": "25 and 75",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "52b81490-0978-4630-b4ae-0ee3cfbfd819",
+              "content": "25 and 70",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "561915c4-ba22-4d8c-87b5-e3c3a590a966",
+              "content": "10 and 40",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "de1e8e89-959f-4a64-944b-c8d1c2febd38",
+              "content": "35 and 75",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, for the output to be `True`, the given number must be between **25** and **75**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "94401b59-9bf2-4b0a-b274-b6cc0ff93c79",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "3ff5aa5a-9411-4fff-8cf0-b2d2f10dbeda",
+              "content": "26.00",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "620f645b-52e7-4964-bea1-496fe5219439",
+              "content": "50",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c561d285-7d99-463b-8de8-b0154ff0766d",
+              "content": "20",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ef79caf7-3a4e-4ec1-947c-e8d235f624a5",
+              "content": "9\n13",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n50\n```\n\n**Input 2**\n\n```\n20\n```\nThe above two inputs are valid because they consist of a single line containing an integer.\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "08c68d02-d621-4a84-a9c7-99a0fafb0d38",
+      "input": "20",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "496090aa-ffa0-4105-bda1-b4688576821b",
+      "input": "25",
+      "output": "False\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4c3805a0-9281-426b-b194-32ad0b380231",
+      "input": "74",
+      "output": "True\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a596f6e7-bd0c-4678-9784-853d53cef330",
+      "input": "35",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ca032693-974f-44e2-92f9-df905e46bc65",
+      "input": "75",
+      "output": "False\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "fe300df5-86e9-40b4-94a5-a4d0a543367a",
+  "short_text": "Reverse the Letters in Words of the Sentence",
+  "content": "Given a sentence, write a program to reverse the letters in words of the sentence.<hr><b>Input</b><br/><br/>The first line of input will contain a string.<hr><b>Output</b><br/><br/>The output should be a single line containing the sentence by reversing all the letters in words.<br/>Note: The order of the words in the modified sentence should be the same as in the given sentence.<hr><b>Explanation</b><br/><br/>For example, if the given sentence is the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">The cat is on the mat.\n</code></pre><br/>Print the sentence by reversing the letters in words without changing the order of the words in the sentence. So the output should be <br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">ehT tac si no eht .tam\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "7074ce38-2418-4636-b7f1-cc73751dfe0b",
+      "code_content": "sentence = input()\nwords_list = sentence.split()\n\nmodified_sentence = []\nfor word in words_list:\n    modified_sentence += [word[::-1]]\n\nreversed_letters_sentence = \" \".join(modified_sentence)\nprint(reversed_letters_sentence)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "463b2465-80e8-4204-b155-b0c58bff700b",
+      "input": "Have a nice weekend.",
+      "output": "evaH a ecin .dnekeew\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "71adb15d-d6e8-4726-82b7-9a7f496eba51",
+      "input": "The cat is on the mat.",
+      "output": "ehT tac si no eht .tam\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "8fe2ce1f-f49c-4715-8361-e0edc696b0fe",
+      "input": "shopkeeper",
+      "output": "repeekpohs\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "ba1387d3-159b-401b-80ad-e4bedf725158",
+      "input": "Raghu is playing football",
+      "output": "uhgaR si gniyalp llabtoof\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "f5fb70e4-b8b6-4564-8594-b412a4c305c3",
+      "input": "Exercising regularly can improve your mood and reduce feelings of anxiety and depression.",
+      "output": "gnisicrexE ylraluger nac evorpmi ruoy doom dna ecuder sgnileef fo yteixna dna .noisserped\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "ac9659d1-f30b-4c25-b21d-b2f64af53219",
+  "short_text": "Win or Lose or Draw - 2",
+  "content": "A function is given in the prefilled code that takes two numbers `A` and `B` as arguments.\n\nWrite a program that compares the scores of `A` and `B`.\n\nReturn **\"Win\"** if `A` is greater than `B`.\nReturn **\"Draw\"** if `A` and `B` are equal.\nReturn **\"Lose\"** if `A` is less than `B`.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Win** should be printed if `A` is greater than `B`. **Draw** should be printed if `A` is equal to `B`. **Lose** should be printed if `A` is less than `B`.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 10` and `B = 6`,\n\n ✔ `A` is greater than `B`. (**10** is greater than **6**)\n ✖ `A` is equal to `B`. (**10** is **not** equal to **6**)\n ✖ `A` is less than `B`. (**10** is **not** less than **6**)\n\nThe output should be **Win**.\n<br>\nFor example, if the given numbers are `A = 70` and `B = 95`,\n\n ✖ `A` is greater than `B`. (**70** is **not** greater than **95**)\n ✖ `A` is equal to `B`. (**70** is **not** equal to **95**)\n ✔ `A` is less than `B`. (**70** is less than **95**)\n\nThe output should be **Lose**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a6a472fb-ac0f-4375-af7b-e66d96848c51",
+      "code_content": "def compare(team_a_points, team_b_points):\n    if team_a_points > team_b_points:\n        result = \"Win\"\n    \n    elif team_a_points == team_b_points:\n        result = \"Draw\"\n    \n    else:\n        result = \"Lose\"\n        \n    return result\n\nteam_a_points = int(input())\nteam_b_points = int(input())\n\ncompare_result = compare(team_a_points, team_b_points)\n\nprint(compare_result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "19fbcf36-4af8-445e-961e-058e8d925a56",
+      "input": "54235\n7836289",
+      "output": "Lose",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "2681c507-4a88-434d-8cf2-18edd5662087",
+      "input": "30256\n223",
+      "output": "Win",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "39dd93e1-8734-4eae-869f-a867171e7952",
+      "input": "70\n95",
+      "output": "Lose",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "528ffc84-d6de-43ed-ad66-aa04d10fe0c1",
+      "input": "10\n6",
+      "output": "Win",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "64f2e666-4c05-42fd-af48-e4e29b370850",
+      "input": "7894000\n7894000",
+      "output": "Draw",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "760c8f3a-0fc0-4e01-94dd-018836e0be5f",
+      "input": "125\n125",
+      "output": "Draw",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

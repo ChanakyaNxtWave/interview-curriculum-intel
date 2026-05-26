@@ -1,0 +1,61 @@
+{
+  "question_id": "75bba458-d61a-4b60-9918-cb2c9808cb8c",
+  "short_text": "Transpose Matrix",
+  "content": "In an academic setting, you are tasked with analyzing the grades of students across various subjects. The grades are organized in a matrix format, where each row represents a student and each column represents a subject. Your goal is to transpose this matrix, converting rows into columns and vice versa.\n\n- You will receive a **matrix** of **student grades** as input:\n- The first line contains **two integers**, **N** (the number of students) and **M** (the number of subjects).\n- The following **N lines** each contain **M space-separated integers** representing the grades of each student across all subjects.\n\nYour task is to **transpose this matrix** and print the resulting transposed matrix row by row. Each row in the transposed matrix should contain space-separated integers.\n\n---\n\n#### Input\n\nThe input consists of:\n\n- The first line contains two integers separated by a space: **N** (the number of students, i.e., **rows**) and M (the number of subjects, i.e., **columns**).\n- The next **N** lines each contain **M** space-separated integers, representing the grades of each student across all subjects.\n\n---\n\n#### Output\n\nThe output should be a transposed matrix, printed row by row. Each row should contain space-separated integers.\n\n\n---\n\n#### Explanation\n\nIf, the input is\n\n```\n3 3\n85 90 78\n88 76 92\n90 80 85\n```\n\n**In this example:**\n\n- The matrix has **Three** students and **Three** subjects. The original matrix is:\n\n  ```\n  85 90 78  # Grades for Student 1\n  88 76 92  # Grades for Student 2\n  90 80 85  # Grades for Student 3\n  ```\n\n- After transposing, **rows become columns**, and **columns become rows**. \n- The transposed matrix is:\n  \n  ```\n  85 88 90  # Grades for Subject 1\n  90 76 80  # Grades for Subject 2\n  78 92 85  # Grades for Subject 3\n  ```\n\nThus, the expected output should be\n\n```\n85 88 90\n90 76 80\n78 92 85\n```\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e26d1edd-970d-4a78-b14b-abc2cb18652a",
+      "code_content": "N, M = input().split()\nN, M = int(N), int(M)\nmatrix = []\n\nfor i in range(N):\n    row_input = input().split()\n    row = []\n    for num in row_input:\n        row.append(int(num))\n    matrix.append(row)\n\nresult = [[0 for i in range(N)] for i in range(M)]\n\nfor i in range(M):\n    for j in range(N):\n        result[i][j] = matrix[j][i]\n\nfor row in result:\n    for num in row:\n        print(num, end=\" \")\n    print()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "397d8680-a7a2-421b-906c-6f6c8dc2fa6c",
+      "input": "4 2\n70 80\n75 85\n60 65\n90 95",
+      "output": "70 75 60 90 \n80 85 65 95",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "67447471-a6d8-4186-8730-0870a3c9b38e",
+      "input": "3 3\n85 90 78\n88 76 92\n90 80 85",
+      "output": "85 88 90 \n90 76 80 \n78 92 85",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7f21f503-914b-457e-9f45-0026aef3030d",
+      "input": "2 4\n50 60 70 80\n90 100 110 120",
+      "output": "50 90 \n60 100 \n70 110 \n80 120",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "918b0e7a-a10b-4a5d-a3b1-5551a9812162",
+      "input": "1 5\n95 85 75 65 55",
+      "output": "95 \n85 \n75 \n65 \n55",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e08f7c01-040e-4dbe-9eec-b1518940b113",
+      "input": "5 1\n50\n60\n70\n80\n90",
+      "output": "50 60 70 80 90",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "677ae02f-bf38-48da-aad5-551072778667",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

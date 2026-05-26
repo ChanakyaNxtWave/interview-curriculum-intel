@@ -1,0 +1,61 @@
+{
+  "question_id": "5552a272-0f1b-43dd-b480-664aeec69ffa",
+  "short_text": "Target Sum",
+  "content": "A librarian is organizing books on a shelf and wants to create a pair of books whose combined weight matches a specific weight limit `target`. Write a program to help the librarian find two books that satisfy this condition.\n\n<MultiLineNote>\n\n- The librarian has a list of book weights in kilograms.\n- You need to find the indices of the two books whose combined weights equal the `target`.\n- Each input will have exactly one solution.\n- A book cannot be selected twice for the same pair.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\n- A single line containing an integer array `weights`, representing the weights of the books in kilograms.\n- A single integer `target`, representing the desired combined weight.\n\n---\n\n#### Output\n\nA single line with two integers, the indices of the two books in the list whose weights add up to the `target`.\n\n---\n\n#### Explanation\n\nIf `weights` is `1 3 5 7` and `target` is `8`, then the output will be `0 3`, because `weights[0] + weights[3] = 1 + 7 = 8`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5fd4f4d6-4f43-4721-8215-13b3edbd706e",
+      "code_content": "weights_input = input()\nweights = [] \n\nfor weight in weights_input.split():\n    weights += [int(weight)] \n\ntarget = int(input())\n\nfor i in range(len(weights)):\n    for j in range(i + 1, len(weights)):\n        if weights[i] + weights[j] == target:\n            print(i, j)\n            break\n    if weights[i] + weights[j] == target:\n        break\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "872ab275-58db-4c5c-9827-2aa2a29e77a4",
+      "input": "1 3 5 7\n8",
+      "output": "0 3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8e179343-f385-4936-93d6-cef9e8acf61d",
+      "input": "2 4 6 8 10\n12",
+      "output": "0 4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a032a5b7-78d2-49ef-ad75-f839066d0a68",
+      "input": "5 5 10 15 20\n25",
+      "output": "0 4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b1b765be-a4d6-4a9b-a26d-7746671d21a6",
+      "input": "3 8 12 7 9\n15",
+      "output": "0 2",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "b934fe07-de80-4ec2-9193-034afa371dbb",
+      "input": "10 15 20 25 30\n45",
+      "output": "1 4",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "40f7871e-a9ef-4bdb-a190-a4bc7fa56437",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

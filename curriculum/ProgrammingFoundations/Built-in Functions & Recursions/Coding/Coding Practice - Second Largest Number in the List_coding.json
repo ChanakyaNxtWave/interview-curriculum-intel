@@ -1,0 +1,75 @@
+{
+  "question_id": "9c8ebd59-8424-47c6-b278-1ebdd13dfb09",
+  "short_text": "Second Largest Number in the List",
+  "content": "Given comma-separated numbers, write a program to print the **Second Largest** number in the given numbers.\n\n---\n\n#### Input\n\nThe input will be a single line containing comma-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the **Second Largest** number in the given numbers.\n\n---\n\n#### Explanation\n\nFor example, if the given comma-separated numbers are `13,12,3,25`,\n\n- The given numbers are **13**, **12**, **3**, and **25**.\n- The **First Largest** number in the given numbers is **25**.\n- The **Second Largest** number in the given numbers is **13**.\n\nThe output should be **13**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "73b4df06-b4ca-4d04-af70-e6ac01551cbd",
+      "code_content": "numbers_list = input().split(\",\")\nnew_list = []\n\nfor each_number in numbers_list:\n    number = int(each_number)\n    new_list += [number]\n\nsorted_list = sorted(new_list)\nsecond_largest = sorted_list[-2]\n\nprint(second_largest)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0b2d3514-8aa3-460c-8577-5fd6181c9699",
+      "input": "25,32",
+      "output": "25",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "324c95ec-3cc0-4b6b-9cd0-57622b4389b5",
+      "input": "14,15,72,940,489,48,391",
+      "output": "489",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "4d55b51f-56b7-457a-9444-495ae7aaf726",
+      "input": "-3,-2,-10,-15,-9",
+      "output": "-3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9743477d-995b-4161-8819-bc6c91d0fbd4",
+      "input": "-90,-64,-32,0,89",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9f203fa6-5532-48b0-9939-3c8afce2ec07",
+      "input": "13,12,3,25",
+      "output": "13",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b985e454-8a2c-44a2-82bd-a54cf3babe40",
+      "input": "104,115,7382,86940,67489,2648,578391",
+      "output": "86940",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "dea9939b-654d-4960-850d-cd85413f3e87",
+      "input": "10,11,73,869,67,264,578",
+      "output": "578",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

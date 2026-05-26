@@ -1,0 +1,75 @@
+{
+  "question_id": "72aaa3b9-abaf-4232-8d1f-74e93fb800c6",
+  "short_text": "Indivisible Number",
+  "content": "Given a number `N`, write a program that checks if `N` is **not** divisible by any number from **2** to **9**.\n\nPrint **Divisible Number** if the number `N` is divisible by any of the numbers from **2** to **9**. Print **Indivisible Number** if the number `N` is **not** divisible by any of the numbers from **2** to **9**.\n\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Divisible Number** should be printed if the number `N` is divisible by any of the numbers from **2** to **9**. **Indivisible Number** should be printed if the number `N` is **not** divisible by any of the numbers from **2** to **9**.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 15`,\n\n- **15** is divisible by **3** and **5**.\n- **15** is **not** divisible by **2**, **4**, **6**, **7**, **8**, and **9**.\n\nThe output should be **Divisible Number**, as **15** is divisible by at least one of the numbers from **2** to **9**.\n\n<br/>\n\nFor example, if the given number is `N = 103`,\n\n- **103** is **not** divisible by any number from **2** to **9** (**2**, **3**, **4**, **5**, **6**, **7**, **8**, and **9**).\n\nThe output should be **Indivisible Number**, as **103** is **not** divisible by any number from **2** to **9**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b31d4c82-39b1-426e-b57e-d9aa9b37755c",
+      "code_content": "number = int(input())\nis_divisible = False\n\nfor i in range(2, 10):\n    \n    if number % i == 0:\n        is_divisible = True\n\nif is_divisible:\n    print(\"Divisible Number\")\nelse:\n    print(\"Indivisible Number\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "26474f6a-dfaf-4fe8-a37e-b9d4f89bef0e",
+      "input": "1",
+      "output": "Indivisible Number",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "55a2b3f3-91d9-49b3-a217-23857c544aae",
+      "input": "103",
+      "output": "Indivisible Number",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "773c50ea-3786-4501-ae96-8ae591d5d96c",
+      "input": "1237",
+      "output": "Indivisible Number",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9af70532-33c8-4bd0-8617-80feaa93f265",
+      "input": "0",
+      "output": "Divisible Number",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "a401bc05-8519-423c-a272-d92077135818",
+      "input": "256",
+      "output": "Divisible Number",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c3f8d588-fa3b-4fd8-9903-3e36b43e9988",
+      "input": "31",
+      "output": "Indivisible Number",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f7df8748-36fd-4c1a-97c0-e17011339b22",
+      "input": "15",
+      "output": "Divisible Number",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

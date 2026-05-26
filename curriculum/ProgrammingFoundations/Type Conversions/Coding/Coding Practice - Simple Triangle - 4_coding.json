@@ -1,0 +1,33 @@
+{
+  "question_id": "8fe37c07-4788-4b18-875d-2e269a26fdf2",
+  "short_text": "Simple Triangle - 4",
+  "content": "Write a program that prints a simple triangle using the plus (`+`). \n\n---\n\n#### Explanation\n\nPrint one plus on the first line, two pluses on the second line and three pluses on the third line.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fa91d075-9a5f-43be-91cd-6051f6e44433",
+      "code_content": "print(\"+\")\nprint(\"+\" * 2)\nprint(\"+\" * 3)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "570296a3-8aa2-4fc0-888b-3c35004d0097",
+      "input": "",
+      "output": "+\n++\n+++",
+      "is_hidden": false,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

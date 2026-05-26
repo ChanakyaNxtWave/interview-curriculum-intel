@@ -1,0 +1,47 @@
+{
+  "question_id": "c0e2bcff-ffdf-4b69-a416-5af6be910041",
+  "short_text": "Abstract Payment System",
+  "content": "Implement a payment system by following the principles of abstraction. You will be creating an abstract class and its subclasses for different payment methods.\n\n**Existing _AbstractionPayment_ class**:\n\nThe existing **AbstractionPayment** class is an abstract class that includes abstract methods `process_payment()` and `validate_payment()`. Your task is to implement these methods in the subclasses.\n\n<details>\n\n<summary>**Features to be added to subclasses of `AbstractionPayment`**</summary>\n\n- **Create two subclasses**: `CardPayment` and `MobilePayment`.\n- **Implement the abstract methods**:\n - Both subclasses should implement the `process_payment()` method to print out a message indicating that the payment is being processed.\n   - **Format** : **`Processing {card/mobile} payment for {amount} {currency}`**\n - Both subclasses should implement the `validate_payment()` method to print out a message indicating that the payment is being validated.\n   - **Format** : **`Validating {card/mobile} payment for {amount} {currency}`**\n- **Attributes**:\n - Both subclasses should have the following attributes:\n  - `id`: a unique identifier for the payment\n  - `amount`: the amount of the payment\n  - `currency`: the currency of the payment amount\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d79756ec-3911-41ca-8953-1a8dc9d5f0fd",
+      "code_content": "from abc import ABC, abstractmethod\n\nclass AbstractionPayment(ABC):\n    def __init__(self, id, amount, currency):\n        self.id = id\n        self.amount = amount\n        self.currency = currency\n    \n    @abstractmethod\n    def process_payment(self):\n        pass\n\n    @abstractmethod\n    def validate_payment(self):\n        pass\n\nclass CardPayment(AbstractionPayment):\n    def process_payment(self):\n        print(f\"Processing card payment for {self.amount} {self.currency}\")\n\n    def validate_payment(self):\n        print(f\"Validating card payment for {self.amount} {self.currency}\")\n\nclass MobilePayment(AbstractionPayment):\n    def process_payment(self):\n        print(f\"Processing mobile payment for {self.amount} {self.currency}\")\n\n    def validate_payment(self):\n        print(f\"Validating mobile payment for {self.amount} {self.currency}\")\n\ndef default_test():\n    card_payment = CardPayment(1, 100, \"USD\")\n    card_payment.process_payment()\n    card_payment.validate_payment()\n    \n    mobile_payment = MobilePayment(2, 150, \"EUR\")\n    mobile_payment.process_payment()\n    mobile_payment.validate_payment()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "18daa465-b292-4377-84af-9ebfe5913ce0",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4e3bbe44-46cb-4320-b08a-b07b69d9051e",
+      "input": "Checking Default Tests",
+      "output": "Processing card payment for 100 USD\nValidating card payment for 100 USD\nProcessing mobile payment for 150 EUR\nValidating mobile payment for 150 EUR",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a4fe8832-7c4d-4ac7-a95a-61197b3e8637",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d1f94c09-95d8-4509-b3d7-6a98e8dc300b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

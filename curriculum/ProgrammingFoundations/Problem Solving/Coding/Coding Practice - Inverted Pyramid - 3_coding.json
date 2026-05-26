@@ -1,0 +1,75 @@
+{
+  "question_id": "08f703b8-d421-4fe1-ac7f-f368094e33bc",
+  "short_text": "Inverted Pyramid - 3",
+  "content": "Given a number `N`, write a program to print an **Inverted Pyramid** of `N` rows using stars (`*`) and pluses (`+`).\r\n\r\nThe first row of the pyramid contains pluses (`+`), and the remaining rows contain stars (`*`).\r\n\r\n````\r\n+ + + + \r\n * * * \r\n  * * \r\n   *\r\n````\r\n\r\n<MultiLineNote>\r\nThere is a space after every star (`*`) and every plus (`+`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing pluses (`+`) and stars (`*`) as an **Inverted Pyramid** shown in the sample output. \r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`, \r\n\r\n- Print pluses (`+`) and stars (`*`) on **4** rows as shown in the given image.\r\n  - The first row should contain **4** pluses.\r\n  - The remaining **3** rows should contain stars (`*`).\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-pyramid-3.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates a space (\" \").\r\n- The Plus in the box indicates a plus (\"+\").\r\n- The Star in the box indicates a star (\"*\").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n````\r\n+ + + + \r\n * * * \r\n  * * \r\n   *\r\n````",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ec3b0141-a0b0-4111-b2d0-16df0464d425",
+      "code_content": "rows = int(input())\n\nfor each_number in range(rows):\n    if each_number == 0:\n        left_spaces = \" \" * each_number\n        pluses = \"+ \" * (rows - each_number)\n        each_row = left_spaces + pluses\n    else:\n        left_spaces = \" \" * each_number\n        stars = \"* \" * (rows - each_number)\n        each_row = left_spaces + stars\n        \n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "134fd3fa-9b52-4974-8d10-dcddef34ae4f",
+      "input": "15",
+      "output": "+ + + + + + + + + + + + + + + \n * * * * * * * * * * * * * * \n  * * * * * * * * * * * * * \n   * * * * * * * * * * * * \n    * * * * * * * * * * * \n     * * * * * * * * * * \n      * * * * * * * * * \n       * * * * * * * * \n        * * * * * * * \n         * * * * * * \n          * * * * * \n           * * * * \n            * * * \n             * * \n              *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "14cc06d2-0226-4527-9d65-e60c9742b698",
+      "input": "3",
+      "output": "+ + + \n * * \n  *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "1fa6e230-156b-4b1b-a221-cdabff9afebc",
+      "input": "4",
+      "output": "+ + + + \n * * * \n  * * \n   *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5297cb37-2929-4803-8daf-731cc649df9a",
+      "input": "5",
+      "output": "+ + + + + \n * * * * \n  * * * \n   * * \n    *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ba51a62a-c7bc-4052-a63d-0a4dca17080e",
+      "input": "1",
+      "output": "+",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "c54d48f8-0425-4f90-9f17-d297939a6b19",
+      "input": "10",
+      "output": "+ + + + + + + + + + \n * * * * * * * * * \n  * * * * * * * * \n   * * * * * * * \n    * * * * * * \n     * * * * * \n      * * * * \n       * * * \n        * * \n         *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "eff1efde-d419-4ade-828e-9e011531f316",
+      "input": "2",
+      "output": "+ + \n *",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "9d1fba5e-f528-4c59-820a-536ea84fb1a7",
+  "short_text": "Organize Books",
+  "content": "A local bookstore is preparing for a big sale and needs to organize their inventory of books by price. The bookstore manager has a list of book prices and wants to display the prices in descending order to highlight the most expensive books first. Additionally, the manager wants to identify the minimum and maximum prices from the sorted list for promotional purposes. \n\nYour task is to complete the a **`organize_book_prices()`** method that takes a list of book prices as a parameter and returns the sorted list along with the minimum and maximum prices.\n\n<MultiLineNote>\n\n- Use the **`Built-in`** function to calculate the number of titles.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe **`organize_book_prices()`** method takes **prices**  as parameter, representing a list of integers representing the book prices.\n\n---\n\n#### Output\n\nThe **`organize_book_prices()`** method should return:\n\n- A list containing:\n - The **sorted list** of book prices in **descending order**.\n - The **minimum price** from the original list.\n - The **maximum price** from the original list.\n\n---\n\n#### Explanation\n\nFor example if the input \n\n```\n15 10 20 5 30\n```\n\n- The list of prices when sorted in descending order is **[30, 20, 15, 10, 5]**. \n- In this case, **5** is the minimum price and **30** is the maximum price.\n\n\nThe expected output would be :\n\n```\n[[30, 20, 15, 10, 5], 5, 30]\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d6e8da4d-5b63-40af-8c93-97a1ebd95560",
+      "code_content": "def organize_book_prices(prices):\n    sorted_prices = sorted(prices, reverse=True)\n    min_price = min(prices)\n    max_price = max(prices)\n    return [sorted_prices, min_price, max_price]",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b55644e-3f62-4189-9ab3-375bc8aa9291",
+      "input": "5 4 2 2 1",
+      "output": "[[5, 4, 2, 2, 1], 1, 5]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "76f90d97-f3f1-4966-a10a-40666509ae73",
+      "input": "30 20 3 10 5",
+      "output": "[[30, 20, 10, 5, 3], 3, 30]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7a2d2a2f-92c2-462d-9f28-8b61ef60109c",
+      "input": "1 2 3 4 5",
+      "output": "[[5, 4, 3, 2, 1], 1, 5]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b2591c63-b872-4d02-869d-7a8b5b5f20cb",
+      "input": "200 150 100",
+      "output": "[[200, 150, 100], 100, 200]",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ff479bb6-251b-4fc3-8ce1-cf0ebc93367e",
+      "input": "15 10 20 5 30",
+      "output": "[[30, 20, 15, 10, 5], 5, 30]",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "83df0765-d00f-4be4-9557-91ec0ad42c22",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

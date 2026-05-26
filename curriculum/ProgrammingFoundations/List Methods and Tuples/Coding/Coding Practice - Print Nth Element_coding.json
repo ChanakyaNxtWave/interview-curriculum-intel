@@ -1,0 +1,61 @@
+{
+  "question_id": "9df7f92f-e40c-49d6-8ba5-8afac5aaa694",
+  "short_text": "Print Nth Element",
+  "content": "For this problem, the prefilled code will contain a tuple of numbers.\n\nWrite a program that takes an integer `N` as input and prints the element at the `N`th index of the tuple.\n\n---\n\n#### Input\n\n- The input will be an integer `N` which represents the index of the element you need to print.\n\n---\n\n#### Output\n\n- Print the element at index `N` in the tuple.\n\n---\n\n#### Example\n\nIf `N=3`, then the output should be:\n\n```\n47\n```\n\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "3bb715d6-83f1-424c-aff4-b37b44971f80",
+      "code_content": "tuple_values = (10, 25, 33, 47, 52, 61, 78, 85, 90, 100)\n\n# Write your code here:\nn = int(input())\nprint(tuple_values[n])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3f43c0e2-ca34-4daa-ad0d-085924596f8c",
+      "input": "5",
+      "output": "61",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4776f9e9-05d3-4a80-9543-19c62592b705",
+      "input": "7",
+      "output": "85",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "90053442-ee46-4ea8-ae6f-785e30208374",
+      "input": "0",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e5675586-3d66-47bc-86cf-33663412e719",
+      "input": "3",
+      "output": "47",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f80d8881-84b3-4d33-9dfa-0c6202e0a26f",
+      "input": "9",
+      "output": "100",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "62237960-515f-4451-8ca9-7bf74bbb4421",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "0b28cce4-0e7b-4d65-a00e-1c589aea8ac1",
+  "short_text": "Character Frequency",
+  "content": "Write a program to compute the frequency of characters other than space.<hr><b>Input</b><br/><br/>The input will be a single line containing a string.<br/>Note: <br/>  1. The input string will contain only alphabets and white space.<br/>  2. Ignore the case-sensitivity.<hr><b>Output</b><br/><br/>The output should be M lines equal to unique characters in the given string sorted in alphabetical order.<br/>Each line should contain the character and its frequency separated by a colon (:). <hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;Pop up&quot;, all the unique characters in the given string are (p, o, u). The characters (p, o, u) are with frequency (3, 1, 1) respectively. Your code should print each unique character and its frequency separated by a colon(:) in alphabetical order. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">o: 1\np: 3\nu: 1\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "f2b18a21-6a29-444f-a30a-ec1e2c54b216",
+      "code_content": "def print_char_count(line):\n    line = line.lower()\n    unique_chars = set(line)\n    unique_chars.discard(\" \")\n    for char in sorted(unique_chars):\n        print(\"{}: {}\".format(char, line.count(char)))\n\n\nline = input()\nprint_char_count(line)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "392893c1-b30a-41fc-8d58-77344f389395",
+      "input": "FORMATTING STYLES",
+      "output": "a: 1\ne: 1\nf: 1\ng: 1\ni: 1\nl: 1\nm: 1\nn: 1\no: 1\nr: 1\ns: 2\nt: 3\ny: 1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "918559da-188b-43f7-9ade-1b51aab44213",
+      "input": "Pop up",
+      "output": "o: 1\np: 3\nu: 1\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a327457e-bc2b-4773-bca7-e07cc966beaa",
+      "input": "Tic Tac Toe",
+      "output": "a: 1\nc: 2\ne: 1\ni: 1\no: 1\nt: 3\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "b9f78669-7af8-4cfa-a79a-a52c12d12bc8",
+      "input": "Welcome Greeting",
+      "output": "c: 1\ne: 4\ng: 2\ni: 1\nl: 1\nm: 1\nn: 1\no: 1\nr: 1\nt: 1\nw: 1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c8cd334f-1009-4223-bdc4-f85fff76dfbd",
+      "input": "High and Level",
+      "output": "a: 1\nd: 1\ne: 2\ng: 1\nh: 2\ni: 1\nl: 2\nn: 1\nv: 1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

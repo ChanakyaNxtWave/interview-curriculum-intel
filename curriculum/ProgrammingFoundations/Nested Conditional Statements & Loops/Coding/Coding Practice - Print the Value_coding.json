@@ -1,0 +1,378 @@
+{
+  "question_id": "0026be65-dd7b-475d-bf2a-9439e813a38b",
+  "short_text": "Print the Value",
+  "content": "Write a program that reads a string `S`. The string `S` contains a number except the last character. The last character of the string contains **T** or **H** or **K**.\n\nPrint the Value by multiplying the number in `S` with **10** or **100** or **1000** based on the last character.\n\n| Last Character | Represents | Value                                       |\n| -------------- | ---------- | ------------------------------------------- |\n| T              | Tens       | Multiply the number in string with **10**   |\n| H              | Hundreds   | Multiply the number in string with **100**  |\n| K              | Thousands  | Multiply the number in string with **1000** |\n\n<MultiLineQuickTip>\n\nMake sure the number is converted to an integer before doing any operations like Multiplication (`*`), etc.\n\n**Example:** `S = 34T`\n\n- The number in **34T** is **34**.\n- **34** should be converted to an integer before doing any operations.\n\n</MultiLineQuickTip>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the value obtained by multiplying the number in `S` with **10** or **100** or **1000** based on the last character.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = 34T`,\n\n- The number in `S` is **34**.\n- The last character of `S` is **T**\n- As **T** represents **Tens**, multiply the number in `S` with **10**. So, the value is **340** (`34 * 10 = 340`).\n\nThe output should be **340**.\n\n<br/>\n\nFor example, if the given string is `S = 6H`,\n\n- The number in `S` is **6**.\n- The last character of `S` is **H**\n- As **H** represents **Hundreds**, multiply the number in `S` with **100**. So, the value is **600** (`6 * 100 = 600`).\n\nThe output should be **600**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5096e41f-dceb-4841-8c22-c87cad22aed2",
+      "code_content": "string = input()\n\nstring_length = len(string)\nlast_index = string_length - 1\n\nnumber = string[:last_index]\nnumber = int(number)\n\nlast_character = string[last_index]\n\nif last_character == \"T\":\n    value = number * 10\nelif last_character == \"H\":\n    value = number * 100\nelif last_character == \"K\":\n    value = number * 1000\n\nprint(value)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "64d59455-6a9c-49d6-84c6-a4b5ba1d0f32",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n23K\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "23000",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = 23K`,\n\n- The number in `S` is **23**.\n\n- The last character of `S` is **K**\n\n- As **K** represents **Thousands**, multiply the number in `S` by **1000**. So, the value is **23000** (`23 * 1000 = 23000`).\n\nThe output should be **23000**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "671f47c5-fbfd-43c9-ad7d-c57ad52c1a82",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n12H\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1200",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = 12H`,\n\n- The number in `S` is **12**.\n\n- The last character of `S` is **H**\n\n- As **H** represents **Hundreds**, multiply the number in `S` by **100**. So, the value is **1200** (`12 * 100 = 1200`).\n\nThe output should be **1200**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d2c42257-45e9-4219-876b-e8a367abb4d4",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n54T\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "540",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = 54T`,\n\n- The number in `S` is **54**.\n\n- The last character of `S` is **T**\n\n- As **T** represents **Tens**, multiply the number in `S` by **10**. So, the value is **540** (`54 * 10 = 540`).\n\nThe output should be **540**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "3e9693de-07e6-496d-be85-b549bbffd3ac",
+          "short_text": "",
+          "content": "According to the problem description, what should be done to the number in the string before doing any operations?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "686c6f6f-c407-4aaa-b194-6e29a6731fd3",
+              "content": "Convert it to a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d929af07-a482-43a0-a2ca-09a6d692995a",
+              "content": "Convert it to a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fcc05ee2-162f-4791-881a-a9fd29fafe8c",
+              "content": "Convert it to an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the number in the string should be converted into an integer before doing any operations.\n\nFor example `S = 43H`\n\n- The number in **43H** is **43**.\n\n- **43** should be converted to an integer before doing any operations.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8169eced-c371-4b9b-9145-0b2fbd79e540",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1d10bd02-befb-4343-8b28-941acf42d3f7",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "da3eb4f7-81c2-47c2-939a-cbe9c59f7009",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ededb77b-5ab2-49dd-a7a5-b3318460f7ed",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f3445971-3b3f-4eff-ae44-e8639af65c4d",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing an integer that is the value obtained by multiplying the number in `S` with **10** or **100** or **1000** based on the last character.\n\nFor example,\n\nIf the given string is `S = 14K`,\n\n- The number in `S` is **14**.\n\n- The last character of `S` is **K**\n\n- As **K** represents **Thousands**, multiply the number in `S` by **1000**. So, the value is **14000** (`14 * 1000 = 14000`).\n\nThe output should be **14000**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8f9b41e2-33a1-43eb-aeeb-1cdd9110c0e7",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0a54d20b-d158-4dba-a990-21a0d64c4504",
+              "content": "The input will be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "99520732-13a6-4a3f-82b8-b69661d128f5",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cbd89766-3e90-43fe-ae1d-df926564b527",
+              "content": "The input will be multiple lines containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e0fd51d2-ab9b-4936-b8c0-ac523483e7b5",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing a string representing `S`.\n\nFor example, **31T**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "92ae0dff-6e63-49a7-8ac5-c938e0d54c69",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n137K\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "35446652-bea8-41ee-80d3-ed6fe7b09dc9",
+              "content": "137",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "acf04e09-e1fe-4b4d-9852-abf222da7dfd",
+              "content": "137000",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d9d5d956-2ec3-4073-bfcd-5c3a05880f9a",
+              "content": "1370",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "da8370ca-3672-403e-9c98-2ec5e26965d2",
+              "content": "13700",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = 137K`,\n\n- The number in `S` is **137**.\n\n- The last character of `S` is **K**\n\n- As **K** represents **Thousands**, multiply the number in `S` by **1000**. So, the value is **137000** (`137 * 1000 = 137000`).\n\nThe output should be **137000**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9ea42655-797e-4c09-a732-bf445432756a",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "117a5d0a-86a7-4d57-bd59-426c6712361d",
+              "content": "18H",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "188379cd-815d-408c-837f-50c28146a414",
+              "content": "6T\n81K",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2fd593f3-a4be-427f-b4ee-ee2a852a38ef",
+              "content": "26A",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fd66c0ec-53a3-464d-afba-e4af776f9c3e",
+              "content": "22K",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n22K\n```\n\n**Input 2**\n\n```\n18H\n```\nThe above two inputs are valid because they consist of a single line containing a string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c73a7b17-30d8-4010-b1d4-748486fb30ee",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "163a8ee9-ff59-4965-8ce5-915c78f69744",
+              "content": "Multiplying the number in the string `S` with 100, 1000, or 10000 based on the last character.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1f41f054-bf74-4a47-aa3c-27e6279815b4",
+              "content": "Check if the number in the string is positive or negative.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "32c21dec-2e94-4ca3-b4f6-9fbf50d2c57a",
+              "content": "Check if the number in the string is odd or even.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "96f575f2-1875-49e4-aa7d-1c5dba334ab7",
+              "content": "Multiplying the number in the string with 10, 100, or 1000 based on the last character.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a string and multiply the number in the string `S` with 10, 100, or 1000 based on the last character.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c9880c4a-3c54-4214-9c9b-c2d2ffb545e0",
+          "short_text": "",
+          "content": "What does the last character in the string `T`, `H`, and `K` represent?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "177e47dc-a86a-431b-80f6-51e1b368b3a4",
+              "content": "`T = 100`, `H = 1000` and `K = 10000`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "38c27796-7dfc-4ee8-890e-e7b9a555c5f8",
+              "content": "`T = 1`, `H = 10` and `K = 100`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d1fbd84a-ad5b-4e02-bac3-70eb8d8dc449",
+              "content": "`T = 10`, `H = 100` and `K = 1000`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e6dd7aa1-8720-4532-ba5c-a36e41bd8b32",
+              "content": "`T = 100`, `H = 10` and `K = 10000`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The last character in the string `T`, `H`, and `K` represent `T = 10`, `H = 100` and `K = 1000`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "2bdbf330-4b3d-4a36-ad35-b88314e4e013",
+      "input": "30H",
+      "output": "3000",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "5fa3f963-5602-4960-b7cc-5120859cc5b8",
+      "input": "-999K",
+      "output": "-999000",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "b22416b2-f809-4d6e-83b1-bb04489f77de",
+      "input": "6H",
+      "output": "600",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e8ed53e0-bf82-4287-806f-d74ab84dd39f",
+      "input": "34T",
+      "output": "340",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ea86017c-133e-428a-810c-a0a1a8fe0c50",
+      "input": "22T",
+      "output": "220",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "ed983e82-4992-467f-b36c-35dc77fb1afa",
+      "input": "700K",
+      "output": "700000",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

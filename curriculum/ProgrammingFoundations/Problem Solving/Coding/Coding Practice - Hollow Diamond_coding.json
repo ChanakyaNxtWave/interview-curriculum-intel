@@ -1,0 +1,61 @@
+{
+  "question_id": "cd621f49-f3a1-46db-958f-f376f4d4a2a8",
+  "short_text": "Hollow Diamond",
+  "content": "Given a number `N`, write a program to print the **Hollow Diamond** of `2 * N - 1` rows using stars (`*`).\r\n\r\n```\r\n   *\r\n  * *\r\n *   *\r\n*     *\r\n *   *\r\n  * *\r\n   *\r\n```\r\n\r\n---\r\n\r\n####Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n####Output\r\n\r\nThe output should be `2 * N - 1` rows containing stars (`*`) as the **Hollow Diamond** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print the stars (`*`) on **9** rows (`2 * 5 - 1`) as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-diamond.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates a space (\" \").\r\n- The Star in the box indicates a star (\"*\").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n    *\r\n   * *\r\n  *   *\r\n *     *\r\n*       *\r\n *     *\r\n  *   *\r\n   * *\r\n    *\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "16789f0b-1d30-4818-a3f8-ad58d2043431",
+      "code_content": "n = int(input())\nleft_spaces_count = n - 1\nleft_spaces = \" \" * left_spaces_count\nfirst_row = left_spaces + \"*\"\nprint(first_row)\n\nmiddle_spaces_count = -1\nfor i in range(2, n + 1):  \n    left_spaces_count = n - i\n    left_spaces = \" \" * left_spaces_count\n\n    middle_spaces_count = middle_spaces_count + 2\n    middle_spaces = \" \" * middle_spaces_count\n\n    row = left_spaces + \"*\" + middle_spaces + \"*\"\n    print(row)\n\nfor i in range(1, n - 1):  \n    left_spaces_count = i\n    left_spaces = \" \" * left_spaces_count\n\n    middle_spaces_count = middle_spaces_count - 2\n    middle_spaces = \" \" * middle_spaces_count\n\n    row = left_spaces + \"*\" + middle_spaces + \"*\"\n    print(row)\n\nleft_spaces_count = n - 1\nleft_spaces = \" \" * left_spaces_count\nlast_row = left_spaces + \"*\"\nprint(last_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "15973097-8d4d-4f0e-880d-a3bc6cd3a93c",
+      "input": "11",
+      "output": "          *\n         * *\n        *   *\n       *     *\n      *       *\n     *         *\n    *           *\n   *             *\n  *               *\n *                 *\n*                   *\n *                 *\n  *               *\n   *             *\n    *           *\n     *         *\n      *       *\n       *     *\n        *   *\n         * *\n          *\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "5267a06c-fd28-4672-90b8-375d00b1ccdd",
+      "input": "8",
+      "output": "       *\n      * *\n     *   *\n    *     *\n   *       *\n  *         *\n *           *\n*             *\n *           *\n  *         *\n   *       *\n    *     *\n     *   *\n      * *\n       *\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9bc975f8-a75c-4fad-9e4e-0d9f3900898d",
+      "input": "5",
+      "output": "    *\n   * *\n  *   *\n *     *\n*       *\n *     *\n  *   *\n   * *\n    *\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "df7375be-bff3-4b74-b6a2-7b27b66e7566",
+      "input": "14",
+      "output": "             *\n            * *\n           *   *\n          *     *\n         *       *\n        *         *\n       *           *\n      *             *\n     *               *\n    *                 *\n   *                   *\n  *                     *\n *                       *\n*                         *\n *                       *\n  *                     *\n   *                   *\n    *                 *\n     *               *\n      *             *\n       *           *\n        *         *\n         *       *\n          *     *\n           *   *\n            * *\n             *\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "eafc1b27-39a5-4f38-98f6-4b5bb8a6b08e",
+      "input": "3",
+      "output": "  *\n * *\n*   *\n * *\n  *\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

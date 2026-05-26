@@ -1,0 +1,391 @@
+{
+  "question_id": "ac17087c-f33a-4a93-b88f-9f097368c32e",
+  "short_text": "Compare Numbers - 7",
+  "content": "Write a program that reads a four-digit number and checks if the first two digits of the number is **19** and the last two digits of the number is between **30** and **60**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a four-digit integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if the first two digits of the number is **19** and the last two digits of the number is between **30** and **60**, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is **1947**, \r\n\r\nThe first two digits is **19** and the last two digits is **47**.\r\n\r\n✔ The first two digits of the number is **19**. (The first two digits, **19** is equal to **19**)\r\n✔ The last two digits of the number is between **30** and **60**. (**47** is greater than **30** and less than **60**)\r\n\r\nThe output should be **True**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "911459f2-cff0-4c93-84de-07fb4268838a",
+      "code_content": "number = input()\n\nlength = len(number)\n\nfirst_two_digits = number[:2]\nlast_two_digits = number[length - 2:]\n\nfirst_two_digits = int(first_two_digits)\nlast_two_digits = int(last_two_digits)\n\nis_nineteen = first_two_digits == 19\n\nis_greater_than = last_two_digits > 30\nis_less_than = last_two_digits < 60\nis_between_30_and_60 = is_greater_than and is_less_than\n\nresult = is_nineteen and is_between_30_and_60\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "90e21734-469d-4234-8e6d-c2d18f814370",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1934\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **1934**,\n\nThe first two digits are **19** and the last two digits are **34**\n\n✔ The first two digits of the number is **19**. (**19** is equal to **19**)\n\n✔ The last two digits of the number is between **30** and **60**. (**34**  is greater than **30** and less than **60**)\n\nThe output should be **True**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a5c62587-4ada-4e6e-816d-ddb45310f3fa",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1916\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The given number is **1916**,\n\nThe first two digits are **19** and the last two digits are **16****\n\n✔ The first two digits of the number is **19**. (**19** is equal to **19**)\n\n✖ The last two digits of the number is between **30** and **60**. (**16** is less than **30** and **60**)\n\nThe output should be **False**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ea794ee6-0651-4a6d-9ffe-0f1bed0e2c84",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1999\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **1999**,\n\n\nThe first two digits are **19** and the last two digits are **99**\n\n✔ The first two digits of the number is **19**. (**19** is equal to **19**)\n\n✖ The last two digits of the number is between **30** and **60**. (**99** is greater than **30** and **60**)\n\nThe output should be **False**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "06515069-a443-47bf-a43d-81ed050508e7",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "345ef59f-dc08-4639-87e4-6edd0c2d8778",
+              "content": "2399",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "709f33ec-2941-45ea-8986-9607ac3100f1",
+              "content": "1910,1826                                              ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a391f75a-231a-4b13-b696-708096dc91d4",
+              "content": "1950",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b7dd6ec1-3e42-4306-abba-bd29f97e7f27",
+              "content": "7709\n669",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n2399\n```\n\n**Input 2**\n\n```\n1950                                                      \n```\nThe above two inputs are valid because they consist of a single line containing a four-digit integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "48538f8e-4b6d-4e8f-94ce-2ed016ca586f",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n1985\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "48d9d4a7-a736-434b-82b1-c8f53ab17704",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "60825194-7347-4764-b2fe-0eb231cef4e7",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "77c47b03-012c-484a-ae3d-1726425d9be0",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e3d1f636-1c70-46f1-ba23-2d63b707be6f",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The given number is **1985**,\n\nThe first two digits are **19** and the last two digits are **85**\n\n✔ The first two digits of the number is **19**. (**19** is equal to **19**)\n\n✖ The last two digits of the number is between **30** and **60**. (**85**  is greater than **30** and **60**)\n\nThe output should be **False**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "49ed2fdb-06dc-444d-94a8-7c4078391985",
+          "short_text": "",
+          "content": "According to the problem description, the first two digits of the number should be?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2437fd15-1f76-4b65-8c02-95edbe5d2491",
+              "content": "Greater than **18**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2c167ef0-e4a4-4d5e-b064-27fe54489a9d",
+              "content": "Equal to **19**",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3045cd59-8765-4e42-8f2b-33cec322e683",
+              "content": "Less than **19**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ccf1577c-554c-4bfc-a4d9-1272cf872b4f",
+              "content": "Greater than **19**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the first two digits of the number should be equal to **19**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "963a243d-786d-48f5-8c8d-e1d54dcdee29",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2f8e0c20-b49c-44d7-9bea-9752a368507b",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4b990fde-cb1e-4b6f-831a-0b9b4d4985e1",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b57deb2f-3025-4415-9bfc-9f094c64df0b",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ceae97ac-b18f-4ef2-a4d8-1fb89721fdeb",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean value. **True** should be printed if the first two digits of the number is **19** and the last two digits of the number is between **30** and **60**, otherwise **False** should be printed.\n\nFor example,   \n\nIf the given number is **1834**,\n\nThe first two digits are **18** and the last two digits are **34****\n\n✖ The first two digits of the number is **19**. (**18** is not equal to **19**)\n\n✔ The last two digits of the number is between **30** and **60**. (**34**  is greater than **30** and less than **60**)\n\nThe output should be **False**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a0bcef5b-ba69-48e8-9e58-5fe2ecd4c4c0",
+          "short_text": "",
+          "content": "According to the problem description, the last two digits of the number should be?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0946dfd3-156d-4a0a-bb46-6b6e92e4b96d",
+              "content": "Between **20** and **40**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "0ba07375-79e4-441e-b6d3-4027f46c4025",
+              "content": "Between **19** and **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "360e55d3-a15c-415f-b5d6-0526f9c6041e",
+              "content": "Between **30** and **40**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "95a41927-6dd4-47ed-82aa-529c41cb29fb",
+              "content": "Between **30** and **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the last two digits of the number is between **30** and **60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c0fa654f-14a7-46f1-a3bf-21fafa3d246e",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0ebe76e9-f2b9-481c-94ad-90ee069597b8",
+              "content": "The input will be a single line containing a four-digit float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d5751f6f-b376-43b0-bfa1-9a94449d8cf9",
+              "content": "The input will be a single line containing a two-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "eda5959d-fb3c-4825-bb0c-f9407dd75bfb",
+              "content": "The input will be a single line containing a four-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "fad5d85c-e6b5-45b9-9fff-2e63542f0c31",
+              "content": "The input will be a single line containing a three-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing a four-digit integer.\n\nFor example, **1969**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ef727c8f-33f8-428d-a65a-98c83925bed2",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5e7b3dea-551c-4c5a-940b-c4048a4544f1",
+              "content": "To check if the first two digits of the number is **18** and the last two digits of the number is not between **30** and **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8d59d3bd-a35b-4ab4-86f2-1cf5cc80e88c",
+              "content": "To check if the first two digits of the number is not **19** and the last two digits of the number is between **30** and **40**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9877d14a-6534-48ac-a4a6-f37e00b1f9ee",
+              "content": "To check if the first two digits of the number is **19** and the last two digits of the number is between **30** and **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ea1bf0e2-6668-4eff-b716-32cc44723d9a",
+              "content": "To check if the first two digits of the number is **19** and the last two digits of the number is between **30** and **40**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a four-digit number and check if the first two digits of the number is **19** and the last two digits of the number is between **30** and **60**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0f710c48-6db8-46c8-9310-6392ef8d39e6",
+      "input": "1960",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "138c278e-3c38-496b-a149-3331824dce97",
+      "input": "9999",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "1b67c52a-0de7-43ba-950e-e647395946cd",
+      "input": "1930",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8052d248-b6b3-4ec0-b957-86b57cba902f",
+      "input": "1935",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c2bde79f-47be-449a-b247-7f93c33ee7a5",
+      "input": "1857",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e440f69c-4662-4ea8-bf5f-eab2a9d0b5d0",
+      "input": "1923",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ea2ff3fc-aa1b-4734-9cc0-3b745ed0ff4e",
+      "input": "1947",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

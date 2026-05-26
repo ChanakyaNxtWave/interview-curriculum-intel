@@ -1,0 +1,61 @@
+{
+  "question_id": "00165ef6-803e-4ce5-8b73-688757512236",
+  "short_text": "Sum of the digits",
+  "content": "Write a program that prints the sum of the digits of a given three-digit number.<hr><b>Input</b><br/><br/>The input will be a single line containing a three-digit number.<hr><b>Output</b><br/><br/>The output should be a single line containing the sum of the three digits of the given number.<hr><b>Explanation</b><br/><br/>For example, if the given number is 326, the sum of its digits, 3 + 2 + 6 is 11.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "0b1cf497-92a2-4e50-a8ba-d0f0762d5e62",
+      "code_content": "word = input()\nfirst_digit = int(word[0])\nsecond_digit = int(word[1])\nthird_digit = int(word[2])\nsum_of_digits = first_digit + second_digit + third_digit\nprint(sum_of_digits)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "37e2bc74-d8c4-4ee7-9f23-e09be77d5d9f",
+      "input": "796",
+      "output": "22\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "433ac50a-59b3-4547-9d95-a8913c8a616f",
+      "input": "222",
+      "output": "6\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "44daccbe-e2a5-4a8f-b0c1-78e077c90b3b",
+      "input": "692",
+      "output": "17\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4b7d5493-d70b-480e-b7ac-324900f6a2ad",
+      "input": "893",
+      "output": "20\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f921a711-8f2a-4f12-8bf9-915f3b25e1a4",
+      "input": "326",
+      "output": "11\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

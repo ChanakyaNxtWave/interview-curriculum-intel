@@ -1,0 +1,61 @@
+{
+  "question_id": "4df65808-9dd8-4212-9464-e71ad27d0a38",
+  "short_text": "Count Ingredients",
+  "content": "You are a chef in a busy restaurant, and you need to prepare a special dish for a big event. The event planner has given you a list of ingredients, and you need to check if you have enough of each ingredient to make the dish.\n\nEach ingredient has a required quantity, and you can only use what you have in stock. If you don't have enough of an ingredient, you will skip that ingredient and move on to the next one. \n\nYour task is to **complete the method `count_usable_ingredients()`** that returns how many ingredients can be used for the dish.\n\n<MultiLineNote>\n\n- Do not change the method name, as the test cases will fail if modified.\n- The method will receive all required inputs as parameters.\n- No direct input reading should be done inside the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe **`count_usable_ingredients()`** method takes two parameters:\n\n - **`T`** : An integer representing the number of ingredients.\n - **`input_lines`** : A list of strings, where each string represents one ingredient's required and available quantities. Each string contains two space-separated integers:\n  - The first integer represents the required quantity of the ingredient.\n  - The second integer represents the available quantity of the ingredient.\n\n---\n\n#### Output\n\nThe **`count_usable_ingredients()`** method should return a single integer representing the number of ingredients that can be used for the dish (the ingredients where the available quantity is greater than or equal to the required quantity).\n\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n3\n5 10\n7 4\n3 3\n```\n\nThe number **T** represents the number of ingredients. For each ingredient, there are two values:\n\n- The **first value** represents the required quantity.\n\n- The **second value** represents the available quantity.\n\n- For the first ingredient, required quantity is **5** and available quantity is **10**. Since **10 >= 5**, this ingredient can be used.\n- For the second ingredient, required quantity is **7** and available quantity is **4**. Since **4 < 7**, this ingredient cannot be used.\n- For the third ingredient, required quantity is 3 and available quantity is **3**. Since **3 >= 3**, this ingredient can be used.\n\nThus, 2 ingredients can be used, and the output should be\n\n```\n2\n```\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e2ee0b50-feef-447e-aed2-435d412cdff8",
+      "code_content": "def count_usable_ingredients(T, input_lines):\n    count = 0  \n    for line in input_lines:\n        RA_parts = line.split()  \n        if len(RA_parts) != 2:\n            continue \n        R = int(RA_parts[0]) \n        A = int(RA_parts[1]) \n        if A >= R:\n            count += 1\n    return count",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "37983849-937a-4ea9-a66d-517869ff6e94",
+      "input": "4\n5 10\n7 4\n3 3\n2 5\n",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "55257570-3ca3-49b8-8b06-b1526619fb92",
+      "input": "3\n5 10\n7 4\n3 3\n",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5f4609a8-eb83-4340-aad4-70202d54ac9c",
+      "input": "2\n5 3\n6 6\n",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6c3d2d15-be08-4334-8c2b-2784078db880",
+      "input": "5\n10 15\n12 8\n7 20\n8 8\n5 5\n",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d6220f53-80b5-4576-91b7-8f75fbbdac6c",
+      "input": "1\n1 1\n",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36f6b324-5f3c-4392-9acf-5635e753ef93",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

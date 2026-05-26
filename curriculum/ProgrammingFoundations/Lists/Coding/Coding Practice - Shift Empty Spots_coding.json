@@ -1,0 +1,75 @@
+{
+  "question_id": "b8b41faa-6f29-41c4-8b7c-bf4993d6e83a",
+  "short_text": "Shift Empty Spots",
+  "content": "Imagine you are organizing a warehouse where items are stored on a conveyor belt represented as a list of integers. Some spots on the belt are empty, represented by `0`. To optimize space and efficiency, you need to rearrange the items so that all non-empty spots are shifted forward in their current order, and the empty spots (`0`) are moved to the end of the conveyor belt.\n\n<MultiLineNote>\n\n- Items on the conveyor belt are represented as integers in a list.\n- The input list may contain one or more zeros, which represent empty spots on the belt.\n- You must perform this operation **in-place**, meaning you cannot use additional memory to create a new list.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a list of integers separated by spaces.\n\n---\n\n#### Output\n\nThe updated list of integers with all `0`s moved to the end.\n\n---\n\n#### Explanation\n\nIf the input list is `2 0 1 3 0`, then the output should be `2 1 3 0 0`. The empty spots (`0`) are moved to the end while maintaining the relative order of the items.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2e3bacbd-ace4-49d3-839c-8392d138123e",
+      "code_content": "obstacle_input = input()\nobstacle_list = obstacle_input.split()\n\nobstacles = [0] * len(obstacle_list)\n\nfor i in range(len(obstacle_list)):\n    obstacles[i] = int(obstacle_list[i])\n\nnon_zero_index = 0\n\nfor i in range(len(obstacles)):\n    if obstacles[i] != 0:\n        obstacles[non_zero_index] = obstacles[i]\n        non_zero_index += 1\n\nwhile non_zero_index < len(obstacles):\n    obstacles[non_zero_index] = 0\n    non_zero_index += 1\n\nfor i in range(len(obstacles)):\n    if i != len(obstacles) - 1:\n        print(obstacles[i], end=\" \")\n    else:\n        print(obstacles[i])\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "496cc8c8-d8aa-44b2-8b43-9eb1199fd315",
+      "input": "0 0 0 0 0",
+      "output": "0 0 0 0 0",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "59b6468a-7c8a-4500-9843-ad3fa707408a",
+      "input": "2 0 1 3 0",
+      "output": "2 1 3 0 0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "60dbd8e8-9908-49fd-afc2-60d18cea1e9a",
+      "input": "1 2 3 4 5",
+      "output": "1 2 3 4 5",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8ca2ac18-3910-477a-a19f-9be95f9e8418",
+      "input": "7 0 8 0 9 0",
+      "output": "7 8 9 0 0 0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "943d24a3-3b6e-47af-a28f-8dc174ef8e59",
+      "input": "0 4 0 5 0",
+      "output": "4 5 0 0 0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "98236b83-40cd-4428-b94b-8ea091e78c6a",
+      "input": "0 0 2 0 0 3 0",
+      "output": "2 3 0 0 0 0 0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e80a68ec-aa04-453b-a6e5-aac668eecbcf",
+      "input": "0 0 0 0 1",
+      "output": "1 0 0 0 0",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "40f7871e-a9ef-4bdb-a190-a4bc7fa56437",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

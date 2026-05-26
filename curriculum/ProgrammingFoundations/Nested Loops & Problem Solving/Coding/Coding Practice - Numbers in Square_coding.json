@@ -1,0 +1,61 @@
+{
+  "question_id": "d2de9911-831a-4204-8e12-7d0bb04788b6",
+  "short_text": "Numbers in Square",
+  "content": "Given a number `N`, write a program to print a **Square** of `N` rows using numbers starting from **1**.\r\n\r\n```\r\n1 2 3\r\n1 2 3\r\n1 2 3\r\n\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every number.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows and `N` columns containing numbers starting from **1** as a **Square** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print the numbers on **5** rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-square.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image,\r\n\r\n- The Number in box indicates the number and a space (\"1 \")\r\n\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n1 2 3 4 5\r\n1 2 3 4 5\r\n1 2 3 4 5\r\n1 2 3 4 5\r\n1 2 3 4 5\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "1489e518-3f4f-4a06-8090-be60aeb72ad4",
+      "code_content": "n = int(input())\n\nfor row in range(1, n + 1):\n    each_row = \"\"\n    for column in range(1 , n + 1):\n        each_row += str(column) + \" \"\n    print(each_row)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3a22bc89-37f9-4ce3-924a-150eb5e4d1fc",
+      "input": "5",
+      "output": "1 2 3 4 5 \n1 2 3 4 5 \n1 2 3 4 5 \n1 2 3 4 5 \n1 2 3 4 5 \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "447b8630-6758-4824-bcd7-bf7ca01a1137",
+      "input": "10",
+      "output": "1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b1acf406-3323-4e10-98fc-37a8346aa21c",
+      "input": "3",
+      "output": "1 2 3 \n1 2 3 \n1 2 3 \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d6cf3b60-e2f8-4d4b-9cff-9c6bc16d5120",
+      "input": "13",
+      "output": "1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "dd77ba9b-6c0c-43bd-b9c8-d0f80113b66f",
+      "input": "8",
+      "output": "1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

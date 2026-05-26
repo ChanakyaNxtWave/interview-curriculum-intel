@@ -1,0 +1,61 @@
+{
+  "question_id": "ae4c7ee2-f6bc-4a40-9c8a-bafaff2669f4",
+  "short_text": "Remove N in All Tuples",
+  "content": "For this problem, the prefilled code will contain a list of tuples. Write a program to remove the given number N in all the tuples if it present.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the list of tuples without the N.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, as 3 is in tuples at index 0 and 2, remove 3 in those tuples and print the list. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[(1, 2, 4, 5, 6), (2, 4, 6, 8), (1, 5, 7)]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "bf6121ae-e157-479b-985a-c19dc17d748e",
+      "code_content": "num_list = [(1, 2, 3, 4, 5, 6), (2, 4, 6, 8), (1, 3, 5, 7)]\n\nn = int(input())\nnew_list = []\nfor tuple_a in num_list:\n    new_tuple = tuple_a\n    if n in tuple_a:\n        n_index = tuple_a.index(n)\n        new_tuple = tuple_a[:n_index] + tuple_a[n_index+1:]\n    new_list.append(new_tuple)\n\nprint(new_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "253f2e63-d819-46bb-b25a-e9b34355b05a",
+      "input": "6",
+      "output": "[(1, 2, 3, 4, 5), (2, 4, 8), (1, 3, 5, 7)]\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9fbf0421-f4b9-4278-820f-617e66a57bcb",
+      "input": "3",
+      "output": "[(1, 2, 4, 5, 6), (2, 4, 6, 8), (1, 5, 7)]\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "a4ffd707-0e5d-42df-97f6-cac504b0d648",
+      "input": "-10",
+      "output": "[(1, 2, 3, 4, 5, 6), (2, 4, 6, 8), (1, 3, 5, 7)]\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bf21ee9b-97e6-4cc6-9af0-862dca9807ff",
+      "input": "-8",
+      "output": "[(1, 2, 3, 4, 5, 6), (2, 4, 6, 8), (1, 3, 5, 7)]\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "debed6b8-b983-4c6f-bb9c-4b50ca89403c",
+      "input": "1",
+      "output": "[(2, 3, 4, 5, 6), (2, 4, 6, 8), (3, 5, 7)]\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

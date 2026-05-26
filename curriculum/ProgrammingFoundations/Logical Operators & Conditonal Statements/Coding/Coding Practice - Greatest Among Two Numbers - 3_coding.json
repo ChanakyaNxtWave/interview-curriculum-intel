@@ -1,0 +1,384 @@
+{
+  "question_id": "6cb81048-78a8-4845-afff-364ef0bd50f8",
+  "short_text": "Greatest Among Two Numbers - 3",
+  "content": "Write a program that reads two numbers `A` and `B` and prints the greatest among the two numbers.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `A`.\r\nThe second line of input contains an integer representing `B`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the greatest among the two numbers.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `A = 4` and `B = 3`, the output should be **4** as **4** is greater than **3**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ea09923a-45f7-42d6-b7ef-bf19a6af008f",
+      "code_content": "first_number = int(input())\nsecond_number = int(input())\nif first_number > second_number:\n    greater_number = first_number \nelse:\n    greater_number = second_number\nprint(greater_number)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "592d4a48-b0ae-4dc7-93c7-8d7c991def37",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n50\n60\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "60",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 50` and `B = 60`,\n\nAs **60** is greater than **50**,\n\nThe output should be **60**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9e908370-9984-47a7-bd1f-f21de5ce84f8",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n18\n9\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "18",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 18` and `B = 9`,\n\nAs **18** is greater than **9**,\n\nThe output should be **18**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "eb69e0c5-58e1-4a22-9f78-81b73efea146",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n36\n32\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "36",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 36` and `B = 32`,\n\nAs **36** is greater than **32**,\n\nThe output should be **36**",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "1c2e39c7-5785-4a3e-92ef-017611cb00cd",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n99\n100\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "81875e21-3689-47bc-bac5-4e25fa2ca278",
+              "content": "90",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "89b8ef77-f678-436a-9fdb-969ec8d263f7",
+              "content": "89",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f3b7f1e4-7df6-4370-aba5-05f2e9769def",
+              "content": "100",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f43d5016-8315-4258-b23b-0485073e4d40",
+              "content": "99",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 99` and `B = 100`,\n\nAs **100** is greater than **99**,\n\nThe output should be **100**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "2f982fc9-3c43-43a5-bb5f-217d5f9b2841",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "15b85824-15d8-4c97-94cd-2a1db56238c8",
+              "content": "To print the greatest among the two numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "501424c0-a070-43c5-b6c6-3c879acc5353",
+              "content": "To print the smallest among the two numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a8e997d3-d3c2-44c3-bcee-8a9ef269941c",
+              "content": "To print the odd among the two numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fd4ca0f9-0c35-4227-bab9-584095f1e1ef",
+              "content": "To print the even number among the two numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read two numbers `A` and `B` and print the greatest among the two numbers.\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "514a94a7-9160-4630-8b2a-eec607447554",
+          "short_text": "",
+          "content": "If the given numbers `A = 14` and `B = 14`, what will be the output?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0acb7987-434a-4b63-9667-d8330511f1e5",
+              "content": "error",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "12c5d237-722f-4bf4-86fb-ee8b8ca7536a",
+              "content": "14",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c5125a8d-c90c-464b-9680-f07e26459a62",
+              "content": "14\n14",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d44ce6e6-defe-4276-89a0-41e1f3f15609",
+              "content": "0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 14` and `B = 14`,\n\nAs **14** is equal to **14**.\n\nSo, the output should be **14**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5b663d54-32a6-4762-b2c8-a51cd06bcb21",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "79b934cb-a614-4368-ae5b-cd0518f14af5",
+              "content": "77\n78\n66",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8cae8e03-696a-4ceb-8372-34e8a0dc3f8b",
+              "content": "67",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "abb44cec-b5ec-4156-952f-6a23ec887a5e",
+              "content": "8\n10",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c1a8975a-1df3-4163-abcf-116f20ccf0c5",
+              "content": "56\n23",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n8\n10\n```\n\n**Input 2**\n\n```\n56\n23                                                   \n```\nThe above two inputs are valid because they consist of the,\n\n- The first line of input contains an integer `A`.\n\n- The second line of input contains an integer `B`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5bfeb4c8-fd52-4a6b-895a-64c1c4524f04",
+          "short_text": "",
+          "content": "From your understanding of the problem, which number should be printed among the two numbers?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2af31166-9342-4018-bc54-26ec1ebe5920",
+              "content": "Smallest among the two",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b73ad1f5-d837-41a7-b7c9-008d088e72a9",
+              "content": "Even among the two",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cb4eb1c3-4d61-4e34-beed-1ca3a19225fd",
+              "content": "Greatest among the two",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ef2c3767-c1db-4a7e-a52a-7808eaad3fc9",
+              "content": "Odd among the two",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the greatest among the two numbers should be printed.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "81c28b67-cfe7-4440-936b-06fb04ee17e0",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5bfb32a5-a2c9-4e8c-8a1c-607803f97f1e",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6c93e934-7b8f-4547-b569-78b02096f79f",
+              "content": "The first line of input will be an integer `A`.\n\nThe second line of input will be an integer `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "70bd0598-bf34-495c-a454-76ab1f99a4d1",
+              "content": "The first line of input will be a float `A`.\n\nThe second line of input will be a float `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "71d7524a-d7eb-4c13-b07a-2fba5d67296c",
+              "content": "The first line of input will be a string `A`.\n\nThe second line of input will be a string `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be, \n\n- The first line of input will be an integer representing `A`.\n\n- The second line of input will be an integer representing `B`.\n\nFor example,\n\n```\n9\n45\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b3bc71ae-9907-4918-b27a-456f44104492",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0332aadd-5422-4df2-8d84-c6ffa48ff9f7",
+              "content": "The output should be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "210315af-3b78-4ee4-9c32-7ea9bc36c3af",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4172a911-1cd4-469e-adb8-71bec492f16e",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e47a0b2d-a5ee-444a-9834-2296bbcf16d8",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing an integer, that is the greatest among the two numbers.\n\nFor example,\n\nIf the given numbers are `A = 10` and `B = 11`,\n\nAs **11** is greater than **10**,\n\nThe output should be **11**",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "3ff003d1-9303-4ec1-b8f2-df1264e8991f",
+      "input": "11\n12",
+      "output": "12\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "439599e5-e612-43ef-9464-c5fe870f91b3",
+      "input": "9\n17",
+      "output": "17\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "498ecbc2-98dd-4041-a4bc-d417bcb2c687",
+      "input": "70\n90",
+      "output": "90\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "aeb245d9-06ac-4a7b-ac1a-f2d36d76d455",
+      "input": "2\n22",
+      "output": "22\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c2aab2a9-6262-406a-9ffe-f2cfd65e2dc4",
+      "input": "4\n3",
+      "output": "4\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f083ea07-e244-4004-9097-a0923f8a42e2",
+      "input": "15\n7",
+      "output": "15",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

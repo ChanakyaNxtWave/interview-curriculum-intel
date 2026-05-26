@@ -1,0 +1,47 @@
+{
+  "question_id": "8fb7a682-0e7c-4f08-9592-8a0bbccfa2a8",
+  "short_text": "Encapsulation Customer",
+  "content": "Complete the `Customer` class by adding encapsulation to protect the customer's password. Follow the instructions below to implement the necessary attributes and methods.\n\n<details>\n\n<summary>**Features to be added to `Customer` class**</summary>\n\n- **Add below attributes**:\n - The `Customer` class should have the following attributes:\n  - **`id`**: Public attribute to store the customer's ID.\n  - **`name`**: Public attribute to store the customer's name.\n  - **`address`**: Public attribute to store the customer's address.\n  - **`email`**: Public attribute to store the customer's email.\n  - **`__password`**: Private attribute to store the customer's password.\n\n- **Implement below methods**:\n - **`__getpassword(self)`**: Private method to retrieve the customer's password.\n - **`__setpassword(self, new_password)`**: Private method to update the customer's password. This method should check if the `new_password` is at least 8 characters long. If not, it should print **`Password must be at least 8 characters long`**.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the test case **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This coding question does not have the usual input/output test cases. The class defined by you will be tested internally whether the attributes are present or not. So in test case results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b082222e-9500-48ca-bdbd-3ace124fe0fb",
+      "code_content": "class Customer:\n    def __init__(self, id, name, address, email, password):\n        self.id = id\n        self.name = name\n        self.address = address\n        self.email = email\n        self.__password = password\n\n    def __getpassword(self):\n        return self.__password\n\n    def __setpassword(self, new_password):\n        if len(new_password) >= 8:\n            self.__password = new_password\n        else:\n            print(\"Password must be at least 8 characters long\")\n\ndef default_test():\n    customer = Customer(id=1, name=\"Jane Doe\", address=\"123 Main St\", email=\"jane@example.com\", password=\"securepwd\")\n    print(customer.id)\n    print(customer.name)\n    print(customer.address)\n    print(customer.email)\n    # The following line should not be able to access the password directly\n    try:\n        print(customer.__password)\n    except AttributeError:\n        print(\"Private attribute access is restricted\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0879ef25-324e-4541-871d-2501442cba9b",
+      "input": "Checking Default Tests",
+      "output": "1\nJane Doe\n123 Main St\njane@example.com\nPrivate attribute access is restricted",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "145d02b6-1df6-4f06-8c6f-3246a9ddf58b",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All public attributes are present and correct.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "1663f1ef-6b8b-4288-804b-4d2905b7bd67",
+      "input": "Checking if methods are implemented correctly",
+      "output": "Password must be at least 8 characters long\nPASS: All methods are implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b3b31675-d5ff-4676-b8b1-31ff0ba46159",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

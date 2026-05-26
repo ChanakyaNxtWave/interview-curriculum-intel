@@ -1,0 +1,61 @@
+{
+  "question_id": "a321f1b7-62eb-467e-80da-444c2e21d868",
+  "short_text": "First 3 and Last 3 Elements of List",
+  "content": "Write a program to read N inputs and print a list containing the first and last three inputs.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The next following N lines will contain a string each in a line.<hr><b>Output</b><br/><br/>The output should be a single line containing a list with the first and last three inputs.<hr><b>Explanation</b><br/><br/>For example, if the given N is 8, read the inputs in the next eight lines. If the given eight inputs are the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Anjali\r\nRavi\r\nAkbar\r\nSuresh\r\nGopal\r\nLatha\r\nMohan\r\nAshok\r\n</code></pre>Your code should print a list containing the first and last three inputs. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['Anjali', 'Ravi', 'Akbar', 'Latha', 'Mohan', 'Ashok']\r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "4c3ea4d5-b541-47f6-834c-f0c1483a62ea",
+      "code_content": "n = int(input())\n\nlist_a = []\nfor i in range(n):\n    value = input()\n    list_a += [value]\n\nnew_list = list_a[:3] + list_a[n-3:]\nprint(new_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0f7509d9-6c74-477b-8e41-471e91ef4d07",
+      "input": "8\nAnjali\nRavi\nAkbar\nSuresh\nGopal\nLatha\nMohan\nAshok",
+      "output": "['Anjali', 'Ravi', 'Akbar', 'Latha', 'Mohan', 'Ashok']\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6571baad-56f8-4f1a-bf69-c59682493fc0",
+      "input": "6\nBanana\nApple\nPomegranate\nStrawberry\nGrapes\nOrange",
+      "output": "['Banana', 'Apple', 'Pomegranate', 'Strawberry', 'Grapes', 'Orange']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ce59b6c5-6819-4f73-8794-6e68f9800057",
+      "input": "12\none\ntwo\nthree\nfour\nfive\nsix\nseven\neight\nnine\nten\neleven\ntwelve\n",
+      "output": "['one', 'two', 'three', 'ten', 'eleven', 'twelve']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "dbb7fbf4-47d9-4859-835f-4439a214d0b2",
+      "input": "10\nCricket\nHockey\nFootball\nBadminton\nTennis\nBasketball\nGolf\nVolleyball\nArchery\nBoxing",
+      "output": "['Cricket', 'Hockey', 'Football', 'Volleyball', 'Archery', 'Boxing']\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "dd5932d1-268c-49ee-ad63-7f305863b045",
+      "input": "7\nGoogle\nSamsung\nMicrosoft\nWipro\nTcs\niB Hubs\nNxtwave",
+      "output": "['Google', 'Samsung', 'Microsoft', 'Tcs', 'iB Hubs', 'Nxtwave']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

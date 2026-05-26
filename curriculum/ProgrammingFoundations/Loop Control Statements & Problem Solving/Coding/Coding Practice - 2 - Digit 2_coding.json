@@ -1,0 +1,61 @@
+{
+  "question_id": "37443250-8b86-4cc5-9fe1-3ce36da3f6bc",
+  "short_text": "Digit 2",
+  "content": "Given a number `N`, write a program to print the digit **2** in `2 * N - 1` rows using stars (`*`).\n\n```\n* * * \n    *\n* * * \n*\n* * * \n```\n\n<MultiLineNote>\nThere is a space after every star (`*`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `2 * N - 1` rows containing stars (`*`) as the digit **2** shown in the sample output.\n\n---\n\n#### Explanation\n\n\nFor example, if the given number is `N = 5`,\n\n- Print the stars (`*`) on **9** (`2 * 5 - 1`) rows as shown in the given image.\n\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-2.png' widthPercent='50'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Star in the box indicates the star and a space (\"* \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n* * * * * \n        * \n        * \n        * \n* * * * * \n*        \n*        \n*        \n* * * * * \n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a6a151cc-fa07-4843-a72e-f8e69dc571a6",
+      "code_content": "n = int(input())\n\nfor row in range(1, 2 * n):\n    if row == 1 or  row == n or row == (2 * n - 1):\n        each_row = \"* \" * n\n    elif row < n :\n        spaces = \" \" * (2 * (n - 1))\n        each_row = spaces + \"*\"\n    else:\n        each_row = \"*\"\n    \n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2531cdf7-1aa6-4cb3-905c-b148a014aac5",
+      "input": "5",
+      "output": "* * * * * \n        *\n        *\n        *\n* * * * * \n*\n*\n*\n* * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "479ca5a2-ee95-4ef4-8a56-ff209d2b5691",
+      "input": "3",
+      "output": "* * * \n    *\n* * * \n*\n* * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8b57cbd1-2147-45c4-a29e-390ac243e88f",
+      "input": "12",
+      "output": "* * * * * * * * * * * * \n                      *\n                      *\n                      *\n                      *\n                      *\n                      *\n                      *\n                      *\n                      *\n                      *\n* * * * * * * * * * * * \n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n* * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "c6a73496-2d6f-46fa-85d8-e8affb150545",
+      "input": "2",
+      "output": "* * \n* * \n* *",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "fcaa4f5b-8c04-41ca-9cf4-e92e22e958c0",
+      "input": "20",
+      "output": "* * * * * * * * * * * * * * * * * * * * \n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n                                      *\n* * * * * * * * * * * * * * * * * * * * \n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n* * * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

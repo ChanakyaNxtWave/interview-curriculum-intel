@@ -1,0 +1,75 @@
+{
+  "question_id": "3e3ca2c3-4d62-4db5-9f68-3683becddde3",
+  "short_text": "First Word in Dictionary Order",
+  "content": "Given a sentence `S` contains space-separated words, write a program to print the word that comes first when the words are in dictionary order.\n\n<MultiLineNote>\n- Consider both uppercase and lowercase alphabets as the same.\n- Dictionary order is a way of ordering words or sequences of characters based on their alphabetical order.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that is a word in the given sentence that comes first when the words are in dictionary order.\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"He is bit slow\"`,\n\n- The words in the given sentence are **He, is, bit,** and **slow**.\n- The words in the given sentence in dictionary order are **bit, He, is** and **slow**.\n- The word in the given sentence that comes first in the dictionary is **bit**.\n\nThe output should be **bit**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "13d9d2d9-4f3a-4b77-b03b-6632caaf6ac8",
+      "code_content": "s = input()\n\nfirst_word = s\nword = \"\"\n\nfor i in range(len(s)):\n    char = s[i]\n    word += char\n    \n    if char == \" \" or i == len(s)-1:\n        if word.lower() < first_word.lower():\n            first_word = word\n        word = \"\"\n\nprint(first_word)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "481ab17d-dd48-4a2d-850e-58550d3ec8d7",
+      "input": "In An Agreement",
+      "output": "Agreement",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "4ef3ad1e-3192-4706-9943-0ad23d245ebd",
+      "input": "We Are of One Mind",
+      "output": "Are",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "75666ee3-297c-4ce5-ab03-30a95c92228a",
+      "input": "Sure",
+      "output": "Sure",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "840f9d3a-bf48-4e74-a8ed-3c03bf7a2209",
+      "input": "He is bit slow",
+      "output": "bit",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "89fc130a-5036-404c-a555-b96845697b21",
+      "input": "wxyz wxy",
+      "output": "wxy",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e8023c4b-40df-4665-a752-20803002be80",
+      "input": "you go it Dude",
+      "output": "Dude",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "f5cd6f48-31b2-4f29-807e-c08e3593844d",
+      "input": "friday became a cool, wet afternoon",
+      "output": "a",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

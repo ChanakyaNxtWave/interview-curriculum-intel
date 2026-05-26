@@ -1,0 +1,75 @@
+{
+  "question_id": "412c38cc-d8d2-42bf-ac6a-cf969985a585",
+  "short_text": "Print Unicode Values",
+  "content": "Given a string `S`, write a program to print the Unicode values of all the characters in `S`, each on a new line.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should contain integers that are the Unicode values of all the characters in the string, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"code\"`,\n\n- The characters in the string **`code`** are **c, o, d,** and **e**.\n- The Unicode values of above characters are,\n\n| Character | Unicode value |\n| --------- | ------------- |\n| c         | 99            |\n| o         | 111           |\n| d         | 100           |\n| e         | 101           |\n\nThe output should be,\n\n```\n99\n111\n100\n101\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9586e5e2-59f1-4fe9-a45b-ab8eddb3c3ff",
+      "code_content": "string  = input()\n\nfor each_character in string:\n    print(ord(each_character))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3c251889-562b-41f7-b778-d06f8373c9e7",
+      "input": "email@123",
+      "output": "101\n109\n97\n105\n108\n64\n49\n50\n51",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "44a02d27-d5f4-469b-a3ec-d6e66ec8fbbb",
+      "input": "India",
+      "output": "73\n110\n100\n105\n97",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4528e9d8-e15f-46f1-9619-38332a3e79a8",
+      "input": "CAPS",
+      "output": "67\n65\n80\n83",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7d939a7d-df0a-4a48-8f94-6af5b4e03e58",
+      "input": "code",
+      "output": "99\n111\n100\n101",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aefc908c-ab26-4c9b-ba99-e35b72d64e90",
+      "input": "!@#$%^&*()",
+      "output": "33\n64\n35\n36\n37\n94\n38\n42\n40\n41",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "be3a6ff8-2c94-4c88-87dc-78246f2e83fc",
+      "input": "large Monitor",
+      "output": "108\n97\n114\n103\n101\n32\n77\n111\n110\n105\n116\n111\n114",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "dca5706a-d31e-460e-b50b-4120f4efa726",
+      "input": "OutpuT",
+      "output": "79\n117\n116\n112\n117\n84",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

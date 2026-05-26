@@ -1,0 +1,33 @@
+{
+  "question_id": "fdca9d93-a0e4-4e13-8de4-211ee3d3b92a",
+  "short_text": "Create & Print List",
+  "content": "Write a program to print a list with the given elements<br/>&quot;Rose&quot;, 183, 148, 123.64, False<hr><b>Output</b><br/><br/>The output should be a single line containing a list with the above elements.<hr><b>Explanation</b><br/><br/>Your code should print the following output.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['Rose', 183, 148, 123.64, False]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "57f15ec1-a099-447b-8a06-3d854db9c70a",
+      "code_content": "player = [\"Rose\", 183, 148, 123.64, False]\nprint(player)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "581a2a06-4439-4eb3-acbf-67fa0c4451f1",
+      "input": "",
+      "output": "['Rose', 183, 148, 123.64, False]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

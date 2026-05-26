@@ -1,0 +1,75 @@
+{
+  "question_id": "1e7e5740-596d-4c5e-a7a6-bab1d39f29e4",
+  "short_text": "Negative Numbers",
+  "content": "Write a program that reads two numbers `A` and `B`, and checks if both the given numbers are negative numbers.\n\n<MultiLineNote>\n\nNegative numbers are numbers that are less than zero.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if both the given numbers are negative, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = -1` and `B = -2`,\n\n✔ `A` is a negative number. (**-1** is less than **0**)\n✔ `B` is a negative number. (**-2** is less than **0**)\n\nThe output should be **True** as both the given numbers are negative.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f2a6e071-8df6-44f1-8633-eebfd0d76831",
+      "code_content": "first_number = input()\nfirst_number = int(first_number)\n\nsecond_number = input()\nsecond_number = int(second_number)\n\nresult = (first_number < 0) and (second_number < 0)\n\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "44a9f651-99c6-47c7-9c0f-118cc76bff78",
+      "input": "-23\n1001",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7e621dff-e3dc-4991-aad9-bb2bd006b4da",
+      "input": "3\n-1",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "863405e3-8132-4fea-a5ad-0c10fe67d612",
+      "input": "-1098\n-90878",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "a49e062f-5b2d-49c3-b5a8-f51fe115239a",
+      "input": "154\n976",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "aa77ac2f-9d1f-461a-8061-10daa182f43c",
+      "input": "1000\n-1000",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "bbc09c3a-319d-4b17-99ce-4753da207ba0",
+      "input": "-1\n-2",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e2e35dce-e3bc-4fa4-89b5-fd1b76d91959",
+      "input": "-55\n-55",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "e9f3eca0-06b0-4cc2-9eac-cc3799b95f50",
+  "short_text": "Remove a Key",
+  "content": "For this problem, the prefilled code will contain a dictionary. Write a program to remove a key.<hr><b>Input</b><br/><br/>The input will be a single line containing a string, denoting the key to be removed.<hr><b>Output</b><br/><br/>The output should be a single line containing the dictionary without the given key and its value.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;Vani&quot;, your code should print the dictionary without the key-value pair of &quot;Vani&quot; So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">{'Ram': 'Cricket', 'Naresh': 'Football', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "12d8d488-efee-4e79-bf92-32db923ebe9a",
+      "code_content": "students_dict = {\n    \"Ram\": \"Cricket\",\n    \"Naresh\": \"Football\",\n    \"Vani\": \"Tennis\",\n    \"Rahim\": \"Cricket\",\n    \"Deepak\": \"Boxing\"\n}\n\nkey = input()\ndel students_dict[key]\nprint(students_dict)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "01777f8a-6516-4d33-b10f-1486da932a32",
+      "input": "Vani",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "03c22794-adb1-4d5f-a5cc-87a7c7278c2e",
+      "input": "Naresh",
+      "output": "{'Ram': 'Cricket', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "1e1d5b58-689f-4da2-b688-238ce313e05d",
+      "input": "Rahim",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Deepak': 'Boxing'}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "4e768432-dc02-4d44-9c0b-adedade2b8bf",
+      "input": "Ram",
+      "output": "{'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "928ebb7a-9064-4a3d-808a-24ee508496da",
+      "input": "Deepak",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c653449e-bc51-4aab-a83f-8a98ef71c10e",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,47 @@
+{
+  "question_id": "b704d6b0-03ec-48da-b9e6-de3b81581166",
+  "short_text": "Inheritance Booking",
+  "content": "Complete the given **GroupBooking** class by adding new features by following the given instructions.\n\n**Existing `GroupBooking` class**:\n\nThe existing **GroupBooking** class inherits from the **Booking** class but contains only a `pass` statement. Remove the `pass` statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to **`GroupBooking`** class**</summary>\n\n- **Add below attributes**:\n - The **GroupBooking** class should have the following additional attribute:\n  - **`group_size`** (an integer representing the number of passengers in the group)\n\n- **Implement the following methods**:\n - `add_group_member()`: This method should accept a name and add it to the **passengers** list attribute from the **Booking** class.\n  - Method should check if the number of passengers in the group is less than the maximum allowed group size.\n  - If the **group size is full**, it will display the message **Cannot add more passengers, group is full.**\n - `view_group()`: This method should print all the names of passengers in the group each on a new line.\n  -  The method should print the group details in the below format\n\n    ```\n    Group members:\n    #  Name of the Group member each in a new Line\n    ```  \n</details>\n\n\n<details>\n\n<summary>**Features to be added to **`CustomGroupBooking`** class**</summary>\n\n\nThe **CustomGroupBooking** class **inherits from the GroupBooking class**. Add the following additional features:\n\n- **Add below attributes**:\n - The **GroupBooking** class should have the following additional attribute:\n  - **`group_name`**: A string representing the name of the group.\n\n- **Implement the following methods**:\n - `get_group_details()`: This method should prints detailed information about the group, as given below :\n\n    ```\n    Group Name: {group_name}\n    Booking ID: {bookingid}\n    Flight: {flight}\n    Status: {status}\n    Group Size: {group_size}\n    Passengers:\n    # Name of each passenger, one per line\n\n    ```  \n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This coding question does not have the usual input/output testcases. The class defined by you will be tested internally to check whether the attributes are present or not. The test case results will provide a rough description of the tests being verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ca167702-b2e2-4b95-8461-2b2ba719061b",
+      "code_content": "class Booking:\n    def __init__(self, bookingid, flight, status):\n        self.bookingid = bookingid\n        self.passengers = []\n        self.flight = flight\n        self.status = status\n\n    def add_passenger(self, name):\n        self.passengers.append(name)\n\n    def get_booking_details(self):\n        print(f\"Booking ID: {self.bookingid}\")\n        print(f\"Flight: {self.flight}\")\n        print(f\"Status: {self.status}\")\n        print(\"Passengers:\")\n        for passenger in self.passengers:\n            print(passenger)\n\nclass GroupBooking(Booking):\n    def __init__(self, bookingid, flight, status, group_size):\n        super().__init__(bookingid, flight, status)\n        self.group_size = group_size\n\n    def add_group_member(self, name):\n        if len(self.passengers) < self.group_size:\n            self.passengers.append(name)\n        else:\n            print(\"Cannot add more passengers, group is full.\")\n\n    def view_group(self):\n        print(\"Group members:\")\n        for passenger in self.passengers:\n            print(passenger)\n\nclass CustomGroupBooking(GroupBooking):\n    def __init__(self, bookingid, flight, status, group_size, group_name):\n        super().__init__(bookingid, flight, status, group_size)\n        self.group_name = group_name\n\n    def get_group_details(self):\n        print(f\"Group Name: {self.group_name}\")\n        print(f\"Booking ID: {self.bookingid}\")\n        print(f\"Flight: {self.flight}\")\n        print(f\"Status: {self.status}\")\n        print(f\"Group Size: {self.group_size}\")\n        print(\"Passengers:\")\n        for passenger in self.passengers:\n            print(passenger)\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    group_booking = GroupBooking(\"GB123\", \"FL456\", \"Confirmed\", 5)\n    group_booking.add_group_member(\"Alice\")\n    group_booking.add_group_member(\"Bob\")\n    group_booking.add_group_member(\"Charlie\")\n    group_booking.view_group()\n\n    print(\"Group Size:\", group_booking.group_size)\n    custom_group_booking = CustomGroupBooking(\"CB123\", \"FL789\", \"Pending\", 3, \"Team Alpha\")\n    custom_group_booking.add_group_member(\"David\")\n    custom_group_booking.add_group_member(\"Eve\")\n    custom_group_booking.get_group_details()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5865e88c-46a6-4553-9d43-c73afb3443b6",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in the GroupBooking and CustomGroupBooking classes.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "803c0406-882c-441e-874f-0b60bb5d4181",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly in the GroupBooking and CustomGroupBooking classes.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f6818632-9b08-4f82-8f44-9f23d4733e70",
+      "input": "Checking Default Tests",
+      "output": "Group members:\nAlice\nBob\nCharlie\nGroup Size: 5\nGroup Name: Team Alpha\nBooking ID: CB123\nFlight: FL789\nStatus: Pending\nGroup Size: 3\nPassengers:\nDavid\nEve",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "17461f67-a7fd-46af-96c6-62ef30dd1e19",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

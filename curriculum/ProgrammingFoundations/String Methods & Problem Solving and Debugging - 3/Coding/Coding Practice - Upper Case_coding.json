@@ -1,0 +1,82 @@
+{
+  "question_id": "a4fac0c8-d543-432f-8321-2ebbecfb0b48",
+  "short_text": "Upper Case",
+  "content": "Given a string, write a program to check if all the characters in the string are in **uppercase**.\n\nPrint **True** if the string contains all **uppercase** characters, otherwise print **False**.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if all the characters in the string are in **uppercase**. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **IEEE**, the output should be **True** as all the characters in the given string are in **uppercase**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "dca89655-db19-4232-9c94-1c77e9ee1d27",
+      "code_content": "string = input()\n\nis_string_uppercase = string == string.upper()\n\nprint(is_string_uppercase)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "56b73875-f158-4548-ada2-222c0250c1c0",
+      "input": "IEEE",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6169b4ec-aa5e-4939-a439-087a0e354877",
+      "input": "CommuNitY",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6cbd2b97-23bc-4a80-ba2f-f89eb7092eb7",
+      "input": "frontend",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6f1720e9-a042-4079-a009-839655af153a",
+      "input": "Team Work",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8535b209-a8a7-4f68-a872-0e4e7fe8fc46",
+      "input": "MALALA YoUSaFZAI",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "85cc9f5d-2e79-44ca-9391-63e1b6b969e1",
+      "input": "ETIQUETTE",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b118e1e4-5dad-4240-9866-084b67ddcd8f",
+      "input": "Organizational Values",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b6cb6739-d2f0-4c3b-a847-8433d26e4004",
+      "input": "DEVELOPMENT",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

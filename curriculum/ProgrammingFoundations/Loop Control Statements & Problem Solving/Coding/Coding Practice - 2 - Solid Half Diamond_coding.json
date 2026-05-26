@@ -1,0 +1,61 @@
+{
+  "question_id": "4a5e02b2-f721-42ab-8e97-551a3892ff28",
+  "short_text": "Solid Half Diamond",
+  "content": "Given an integer N, write a program to print the solid half diamond pattern in (2*N - 1) rows and N columns, similar to the pattern shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">* \n* * \n* * * \n* * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n</code></pre><hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be (2*N - 1) rows and N columns containing the asterisk(*) characters in the solid half diamond pattern.\nNote: There is a space after each asterisk(*) character.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, the pattern should contain 9 rows and 5 columns as shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">* \n* * \n* * * \n* * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "11a21f10-775b-46c1-999e-3f8bbfaa9285",
+      "code_content": "number_of_rows = int(input())\n\nfor i in range(1, number_of_rows):\n    print(\"* \" * i)\n\nfor i in range(number_of_rows):\n    print(\"* \" * (number_of_rows - i))\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1efd7c84-719d-4d0e-8be3-a8fcd98774df",
+      "input": "3",
+      "output": "* \n* * \n* * * \n* * \n* \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "374a495b-1137-4c08-8e4a-3657e4c9c9b2",
+      "input": "5",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "79c299aa-a669-4d8b-8cea-571a4e137ea8",
+      "input": "14",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * \n* * * * * * * * \n* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "bd53ae85-5c0a-4d54-9802-49d1fad89740",
+      "input": "8",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c53e692a-0bc9-4677-b837-d478388b5dca",
+      "input": "11",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * \n* * * * * * * * \n* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

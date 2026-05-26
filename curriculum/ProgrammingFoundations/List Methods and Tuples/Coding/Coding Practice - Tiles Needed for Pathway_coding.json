@@ -1,0 +1,61 @@
+{
+  "question_id": "cd0e15fc-7c42-4d29-be3f-ec529024d0b1",
+  "short_text": "Tiles Needed for Pathway",
+  "content": "In the city of Berland, there is a beautiful park with a **rectangular pathway** that measures n meters in length and m meters in width. To celebrate the opening of the new park, the city council has decided to pave the pathway with **square tiles**. Each tile measures a meters on each side.\n\nThe council wants to ensure that the entire pathway is covered with tiles. It is acceptable for the tiles to extend beyond the edges of the pathway, but they cannot be cut. The tiles must be laid out so that their sides are parallel to the sides of the pathway.\n\nWrite a program to determine the minimum number of tiles needed to completely cover the pathway.\n\n\n---\n\n#### Input\n\n- The first line contains three positive integers **`n`**, **`m`**, and **`a`**, where:\n - **`n`** is the length of the pathway,\n - **`m`** is the width of the pathway,\n - **`a`** is the side length of each square tile.\n\n---\n\n#### Output\n\nThe output should be a single integer, representing the least number of tiles required to cover the entire pathway..\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n6 6 4\n```\n\nTo cover a pathway of dimensions 6 meters by 6 meters with tiles that are each 4 meters by 4 meters:\n\nYou will need enough tiles to cover both dimensions.\n\n- For length: **⌈6 ÷ 4⌉ = 1.5**, Since we cannot use a fraction of a tile, we round up to the nearest whole number, which gives us total length is **`2`**.\n- For width: **⌈6 ÷ 4⌉ =  1.5**, Since we cannot use a fraction of a tile, we round up to the nearest whole number, which gives us total width is **`2`**.\n  \nTherefore, total tiles needed = **2 × 2 = `4`**.\n\n\nThe Expected Output is\n\n``` \n4\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "aba67a83-50e5-4f39-8248-d72835e3179c",
+      "code_content": "def calculate_tiles(n, m, a):\n    tiles_length = (n + a - 1) // a\n    tiles_width = (m + a - 1) // a\n    return tiles_length * tiles_width\n\ninp = input().split()\nn,m,a = int(inp[0]),int(inp[1]),int(inp[2])\nprint(calculate_tiles(n, m, a))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1a6fbe70-8e84-4ad3-a4ab-52a42b85faf2",
+      "input": "6 6 4",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "32ea883b-58a9-4040-9777-a01d306ac347",
+      "input": "1000000000 1000000000 1000000000",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c3aecf10-9982-44a2-a5a7-10bca46a0568",
+      "input": "6 2 4",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e92c60d9-b2ce-4815-a639-3b02aa2b9b91",
+      "input": "10 10 3",
+      "output": "16",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ea962ad2-d80c-440b-8340-e55750f2d601",
+      "input": "7 3 4",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c71df491-0ddf-425d-a344-7378abc8a5d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

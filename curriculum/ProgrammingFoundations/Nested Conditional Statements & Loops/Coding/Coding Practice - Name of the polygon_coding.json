@@ -1,0 +1,377 @@
+{
+  "question_id": "80870df2-37d6-40fa-85c5-398df686c10e",
+  "short_text": "Name of the polygon",
+  "content": "Write a program that reads the number `N` and prints the name of the polygon based on the `N` number of sides.\r\n\r\n<SingleLineNote>\r\nA polygon is a closed shape made of straight lines that has three or more sides and angles.\r\n</SingleLineNote>\r\n\r\nThe below images are examples of a **Polygon** which contains three or more sides.\r\n\r\n<img src=\"https://new-assets.ccbp.in/frontend/content/programming-foundations/Name_of_the_Polygon.png\" alt=\"Polygons\">\r\n\r\n----\r\n\r\n**Input**  \r\n  \r\nThe input will be a single line containing an integer `N` representing the number of sides.\r\n\r\n----\r\n\r\n**Output**\r\n\r\nThe output should be a single line containing a string representing the name of the polygon.\r\n\r\n\r\n**Not Polygon** should be printed if the given number of sides is less than **3**.\r\n\r\n**Triangle** should be printed if the given number of sides is equal to **3**.\r\n\r\n**Quadrilateral** should be printed if the given number of sides is equal to **4**.\r\n\r\n**Pentagon** should be printed if the given number of sides is equal to **5**.\r\n\r\n**Big Polygon** should be printed if the given number of sides is greater than **5**.\r\n\r\n----\r\n\r\n**Explanation**  \r\n  \r\nFor example, if the given number of sides `N = 4`,\r\n\r\n✖ `N` is less than **3**. (**4** is not less than **3**)\r\n✖ `N` is equal to **3**. (**4** is not equal to **3**)\r\n✔ `N` is equal to **4**. (**4** is equal to **4**)\r\n✖ `N` is equal to **5**. (**4** is not equal to **5**)\r\n✖ `N` is greater than **5**. (**4** is not greater than **5**)\r\n\r\nThe output should be **Quadrilateral** as the number of sides is equal to **4**.\r\n\r\nFor example, if the given number of sides `N = 2`,\r\n\r\n✔ `N` is less than **3**. (**2** is less than **3**)\r\n✖ `N` is equal to **3**. (**2** is not equal to **3**)\r\n✖ `N` is equal to **4**. (**2** is not equal to **4**)\r\n✖ `N` is equal to **5**. (**2** is not equal to **5**)\r\n✖ `N` is greater than **5**. (**2** is not greater than **5**)\r\n\r\nThe output should be **Not Polygon** as the number of sides is less than **3**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "20a393fc-9779-4769-b26b-e580f3e56de6",
+      "code_content": "number_of_sides = int(input())\n\nif number_of_sides < 3:\n    print(\"Not Polygon\")\nelif number_of_sides == 3:\n    print(\"Triangle\")\nelif number_of_sides == 4:\n    print(\"Quadrilateral\")\nelif number_of_sides == 5:\n    print(\"Pentagon\")\nelse:\n    print(\"Big Polygon\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0935b5c0-39ee-43e0-b35e-2bb84c2bf966",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Pentagon",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number of sides `N = 5`,\n\n✖ `N` is less than **3**. (**5** is not less than **3**)\n✖ `N` is equal to **3**. (**5** is not equal to **3**)\n✖ `N` is equal to **4**. (**5** is not equal to **4**)\n✔ `N` is equal to **5**. (**5** is equal to **5**)\n✖ `N` is greater than **5**. (**5** is not greater than **5**)\n\nThe output should be **Pentagon** as the number of sides is equal to **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "0ead9fcf-3a58-487e-bf67-582a88573716",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Not Polygon",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number of sides `N = 1`,\n\n✔ `N` is less than **3**. (**1** is less than **3**)\n✖ `N` is equal to **3**. (**1** is not equal to **3**)\n✖ `N` is equal to **4**. (**1** is not equal to **4**)\n✖ `N` is equal to **5**. (**1** is not equal to **5**)\n✖ `N` is greater than **5**. (**1** is not greater than **5**)\n\nThe output should be **Not Polygon** as the number of sides is less than **3**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "99fe2682-e732-4c27-9479-d4cc10abb38e",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n7\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Big Polygon",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number of sides `N = 7`,\n\n✖ `N` is less than **3**. (**7** is not less than **3**)\n✖ `N` is equal to **3**. (**7** is not equal to **3**)\n✖ `N` is equal to **4**. (**7** is not equal to **4**)\n✖ `N` is equal to **5**. (**7** is not equal to **5**)\n✔ `N` is greater than **5**. (**7** is greater than **5**)\n\nThe output should be **Big Polygon** as the number of sides is greater than **5**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "1662a3ac-7995-40e7-b90e-12e81bf9c078",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "02d4df36-5b71-436e-a001-ab50100c9929",
+              "content": "The output should be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3dc3ab22-4b29-42bd-8000-ae36e0375cc0",
+              "content": "The output should be a single line containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5870e8c9-c15f-4a98-9b7f-357ee754c387",
+              "content": "The output should be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "86c6c3f7-dbe4-4d29-bdfa-94d087300cb6",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string representing the name of the polygon.\n\n**Not Polygon** should be printed if the given number of sides is less than **3**.\n\n**Triangle** should be printed if the given number of sides is equal to **3**.\n\n**Quadrilateral** should be printed if the given number of sides is equal to **4**.\n\n**Pentagon** should be printed if the given number of sides is equal to **5**.\n\n**Big Polygon** should be printed if the given number of sides is greater than **5**.\n\n----\n\n**Example - 1**\n\nIf the given number of sides `N = 3`,\n\n✖ `N` is less than **3**. (**3** is not less than **3**)\n✔ `N` is equal to **3**. (**3** is equal to **3**)\n✖ `N` is equal to **4**. (**3** is not equal to **4**)\n✖ `N` is equal to **5**. (**3** is not equal to **5**)\n✖ `N` is greater than **5**. (**3** is not greater than **5**)\n\nThe output should be **Triangle** as the number of sides is equal to **3**.\n\n----\n\n**Example - 2**\n\nIf the given number of sides `N = 21`,\n\n✖ `N` is less than **3**. (**21** is not less than **3**)\n✖ `N` is equal to **3**. (**21** is not equal to **3**)\n✖ `N` is equal to **4**. (**21** is not equal to **4**)\n✖ `N` is equal to **5**. (**21** is not equal to **5**)\n✔ `N` is greater than **5**. (**21** is greater than **5**)\n\nThe output should be **Big Polygon** as the number of sides is greater than **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1f98706b-99b4-4766-bcc0-efb8b92422b8",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "8383e188-e4a8-4979-b6f2-caddd94a10e7",
+              "content": "To find the sum of the sides in a polygon based on the name of the polygon.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "95df8164-e1e3-4869-be63-c3185f96d290",
+              "content": "To find the name of the polygon based on the number of sides.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ca9781f9-f823-42f0-a402-62af625256e2",
+              "content": "To find the area of a polygon based on the number of sides.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fdbdba37-72f9-4883-a739-e302b4b7f744",
+              "content": "To find the number of sides of the polygon.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the number of sides and find the name of the polygon.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "22f774a8-da24-4920-8d06-789d416bf91f",
+          "short_text": "",
+          "content": "Match the Name of the Polygon with their number of sides.\n\n| Name of the polygon | Number of sides |\n| :--------- | :--------- |\n| 1) Triangle | A) 4 |\n| 2) Pentagon | B) 3 |\n| 3) Quadrilateral | C) 5 |",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3dcb52a2-7b02-491e-a7d2-81b5445f4f3b",
+              "content": "1-B, 2-C, 3-A",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8eb240e5-ae6e-48d5-8de8-834d82bf0c3d",
+              "content": "1-B, 2-A, 3-C",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fa560dd0-8509-4fdd-96fe-b99dae77c68d",
+              "content": "1-C, 2-A, 3-B",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fa98bab3-bd65-4810-8e06-66cdcc2d5502",
+              "content": "1-A, 2-B, 3-C",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number of sides `N = 3`,\n\n✖ `N` is less than **3**. (**3** is not less than **3**)\n✔ `N` is equal to **3**. (**3** is equal to **3**)\n✖ `N` is equal to **4**. (**3** is not equal to **4**)\n✖ `N` is equal to **5**. (**3** is not equal to **5**)\n✖ `N` is greater than **5**. (**3** is not greater than **5**)\n\nThe output should be **Triangle** as the number of sides is equal to **3**.\n\n----\n\nIf the given number of sides `N = 4`,\n\n✖ `N` is less than **3**. (**4** is not less than **3**)\n✖ `N` is equal to **3**. (**4** is not equal to **3**)\n✔ `N` is equal to **4**. (**4** is equal to **4**)\n✖ `N` is equal to **5**. (**4** is not equal to **5**)\n✖ `N` is greater than **5**. (**4** is not greater than **5**)\n\nThe output should be **Quadrilateral** as the number of sides is equal to **4**.\n\n----\n\nIf the given number of sides `N = 5`,\n\n✖ `N` is less than **3**. (**5** is not less than **3**)\n✖ `N` is equal to **3**. (**5** is not equal to **3**)\n✖ `N` is equal to **4**. (**5** is not equal to **4**)\n✔ `N` is equal to **5**. (**5** is equal to **5**)\n✖ `N` is greater than **5**. (**5** is not greater than **5**)\n\nThe output should be **Pentagon** as the number of sides is equal to **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bd0d020b-71b1-44d3-a738-a2eb07b2fc6a",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n6\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "157a6a7d-851e-4c71-aa0d-06c852fdf495",
+              "content": "Pentagon",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "32f9098d-fa7f-41fb-a27e-7fd8a56b531f",
+              "content": "Big Polygon",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "661d3e8a-e572-4628-9c10-1227c35e67c0",
+              "content": "Triangle",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f66d4388-6096-4086-bfd6-20919c5f9e4c",
+              "content": "Not Polygon",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number of sides `N = 6`,\n\n✖ `N` is less than **3**. (**6** is not less than **3**)\n✖ `N` is equal to **3**. (**6** is not equal to **3**)\n✖ `N` is equal to **4**. (**6** is not equal to **4**)\n✖ `N` is equal to **5**. (**6** is not equal to **5**)\n✔ `N` is greater than **5**. (**6** is greater than **5**)\n\nThe output should be **Big Polygon** as the number of sides is greater than **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dc66bc07-45c4-4073-b650-f9613e2cf5d9",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "3c8777bd-c1d6-452a-bcad-83932acce7a2",
+              "content": "33",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6dcdd827-6076-439d-b8dc-80d596fa8bd9",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7172ab50-1b19-4b76-9432-45db40e05fa4",
+              "content": "Five",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "94a149fc-b4b1-4917-994c-2c64583a2031",
+              "content": "4.5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n33\n```\n\n**Input 2**\n\n```\n12\n```\n\nThe above two inputs are valid because they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dda99018-c21c-4d69-bff7-e0cb261a33f2",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "556fabe3-6c45-4a32-af9f-da85ccc637e7",
+              "content": "The input will be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9760f147-5a3c-45c6-8a83-b4bc61afd382",
+              "content": "The input will be a single line containing a float value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a8542b83-2ada-434e-b6b5-bdbc3688b529",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "daddbdcd-31fb-4a37-b332-60b442e9904d",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer `N` representing the number of sides.\n\nFor example, **10**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fdef9ef6-89b1-43dd-9a3e-753d22323ec6",
+          "short_text": "",
+          "content": "According to the problem description, what is a **Polygon**?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "259f556e-0e6b-42d6-84ff-1418268c4527",
+              "content": "An open shape made of straight lines that has three or more sides.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b0cb4cd6-3397-4398-ad89-9d5d8ce3515b",
+              "content": "A shape made of straight lines that has two or fewer sides.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ccc3e6f6-e901-48a5-80cb-89fd90ab460a",
+              "content": "A closed shape made of curved lines that has three or more sides.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e5c88f65-8285-4b31-aed4-5c7f7d5e1098",
+              "content": "A closed shape made of straight lines that has three or more sides.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, a polygon is a closed shape made of straight lines that has three or more sides and angles.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "23acf170-5157-41c2-aa3f-b3c1d05adff4",
+      "input": "2",
+      "output": "Not Polygon\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "42531253-54ab-47a0-8223-51b494cc9fab",
+      "input": "6",
+      "output": "Big Polygon\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "474442bd-87a0-4e4b-bab0-369b0a7c613f",
+      "input": "5",
+      "output": "Pentagon\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "8883f578-c775-4126-bec6-b66c2b4d6c6f",
+      "input": "4",
+      "output": "Quadrilateral\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9a1df3f2-b32e-46fd-a83e-78be43642fa7",
+      "input": "3",
+      "output": "Triangle\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "668f2ab1-abc7-49da-a7bb-057e0d124c16",
+  "short_text": "List Repetition",
+  "content": "A list `L` is given in the prefilled code.\n\nGiven a number `N`, write a program that prints the list by repeating the prefilled list `N` times.\n\n```\nL = [1, \"two\", \"3\", 4.0]\n```\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list obtained by repeating the prefilled list `N` times.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 2`,\n\n- The elements in the given prefilled list `L` are **1**, **\"two\"**, **\"3\"**, and **4.0**.\n- The prefilled list should be repeated **2** times.\n- After repeating the prefilled list, the elements in the list are **1**, **\"two\"**, **\"3\"**, **4.0**, **1**, **\"two\"**, **\"3\"**, and **4.0**.\n\nThe output should be,\n\n```\n[1, 'two', '3', 4.0, 1, 'two', '3', 4.0]\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "43518d1b-7276-4c8b-8a5f-e16c987d0733",
+      "code_content": "L = [1, \"two\", \"3\", 4.0]\n\nnumber_of_times = int(input())\n\nresultant_list = L * number_of_times\n\nprint(resultant_list)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "33de67ac-4ad3-4183-a784-27220251456a",
+      "input": "5",
+      "output": "[1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "437a939c-9f36-4e74-9429-e291634a64da",
+      "input": "0",
+      "output": "[]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "59a3138d-04c0-41b7-ab0a-ee0c523a1dc6",
+      "input": "3",
+      "output": "[1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6aa2a599-1b8c-4609-a248-ce7e0cfed662",
+      "input": "1",
+      "output": "[1, 'two', '3', 4.0]",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b64f7f18-dfb2-44be-bcde-3d0b166a9dde",
+      "input": "21",
+      "output": "[1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0]",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f9fdd5f5-0774-4862-878d-32c901322ca3",
+      "input": "2",
+      "output": "[1, 'two', '3', 4.0, 1, 'two', '3', 4.0]",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

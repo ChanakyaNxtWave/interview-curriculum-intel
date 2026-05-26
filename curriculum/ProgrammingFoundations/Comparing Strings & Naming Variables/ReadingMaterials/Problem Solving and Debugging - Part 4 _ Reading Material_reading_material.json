@@ -1,0 +1,13 @@
+{
+  "unit_title": "Problem Solving and Debugging - Part 4 | Reading Material",
+  "content": "# Round\n\n## Rounding Numbers\n\n`round(number, digits(optional))`  Rounds the float value to the given number of decimal digits.\n\n  \n\n`digits` -> define the number of decimal digits to be considered for rounding.\n\n-   when not specified default is `0`\n\n  \n\n#### Code\n\n```python\na = round(3.14,1)\nprint(a)\na = round(3.14)\nprint(a)\n```\n\n#### Output\n\n```\n3.1\n3\n```\n\n## Floating Point Approximation\n\nFloat values are stored approximately.\n\n#### Code\n\n```\nprint(0.1 + 0.2)\n```\n\n#### Output\n\n```\n\n0.30000000000000004\n```\n\n## Floating Point Errors\n\nSometimes, floating point approximation gives unexpected results.\n\n#### Code\n\n```python\nprint((0.1 + 0.2) == 0.3)\n```\n\n#### Output\n\n```\n\nFalse\n```\n\nTo avoid these unexpected results, we can use `round()`\n\n#### Code\n\n```python\na = round((0.1 + 0.2), 1)\nprint(a)\nprint(a == 0.3)\n```\n\n#### Output\n\n```\n0.3\nTrue\n```\n\n## Comments\n\nComment starts with a hash `#`  \n  \nIt can be written in  its own line next to a statement of code.\n\n#### Code\n\n```python\nn = 5\n# Finding if Even\neven = (n % 2 == 0)\nprint(even) # prints boolean value \n```\n\n#### Output\n\n```\n\nFalse\n```",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "4543bbdc-ff47-467f-9019-f126511d2689",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "cd81eac4-152f-4ac4-9675-c59044c2fc59",
+  "unit_name": "Problem Solving and Debugging - Part 4 | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

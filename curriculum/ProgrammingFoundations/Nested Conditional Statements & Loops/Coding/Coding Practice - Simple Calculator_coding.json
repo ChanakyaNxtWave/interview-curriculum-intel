@@ -1,0 +1,412 @@
+{
+  "question_id": "fc660d97-1da5-45dc-943c-2702d9851e1b",
+  "short_text": "Simple Calculator",
+  "content": "Write a program that reads an operator `O`, and two numbers `A` and `B`.\r\n\r\nPrint the result by doing arithmetic operations on `A` and `B` based on the operator `O`\r\n\r\n|Operator | Arithmetic Operation | Represents|\r\n|--- | --- | ---|\r\n|`+` | `A + B` | Addition of A and B|\r\n|`-` | `A - B` | Subtraction of B from A|\r\n|`*` | `A * B` | Multiplication of A and B|\r\n|`/` | `A / B` | Division of A and B|\r\n|`%` | `A % B` | Remainder when A is divided by B|\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains a string representing `O`. (`+`, `-`, `*`, `/`, or `%`).\r\nThe second line of input contains an integer representing `A`.\r\nThe third line of input contains an integer representing `B`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer, that is the result obtained by doing arithmetic operations on `A` and `B` if an operator `O` is equal to `+`, `-`, `*` or `%`.\r\n\r\nThe output should be a single line containing a float, that is the result obtained by doing arithmetic operations on `A` and `B` if an operator `O` is equal to `/`.\r\n\r\n\r\n---\r\n\r\n#### Constraints\r\n\r\nThe operator (`O`) is always equal to one of `+`, `-`, `*`, `/` or `%`.\r\n\r\n---\r\n\r\n\r\n#### Explanation\r\n\r\nFor example, if the given operator is `O = \"+\"` and the two numbers are `A = 3` and `B = 5`. \r\n  \r\n  * As `O` is equal to `+`, `A` should be added to `B`.\r\n  * The Addition of `A` and `B` is equal to **8**. (`3 + 5 = 8`)\r\n\r\nThe output should be **8**.\r\n\r\n<br/>\r\n\r\nFor example, if the given operator is `O = \"*\"` and the two numbers are `A = 2` and `B = 5`. \r\n  \r\n  * As `O` is equal to `*`, `A` should be multiplied by `B`.\r\n  * The Multiplication of `A` and `B` is equal to **10**. (`2 * 5 = 10`)\r\n\r\nThe output should be **10**.\r\n\r\n<br/>\r\n\r\nFor example, if the given operator is `O = \"-\"` and the two numbers are `A = 10` and `B = 9`. \r\n  \r\n  * As `O` is equal to `-`, `B` should be subtracted from `A`.\r\n  * The Subtraction of `B` from `A` is equal to **1**. (`10 - 9 = 1`)\r\n\r\nThe output should be **1**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d232c4a7-83cb-4a4d-aa99-d76c3e3a9f10",
+      "code_content": "operator = input()\nfirst_number = int(input())\nsecond_number = int(input())\n\nif operator == \"+\":\n    print(first_number + second_number)\nelif operator == \"-\":\n    print(first_number - second_number)\nelif operator == \"*\":\n    print(first_number * second_number)\nelif operator == \"/\":\n    print(first_number / second_number)\nelse:\n    print(first_number % second_number)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "3bf34b9c-a779-497d-9a7e-b44d3eb191b6",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n%\n60\n12\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given operator is `O = \"%\"` and the two numbers are `A = 60` and `B = 12`. \n  \n  * As `O` is equal to `%`, `A` should be divided by `B`.\n\n  * The remainder, when `A` is divided by `B`, is equal to **0**. (`60 % 12 = 0`)\n\nThe output should be **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9e6b12b8-3ad6-4c16-8657-4096bccefafc",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n*\n7\n9\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "63",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given operator is `O = \"*\"` and the two numbers are `A = 7` and `B = 9`. \n  \n  * As `O` is equal to `*`, `A` should be multiplied by `B`.\n  \n  * The Multiplication of `A` and `B` is equal to **63**. (`7 * 9 = 63`)\n\nThe output should be **63**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dff21c2f-1fc8-4cb5-ab74-54f06570dce2",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n/\n25\n5\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5.0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given operator is `O = \"/\"` and the two numbers are `A = 25` and `B = 5`. \n  \n  * As `O` is equal to `/`, `A` should be divided by `B`.\n  \n  * Division of `A` and `B` is equal to **5.0**. (`25 / 5 = 5.0`)\n\nThe output should be **5.0**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "01a5de23-a205-407b-a8ac-10e6548f809e",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "632aae74-fec5-4af5-95cd-13013040c01b",
+              "content": "If an operator `O` is equal to `+`, `-`, `*`, or `%`, then the output should be a single line containing an integer.\n\nIf an operator `O` is equal to `/`, Then the output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "975961b5-dcf1-4773-8357-d025b0e65d74",
+              "content": "If an operator `O` is equal to `+`, `-`, `*`, or `%`, then the output should be a single line containing a string.\n\nIf an operator `O` is equal to `/`, Then the output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e93b94f0-1a3d-4ef3-b67f-243c5512d9c1",
+              "content": "If an operator `O` is equal to `+`, `-`, `*`, or `%`, then the output should be a single line containing a float.\n\nIf an operator `O` is equal to `/`, Then the output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f02daa4b-48ad-4902-b3d7-f139c5872f73",
+              "content": "If an operator `O` is equal to `+`, `-`, `*`, or `%`, then the output should be a single line containing an integer.\n\nIf an operator `O` is equal to `/`, Then the output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing an integer, that is the result obtained by doing arithmetic operations on `A` and `B` if an operator `O` is equal to `+`, `-`, `*` or `%`.\n\nThe output of the program should be a single line containing a float, that is the result obtained by doing arithmetic operations on `A` and `B` if an operator `O` is equal to `/`.\n\nFor example,\n\nIf the given operator is `O = \"*\"` and the two numbers are `A = 5` and `B = 11`. \n  \n  * As `O` is equal to `*`, `A` should be multiplied by `B`.\n  \n  * The Multiplication of `A` and `B` is equal to **55**. (`5 * 11 = 55`)\n\nThe output should be **55**.\n\n---\n\nFor example,\n\nIf the given operator is `O = \"/\"` and the two numbers are `A = 14` and `B = 2`. \n  \n  * As `O` is equal to `/`, `A` should be divided by `B`.\n  \n  * Division of `A` and `B` is equal to **7.0**. (`14 / 2 = 7.0`)\n\nThe output should be **7.0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "037a1a5b-d1bf-4f70-9b0e-0dbdc2c49801",
+          "short_text": "",
+          "content": "According to the problem description, what are the arithmetical operators?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "381a3e27-69f3-4f12-90e4-c3ffdbedd0aa",
+              "content": ">, <, =, >=, <=",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "44365786-f368-4ac5-8749-162dfca77b60",
+              "content": "True, False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ad1d84b7-de58-4933-b47a-2bb2d66474a7",
+              "content": "+, -, *, /, %",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "cf32d4e5-9d25-4538-8045-179b763884a3",
+              "content": "AND, OR, NOT",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, `+`,  `-`,  `*`,  `/`, and `%` are the arithmetical operators.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3bc3ad40-568c-45a1-9597-01cd36b01f9a",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n%\n67\n13\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "06f90707-1ade-411c-ba4a-66f90c50b71e",
+              "content": "2",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "81dbe8e3-df1a-47ca-90e9-defb9fa728d2",
+              "content": "0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "875d6930-2636-4f08-9480-39341828de6a",
+              "content": "3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cbe7ec5d-eb77-4705-8d21-fff55f4bdb0e",
+              "content": "1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given operator is `O = \"%\"` and the two numbers are `A = 67` and `B = 13`. \n  \n  * As `O` is equal to `%`, `A` should be divided by `B`.\n\n  * The remainder, when `A` is divided by `B`, is equal to **2**. (`67 % 13 = 2`)\n\nThe output should be **2**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "aeb35ee7-b10b-4e15-8320-acf5932012cf",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "10315d7a-a188-4d41-96f6-11ebcf213bdd",
+              "content": "Perform any arithmetic operation on the given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2a83e2c3-1bee-49cf-a0e0-a1d7ebafcd5f",
+              "content": "To generate random numbers between the given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a5ed1fdf-d124-4b08-9910-764fb2cb4619",
+              "content": "Perform arithmetic operations on the numbers based on the operator.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d8e1829a-bc89-4f98-bc7b-ea69466d1362",
+              "content": "Perform addition operations on the given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read an operator `O`, and two numbers `A` and `B`. perform arithmetic operations on the numbers based on the operator `O`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c3a6a1af-0df9-447a-8b0c-85c0c3907b55",
+          "short_text": "",
+          "content": "What is the output of the program if the operator is \"/\" and `A` is `10` and `B` is `4`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "01698f0d-7ec1-4b91-8d67-546f7b92a75d",
+              "content": "3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "705fbc1b-ee51-4ac1-8ec7-568f040d8434",
+              "content": "2.45",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "883a6b58-cc28-4d2c-826f-20994c3b651b",
+              "content": "2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e91ed43c-3cdf-41b5-946a-1a8a8c245bc1",
+              "content": "2.5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given operator is `O = \"/\"` and the two numbers are `A = 10` and `B = 4`. \n  \n  * As `O` is equal to `/`, `A` should be divided by `B`.\n  \n  * Division of `A` and `B` is equal to **2.5**. (`10 / 4 = 2.5`)\n\nThe output should be **2.5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c5fc1593-46e7-43db-bbcf-b3ba4fbfe0c9",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3715c3ca-3d3f-4306-8d99-7bd7eb0314e2",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains an integer.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5d9644ea-6f96-4d5d-a5b8-17525af08b40",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a string.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6a42bfb3-b57e-4131-9ab5-1a6a913d2bbc",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a string.\n\nThe third line of input contains a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8c92fce0-4ecf-46d9-a7b1-9f219cf2ad96",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be, \n\nThe first line of input contains a string representing `O`. (`+`, `-`, `*`, `/`, or `%`).\n\nThe second line of input contains an integer representing `A`.\n\nThe third line of input contains an integer representing `B`.\n\nFor example,\n\n```\n-\n20\n6\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ea8337c6-7796-4757-a94d-43151e7e43ff",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "85b9bcbf-8c88-4818-8670-2ef4d8ece9d5",
+              "content": "```\n20\n*\n21\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ac55cfb3-60a7-48a1-8356-af59db81c00c",
+              "content": "```\n%\n40\n8\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b83d7547-b410-4e32-b574-4b968b6f2fa8",
+              "content": "```\n9\n13\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f2d0fda3-3a0b-45cc-915a-88d8c805381b",
+              "content": "```\n+\n1\n4\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n+\n1\n4\n```\n\n**Input 2**\n\n```\n%\n40\n8\n```\nThe above two inputs are valid because,\n\n- The first line of input contains a string`O`. (`+`, `-`, `*`, `/`, or `%`).\n\n- The second line of input contains an integer `A`.\n\n- The third line of input contains an integer `B`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "00569d72-7938-4d6d-9801-8206e0cefd70",
+      "input": "%\n20\n10",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2125289a-c033-4c53-9534-1d9d093bcfe5",
+      "input": "*\n2\n5",
+      "output": "10\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "29648881-db47-424c-a8b3-535bf21f5252",
+      "input": "%\n9\n2",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2f5ac06a-3529-4dc6-a9b5-afa65596dbdd",
+      "input": "+\n3\n5",
+      "output": "8\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4e960fbb-22f2-4264-9180-78034f650233",
+      "input": "/\n20\n5",
+      "output": "4.0\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "62225733-b8a6-418b-bd1e-691b71aa31ce",
+      "input": "+\n-250\n250",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "813d9e2e-3619-4cf3-aad0-0314631f54f5",
+      "input": "-\n-100\n-150",
+      "output": "50\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "aaf070ba-b89c-4ecb-8aeb-ffb6173c1ab9",
+      "input": "-\n155\n100",
+      "output": "55\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b07d4cef-c874-4603-99f6-77a1a6ae4786",
+      "input": "/\n-492\n2",
+      "output": "-246.0\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f27cc833-29c0-487c-9415-9251ba72edb0",
+      "input": "-\n10\n9",
+      "output": "1\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

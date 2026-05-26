@@ -1,0 +1,377 @@
+{
+  "question_id": "506b9608-ec59-4399-93b9-8c5de1e3538c",
+  "short_text": "Permission to attempt Exam",
+  "content": "Write a program that reads the attendance percentage `A` and status of having medical report `M` of a student and checks if any of the below conditions is satisfied.\r\n\r\n* `A` is greater than or equal to **75**.\r\n* `M` is equal to **\"Y\"**.\r\n\r\nPrint **Allowed to write exam** if any of the given conditions is satisfied. Otherwise, print **Cannot write exam**.\r\n\r\n<MultiLineNote>\r\n\r\n* The last character of the attendance percentage `A` contains `%`.\r\n* The remaining characters contain a Number.\r\n\r\nExample: `40%`, `60%` \r\n\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains a string representing `A`.\r\nThe second line of input contains a string representing `M`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string. **Allowed to write exam** should be printed if `A` is greater than or equal to **75** or `M` is equal to **\"Y\"**. Otherwise, **Cannot write exam** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given attendance percentage `A = \"80%\"` and the status of having a medical report is `M = \"Y\"`, \r\n\r\n✔ `A` is greater than or equal to **75**. (`80 >= 75`)\r\n✖ `M` is equal to **\"Y\"**.\r\n\r\nThe output should be **Allowed to write exam** as the attendance percentage is greater than or equal to **75**.\r\n<br/>\r\n\r\nFor example, if the given attendance percentage is `A = \"70%\"` and the status of having a medical report is `M = \"Y\"`,\r\n\r\n✖ `A` is greater than or equal to **75**. (`70 < 75`)\r\n✔ `M` is equal to **\"Y\"**.\r\n\r\nThe output should be **Allowed to write exam** as the attendance percentage is not greater than or equal to **75** but the medical report status is equal to **\"Y\"**.\r\n<br/>\r\n\r\nFor example, if the given attendance percentage is `A = \"72%\"` and the status of having a medical report is `M = \"N\"`,\r\n\r\n✖ `A` is greater than or equal to **75**. (`72 < 75`)\r\n✖ `M` is equal to **\"Y\"**.\r\n\r\nThe output should be **Cannot write exam** as the attendance percentage is not greater than or equal to **75** and the medical report status is not equal to **\"Y\"**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "68f1bed7-40cc-4873-9255-8ad320f5083c",
+      "code_content": "attendance = input()\nmedical_reason = input()\n\nlength = len(attendance)\nattendance = attendance[:(length-1)]\nattendance = int(attendance)\n\nif attendance >= 75:\n    print(\"Allowed to write exam\")\n\nelif attendance < 75 and medical_reason == \"Y\":\n    print(\"Allowed to write exam\")\n\nelse:\n    print(\"Cannot write exam\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "10393c2c-028e-4c1e-8928-5158761608d5",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n74%\nN\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Cannot write exam",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given attendance percentage is `A = \"74%\"` and the status of having a medical report is `M = \"N\"`,\n\n✖ `A` is greater than or equal to **75**. (`74 < 75`)\n✖ `M` is equal to **\"Y\"**.\n\nThe output should be **Cannot write exam** as the attendance percentage is not greater than or equal to **75** and the medical report status is not equal to **\"Y\"**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "cac0e64b-ab51-4756-a5fa-9aba9d81861f",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n75%\nN\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Allowed to write exam",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given attendance percentage `A = \"75%\"` and the status of having a medical report is `M = \"N\"`, \n\n✔ `A` is greater than or equal to **75**. (`75 >= 75`)\n✖ `M` is equal to **\"Y\"**.\n\nThe output should be **Allowed to write exam** as the attendance percentage is greater than or equal to **75**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f47603a6-7767-4028-abca-80f88a71c58c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n79%\nY\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Allowed to write exam",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given attendance percentage is `A = \"79%\"` and the status of having a medical report is `M = \"Y\"`,\n\n✔ `A` is greater than or equal to **75**. (`79 > 75`)\n\n✔ `M` is equal to **\"Y\"**.\n\nThe output should be **Allowed to write exam** as the attendance percentage is greater than or equal to **75** and medical report status is equal to **\"Y\"**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "03fee67c-8487-4c3a-802c-e35a1f3bab1c",
+          "short_text": "",
+          "content": "What is the medical report status required for a student to be allowed to write the exam?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5cd5db49-bc1f-45b3-a87e-5aa17341caee",
+              "content": "Y",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ba891a76-95d8-4642-b60f-0a009c8b7aac",
+              "content": "N",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cad21a11-17c9-4ca0-bada-91fb68b30d7f",
+              "content": "P",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "db2a5052-1bd3-48f1-af16-31b0d3fb4069",
+              "content": "M",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The medical report status required for a student to be allowed to write the exam is `Y`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1ab9f596-a06d-4367-b8ab-fab85b2d5bf0",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "16e3edd6-9214-4004-b019-07a424b8f5c6",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "399fc01a-e487-4358-ba37-9355a3ea2ca1",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5b85e98c-4474-413e-8923-4dc9a50ae2cc",
+              "content": "The output should be a single line containing comma-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ea487ee1-0ba1-4de1-a7f9-9bed4bf2353c",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string. **Allowed to write exam** should be printed if `A` is greater than or equal to **75** or `M` is equal to **\"Y\"**. Otherwise, **Cannot write exam** should be printed.\n\nFor example,\n\nIf the given attendance percentage `A = \"91%\"` and the status of having a medical report is `M = \"Y\"`, \n\n✔ `A` is greater than or equal to **75**. (`91 >= 75`)\n✔ `M` is equal to **\"Y\"**.\n\nThe output should be **Allowed to write exam** as the attendance percentage is greater than or equal to **75**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "21205ce1-d64c-4b72-a29f-8d688cec4c28",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "28a9eeb8-e108-40ed-b14b-75c8a188e041",
+              "content": "To check if any of the below condition is satisfied.\n\n* `A` is less than or equal to **75**.\n* `M` is not equal to **\"Y\"**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3db5088c-c31d-41d2-8c94-87b14fcf8efe",
+              "content": "To check if both the below conditions are satisfied.\n\n* `A` is greater than or equal to **75**.\n* `M` is equal to **\"Y\"**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "67844140-50e4-408c-b8c7-54092c56d15f",
+              "content": "To check if any of the below condition is satisfied.\n\n* `A` is greater than or equal to **75**.\n* `M` is equal to **\"Y\"**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "cf0fde30-8677-431c-b13c-31590c734abb",
+              "content": "To check if any of the below condition is satisfied.\n\n* `A` is greater than or equal to **70**.\n* `M` is equal to **\"Y\"**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the attendance percentage `A` and status of having medical report `M` of a student and check if any of the below condition is satisfied.\n\n* `A` is greater than or equal to **75**.\n* `M` is equal to **Y**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "2edfca94-5f96-47e1-b57b-1ccfc21f069c",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2c539fb2-ff24-49dc-bddd-c9c5d2b91d76",
+              "content": "The input will be multiple lines containing comma-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "64b76970-ee6f-4380-9453-38cf35546aa3",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "67963f82-6c7e-4a07-9d39-a15ddbaa38b3",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c3f9d4a7-bd87-4cb4-80f5-3bf796e5c846",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be,\n\n- The first line of input contains a string representing attendance percentage `A`.\n\n- The second line of input contains a string representing medical report `M`.\n\nFor example,\n\n```\n90%\nY\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4567761e-3975-4390-9ac3-f4a5f20f4e28",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "0f960a67-1962-4c2a-8cf5-fe8aa65399eb",
+              "content": "```\n80\nY\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "29c6f3bf-a79a-4ac0-85ca-312764735863",
+              "content": "```\n50%\nY\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "589b9dd7-a3b7-454d-9ee8-c276b01458e9",
+              "content": "```\n58%\nM\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "aa764182-b8f4-4452-8526-49cf7edcb1ae",
+              "content": "```\n65%\nY\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n50%\nY\n```\n\n**Input 2**\n\n```\n65%\nY\n```\n\nThe above two inputs are valid because,\n\n- The first line of input contains a string.\n\n- The second line of input contains a string.\n\n<MultiLineNote>\n**Percentage symbol**\n\n* The last character of the attendance percentage `A` contains `%`.\n* The remaining characters contain a Number.\n\nExample: `40%`, `60%` \n\n</MultiLineNote>",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e3983bd0-a596-4123-ad88-eae84d3e93d7",
+          "short_text": "",
+          "content": "What is the minimum value of attendance percentage required to be allowed to write an exam?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "9143fd93-fc6c-4b7d-af8d-d721914f12b9",
+              "content": "70%",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "940ac2f8-f5aa-4752-9da2-0141bafc03c9",
+              "content": "74%",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bb73fe49-cc0c-45fe-afcf-1a4885a647bd",
+              "content": "75%",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "cec6b6e7-0a9c-429b-bd72-798825016d6d",
+              "content": "80%",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The minimum value of attendance percentage required to be allowed to write an exam is `75%`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e9a3eb31-c69d-4b37-aae4-198ae2ab64ca",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n53%\nN\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2b6e1850-1aee-4878-843f-85595f5bde95",
+              "content": "allowed to write the exam",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2d1cc58c-b30a-4504-8e4f-b59330927e5a",
+              "content": "can't write an exam",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c4f9f887-4aba-489d-8bfa-24d434939ae3",
+              "content": "Cannot write exam",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "fc57218b-6412-4895-b02b-7fcd1297edeb",
+              "content": "Allowed to write exam",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given attendance percentage is `A = \"53%\"` and the status of having a medical report is `M = \"N\"`,\n\n✖ `A` is greater than or equal to **75**. (`53 < 75`)\n\n✖ `M` is equal to **\"Y\"**.\n\nThe output should be **Cannot write exam** as the attendance percentage is not greater than or equal to **75** and the medical report status is not equal to **\"Y\"**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "5f85d10d-55a8-4d6c-a1a7-f210bbca16e3",
+      "input": "55%\nN",
+      "output": "Cannot write exam\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6be9e2dc-ad80-4cc4-b3f7-1e96152f779b",
+      "input": "80%\nY",
+      "output": "Allowed to write exam\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "81221568-edc0-40eb-8186-e9250b0045d1",
+      "input": "100%\nN",
+      "output": "Allowed to write exam\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8307cf58-7be7-4a99-80bf-db93f68822ad",
+      "input": "72%\nN",
+      "output": "Cannot write exam\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "cf917728-a85c-453c-a7ef-44c864708a59",
+      "input": "70%\nY",
+      "output": "Allowed to write exam\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

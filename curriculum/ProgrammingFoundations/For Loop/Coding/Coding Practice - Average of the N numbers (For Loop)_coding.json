@@ -1,0 +1,75 @@
+{
+  "question_id": "edf4fa5f-8ac6-4511-8d1a-ce76c19d7557",
+  "short_text": "Average of the N numbers (For Loop)",
+  "content": "Write a program that reads a number `N` and prints the average of numbers from **1** to `N`.\n\n<MultiLineNote>\n\n* The average of numbers from **1** to `N` can be calculated as,\n    Average = Sum of numbers from **1** to `N` / Count of numbers (`N`)\n\n    Example: If `N = 3`, the average of numbers from **1** to **3** is,\n    Average = (1 + 2 + 3) / 3 = 2.0\n\n\n* Use the **For** loop to iterate over the range of numbers.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a float that is the average of numbers from **1** to `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 8`,\n\n- The numbers from **1** to **8** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**.\n- The count of numbers from **1** to **8** is **8**.\n- The sum of the numbers is **36**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36`)\n- The average of the numbers is **4.5**. (`36 / 8 = 4.5`)\n\nThe output should be **4.5**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d449b6ef-da40-4fa2-9a01-312c1284f7f3",
+      "code_content": "number = int(input())\nsum_of_numbers = 0\n\nfor each_num in range(1, number + 1):\n    sum_of_numbers = sum_of_numbers + each_num\n\naverage = sum_of_numbers / number\nprint(average)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3935f943-189b-4dda-a9cb-26e86c31def5",
+      "input": "8",
+      "output": "4.5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "74939611-c966-48ed-bd0c-b2165e8777d4",
+      "input": "1",
+      "output": "1.0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a27ab9f8-a702-4652-bee9-1cae9913353e",
+      "input": "174602",
+      "output": "87301.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c536d759-d9eb-4b19-9fa7-72dec0127bff",
+      "input": "15",
+      "output": "8.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ca214bc3-8acf-44ac-8d4e-b0c14ac7467d",
+      "input": "120",
+      "output": "60.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "dd3ab77d-d929-4325-a7ec-992385d4ade4",
+      "input": "65",
+      "output": "33.0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "fcb61fc9-29c0-4f05-a328-d42f4bac5ac6",
+      "input": "40",
+      "output": "20.5",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ad396947-a6fc-4dc5-b3ec-221c6a4e9d0d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

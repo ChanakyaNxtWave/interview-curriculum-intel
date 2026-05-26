@@ -1,0 +1,68 @@
+{
+  "question_id": "1037950a-6f24-4bad-b226-5e550c0e6fd5",
+  "short_text": "Numbers in Rectangle - 3",
+  "content": "Given two numbers `M` and `N`, write a program to print a **Rectangle** of `M` rows and `N` columns that contains numbers starting from `K` in descending order. `K` is the count of numbers that can be printed in `M` rows and `N` columns of a **Rectangle**.\n\nFor example, if the given number of rows and columns is `M = 3` and `N = 4`,\n\n- The count of numbers that can be arranged in a **Rectangle** of **3** rows and **4** is **K = 12** (`3 * 4 = 12`).\n\nSo, the **Rectangle** should be printed with the numbers starting from **12**(`K`) in descending order as given below.\n\n```\n12 11 10 9\n8 7 6 5\n4 3 2 1\n```\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `M` rows and `N` columns containing numbers starting from `K` in descending order as a **Rectangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers is `M = 2` and `N = 3`,\n\n- The count of numbers that can be arranged in a **Rectangle** of **2** rows and **3** is **K = 6** (`2 * 3 = 6`).\n- Print the numbers starting from **6** in descending order on **2** rows and **3** columns as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-rectangle-3.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image, the Number in the box indicates the number and a space (\"6 \")\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n6 5 4\n3 2 1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5209cb86-ae81-4157-abda-ad764369bce8",
+      "code_content": "m = int(input())\nn = int(input())\n\nstart_number = m * n\n\nfor row in range(m):\n    each_row = \"\"\n\n    for column in range(n):\n        each_row = each_row + str(start_number) + \" \"\n        start_number = start_number - 1\n\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "068e0ff9-d490-482e-af38-682d73040a52",
+      "input": "6\n5",
+      "output": "30 29 28 27 26 \n25 24 23 22 21 \n20 19 18 17 16 \n15 14 13 12 11 \n10 9 8 7 6 \n5 4 3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "42dea163-04b1-4a5d-ba6d-8d71b73449d8",
+      "input": "25\n10",
+      "output": "250 249 248 247 246 245 244 243 242 241 \n240 239 238 237 236 235 234 233 232 231 \n230 229 228 227 226 225 224 223 222 221 \n220 219 218 217 216 215 214 213 212 211 \n210 209 208 207 206 205 204 203 202 201 \n200 199 198 197 196 195 194 193 192 191 \n190 189 188 187 186 185 184 183 182 181 \n180 179 178 177 176 175 174 173 172 171 \n170 169 168 167 166 165 164 163 162 161 \n160 159 158 157 156 155 154 153 152 151 \n150 149 148 147 146 145 144 143 142 141 \n140 139 138 137 136 135 134 133 132 131 \n130 129 128 127 126 125 124 123 122 121 \n120 119 118 117 116 115 114 113 112 111 \n110 109 108 107 106 105 104 103 102 101 \n100 99 98 97 96 95 94 93 92 91 \n90 89 88 87 86 85 84 83 82 81 \n80 79 78 77 76 75 74 73 72 71 \n70 69 68 67 66 65 64 63 62 61 \n60 59 58 57 56 55 54 53 52 51 \n50 49 48 47 46 45 44 43 42 41 \n40 39 38 37 36 35 34 33 32 31 \n30 29 28 27 26 25 24 23 22 21 \n20 19 18 17 16 15 14 13 12 11 \n10 9 8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "448177ff-350f-4fa7-9fe7-f16ba1bb236b",
+      "input": "2\n3",
+      "output": "6 5 4 \n3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "91da4a26-d2a1-4018-86ea-8d93140c806b",
+      "input": "2\n15",
+      "output": "30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 \n15 14 13 12 11 10 9 8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c957fe34-9ea3-4f2c-814e-fbee202afc84",
+      "input": "9\n13",
+      "output": "117 116 115 114 113 112 111 110 109 108 107 106 105 \n104 103 102 101 100 99 98 97 96 95 94 93 92 \n91 90 89 88 87 86 85 84 83 82 81 80 79 \n78 77 76 75 74 73 72 71 70 69 68 67 66 \n65 64 63 62 61 60 59 58 57 56 55 54 53 \n52 51 50 49 48 47 46 45 44 43 42 41 40 \n39 38 37 36 35 34 33 32 31 30 29 28 27 \n26 25 24 23 22 21 20 19 18 17 16 15 14 \n13 12 11 10 9 8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e229d2c6-5de8-4958-a63e-7d6ae38dfeb7",
+      "input": "30\n2",
+      "output": "60 59 \n58 57 \n56 55 \n54 53 \n52 51 \n50 49 \n48 47 \n46 45 \n44 43 \n42 41 \n40 39 \n38 37 \n36 35 \n34 33 \n32 31 \n30 29 \n28 27 \n26 25 \n24 23 \n22 21 \n20 19 \n18 17 \n16 15 \n14 13 \n12 11 \n10 9 \n8 7 \n6 5 \n4 3 \n2 1",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

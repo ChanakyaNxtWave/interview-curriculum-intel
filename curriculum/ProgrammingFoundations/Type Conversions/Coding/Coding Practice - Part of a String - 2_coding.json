@@ -1,0 +1,61 @@
+{
+  "question_id": "c78ed163-ff9e-431a-a56d-7955553e02e2",
+  "short_text": "Part of a String - 2",
+  "content": "Write a program that reads a word and two indices (X, Y) and prints a part of the word from the index X to the index Y.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains a string.\r\nThe second line of input contains an integer X.\r\nThe third line of input contains an integer Y.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string that is part of the word.\r\n\r\n---\r\n\r\n#### Constraints\r\n\r\n**Y** is always greater than or equal to **X**.\r\n\r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is **Growing**, index **X** is **3** and index **Y** is **6**,\r\n\r\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\r\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">G</div>\r\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">r</div>\r\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">o</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">w</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">i</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">n</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 0;padding: 8px 12px;\">g</div>\r\n</div>\r\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\r\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\r\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\r\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">3</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">4</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">5</div>\r\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">6</div>\r\n</div>\r\n\r\n<br/>\r\n\r\nThe output should be **wing** as the slicing starts from the **3rd** index and stops at the **6th** index.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4941ff22-66c0-4e84-af9f-2cc14225ee54",
+      "code_content": "word = input()\nstart_index = input()\nstart_index = int(start_index)\n\nend_index = input()\nend_index = int(end_index)\n\npart = word[start_index:end_index + 1]\nprint(part)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "03393075-5fc2-4c3b-abfa-9aa8ca15189a",
+      "input": "Parts\n3\n3",
+      "output": "t",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "52625f05-b339-4904-b874-da2d24efe70c",
+      "input": "Scrabble\n1\n5",
+      "output": "crabb",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "832a435d-c521-4bbb-83c3-103d40eabda4",
+      "input": "Growing\n3\n6",
+      "output": "wing",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d15bb81e-b236-455b-9355-fbab4d109803",
+      "input": "HONEY\n1\n4",
+      "output": "ONEY",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e8dc9243-f641-40c6-9735-2fa49913ee31",
+      "input": "eat\n1\n2",
+      "output": "at",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

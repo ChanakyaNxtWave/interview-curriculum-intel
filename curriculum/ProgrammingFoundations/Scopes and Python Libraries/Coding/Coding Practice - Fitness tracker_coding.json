@@ -1,0 +1,61 @@
+{
+  "question_id": "301b0607-73bc-45d7-9bf6-fee0a6c439cf",
+  "short_text": "Fitness tracker",
+  "content": "You are developing a **fitness tracker** application that records the daily step counts of users over a week. You want to analyze the data to determine the average daily steps for users who meet a minimum step goal and identify the days on which users exceeded their personal best.\n\nYour task is to write a program that reads the input for the number of users and their daily step counts over a week (7 days). Each user has a name followed by their step counts for each day. Then, filter out any users whose average daily steps are below a specified minimum threshold. After filtering, use `map` to extract the names of users who meet the criteria. Finally, use `reduce` to calculate the total number of steps taken by all users who exceeded their personal best.\n\n<MultiLineNote>\n- A user’s average daily steps are calculated as the sum of their steps over 7 days divided by 7.\n- A user’s personal best is defined as their highest single-day step count.\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line contains an integer `N` representing the number of users.\n- The second line contains an integer `G` representing the minimum average step goal.\n- The next N lines each contain a string representing the user’s name followed by 7 integers representing their daily step counts, separated by spaces.\n\n---\n\n#### Output\n\nA list of names of users who meet the average step goal and an integer representing the total number of steps taken by all users who exceeded their personal best.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n3\n7000\nAlice 5000 6000 7000 8000 9000 10000 11000\nBob 3000 4000 5000 6000 7000 8000 9000\nCharlie 10000 20000 15000 12000 18000 11000 13000\n```\n\nwe have 3 users with details as follows:\n\nAlice 5000 6000 7000 8000 9000 10000 11000\nBob 3000 4000 5000 6000 7000 8000 9000\nCharlie 10000 20000 15000 12000 18000 11000 13000\n\n\nAnd if your minimum average step goal is **7000**, then the output should be:\n\n```\n['Alice', 'Charlie'], 31000\n```\n\nbecause:\n\n- Alice's average is **8000** and Charlie's average is **14000**, both meeting the goal.\n- Bob's average is **6000**, which does not meet the goal.\n- The total steps from all users who exceeded their personal best (Alice's best is **11000** and Charlie's best is **20000**) is **31000**.\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d9623e2c-8c75-44b2-bef0-247d4069b6ba",
+      "code_content": "from functools import reduce\n\nN = int(input())\nG = int(input())\n\nusers = [input().strip().split() for i in range(N)]\n\ndef calculate_average(steps):\n    return sum(steps) / len(steps)\n\ndef exceeds_goal(user):\n    name = user[0]\n    steps = list(map(int, user[1:]))\n    avg_steps = calculate_average(steps)\n    return avg_steps >= G, name, max(steps)\n\nvalid_users = []\ntotal_steps = 0\n\nfor user in users:\n    meets_goal, name, personal_best = exceeds_goal(user)\n    if meets_goal:\n        valid_users.append(name)\n        total_steps += personal_best\n\nprint(valid_users, total_steps)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "307a0a3b-69f9-4649-8124-f769054ebeec",
+      "input": "3\n7000\nAlice 5000 6000 7000 8000 9000 10000 11000\nBob 3000 4000 5000 6000 7000 8000 9000\nCharlie 10000 20000 15000 12000 18000 11000 13000",
+      "output": "['Alice', 'Charlie'] 31000",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3e470b92-fd0a-47a6-bda7-88287cc2dbfe",
+      "input": "4\n10000\nDave 12000 13000 14000 15000 16000 17000 18000\nEve 9000 8000 7000 6000 5000 4000 3000\nFrank 20000 25000 30000 35000 -1 -1 -1\nGrace -1 -1 -1 -1 -1 -1 -1",
+      "output": "['Dave', 'Frank'] 53000",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5f0af40b-9484-487d-8de4-094e7cbffecd",
+      "input": "6\n5000\nTommy 4000 -1 -1 -1 -1 -1 -1\nLucy 6000 7000 -1 -1 -1 -1 -1\nMaxwell 8000 8500 9000 -1 -1 -1 -1\nNina 3000 -1 -1 -1 -1 -1 -1\nOliver 10000 11000 12000\nEve 2000 3000 4000 5000 6000 -1 -1",
+      "output": "['Oliver'] 12000",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6f20690b-2948-48a4-8613-3974add380e0",
+      "input": "4\n10000\nJohn 12000 13000 -1 -1 -1 -1 -1\nSarah -1 -1 -1 -1 -1 -1 -1\nMike 9000 9500 8000 -1 -1 -1 -1\nEmma 15000 16000 17000 -1 -1 -1 -1",
+      "output": "[] 0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c370dd32-0fd7-48bd-b37d-84ffa687e99c",
+      "input": "5\n8000\nAlice 5000 6000 7000 8000 9000 10000 11000\nBob 3000 4000 5000 6000 7000 8000 9000\nCharlie 10000 20000 15000 12000 18000 11000 13000\nDavid 7500 8000 8500 9000 9500 10000 10500\nEve 2000 3000 4000 5000 6000 -1 -1",
+      "output": "['Alice', 'Charlie', 'David'] 41500",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7f68984f-446c-43bc-a2f6-b66d1992c341",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

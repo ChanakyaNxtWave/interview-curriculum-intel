@@ -1,0 +1,61 @@
+{
+  "question_id": "1bd09ec4-24d7-4dc1-85d1-e082ad1e7cdc",
+  "short_text": "Hollow Right Angled Triangle",
+  "content": "Given a number `N`, write a program to print a **Right Angled Triangle** of `N` rows using stars (`*`).\r\n\r\n```\r\n* \r\n* * \r\n*   * \r\n* * * * \r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every star (`*`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing stars (`*`) as a **Right Angled Triangle** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print stars (`*`) on **5** rows as shown in the given image.\r\n\r\n  <Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle.png' widthPercent='60'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image, \r\n\r\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\r\n- The Star in the box indicates star and a space (\"* \").\r\n\r\n</MultiLineNote>\r\n\r\n```\r\n* \r\n* * \r\n*   * \r\n*     * \r\n* * * * * \r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "561cd839-4993-47b2-9375-447af009889c",
+      "code_content": "n = int(input())\n\nprint(\"* \")\n\nfor i in range(1, n - 1):\n    middle_spaces = \" \" * (2 * (i - 1))\n    row = \"* \" + middle_spaces + \"* \"\n    print(row)\n\n\nprint(\"* \" * n)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "342a2826-30e7-4c0b-b323-75d554441620",
+      "input": "14",
+      "output": "* \n* * \n*   * \n*     * \n*       * \n*         * \n*           * \n*             * \n*               * \n*                 * \n*                   * \n*                     * \n*                       * \n* * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "3d4d3a15-abb7-420a-8eb6-b4c4d61d5ea7",
+      "input": "5",
+      "output": "* \n* * \n*   * \n*     * \n* * * * * \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7a257559-4484-4bc2-b84d-44033195f33f",
+      "input": "8",
+      "output": "* \n* * \n*   * \n*     * \n*       * \n*         * \n*           * \n* * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d0073877-80d7-406b-8b7e-e35ab1a002a3",
+      "input": "11",
+      "output": "* \n* * \n*   * \n*     * \n*       * \n*         * \n*           * \n*             * \n*               * \n*                 * \n* * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f2ee5443-4e85-4bd6-a6a6-abcb43a7fb8a",
+      "input": "3",
+      "output": "* \n* * \n* * * \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

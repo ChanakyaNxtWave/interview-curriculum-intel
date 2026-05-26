@@ -1,0 +1,377 @@
+{
+  "question_id": "e0173d92-18ad-43a8-a147-93b36ef11201",
+  "short_text": "Buy a Book",
+  "content": "Write a program that reads the size `S` and page count `C` of a book and checks if `S` is equal to **large** or `C` is greater than or equal to **300**.\n\nPrint **Buy a Book** if `S` is equal to **large** or `C` is greater than or equal to **300**. Otherwise, print **Do Not Buy a Book**.\n\n---\n\n#### Input\n\nThe first line of input contains a string representing `S`.\nThe second line of input contains an integer representing `C`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Buy a Book** should be printed if `S` is equal to **large** or `C` is greater than or equal to **300**. Otherwise, **Do Not Buy a Book** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given size is `S = \"large\"` and the page count is `C = 80`,\n\n✔ `S` is equal to **large**. (**large** is equal to **large**)\n✗ `C` is greater than or equal to **300**. (**80** is not greater than or equal to **300**)\n\nThe output should be **Buy a Book** as the size of the book `S` is equal to **large**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "232a03ec-3018-4c9d-aa5a-2722e81aaa04",
+      "code_content": "size = input()\npages = int(input())\n\ncan_buy_book = (size == \"large\") or (pages >= 300)\n\nif can_buy_book:\n    print(\"Buy a Book\")\nelse:\n    print(\"Do Not Buy a Book\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "10316277-df6b-43fb-8459-426bc15b1bae",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nregular\n100\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Do Not Buy a Book",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given size is `S = \"regular\"` and the page count is `C = 100`,\n\n✖ `S` is equal to **large** (**regular** is not equal to **large**)\n\n✖ `C` is greater than or equal to **300** (**100** is not greater than or equal to **300**)\n\nThe output should be **Do Not Buy a Book** as both of the conditions are not satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1fe1eb1f-228b-4d88-b06a-6434c8716308",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nsmall\n400\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Buy a Book",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given size is `S = \"small\"` and the page count is `C = 400`,\n\n✖ `S` is equal to **large** (**small** is not equal to **large**)\n\n✔ `C` is greater than or equal to **300** (**400** is greater than **300**)\n\nThe output should be **Buy a Book** as the page count of book `C` is greater than **300**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "cb437ea6-b6a6-4932-a7f9-d086c3f37a6c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nlarge\n299\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Buy a Book",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given size is `S = \"large\"` and the page count is `C = 299`,\n\n✔ `S` is equal to **large** (**large** is equal to **large**)\n\n✖ `C` is greater than or equal to **300** (**299** is not greater than or equal to **300**)\n\nThe output should be **Buy a Book** as the size of the book `S` is equal to **large**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0a91f983-4a53-46ff-b036-1e50cefcdbcd",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "28fa26af-7cb2-4178-93ff-951a4f55212d",
+              "content": "small \n300",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5c462079-0c53-4d00-88f8-7e8db2f6bc69",
+              "content": "regular 500",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ce80618f-38f1-40ad-ba9f-b9a3684c6c93",
+              "content": "600\n52",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cedcdb3c-4bbd-4cda-bf0d-fb46cbe38528",
+              "content": "large\n156",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\nlarge\n156\n```\n\n**Input 2**\n\n```\nsamll\n300                                                \n```\nThe above two inputs are valid because,\n\n- The first line of input contains a string.\n\n- The second line of input contains an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "2da72564-e664-427f-9315-186d99309bee",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2fa54f19-0b2d-4d29-a672-c30998b0f815",
+              "content": "The output should be a single line containing a float.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "40793576-32fe-45bf-8551-fbef9f914369",
+              "content": "The output should be a single line containing an integer.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a32d9309-cc8c-4389-a7ff-59d7125b9604",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "fa7adeda-9c26-48cd-8dd1-bba00014b1c2",
+              "content": "The output should be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string. `Buy a Book` should be printed if `S` is equal to **large** or `C` is greater than or equal to **300**. Otherwise, **Do Not Buy a Book** should be printed.\n\nFor example, if the given size is `S = \"large\"` and the page count is `C = 150`,\n\n✔ `S` is equal to **large** (**large** is equal to **large**)\n\n✖ `C` is greater than or equal to **300** (**150** is not greater than or equal to **300**)\n\nThe output should be **Buy a Book** as the size of the book `S` is equal to **large**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "34282873-56b6-44b4-9437-596a477889b4",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\nsmall\n300\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1b9f2d9b-66f5-43e7-b679-662adf94edd8",
+              "content": "Buy a Book",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "38725f5c-a108-4737-be46-4439872beef3",
+              "content": "Do Not Buy a Book",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "53979722-41b9-4b43-8500-4dbca3875061",
+              "content": "do not buy a book",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e36f8758-fa55-479d-a393-c1350f676aa4",
+              "content": "buy a book",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given size is `S = \"small\"` and the page count is `C = 300`,\n\n✖ `S` is equal to **large** (**small** is not equal to **large**)\n\n✔ `C` is greater than or equal to **300** (**300** is equal to **300**)\n\nThe output should be **Buy a Book** as the page count of book `C` is equal to **300**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "458526c4-601a-4bbf-9a06-7029d6f66e2d",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0a22bc95-b4dd-4da3-bea7-c418d73c40d3",
+              "content": "To check if the size is equal to **small** or page count is greater than or equal to **300**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "61886957-09a9-4e72-a0d7-4979bf39f25b",
+              "content": "To check if the size is equal to **large** and the page count is greater than or equal to **300**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "97981eec-55c5-4352-be7f-67418494021c",
+              "content": "To check if the size is equal to **large** or page count is greater than or equal to **200**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d74df67b-fab0-400a-af3a-4a330283604b",
+              "content": "To check if the size is equal to **large** or page count is greater than or equal to **300**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the size `S` and page count `C` of a book and check if `S` is equal to **large** or `C` is greater than or equal to **300**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5f1c731d-f46b-469c-b585-9cd9fbeb1b74",
+          "short_text": "",
+          "content": "From your understanding of the problem description, what should be the page count `C`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "17f4db71-a7b8-4863-aadd-0f45543f13cc",
+              "content": "Greater than 250 or equal to 250",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2ea09bd9-8d86-4926-8410-a672e8fa135f",
+              "content": "Less than 300",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3e98f6a0-8bdf-4375-acbb-abe4941ace97",
+              "content": "Greater than 300 or equal to 300",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "74df4c89-73e8-432d-9e3a-008ea3e5b14b",
+              "content": "Greater than 500",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the page count should be greater than **300** or equal to **300**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "885174ea-18a7-4071-b2ec-c9a1ef0ea326",
+          "short_text": "",
+          "content": "According to the problem description, what should be the size `S` of the book?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "465a453e-3c5f-480a-a218-0b7cf2151bec",
+              "content": "Medium",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4960a866-c2b8-4faf-a9f0-baf955e86296",
+              "content": "LARGE",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b735e940-06c2-4a07-ad29-ba8b8b9fe175",
+              "content": "large",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f0355c3b-c44c-4923-afe6-a1004245392b",
+              "content": "Small",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the size `S` of the book should be **large**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a077cd87-4c80-44cf-84e3-55082dabbc2b",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "096c7afb-7056-48e7-a624-0b39aef6801a",
+              "content": "- The first line of input contains a string `S`.\n\n- The second line of input contains a string `C`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5ad13772-a3de-4166-851a-4d41e58828df",
+              "content": "- The first line of input contains an integer `S`.\n\n- The second line of input contains a string `C`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f60fed40-c6c3-4f80-b999-544235fea755",
+              "content": "- The first line of input contains an integer `S`.\n\n- The second line of input contains an integer `C`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f7861724-e6bc-4a54-89af-c79b89f7dbf1",
+              "content": "- The first line of input contains a string `S`.\n\n- The second line of input contains an integer `C`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be, \n\n- The first line of input contains a string representing `S`.\n\n- The second line of input contains an integer representing `C`.\n\nFor example,\n\n```\nlarge\n584\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "22ceabd1-f16e-48f6-9def-48398d1a532f",
+      "input": "small\n30",
+      "output": "Do Not Buy a Book",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8d373f85-20a5-4c77-b31e-734fac804ef8",
+      "input": "large\n80",
+      "output": "Buy a Book",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "95e93c57-a384-4bc2-bfb0-f89e2b238a4d",
+      "input": "small\n200",
+      "output": "Do Not Buy a Book",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9fe46899-f36b-4e71-a194-6d6a534f8ec8",
+      "input": "small\n300",
+      "output": "Buy a Book",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fffc3987-526d-4378-a8ad-0861a862cd99",
+      "input": "large\n250",
+      "output": "Buy a Book",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

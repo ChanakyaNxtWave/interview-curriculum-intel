@@ -1,0 +1,61 @@
+{
+  "question_id": "b534f448-85e4-44a2-9f68-37e846cf76ca",
+  "short_text": "Sports Data",
+  "content": "A college is conducting its annual sports meet. So they need data of students with the sport they play. Each student can participate in only one sport.<br/>For this problem, the prefilled code will contain a dictionary. Write a program to add a list of tuples to the dictionary as key-value pairs.<br/>If a student&#x27;s name appears more than once, update the latest sport entry.<hr><b>Input</b><br/><br/>The first line of input will contain an integer N, denoting the number of key-value pairs.<br/>The next N lines will contain space-separated strings, denoting key followed by the value.<hr><b>Output</b><br/><br/>The output should be a single line containing the dictionary with the added key-value pairs.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read the inputs in the next three lines, if the given three inputs are the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Gopal Hockey\nJyothi Cricket\nAkhil Football\n</code></pre><br/>Your code should print the dictionary with all the key-value pairs. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Gopal': 'Hockey', 'Jyothi': 'Cricket', 'Akhil': 'Football'}\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "9a281329-566c-45f4-9287-f367a7803ee3",
+      "code_content": "students_dict = {\n    \"Ram\": \"Cricket\",\n    \"Naresh\": \"Football\",\n    \"Vani\": \"Tennis\",\n    \"Rahim\": \"Cricket\"\n}\n\nn = int(input())\nfor i in range(n):\n    key_value_pair = input().split()\n    key, value = key_value_pair[0], key_value_pair[1]\n    students_dict[key] = value\n\nprint(students_dict)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1e42c0f6-88c9-42b3-ad35-9b019260c3df",
+      "input": "3\nGopal Hockey\nJyothi Cricket\nAkhil Football",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Gopal': 'Hockey', 'Jyothi': 'Cricket', 'Akhil': 'Football'}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "271e78a2-6933-409c-9b6a-2c4f171c6ff9",
+      "input": "7\nAnjali Badminton\nRavi Cricket\nAkbar Volleyball\nSuresh Chess\nLatha Chess\nMohan Tennis\nAshok Football\n",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Anjali': 'Badminton', 'Ravi': 'Cricket', 'Akbar': 'Volleyball', 'Suresh': 'Chess', 'Latha': 'Chess', 'Mohan': 'Tennis', 'Ashok': 'Football'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "81b42f8c-b61f-49c8-868b-14516a754b2b",
+      "input": "4\nNaveen Hockey\nRamesh Cricket\nNaveen Hockey\nRamesh Cricket\n",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Naveen': 'Hockey', 'Ramesh': 'Cricket'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ebe5e0ac-7b8c-470f-89e8-47200a8f49b6",
+      "input": "5\nAshok Football\nAshok Hockey\nAshok Cricket\nAshok Chess\nAshok Volleyball",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Ashok': 'Volleyball'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "f1ff0a08-ba6b-42b3-bac1-5fc0ddd8b513",
+      "input": "4\nSuresh Chess\nLatha Chess\nMohan Tennis\nAshok Football",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Suresh': 'Chess', 'Latha': 'Chess', 'Mohan': 'Tennis', 'Ashok': 'Football'}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c653449e-bc51-4aab-a83f-8a98ef71c10e",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,377 @@
+{
+  "question_id": "f46a4dc6-3516-4678-88d6-26989428d4a3",
+  "short_text": "Digit Zero",
+  "content": "Write a program that reads a three-digit number and checks if the given number contains **0**.\n\n---\n\n#### Input\n\nThe input will be a single line containing a three-digit integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the given number contains **0**, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given number is **120**,\n\n✖ The first digit is equal to **0**. (**1** is not equal to **0**)\n✖ The second digit is equal to **0**. (**2** is not equal to **0**)\n✔ The third digit is equal to **0**. (**0** is equal to **0**)\n\nThe output should be **True** as the given number contains **0**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a3697577-6e4b-4f26-945e-2bccdbe8cbdf",
+      "code_content": "number = input()\n\nfirst_digit = number[0]\nsecond_digit = number[1]\nthird_digit = number[2]\n\nfirst_digit = int(first_digit)\nsecond_digit = int(second_digit)\nthird_digit = int(third_digit)\n\nresult = (first_digit == 0) or (second_digit == 0) or (third_digit == 0)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "3da5dada-8bd0-4982-a70f-c63fb957d83c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n999\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number, **999**\n\n\n✖ First digit is equal to **0**. (**9** is not equal to **0**)  \n\n✖ Second digit is equal to **0**. (**9** is not equal to **0**)   \n\n✖ Third digit is equal to **0**. (**9** is not equal to **0**)    \n\n\nThe output should be **False** as the given number not contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4b2a2fc0-e42c-4dc7-9f4f-755a052ec09e",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n160\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **160**,\n\n✖ The first digit is equal to **0**. (**1** is not equal to **0**)\n\n✖ The second digit is equal to **0**. (**6** is not equal to **0**)\n\n✔ The third digit is equal to **0**. (**0** is equal to **0**)\n\nThe output should be **True** as the given number contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f050db3e-c31e-483f-a8c6-27fc11af5057",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n100\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **100**,\n\n✖ The first digit is equal to **0**.   (**1** is not equal to **0**)\n\n✔ The second digit is equal to **0**.  (**0** is equal to **0**)\n\n✔ The third digit is equal to **0**.   (**0** is equal to **0**)\n\nThe output should be **True** as the given number contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "23c62ce0-4737-4a7f-a04f-f074fbbf8b7f",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1919b618-4f29-4ee4-b938-921b8d0e8cbe",
+              "content": "To check if the given number contains **6**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "64db8a77-bd88-495d-96ae-1bc5d9f02758",
+              "content": "To check if the given number contains **0**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "96e15346-a226-45ab-b1c4-2483b3965567",
+              "content": "To check if the given number contains **2**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d4ecf73e-27ae-493e-bb43-e5250d0eb535",
+              "content": "To check if the given number contains **1**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a three-digit number and check if the given number contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4c1ab187-e690-49d4-8ad6-645a51aa59a4",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n790\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6b287fe3-faca-4766-b405-b214e5a18407",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8affd81c-51d6-4a99-84fe-95336f4c4eed",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bcbb61be-535e-4b87-bf23-9b0e1098d916",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f4666947-3b78-4639-8479-053aa8b021c6",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **790**,\n\n✖ The first digit is equal to **0**.   (**7** is not equal to **0**)\n\n✖ The second digit is equal to **0**.  (**9** is not equal to **0**)\n\n✔ The third digit is equal to **0**.   (**0** is equal to **0**)\n\nThe output should be **True** as the given number contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "681a569c-4ccf-414e-8362-d10c405e1710",
+          "short_text": "",
+          "content": "According to the problem description, what number should the program check for?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "070bd7f5-efaf-47e7-9b1b-e85596fd7c86",
+              "content": "2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "28a3dbd1-80e2-41d7-971d-bb9a26df4ff1",
+              "content": "4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7efe1820-4146-4547-afcc-c2fcee2af4a2",
+              "content": "1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f96b45e2-7f2c-4a4e-b01d-88f3752d451a",
+              "content": "0",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the program should check if the digit contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6879285a-d476-4ed3-8517-4140b38cc3c0",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "30d8ba78-6551-414a-a61f-9664bf9c5374",
+              "content": "77",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7debada0-a612-4c98-a833-4939201dafcd",
+              "content": "505",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b9697a4d-24d4-4fdb-8344-629f19cde6b3",
+              "content": "35.8\n67.9                                              ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f9012dcf-0846-4504-946b-930203e6783d",
+              "content": "800",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n800\n```\n\n**Input 2**\n\n```\n505                                                         \n```\nThe above two inputs are valid because they consist of a single line containing a three-digit number.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "84c644b9-4df6-4a1d-b7ae-c1f98c90d6d0",
+          "short_text": "",
+          "content": "According to the problem description, how many digit numbers should the program read?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1d7d7b59-aa0c-49a4-9316-59970073838e",
+              "content": "Single-digit number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "559cce0a-26ba-4adc-87c7-1ea614127a0b",
+              "content": "Two-digit number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "785eec92-42b0-496a-9a01-5507d04adb95",
+              "content": "Four-digit number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f2b81f4e-ce72-438e-b872-e6adafb17574",
+              "content": "Three-digit number",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the program should read a **three-digit** number.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a8097c41-184f-4e46-a314-c2a26808dfeb",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4e663378-ecc8-4963-b813-8149f50e985f",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6bc26c83-0695-4632-987b-7b7ad8c9764d",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d2933f28-3088-4cf1-b031-fa36d63de9e5",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e2e20989-afcf-4937-a526-d67d462294fc",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean value. **True** should be printed if the given number contains **0**. Otherwise,   **False** should be printed.\n\nFor example,\n\nIf the given number is **204**,\n\n✖ First digit is equal to **0**.  (**2** is not equal to **0**)     \n\n✔ Second digit is equal to **0**.  (**0** is equal to **0**)     \n\n✖ Third digit is equal to **0**.  (**4** is not equal to **0**)   \n\nThe output should be **True** as the given number contains **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c2156d38-bc04-4846-8ec7-68458a7bfeb0",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "34ae27f2-a10c-4534-8797-212083a8e504",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3928c917-7e05-4c03-9137-ce3a5d2d6b75",
+              "content": "The input will be a single line containing a three-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "498e04d3-6953-40d3-a789-2467937632d9",
+              "content": "The input will be a single line containing a three-digit float value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "74975af7-5ee0-4489-96b1-9fd34856de43",
+              "content": "The input will be a single line containing a four-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing a three-digit integer.\n\nFor example, **909**",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "1c13a20d-1e59-4da6-a0cb-b2c91d02971d",
+      "input": "999",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "52147b6b-ec90-440d-8c1b-95b0edff704a",
+      "input": "120",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "81ce6565-4a50-4db0-8f51-4a975c0e823f",
+      "input": "100",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ce21dbea-5fd6-40f9-ba5a-e47341de85f7",
+      "input": "678",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fcc812f6-4c89-49ff-a6a1-fe291f2499b3",
+      "input": "111",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

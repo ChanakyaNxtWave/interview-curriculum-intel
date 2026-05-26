@@ -1,0 +1,61 @@
+{
+  "question_id": "ea32be19-9bfe-4a9e-85cc-61191ebce9b1",
+  "short_text": "Count successful villagers",
+  "content": "In a small village, there is a unique competition called the **Fruit Stacking** Challenge. Villagers bring fruits to stack them into a **pyramid shape**, where each layer has more fruits than the one above it. Each villager has a certain number of fruits they bring, starting from `1` fruit for the first villager, **2** fruits for the second, and so on.\n\nYour task is to **complete the method `count_successful_villagers()`** which receives **N** as a parameter and returns how many villagers can successfully stack their fruits into the pyramid under the given rules.\n\n<MultiLineNote>\n\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe **`count_successful_villagers()`** method takes one parameters `N` representing the total number of villagers.\n\n---\n\n#### Output\n\nThe **`count_successful_villagers()`** method should **return an integer** representing how many villagers can successfully form the pyramid.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n4\n```\n\nThe expected output would be :\n\n```\n2\n```\n\nThe villagers have fruits as follows:\n\n- **Villager 1**: `1` fruit → Can form a 1-layer pyramid (1 fruit).\n- **Villager 2**: `2` fruits → Can form a 1-layer pyramid (1 fruit), but can't use the remaining 1 fruit to form a second layer.\n- **Villager 3**: `3` fruits → Can form a 2-layer pyramid (1 + 2 = 3 fruits).\n- **Villager 4**: `4` fruits → Can form a 2-layer pyramid (1 + 2 = 3 fruits), but has 1 fruit left and can't use it. \n\nThe output should be the total number of complete layers that all the villagers can form with their fruits. In this case, the sum of all possible layers from all the villagers is **`2`**.\n\n\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "10433c22-0183-49dc-a7bd-f0245fb65ace",
+      "code_content": "def count_successful_villagers(N):\n    successful_villagers = 0\n    for i in range(1, N + 1):\n        fruits = i\n        layers = 0\n        while fruits > 0 and layers < 10:\n            layers += 1\n            fruits -= layers\n        if fruits == 0 and layers <= 10:\n            successful_villagers += 1\n    return successful_villagers",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0d35e48d-9a30-4ca4-8c36-8ec13076b397",
+      "input": "1",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "30847080-bdfd-4c50-b5ad-0561f494ea50",
+      "input": "10",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3568d053-40a5-4583-b5e1-a456de96b2e3",
+      "input": "5",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3d490e6d-32cd-4061-84c1-844caecf03ee",
+      "input": "8",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6c62a810-d198-47df-9568-788ee8fb62a4",
+      "input": "4",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36f6b324-5f3c-4392-9acf-5635e753ef93",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

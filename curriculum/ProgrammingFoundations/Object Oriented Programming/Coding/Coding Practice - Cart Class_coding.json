@@ -1,0 +1,47 @@
+{
+  "question_id": "d10accd8-96c7-4abc-916b-caa59598cdf8",
+  "short_text": "Cart Class",
+  "content": "Complete the given `Cart` class by adding new features following the given instructions.\n\n**Existing _Cart_ class**:\n\nThe existing `Cart` class has only a `pass` statement. Remove the `pass` statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to the _Cart_ class**</summary>\n\n- **Add the following attribute**:\n  - `items`: a list to store the names of items in the cart.\n\n- **Add the following method**:\n  - `print_cart_contents()`: This method should print the contents of the cart. If the cart is empty, it should print `The cart is empty`.\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "82760282-1c45-4921-b992-251ba103afd4",
+      "code_content": "class Cart:\n    def __init__(self):\n        self.items = []\n\n    def print_cart_contents(self):\n        if not self.items:\n            print(\"The cart is empty\")\n        else:\n            for item in self.items:\n                print(item)\n\n# The default_test function is used for testing; do not modify it.\ndef default_test():\n    cart = Cart()\n    cart.print_cart_contents()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "22c0f01c-2899-4a8a-b7cf-73a2cf1dc38b",
+      "input": "Checking Default Tests",
+      "output": "The cart is empty",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6e9df6ef-5acb-404a-beaf-e2efd47660e5",
+      "input": "Checking attribute presence",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "892bdd1f-03bc-45c2-85ae-446b5b68e940",
+      "input": "Checking methods",
+      "output": "The cart is empty\nPASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36941df1-f44b-4f78-8f8d-9ae759d2d3b2",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9efc825e-7f58-45ec-be9a-7ba1f44591c1",
+  "topic_name": "Object Oriented Programming",
+  "course_title": "Programming Foundations"
+}

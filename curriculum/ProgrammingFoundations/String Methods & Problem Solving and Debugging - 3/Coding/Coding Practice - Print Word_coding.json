@@ -1,0 +1,68 @@
+{
+  "question_id": "88f848a2-1c2b-4408-8360-81995f69c453",
+  "short_text": "Print Word",
+  "content": "Given a string, write a program to print only the alphabets in the given string.\n\n<MultiLineNote>\nIn the given string there are two special characters before and two special characters after each letter. \n\nEx: ##**P**##**Y**##**T**##**H**##**O**##**N**##.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that contains only alphabets.\n\n---\n\n#### Explanation\n\nFor example, if the given string is \"**--c--a--r--**\",\n\n- The alphabets in the string with index values are,\n\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">c</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit;font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit;font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">a</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit;font-weight: 900; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">r</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">-</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;\">-</div>\n</div>\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell;font-weight: 900; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell;font-weight: 900; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell;font-weight: 900; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">8</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">9</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">10</div>\n</div>\n\n<br>\n- The alphabets in the given string in order are **c**, **a**, **r**.\n\nThe output should be **car**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "378a558d-cc0f-4e48-a59b-c02fe74d11fa",
+      "code_content": "string = input()\n\nstart_index = 2\nstep = 3\n\nword = string[start_index::step]\n\nprint(word)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00326e62-4354-414e-bcb5-357f71d79d10",
+      "input": "--V##i##e##w--",
+      "output": "View",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "1b7a4be2-39aa-47ef-a10c-5b17f6b1501a",
+      "input": "--c--a--r--",
+      "output": "car",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3360d812-2250-4171-af7b-b2468bc2c20d",
+      "input": "##c--o--d--e--r##",
+      "output": "coder",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "accdb93f-0257-4bf2-9167-673f6712bf7c",
+      "input": "##B@@i@@n##",
+      "output": "Bin",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d186e430-1ac6-4c38-b727-debd32bbb4f2",
+      "input": "##M@@e@@m@@o--r--y--p--o--w--e--r##",
+      "output": "Memorypower",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ebc02231-b470-4ba2-8521-78026fc91107",
+      "input": "--p@@y--t@@h--o@@n--",
+      "output": "python",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

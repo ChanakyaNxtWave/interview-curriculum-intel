@@ -1,0 +1,75 @@
+{
+  "question_id": "81c2dcfb-4992-4fa7-a120-6adf458178b7",
+  "short_text": "Product of Odd Numbers from M to N",
+  "content": "Write a program that reads two numbers `M` and `N`, and prints the product of odd numbers from `M` to `N`.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the product of the odd numbers from `M` to `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 2` and `N = 7`,\n\n- Numbers from **2** to **7** are **2**, **3**, **4**, **5**, **6**, and **7**.\n- The odd numbers among numbers from **2** to **7** are **3**, **5**, and **7**.\n- The product of odd numbers from **2** to **7** is **105**. (`3 * 5 * 7 = 105`)\n\n|Number | Previous Product | Previous Product * Number = Current Product |\n|---|---|---|\n|3 | 1 | 1 * 3 = 3 |\n|5 | 3 | 3 * 5 = 15 |\n|7 | 15 | 15 * 7 = 105 |\n\nThe output should be **105**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0cc51d1b-d459-4bcf-a0b9-8da2dab7b516",
+      "code_content": "start_number = int(input())\nend_number = int(input())\n\nproduct = 1\n\n\nfor number in range(start_number, end_number + 1):\n    if number % 2 == 1:\n        product = product * number\n\n    \n\nprint(product)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2c28a0c3-b9f5-41f0-abde-18dbf738fe2a",
+      "input": "-103\n-59",
+      "output": "-57256487854146667258655797193937028311965625",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "314d6d25-14fe-4bca-ba8b-aabab213b084",
+      "input": "-16\n-5",
+      "output": "675675",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "37a073b7-1702-41ee-ae90-270a9555f34f",
+      "input": "1\n23",
+      "output": "316234143225",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "3a6f5f46-b06e-4333-948a-7f98c1adabcc",
+      "input": "2\n7",
+      "output": "105",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "518fb9b7-31e2-4195-a77e-73d23806ba22",
+      "input": "11\n11",
+      "output": "11",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "b3f973d9-9a49-46e9-82c6-40e67f6aa12b",
+      "input": "4\n8",
+      "output": "35",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d3f07da1-65d4-4dac-9f22-de4d1c9ecc2a",
+      "input": "-3\n18",
+      "output": "103378275",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

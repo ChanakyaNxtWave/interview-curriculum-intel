@@ -1,0 +1,391 @@
+{
+  "question_id": "56e5b608-b762-4a6e-96f7-a0dbcf349e91",
+  "short_text": "Day Name",
+  "content": "Write a program that reads a day number and prints the corresponding day name.\r\n\r\n| Day Number|Day Name |\r\n| --- |--- |\r\n| 1 | Monday |\r\n| 2 | Tuesday |\r\n| 3 | Wednesday |\r\n| 4 | Thursday |\r\n| 5 | Friday |\r\n| 6 | Saturday |\r\n| 7 | Sunday |\r\n\r\nFor example, \r\n\r\nIf the given day number is **1**, the day name is **Monday**, \r\nIf the given day number is **2**, the day name is **Tuesday**, etc.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing the day number.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string that is the day name. \r\n\r\n---\r\n\r\n#### Constraints\r\n\r\nThe day number is always greater than or equal to **1** and less than or equal to **7**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given day number is **3**, the output should be **Wednesday** as the day number of **Wednesday** is **3**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b7e1c4e1-cb9a-4147-ab1b-70f12ec10a56",
+      "code_content": "day_number = int(input())\n\nif day_number == 1:\n    print(\"Monday\")\nelif day_number == 2:\n    print(\"Tuesday\")\nelif day_number == 3:\n    print(\"Wednesday\")\nelif day_number == 4:\n    print(\"Thursday\")\nelif day_number == 5:\n    print(\"Friday\")\nelif day_number == 6:\n    print(\"Saturday\")\nelif day_number == 7:\n    print(\"Sunday\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "cfd0fb8e-70e5-4722-b8ad-4b954ce40566",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n7\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Sunday",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **7**, \n\nThe output should be **Sunday** as the day number of **Sunday** is **7**.\n\n| Day Number|Day Name |\n| --- |--- |\n| 1 | Monday |\n| 2 | Tuesday |\n| 3 | Wednesday |\n| 4 | Thursday |\n| 5 | Friday |\n| 6 | Saturday |\n| **7** | **Sunday** |",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d5f136a2-4238-43b8-aa00-eb9cdd0bcca0",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Friday",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **5**, \n\nThe output should be **Friday** as the day number of **Friday** is **5**.\n\n| Day Number|Day Name |\n| --- |--- |\n| 1 | Monday |\n| 2 | Tuesday |\n| 3 | Wednesday |\n| 4 | Thursday |\n| **5** | **Friday** |\n| 6 | Saturday |\n| 7 | Sunday |",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e42580e1-705a-4093-b3cf-84e5079121b4",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Monday",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **1**, \n\nThe output should be **Monday** as the day number of **Monday** is **1**.\n\n| Day Number|Day Name |\n| --- |--- |\n| **1** | **Monday** |\n| 2 | Tuesday |\n| 3 | Wednesday |\n| 4 | Thursday |\n| 5 | Friday |\n| 6 | Saturday |\n| 7 | Sunday |",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0fa93ed4-5a39-42bc-8180-05d1ae85aaa7",
+          "short_text": "",
+          "content": "What is the range of values for the day number according to the problem description?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1b2bd068-ac76-44eb-929a-cb8ebc17ac97",
+              "content": "The day number is greater than or equal to **0** and less than or equal to **6**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2b4613ab-11c0-4e7d-8a9e-0be5b84675a5",
+              "content": "The day number is greater than **1** and less than **7**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "63c56936-fbe5-4f07-b6d3-a8b6e6688cdb",
+              "content": "The day number is greater than or equal to **1** and greater than **7**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9118a46a-3c6c-46d0-93ef-af7453553d5d",
+              "content": "The day number is greater than or equal to **1** and less than or equal to **7**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the range of values for the day number is greater than or equal to **1** and less than or equal to **7**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "28e108d9-2371-4162-8389-a56bed8b1f25",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0aa29d3b-5cad-4c23-8dc0-f6dc75b47e32",
+              "content": "Wednesday",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5acdf419-8ac4-4818-a1da-ef7482bf16ee",
+              "content": "Monday",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "dbbb9cfe-c705-4e7e-9d8d-f83957bd2bc0",
+              "content": "saturday",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f3f5ecc3-c5f7-4c1b-9bb5-d196820e021e",
+              "content": "THURSDAY",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output 1**\n\n```\nWednesday\n```\n\n**Output 2**\n\n```\nMonday\n```\n\nThe above two outputs are valid because they consist of a single line containing a string that is the day name. \n\n| Day Number|Day Name |\n| --- |--- |\n| 1 | Monday |\n| 2 | Tuesday |\n| 3 | Wednesday |\n| 4 | Thursday |\n| 5 | Friday |\n| 6 | Saturday |\n| 7 | Sunday |",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b186ef02-25d7-44bd-947d-0c55a59624a8",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "14378a98-d704-40c9-9b2c-92a543db9b7d",
+              "content": "1",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "28022051-c212-4dd9-b6f5-c5f75fbf6b84",
+              "content": "5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c96689b0-8e68-4453-ae78-f8f277943909",
+              "content": "3,6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f1a88378-5832-4f94-ba02-18a820d512b8",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n1\n```\n\n**Input 2**\n\n```\n5\n```\nThe above two inputs are valid because they consist of a single line containing an integer.\n\n<MultiLineNote>\n`12` is not a valid input because the day number is always greater than or equal to **1** and less than or equal to **7**\n</MultiLineNote>",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e2e6dfd8-00f4-4543-b8b4-3eb976b64b07",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "33fc5c48-9675-4fa5-b30e-bb95d642050e",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3eb52093-5114-4032-8d27-48d98147be01",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3ed7b5c7-b8d8-48c5-bd06-f66a67f0e7b6",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "be7156fb-3bf8-4d2f-bad5-8338125eae6a",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string that is the day name.\n\nFor example,\n\nIf the given day number is **6**, \n\nThe output should be **Saturday** as the day number of **Saturday** is **6**.\n\n| Day Number|Day Name |\n| --- |--- |\n| 1 | Monday |\n| 2 | Tuesday |\n| 3 | Wednesday |\n| 4 | Thursday |\n| 5 | Friday |\n| **6** | **Saturday** |\n| 7 | Sunday |",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ecd6e0ba-6ecf-4e9c-a1e6-6bc54bde36d7",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n4\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3eadb4e8-5bd5-478f-a22d-2e3068b71771",
+              "content": "Saturday",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "61e4a7ff-45b9-4b97-a0ae-092c993dad67",
+              "content": "Friday",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "651127fb-397b-480d-a0bf-2946bf5fd808",
+              "content": "Tuesday",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fef1ff67-eff7-417f-8e9d-506a6afa3577",
+              "content": "Thursday",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **4**, \n\nThe output should be **Thursday** as the day number of **Thursday** is **4**.\n\n| Day Number|Day Name |\n| --- |--- |\n| 1 | Monday |\n| 2 | Tuesday |\n| 3 | Wednesday |\n| **4** | **Thursday** |\n| 5 | Friday |\n| 6 | Saturday |\n| 7 | Sunday |",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f15eeb9a-b560-43d7-8d27-e96205b5337c",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0487e3f8-912e-4b4b-98cb-dfa1ab526974",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "17571cea-4b9a-4eb1-9013-b70bd8c739b0",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7f647793-9fb9-4810-a24f-33011b816b7e",
+              "content": "The input will be multiple lines containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e3121b1a-288f-4035-ad2f-2599f41dcd1e",
+              "content": "The input will be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing the day number.\n\nFor example, **4**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f9476699-7a7a-458b-9992-3c29d4c7ae23",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0954dd8b-db85-46ca-8b52-04315fb39bd6",
+              "content": "To read a day number and print the corresponding day name.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "33be8665-e939-4853-8b75-61471d333bf9",
+              "content": "To read a day name and print the corresponding day number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "736470a5-caac-44b4-a2ec-94e313687519",
+              "content": "To read the month name and print the corresponding month number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d438c09d-10bd-49f4-bdea-e74915702795",
+              "content": "To read the year number and print the corresponding month name.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a day number and print the corresponding day name.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "01692307-7b4c-4a12-b402-92a9c27681da",
+      "input": "6",
+      "output": "Saturday",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "249a71e6-fc18-425d-920b-7b5b8932f654",
+      "input": "5",
+      "output": "Friday",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "7df86fba-5250-41e4-8ca8-958cd0316325",
+      "input": "3",
+      "output": "Wednesday",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "826e6fb0-aa34-4476-8fc9-bdfd2d8a3fad",
+      "input": "2",
+      "output": "Tuesday",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8c15bd84-7d3f-4682-a3c6-e7aecebd1b16",
+      "input": "1",
+      "output": "Monday",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "93c407e9-68c8-4a2c-9e69-43294fbe4059",
+      "input": "4",
+      "output": "Thursday",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "f6c21861-9573-4170-9fd0-7636213df024",
+      "input": "7",
+      "output": "Sunday",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

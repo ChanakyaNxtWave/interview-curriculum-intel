@@ -1,0 +1,47 @@
+{
+  "question_id": "b6350582-2603-4bc1-8027-615da7f9b588",
+  "short_text": "Inheritance Inventory",
+  "content": "Complete the given **SpecialCategoryInventory** class by following the given instructions, which inherits from **CategoryInventory**.\n\n**Existing _Inventory_ class**:\n\nThe **Inventory** class models general inventory details with the following attributes and methods:\n\n- `total_stock`: an integer representing the total stock in the inventory.\n\nIt also includes the following methods:\n\n- `add_stock(self, quantity)`: Adds the given quantity to `total_stock`.\n- `remove_stock(self, quantity)`: Removes the given quantity from `total_stock`.\n\n**Existing _CategoryInventory_ class**:\n\nThe **CategoryInventory** class inherits from **Inventory** and manages stock levels for specific categories with the following additional attribute:\n\n- `category_name`: a string representing the name of the category.\n\n<details>\n\n<summary>**Features to be added to **_SpecialCategoryInventory_** class**</summary>\n\n- **Add below attributes**:\n - The **SpecialCategoryInventory** class should have the following additional attribute:\n  - `special_feature`: a string representing the special feature of the category.\n- **Implement the method**:\n - `display_category_details(self)`: This method should print the category name and its special feature.\n  - The method should print in the below format\n  \n   ```\n   Category: {category_name}\n   Special Feature: {special_feature}\n   ``` \n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This coding question does not have the usual input/output testcases. The class defined by you will be tested internally to check whether the attributes and methods are implemented correctly. The test case results will provide a rough description of the tests being verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "70d42f66-469b-428d-b932-649992033b53",
+      "code_content": "class Inventory:\n    def __init__(self):\n        self.total_stock = 0\n\n    def add_stock(self, quantity):\n        self.total_stock += quantity\n\n    def remove_stock(self, quantity):\n        if quantity <= self.total_stock:\n            self.total_stock -= quantity\n        else:\n            print(\"Not enough stock to remove.\")\n\nclass CategoryInventory(Inventory):\n    def __init__(self, category_name):\n        super().__init__()\n        self.category_name = category_name\n\n\nclass SpecialCategoryInventory(CategoryInventory):\n    def __init__(self, category_name, special_feature):\n        super().__init__(category_name)\n        self.special_feature = special_feature\n\n    def display_category_details(self):\n        print(f\"Category: {self.category_name}\")\n        print(f\"Special Feature: {self.special_feature}\")\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    special_inventory = SpecialCategoryInventory(\"Electronics\", \"Latest Tech\")\n    print(special_inventory.category_name)\n    print(special_inventory.special_feature)\n    special_inventory.display_category_details()\n    special_inventory.add_stock(50)\n    print(special_inventory.total_stock)\n    special_inventory.remove_stock(20)\n    print(special_inventory.total_stock)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "30a5f803-bafb-40b6-8540-94b4de9673d7",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: The SpecialCategoryInventory class has all the required attributes.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6d60384c-7064-49d3-ae06-186328a4500e",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: The display_category_details method is implemented correctly in the SpecialCategoryInventory class.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8c20993d-4a33-4be3-acb6-de5ae8f30aa0",
+      "input": "Checking Default Tests",
+      "output": "Electronics\nLatest Tech\nCategory: Electronics\nSpecial Feature: Latest Tech\n50\n30",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "17461f67-a7fd-46af-96c6-62ef30dd1e19",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

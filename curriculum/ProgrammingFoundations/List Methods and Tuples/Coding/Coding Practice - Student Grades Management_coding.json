@@ -1,0 +1,61 @@
+{
+  "question_id": "dd327f20-5e80-41fd-8e9f-5e1ea552d341",
+  "short_text": "Student Grades Management",
+  "content": "In a bustling school, teachers are responsible for tracking student performance in various subjects. They maintain a list of grades for each student to monitor their progress throughout the semester. As the semester progresses, teachers often need to manage these grades by:\n\n- **Adding new scores** when students complete assignments.\n- **Inserting grades at specific positions** for late submissions.\n- **Removing grades** when students drop a subject.\n- **Identifying the highest grade** among all students to recognize top performers.\n\nYour task is to **write a program** that allows teachers to perform these tasks efficiently by manipulating a list of grades.\n\n**Operations to Implement:**\n\n- **Add a Grade**: Add a new grade to the end of the grades list.\n- **Insert a Grade**: Insert a grade at a specified index in the grades list.\n- **Remove a Grade**: Remove the first occurrence of a specified grade from the grades list.\n- **Find Highest Grade**: Find and output the highest grade in the grades list.\n\n---\n\n#### Input\n\n- **First Line**: A single line containing space-separated integers representing the initial grades list.\n\n- **Second Line**: An integer `Q`, representing the number of operations to perform.\n\n- **Next Q Lines**: Each line contains a command in one of the following formats:\n - If the command is **add**, it will be followed by a grade to add to the list.\n - If the command is **insert**, it will be followed by an integer index and a grade to insert at that index.\n - If the command is **remove**\", it will be followed by a grade to remove from the list.\n - If the command is **find**, there are no additional parameters. This command finds and outputs the highest grade.\n\n---\n\n#### Output\n\n- For each **find** operation, output the highest grade or **`No grades available`** on a separate line.\n- After performing all operations, output the final list of grades as space-separated integers on a single line.\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n85 90 78 92 88\n4\nadd 95\ninsert 2 80\nremove 78\nfind\n```\n\n- The operations will be processed as follows:\n- The initial grades are **[85, 90, 78, 92, 88]**.\n- The command **`add 95`** appends 95 to the end of the list, resulting in **[85, 90, 78, 92, 88, 95]**.\n- The command **`insert 2 80`** inserts 80 at index 2, changing the list to **[85, 90, 80, 78, 92, 88, 95]**.\n- The command **`remove 78`** removes the first occurrence of 78, resulting in **[85, 90, 80, 92, 88, 95]**.\n- The command **`find`** checks for the highest grade in the current list and outputs **`95`**.\n\nFinally, after processing all commands, the output will be:\n\n```\n95\n85 90 80 92 88 95\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "601c7f7b-59bc-43fe-bbfa-623d9ab19ee2",
+      "code_content": "grades_input = input().split()\ngrades = []\nfor x in grades_input:\n    grades.append(int(x))\n\nQ = int(input())\n\nfor _ in range(Q):\n    operation = input().split()\n    if operation[0] == \"add\":\n        grade = int(operation[1])\n        grades.append(grade)\n    elif operation[0] == \"insert\":\n        index = int(operation[1])\n        grade = int(operation[2])\n        if index <= len(grades):\n            grades.insert(index, grade)\n    elif operation[0] == \"remove\":\n        grade = int(operation[1])\n        if grade in grades:\n            grades.remove(grade)\n    elif operation[0] == \"find\":\n        if grades:\n            print(max(grades))\n        else:\n            print(\"No grades available\")\n\nfor i in range(len(grades)):\n    if i < len(grades) - 1:\n        print(grades[i], end=' ')\n    else:\n        print(grades[i])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "07799187-4546-4b50-8a0a-d16d7ca262b6",
+      "input": "60 75\n3\ninsert 0 65\ninsert 3 85\nfind",
+      "output": "85\n65 60 75 85",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3b813b99-cc37-4e82-bde5-9e507c49d87a",
+      "input": "75 80 90 100\n4\nadd 85\ninsert 0 70\nremove 100\nfind",
+      "output": "90\n70 75 80 90 85",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "62fc4c45-f597-4636-9a88-9ea31797d3e9",
+      "input": "88 76 90 65\n6\nfind\nremove 90\nfind\nadd 95\nfind\nremove 65",
+      "output": "90\n88\n95\n88 76 95",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a3eb5ed8-d8f4-4a91-83aa-98754ccce703",
+      "input": "70 80 90\n2\nremove 85\nfind",
+      "output": "90\n70 80 90",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "cb89c28e-aae1-428f-b3b9-65767743300e",
+      "input": "85 90 78 92 88\n4\nadd 95\ninsert 2 80\nremove 78\nfind",
+      "output": "95\n85 90 80 92 88 95",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c71df491-0ddf-425d-a344-7378abc8a5d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

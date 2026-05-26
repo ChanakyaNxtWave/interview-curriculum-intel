@@ -1,0 +1,33 @@
+{
+  "question_id": "89a49c8f-c19c-47f0-921e-ed970bb6f5eb",
+  "short_text": "Print the Given Tuple",
+  "content": "For this problem, the prefilled code will contain a tuple.\n\nWrite a program that prints the tuple provided in the prefilled code.\n\n---\n\n#### Output\n\n- Print the tuple.\n\n---\n\n#### Example\n\nFor the tuple given in the prefilled code, the output should be:\n\n```\n('Apple', 'Banana', 'Orange')\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f3c5fc49-579e-4f21-b2ee-0f38c6fc633e",
+      "code_content": "tuple_values = ('Apple', 'Banana', 'Orange')\n\n# Write your code here:\nprint(tuple_values)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "971dd88f-5605-4d18-bac9-14758e815eda",
+      "input": "",
+      "output": "('Apple', 'Banana', 'Orange')",
+      "is_hidden": false,
+      "weightage": 15.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "62237960-515f-4451-8ca9-7bf74bbb4421",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

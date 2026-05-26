@@ -1,0 +1,61 @@
+{
+  "question_id": "6bd7ea79-2578-4de9-9bcc-6c22b1782720",
+  "short_text": "Indexing - 2",
+  "content": "For this problem, the prefilled code will contain a function. Write a program that the given function will return the character present at the index N in the word W. <hr><b>Input</b><br/><br/>The first line of input will contain a string (W).<br/>The second line of input will contain a positive integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the character present at the index N in the word W. <hr><b>Explanation</b><br/><br/><br/>For example, if the given word W is <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">Chocolate</code> and the integer N is 2. Since the index starts from zero. The character present at index 2 is <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">o</code>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "14ca10e4-f310-4867-90dd-ebbf0ac52a69",
+      "code_content": "def indexing(arg_1, arg_2):\n    character = arg_1[arg_2]\n    return character\n\n\nword = input()\nindex = int(input())\nresult = indexing(word, index)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "08d7f6da-2cdd-4ea4-adb3-128e5a874974",
+      "input": "Chocolate\n2",
+      "output": "o\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "5105b6b3-2686-4749-8530-85a35cbee860",
+      "input": "Google\n4",
+      "output": "l\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "5d4c0b8d-a833-499d-a68b-9d674101c9d0",
+      "input": "play\n3",
+      "output": "y\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "88f1864b-4508-4849-a4c4-40b38572b3b9",
+      "input": "g\n0",
+      "output": "g\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fce74b77-1677-42d4-b0ac-32bfd397990f",
+      "input": "Cricket\n1",
+      "output": "r\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

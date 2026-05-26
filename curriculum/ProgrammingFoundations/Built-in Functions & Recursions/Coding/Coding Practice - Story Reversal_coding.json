@@ -1,0 +1,61 @@
+{
+  "question_id": "07ea6d59-1dd0-4da8-9a5c-d4df61d63508",
+  "short_text": "Story Reversal",
+  "content": "In a quaint village, there is a storyteller who loves to tell tales. However, he has a peculiar habit of telling his stories backwards to make them more interesting. One day, he found an old scroll with a story written on it and decided to read it in reverse.\n\nYour task is to **complete the method `reverse_story()`**, which receives a string story as a parameter, and returns the story reversed.\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes string, as a parameter.\n\n---\n\n#### Output\n\nThe method should **return a single string** representing the reversed story.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\nOnce upon a time\n```\n\nThe expected output would be :\n\n```\nemit a nop ecnO\n\n```\n\n- The story is `Once upon a time`.\n- The reversed story is `emit a nop ecnO`.\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4f67a1e1-21ad-4ecf-9d93-88604c54307c",
+      "code_content": "def reverse_story(story):\n    if len(story) <= 1:\n        return story\n    return reverse_story(story[1:]) + story[0]",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "15ebbda9-71a6-4195-bd4a-652658708067",
+      "input": "Just Checking",
+      "output": "gnikcehC tsuJ",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "240eeb66-5694-4d35-b4fa-af1747661d64",
+      "input": "Great It's Working!",
+      "output": "!gnikroW s'tI taerG",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "469998eb-32ec-4f20-b798-8f8219c3cb61",
+      "input": "A very long string with multiple words and spaces!",
+      "output": "!secaps dna sdrow elpitlum htiw gnirts gnol yrev A",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "579a1efd-16bb-43d0-bb2d-1669853c1413",
+      "input": "Once upon a time",
+      "output": "emit a nopu ecnO",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c1a4edce-3673-4c4d-b1a0-95b2cabf9a14",
+      "input": "123654",
+      "output": "456321",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "83df0765-d00f-4be4-9557-91ec0ad42c22",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

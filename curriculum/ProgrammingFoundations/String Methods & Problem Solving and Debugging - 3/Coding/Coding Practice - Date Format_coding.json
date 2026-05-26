@@ -1,0 +1,61 @@
+{
+  "question_id": "22f50ae6-c195-4dd5-a791-db571d99c0dc",
+  "short_text": "Date Format",
+  "content": "Given a string in the format **dd-mm-yy** `S`, write a program to convert the string from **dd-mm-yy** format to **dd/mm/yy** format.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string representing `S`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string after converting from **dd-mm-yy** format to **dd/mm/yy**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given string is `S = 07-11-2020`,\r\n\r\n- After replacing **\" - \"** with **\" / \"** in the date **07/11/2020**.\r\n\r\nThe output should be **07/11/2020**",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7e58e6e0-7a83-4a9f-bdb3-1705c8a867a0",
+      "code_content": "date = input()\ndate = date.replace(\"-\", \"/\")\nprint(date)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "55dd1cf3-ac84-4973-954b-aec8f35dcada",
+      "input": "12-31-1900",
+      "output": "12/31/1900\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "6e76892f-6011-4e40-8f91-55fd52d2870e",
+      "input": "07-11-2020",
+      "output": "07/11/2020\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "933e4251-7c46-4f60-918f-6006c1e272de",
+      "input": "12-10-2222",
+      "output": "12/10/2222\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c5b52f76-0bd7-4d5f-a6e0-f87249e2eb29",
+      "input": "3-1-2015",
+      "output": "3/1/2015\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f3a6fb43-eca7-4d18-8d42-2552f4ea3551",
+      "input": "2-29-2020",
+      "output": "2/29/2020\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

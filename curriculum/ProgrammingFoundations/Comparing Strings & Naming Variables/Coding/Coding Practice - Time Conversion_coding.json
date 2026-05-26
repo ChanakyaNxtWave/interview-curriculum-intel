@@ -1,0 +1,68 @@
+{
+  "question_id": "25596966-2613-405b-9b74-63848b903fb0",
+  "short_text": "Time Conversion",
+  "content": "Given a time `T` in either Minutes (`M`) or Seconds (`S`). Example: `220M`, `3S`.\n\nIf the last character in the `T` is `M`, it is Minutes.\nIf the last character in the `T` is `S`, it is Seconds. \n\nWrite a program to convert the given time `T` in Minutes (`M`) or Seconds (`S`) into Hours (`H`) rounded up to **2** decimals.\n\nThe last character of the output should be `H` representing time in Hours.\n\n<MultiLineNote>\n1 Minute = 1/60 Hours.\n\n1 Second = 1/3600 Hours.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `T`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by converting Minutes (`M`) or Seconds (`S`) into Hours (`H`) as shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given time is `T = 80M`,\n\n- The given time is in Minutes (**M**).\n- Converting from **Minutes** to **Hours**.\n- 80 Minutes = (80 / 60) Hours since, [1 Minute = 1 / 60 Hours] = 1.333333333 Hours.\n- **1.333333333** Hours rounded up to **2** decimal places is **1.33** Hours.\n\nThe output should be **1.33H**.\n\nFor example, if the given time is `T = 4200S`,\n\n- The given time is in Seconds (**S**).\n- Converting from **Seconds** to **Hours**.\n- 4200 Seconds= (4200 / 3600) Hours since, [1 Second = 1/3600 Hours] = 1.16666666667 Hours.\n- **1.16666666667** Hours rounded up to **2** decimal places is **1.17** Hours.\n\nThe output should be **1.17H**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "70808c9e-a568-40c2-b323-4c66d21e5292",
+      "code_content": "given_time = input()\n\nis_seconds = given_time[-1] == \"S\"\n\ngiven_time = given_time[:-1]\ngiven_time = int(given_time)\n\nif is_seconds:\n    seconds_to_hours = given_time/3600\n    seconds_to_hours = round(seconds_to_hours,2)\n    hours = str(seconds_to_hours)+\"H\"\nelse:\n    minutes_to_hours = given_time/60 \n    minutes_to_hours = round(minutes_to_hours,2)\n    hours = str(minutes_to_hours)+\"H\"\n    \nprint(hours)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3895e766-3934-42eb-90ee-920c4afcf8c9",
+      "input": "1000S",
+      "output": "0.28H",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "3e134ebf-8713-4861-abc5-162920af31b9",
+      "input": "60M",
+      "output": "1.0H",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "b108e9f6-2b34-4a57-a309-5f7fbebbb885",
+      "input": "20M",
+      "output": "0.33H",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "bd38a4b0-05f6-4a54-b18e-0ee4ebe9bf7c",
+      "input": "2500S",
+      "output": "0.69H",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "bf7f6ec0-0109-4e6e-9ec7-62edaf67aec7",
+      "input": "80M",
+      "output": "1.33H",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c843db5f-4dc6-4c6b-b4e5-84f6c8f77408",
+      "input": "4200S",
+      "output": "1.17H",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

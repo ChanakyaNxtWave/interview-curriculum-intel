@@ -1,0 +1,33 @@
+{
+  "question_id": "9a94592d-6a07-434a-9325-29bc70f39a70",
+  "short_text": "Three Hashes",
+  "content": "Write a program that prints three hashes (`###`) as output.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bbd64f3a-a948-494e-bd4a-0c529d7da3e6",
+      "code_content": "print(\"###\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "65ba5c76-ff79-4517-860b-c3ab3efe0596",
+      "input": "",
+      "output": "###",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "81959e79-ceeb-448c-af0e-7e0e7f5447f0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "90c7b574-bd25-4a14-b4ce-8c1bab181236",
+  "topic_name": "Introduction to Python",
+  "course_title": "Programming Foundations"
+}

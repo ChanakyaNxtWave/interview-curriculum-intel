@@ -1,0 +1,61 @@
+{
+  "question_id": "da2f6c1b-1119-487a-b563-be7ddefad486",
+  "short_text": "Second Character in the Word",
+  "content": "For this problem, the prefilled code will contain a function. Write a program that the given function will return the second character in the word passed to the function.<hr><b>Input</b><br/><br/>The first line of input will contain a string.<hr><b>Output</b><br/><br/>The output should be a single line containing the second character of the given word.<hr><b>Explanation</b><br/><br/>For example, if the given word is &quot;MATHS&quot;, your code should print the second character in the given word, which is &quot;A&quot;.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "5c9bec67-a082-442c-94a4-4b61da7adb7d",
+      "code_content": "def second_character(arg_1):\n    character = arg_1[1]\n    return character\n\n\nword = input()\nresult = second_character(word)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "391ffb68-6882-4f39-bd01-0e4374308fa1",
+      "input": "MATHS",
+      "output": "A\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "6b670351-982a-4627-b715-cca01fecce71",
+      "input": "Google",
+      "output": "o\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a9e964f3-710b-4ca6-a725-b9bd6ea2e723",
+      "input": "Cricket",
+      "output": "r\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cd1c9a48-3a08-474e-bd44-627243952d6a",
+      "input": "Mr",
+      "output": "r\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f3f4e6dd-8a4e-45df-a161-621ff8dd5e58",
+      "input": "science",
+      "output": "c\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

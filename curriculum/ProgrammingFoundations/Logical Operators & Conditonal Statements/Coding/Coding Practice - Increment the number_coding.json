@@ -1,0 +1,103 @@
+{
+  "question_id": "cd7c28a3-c471-4152-8d2f-8e30fae7be3c",
+  "short_text": "Increment the number",
+  "content": "Write a program that reads a number `N` and checks if `N` is greater than **10**.\r\n\r\nPrint the result of `N + 5` if `N` is greater than **10**. Otherwise, print the result of `N + 1`.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer. The result of `N + 5` should be printed if `N` is greater than **10**. Otherwise, the result of `N + 1` should be printed.\r\n\r\n---\r\n\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 3`,\r\n\r\n- **3** is **not** greater than **10**.\r\n- The result of `N + 1` is **4** (`3 + 1 = 4`). \r\n\r\nThe output should be **4** as `N` is **not** greater than **10**.\r\n\r\n<br/>\r\n\r\nFor example, if the given number is `N = 63`,\r\n\r\n- **63** is greater than **10**.\r\n- The result of `N + 5` is **68** (`63 + 5 = 68`). \r\n\r\nThe output should be **68** as `N` is greater than **10**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "97e53267-96f3-48db-8b8d-4dda72906a80",
+      "code_content": "number = int(input())\n\nif number > 10:\n    number = number + 5\nelse:\n    number = number + 1\n\nprint(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "09be530b-16b4-4b1c-a36d-8d047fc6eb0c",
+      "input": "100000",
+      "output": "100005",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "0ccac7d9-c356-4240-b752-c56f99470e15",
+      "input": "-100000",
+      "output": "-99999",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "12961268-ae07-433d-97eb-6345da8be2fd",
+      "input": "0",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "335cc3ad-08ed-4f72-83ce-dedb96741b83",
+      "input": "-242",
+      "output": "-241",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "43c00476-d082-46fe-8e65-8f224e1da23a",
+      "input": "-1425",
+      "output": "-1424",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "55c5dce0-a295-4727-9b8e-fd305f48b0b8",
+      "input": "-10",
+      "output": "-9",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "775cad40-3090-4397-bd06-257f039d94ff",
+      "input": "10",
+      "output": "11",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "849777b2-975c-405a-98ae-749ffcd3aa3b",
+      "input": "63",
+      "output": "68",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d421a058-7cab-4e28-af9e-bd1d651ca873",
+      "input": "242",
+      "output": "247",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ddc2501a-1596-480b-9215-dec01ff4ff7f",
+      "input": "9",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ff6d583b-2ffd-4d2f-88df-333cc4cae931",
+      "input": "3",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "4841a84d-4420-4023-9a9c-d014cac6acf6",
+  "short_text": "Unique Enrollments",
+  "content": "You are developing a course enrollment system for a university that offers multiple courses. Students can enroll in various courses, and you need to manage the course lists effectively. Each course has a list of enrolled students represented by their Student IDs, which are integer. Your task is to ensure that you have a comprehensive list of all students who are enrolled in either Course A or Course B, without listing any student more than once. Additionally, the output list of Student IDs must be sorted in ascending numerical order.\n\nWrite a program that reads **two lists** of strings representing student enrollments for Course **A** and Course **B**, and outputs a combined list of unique students enrolled in either course in **sorted order**.\n\n---\n\n#### Input\n\n- The first line contains integers separated by spaces representing student enrollments for Course A.\n- The second line contains integers separated by spaces representing student enrollments for Course B.\n\n---\n\n#### Output\n\nThe output should be a single line containing the **unique students IDs** from both courses, separated by spaces, and sorted in **ascending order**.\n\n---\n\n#### Explanation\n\nFor example If the input is \n\n```\n123 456 789 123\n456 789 101 202\n```\n\nThe expected output would be \n\n\n```\n101 123 202 456 789\n```\n\nThis is because the output includes all unique students enrolled in either **Course A** or **Course B**.\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ec812758-c06a-41a1-ad59-61f722b6e49f",
+      "code_content": "c_a = input().split()\nc_b = input().split()\n\ncourse_a = []\ncourse_b = []\n\nfor i in c_a:\n    course_a.append(int(i))\n\nfor i in c_b:\n    course_b.append(int(i))\n    \nunique_enrollments = set(course_a).union(course_b)\n\nsorted_enrollments = sorted(unique_enrollments)\n\nsorted_enrollments_as_strings = []\nfor enrollment in sorted_enrollments:\n    sorted_enrollments_as_strings.append(str(enrollment))\n\nprint(\" \".join(sorted_enrollments_as_strings))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "63198d8d-2559-4ae8-9233-708003ccbc20",
+      "input": "123 456 789 123\n456 789 101 202",
+      "output": "101 123 202 456 789",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8d79154a-0cd4-4f94-8cf7-4fe34670cc06",
+      "input": "111 222 333\n444 222 555",
+      "output": "111 222 333 444 555",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a7c9a6f0-4ccc-4fd0-b634-f96848bb7ebf",
+      "input": "5 10 15\n1 2 3",
+      "output": "1 2 3 5 10 15",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bc8cd3ee-4531-4197-af28-38e1271395c0",
+      "input": "123 123 123\n123 123 123",
+      "output": "123",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e3bcb976-3ed5-4b44-9792-83c62eed5e5b",
+      "input": "101 202 303 404\n404 505 606 101",
+      "output": "101 202 303 404 505 606",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e5e0e9f7-bf83-4d89-b157-6b712762a6e6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

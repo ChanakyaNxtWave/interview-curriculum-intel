@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KP Mapping Review</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>KP Mapping Review</h1>
+    <p class="subtitle">Review AI-suggested knowledge points, edit tags, and approve mappings.</p>
+    <div id="stats" class="stats"></div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="filters">
+        <div class="filters-header">
+          <strong>Filters</strong>
+          <button type="button" class="link-btn" id="clearFilters" title="Reset all filters">Clear</button>
+        </div>
+
+        <input type="search" id="searchList" placeholder="Search title, topic, ID..." />
+
+        <label>
+          Review
+          <select id="filterReview">
+            <option value="">All</option>
+            <option value="flagged">AI flagged for review</option>
+            <option value="pending">Status: pending</option>
+            <option value="needs_review">Status: needs_review</option>
+            <option value="approved">Status: approved</option>
+            <option value="rejected">Status: rejected</option>
+          </select>
+        </label>
+
+        <label>
+          Content type
+          <select id="filterType">
+            <option value="">All types</option>
+          </select>
+        </label>
+
+        <label>
+          Topic
+          <select id="filterTopic">
+            <option value="">All topics</option>
+          </select>
+        </label>
+
+        <label>
+          Knowledge point
+          <select id="filterKp">
+            <option value="">Any KP</option>
+          </select>
+        </label>
+
+        <label>
+          AI confidence
+          <select id="filterConfidence">
+            <option value="">Any confidence</option>
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+            <option value="uncertain">uncertain</option>
+          </select>
+        </label>
+
+        <label>
+          Tags
+          <select id="filterTags">
+            <option value="">Any</option>
+            <option value="has">Has tags</option>
+            <option value="none">No tags</option>
+          </select>
+        </label>
+
+        <p id="filterSummary" class="filter-summary">Loading…</p>
+      </div>
+      <ul id="contentList" class="content-list"></ul>
+    </aside>
+
+    <section class="detail" id="detailPanel">
+      <p class="placeholder">Select a content item from the list.</p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

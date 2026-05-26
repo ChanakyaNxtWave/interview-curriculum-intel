@@ -1,0 +1,61 @@
+{
+  "question_id": "d1ad8360-25f0-4022-8d73-113bcf5fee31",
+  "short_text": "Sum of Even Numbers from M to N",
+  "content": "Write a program that reads two numbers `M` and `N` and prints the sum of the even numbers from `M` to `N`.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `M`.\r\nThe second line of input contains an integer representing `N`.\r\n\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the sum of the even numbers from `M` to `N`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given two numbers are `M = 2` and `N = 6`,\r\n\r\n- The numbers from **2** to **6** are **2**, **3**, **4**, **5**, and **6**.\r\n- The even numbers among the numbers from **2** to **6** are **2**, **4**, and **6**.\r\n- The sum of even numbers from **2** to **6** is **12**. (`2 + 4 + 6 = 12`)\r\n\r\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\r\n|---|---|---|\r\n|2 | 0 | 0 + 2 = 2 |\r\n|4 | 2 | 2 + 4 = 6 |\r\n|6 | 6 | 6 + 6 = 12 |\r\n\r\nThe output should be **12**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d263df24-c96d-4e56-9bfa-f42ff55140ae",
+      "code_content": "m = int(input())\nn = int(input())\n\ntotal = 0\nfor number in range(m, n+1):\n    if (number % 2) == 0:\n        total = total + number\n\nprint(total)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2dc030b5-51e5-450a-9d9c-5889a7f870a1",
+      "input": "14\n2020",
+      "output": "1021068\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6091fd0a-2960-4b61-80c6-905509996e46",
+      "input": "-36\n36",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7d9b9297-dbb9-40f8-b157-5e86879b1ee8",
+      "input": "10\n20",
+      "output": "90\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b19a633a-d8e8-427e-adf4-8cdf8cd3f776",
+      "input": "-100\n0",
+      "output": "-2550\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ce8ca0c7-e085-4721-a140-c509dab88d5b",
+      "input": "2\n6",
+      "output": "12\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

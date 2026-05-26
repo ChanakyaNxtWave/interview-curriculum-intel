@@ -1,0 +1,61 @@
+{
+  "question_id": "37489a08-87aa-4085-a127-11a416ce79f7",
+  "short_text": "Square Numbers",
+  "content": "Complete the function **square_numbers** that takes a list of integers as paramater and returns a new list where each integer is squared. The function should make use of built-in function to perform this operation.\n\n\n---\n\n#### Input\n\nThe **`square_numbers`** function takes one parameter: a list of integers as input.\n\n---\n\n#### Output\nThe **`square_numbers`** function should return a new list containing the squares of the integers from the input list.\n\n---\n\n\n#### Explanation\n\nThe function receives the list **`[1, 2, 3, 4, 5]`** as input. Using the **`map()`** function, a helper function squares each number:\n\n1² = 1  \n2² = 4  \n3² = 9  \n4² = 16  \n5² = 25\n\nThe resulting list is **`[1, 4, 9, 16, 25]`**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d10a6076-59d3-479a-a402-266141181150",
+      "code_content": "\ndef square(x):\n    return x ** 2\n\ndef square_numbers(numbers):\n    return list(map(square, numbers))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "667b9e55-0002-4997-86fd-a96a9087fa46",
+      "input": "1 2 3 4 5",
+      "output": "[1, 4, 9, 16, 25]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "916a1669-f1d3-4ba4-921e-5c87f06fe927",
+      "input": "-3 -2 -1 0 1",
+      "output": "[9, 4, 1, 0, 1]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9bf9972b-4427-4fd7-b991-62a6051315b6",
+      "input": "99 -99",
+      "output": "[9801, 9801]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a4f0788d-0aae-4500-9926-c81a80cd5729",
+      "input": "0",
+      "output": "[0]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a62062c8-5974-4d19-b99b-d0d3f6ff94ab",
+      "input": "10 20 30",
+      "output": "[100, 400, 900]",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "be8d64eb-d56a-40c7-ac7d-fdd7e563e83d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

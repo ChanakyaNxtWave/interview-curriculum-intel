@@ -1,0 +1,453 @@
+{
+  "question_id": "b7ef7d00-b98b-4ef9-a8db-1b89114f313e",
+  "short_text": "Right Angled Triangle - 9",
+  "content": "Given a number `N`, write a program to print a **Right Angled Triangle** of `N` rows using dots (`.`) in the borders and zeros (`0`) inside the right angled triangle.\r\n\r\n```\r\n. \r\n. .\r\n. 0 .\r\n. 0 0 .\r\n. . . . . \r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every dot (`.`) and every zero (`0`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing dots (`.`) in the borders and zeros (`0`) inside as a **Right Angled Triangle** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 7`,\r\n\r\n- Print dots (`.`) and zeros (`0`) on 7 rows as shown in the given image.\r\n\r\n  - The borders of the right angled triangle contain dots (`.`).\r\n\r\n  - Inside of the right angled triangle contain zeros (`0`).\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-9.png' widthPercent='60'/>\r\n\r\n<MultiLineNote>\r\nIn the given image, \r\n\r\n- The Dot in the box indicates a dot and a space (\". \").\r\n- The Zero in the box indicates a zero and a space (\"0 \").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n````\r\n. \r\n. .\r\n. 0 .\r\n. 0 0 .\r\n. 0 0 0 .\r\n. 0 0 0 0 .\r\n. . . . . . .\r\n````",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c0b9d908-cf96-4893-b89c-2cef4ec46ba1",
+      "code_content": "n = int(input())\n\nif n ==1:\n    print(\". \")\n\nelse:\n    print(\". \")\n\n    for i in range(1, n - 1):\n        middle_zeros = \"0 \" * (i - 1)\n        row = \". \" + middle_zeros + \".\"\n        print(row)\n        \n    print(\". \" * n)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "3ea9d318-bb41-49cd-b21b-8f8b4c62ccb1",
+          "short_text": null,
+          "content": "Which of the following code snippets is used to print the `N - 1` row of the Triangle when `N` is given as input?\r\n\r\nTriangle of **5** (`N = 5`) rows:\r\n\r\n```\r\n. \r\n. . \r\n. 0 . \r\n. 0 0 . \r\n. . . . .\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "99374fda-e613-4b72-a2c2-63b18dcf7e80",
+              "content": "```python\r\ndot = ...  # string of 1 dot\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(dotzeroes)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a6d65f69-dae1-433e-a5f5-a73004a52b51",
+              "content": "```python\r\ndot = ...  # string of 1 dot\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(dot * zeroes * dot)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d23f28e7-6e72-4df8-a311-a218af8c26cb",
+              "content": "```python\r\ndot = ... # string of 1 dot\r\nzeroes = ... # string of zeroes in the N-1 row\r\n\r\nprint(dot + zeroes + dot)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "db34aa47-1fa4-4c10-be67-af5c5489d52b",
+              "content": "```python\r\ndot = ...  # string of 1 dot\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(dot + zeroes)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In the `N-1` row, there are always two dots at the borders and `N-2` zeros in between. The Python code snippet constructs this row by concatenating a single dot string (`dot`), a string of `N-2` zeros (`zeroes`), and another dot string (`dot`). This forms the `N-1` row of the triangle.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5dc9eb0c-0a96-4fc5-990b-fd61832c37f9",
+          "short_text": "",
+          "content": "Which of the following code snippets is used to print the last row of the Triangle when `N` is given as input?\n\nTriangle of **5** (`N = 5`) rows:\n\n```\n. \n. .\n. 0 .\n. 0 0 .\n. . . . . \n```\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "257b968d-291e-4ed9-ad18-cf7e909151ba",
+              "content": "```python\nrow = \". \" * (N - 1)\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "56d4e104-312d-4de6-81bd-bf3898427aa7",
+              "content": "```python\nrow = \".\" * (N - 1)\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7776068e-c5a8-4d33-97a9-9c9ab58ee498",
+              "content": "```python\nrow = \". \" * N\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8e0ee711-c435-4368-a45c-e2746d35f381",
+              "content": "```python\nrow = \". \" + N\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a1970e5a-316d-40e9-90b7-23cf756b3a4f",
+              "content": "```python\nrow = \".\" * N\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In the Python code snippet, '. ' is a string that includes a dot and a space. The asterisk `*` is used for string repetition. Therefore, '. ' * N would result in repeating the '. ' string N times, which forms the last row of the triangle with N dots and spaces.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b0d2af6b-0e3a-4a16-9c37-5d1a7e13cdbe",
+          "short_text": null,
+          "content": "Fill in the blank space in the given code to print the given Triangle of `N` rows when `N` is given as input?\r\n\r\nTriangle of **5** (`N = 5`) rows:\r\n\r\n```\r\n. \r\n. . \r\n. . . \r\n. . . . \r\n. . . . .\r\n```\r\n\r\n```python\r\nn = int(input())\r\n\r\nfor i in range(1, n + 1):\r\n    print(\". \" * _____)\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0e753f83-36dd-4116-abaf-d59bcd32f5a0",
+              "content": "i - 1",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "3465fd9e-bcc1-4050-938e-e99475c8a193",
+              "content": "n - 1",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "492f4f6c-2566-4554-be99-4a5cc354df21",
+              "content": "i",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "8d461506-e5ae-4dd5-9424-bc16b2f68374",
+              "content": "n",
+              "content_type": "TEXT",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Here, the number of dots in each row is equal to the row number `i` in the for loop. So in the blank space, we need to use the variable `i`. Hence '. ' * i will print `i` number of '. ' strings in each row.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "044c4ee6-f572-41c9-a80c-c2e3ae589873",
+          "short_text": "",
+          "content": "Considering the given code snippet, which of the following conditions is used to check whether the **row is first, second row or last row** of the Triangle when `N` is given as input?\n\nTriangle of **4** (`N = 4`) rows:\n\n```python\nfor i in range(1, N + 1):\n    condition = ______\n```\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "60f4b50f-34b2-44b7-887e-5dd4c678ddfc",
+              "content": "```\ni == 0 or i == 1 or i == N + 1\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "71a599ac-6f6e-4401-bf55-d9ec4894a005",
+              "content": "```\ni == 0 or i == 1 or i == N - 1\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c05f04a5-93cc-45c0-aba0-9af3ea989785",
+              "content": "```\ni == 0 or i == 2 or i == N + 1\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f1aa2419-6947-4651-82d5-35a7b71e13fa",
+              "content": "```\ni == 1 or i == 2 or i == N\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In the for loop, `i` represents the row number. If `i` is equal to `1` or `2`, it means we are at the first or second row of the triangle. And, if `i` is equal to `N`, it indicates that we are at the last row of the triangle. So, the condition `i == 1 or i == 2 or i == N` checks for these specific rows.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "42fd8e5e-50f9-45c0-adc3-5d7bf3d724ba",
+          "short_text": null,
+          "content": "Which of the following code snippets is used to print `N` rows, where `N` is given as input?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3fc700af-007b-48d7-837c-084e98738051",
+              "content": "```python\r\nn = int(input())\r\n\r\nrow = \"*\"\r\n\r\nfor i in range(n):\r\n    print(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "698510d6-3d6c-4e7f-8f9a-c67844f5e113",
+              "content": "```python\r\nn = int(input())\r\n\r\nrow = \"*\"\r\n\r\nfor i in range(0, n):\r\n    print(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d9084cbb-85b9-4c57-9315-9185ddbb36b0",
+              "content": "```python\r\nn = int(input())\r\n\r\nrow = \"*\"\r\n\r\nfor i in range(1, n):\r\n    print(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dba2235c-979f-49dc-9cae-f6b6193bccbe",
+              "content": "```python\r\nn = int(input())\r\n\r\nrow = \"*\"\r\n\r\nfor i in range(1, n+1):\r\n    print(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f7121535-325c-490a-bf32-375e85007a59",
+              "content": "```python\r\nn = int(input())\r\n\r\nrow = \"*\"\r\n\r\nfor i in range(0, n+1):\r\n    print(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The given Python code reads an integer `n` as input and defines a variable `row` to hold a single string '*'. In the loop, it prints the `row` string for `n` times, resulting in `n` rows of '*'. However, it doesn't modify the `row` string to reflect the structure of the triangle, so it will print the same '*' for all `n` rows.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "45a1de8b-b82f-4409-9772-37a090ee4cbb",
+          "short_text": "",
+          "content": "Which of the following concepts is used to print the Triangle when `N` is given as input?\n\nTriangle of **5** (`N = 5`) rows:\n\n```\n. \n. .\n. 0 .\n. 0 0 .\n. . . . . \n```\n",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0b1b113b-01a4-45c4-9f22-382fb6483374",
+              "content": "String Concatenation",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "98b3cc15-f495-4bd1-a5e7-8261b002f25b",
+              "content": "String Repetition",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "d5262bcc-ed4c-48d5-9972-5aa619b00d40",
+              "content": "Loops",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "To print the triangle of `N` rows, we use the concept of `loops`. Loops in Python are used to repeatedly execute a block of code, which is ideal for this case where we need to print each row of the triangle one after the other. Therefore, the concept of loops is essential to solve this problem.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "84e06ef3-b7e6-4f88-adf0-f0da48597f47",
+          "short_text": "",
+          "content": "Rearrange the given steps in order to print the Triangle of `N` rows, where `N` is given as input?\n\n<b>Step 1:</b> Create a loop to iterate through each row of the Triangle.\n\n<b>Step 2:</b>  If the current row is on the border, print a row of dots (`.`) followed by a space. Else, print a row of zeros (`0`) with dots (`.`) at the beginning and end of the row.\n\n<b>Step 3:</b> Read `N` as input.\n\n<b>Step 4:</b> Check if the current row is on the border (first, second or last row) or inside the Triangle.",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "519d7afe-ef7f-4207-8ad5-718de62a9bfa",
+              "content": "Step 2, Step 4, Step 3, Step 1",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "8ea625d9-e407-447f-b114-93d556ee8bb2",
+              "content": "Step 1, Step 2, Step 3, Step 4",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "a563b8be-28bf-43cb-b77b-a1fb63ea1d84",
+              "content": "Step 3, Step 4, Step 1, Step 2",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "c3948742-1e00-458e-93b0-9e71d0e036ee",
+              "content": "Step 3, Step 1, Step 4, Step 2",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Firstly, `N` is read as input (Step 3). Next, a loop is created to iterate through each row of the Triangle (Step 1). Then, a check is performed to see if the current row is on the border (first, second, or last row) or inside the Triangle (Step 4). Depending on the result, appropriate rows are printed with dots or zeros (Step 2).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "eeb4fecc-9c61-4da3-a2f1-6e3149c36e4b",
+          "short_text": "",
+          "content": "Which of the following operators is used for string concatenation in Python?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "50ab4343-e209-4db4-a9d9-23b9214acd16",
+              "content": "`/`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7e132c9b-4eaf-4269-8a44-718c1667d397",
+              "content": "`:`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "82c07a7f-299d-4c1a-9e1f-44b732612afb",
+              "content": "`-`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8a5cee28-2018-4996-9185-c937f5c6cf47",
+              "content": "`*`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c1a31f4b-7a18-4087-903b-2261f61f4a27",
+              "content": "`+`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The operator used for string concatenation in Python is the + (plus) operator. When applied to two strings, the + operator combines or concatenates the strings together, resulting in a new string that is the combination of the two original strings.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f7773808-578c-4255-b7f9-2067bbbbc27a",
+          "short_text": "",
+          "content": "Which of the following operators is used for string repetition in Python?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "4ce9f597-56b6-4e5b-8066-361ea994ca79",
+              "content": "`:`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "923188b8-04aa-44d6-9a64-f0a6775bffd9",
+              "content": "`*`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9301c05f-9024-4250-ba0e-05049270106d",
+              "content": "`/`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dd377918-f7f6-41ab-8109-153920262588",
+              "content": "`+`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f16ecbde-01e5-4788-811b-f9090cde4805",
+              "content": "`-`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The operator used for string repetition in Python is the `*` (asterisk) operator. When applied to a string, the `*` operator allows you to repeat the string a certain number of times.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "044fc5b5-4709-413f-b020-8fefda82a05f",
+      "input": "3",
+      "output": ". \n. .\n. . .",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "1cd08d8a-8709-4bd1-a1e5-72c370ad9b1b",
+      "input": "33",
+      "output": ". \n. .\n. 0 .\n. 0 0 .\n. 0 0 0 .\n. 0 0 0 0 .\n. 0 0 0 0 0 .\n. 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "632e21c5-8c85-46b0-a7fd-9e27381b1a4d",
+      "input": "1",
+      "output": ".",
+      "is_hidden": true,
+      "weightage": 14.0
+    },
+    {
+      "test_case_id": "8806f22e-04fe-4075-a9c0-3e785d5c5d84",
+      "input": "17",
+      "output": ". \n. .\n. 0 .\n. 0 0 .\n. 0 0 0 .\n. 0 0 0 0 .\n. 0 0 0 0 0 .\n. 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .\n. . . . . . . . . . . . . . . . .",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a8d34463-c4cb-4da8-b06b-12d1660bc658",
+      "input": "2",
+      "output": ". \n. .",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d036f8cb-dee9-413a-bf36-c7ab5deb05cd",
+      "input": "4",
+      "output": ". \n. .\n. 0 .\n. . . .",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "ea2585f3-8502-4ef9-8cef-04669f922036",
+      "input": "7",
+      "output": ". \n. .\n. 0 .\n. 0 0 .\n. 0 0 0 .\n. 0 0 0 0 .\n. . . . . . .",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fa569151-b323-480f-a976-d854682b0ff0",
+      "input": "6",
+      "output": ". \n. .\n. 0 .\n. 0 0 .\n. 0 0 0 .\n. . . . . .",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

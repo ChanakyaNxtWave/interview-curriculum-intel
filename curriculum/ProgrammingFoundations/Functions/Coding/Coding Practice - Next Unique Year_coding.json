@@ -1,0 +1,61 @@
+{
+  "question_id": "6066a1c4-91dd-45f3-8612-8f471f674d6f",
+  "short_text": "Next Unique Year",
+  "content": "In a bustling city, a famous bakery is known for its special cupcakes. Every year, the bakery introduces a new flavor for the New Year celebration. The owner wants to choose a year that has all unique digits for the launch of this special flavor.\n\nYour task is to **complete the method `next_unique_year()`** which receives the current year as a parameter and returns the next year that has all unique digits. This will help the owner ensure that the new flavor is associated with a special year.\n\n<MultiLineNote>\n\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe method **`next_unique_year()`** receives the current year as a parameter.\n\n---\n\n#### Output\n\nThe **`next_unique_year()`** method should return a single integer representing the next year that has all unique digits.\n\n\n---\n\n#### Explanation\n\nFor example if the input \n\n```\n2025\n```\n\nThe expected output would be\n\n```\n2031\n```\n\n- The current year **2025** is given as a parameter.\n- To find the next year with all unique digits, we check subsequent years:\n  - **2025** has repeating '2's, so it's invalid.\n  - **2026** has repeating '2's, so it's invalid.\n  \nTherefore, the next unique year, given 2025 as the parameter, is **2031** (as per the provided logic), which has no repeating digits.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b3f7264f-c435-46fd-a7d5-5634f21cb60d",
+      "code_content": "def has_unique_digits(year):\n    str_year = str(year)\n    length = len(str_year)\n    for i in range(length):\n        for j in range(i + 1, length):\n            if str_year[i] == str_year[j]:\n                return False\n    return True\n\ndef next_unique_year(current_year):\n    next_year = current_year + 1\n    while True:\n        if has_unique_digits(next_year):\n            return next_year\n        next_year += 1",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "106841a5-daf5-46b2-baa4-57c14cc347f9",
+      "input": "2025",
+      "output": "2031",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6b827d77-3bf3-4180-919d-346514206c83",
+      "input": "2011",
+      "output": "2013",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "792469df-e6b8-4ad0-a9d1-23620abea5f2",
+      "input": "1990",
+      "output": "2013",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "97b2a59f-71da-4fb5-9698-a0dbf0f85063",
+      "input": "2020",
+      "output": "2031",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bb553cb9-38bc-49fc-87c6-e294be78d5c1",
+      "input": "1999",
+      "output": "2013",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36f6b324-5f3c-4392-9acf-5635e753ef93",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

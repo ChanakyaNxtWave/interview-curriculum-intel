@@ -1,0 +1,82 @@
+{
+  "question_id": "27c79dd1-ef21-4810-963e-2f6f12435e6e",
+  "short_text": "Numbers in Inverted Hollow Pyramid",
+  "content": "Given two numbers `N` and `S`, write a program to print an **Inverted Hollow Pyramid** of `N` rows using numbers starting from **S**.\n\n```\n6 7 8 9 10\n 6     9\n  6   8\n   6 7\n    6\n\n```\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe second line of input contains an integer representing `S`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing numbers starting from `S` as an **Inverted Hollow Pyramid** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `N = 5` and `S = 7`,\n\n- Print the numbers on **5** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-hollow-pyramid.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates a space (\"&nbsp;\").\n- The Number in the box indicates the number and a space (\"7 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n7 8 9 10 11\n 7     10\n  7   9\n   7 8\n    7\n\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2c41644c-9c09-4bca-bb20-a0c2e11f88c0",
+      "code_content": "rows = int(input())\nstarting_number = int(input())\n\nfirst_row = \"\"\n\nfor i in range(rows):\n    first_row += str(starting_number + i) + \" \" \n    \nprint(first_row)\n\nright_value = starting_number + rows - 2\n\nfor j in range(1, rows - 1):\n    left_spaces = j \n    right_spaces = j\n    middle_spaces = (2 * rows - 1) - (left_spaces + right_spaces + 2)\n    print(\" \"*left_spaces + str(starting_number) + \" \"*middle_spaces + str(right_value))\n    right_value -= 1\n    \nprint(\" \"*(rows - 1) + str(starting_number))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2279a05e-6dc7-45fd-8dbd-5b97bc11ed40",
+      "input": "2\n10",
+      "output": "10 11 \n 10",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "327d425f-9bf9-4214-9129-26023b3dbecf",
+      "input": "4\n6",
+      "output": "6 7 8 9 \n 6   8\n  6 7\n   6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "47c209c1-5bcf-44ca-892b-bf2d82420493",
+      "input": "6\n8",
+      "output": "8 9 10 11 12 13 \n 8       12\n  8     11\n   8   10\n    8 9\n     8",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "6c1f26ee-91ff-452a-a7d1-f4dd5072de4e",
+      "input": "2\n1",
+      "output": "1 2 \n 1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "92da60b8-fbfb-47d6-a7a4-b9cad1aed0eb",
+      "input": "10\n2",
+      "output": "2 3 4 5 6 7 8 9 10 11 \n 2               10\n  2             9\n   2           8\n    2         7\n     2       6\n      2     5\n       2   4\n        2 3\n         2",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a2544ff7-1545-4539-8f11-78000ea14e5f",
+      "input": "3\n4",
+      "output": "4 5 6 \n 4 5\n  4",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bdc6aad1-6a72-4564-8dde-a877bf3dfaf1",
+      "input": "7\n3",
+      "output": "3 4 5 6 7 8 9 \n 3         8\n  3       7\n   3     6\n    3   5\n     3 4\n      3",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "cb2e9311-4ae9-412b-950b-0655ce399e8e",
+      "input": "5\n7",
+      "output": "7 8 9 10 11 \n 7     10\n  7   9\n   7 8\n    7",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7fd01c52-e0bb-49e8-b8fd-82ff808825da",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

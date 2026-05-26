@@ -1,0 +1,61 @@
+{
+  "question_id": "595ceac1-7aab-492c-8d61-3c9fe86cf97e",
+  "short_text": "Parsing Datetime",
+  "content": "Write a program to convert the date given in the string format to a datetime object.<br/>The date in string format is like &quot;8 Feb 2021&quot;.<hr><b>Input</b><br/><br/>The input will be a single line containing the date in the string format.<hr><b>Output</b><br/><br/>The output should be a single line containing the appropriate datetime object.<hr><b>Explanation</b><br/><br/>For example, if the given date is &quot;2 July 2000&quot;, your code should convert this date into a datetime object.<br/>So the output should be<br/>2000-07-02 00:00:00",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "f72ed10e-f76a-4755-a6e9-89536db9328f",
+      "code_content": "from datetime import datetime\n\ndate = input()\ndate_string = \"%d %b %Y\"\ndatetime_object = datetime.strptime(date, date_string)\nprint(datetime_object)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4d5dd60b-1849-4335-9a27-37b0e8ceb85e",
+      "input": "14 Oct 1999",
+      "output": "1999-10-14 00:00:00\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "4f092148-0d25-4aea-8f9c-0e59fd23fb4c",
+      "input": "7 Jan 2018",
+      "output": "2018-01-07 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "f634a81a-6bac-48d2-8e50-281f2d911f7c",
+      "input": "15 Aug 1947",
+      "output": "1947-08-15 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fa04de29-a487-4179-8663-a286d644b84b",
+      "input": "12 Dec 1986",
+      "output": "1986-12-12 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fa9bcf38-9418-49bb-bb66-bda472337156",
+      "input": "2 Jul 2000",
+      "output": "2000-07-02 00:00:00\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f543f8cb-9c90-4462-a019-4620b579057f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "c201f565-b4ee-48b7-898a-c03a4284a38b",
+  "short_text": "Matrix Transpose",
+  "content": "\nWrite a program that reads two integers `M` and `N` from the user, representing the number of rows and columns of a matrix. The program should then read `M x N` elements of the matrix from the user and calculate and print the transpose of the matrix.\n\n---\n\n#### Input\n\n- The first line should contain the integer `M`, representing the number of rows in the matrix.\n- The second line should contain the integer `N`, representing the number of columns in the matrix.\n- The next `M` lines should each contain `N` integers separated by spaces, representing the elements of the matrix.\n\n---\n\n#### Output\n\nThe output should be the transpose of the matrix, printed row by row.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\n2 \n3\n1 2 3\n4 5 6\n```\n\nThe output should be:\n\n```\n1 4\n2 5\n3 6\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e20b9a76-d606-4235-a5ad-89a11b769dd9",
+      "code_content": "m = int(input())\nn = int(input())\n\nmatrix = []\n\nfor i in range(m):\n    matrix.append([])\n    row = input().split()\n    for j in range(n):\n        matrix[i].append(int(row[j]))\n\ntranspose = []\n\nfor j in range(n):\n    transpose.append([])\n    for i in range(m):\n        transpose[j].append(matrix[i][j])\n\nfor row in transpose:\n    for element in row:\n        print(element, end=' ')\n    print()\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "20b2004e-6eb0-4e2a-a62e-81580ef6db24",
+      "input": "5\n5\n1 2 3 4 5\n6 7 8 9 10\n11 12 13 14 15\n16 17 18 19 20\n21 22 23 24 25\n",
+      "output": "1 6 11 16 21 \n2 7 12 17 22 \n3 8 13 18 23 \n4 9 14 19 24 \n5 10 15 20 25",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "3c3a9550-f0a8-4a9f-8622-9d69a60ebe1b",
+      "input": "3\n3\n1 2 3\n4 5 6\n7 8 9\n",
+      "output": "1 4 7 \n2 5 8 \n3 6 9",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9f0ebd79-cd90-45f6-ad5f-4279fcb9ddb9",
+      "input": "4\n2\n1 2\n3 4\n5 6\n7 8\n",
+      "output": "1 3 5 7 \n2 4 6 8",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "bda1983e-5867-4b7b-a8ae-c0c76befac56",
+      "input": "2\n3\n1 2 3\n4 5 6\n",
+      "output": "1 4 \n2 5 \n3 6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "eecbe02b-2c89-466c-a1c5-06e24848d093",
+      "input": "1\n1\n5\n",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "a59545d0-e460-46e3-9428-017865545731",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

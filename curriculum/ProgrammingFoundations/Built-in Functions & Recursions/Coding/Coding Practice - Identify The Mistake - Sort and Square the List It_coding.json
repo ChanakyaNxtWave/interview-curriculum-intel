@@ -1,0 +1,61 @@
+{
+  "question_id": "fe1d7c65-61cf-4929-ba0d-2496ff27a167",
+  "short_text": "Identify The Mistake - Sort and Square the List It",
+  "content": "Write a program to print the square of given list numbers in ascending order.<hr><b>Input</b><br/><br/>The input will be a single line containing the comma-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the list with the square of the numbers in ascending order.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;2, 4, 1, 3, 5&quot;, your code should print the square of the numbers in ascending order. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[1, 4, 9, 16, 25]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "6b251ef8-b638-49ad-a53c-1adb9d8acb7d",
+      "code_content": "list_a = input().split(\",\")\nlist_x = []\n\nfor num in list_a:\n    list_x += [int(num)**2]\n\nlist_x = sorted(list_x)\nprint(list_x)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0817117d-0f11-48b5-9509-aa9eb8c07f8b",
+      "input": "2,3,-1,5",
+      "output": "[1, 4, 9, 25]\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "14638117-9238-4063-a92b-d2a4940bc0c6",
+      "input": "2,4,1,3,5",
+      "output": "[1, 4, 9, 16, 25]\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "315a21ea-eba3-4c53-9c36-8075a692f1f5",
+      "input": "10,3,19,93,891,37",
+      "output": "[9, 100, 361, 1369, 8649, 793881]\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "a27bf9dd-edec-4f53-bdbf-645e0550a5fe",
+      "input": "1,1,1,1,1",
+      "output": "[1, 1, 1, 1, 1]\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "f5c2b94b-64c7-4f61-95c9-986da5dc3b8c",
+      "input": "3",
+      "output": "[9]\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

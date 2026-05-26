@@ -1,0 +1,61 @@
+{
+  "question_id": "a3841abb-b8fe-400b-9a74-dfa21436e45d",
+  "short_text": "Find Perfect Square",
+  "content": "A teacher is about to give a class on **perfect squares**. She wants to create a list of numbers from `1` to `N` and check which of these numbers are perfect squares. A perfect square is a number that can be expressed as the square of an integer.\n\nYour task is to **complete the method `find_perfect_squares()`**, which receives `N` as a parameter, and returns a list of all perfect squares from **1 to N**.\n\n<MultiLineNote>\n\n- A perfect square is a number that can be written as the product of an integer with itself. For example:\n**1 = 1 x 1**\n**4 = 2 x 2**\n**9 = 3 x 3**\nand so on.\n\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method **`find_perfect_squares()`**  will receive an integer `N` as a parameter.\n\n---\n\n#### Output\n\nThe **`find_perfect_squares()`** method should **return a list of integers** representing these perfect squares.\n\n\n---\n\n#### Explanation\n\nFor example if the input \n\n```\n10\n```\n\nThe expected output would be \n\n```\n[1,4,9]\n```\n\nThe method `find_perfect_squares(N)` receives **N = 10** as a parameter. It should return **[1, 4, 9]** since those are the perfect squares between *1* and *10*.\n\n - `1` is a perfect square `(1 x 1)`.\n - `4` is a perfect square `(2 x 2)`.\n - `9` is a perfect square `(3 x 3)`.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "556a7fc7-2303-42c2-aac6-1042c0918543",
+      "code_content": "def find_perfect_squares(N):\n    perfect_squares = []\n    for i in range(1, N + 1):\n        root = 1\n        while root * root < i:\n            root += 1\n        if root * root == i:\n            perfect_squares.append(i)\n    return perfect_squares",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "592614c1-8037-4dd7-8b50-9be1412a4dc8",
+      "input": "1",
+      "output": "[1]",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6ab6f57d-0e77-472c-89d6-882185757808",
+      "input": "10",
+      "output": "[1, 4, 9]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "88e9bbde-6c9b-47fb-b50a-32f203da9d5e",
+      "input": "27",
+      "output": "[1, 4, 9, 16, 25]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a24dd89b-3c87-4d4f-8caa-5648c9ff86b2",
+      "input": "100",
+      "output": "[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b2ebd5fa-0e45-4b76-966e-3021f5aa24b4",
+      "input": "50",
+      "output": "[1, 4, 9, 16, 25, 36, 49]",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36f6b324-5f3c-4392-9acf-5635e753ef93",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

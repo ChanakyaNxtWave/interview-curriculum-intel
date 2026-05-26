@@ -1,0 +1,61 @@
+{
+  "question_id": "9e89f965-9768-453a-8654-62597c4b288d",
+  "short_text": "Second Lowest Grade Finder",
+  "content": "In a classroom, a teacher wants to find out which students have the second lowest grade in their class. The teacher has collected the names and grades of all students and needs your help to identify those students. Write a program that reads the names and grades, store them in a nested list, and then print the names of the students who have the second lowest grade. \n\n<MultiLineNote> \n\n- If multiple students have the second lowest grade, their names should be printed in alphabetical order, each on a new line. \n- There will always be one or more students with the second lowest grade.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of\n\n- The first line contains an integer **n**, the number of students.\n- The next **2n** line contains\n  - A **student's name** (string).\n  - The **student's grade** (float).\n  \n---\n\n#### Output\n\nThe output should be the names of any student(s) having the second lowest grade, printed in alphabetical order. Each name should be on a new line.\n\n\n---\n\n#### Explanation\n\nFor example, given the following input\n\n```\n5\nHarry\n37.21\nBerry\n37.21\nTina\n37.2\nAkriti\n41\nHarsh\n39\n```\n\nThe grades are as follows:\n\n- Harry: 37.21\n- Berry: 37.21\n- Tina: 37.2 **(lowest)**\n- Akriti: 41\n- Harsh: 39\n  \nThe **lowest grade is 37.2 (Tina)**, and the second lowest grade is 37.21 **(held by Harry and Berry)**. Since both Harry and Berry have the same second lowest grade, their names are printed in alphabetical order.\n\nThe Output Should be \n\n```\nBerry\nHarry\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f1a0ae0e-e65b-43a7-9522-20c5109a1557",
+      "code_content": "students = []\nfor i in range(int(input())):\n    name = input()\n    score = float(input())\n    students.append([name, score])\n\ngrades_set = set()\nfor student in students:\n    grades_set.add(student[1])\n\ngrades = sorted(grades_set)\nsecond_lowest_grade = grades[1]\n\nresult = []\nfor student in students:\n    if student[1] == second_lowest_grade:\n        result.append(student[0])\n\nsorted_result = sorted(result)\nfor name in sorted_result:\n    print(name)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0b0f0dc9-590f-4017-87b1-0bb70641779f",
+      "input": "4\nAlice\n50.0\nBob\n50.0\nCharlie\n60.0\nDavid\n70.0",
+      "output": "Charlie",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "15fc0cad-2989-4b9d-b828-8f1af7ab2f71",
+      "input": "7\nZoe\n60\nMax\n60\nLeo\n70\nKim\n80\nIan\n80\nAva\n90\nRay\n70",
+      "output": "Leo\nRay",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5a34720e-8fb4-4326-9e2b-99a2a2096d34",
+      "input": "6\nJohn\n85.5\nJane\n90.0\nMike\n85.5\nTom\n92.0\nLucy\n88.5\nEmma\n90.0",
+      "output": "Lucy",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "abb0f307-292a-4ee9-9ad5-3a418fbfe4c5",
+      "input": "3\nChris\n75.0\nAlex\n80.0\nSam\n75.0",
+      "output": "Alex",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ff54bcd7-8c90-4afb-ba2f-b9f96d46a4d8",
+      "input": "5\nHarry\n37.21\nBerry\n37.21\nTina\n37.2\nAkriti\n41\nHarsh\n39",
+      "output": "Berry\nHarry",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

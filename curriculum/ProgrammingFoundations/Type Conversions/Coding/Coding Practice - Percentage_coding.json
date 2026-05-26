@@ -1,0 +1,61 @@
+{
+  "question_id": "1e152232-3441-41bc-bd40-828c5cce9788",
+  "short_text": "Percentage",
+  "content": "Write a program that reads a percentage `P` and prints the percentage `P` of the number **200**.\r\n\r\n<MultiLineNote>\r\n\r\n##### The Percentage (P) of Number (N) can be calculated as:\r\n\r\nvalue = (percentage / 100) * number\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a float that is the `P` percentage of **200**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given percentage is `P = 50`, the **50** percent of number **200** is,\r\n\r\n```\r\nvalue = (percentage / 100) * number\r\nvalue = (50 / 100) * 200\r\nvalue = 0.5 * 200\r\nvalue = 100.0\r\n```\r\n\r\nThe output should be **100.0**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c20df0dc-35c5-4150-ae46-10f84d0ac41a",
+      "code_content": "percentage = input()\npercentage = int(percentage)\n\nvalue = (percentage / 100) * 200\nprint(value)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "112f2e84-2012-4f0c-a975-0ab843608cc6",
+      "input": "50",
+      "output": "100.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "13e8011f-c2cd-4fd9-af08-e228d2b2e1a9",
+      "input": "30",
+      "output": "60.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2eee960a-31d9-4057-87ce-20a702578fdd",
+      "input": "1",
+      "output": "2.0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "afb290f2-fa2a-4a36-95bc-69baa353dffd",
+      "input": "99",
+      "output": "198.0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "dfc72d6d-eace-42d4-af15-5a1bb3323ac6",
+      "input": "100",
+      "output": "200.0",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "fcf9916b-5cb4-49e0-baa7-ce4b4cda07ab",
+  "short_text": "Double Char",
+  "content": "Given a string, write a program to double all the characters in the given string.<hr><b>Input</b><br/><br/>The input will be a single line containing a string.<hr><b>Output</b><br/><br/>The output should be a single line containing a new string with all the characters doubled in the given string.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;The&quot;, the output should be &quot;TThhee&quot;.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "7fdf8597-085c-44ff-8072-f03c6cddb927",
+      "code_content": "word = input()\n\nnew_word = \"\"\nfor character in word:\n    new_word = new_word + (character*2)\n\nprint(new_word)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "342d0b31-7481-4341-aca3-117e837e4ee8",
+      "input": "The",
+      "output": "TThhee\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "5f450fa5-2d03-421c-a2df-f64afca0b73e",
+      "input": "Hello",
+      "output": "HHeelllloo\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6c1b6b89-1b07-415a-a7aa-e8ee7d5ff9e7",
+      "input": "FOUNDATIONS",
+      "output": "FFOOUUNNDDAATTIIOONNSS\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9652f705-cfb5-40c5-aa86-be02853d0c37",
+      "input": "first-digit",
+      "output": "ffiirrsstt--ddiiggiitt\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ae2fa68a-07bd-4842-b73c-9bebaa085573",
+      "input": "A*L*E*R*T",
+      "output": "AA**LL**EE**RR**TT\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

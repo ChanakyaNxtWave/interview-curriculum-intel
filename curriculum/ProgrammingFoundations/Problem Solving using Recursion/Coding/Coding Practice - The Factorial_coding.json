@@ -1,0 +1,68 @@
+{
+  "question_id": "4c68cd29-76dc-41f1-b6ae-89892720a3e2",
+  "short_text": "The Factorial",
+  "content": "A function named `factorial` is given in the prefilled code that takes an integer `n` as an argument.\n\nWrite a program that reads an integer `n` as input from the user and uses the provided `factorial` function in the prefilled code to print the factorial of `n` using recursion.\n\n---\n\n#### Input\n\nThe input will be a single line containing a single integer.\n\n---\n\n#### Output\n\nThe output should be a single integer representing the factorial of `n`.\n\n---\n\n#### Explanation\n\nFor example, if the given integer is `5`,\n\nThe output should be:\n\n```\n120\n```\n\nThe factorial of **5** (5!) is calculated as 5 × 4 × 3 × 2 × 1, which equals **120**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fee2ebef-cfec-474b-84bf-7a9795fa8746",
+      "code_content": "def factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    return n * factorial(n - 1)\n\nn = int(input().strip())\n\nresult = factorial(n)\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "14484567-4cf2-4126-b0d9-36a31f0cadc2",
+      "input": "6",
+      "output": "720",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "652518b5-8848-49b3-9aa8-86dae2c9c285",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "66b2447c-9c5e-4090-ae30-0970fc76cef6",
+      "input": "5",
+      "output": "120",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7ec2d394-7234-4de9-ab89-633043293174",
+      "input": "2",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8d00e9ea-a558-4f92-aac5-3cc1da1dcef4",
+      "input": "10",
+      "output": "3628800",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b46bb411-c3f0-4111-8249-a2500e4d126b",
+      "input": "0",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "86ab3e6f-332c-49fa-98ae-97430059e4f6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

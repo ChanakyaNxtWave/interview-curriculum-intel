@@ -1,0 +1,61 @@
+{
+  "question_id": "4199735b-b23b-401f-bd76-897ebec388da",
+  "short_text": "List Indexing - 2",
+  "content": "For this problem, the prefilled code will contain a list. You need to write a program to read N integers, and print the elements at the index locations represented by those integers.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The following N lines will contain a positive integer in each line.<hr><b>Output</b><br/><br/>The output should be N lines containing the list elements at the given indexes each in a line.<hr><b>Explanation</b><br/><br/>For example, if the given number N is 2, read the inputs in the next two lines and print the elements at the given indexes. If the given two indexes are 1 and 4, the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Java\r\nC++\r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "8782082d-2e40-4bb8-8d3e-c053252832e6",
+      "code_content": "programming_languages_list = [\"Python\", \"Java\", \"Ruby\", \"C\", \"C++\", \"Go\", \"R\", \"JavaScript\", \"Swift\", \"PHP\", \"Kotlin\", \"Perl\"]\n\nm = int(input())\nfor i in range(m):\n    index = int(input())  # Read the list indexes\n    print(programming_languages_list[index])  # Print the elements at given index\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "22a74422-b90a-45a2-8648-ae13a41045d0",
+      "input": "4\n4\n3\n2\n0",
+      "output": "C++\nC\nRuby\nPython\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "626dd22f-7337-4def-99f2-e7f3a6ca3542",
+      "input": "3\n7\n5\n0",
+      "output": "JavaScript\nGo\nPython\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "628ee119-2566-48f3-bf71-ca72b4d1e801",
+      "input": "2\n1\n4",
+      "output": "Java\nC++\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "d5df9154-635c-4a51-a8b8-f1f3e4590e0f",
+      "input": "4\n0\n2\n8\n5",
+      "output": "Python\nRuby\nSwift\nGo\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e9658c05-a02f-468b-a1d3-a2dd78e44d0a",
+      "input": "7\n0\n1\n2\n3\n4\n5\n6",
+      "output": "Python\nJava\nRuby\nC\nC++\nGo\nR\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

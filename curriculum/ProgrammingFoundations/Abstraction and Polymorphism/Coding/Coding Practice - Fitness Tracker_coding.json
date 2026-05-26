@@ -1,0 +1,47 @@
+{
+  "question_id": "913364f4-8ddf-4d2e-bbb2-34dfd5837814",
+  "short_text": "Fitness Tracker",
+  "content": "Complete the given **`FitnessTracker`** class by adding new features as per the instructions below.\n\nExisting **`FitnessTracker`** class :\n\nThe existing FitnessTracker class has only a **pass** statement. Remove the pass statement and implement the new features as mentioned in the given instructions. \n\n\n<details> \n\n<summary>**Features to be added to **`FitnessTracker`** class**</summary>\n\n- **Add below attributes**\n - The **`FitnessTracker`** class should have the following attributes:\n   - **`activities`**: a dictionary to store activity types as keys and their durations (in minutes) as values (public attribute).\n   - **`__user_id`**: a private attribute that holds the user ID for security purposes.\n\n- **`Add below methods`**\n - **`add_activity(activity_type, duration)`**:\n   - Adds an activity entry to the tracker with the specified duration.\n - **`remove_activity(activity_type)`**:\n   - Removes an activity entry from the tracker. If the activity does not exist, it prints **`Activity not found`**.\n - **`calculate_calories_burned()`**:\n   - Calculates and returns the **`total calories burned`** based on a fixed rate of calories burned per minute of activity (5 calories per minute).\n - **`display_activities():`**\n   - Returns all activities currently tracked along with their durations in the below format\n     - Example  :- `{\"Running\": 30, \"Cycling\": 45}`\n - **`set_user_id(new_user_id)`** (setter method):\n   - Updates the private **`__user_id`** attribute. This method requires a valid user ID to modify sensitive information.\n - **`get_user_id()`** (getter method):\n   - Returns the value of the private **`__user_id`** attribute for verification purposes.\n</details> \n\n<MultiLineNote>\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "03194f0a-90d0-4762-aab2-ebd58d93bbef",
+      "code_content": "class FitnessTracker:\n    def __init__(self):\n     self.activities = {}  # public attributes for storing activities\n     self.__user_id= None     # private attributes for user ID\n     \n    def add_activity(self,activity_type, duration):\n        self.activities[activity_type] = duration  # Add or update activity duration\n        \n    def remove_activity(self,activity_type):\n     if activity_type in self.activities:\n         del self.activities[activity_type]  # Remove specified activity Type\n     else:\n         print(\"Activity not found\")\n         \n    def calculate_calories_burned(self):\n       total_calories = sum(duration * 5 for duration in self.activities.values())\n       return total_calories\n       \n    def display_activities(self):\n        return {activity: duration for activity,duration in self.activities.items()}\n        \n    def set_user_id(self, new_user_id):\n        self.__user_id = new_user_id\n        \n    def get_user_id(self):\n        return self.__user_id \n        \n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    tracker = FitnessTracker()\n    tracker.add_activity(\"Running\", 30)\n    tracker.add_activity(\"Cycling\", 45)\n    \n    print(tracker.display_activities())\n    \n    print(\"Calories burned:\", tracker.calculate_calories_burned())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "33d9150c-142e-4c55-9f2d-b74d91909330",
+      "input": "Checking Default Tests",
+      "output": "{'Running': 30, 'Cycling': 45}\nCalories burned: 375",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7b59c66e-0662-44b8-b3ad-f92753a592e9",
+      "input": "Checking Fitness Tracker Methods",
+      "output": "PASS: All methods are working correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "82635124-cb09-4ea2-8185-904ced173d90",
+      "input": "Checking Fitness Tracker Attributes",
+      "output": "PASS: All attributes are correctly defined.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

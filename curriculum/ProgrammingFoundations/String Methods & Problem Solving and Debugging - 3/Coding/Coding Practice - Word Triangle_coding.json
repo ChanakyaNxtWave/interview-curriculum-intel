@@ -1,0 +1,61 @@
+{
+  "question_id": "4625d9a3-e6ca-4054-abae-a566a42d837b",
+  "short_text": "Word Triangle",
+  "content": "Given a word, write a program that prints the letters of the word on `N` lines as shown in the sample output, where `N` is the length of the word.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` lines containing letters of the word as shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is `Rahul`,\r\n\r\n- The length of the word is **5**.\r\n- The first line should contain the first letter **R**.\r\n- The second line should contain the first two letters **Ra**.\r\n- The third line will contain the first three letters **Rah**\r\n- The fourth line will contain the first four letters **Rahu**\r\n- The fifth line will contain all five letters **Rahul**\r\n\r\nThe output should be,\r\n\r\n```\r\nR\r\nRa\r\nRah\r\nRahu\r\nRahul\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "46f8d837-3527-432e-b862-360e1a3ec62d",
+      "code_content": "word = input()\n\nlen_of_word = len(word)\nfor index in range(1, len_of_word+1):\n    print(word[:index])\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "45bac01c-88bc-47c0-82bb-800fc1d9fddb",
+      "input": "Structure",
+      "output": "S\nSt\nStr\nStru\nStruc\nStruct\nStructu\nStructur\nStructure\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5ae99f52-8b47-400e-bcb8-b551bbeecc24",
+      "input": "Material",
+      "output": "M\nMa\nMat\nMate\nMater\nMateri\nMateria\nMaterial\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "725f06dd-9f3d-423f-8caf-18bebb620277",
+      "input": "Winner",
+      "output": "W\nWi\nWin\nWinn\nWinne\nWinner\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d5e7ccfd-0d4d-477f-a488-ffccfcb84b01",
+      "input": "Rahul",
+      "output": "R\nRa\nRah\nRahu\nRahul\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f0544f35-d4b4-4a30-abb2-a438d70fb88c",
+      "input": "Workbench",
+      "output": "W\nWo\nWor\nWork\nWorkb\nWorkbe\nWorkben\nWorkbenc\nWorkbench\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

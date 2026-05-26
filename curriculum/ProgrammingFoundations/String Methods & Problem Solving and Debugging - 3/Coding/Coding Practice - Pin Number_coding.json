@@ -1,0 +1,68 @@
+{
+  "question_id": "33799f63-24ea-4f06-a1f3-6ea154a04ee5",
+  "short_text": "Pin Number",
+  "content": "Given a string, write a program that checks if all the characters in the string are digits.\n\nPrint **True** if all the characters in the string are digits. Otherwise, print **False**.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if all the characters in the string are digits. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **5GNetwork**,\n\n- The characters in the string **5GNetwork** are **5, G, N, e, t, w, o, r** and **k**.\n- The digits in **5GNetwork** are **5**.\n- The alphabets in **5GNetwork** are **G, N, e, t, w, o, r** and **k**.\n\nThe output should be **False**, as all the characters in string **5GNetwork** are not digits.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "27c71d73-3bb9-45bf-82be-1599a8393be9",
+      "code_content": "string = input()\n\ncontains_digit = string.isdigit()\n\nprint(contains_digit)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "029cf72d-14fe-45d5-b98f-3ddd2ea17cd6",
+      "input": "string-method-2",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "547c6145-8849-499d-9e1b-3c133f027bf3",
+      "input": "12345",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5d6271e7-5f10-41d6-ad01-99864096a927",
+      "input": "987654321",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6675ce16-ca8d-467c-96d1-4abb62f1efa1",
+      "input": "nxtwave",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "cc14f880-9293-44a5-b31a-47abc1de1828",
+      "input": "2",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d9888bf5-50d4-4bac-bc7e-a16beaf69c1e",
+      "input": "5GNetwork",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,75 @@
+{
+  "question_id": "3e96d669-eed8-4372-b593-80c764227c72",
+  "short_text": "First half Words of List",
+  "content": "Given space-separated words, write a program that creates a list using space-separated words and prints the first half of the words in the list as a new list.\n\n<MultiLineNote>\nIf the given number of words is an odd number, add one to it such that it becomes an even number and count half of the number of words.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated strings.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list of first half of the words.\n\n---\n\n#### Explanation\n\nFor example, if the given words are **\"apple mango orange grapes kiwi\"**.\n\n- Given **5** words are **\"apple\"**, **\"mango\"**, **\"orange\"**, **\"grapes\"**, and **\"kiwi\"**.\n- Half of the given **5** words are **3** words **\"apple\"**, **\"mango\"**, and **\"orange\"**.\n\nThe output should be,\n\n```\n['apple', 'mango', 'orange']\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f6419bf9-8bbc-413e-bb5c-5646eaef2390",
+      "code_content": "words = input().split()\n\nwords_length = len(words)\n\nif words_length % 2 == 0:\n    half_list_length = words_length // 2\nelse:\n    half_list_length = (words_length // 2) + 1\n\nnew_list=words[:half_list_length]\n\nprint(new_list)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "048ed270-f2a0-436f-bca3-4e2cab4b907f",
+      "input": "EVEREST",
+      "output": "['EVEREST']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "43ac51ff-0027-4013-9541-312e810133aa",
+      "input": "HaRRy RoN",
+      "output": "['HaRRy']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6cc049c9-c303-4af0-aeaa-7cb282b469aa",
+      "input": "pLAy sIng danCE Eat sLeep woRk SwiM Jump",
+      "output": "['pLAy', 'sIng', 'danCE', 'Eat']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "76c5e785-79eb-4d00-90fa-784dac9adda1",
+      "input": "apple mango orange grapes kiwi",
+      "output": "['apple', 'mango', 'orange']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8163deca-7b8a-4cbd-8462-7d0f309d5557",
+      "input": "eagle duck peacock kingfisher pheasant goldfinch swallow sparrow dove swan myna cuckoo nightingale parrot",
+      "output": "['eagle', 'duck', 'peacock', 'kingfisher', 'pheasant', 'goldfinch', 'swallow']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "887c0dbf-1629-4486-bdc0-b2c015c68b6d",
+      "input": "python java c html",
+      "output": "['python', 'java']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d18de112-9508-4288-b79e-d32e0e780b83",
+      "input": "DOG CAT HORSE TIGER LION BEAR ELEPHANT KANGAROO MONKEY BOAR DEER",
+      "output": "['DOG', 'CAT', 'HORSE', 'TIGER', 'LION', 'BEAR']",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

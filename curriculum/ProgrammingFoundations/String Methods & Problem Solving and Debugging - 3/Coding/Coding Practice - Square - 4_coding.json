@@ -1,0 +1,68 @@
+{
+  "question_id": "b914040f-8804-4e09-aeda-e45c275da34e",
+  "short_text": "Square - 4",
+  "content": "Given a number `N`, write a program to print a **Square** of `N` rows and `N` columns using numbers starting from **0**.\n\n```\n0 0 0 0 0\n1 1 1 1 1\n2 2 2 2 2\n3 3 3 3 3\n4 4 4 4 4\n```\n\n<MultiLineNote>\nThere is a space after every number (`1`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows and `N` columns containing numbers starting from **0** as a **Square** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 3`,\n\n- Print the numbers in **3** rows and **3** columns starting from **0** as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-square-4.png' widthPercent='50'/>\n\n<MultiLineNote>\n\nIn the given image, the Number in box indicates the number and a space (\"1 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n0 0 0\n1 1 1\n2 2 2\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d7d8a805-2cb5-43c1-ac82-2067712d145b",
+      "code_content": "number_of_rows = int(input())\n\nfor row in range(number_of_rows):\n    each_number = str(row)\n    each_row = (each_number + \" \") * number_of_rows\n\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0357576f-5f59-483d-a559-7968e66ee552",
+      "input": "4",
+      "output": "0 0 0 0 \n1 1 1 1 \n2 2 2 2 \n3 3 3 3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "364b9ef7-f6fd-4ff9-8c77-d01f1bf3ab0f",
+      "input": "1",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "657d4bc1-348a-4939-91f1-67bec8a78013",
+      "input": "2",
+      "output": "0 0 \n1 1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "68808847-1f97-4bd6-9baa-1ba7dd09b198",
+      "input": "3",
+      "output": "0 0 0 \n1 1 1 \n2 2 2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bb907b8a-ae88-4084-9afb-f3e421ce1ebe",
+      "input": "21",
+      "output": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \n2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 \n3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 \n4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 \n5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 \n6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 \n7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 \n8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 \n9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 \n10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 \n11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 \n12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 \n13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 \n14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 \n15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 \n16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 \n17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 \n18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 \n19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 19 \n20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c34a5d6f-7130-4edf-9d30-7784ac179767",
+      "input": "7",
+      "output": "0 0 0 0 0 0 0 \n1 1 1 1 1 1 1 \n2 2 2 2 2 2 2 \n3 3 3 3 3 3 3 \n4 4 4 4 4 4 4 \n5 5 5 5 5 5 5 \n6 6 6 6 6 6 6",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

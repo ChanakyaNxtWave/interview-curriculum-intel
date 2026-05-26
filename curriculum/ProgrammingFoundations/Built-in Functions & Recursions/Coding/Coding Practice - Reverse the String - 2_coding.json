@@ -1,0 +1,82 @@
+{
+  "question_id": "4bb00645-d0ff-45d1-b552-e48ff260922a",
+  "short_text": "Reverse the String - 2",
+  "content": "A function is given in the prefilled code that takes a string `S` as an argument.\n\nWrite a program that returns the reverse of the given string `S` using Recursion.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing the reverse of the string `S` that is passed as an argument to the function.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"react\"`,\n\n- The characters in **react** are **r**, **e**, **a**, **c**, and **t**.\n- The reverse of the string **react** is **tcaer**.\n\nThe output should be **tcaer**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "09dadc6b-46d1-4aa8-8c0f-d3e4850673b2",
+      "code_content": "def get_reversed_string(string):\n    if len(string) == 1:\n        return string[0]\n        \n    return string[len(string) - 1] + get_reversed_string(string[:-1])\n    \nstring = input()\n\nresultant_string = get_reversed_string(string)\nprint(resultant_string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "15d1ef04-a5ce-4d5b-ab38-7c1363a46e5a",
+      "input": "html",
+      "output": "lmth",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "49cbd046-a920-458c-8823-5c0473a56b3d",
+      "input": "Ionic",
+      "output": "cinoI",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "69711239-5b10-4dcc-a588-8df2d99c949c",
+      "input": "CSS",
+      "output": "SSC",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6b1ca017-d9b5-44fa-895a-fa09c530add0",
+      "input": "React Native",
+      "output": "evitaN tcaeR",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7520126a-abeb-4585-91e2-8d5c2720532c",
+      "input": "BootStrap",
+      "output": "partStooB",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7f96cf7c-7df6-4745-a741-36538839c195",
+      "input": "react",
+      "output": "tcaer",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8c77b3b6-821a-428f-b37f-75da0c30cc1e",
+      "input": "z",
+      "output": "z",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "bcfdeb91-46a7-4ef6-8026-6d8c63e000be",
+      "input": "JAvASCripT123",
+      "output": "321TpirCSAvAJ",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

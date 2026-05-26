@@ -1,0 +1,61 @@
+{
+  "question_id": "8969b0c3-2ffa-46b0-998c-6236ca3ad06d",
+  "short_text": "Rank Dishes",
+  "content": "In a cooking competition, judges need to rank various dishes made by the participants based on their scores. After collecting all the scores, they want to present these scores in ascending order to clearly identify which dishes performed best and which performed less well.\n\nYour task is to **complete the method `rank_dishes()`** that takes a list of scores as a parameter and returns them sorted in ascending order.\n\n<MultiLineNote>\n\n- Use the **`Built-in`** function to arrange the scores.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes **`scores`** a list containing integers representing scores given by participants.\n\n---\n\n#### Output\n\nThe method should **return a list of integers**, representing the sorted scores.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n[50, 20, 75, 10, 40]\n```\n\nSorted order of `[50, 20, 75, 10, 40]` = **`[10, 20, 40, 50, 75]`**\n\n\nThe expected output would be :\n\n```\n[10, 20, 40, 50, 75]\n\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ad83cef8-8eb6-41ab-a570-99043a647b11",
+      "code_content": "def rank_dishes(scores):\n    return sorted(scores)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "24ce6d04-dd71-40a4-816f-9e295bd5011e",
+      "input": "11 25 41 3 26 584 89 56 3 69",
+      "output": "[3, 3, 11, 25, 26, 41, 56, 69, 89, 584]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3818cfe1-04a6-4b9d-bdaa-120ed9a72fb9",
+      "input": "74 85 96 12 45 36 98 74",
+      "output": "[12, 36, 45, 74, 74, 85, 96, 98]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "72133fa0-e485-4bfe-810c-7961c125ec18",
+      "input": "90 80 10 60 50 4",
+      "output": "[4, 10, 50, 60, 80, 90]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7f790a21-4a4a-4206-9200-567595b0cce7",
+      "input": "50 20 75 10 40",
+      "output": "[10, 20, 40, 50, 75]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f389c399-b498-452a-9672-98fafb8851f0",
+      "input": "66 77 5 2 22 30 50 60",
+      "output": "[2, 5, 22, 30, 50, 60, 66, 77]",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "83df0765-d00f-4be4-9557-91ec0ad42c22",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,47 @@
+{
+  "question_id": "1b71e833-30b8-4f6c-b2a0-4d3b9e63b898",
+  "short_text": "Encapsulation Inventory",
+  "content": "You need to complete the `Library` class by adding new features as per the given instructions. The `Library` class should encapsulate details about books and allow restricted access to sensitive data using appropriate methods.\n\n\n<details>\n\n<summary>**Features to be added to `Library` class**</summary>\n\n- **Add below attributes**:\n - The **Library class** should have the following **attributes**:\n  - **`name`**: A string representing the name of the library.\n  - **`location`**: A string representing the location of the library.\n  - **`__books_count`**: An integer representing the number of books in the library (private attribute).\n  - **`__secret_code`**: A string representing a secret code required to modify the book count (private attribute).\n- **Add below methods**:\n - **`get_books_count()`** : This public method should return the count of books in the library.\n - **`set_books_count()`** : This public method should allow changing the book count only if the correct secret code is provided.\n   - If the correct secret code is provided Update the **`book_count`** , If the incorrect secret code is provided print **`Invalid secret code`**\n - **`show_library_info()`** : This method should print the library's name and location.\n   - Output Format:\n\n```\nLibrary Name: {library_name}\nLibrary Location: {library_location}\n```\n\n\n\n</details>\n\n\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes and methods are implemented correctly. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "443524ec-f47e-4498-b8ea-62d2d369a693",
+      "code_content": "class Library:\n    def __init__(self, name, location, books_count, secret_code):\n        self.name = name\n        self.location = location\n        self.__books_count = books_count  # Private attribute\n        self.__secret_code = secret_code  # Private attribute\n\n    def get_books_count(self):\n        return self.__books_count  # Return the number of books\n\n    def set_books_count(self, books_count, provided_secret_code):\n        if provided_secret_code == self.__secret_code:\n            self.__books_count = books_count  # Update the book count\n        else:\n            print(\"Invalid secret code\")\n\n    def show_library_info(self):\n        print(f\"Library Name: {self.name}\")\n        print(f\"Library Location: {self.location}\")\n\ndef default_test():\n    library = Library(\"City Library\", \"Downtown\", 10000, \"Secret123\")\n    library.show_library_info()\n    print(\"Current Books Count:\", library.get_books_count())\n    library.set_books_count(12000, \"WrongCode\")  # Output: Invalid secret code\n    library.set_books_count(12000, \"Secret123\")  # Updates the books count\n    print(\"Updated Books Count:\", library.get_books_count())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "8bd2ff3d-d993-47aa-9656-b0031dd380cc",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly in Library class.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9e6e2012-71a4-4303-b71b-0afb30e0d6f0",
+      "input": "Checking Default Tests",
+      "output": "Library Name: City Library\nLibrary Location: Downtown\nCurrent Books Count: 10000\nInvalid secret code\nUpdated Books Count: 12000",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bc47989b-3975-487f-8972-ff4e4b1c3f70",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in Library class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b3b31675-d5ff-4676-b8b1-31ff0ba46159",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

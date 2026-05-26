@@ -1,0 +1,68 @@
+{
+  "question_id": "eb765c36-c30a-4f05-960e-43a7ed647ecc",
+  "short_text": "Total sum",
+  "content": "\nA function named `sum_natural_numbers` is given in the prefilled code that takes an integer `n` as an argument.\n\nWrite a program that reads an integer `n` as input from the user and uses the provided `sum_natural_numbers` function in the prefilled code to find and print the sum of the first `n` natural numbers using recursion.\n\n---\n\n#### Input\n\nThe input will be a single line containing a single integer.\n\n---\n\n#### Output\n\nThe output should be a single integer representing the sum of the first `n` natural numbers.\n\n---\n\n#### Explanation\n\nFor example, if the given integer is `5`,\n\nThe output should be:\n\n```\n15\n```\n\nThe sum of the first **5** natural numbers (1 + 2 + 3 + 4 + 5) is **15**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "16a7da04-3184-4cad-bb74-73593510c7eb",
+      "code_content": "def sum_natural_numbers(n):\n    if n <= 0:\n        return 0\n    return n + sum_natural_numbers(n - 1)\n\nn = int(input().strip())\n\nresult = sum_natural_numbers(n)\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5d42ce0e-93a7-4fa4-9ccf-3c82844f40ba",
+      "input": "5",
+      "output": "15",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5f38fa70-4e8e-48fe-afa9-de6701d17558",
+      "input": "3",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "7e84acfe-55ea-4cc8-8688-b78773222e37",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "90624501-4a49-4e49-ad0a-efacddbc04be",
+      "input": "10",
+      "output": "55",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9f7fecf5-e497-4200-b774-2eacefc02d3e",
+      "input": "2",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ebc56b6e-bb81-41fc-9c9b-9620e8ddf41a",
+      "input": "0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "86ab3e6f-332c-49fa-98ae-97430059e4f6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

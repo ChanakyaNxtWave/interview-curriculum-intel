@@ -1,0 +1,405 @@
+{
+  "question_id": "ab82b38d-413c-4c07-aa4c-e5f984cb5a83",
+  "short_text": "Find the Group - 2",
+  "content": "The numbers from **1** to **30** are divided into six groups, **Group 1**, **Group 2**, **Group 3**, **Group 4**, **Group 5** and **Group 6**.\r\n\r\n| Group 1 | Group 2 | Group 3 | Group 4 | Group 5 | Group 6 |\r\n| :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |\r\n|    1    |    2    |    3    |    4    |    5    |    6    |\r\n|    7    |    8    |    9    |   10    |   11    |   12    |\r\n|   13    |   14    |   15    |   16    |   17    |   18    |\r\n|   19    |   20    |   21    |   22    |   23    |   24    |\r\n|   25    |   26    |   27    |   28    |   29    |   30    |\r\n\r\nWrite a program that reads a number `N` and prints the group in which the given number `N` is present. The number `N` is always from **1** to **30**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string representing the group of the number `N`.\r\n\r\n---\r\n\r\n#### Constraints\r\n\r\nThe number `N` given as input is always greater than **0** and less than or equal to **30**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 29`,\r\n\r\n\r\n<details style=\"margin:0;\">\r\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to find the group</summary>\r\n        <p>The total number of groups are **6**.</p>\r\n        <ul>\r\n          <li style=\"margin:0;padding:0;\">The number that leaves **1** as the remainder when divided by **6** is in **Group 1**.</li>\r\n          <li style=\"margin:0;padding:0;\">The number that leaves **2** as the remainder when divided by **6** is in **Group 2**.</li>\r\n          <li style=\"margin:0;padding:0;\">The number that leaves **3** as the remainder when divided by **6** is in **Group 3**.</li>\r\n          <li style=\"margin:0;padding:0;\">The number that leaves **4** as the remainder when divided by **6** is in **Group 4**.</li>\r\n          <li style=\"margin:0;padding:0;\">The number that leaves **5** as the remainder when divided by **6** is in **Group 5**.</li>\r\n          <li style=\"margin:0;padding:0;\">The number that leaves **0** as the remainder when divided by **6** is in **Group 6**.</li>\r\n        </ul>\r\n</details>\r\n\r\n* When **29** is divided by **6** the remainder is **5**. So, **29** will be in **Group 5**.\r\n\r\n\r\nThe output should be **Group 5**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5d4a776f-b038-40bc-87b2-a231ae84a18d",
+      "code_content": "number = int(input())\n\nremainder = number % 6\n\nif remainder == 1:\n    print(\"Group 1\")\nelif remainder == 2:\n    print(\"Group 2\")\nelif remainder == 3:\n    print(\"Group 3\")\nelif remainder == 4:\n    print(\"Group 4\")\nelif remainder == 5:\n    print(\"Group 5\")\nelse:\n    print(\"Group 6\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1e96bb11-9f88-48d9-8a18-0b20b05eec7a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n9\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Group 3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 9`,\n\n- The number that leaves **3** as the remainder when divided by **6** is in **Group 3**.\n\n- When **9** is divided by **6** the remainder is **3**. So, **9** will be in **Group 3**.\n\nThe output should be **Group 3**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "60edd7a3-0576-48b9-bf9c-d9f461575037",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n24\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Group 6",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 24`,\n\n- The number that leaves **0** as the remainder when divided by **6** is in **Group 6**.\n\n- When **24** is divided by **6** the remainder is **0**. So, **24** will be in **Group 6**.\n\nThe output should be **Group 6**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "aad1c3e0-7ab5-4460-a51f-4b5c88e7ffb0",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n17\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Group 5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 17`,\n\n- The number that leaves **5** as the remainder when divided by **6** is in **Group 5**.\n\n- When **17** is divided by **6** the remainder is **5**. So, **17** will be in **Group 5**.\n\nThe output should be **Group 5**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "047ebcfd-f8c9-4b89-b807-d82b5cf963a9",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "62b3e839-16f6-4abd-929d-63401fb3241a",
+              "content": "19",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "831c689b-5c52-43a3-a733-219eec62382e",
+              "content": "25.0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d810f511-5422-4a0e-b775-171ab8336004",
+              "content": "23",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e3de5400-2c0d-42a3-a956-f93f97d446ce",
+              "content": "36\n15",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n19\n```\n\n**Input 2**\n\n```\n23\n```\nThe above two inputs are valid because they consist of a single line containing an integer `N`.\n\n**Note :** The number `N` given as input is always greater than **0** and less than or equal to **30**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "0b68cf6a-65d5-49b5-b60e-c71875d999f8",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3cd6e317-196d-45b1-a582-08858cc6c6b5",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "52aa23d0-724f-47ef-acd8-c075a076b9cb",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c664154d-a68e-4845-9319-0994c1a7a0d1",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cb996892-44de-46b0-ac74-d669228cb56f",
+              "content": "The output should be a single line containing comma-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string representing the group of the number `N`.\n\nFor example,\n\nIf the given number is `N = 7`,\n\nThe total number of groups is **6**.\n\n- The number that leaves **1** as the remainder when divided by **6** is in **Group 1**.\n\n- The number that leaves **2** as the remainder when divided by **6** is in **Group 2**.\n\n- The number that leaves **3** as the remainder when divided by **6** is in **Group 3**.\n\n- The number that leaves **4** as the remainder when divided by **6** is in **Group 4**.\n\n- The number that leaves **5** as the remainder when divided by **6** is in **Group 5**.\n\n- The number that leaves **0** as the remainder when divided by **6** is in **Group 6**.\n\nWhen **7** is divided by **6** the remainder is **1**. So, **7** will be in **Group 1**.\n\nThe output should be **Group 1**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "62aff021-ea95-4b24-91e0-b173c0bc9c23",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n10\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4ec80f42-a2bb-49af-b426-3d7e1559309c",
+              "content": "Group 2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "530e9b9d-c2a9-4642-a9ef-4cadd7d6da05",
+              "content": "Group 4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ab39f87d-bf91-4e0c-b518-5a2644365e1a",
+              "content": "Group 1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "efed5374-f533-4eac-8184-5a6695fa9350",
+              "content": "Group 6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 10`,\n\n- The number that leaves **4** as the remainder when divided by **6** is in **Group 4**.\n\n- When **10** is divided by **6** the remainder is **4**. So, **10** will be in **Group 4**.\n\nThe output should be **Group 4**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a312c2b5-cba8-4aa1-9cc0-178324ac1ffe",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0712ebc4-7aa0-46ca-b5a8-b61946371d18",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3e848ede-7c21-484e-a407-db5ef1784607",
+              "content": "The input will be multiple lines containing two space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d967faee-4421-4612-b123-2afe7caf5619",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e68da433-5f03-43e7-a04b-eab0f082baab",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing `N`.\n\nFor example, **21**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c39c6586-4462-4313-abd6-283e5d34af01",
+          "short_text": "",
+          "content": "According to the given description, if a number that leaves a remainder of 0 when divided by 6, which group does it present in?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "25a75a75-cbf0-4980-9983-2a5bf9e430e2",
+              "content": "Group 2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2b4c36ed-0b78-4333-a9f4-e2353f22c9f6",
+              "content": "Group 6",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4555fd30-f690-4dd6-97ba-1d4419bdcb51",
+              "content": "Group 4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d5243b12-7e22-4356-b126-a8ed6726f1b1",
+              "content": "Group 5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the given description, if a number that leaves a remainder of **0** when divided by **6**, then the number is present in **Group 6**.\n\n- The number that leaves **0** as the remainder when divided by **6** is in `Group 6`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c842f640-f22c-43fe-8985-4d4e44cb229d",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "7657723a-445c-45e8-863f-880f4edff75d",
+              "content": "To check if the given number `N` is divisible by 6 or not.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b354b7f8-de91-45a8-bcab-674ef3d6454b",
+              "content": "To check which group the given number `N` is present in.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "dfda2be6-9946-4076-b1e7-8a6de6c93be3",
+              "content": "To check if the remainder is 0 or not when the given number is divided by `6`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e7f0b2d1-3dd4-4026-a486-dcee9d30f71f",
+              "content": "To check if the given number `N` is even or odd.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the number `N` and check the group in which the given number `N` is present.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d2783bbb-6e98-4ebe-800c-1d856e6b35ee",
+          "short_text": "",
+          "content": "Considering the given description, how many groups are there to divide the numbers from 1 to 30?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "699b3030-36b2-49aa-8eec-e26ddf3493df",
+              "content": "6",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6b001bda-3867-4118-9577-8573c5e328f7",
+              "content": "4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7d0da4e1-741e-4178-92bc-e878af309199",
+              "content": "3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d627b562-e6ba-4c74-b6b7-195ff5198551",
+              "content": "5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the given description, there are **6** groups to divide the numbers from **1** to **30**.\n\n| Group 1 | Group 2 | Group 3 | Group 4 | Group 5 | Group 6 |\n| :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |\n|    1    |    2    |    3    |    4    |    5    |    6    |\n|    7    |    8    |    9    |   10    |   11    |   12    |\n|   13    |   14    |   15    |   16    |   17    |   18    |\n|   19    |   20    |   21    |   22    |   23    |   24    |\n|   25    |   26    |   27    |   28    |   29    |   30    |",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0d2da6e1-f07f-4b64-b210-bef40c6bec41",
+      "input": "14",
+      "output": "Group 2",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7459132e-68f8-4a1c-b045-25537c4a129a",
+      "input": "3",
+      "output": "Group 3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "85431ea2-9d7e-4dd8-9b00-f0dc8c247ed7",
+      "input": "25",
+      "output": "Group 1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8ea9644c-4509-40cf-a157-f085ee042cd8",
+      "input": "29",
+      "output": "Group 5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "921b5b91-9bce-4221-b1e6-305eb96cc937",
+      "input": "23",
+      "output": "Group 5",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a54a26b4-5aa0-49eb-9ac0-e5e65f864cb5",
+      "input": "18",
+      "output": "Group 6",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b6212261-8772-466e-8a27-207d9f6a1758",
+      "input": "11",
+      "output": "Group 5",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d330d765-6d6a-4117-a999-6a93ea8bb149",
+      "input": "8",
+      "output": "Group 2",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f9183c68-7d68-427c-bad9-72e503b6362b",
+      "input": "30",
+      "output": "Group 6",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

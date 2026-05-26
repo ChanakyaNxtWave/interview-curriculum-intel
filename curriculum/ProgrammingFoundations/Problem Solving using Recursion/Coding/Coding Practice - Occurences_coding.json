@@ -1,0 +1,68 @@
+{
+  "question_id": "ad8d2a27-8580-4dee-abe9-a1653a722248",
+  "short_text": "Occurences",
+  "content": "A function named `count_occurrences` is given in the prefilled code that takes a list of integers and an integer `x` as arguments.\n\nWrite a program that reads a sequence of space-separated integers as input from the user, followed by a separate integer `x` on a new line, and uses the provided `count_occurrences` function in the prefilled code to recursively count how many times `x` appears in the given input.\n\n---\n\n#### Input\n\n- The first line will contain a space-separated integers.  \n- The second line will contain a single integer `x`.\n\n---\n\n#### Output\n\nOutput a single integer that represents the count of occurrences of `x` in the given input.\n\n---\n\n#### Explanation\n\nFor example, if the inputs are:\n\n```\n4 3 2 3 1 3\n3\n```\n\nThe output should be:\n\n```\n3\n```\n\nThe number `3` appears **3** times in the given input.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "1167d081-febf-4342-910c-99f87ca6d583",
+      "code_content": "def count_occurrences(lst, x):\n    if len(lst) == 0:\n        return 0\n    count = 0\n    if lst[0] == x:\n        count = 1\n    return count + count_occurrences(lst[1:], x)\n\ninput_line = input().split()\nnumbers = []\nfor num in input_line:\n    numbers.append(int(num))\nx = int(input())\n\nresult = count_occurrences(numbers, x)\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2941e54b-da1d-4aca-b0b6-9f03fdffdccf",
+      "input": "4 3 2 3 1 3\n3",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "628a4849-059f-41d6-8dbe-7e7f840350b4",
+      "input": "5 5 5 5 5 5 5 5 5\n5",
+      "output": "9",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "80287d31-c9c2-418a-8eb7-cd385e71b55c",
+      "input": "2 3 4 5 6\n7",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a71f35b1-85fc-44bc-a249-2b79fa03c89e",
+      "input": "10 20 30 10 40 10\n10",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c73b6a35-7093-4b4d-b761-e582d1ba0ae3",
+      "input": "1 1 1 1 1\n1",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d2fd0551-3807-44a8-b84a-2119034bd3c0",
+      "input": "1 2 3 4 5 3 3\n3",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d4fb3c1b-1b06-4a5d-bbbf-14e5aee42dbe",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

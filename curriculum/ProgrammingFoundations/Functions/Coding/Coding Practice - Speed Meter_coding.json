@@ -1,0 +1,61 @@
+{
+  "question_id": "6126f0fc-6d1e-467b-ab0b-393b7b097d41",
+  "short_text": "Speed Meter",
+  "content": "Write a function with the name get_speed_status that takes the speed (S) as an argument.<br/> - If the speed is less than 60, it should return &quot;Normal&quot;.<br/> - If the speed is greater than or equal to 60 and less than 80, it should return &quot;Warning&quot;.<br/> - If the speed is greater than or equal to 80, it should return &quot;Over Speed&quot;.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (S).<hr><b>Output</b><br/><br/>The output should be a single line containing the message according to the above conditions.<hr><b>Explanation</b><br/><br/>For example, if the given speed is 75, the output should be &quot;Warning&quot;, as 75 is greater than 60 and less than 80.<br/><br/>For example, if the given speed is 50, the output should be &quot;Normal&quot;, as 50 is less than 60.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "07451951-48a4-433b-b74d-ce6082b9a7c2",
+      "code_content": "def get_speed_status(speed):\n    if speed < 60:\n        msg = \"Normal\"\n    elif (speed >= 60) and (speed < 80):\n        msg = \"Warning\"\n    else:\n        msg = \"Over Speed\"\n    return msg\n\n\nspeed = int(input())\nresult = get_speed_status(speed)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2e254f33-8698-48e9-ac1e-fe9b2d003d64",
+      "input": "80",
+      "output": "Over Speed\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7cce0dc3-b616-4a76-aaee-09f3199797e4",
+      "input": "75",
+      "output": "Warning\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "82714440-d416-49eb-b861-f1f4eac652ef",
+      "input": "60",
+      "output": "Warning\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9e94d7fd-ba77-4b28-a215-bef19693a7f1",
+      "input": "120",
+      "output": "Over Speed\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "afb6ddb7-5dae-490f-a7c0-00c6d887175a",
+      "input": "50",
+      "output": "Normal\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

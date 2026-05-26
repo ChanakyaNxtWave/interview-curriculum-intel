@@ -1,0 +1,61 @@
+{
+  "question_id": "fe26097a-2806-4cfd-a956-1ac37e8711ba",
+  "short_text": "Difference Between Largest and Smallest Number",
+  "content": "Write a program to print the difference between the largest and smallest numbers in the list.<hr><b>Input</b><br/><br/>The input will be a single line containing the comma-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the differences between the largest and the smallest numbers in the given list.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;2,4,-1,5&quot;, the largest number is 5 and the smallest number is -1, the difference between the largest and the smallest number is 6, so the output should be 6.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "1de84c46-9b58-4e53-8f79-f9e928500112",
+      "code_content": "numbers = input()\nnums_list = numbers.split(\",\")\n\nlength_of_nums_list = len(nums_list)\nfor i in range(length_of_nums_list):\n    nums_list[i] = int(nums_list[i])\n\nlargest_number = max(nums_list)\nsmallest_number = min(nums_list)\n\ndifference = largest_number - smallest_number\nprint(difference)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "57a77c1a-ea1f-4dd2-b6c1-9136c2fa1e3d",
+      "input": "10,3,19,93,891,37",
+      "output": "888\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6f5114a0-f016-42f3-b796-5caafe2c7487",
+      "input": "1,1,1,1,1",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ca50eeb4-02eb-4289-a08e-0bc50f5a2222",
+      "input": "3",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d2881fbd-84b4-4a61-bbbf-f7022e65c6a5",
+      "input": "30,52,24,19",
+      "output": "33\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e70e2f52-92d5-4b74-a79e-b2309468f086",
+      "input": "2,3,-1,5",
+      "output": "6\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

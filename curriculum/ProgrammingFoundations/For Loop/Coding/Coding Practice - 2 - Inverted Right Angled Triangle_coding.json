@@ -1,0 +1,61 @@
+{
+  "question_id": "e1b7f38c-c3e6-4058-8bf5-eb47c5216745",
+  "short_text": "Inverted Right Angled Triangle",
+  "content": "Write a program that reads a number `N` and prints an **Inverted Right Angled Triangle** of `N` rows using stars (`*`).\r\n\r\n```\r\n* * * * * \r\n* * * *\r\n* * *\r\n* *\r\n*\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every star.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing stars (`*`) as an **Inverted Right Angled Triangle** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print the stars (`*`) on **5** rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\nIn the given image, there is a space after every star.\r\n</MultiLineNote>\r\n\r\n\r\n```\r\n* * * * * \r\n* * * * \r\n* * * \r\n* * \r\n* \r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a26c7aea-e442-4128-8bbc-f85ff82e878f",
+      "code_content": "n = int(input())\n\nfor i in range(n):\n    no_of_stars = n - i \n    row = \"* \" * no_of_stars \n    print(row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "17fcae9f-6fb3-4e63-9240-011d0fed45f9",
+      "input": "14",
+      "output": "* * * * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * \n* * * * * * * * \n* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6fe4e63b-0d29-4da3-b29e-7a9f55544105",
+      "input": "5",
+      "output": "* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8d1ff423-b219-45b3-93bf-4d7075588c6f",
+      "input": "11",
+      "output": "* * * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * \n* * * * * * * * \n* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a39ee39c-a3dc-43cf-a941-5c42978f16ce",
+      "input": "3",
+      "output": "* * * \n* * \n* \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "cfea0882-7f86-497f-82cd-da7ff2d1c800",
+      "input": "7",
+      "output": "* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n* \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

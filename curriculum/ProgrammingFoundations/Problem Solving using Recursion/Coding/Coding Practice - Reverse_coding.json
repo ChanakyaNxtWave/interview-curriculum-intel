@@ -1,0 +1,68 @@
+{
+  "question_id": "97c44a29-2449-4521-952f-14e9be2fd9a5",
+  "short_text": "Reverse",
+  "content": "A function named `reverse_list` is given in the prefilled code that takes a list of integers as an argument.\n\nWrite a program that reads a single line of space-separated integers as input from the user and uses the provided `reverse_list` function in the prefilled code to recursively reverse the list, then print the reversed list as space-separated integers.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be the reversed list printed as space-separated integers.\n\n---\n\n#### Explanation\n\nFor example, if the given input is:\n\n```\n1 2 3 4 5\n```\n\nThe output should be:\n\n```\n5 4 3 2 1\n```\n\nThe list is reversed recursively.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9041070d-5a2f-4c5f-9376-5ac97a8640e6",
+      "code_content": "def reverse_list(lst):\n    if len(lst) == 0:\n        return []\n    return [lst[-1]] + reverse_list(lst[:-1])\n\ninput_line = input().split()\nnumbers = []\nfor x in input_line:\n    numbers.append(int(x))\nreversed_numbers = reverse_list(numbers)\noutput = \"\"\nfor x in reversed_numbers:\n    output = output + str(x) + \" \"\nprint(output.strip())\n\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0dc83ad5-05cb-4049-9780-b881330ecbad",
+      "input": "1 2 3 4 5",
+      "output": "5 4 3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "13bee2d3-7ea7-4fc2-89be-b56b4f74d456",
+      "input": "100 200 300 400",
+      "output": "400 300 200 100",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "1603b158-55a3-468a-b913-c52615851d73",
+      "input": "7 8 9",
+      "output": "9 8 7",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "98ef4699-fe51-45c8-8772-4cefabe87f02",
+      "input": "10 20 30",
+      "output": "30 20 10",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a54c399d-595b-483b-9643-f0d2fe3fb06b",
+      "input": "5",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f9953ed6-338e-4505-bc5e-65c95c94778f",
+      "input": "1 2 3 4 5 6 7 8 9",
+      "output": "9 8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d4fb3c1b-1b06-4a5d-bbbf-14e5aee42dbe",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

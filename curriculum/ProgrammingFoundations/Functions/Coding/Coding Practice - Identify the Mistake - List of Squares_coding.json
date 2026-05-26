@@ -1,0 +1,61 @@
+{
+  "question_id": "58bc4b7c-7a7f-4cd5-834c-a4e9207b48e9",
+  "short_text": "Identify the Mistake - List of Squares",
+  "content": "Given a list of integers, write a program to square the elements in the given list.<hr><b>Input</b><br/><br/>The input will be a single line containing comma-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing a list by squaring the elements.<hr><b>Explanation</b><br/><br/>For example, if the given string is the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1,2,3,4\n</code></pre><br/>Print the list by squaring the elements in the list. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[1, 4, 9, 16]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "5c55a2b3-855e-4cde-adb1-e33fe08035a7",
+      "code_content": "def get_list(string_a):\n    list_a = string_a.split(',')\n    len_list_a = len(list_a)\n    for i in range(len_list_a):\n        list_a[i] = int(list_a[i])**2\n    return list_a\n\n\nstring_a = input()\nnumbers_list = get_list(string_a)\nprint(numbers_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1136f1cf-eaa2-4fa4-8d01-6c95111ec723",
+      "input": "12,-24,4,-2,5",
+      "output": "[144, 576, 16, 4, 25]\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "3f58676e-70e1-481f-96e7-f2d8de75c4aa",
+      "input": "1,1,-1,-1",
+      "output": "[1, 1, 1, 1]\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "41074c35-ebee-437f-947f-be49496c9cb6",
+      "input": "-7,-9,34",
+      "output": "[49, 81, 1156]\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "74d0ffa2-1a43-4f21-99ad-fdcd06b93226",
+      "input": "2,1,5,7",
+      "output": "[4, 1, 25, 49]\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "a5809609-ff8e-4b8d-8789-04281bb7580d",
+      "input": "1,2,3,4",
+      "output": "[1, 4, 9, 16]\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

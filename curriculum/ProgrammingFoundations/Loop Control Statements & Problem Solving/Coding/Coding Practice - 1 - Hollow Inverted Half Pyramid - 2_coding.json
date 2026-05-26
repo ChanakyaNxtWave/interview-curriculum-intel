@@ -1,0 +1,61 @@
+{
+  "question_id": "dafccd33-c13a-4b1a-aa2a-5a68c4aa3fd4",
+  "short_text": "Hollow Inverted Half Pyramid - 2",
+  "content": "Given the number of rows N, write a program to print the hallow inverted half pyramid pattern similar to the pattern shown below.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 2 3 4 5 \n1     4 \n1   3 \n1 2 \n1 \n</code></pre><hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be N rows containing the numbers in the hollow inverted half pyramid pattern.<br/>Note: There is a space after each number.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, the pattern should contain 5 rows as shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 2 3 4 5 \n1     4 \n1   3 \n1 2 \n1 \n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "505cc34e-f667-4b1e-9223-6a6a91a8a862",
+      "code_content": "n = int(input())\nfor row in range(1, n+1):\n    i = n - (row-1)\n    if (i > 2) and (i < n):\n        hollow_spaces = \"  \" * (i - 2)\n        numbers = \"1 \" + hollow_spaces + (str(i) + \" \")\n        print(numbers)\n    else:\n        numbers = \"\"\n        for j in range(1, i+1):\n            numbers = numbers + (str(j) + \" \")\n        print(numbers)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0f03912e-7632-4abe-a29d-a097239f11a9",
+      "input": "11",
+      "output": "1 2 3 4 5 6 7 8 9 10 11 \n1                 10 \n1               9 \n1             8 \n1           7 \n1         6 \n1       5 \n1     4 \n1   3 \n1 2 \n1 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "173f4ba3-5dba-4b1b-baf4-6512ab473932",
+      "input": "5",
+      "output": "1 2 3 4 5 \n1     4 \n1   3 \n1 2 \n1 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "667210d6-d368-4dd6-b825-7b9a0d5f70d1",
+      "input": "3",
+      "output": "1 2 3 \n1 2 \n1 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "70faa1f9-f456-4951-9643-6e8da71ffbc0",
+      "input": "8",
+      "output": "1 2 3 4 5 6 7 8 \n1           7 \n1         6 \n1       5 \n1     4 \n1   3 \n1 2 \n1 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "de3e128b-5f1f-4023-8981-29ee6a2c3b3c",
+      "input": "14",
+      "output": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 \n1                       13 \n1                     12 \n1                   11 \n1                 10 \n1               9 \n1             8 \n1           7 \n1         6 \n1       5 \n1     4 \n1   3 \n1 2 \n1 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7fd01c52-e0bb-49e8-b8fd-82ff808825da",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

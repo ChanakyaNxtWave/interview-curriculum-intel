@@ -1,0 +1,75 @@
+{
+  "question_id": "cdae9304-0598-4664-875b-199df1ec6094",
+  "short_text": "Print the Characters",
+  "content": "Write a program that reads a string and prints each character of the given string on a new line.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be `N` lines, with each line containing a string that is one of the characters of the given string. Here, `N` is the length of the given string.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **shine**,\n\n- The length of the given string is **5**.\n- Each character of the string should be printed on a new line.\n\nThe output should be,\n\n```\ns\nh\ni\nn\ne\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "32d2737d-165f-4901-81cd-b2b8b71ecce6",
+      "code_content": "string = input()\n\nindex = 0\nlength = len(string)\n\nwhile index < length:\n    character = string[index]\n    print(character)\n    index = index + 1",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "35417835-3d0c-4f99-8029-865c0c75410f",
+      "input": "dictionary",
+      "output": "d\ni\nc\nt\ni\no\nn\na\nr\ny",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "528ae807-98a9-4696-9927-727d9ed020df",
+      "input": "Count",
+      "output": "C\no\nu\nn\nt",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "67e8d4a4-1e4b-4002-9fa7-7cf1a0ecebb9",
+      "input": "knowledge",
+      "output": "k\nn\no\nw\nl\ne\nd\ng\ne",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "70ece3df-3167-4b95-963a-f841490a061d",
+      "input": "shine",
+      "output": "s\nh\ni\nn\ne",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aba7ea8d-16c7-4d5f-829a-d17b353a3bc0",
+      "input": "Solar System",
+      "output": "S\no\nl\na\nr\n \nS\ny\ns\nt\ne\nm",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "bf277c02-9fec-4a6a-a3fc-45740da3ace5",
+      "input": "Morning",
+      "output": "M\no\nr\nn\ni\nn\ng",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bf9f1370-1d09-499f-b2d1-50689d0bbd5d",
+      "input": "X",
+      "output": "X",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

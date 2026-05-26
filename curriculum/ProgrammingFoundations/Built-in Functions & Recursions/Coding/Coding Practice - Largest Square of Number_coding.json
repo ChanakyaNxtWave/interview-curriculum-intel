@@ -1,0 +1,96 @@
+{
+  "question_id": "43f27634-30aa-4081-b05a-6e13ca9114c6",
+  "short_text": "Largest Square of Number",
+  "content": "A function is given in the prefilled code that takes a list `L` as an argument.\n\nWrite a program to find the largest of the squares of the numbers in the list `L`  using Recursion.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the largest of the squares of the numbers in the list `L` that is passed as an argument.\n\n---\n\n#### Explanation\n\nFor example, if the given space-separated numbers are `2 3 5 4`,\n\n- The squares of the given numbers are **4**, **9**, **25**, and **16**.\n- The largest of the squares of the given numbers is **25**.\n\nThe output should be **25**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6be6c9a2-3c6b-4e23-87c1-396934a53f35",
+      "code_content": "def get_largest_square(numbers):\n    each_number_square = int(numbers[0]) ** 2\n    \n    if len(numbers) == 1:\n        return each_number_square\n        \n    return max(each_number_square, get_largest_square(numbers[1:]))\n\nnumbers = input().split()\n\nresult = get_largest_square(numbers)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "052ab7a8-e34b-4d3d-9c76-b0daa7f739fb",
+      "input": "2 3 5 4",
+      "output": "25",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "1c959085-71ec-4240-bfec-4e13250185f0",
+      "input": "5 0 9 7 3",
+      "output": "81",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2b4de478-677e-4d2b-87b3-09251c89e89d",
+      "input": "1478874512",
+      "output": "2187069822243238144",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5aace2a2-18b6-4c4f-b38d-0a7cd3c6e80b",
+      "input": "15 150 -963 54",
+      "output": "927369",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7ac8a03b-d8a3-4048-8f50-386eb6cc1360",
+      "input": "1 -10 100",
+      "output": "10000",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a856fcd5-29d5-440c-9c5f-16266a235eb2",
+      "input": "4 6 8 2 35 14 69 85",
+      "output": "7225",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "aed28a9e-b9e7-4e41-baf5-7f7719ee5ab6",
+      "input": "14 -6 28 2 -35 1 6 -85",
+      "output": "7225",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d85d15d8-bd51-42e2-bedb-20a37e5499f8",
+      "input": "6 -8 -35 1 9 8",
+      "output": "1225",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f0b8792c-167f-44b5-a16c-f0b88db1b69b",
+      "input": "-96 -85 0",
+      "output": "9216",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ffdf4206-38ee-4e00-933c-c086e2360dbf",
+      "input": "-4 20 -3 5 -10",
+      "output": "400",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

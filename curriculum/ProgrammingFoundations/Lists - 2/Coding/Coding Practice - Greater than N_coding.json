@@ -1,0 +1,61 @@
+{
+  "question_id": "819d867a-7a15-427e-ab07-428cd9095fbc",
+  "short_text": "Greater than N",
+  "content": "For this problem, the prefilled code will contain a list. Your program should create a new list with all the elements in existing list that are greater than given number.<br/>Note: The order of elements in the new list should be same as the order of those elements in the list given in the prefilled code.<hr><b>Input</b><br/><br/>The first line of input will contain an integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the list with elements greater than N.<hr><b>Explanation</b><br/><br/>For example, if the given number is 50, your code should print the list of numbers that are greater than 50 in the given list. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[93, 71]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "1530b019-14e2-4a05-b7ab-0fdf4a11221f",
+      "code_content": "num_list = [1, 6, 32, 93, 71, -20, 30, -90, 50]\n\nn = int(input())\nnew_list = []\nfor number in num_list:\n    if number > n:\n        new_list += [number]\n\nprint(new_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "047791e1-46de-4c39-a9a6-acc27b360f8e",
+      "input": "-100",
+      "output": "[1, 6, 32, 93, 71, -20, 30, -90, 50]\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "54fb4daf-fbd9-41bf-a748-ea4d5c56d3f1",
+      "input": "1000",
+      "output": "[]\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "5913f24b-3df9-4dc1-8b1b-0237c0387015",
+      "input": "-45",
+      "output": "[1, 6, 32, 93, 71, -20, 30, 50]\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "62841881-310f-4f43-9e92-75dc82eb0380",
+      "input": "50",
+      "output": "[93, 71]\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ec21dabc-da22-4832-b7e6-aeb02e99ce01",
+      "input": "0",
+      "output": "[1, 6, 32, 93, 71, 30, 50]\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,47 @@
+{
+  "question_id": "fd44fa21-5069-4666-863b-03b4701f69d8",
+  "short_text": "Vehicle Functionality",
+  "content": "Complete the given **`Vehicle`** class along with its subclasses **`Car`** and **`Motorcycle`** by adding new features as per the instructions below.\n\n<details> \n\n<summary>**Features to be added to **_Vehicle_** class and its subclasses**</summary>\n\n- **Add below attributes to the `Vehicle`class**\n    - The `Vehicle` class should have the following attributes:\n    - **`make`**: a string representing the vehicle's manufacturer (public attribute).\n    - **`model`**: a string representing the vehicle's model (public attribute).\n    - **`year`**: an integer representing the year of manufacture (public attribute).\n    - **`__vin`**: a private attribute that holds the vehicle identification number.\n- **Add below methods to the Vehicle class**\n    - **`init(make, model, year, vin)`**:\n      - Initializes the vehicle with its make, model, year, and VIN.\n    - **`display_info()`**:\n      - Displays all details of the vehicle instance in the below format\n\n        Make: {make}\n        Model: {model}\n        Year: {year}\n        VIN: {vin}\n\n- **`Subclasses to be created:`**\n  - **`Car`** :\n    - This subclass should inherit from `Vehicle` and have an additional attribute:\n      - **`number_of_doors`**: An integer representing the number of doors in the car.\n      - The `Car` subclass should also override the **`display_info()`** method to include information about the number of doors.\n        - Format :\n        \n        Make: {make}\n        Model: {model}\n        Year: {year}\n        VIN: {vin}\n        Number of Doors: {number_of_doors}\n\n  - **`Motorcycle`** :\n    - This subclass should also inherit from `Vehicle` and have an additional attribute:\n      - **`engine_capacity`**: A float representing the engine capacity in liters.\n      - The `Motorcycle` subclass should override the **`display_info()`** method to include information about engine capacity.\n        - Format :\n\n```\nMake: {make}\nModel: {model}\nYear: {year}\nVIN: {vin}\nEngine Capacity: {engine_capacity} liters\n```\n</details> \n\n<MultiLineNote>\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "618f023d-efea-4dd0-94f9-e5d3ddef930c",
+      "code_content": "class Vehicle:\n    def __init__(self, make, model, year, vin):\n        self.make = make                    # Public attribute for vehicle make\n        self.model = model                  # Public attribute for vehicle model\n        self.year = year                    # Public attribute for year of manufacture\n        self.__vin = vin                    # Private attribute for vehicle identification number\n\n    def display_info(self):\n        print(f\"Make: {self.make}\")\n        print(f\"Model: {self.model}\")\n        print(f\"Year: {self.year}\")\n        print(f\"VIN: {self.__vin}\")\n\nclass Car(Vehicle):\n    def __init__(self, make, model, year, vin, number_of_doors):\n        super().__init__(make, model, year, vin)  # Call to superclass constructor\n        self.number_of_doors = number_of_doors   # Additional attribute for number of doors\n\n    def display_info(self):\n        super().display_info()                    # Call to display_info method from Vehicle class\n        print(f\"Number of Doors: {self.number_of_doors}\")\n\nclass Motorcycle(Vehicle):\n    def __init__(self, make, model, year, vin, engine_capacity):\n        super().__init__(make, model, year, vin)  # Call to superclass constructor\n        self.engine_capacity = engine_capacity      # Additional attribute for engine capacity\n\n    def display_info(self):\n        super().display_info()                    # Call to display_info method from Vehicle class\n        print(f\"Engine Capacity: {self.engine_capacity} liters\")\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    car = Car(\"Toyota\", \"Camry\", 2021, \"1HGBH41JXMN109186\", 4)\n    motorcycle = Motorcycle(\"Harley-Davidson\", \"Street 750\", 2020, \"1HD1KBB14DB123456\", 0.75)\n    \n    car.display_info()\n    motorcycle.display_info()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4d064c8c-836f-4142-a428-341c11b64aa4",
+      "input": "Checking Vehicle Attributes",
+      "output": "PASS: All attributes are correctly defined.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "67a61286-02bb-4bf7-b74b-c9553b6031ba",
+      "input": "Checking Default Tests",
+      "output": "Make: Toyota\nModel: Camry\nYear: 2021\nVIN: 1HGBH41JXMN109186\nNumber of Doors: 4\nMake: Harley-Davidson\nModel: Street 750\nYear: 2020\nVIN: 1HD1KBB14DB123456\nEngine Capacity: 0.75 liters",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8b7cf26e-c9a4-4b38-b619-9c626ad479b6",
+      "input": "Checking Vehicle Methods",
+      "output": "Make: Harley-Davidson\nModel: Street 750\nYear: 2020\nVIN: 1HD1KBB14DB123456\nEngine Capacity: 0.75 liters\nPASS: All methods are working correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

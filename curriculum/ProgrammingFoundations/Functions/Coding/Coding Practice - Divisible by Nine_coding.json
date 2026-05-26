@@ -1,0 +1,75 @@
+{
+  "question_id": "e27c03ad-c991-4cc4-aad2-526a379fab27",
+  "short_text": "Divisible by Nine",
+  "content": "A function is given in the prefilled code that takes three numbers `N1`, `N2`, and `N3` as arguments.\n\nWrite a program that returns **True** if atleast one of the given numbers `N1`, `N2`, and `N3` is divisible by **9**. Otherwise, return **False**.\n\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N1`.\nThe second line of input contains an integer representing `N2`.\nThe third line of input contains an integer representing `N3`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if one of the numbers `N1`, `N2`, and `N3` is divisible by **9**. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `N1 = 3`, `N2 = 9`, and `N3 = 16`,\n\n✘ The number **3** is **not** divisible by **9**. (`3 % 9 = 3`)\n✔ The number **9** is divisible by **9**. (`9 % 9 = 0`)\n✘ The number **16** is **not** divisible by **9**. (`16 % 9 = 7`)\n\nThe output should be **True**, as one of the numbers is divisible by **9**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "897cd679-36aa-400d-9229-61eeeb32ea70",
+      "code_content": "def check_divisible_by_9(first_number, second_number, third_number):\n    is_divisible_by_9 = ((first_number % 9 == 0) or (second_number % 9 == 0) or (third_number % 9 == 0))\n\n    return  is_divisible_by_9\n    \nfirst_number = int(input())\nsecond_number = int(input())\nthird_number = int(input())\n\nresult = check_divisible_by_9(first_number, second_number, third_number)\n\nprint(result)\n            \n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "38ab89c1-4d3d-418a-a4c1-a49c433e6347",
+      "input": "126\n261\n4149",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "5685c9b1-8c6c-4bac-8b75-996a6121b446",
+      "input": "-57\n-613\n-7299",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "656540eb-fc9a-493c-af2b-7b672555f0d2",
+      "input": "112342134\n10008\n14567",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "899c47fc-be66-4dab-9a9a-2a66c8914063",
+      "input": "46\n67\n91",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a5a211b1-f380-45fd-a47e-da4b3058105e",
+      "input": "10234\n43412145\n712932235",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a78b4c80-c1f6-4162-b85b-39237ce4836f",
+      "input": "-7564272145\n-89045212343\n-9876",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d7b2ad49-c961-47ad-be6d-3cef956a2aed",
+      "input": "3\n9\n16",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

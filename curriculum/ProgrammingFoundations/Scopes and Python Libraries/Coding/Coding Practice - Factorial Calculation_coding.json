@@ -1,0 +1,61 @@
+{
+  "question_id": "31be8314-3d1b-4a6c-bdce-01ecf556d440",
+  "short_text": "Factorial Calculation",
+  "content": "Complete the  function to calculate the factorial of a given number using built-in function.\n\n---\n\n#### Input\n\nThe **`calculate_factorial`** function takes one parameter: a single integer `n` as input.\n\n\n---\n\n#### Output\nThe  **`calculate_factorial`** should return an integer representing the factorial of `n`.\n\n---\n\n\n#### Explanation\n\nThe factorial of a number `n` is the product of all positive integers less than or equal to `n`. For example, factorial(5) = **5 x 4 x 3 x 2 x 1 = 120**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "198caf83-6878-44e5-b47a-b8f37c84999c",
+      "code_content": "import math\n\n\ndef calculate_factorial(n):\n    return math.factorial(n)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "17c67cda-11f7-44ef-9c6e-30cd41da4a84",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "38f382cd-38f3-4a0c-a229-1f1369e91b28",
+      "input": "7",
+      "output": "5040",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "729f5e5d-52e5-441b-a401-42a4f45771ad",
+      "input": "2",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9d76ab59-22c5-46b0-bd44-9f1eb60e55dc",
+      "input": "5",
+      "output": "120",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "cc91c17a-be9b-430d-ae1e-95e9c63a8e93",
+      "input": "6",
+      "output": "720",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "be8d64eb-d56a-40c7-ac7d-fdd7e563e83d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

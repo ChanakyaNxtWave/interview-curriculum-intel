@@ -1,0 +1,61 @@
+{
+  "question_id": "ca179c53-e962-49bd-bcec-4990e73d00cd",
+  "short_text": "Name of the Weekday",
+  "content": "Write a program to print the name of the weekday of a given date.<br/>The date in string format is like &quot;8 Feb 2021&quot;.<hr><b>Input</b><br/><br/>The input will be a single line containing the date in the string format.<hr><b>Output</b><br/><br/>The output should be a single line containing the name of the weekday.<hr><b>Explanation</b><br/><br/>For example, if the given date is &quot;7 Sept 2020&quot;, your code should print the name of the weekday on 7th September 2020. So the output should be &quot;Sunday&quot;.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "356e2e22-c93a-4db5-b6c2-95b7e9ef59aa",
+      "code_content": "from datetime import datetime\n\ndate = input()\ndate_string = \"%d %b %Y\"\ndatetime_object = datetime.strptime(date, date_string)\nname_of_the_day = datetime_object.strftime(\"%A\")\nprint(name_of_the_day)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0ee5ffba-90f9-4396-9a44-c9718f636a75",
+      "input": "12 Dec 1986",
+      "output": "Friday\n",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "95b9249a-e0b5-4f7c-9af5-4fd8e75da616",
+      "input": "2 Jul 2000",
+      "output": "Sunday\n",
+      "is_hidden": false,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "a4790e49-66ab-49b1-a794-83594f761411",
+      "input": "7 Jan 2018",
+      "output": "Sunday\n",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "f460ee21-c588-437a-bca4-f343af60dc76",
+      "input": "14 Oct 1999",
+      "output": "Thursday\n",
+      "is_hidden": false,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "fac2720d-9f3c-4183-9ab1-36342f68f009",
+      "input": "15 Aug 1947",
+      "output": "Friday\n",
+      "is_hidden": true,
+      "weightage": 12.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f543f8cb-9c90-4462-a019-4620b579057f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

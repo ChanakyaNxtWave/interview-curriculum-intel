@@ -1,0 +1,61 @@
+{
+  "question_id": "91c64883-4b67-4a54-bb33-39c9f59ca3fa",
+  "short_text": "Print N Integers",
+  "content": "Write a program to print integers from 1 to the given integer (N).\r\n\r\n---\r\n\r\n#### Input  \r\n  \r\nThe first line of input will contain a positive integer.\r\n\r\n---\r\n\r\n#### Output  \r\n  \r\nThe output should be of N lines, printing an integer in each line.\r\n\r\n---\r\n\r\n#### Explanation  \r\n  \r\nFor example, if the given number is 3, your code should print the  \r\n  \r\n\r\n    1\r\n    2\r\n    3\r\n    \r\n\r\n  \r\nSimilarly, if the given number is 5, your code should print the  \r\n  \r\n\r\n    1\r\n    2\r\n    3\r\n    4\r\n    5",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "cdee8f62-5d00-436c-ba26-5d688f771f04",
+      "code_content": "n = int(input())\ncounter = 1\nwhile counter <= n:\n    print(counter)\n    counter = counter + 1\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "146a6b81-158a-4f31-81b3-5e1cce8a0cd7",
+      "input": "19",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "517eaf8c-d51c-413b-993e-29eb0d893151",
+      "input": "5",
+      "output": "1\n2\n3\n4\n5\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "816874d5-c5ac-404b-a116-f0611af1aa23",
+      "input": "100",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64\n65\n66\n67\n68\n69\n70\n71\n72\n73\n74\n75\n76\n77\n78\n79\n80\n81\n82\n83\n84\n85\n86\n87\n88\n89\n90\n91\n92\n93\n94\n95\n96\n97\n98\n99\n100\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8ab672b2-0a60-4d24-9af4-e881db22a523",
+      "input": "3",
+      "output": "1\n2\n3\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b87025c3-bff2-48c3-a5b8-6cdbe043f98d",
+      "input": "10",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

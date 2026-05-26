@@ -1,0 +1,68 @@
+{
+  "question_id": "7950e1a6-9008-444a-8d68-de31af7ab873",
+  "short_text": "Case Conversion - 2",
+  "content": "Given a string, write a program to modify the string as given below.\n\n- Add a hyphen (`-`) before each upper-case character.\n- Convert upper-case characters into lower-case characters.\n\nPrint the modified string.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by adding a hyphen (`-`) before each uppercase character and converting uppercase characters to lower-case characters.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **aChristmasStory**,\n\n- The upper-case characters in the string **aChristmasStory** are **C and S**.\n- After adding a hyphen (`-`) before the upper case characters **C** and **S** the string is **a-Christmas-Story**.\n- After converting the upper case characters **C** and **S** to the lower case characters **c** and **s** the string is **a-christmas-story**.\n- The modified string after adding hyphen (`-`) before each uppercase character and convert uppercase characters to lower-case characters.\n\nThe output should be **a-christmas-story**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "766f7ab5-6392-4197-becd-9236ebaeae97",
+      "code_content": "string = input()\n\nlength = len(string)\nresult_string = string[0]\n\nfor each_number in range(1, length):\n    each_character = string[each_number]\n    upper_case_character = each_character.upper()\n    lower_case_character = each_character.lower()\n\n    if each_character == upper_case_character:\n        result_string = result_string + \"-\" + lower_case_character\n    else:\n        result_string = result_string + each_character\n\nprint(result_string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2e8f0363-63d2-4d36-8bab-8a5624b518d3",
+      "input": "click",
+      "output": "click",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "381750bb-3357-4b0f-9c35-fe52ec14a44b",
+      "input": "camelCase",
+      "output": "camel-case",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "4d39f4d7-fae9-42f5-9bde-da315a038361",
+      "input": "theFox",
+      "output": "the-fox",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8f88f52b-521a-4aea-94f1-7f953d541e3a",
+      "input": "aHorrorMovie",
+      "output": "a-horror-movie",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "c52de7ed-6a09-4a0d-a557-a72593d61f65",
+      "input": "pEN",
+      "output": "p-e-n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "e59f4da1-dee7-4d11-878c-ed3c765a1098",
+      "input": "aChristmasStory",
+      "output": "a-christmas-story",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+  *::selection { background: rgba(124, 156, 255, 0.35); }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2a2f3f; border-radius: 6px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a4054; }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-card border border-line rounded-lg;
+  }
+  .reading-content h1 { @apply text-2xl font-semibold text-text mt-6 mb-3; }
+  .reading-content h2 { @apply text-xl font-semibold text-text mt-5 mb-2; }
+  .reading-content h3 { @apply text-lg font-semibold text-text mt-4 mb-2; }
+  .reading-content h4 { @apply text-base font-semibold text-text mt-3 mb-1.5; }
+  .reading-content p  { @apply text-text leading-relaxed mb-3; }
+  .reading-content ul { @apply list-disc list-outside ml-5 mb-3 text-text; }
+  .reading-content ol { @apply list-decimal list-outside ml-5 mb-3 text-text; }
+  .reading-content li { @apply mb-1; }
+  .reading-content a  { @apply text-brand underline; }
+  .reading-content code { @apply px-1.5 py-0.5 rounded bg-bg-panel border border-line text-sm font-mono; }
+  .reading-content pre { @apply p-3 rounded-md bg-bg-panel border border-line overflow-x-auto mb-3; }
+  .reading-content pre code { @apply bg-transparent border-0 p-0; }
+  .reading-content blockquote { @apply border-l-2 border-brand/50 pl-3 italic text-text-muted mb-3; }
+  .reading-content img { @apply max-w-full rounded-md my-3 border border-line; }
+  .reading-content strong { @apply text-text font-semibold; }
+  .reading-content table { @apply w-full border-collapse mb-3 text-sm; }
+  .reading-content th, .reading-content td { @apply border border-line px-2 py-1; }
+  .input {
+    @apply bg-bg-panel border border-line rounded-md px-3 py-2 text-sm text-text placeholder:text-text-dim focus:outline-none focus:border-brand;
+  }
+  .btn {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium border border-line bg-bg-panel hover:bg-bg-hover transition-colors;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-brand text-bg border border-brand hover:bg-brand-hover;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs border border-line bg-bg-panel text-text-muted;
+  }
+  .chip-on {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-brand/15 border border-brand/40 text-brand;
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "b299e1ed-6a98-4732-ba59-746665b65817",
+  "short_text": "Print Dates",
+  "content": "Write a program to print the previous day of D, the current day D, and the next day of D.<br/>The date in string format is like &quot;8 Feb 2021&quot;.<hr><b>Input</b><br/><br/>The input will be a single line containing the date in the string format.<hr><b>Output</b><br/><br/>The first line of output should contain the date of the previous day.<br/>The second line of output should contain the date of the current day.<br/>The third line of output should contain the date of the next day.<hr><b>Explanation</b><br/><br/>For example, if the given date is &quot;26 Jan 2021&quot;, your code should print the previous day of that day, which is &quot;25 Jan 2021&quot;, the given date and the next day, which is &quot;27 Jan 2021&quot;. So the output should be<br/>2021-01-25 00:00:00<br/>2021-01-26 00:00:00<br/>2021-01-27 00:00:00",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "ba0af0ac-3762-45f7-b6b3-bf4c9c56429b",
+      "code_content": "from datetime import datetime, timedelta\n\ndate = input()\ndate_string = \"%d %b %Y\"\ntoday = datetime.strptime(date, date_string)\n\nyesterday = today - timedelta(days=1)\nnext_day = today + timedelta(days=1)\n\nprint(yesterday)\nprint(today)\nprint(next_day)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1722dece-6451-438b-953b-dec89e366bb2",
+      "input": "1 Jan 2018",
+      "output": "2017-12-31 00:00:00\n2018-01-01 00:00:00\n2018-01-02 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "38704822-75b5-4e8a-bee0-b9f3a3792271",
+      "input": "2 Jul 2000",
+      "output": "2000-07-01 00:00:00\n2000-07-02 00:00:00\n2000-07-03 00:00:00\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "3fc0ff19-1cb2-4b47-ab63-afcb27625025",
+      "input": "26 Jan 2021",
+      "output": "2021-01-25 00:00:00\n2021-01-26 00:00:00\n2021-01-27 00:00:00\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "5cb8a34d-59ca-4720-9909-15cf62818bfc",
+      "input": "30 Sep 1999",
+      "output": "1999-09-29 00:00:00\n1999-09-30 00:00:00\n1999-10-01 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "7eab359b-e15f-44ff-8cc5-988ce56fe5ee",
+      "input": "31 Dec 1986",
+      "output": "1986-12-30 00:00:00\n1986-12-31 00:00:00\n1987-01-01 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "caaa211e-2733-4813-809c-1008d219ea3e",
+      "input": "28 Feb 2021",
+      "output": "2021-02-27 00:00:00\n2021-02-28 00:00:00\n2021-03-01 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f543f8cb-9c90-4462-a019-4620b579057f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

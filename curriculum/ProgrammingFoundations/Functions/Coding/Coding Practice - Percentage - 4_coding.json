@@ -1,0 +1,96 @@
+{
+  "question_id": "732f9d19-cb2c-4911-873d-0ac684052ebc",
+  "short_text": "Percentage - 4",
+  "content": "A function is given in prefilled code that takes a number `N` as an argument.\n\nWrite a program that checks if `N` is less than **1000**.\n\nReturn **5%** of the `N` if `N` is less than **1000**. Otherwise, return **10%** of the `N`.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing the float returned by the function. **5%** of the `N` should be printed if `N` is less than **1000**. Otherwise, **10%** of `N` should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 500`,\n\n- The given number **500** is less than **1000**. (`500 < 1000`)\n- **5%** of **500** is **25.0**. (`(5 / 100) * 500 = 25.0`)\n\nThe output should be **25.0**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8e1447e4-16ab-437d-9f9f-363c3afe9b42",
+      "code_content": "def calculate_percentage(number):\n    if number < 1000:\n        value = ((5 / 100) * number)\n    else:\n        value = ((10 / 100) * number)\n        \n    return value\n    \nnumber = int(input())\n\nresult = calculate_percentage(number)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0e588c7e-45ce-482f-8418-7e98e154ddc3",
+      "input": "999",
+      "output": "49.95",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "0fd9868e-412d-45b4-9c89-402ebfa81542",
+      "input": "2000",
+      "output": "200.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3298813d-791d-45fc-94fc-e7a92ead1b2e",
+      "input": "0",
+      "output": "0.0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "33b702dc-903f-4112-9011-63e8ab475e12",
+      "input": "500",
+      "output": "25.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3b4a1100-5c2a-40eb-ac21-f7face9015a6",
+      "input": "753952",
+      "output": "75395.2",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "60af17f0-0073-44a5-948e-0fbcfd4312ae",
+      "input": "1000",
+      "output": "100.0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7d8909ed-a694-4fed-b8b8-90a72db2a259",
+      "input": "1001",
+      "output": "100.10000000000001",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ab142d14-8d9d-4fa1-8bca-dd4c9ba12d74",
+      "input": "486",
+      "output": "24.3",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bd882456-5aab-457b-9d3f-522e09b5581e",
+      "input": "5486",
+      "output": "548.6",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bf943b4a-4fe1-4aa1-ab59-bbf24c2835fb",
+      "input": "1",
+      "output": "0.05",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

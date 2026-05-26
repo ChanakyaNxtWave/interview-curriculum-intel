@@ -1,0 +1,47 @@
+{
+  "question_id": "1a95c7a3-560c-4bbd-9da5-75ee86d9a656",
+  "short_text": "Inheritance Product",
+  "content": "Complete the given **Product** and **FoodProduct** classes by adding new features by following the given instructions.\r\n\r\n**Existing _Product_ class**:\r\nThe existing **Product** class has basic initialization for product attributes. You need to add more features to it as well as create a **FoodProduct** subclass that inherits from **Product**.\r\n\r\n<details>\r\n\r\n<summary>**Existing _Product_ class**</summary>\r\n\r\n- **Attributes**:\r\n  - The **Product** class should have the following attributes:\r\n    - **product_id**\r\n    - **name**\r\n    - **price**\r\n    - **quantity**\r\n    - **expiry_date**\r\n</details>\r\n\r\n<details>\r\n<summary>**Features to be added to _FoodProduct_ subclass**</summary>\r\n\r\n- **Methods**:\r\n  - `check_expiry()`: This method prints the expiry date of the food product by accessing the `expiry_date` attribute of the `FoodProduct` class.\r\n  - `sell()`: This method decreases the quantity of the food product by 1 if there are available units, ensuring that the stock reduces correctly upon a sale.\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will affect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\r\n- This coding question does not have the usual input/output test cases. The class defined by you will be tested internally to check whether the attributes are present or not. The test case results will provide a rough description of the tests being verified.\r\n\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a481a8cc-b851-422e-83b5-52ae0833928c",
+      "code_content": "class Product:\n    def __init__(self, product_id, name, price, quantity,expiry_date):\n        self.product_id = product_id\n        self.name = name\n        self.price = price\n        self.quantity = quantity\n        self.expiry_date = expiry_date\n\nclass FoodProduct(Product):\n    def __init__(self, product_id, name, price, quantity, expiry_date):\n        super().__init__(product_id, name, price, quantity)\n        \n\n    def check_expiry(self):\n        print(self.expiry_date)\n\n    def sell(self):\n        if self.quantity > 0:\n            self.quantity -= 1\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    food_product = FoodProduct(product_id=101, name=\"Apple\", price=0.5, quantity=30, expiry_date=\"2025-5-1\")\n    print(food_product.product_id)\n    print(food_product.name)\n    print(food_product.price)\n    print(food_product.quantity)\n    print(food_product.expiry_date)\n    food_product.sell()\n    print(food_product.quantity)\n    food_product.check_expiry()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "900b2722-a319-4241-bdf8-b727c4422e38",
+      "input": "Checking Default Tests",
+      "output": "101\nApple\n0.5\n30\n2025-5-1\n29\n2025-5-1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bbc0d3d2-8937-4edf-aadb-1e5be54ecc98",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in Product class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ee2df925-d049-4c28-8db1-2ad8883ef5b1",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly in FoodProduct class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "68869c08-d1ef-4086-94f9-a567b9781d18",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

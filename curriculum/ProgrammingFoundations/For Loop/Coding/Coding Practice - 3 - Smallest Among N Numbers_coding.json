@@ -1,0 +1,61 @@
+{
+  "question_id": "e0dfa897-f4e5-4785-9e4d-a49d5b5d302f",
+  "short_text": "Smallest Among N Numbers",
+  "content": "Write a program to print the smallest among the given N numbers.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The following N lines will contain an integer in each line.<hr><b>Output</b><br/><br/>The output should be a single line containing the smallest among the given numbers.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, then read the inputs in the next 5 lines and print the smallest among the given five numbers. If the given input integers in the next five lines are 8, 11, 96, 49, and 25, the output should be 8.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "cd5b9d93-76ce-4696-8156-c303e906f847",
+      "code_content": "number_of_inputs = int(input())\n\nfirst_input = int(input())\nsmallest_number = first_input\n\nfor i in range(number_of_inputs - 1):\n    number = int(input())\n    if number < smallest_number:\n        smallest_number = number\n\nprint(smallest_number)",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4bb8dff4-b7ff-4af4-af32-2077e17cc70c",
+      "input": "10\n20\n35\n99\n-84\n-93\n2\n7\n53\n23\n11",
+      "output": "-93\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6d74b577-b756-40a6-9540-839e5a0cb9b6",
+      "input": "8\n1111\n2\n92\n58\n8\n1000\n999\n76",
+      "output": "2\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "92b090e2-e6dd-4c7b-8f6a-60f58e28e684",
+      "input": "3\n10\n10\n10",
+      "output": "10\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ac1b8874-f66b-4bad-8701-84e9fd397d71",
+      "input": "5\n8\n11\n96\n49\n25",
+      "output": "8\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "bef6f8b0-07f1-4f3a-8766-bc60a02bc184",
+      "input": "4\n14\n14\n20\n22\n1",
+      "output": "14\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

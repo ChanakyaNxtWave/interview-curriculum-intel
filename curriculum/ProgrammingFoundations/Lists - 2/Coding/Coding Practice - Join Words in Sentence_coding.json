@@ -1,0 +1,61 @@
+{
+  "question_id": "c3d3067c-c2d9-4c95-a3ea-6af4a54af55d",
+  "short_text": "Join Words in Sentence",
+  "content": "Given a sentence `S`. The words in the sentence `S` are separated by a space. \n\nWrite a program that prints a string by joining the words in the sentence `S` with the dot(`.`).\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the words in the sentence `S` with the dot(`.`).\n\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"This is a program\"`,\n\n- Words in `S` are **This, is, a, program**\n- After joining the words in the sentence `S` with the dot(`.`) is **This.is.a.program**.\n\nThe output should be,\n\n```\nThis.is.a.program\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4f6ec6a9-0eb7-42a8-8723-304410d8790d",
+      "code_content": "string = input()\n\nwords_list = string.split()\nwords_joined_by_dot = \".\".join(words_list)\n\nprint(words_joined_by_dot)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1905a851-9ccf-4d9c-837c-0fcb10f431d5",
+      "input": "JaVaSCript",
+      "output": "JaVaSCript",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "26c3548f-ce08-45bb-b3ad-31b7fb8197b1",
+      "input": "THE WINDOW WAS BEHIND A LARGE BROWN SOFA",
+      "output": "THE.WINDOW.WAS.BEHIND.A.LARGE.BROWN.SOFA",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "47518fd5-3da8-49c5-a64e-0a1b614c3867",
+      "input": "SnoW FelL",
+      "output": "SnoW.FelL",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "6706ea0f-8b30-4b36-a8c2-4ed10231dad4",
+      "input": "Dreams come true",
+      "output": "Dreams.come.true",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "753fa71b-2802-4b15-bb2d-f66072e71b52",
+      "input": "This is a program",
+      "output": "This.is.a.program",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

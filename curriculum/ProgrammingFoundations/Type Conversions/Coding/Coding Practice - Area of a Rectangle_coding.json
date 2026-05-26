@@ -1,0 +1,61 @@
+{
+  "question_id": "85ccf591-ba77-48f3-a02d-b36ebac162a1",
+  "short_text": "Area of a Rectangle",
+  "content": "Write a program to calculate the area of the Rectangle.<br/>Note: Area of Rectangle = Length of Rectangle x Breadth of Rectangle<hr><b>Input</b><br/><br/>The first line of input contains the length of the rectangle, which is an integer.<br/>The second line of input contains the breadth of the rectangle, which is an integer.<hr><b>Output</b><br/><br/>Print the Area of Rectangle<hr><b>Explanation</b><br/><br/>For example, when the length is 4 and breadth is 3, then A = 3 × 4, therefore A = 12",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "c59b5b0d-c2e0-498c-b8a4-1f97be3261fa",
+      "code_content": "length = input()\nbreadth = input()\n\nlength = int(length)\nbreadth = int(breadth)\n\narea = length * breadth\nprint(area)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "17ccf1b7-2fdd-4381-aa78-3fbde6a0903f",
+      "input": "5\n3",
+      "output": "15\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3b4adc53-dfa0-4c4f-9bc4-afa767185066",
+      "input": "3\n4",
+      "output": "12\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "976a4000-48e5-44e7-9acc-ec0d28fe7398",
+      "input": "20\n20",
+      "output": "400\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c8094890-6246-4d89-bc70-ca38a892bba3",
+      "input": "100\n0",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ec950694-e30a-4b12-9609-75fbccf2e189",
+      "input": "9\n19",
+      "output": "171\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

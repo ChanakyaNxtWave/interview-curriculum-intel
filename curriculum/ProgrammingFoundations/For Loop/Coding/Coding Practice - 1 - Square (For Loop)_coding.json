@@ -1,0 +1,377 @@
+{
+  "question_id": "347c61ab-8444-4606-be54-825111fd4ea1",
+  "short_text": "Square (For Loop)",
+  "content": "Write a program that reads a number `N` and prints a **Square** of `N` rows and `N` columns using stars (`*`).\r\n\r\n```\r\n* * *\r\n* * *\r\n* * *\r\n```\r\n\r\n<MultiLineNote>\r\n* There is a space after every star(`*`).\r\n* Use **For** loop.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows and `N` columns containing stars (`*`) as a **Square** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`,\r\n\r\n- Print the stars (`*`) on **4** rows and **4** columns as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/square.png' widthPercent='65'/>\r\n\r\n<MultiLineNote>\r\nIn the given image, there is a space after every star(`*`).\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n* * * *\r\n* * * *\r\n* * * *\r\n* * * *\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8cb91253-62ae-40c2-8fec-c5cc30e98f0c",
+      "code_content": "number_of_rows = int(input())\n\nfor i in range(number_of_rows):\n    print(\"* \" * number_of_rows)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "490f0521-d8cf-4c58-833f-519f32b3503e",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Input**\n\n```\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 5`,\n\n- Print the stars (`*`) on **5** rows and **5** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square2.png' widthPercent='40'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star(`*`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n* * * * *\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "84012675-b864-4d82-81a7-d6bcd495a907",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n6\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "* * * * * *\n* * * * * *\n* * * * * *\n* * * * * *\n* * * * * *\n* * * * * *",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 6`,\n\n- Print the stars (`*`) on **6** rows and **6** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square3.png' widthPercent='60'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star(`*`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n* * * * * *\n* * * * * *\n* * * * * *\n* * * * * *\n* * * * * *\n* * * * * *\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b33d11aa-b53a-44e7-9c7f-ad10065f94e5",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Input**\n\n```\n* * *\n* * *\n* * *\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 3`,\n\n- Print the stars (`*`) on **3** rows and **3** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/Screenshot+from+2023-04-08+14-29-25.png' widthPercent='60'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star(`*`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n* * *\n* * *\n* * *\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "2ad4ab72-d5f6-48a0-a7c1-cabb0412eef9",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5d71cdea-9d9d-46ff-ba96-c423636bc73c",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "904d3cb5-132b-47d7-b269-bc15ab4053cc",
+              "content": "The input will be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "abcacfaa-aa0f-42d2-8da7-a3b8a1db346b",
+              "content": "The input will be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e1c9f034-5919-4131-b13b-68c406c6b8a3",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing `M`.\n\nFor example, **10**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "331e714b-5dff-40c8-a339-e524181bb6a0",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4c044bc5-721f-4094-b592-7467b13de54a",
+              "content": "The output should be `M` rows and `M` columns containing stars (`@`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4cdde237-41a1-4fee-b8dc-6ec92c7ffa25",
+              "content": "The output should be `M` rows and `M` columns containing stars (`+`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "54869c86-b0c8-4ca1-94d8-ca1042207b96",
+              "content": "The output should be `M` rows and `M` columns containing stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c7153255-e890-41cb-bea6-2b7da8ce93c8",
+              "content": "The output should be `M` rows and `M` columns containing stars (`#`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be **M** rows and **M** columns containing stars (`*`).\n\nFor example, if the given number is **2****, \n\n- Print the stars (`*`) on **2** rows and **2** columns.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square4.png' widthPercent='60'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star(`*`).\n</MultiLineNote>\n\nThe output should be,\n\n```\n* *\n* *\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3dc9cec4-94d4-4815-b2a0-bca4e09b718a",
+          "short_text": "",
+          "content": "According to the problem description, which character is used to print the `Square`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1cfa6c6e-8387-4719-a7b6-159b734e9c03",
+              "content": "**`@`**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7c717ea8-a95b-4ca8-971a-893146d472fc",
+              "content": "**`*`**",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ec86095f-f7f9-4461-9e16-e795f7a62579",
+              "content": "**`#`**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "efb8c4e3-e431-46ed-a796-c1f0593e1b3d",
+              "content": "**`+`**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the star (**`*`**) is used to print `Square`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4b929d31-64ff-4f54-b44b-ef05af6647cc",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "54b5f4f0-8733-404a-beef-4622881dc6b1",
+              "content": "To print a Square of M rows and M columns using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "98bf8025-c8e8-4a75-b852-85a8da5a9c8d",
+              "content": "To print a circle of M rows and M columns using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c9d70057-cfca-402c-afca-ffd8f239cf88",
+              "content": "To print a rectangle of M rows and M columns using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dd19d369-51a6-4671-a34a-68bd4093cdb1",
+              "content": "To print a Square of M rows and M columns using stars (`+`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `M` and print a `Square` of **M** rows and **M** columns using stars (`*`).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7a61d572-9ecd-4df0-961d-a50cd3f5a1a9",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n8\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "51e06f1a-a365-4f5c-a857-1476aa1200ea",
+              "content": "```\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "87adabf0-70a0-4d90-9308-d41b3dc458fc",
+              "content": "```\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d597072c-b5f1-4ebf-9269-d84aecfe2239",
+              "content": "```\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dcc92767-86d9-418e-8991-69d3958b40e3",
+              "content": "```\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n+ + + + + + + +\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 8`,\n\n- Print the stars (`*`) on **8** rows and **8** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square5.png' widthPercent='60'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star(`*`).\n</MultiLineNote>\n\nThe output should be,\n\n```\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n* * * * * * * *\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7ff3fbc6-15a2-4408-b72a-7718c169a1e3",
+          "short_text": null,
+          "content": "According to the problem description, what should be printed after every star(`*`) except the last star in a row?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "7260ac1d-7291-4cd7-bb59-4acdd2e79e48",
+              "content": "Star",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cfada6e6-a6a8-4178-9744-156b5ce83ffe",
+              "content": "Two spaces",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e87b5c0b-63cf-439a-9346-c3a3072ac8b3",
+              "content": "No space",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e91a07aa-51a1-4d46-8286-1d5660e0278f",
+              "content": "Space",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, a **space** should be printed after every star(`*`) except the last star in a row.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f2606242-5a6d-432e-bb72-d1de8c8bb526",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "3bf2ac63-1eef-4c0b-9817-a5b98e69e50d",
+              "content": "10\n17",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "572a626b-0a9d-45cb-96e9-8ea1391dc841",
+              "content": "20",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7db94b09-0cd0-4daf-8c57-9a1125761e18",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e4fb8541-1154-429a-aa24-11ce83837892",
+              "content": "3 9",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n12\n```\n\n**Input 2**\n\n```\n20                                           \n```\nThe above two inputs are valid because they consist of a single line containing an integer `M`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "1e901c1a-935b-4f6d-91d6-7ab817d14698",
+      "input": "4",
+      "output": "* * * * \n* * * * \n* * * * \n* * * * \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "aa76cce9-fd8a-4ac4-8d7a-87a582252970",
+      "input": "50",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e43bc638-d11e-44d3-9a37-fcda06f1e594",
+      "input": "10",
+      "output": "* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ee127736-63d8-4c2a-8be0-35ccc5c2e009",
+      "input": "2",
+      "output": "* * \n* * \n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f5588150-602d-4ccb-8041-e907eced4a35",
+      "input": "37",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

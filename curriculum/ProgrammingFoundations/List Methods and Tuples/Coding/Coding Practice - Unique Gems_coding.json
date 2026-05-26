@@ -1,0 +1,61 @@
+{
+  "question_id": "5dfa9a09-8669-43f5-b716-c91aeea275e8",
+  "short_text": "Unique Gems",
+  "content": "In a magical kingdom, a gem collector named Polycarp has collected n unique gems. Each gem has a specific value represented by an integer. Polycarp wants to store these gems in boxes, but he has a peculiar rule: he cannot place two gems with the same value in the same box.\n\nFor example, if Polycarp has collected six gems represented as an array a = **[1, 2, 4, 3, 3, 2]**, he can distribute the gems into two boxes as follows: **[1, 2, 3]** and **[2, 3, 4]**.\n\nWrite a program to help Polycarp determine the minimum number of boxes required to store all the gems while adhering to his rule.\n\n\n---\n\n#### Input\n\n- The first line contains one integer n  — the number of gems.\n- The second line contains n integers a_1, a_2, ..., a_n — values of the gems.\n\n---\n\n#### Output\n\nThe output should be a single integer, representing the minimum number of boxes Polycarp needs to distribute all the gems so that no two gems with the same value are put into the same box.\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n6\n1 2 4 3 3 2\n```\n\nThe gem values are: **`[1, 2, 4, 3, 3, 2]`**.\n\n- We need to count how many times each gem value appears:\n - **1** appears once.\n - **2** appears twice.\n - **4** appears once.\n - **3** appears twice.\n\nThe gem values **2** and **3** appear 2 times each, so 2 boxes are needed to store them. Since we cannot place two gems of the same value in the same box, the maximum frequency (which is 2) gives us the minimum number of boxes required.\n\nThus, the answer is \n\n```\n2\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5a4a5217-fde9-4cc0-b4b5-2fae1838ef51",
+      "code_content": "def min_boxes_needed(n, gems):\n    frequency = [0] * 101  \n    \n    for gem in gems:\n        frequency[gem] += 1\n    \n    max_frequency = max(frequency)\n    \n    return max_frequency\n\nn = int(input())\ninp = input().split()\ngems = []\nfor i in inp:\n    gems.append(int(i))\nprint(min_boxes_needed(n, gems))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4306afef-c097-40ce-88ca-cbc940af78b4",
+      "input": "5\n5 5 5 5 5",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "618d54c4-34e7-4050-82b5-88a4e52ffebe",
+      "input": "7\n1 1 1 2 2 3 4",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a1c0b778-9c37-4b95-8f15-0c6e0d2a9755",
+      "input": "6\n5 5 5 5 5 5",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a69b26e0-a321-4301-b596-dd0c7e9f5643",
+      "input": "6\n1 2 4 3 3 2",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c9905def-3e8a-4f0d-a937-8d9ffb2dae90",
+      "input": "4\n10 20 10 30",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c71df491-0ddf-425d-a344-7378abc8a5d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

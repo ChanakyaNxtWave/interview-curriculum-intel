@@ -1,0 +1,379 @@
+{
+  "question_id": "6b177ec0-c2a4-483d-990e-a9827a2411f9",
+  "short_text": "Print Length times (For Loop)",
+  "content": "Write a program that reads a string and prints the first character (The character at index **0**) of the given string on `N` lines, where `N` is the length of the given string.\n\n<MultiLineNote>\nUse the **For** loop to iterate over the string.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing a string that is the first character of the given string, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **query**,\n\n- The first character in the string **query** is **q**.\n- The length of the string **query** is **5**.\n- The character **q** should be printed on **5** lines.\n\nThe output should be,\n\n```\nq\nq\nq\nq\nq\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6308bf55-7385-4c41-a9f8-eea41bbb3c94",
+      "code_content": "string = input()\nlength_of_string = len(string)\n\nfor i in range(length_of_string):\n    print(string[0])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "01c76509-6238-4ef1-b5ec-acf3c3b56859",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nTuple\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "T\nT\nT\nT\nT",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is **Tuple**,\n\n- The first character in the string `Tuple` is **T**.\n- The length of the string `Tuple` is **5**.\n- The character **T** should be printed on **5** lines.\n\nThe output should be,\n\n```\nT\nT\nT\nT\nT\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "73bf0671-1951-4ce5-8d91-bd7c4ae203a5",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nPython\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "P\nP\nP\nP\nP\nP",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is **Python**,\n\n- The first character in the string `Python` is **P**.\n- The length of the string `Python` is **6**.\n- The character **P** should be printed on **6** lines.\n\nThe output should be,\n\n```\nP\nP\nP\nP\nP\nP\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8ada892e-3f41-4b8a-bd39-e7a53cec112c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\none\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "o\no\no",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is **one**,\n\n- The first character in the string `one` is **o**.\n- The length of the string `one` is **3**.\n- The character **o** should be printed on **3** lines.\n\nThe output should be,\n\n```\no\no\no\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "00f5be42-cb6c-404d-8f82-8945579f81a3",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6b7e6281-e7e4-4dba-ba5e-bd72e99cc6b3",
+              "content": "To print the first character of the given string on a single line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7a27cfd9-3d47-4393-9e57-429001c729d0",
+              "content": "To print the last character of the given string on `N` lines.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bd4956ad-692a-4662-ba3e-25451410b139",
+              "content": "To print the second character of the given string on `N` lines.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cd2af2ab-fc4b-4bc2-b70f-80441c90a703",
+              "content": "To print the first character of the given string on `N` lines.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the string and print the first character of the given string on `N` lines.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1a24639e-d5b6-41fe-8d85-a043d6688fdf",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0dafa433-c916-46f4-beac-937319708954",
+              "content": "The output should be `N` lines containing a string that is the first character of the given string, each on a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "285747a6-77a3-4dc3-a776-2c3af496f8d5",
+              "content": "The output should be `N` lines containing an integer that is the length of the given string, each on a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "641068fc-dba4-4088-9c81-dcca105ae100",
+              "content": "The output should be `N` lines containing a string that is the second character of the given string, each on a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7aca335c-cc34-4ae4-a323-fb9a4bf17eb2",
+              "content": "The output should be a single line containing a string that is the first character of the given string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be `N` lines containing a string representing the first character of the given string, each on a new line.\n\nFor example,\n\nIf the given string is **Read**,\n\n- The first character in the string `Read` is **R**.\n- The length of the string `Read` is **4**.\n- The character **R** should be printed on **4** lines.\n\nThe output should be,\n\n```\nR\nR\nR\nR\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "390a7487-50c8-4a4d-acd1-2ddb40e1b8d4",
+          "short_text": "",
+          "content": "Considering the problem description, which character of the given string should be printed on each line of output?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "187c66f0-6549-4905-b421-e0318206fddd",
+              "content": "The second character (the character at index 1) of the given string should be printed on each line of output.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3bf75fdf-dbcd-4ae1-a9ff-f579e6be907b",
+              "content": "The first character (the character at index 0) of the given string should be printed on each line of output.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4c5aecb6-c6be-41a6-a745-3fb86665c9c2",
+              "content": "The first character (the character at index 1) of the given string should be printed on each line of output.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "76de9947-3b50-46cb-87ec-d57a9be84d62",
+              "content": "The last character of the given string should be printed on each line of output.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the problem description, the **First character** (the character at index **0**) of the given string should be printed on each line of output.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "65774db2-d20a-4514-80f3-d2fe48e67c68",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1adca9fa-701b-4337-bee1-ddbbbfd1fbea",
+              "content": "The input will be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "28a9086c-1dc7-4beb-9cbd-eb450db866d0",
+              "content": "The input will be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5664b2a0-18be-4431-abc8-72d0f1ebb445",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8bda42b5-3b12-4494-a6c7-0fcab56a7cfc",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing a string.\n\nFor example, **Content**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "79a6cea8-cfc0-4f78-8617-b7fb21eb5709",
+          "short_text": "",
+          "content": "According to the problem description, which loop should be used to iterate over the string?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "30477ee4-4359-4440-9f66-da65352fc5f1",
+              "content": "For loop",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3651e2b6-7393-4cd4-8a34-57166a4e7605",
+              "content": "Nested loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "63e00f40-a0f2-4a78-a0bc-9b162af426d9",
+              "content": "While loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, **For** loop should be used to iterate over the string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a0f6855b-5fcf-4360-9a49-bb784c4ebb00",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "1e8349a0-0a1f-4753-92ca-f42076a0632a",
+              "content": "97.09",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "42ad77ca-57da-41b5-aa78-2493312d8b9a",
+              "content": "53",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8583bd0b-8676-4c39-94b3-24e7dd6ae304",
+              "content": "number",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d6cf8630-95d9-4d47-8c32-a86e259996be",
+              "content": "while",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\nwhile\n```\n\n**Input 2**\n\n```\nnumber\n```\n\nThe above two inputs are valid because they consist of a single line containing a string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c7b4d475-b5fe-40e9-b3e0-b5619693c176",
+          "short_text": "",
+          "content": "According to the problem description, what does `N` represent?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "43840dc8-046e-49f4-83d8-922850cbe39a",
+              "content": "Index",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c0b5ab83-21f0-48b3-9b36-971c8c9f9d77",
+              "content": "Length",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e49d0ca9-3ac9-4a89-8ff3-dd518b71f66c",
+              "content": "Breadth",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the `N` represents the **length** of the given string.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "07706803-699a-40b8-9e0e-aa8b2cce9205",
+      "input": "SuPErabuNdanT",
+      "output": "S\nS\nS\nS\nS\nS\nS\nS\nS\nS\nS\nS\nS",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "91cfb7ea-8e83-4a43-9ed3-5718f3bf2fbf",
+      "input": "query",
+      "output": "q\nq\nq\nq\nq",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "92eefeea-288f-48eb-a576-e3c16da70a62",
+      "input": "moRNinG",
+      "output": "m\nm\nm\nm\nm\nm\nm",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a2a20c44-9691-446e-8cbb-54078afe7afb",
+      "input": "python",
+      "output": "p\np\np\np\np\np",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d6562679-8762-493c-a216-60c363dbf5af",
+      "input": "A",
+      "output": "A",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ec355331-fcd1-47d0-8435-573700bfc6bb",
+      "input": "apple",
+      "output": "a\na\na\na\na",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f400ab56-c16e-4c24-a2c8-8bff9345cd02",
+      "input": "List",
+      "output": "L\nL\nL\nL",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ad396947-a6fc-4dc5-b3ec-221c6a4e9d0d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,82 @@
+{
+  "question_id": "c2a4d3b2-0e37-4b9c-bcc4-766ef9ad0abb",
+  "short_text": "Separate Characters with Comma",
+  "content": "Given a string `S`, write a program that prints a string obtained by adding a comma (`,`) between the characters of the given string `S`.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by adding a comma (`,`) between the characters of the given string `S`.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"wonder\"`,\n\n- Characters in the given string **\"wonder\"** are **w**, **o**, **n**, **d**, **e** and **r**.\n- The string after adding a comma(`,`) between the characters of the string **\"wonder\"** is **\"w,o,n,d,e,r\"**.\n\nThe output should be **\"w,o,n,d,e,r\"**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a1e94762-6438-4864-8971-3bc42d9ded6f",
+      "code_content": "string = input()\n\nresultant_string = \"\"\n\nfor index in range(len(string)-1):\n    resultant_string += string[index] + \",\"\n\nresultant_string += string[len(string) - 1]\n\nprint(resultant_string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "05c8a0d1-57e4-453d-b336-5de34bf2a487",
+      "input": "maximizing",
+      "output": "m,a,x,i,m,i,z,i,n,g",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2e26ac66-b054-4002-b729-b4abe97e0434",
+      "input": "wonder",
+      "output": "w,o,n,d,e,r",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "43124098-c112-4eea-9351-d5e8098a85f2",
+      "input": "fRiZzlInEsseS",
+      "output": "f,R,i,Z,z,l,I,n,E,s,s,e,S",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4ae247f3-0141-4a1a-a913-126a353fe434",
+      "input": "Z",
+      "output": "Z",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4bb2fbbc-5561-43a0-a673-b5d55b622ddd",
+      "input": "sInG",
+      "output": "s,I,n,G",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a48e8636-057c-4fa2-8945-4899dc06e125",
+      "input": "JaCKfRuiT",
+      "output": "J,a,C,K,f,R,u,i,T",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b399b6f3-445b-48d8-9092-de42f41f16c5",
+      "input": "ABSOLUTIONS",
+      "output": "A,B,S,O,L,U,T,I,O,N,S",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "dd87af8e-10f2-43bf-acf6-b444a0230327",
+      "input": "CHAMPION",
+      "output": "C,H,A,M,P,I,O,N",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

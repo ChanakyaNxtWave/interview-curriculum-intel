@@ -1,0 +1,47 @@
+{
+  "question_id": "f59dc1bf-58ac-48c5-bab4-ce3cea0b1624",
+  "short_text": "Grocery Store Inventory Management",
+  "content": "Complete the given **`GroceryStore`** class by adding new features as per the instructions below.\n\n\nExisting **`GroceryStore`** class:\n\nThe existing GroceryStore class has only a **pass** statement. Remove the pass statement and implement the new features as mentioned in the given instructions. \n\n\n<details> \n\n<summary> \n\n**Features to be added to **`GroceryStore`** class**\n</summary>\n\n- **Add below attributes**:\n   - The **`GroceryStore`** class should have the following attributes:\n      - **`inventory`**: a dictionary to store item names as keys and their quantities as values.\n      - **`flat_discount`**: a class attribute that holds the discount percentage applicable during sales **(default is 0%)**.\n      - **`min_purchase_amount`**: a class attribute that defines the minimum purchase amount required to apply discounts **(default is Rs. 200)**.\n- **Add below methods** :\n   - **`add_item(item_name, quantity)`**:\n      - This method is responsible for adding items to the grocery store's inventory.\n      - It checks if the specified `item_name` already exists in the inventory dictionary.\n      - If the item exists, it **increases its quantity** by the specified amount.\n      - If the item does not exist, it adds a new entry to the inventory with the item name as the key and the quantity as its value.\n   - **`remove_item(item_name)`**\n      - This method removes an item from the grocery store's inventory.\n      - It checks if the specified item_name exists in the inventory.\n      - If it does exist, it deletes that item from the dictionary.\n      - If it does not exist, it prints a message **`Item not found`**.\n   - **`checkout()`**:\n      - This method calculates the total cost of items in the cart and applies any applicable discounts.\n      - It first calculates the total value of all items in the inventory (assuming each item costs Rs. 100).\n      - It checks if this total is below a predefined minimum purchase amount (`min_purchase_amount`). If so, it prints a message stating that the `Minimum purchase amount not met for discount`.\n      - If the total meets or exceeds **Rs. 200**, it calculates and applies a flat discount (if any) based on the class attribute **`flat_discount`**.\n      - Finally, it prints out the final amount after any discounts have been applied in the below formay.\n       - `Final amount after discount: Rs. {total}` \n   - **`display_inventory()`**\n      - This method provides a view of all items currently in stock along with their quantities.\n      - It returns a dictionary containing each item name as keys and their respective quantities as values.\n   - **`set_discount(new_discount)`** :\n      - This class method allows updating the flat discount percentage applicable during sales.\n      - It takes a new discount percentage as an argument and updates the class attribute **`flat_discount`** to this new value.  \n\n</details>\n\n\n \n\n    \n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "91d4c6c0-d87b-42ec-bd7e-85845452a7d4",
+      "code_content": "class GroceryStore:\n    flat_discount = 0         # Class attribute for discount percentage\n    min_purchase_amount = 200 # Class attribute for minimum purchase amount\n\n    def __init__(self):\n        self.inventory = {}     # Instance attribute for storing items\n\n    def add_item(self, item_name, quantity):\n        if item_name in self.inventory:\n            self.inventory[item_name] += quantity\n        else:\n            self.inventory[item_name] = quantity\n\n    def remove_item(self, item_name):\n        if item_name in self.inventory:\n            del self.inventory[item_name]\n        else:\n            print(\"Item not found\")\n\n    def checkout(self):\n        total = sum(quantity * 100 for quantity in self.inventory.values())  # Assuming each item costs Rs. 100\n        if total < GroceryStore.min_purchase_amount:\n            print(\"Minimum purchase amount not met for discount\")\n            return\n        \n        if total >= 200:\n            discount_amount = (total * GroceryStore.flat_discount) / 100\n            total -= discount_amount\n        \n        print(f\"Final amount after discount: Rs. {total}\")\n\n    def display_inventory(self):\n        return {item: quantity for item, quantity in self.inventory.items()}\n\n    @classmethod\n    def set_discount(cls, new_discount):\n        cls.flat_discount = new_discount\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    store = GroceryStore()\n    store.add_item(\"Apples\", 10)\n    store.add_item(\"Bananas\", 5)\n    store.remove_item(\"Bananas\")\n    store.set_discount(15)  # Set discount to 15%\n    store.checkout()  # Should calculate total and apply discount if applicable\n    print(store.display_inventory())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4ed89a6f-6d1e-41dc-8e1b-8df8dceafcae",
+      "input": "Checking Store Methods",
+      "output": "FAIL: The add_item, remove_item or checkout method is not working correctly",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b6c54a6b-c16a-4960-9581-1b478eac80ef",
+      "input": "Checking Default Tests",
+      "output": "Final amount after discount: Rs. 850.0\n{'Apples': 10}",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ecf5c950-e4dd-4038-8c53-e381e80e51ff",
+      "input": "Checking Store Attributes",
+      "output": "PASS: All attributes are correctly defined.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

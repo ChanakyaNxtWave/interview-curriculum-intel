@@ -1,0 +1,68 @@
+{
+  "question_id": "b8a1cfa9-8c69-42ac-ad93-60ebbe86c4d4",
+  "short_text": "Prime Numbers from 1 to N - 2",
+  "content": "A function is given in the prefilled code that takes a number `N` as an argument.\n\nWrite a program that returns all the prime numbers from **1** to `N` separated by a space.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string of prime numbers from **1** to `N` separated by a space as shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 8`,\n\n- The numbers from **1** to **8** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, and **8**.\n- Prime numbers from **1** to **8** are **2**, **3**, **5**, and **7**.\n\nThe output should be, \n\n```\n2 3 5 7\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "719407ff-d596-44c4-a846-7405a46c01f9",
+      "code_content": "def is_prime(n):\n    if(n == 1 or n == 0):\n        return False\n        \n    for i in range(2, n):\n        if(n % i == 0):\n            return False\n            \n    return True\n \nn = int(input())\nprime_numbers_list = []\n\nfor i in range(1, n + 1):\n    if(is_prime(i)):\n        prime_numbers_list.append(str(i))\n\nprime_numbers_separated_by_spaces = \" \".join(prime_numbers_list)\nprint(prime_numbers_separated_by_spaces)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "01979015-66ee-4003-acfb-7d7df073ae17",
+      "input": "15",
+      "output": "2 3 5 7 11 13",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "0a5305e4-e28d-429e-976a-3c1fcfecb0b7",
+      "input": "25",
+      "output": "2 3 5 7 11 13 17 19 23",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "25849815-599a-497f-9bd7-c94b615dd789",
+      "input": "2",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "c2b39030-6309-4439-9156-39b8126e97cf",
+      "input": "1000",
+      "output": "2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 211 223 227 229 233 239 241 251 257 263 269 271 277 281 283 293 307 311 313 317 331 337 347 349 353 359 367 373 379 383 389 397 401 409 419 421 431 433 439 443 449 457 461 463 467 479 487 491 499 503 509 521 523 541 547 557 563 569 571 577 587 593 599 601 607 613 617 619 631 641 643 647 653 659 661 673 677 683 691 701 709 719 727 733 739 743 751 757 761 769 773 787 797 809 811 821 823 827 829 839 853 857 859 863 877 881 883 887 907 911 919 929 937 941 947 953 967 971 977 983 991 997",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "cea45316-c677-4a5f-b3e2-7fc9d0d38091",
+      "input": "8",
+      "output": "2 3 5 7",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e8c38d7e-8a00-48da-b5f3-542d0e6c27ec",
+      "input": "115",
+      "output": "2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,47 @@
+{
+  "question_id": "7f0787d7-d504-4b7b-81d8-a0c4f77f1108",
+  "short_text": "Account Operations",
+  "content": "Complete the given **Account** class by adding new features by following the given instructions.\r\n\r\n**Existing _Account_ class**:\r\n\r\nThe existing **Account** class has only a _pass_ statement. Remove _pass_ statement and add the new features as mentioned in the given instructions.\r\n\r\n<details>\r\n\r\n<summary>**Features to be added to **_Account_** class**</summary>\r\n\r\n- **Add below attributes**\r\n - The **Account** class should have the following attributes\r\n  - `account_number`\r\n  - `balance`\r\n\r\n- **Add below methods**\r\n - `deposit`: Method to add amount to the balance\r\n - `withdraw`: Subtracts the specified amount from the balance. If the withdrawal amount is greater than the current balance (i.e., the amount is negative), it should print `Insufficient funds`.\r\n - `get_balance`: Method to return the current balance\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will effect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\r\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results you will be shown the rough description of the tests that will be verified.\r\n\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "495a1659-1609-4218-bc0a-797b9d25e572",
+      "code_content": "class Account:\n    def __init__(self, account_number, balance=0):\n        self.account_number = account_number\n        self.balance = balance\n        \n    def deposit(self, amount):\n        self.balance += amount\n        \n    def withdraw(self, amount):\n        if amount <= self.balance:\n            self.balance -= amount\n        else:\n            print(\"Insufficient funds\")\n        \n    def get_balance(self):\n        return self.balance\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    account = Account(account_number=\"12345678\", balance=1000)\n    print(account.account_number)\n    print(account.balance)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "504c361e-c938-4943-a8f9-7ab3a71c4d2a",
+      "input": "Checking methods",
+      "output": "Insufficient funds\nPASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "96e0c1d8-b388-47b2-8ccf-f920e5f6514d",
+      "input": "Checking attribute presence",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a6773d66-833d-4cd6-bd6d-3ff143a6246c",
+      "input": "Checking Default Tests",
+      "output": "12345678\n1000",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36941df1-f44b-4f78-8f8d-9ae759d2d3b2",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9efc825e-7f58-45ec-be9a-7ba1f44591c1",
+  "topic_name": "Object Oriented Programming",
+  "course_title": "Programming Foundations"
+}

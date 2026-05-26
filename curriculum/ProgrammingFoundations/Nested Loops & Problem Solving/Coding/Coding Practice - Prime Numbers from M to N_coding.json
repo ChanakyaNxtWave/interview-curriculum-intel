@@ -1,0 +1,61 @@
+{
+  "question_id": "eb4f6b58-40e0-44f8-a8bf-d347951479d0",
+  "short_text": "Prime Numbers from M to N",
+  "content": "Given two integers M and N, write a program to print all the prime numbers from M to N.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (M).<br/>The second line of input will contain a positive integer (N).<hr><b>Output</b><br/><br/>The output should be containing all the prime numbers from M to N, each in a new line.<hr><b>Explanation</b><br/><br/>For example, if the given numbers are M is 5 and N is 11, as all the prime numbers from 5 to 11 are 5, 7, and 11. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">5\n7\n11\n</code></pre><br/><br/>Similarly, if the given numbers are M is 18 and N is 40, as all the prime numbers from 18 to 40 are 19, 23, 29, 31,and 37. So the output should<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">19\n23\n29\n31\n37\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "1b22d11d-8c9b-40cd-90e5-6d607d85858a",
+      "code_content": "m = int(input())\nn = int(input())\n\nif not (m > 1):\n    m = 2\n\nfor number in range(m, n+1):\n    factors = 0\n    for i in range(2, number):\n        if (number % i) == 0:\n            factors = factors + 1\n\n    if factors == 0:\n        print(number)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "11194bd5-6a8b-4c0e-b9a6-e0627aef700f",
+      "input": "100\n200",
+      "output": "101\n103\n107\n109\n113\n127\n131\n137\n139\n149\n151\n157\n163\n167\n173\n179\n181\n191\n193\n197\n199\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "121c1627-068d-48f3-b337-bb4fd2aa443e",
+      "input": "1000\n1500",
+      "output": "1009\n1013\n1019\n1021\n1031\n1033\n1039\n1049\n1051\n1061\n1063\n1069\n1087\n1091\n1093\n1097\n1103\n1109\n1117\n1123\n1129\n1151\n1153\n1163\n1171\n1181\n1187\n1193\n1201\n1213\n1217\n1223\n1229\n1231\n1237\n1249\n1259\n1277\n1279\n1283\n1289\n1291\n1297\n1301\n1303\n1307\n1319\n1321\n1327\n1361\n1367\n1373\n1381\n1399\n1409\n1423\n1427\n1429\n1433\n1439\n1447\n1451\n1453\n1459\n1471\n1481\n1483\n1487\n1489\n1493\n1499\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "26bb0db1-7dc5-4c99-a94c-16447c5d3094",
+      "input": "5\n11",
+      "output": "5\n7\n11\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "cf1278f3-f4ab-450a-8016-8a3dbfd20baf",
+      "input": "3\n100",
+      "output": "3\n5\n7\n11\n13\n17\n19\n23\n29\n31\n37\n41\n43\n47\n53\n59\n61\n67\n71\n73\n79\n83\n89\n97\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d26f31f5-64b9-4df3-aba4-06edd228642f",
+      "input": "18\n40",
+      "output": "19\n23\n29\n31\n37\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

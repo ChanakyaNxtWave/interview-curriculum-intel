@@ -1,0 +1,82 @@
+{
+  "question_id": "fba867d2-ee6b-45ca-b2fb-07319b99afd1",
+  "short_text": "Greater than Nine",
+  "content": "Write a program that reads two numbers `A` and `B`, and checks if both the given numbers are greater than **9**.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if both the given numbers are greater than **9**, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 11` and `B = 20`,\n\n✔ `A` is greater than **9**. (**11** is greater than **9**)\n✔ `B` is greater than **9**. (**20** is greater than **9**)\n\nThe output should be **True** as both the given numbers are greater than **9**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "015f6ebf-738a-4b97-8020-e2dead79afe5",
+      "code_content": "first_number = input()\nfirst_number = int(first_number)\n\nsecond_number = input()\nsecond_number = int(second_number)\n\nresult = (first_number > 9) and (second_number > 9)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1447a0ee-433f-4542-b389-d2973bc79038",
+      "input": "10\n8",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "1f9d657d-60f3-4a6f-b8ea-e8ae986bed0c",
+      "input": "9\n43",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "696bd042-17e2-44be-9ad6-d2268870cb86",
+      "input": "-8\n-9",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "72ab9627-adcb-46ce-9f3c-b736a5272de3",
+      "input": "10\n4",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8ee2da09-0508-4479-b656-11061fee86c5",
+      "input": "11\n20",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c20144e1-a755-4bd6-a5d3-dd62b57b6ff3",
+      "input": "-2\n12",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "d225261c-9fb9-4b65-8a12-a699bb699d3e",
+      "input": "923869\n238924",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d386c0de-b9ea-43f7-80ca-433545154802",
+      "input": "48\n2934",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

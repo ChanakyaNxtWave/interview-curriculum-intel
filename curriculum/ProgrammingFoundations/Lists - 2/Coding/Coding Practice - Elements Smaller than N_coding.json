@@ -1,0 +1,61 @@
+{
+  "question_id": "a5dbfc36-db34-4bb0-b52c-0f8b003064a3",
+  "short_text": "Elements Smaller than N",
+  "content": "For this problem, the prefilled code will contain a list. \n\nWrite a program that reads an integer `N` from the user and creates a new list containing all elements from the list given in prefilled code that are smaller than `N`.\n\n\n<MultiLineNote>\nThe order of elements in the new list should be same as the order of those elements in the list given in the prefilled code.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single integer `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing the list of numbers from the list given in the prefilled code that are smaller than `N`.\n\n---\n\n#### Explanation\n\nFor example, if the input number is `50`, the elements smaller than `50` in the list `[1, 6, 32, 93, 71, -20, 30, -90, 50]` are **1, 6, 32, -20, 30, -90**.  \n\nThus, the output will be:\n\n```\n[1, 6, 32, -20, 30, -90]\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b879aeb5-40d6-4257-8576-bee77a8dfe50",
+      "code_content": "num_list = [1, 6, 32, 93, 71, -20, 30, -90, 50]\n\nn = int(input())\n\nresult = []\n\nfor x in num_list:\n    if x < n:\n        result += [x]\n\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "427b286f-97b2-4688-a2b2-43285188fce7",
+      "input": "10",
+      "output": "[1, 6, -20, -90]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6d5c84a1-a9b8-4e1c-9771-ddf360172785",
+      "input": "0",
+      "output": "[-20, -90]",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bb3bf57f-15e3-4cc9-9cf4-c1ae79557de9",
+      "input": "-50",
+      "output": "[-90]",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c6bb53c7-9866-4627-9863-96707ef16704",
+      "input": "50",
+      "output": "[1, 6, 32, -20, 30, -90]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d7562c80-2f2c-4c1b-82ea-81b38beb47d3",
+      "input": "100",
+      "output": "[1, 6, 32, 93, 71, -20, 30, -90, 50]",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

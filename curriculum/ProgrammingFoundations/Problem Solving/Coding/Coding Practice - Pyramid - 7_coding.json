@@ -1,0 +1,61 @@
+{
+  "question_id": "06f9b6bd-eada-48de-a0fc-0d6820383f66",
+  "short_text": "Pyramid - 7",
+  "content": "Given a number `N`, write a program to print a **Pyramid** of `N` rows using numbers.\r\n\r\n```\r\n   1\r\n  2 2\r\n 3 3 3\r\n4 4 4 4\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every number.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing numbers as a **Pyramid** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print numbers on **5** rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-pyramid-7.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates a space (\" \").\r\n- The Number in the box indicates the number (\"1\").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n    1\r\n   2 2\r\n  3 3 3\r\n 4 4 4 4\r\n5 5 5 5 5\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "694fc5cb-10e7-44a9-9032-102b1b1cd01e",
+      "code_content": "rows = int(input())\n\nfor each_number in range(1, rows + 1):\n    spaces = \" \" * (rows - each_number)\n    numbers = (str(each_number) + \" \") * (each_number)\n    print(spaces + numbers)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0809717d-f32e-4b05-8cea-0816cc0f5df9",
+      "input": "5",
+      "output": "    1 \n   2 2 \n  3 3 3 \n 4 4 4 4 \n5 5 5 5 5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a14eac4f-f0c7-4484-8e5f-0520c2c0372e",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "c471149b-fefb-4e9d-9da5-3de5400d25d3",
+      "input": "8",
+      "output": "       1 \n      2 2 \n     3 3 3 \n    4 4 4 4 \n   5 5 5 5 5 \n  6 6 6 6 6 6 \n 7 7 7 7 7 7 7 \n8 8 8 8 8 8 8 8",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "ea8992e8-a498-4186-a58c-7e57d44e8112",
+      "input": "9",
+      "output": "        1 \n       2 2 \n      3 3 3 \n     4 4 4 4 \n    5 5 5 5 5 \n   6 6 6 6 6 6 \n  7 7 7 7 7 7 7 \n 8 8 8 8 8 8 8 8 \n9 9 9 9 9 9 9 9 9",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "f61841cc-b534-4373-aac2-989dd5072f7f",
+      "input": "7",
+      "output": "      1 \n     2 2 \n    3 3 3 \n   4 4 4 4 \n  5 5 5 5 5 \n 6 6 6 6 6 6 \n7 7 7 7 7 7 7",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

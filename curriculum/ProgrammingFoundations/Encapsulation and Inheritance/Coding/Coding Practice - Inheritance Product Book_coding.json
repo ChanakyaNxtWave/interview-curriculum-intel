@@ -1,0 +1,47 @@
+{
+  "question_id": "0b7e573e-8175-4a20-b91c-55f55b651da3",
+  "short_text": "Inheritance Product Book",
+  "content": "Implement the **Book** class by extending the **Product** class according to the instructions given below.\r\n\r\n**Existing _Product_ class**:\r\nThe existing **Product** class has the following attributes:\r\n\r\n- **id**\r\n- **name**\r\n- **price**\r\n- **description**\r\n- **author**\r\n- **pages**\r\n\r\nIt also has a method **display_details()** that prints the product details.\r\n\r\n<details>\r\n\r\n<summary>**Features to be added to the _Book_ class**</summary>\r\n\r\n- **Inherit from the Product class**: The **Book** class should inherit from the **Product** class.\r\n- **Implement subclass-specific methods**: The **Book** class should have the following methods:\r\n  - `get_author()`: This method returns the name of the book's `author` by accessing the author attribute of the `Book` class.\r\n  - `get_page_count()`: This method returns the total number of `pages` in the book by accessing the pages attribute of the `Book` class.\r\n\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will affect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\r\n- This coding question does not have the usual input/output test cases. The class defined by you will be tested internally to check whether the attributes are present or not. The test case results will provide a rough description of the tests being verified.\r\n\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b29dc222-ab06-4285-9c51-70f24e7a4d92",
+      "code_content": "class Product:\n    def __init__(self, id, name, price, description):\n        self.id = id\n        self.name = name\n        self.price = price\n        self.description = description\n    \n    def display_details(self):\n        print(f\"Product ID: {self.id}\")\n        print(f\"Name: {self.name}\")\n        print(f\"Price: {self.price}\")\n        print(f\"Description: {self.description}\")\n\nclass Book(Product):\n    def __init__(self, id, name, price, description, author, pages):\n        super().__init__(id, name, price, description)\n        self.author = author\n        self.pages = pages\n    \n    def get_author(self):\n        return self.author\n    \n    def get_page_count(self):\n        return self.pages\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    book = Book(id=1, name=\"Inheritance in Python\", price=29.99, description=\"A guide to object-oriented programming\", author=\"John Doe\", pages=200)\n    book.display_details()\n    print(f\"Author: {book.get_author()}\")\n    print(f\"Pages: {book.get_page_count()}\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "8f658144-dc92-4160-a6ed-7d7130ca17ee",
+      "input": "Checking Default Tests",
+      "output": "Product ID: 1\nName: Inheritance in Python\nPrice: 29.99\nDescription: A guide to object-oriented programming\nAuthor: John Doe\nPages: 200",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "90400f5b-f089-4406-9e72-20a34f15abc4",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in Product class.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e315fa8d-254c-42cb-bd70-72ec028ef8fb",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly in Book class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "68869c08-d1ef-4086-94f9-a567b9781d18",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

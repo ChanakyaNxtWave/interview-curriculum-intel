@@ -1,0 +1,61 @@
+{
+  "question_id": "32574aa1-df63-4284-af32-08cb91073a06",
+  "short_text": "A Toy Store",
+  "content": "A toy store is arranging boxes of toys on shelves. Each box is labeled with a number: `0` for red toys, `1` for white toys, and `2` for blue toys. The store manager wants all the boxes to be sorted by color in the order of red, white, and blue, so it is easier for customers to find what they need. Your task is to help the manager arrange the boxes in this order.\n\n<MultiLineNote>\n\n- Each box is represented by a number: `0` for red, `1` for white, and `2` for blue.\n- The boxes must be sorted in-place without using any built-in sorting functions.\n- Ensure the order of the boxes is: `0` (red), `1` (white), and `2` (blue).\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a list of integers where each integer is `0`, `1`, or `2`.\n\n---\n\n#### Output\n\nA single line containing the sorted list of integers.\n\n---\n\n#### Explanation\n\nIf the input is `2 0 2 1 1 0`, \n\nAfter Sorting all the numbers : the output should be `0 0 1 1 2 2`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f01e20fa-d4b8-4a7f-b930-360d2dcf5ff4",
+      "code_content": "boxes = input().split()\nred_count = 0\nwhite_count = 0\nblue_count = 0\n\nfor box in boxes:\n    if box == '0':\n        red_count += 1\n    elif box == '1':\n        white_count += 1\n    elif box == '2':\n        blue_count += 1\n\nsorted_boxes = \"\"\nfor i in range(red_count):\n    sorted_boxes += \"0 \"\nfor j in range(white_count):\n    sorted_boxes += \"1 \"\nfor k in range(blue_count):\n    sorted_boxes += \"2 \"\n\nsorted_boxes = sorted_boxes\nprint(sorted_boxes)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2f477767-d04f-4be8-808d-3b92650e4fe1",
+      "input": "1 2 2 1 0",
+      "output": "0 1 1 2 2",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "7f5a1d3b-df5c-4c1c-a43f-1b58aaeab0ca",
+      "input": "2 0 2 1 1 0",
+      "output": "0 0 1 1 2 2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8e7c4657-270e-4c06-9af8-8ea579139bdd",
+      "input": "1 1 1 0 0 0",
+      "output": "0 0 0 1 1 1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "de52eec5-24c7-4b79-8b02-606a1e5df6e2",
+      "input": "0 1 2 0 1 2",
+      "output": "0 0 1 1 2 2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fe88cf9c-a628-4334-9e71-73bd5c6604a0",
+      "input": "2 2 2 0 0 1",
+      "output": "0 0 1 2 2 2",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "40f7871e-a9ef-4bdb-a190-a4bc7fa56437",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

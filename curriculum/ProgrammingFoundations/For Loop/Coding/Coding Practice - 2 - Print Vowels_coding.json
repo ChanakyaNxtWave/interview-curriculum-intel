@@ -1,0 +1,75 @@
+{
+  "question_id": "6bda4bef-7ebb-4c8e-ab38-626637cfe200",
+  "short_text": "Print Vowels",
+  "content": "Write a program that reads a string and prints the vowels in the string.\n\n<MultiLineNote>\nVowels are **a**, **e**, **i**, **o**, and **u**.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should contain all the vowels in the string, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **indian**,\n\n- The vowels in the string **indian** are **i**, **i**, and **a**.\n\nThe output should be,\n\n```\ni\ni\na\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "89e5bb05-037b-4e3b-a2d6-284d7126f5a6",
+      "code_content": "string = input()\n\nfor each_character in string:\n    is_vowel = (each_character == 'a') or (each_character == 'e') or (each_character == 'i') or (each_character =='o') or (each_character == 'u')\n    if is_vowel:\n        print(each_character)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "515d1fe9-1815-485e-b62f-9a76bb4610fc",
+      "input": "umbrella",
+      "output": "u\ne\na",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "743ce51c-368f-433d-aa1f-0e0552cfb711",
+      "input": "nxtwave",
+      "output": "a\ne",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8c900fdc-f3e4-4af6-bb3f-32085ecb11fa",
+      "input": "queue",
+      "output": "u\ne\nu\ne",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8e55e5b5-e3c8-4908-8350-b20761c5627f",
+      "input": "developer",
+      "output": "e\ne\no\ne",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "98d330fd-2388-4960-9ac8-2c0106ec72a4",
+      "input": "inspiration",
+      "output": "i\ni\na\ni\no",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c0d7f1d5-9c23-4fc6-98db-93caa6a60394",
+      "input": "indian",
+      "output": "i\ni\na",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fd8046d9-8a6d-47d5-bb98-29983f0633a4",
+      "input": "aieee",
+      "output": "a\ni\ne\ne\ne",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

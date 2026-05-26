@@ -1,0 +1,61 @@
+{
+  "question_id": "163f7019-59ed-4edc-a4e3-e5b974409854",
+  "short_text": "First Prime Number from M to N",
+  "content": "Given two numbers `M` and `N`. Write a program to print the first prime number from `M` to `N`. If no prime numbers are present from `M` to `N` print `No prime numbers in the given range`.\r\n\r\n<MultiLineNote>\r\n- A **Prime Number** is a positive number greater than **1** that has no factors other than **1** and itself.\r\n- **Factors of N:**\r\n\r\n  - If a number `N` is divisible by `X`, then `X` is a factor of `N`.\r\n      - **Example:**\r\n            - If `N = 15` and `X = 3`, then **3** is a factor of **15** as **15** is divisible by **3**.\r\n            - If `N = 15` and `X = 7`, then **7** is **not** a factor of **15** as **15** is not divisible by **7**.\r\n</MultiLineNote>\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `M`.\r\nThe second line of input contains an integer representing `N`.\r\n\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer representing the first prime number from `M` to `N`. If no prime numbers are present from `M` to `N`, the string `No prime numbers in the given range` should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `M = 25` and `N = 50`,  \r\n\r\n- The numbers that have no factors other than **1** and itself from **25** to **50** are **29**, **31**, **37**, **41**, **43** and **47**.\r\n- The first number that has no factors other than **1** and itself from **25** to **50** is **29**.\r\n\r\nThe output should be **29**.\r\n<br>\r\nFor example, if the given numbers are `M = 8` and `N = 10`, \r\n\r\n- There are no numbers that have no factors other than **1** and itself between **8** and **10**.\r\n\r\nThe output should be **No prime numbers in the given range**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f439e271-1415-4970-a437-a97397c6f2b8",
+      "code_content": "m = int(input())\nn = int(input())\n\nif not (m > 1):\n    m = 2\n\nno_primes = True\n\nfor i in range(m, n+1):\n    is_prime = True\n    for j in range(2, i):\n        if i % j == 0:\n            is_prime = False\n            break\n    if is_prime:\n        print(i)\n        no_primes = False\n        break\n\nif no_primes:\n    print(\"No prime numbers in the given range\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2bdc5949-0b51-41aa-8299-9ee31bc282a3",
+      "input": "34\n35",
+      "output": "No prime numbers in the given range\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "3f7706b0-986c-4a5c-8537-9713a91976e8",
+      "input": "1\n50",
+      "output": "2\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "8d3f57ec-cd0a-4b44-be5c-38a6dcf6f8e5",
+      "input": "25\n50",
+      "output": "29\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9a7ed233-d03e-489b-b538-7cc2fd5d1789",
+      "input": "-50\n100",
+      "output": "2\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9bf38730-dd4b-4104-ae72-70ed57abc864",
+      "input": "8\n10",
+      "output": "No prime numbers in the given range\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

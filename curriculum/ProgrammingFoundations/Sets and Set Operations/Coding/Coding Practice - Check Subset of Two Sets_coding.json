@@ -1,0 +1,61 @@
+{
+  "question_id": "3a0387a9-7bb0-4e87-80e7-07ee24a1929b",
+  "short_text": "Check Subset of Two Sets",
+  "content": "\nWrite a program that reads two strings, `S1` and `S2`,both containing space-separated strings from the user and forms sets from these strings. The program should then check whether the first set is a subset of the second set and print the result. If the first set is a subset of the second set, print `True`.Otherwise, print `False`.\n\n---\n\n#### Input\n\n- The first line contains space-separated strings to form the first set.\n- The second line contains space-separated strings to form the second set.\n\n---\n\n#### Output\n\nThe output should be a single line containing either `True` or `False`, indicating whether the first set is a subset of the second set.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana\nbanana orange apple\n```\n\n- In this example, the first set contains `apple` and `banana`, while the second set contains `banana`, `orange`, and `apple`. \n- Since all elements of the first set are present in the second set, the output is `True`.\n\nThe output should be:\n\n```\nTrue\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0fcc6ff7-fa95-4f2a-a1d5-87ffe06cc525",
+      "code_content": "s1 = input().strip().split()\ns2 = input().strip().split()\nis_subset = set(s1).issubset(set(s2))\nprint(is_subset)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4ee230c8-75c1-4d99-b9fc-6fbf1e9ff5d9",
+      "input": "kathy lucas mia\nmia kathy",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a14229ed-64b1-4c58-8b3c-01e2f97158da",
+      "input": "grace hannah\nhannah",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "cef88513-7741-471e-9600-9ffee66052be",
+      "input": "apple banana\nbanana orange apple",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f537a125-98f1-4ec7-9edc-5c0b309da22a",
+      "input": "dave eve frank\neve frank",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f8690b2f-8af5-4f4e-92b5-6c47ff8dd10e",
+      "input": "hannah igor jack\njack igor",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "6aa1e88e-0163-4f68-a272-a8ea867c0fbd",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

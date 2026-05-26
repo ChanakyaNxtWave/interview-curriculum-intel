@@ -1,0 +1,47 @@
+{
+  "question_id": "1d4bba06-fa16-47d2-8c19-82d8a83cd6ff",
+  "short_text": "Customer details",
+  "content": "Complete the given `Customer` class hierarchy by adding new features following the given instructions. You will be implementing polymorphism through method overriding.\r\n\r\n<details>\r\n\r\n<summary>**Features to be added to `Customer`, `GuestCustomer`, and `RegisteredCustomer` classes**</summary>\r\n\r\n- **Add attributes to `Customer` class**:\r\n  - The `Customer` class should have the following attributes:\r\n    - `id`\r\n    - `name`\r\n    - `address`\r\n    - `email`\r\n\r\n- **Add `update_details` method to `Customer` class**:\r\n  - The `update_details` method should print `\"Customer details updated\"`.\r\n\r\n- **Override `update_details` method in `GuestCustomer` class**:\r\n  - The overridden `update_details` method should print `\"Guest customer details updated\"`.\r\n\r\n- **Override `update_details` method in `RegisteredCustomer` class**:\r\n  - The overridden `update_details` method should print `\"Registered customer details updated\"`.\r\n\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will affect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\r\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the methods are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\r\n\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6cf056c0-84de-4e47-bc24-b8eea2595995",
+      "code_content": "class Customer:\n    def __init__(self, id, name, address, email):\n        self.id = id\n        self.name = name\n        self.address = address\n        self.email = email\n\n    def update_details(self):\n        print(\"Customer details updated\")\n\nclass GuestCustomer(Customer):\n    def update_details(self):\n        print(\"Guest customer details updated\")\n\nclass RegisteredCustomer(Customer):\n    def update_details(self):\n        print(\"Registered customer details updated\")\n\ndef default_test():\n    # Test for Customer\n    customer = Customer(id=1, name=\"John Doe\", address=\"123 Main St\", email=\"john@example.com\")\n    customer.update_details()\n    # Test for GuestCustomer\n    guest_customer = GuestCustomer(id=2, name=\"Jane Doe\", address=\"456 Main St\", email=\"jane@example.com\")\n    guest_customer.update_details()\n    # Test for RegisteredCustomer\n    registered_customer = RegisteredCustomer(id=3, name=\"Jim Beam\", address=\"789 Main St\", email=\"jim@example.com\")\n    registered_customer.update_details()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "c8db2433-f9bd-42bc-84be-cf96a9e38d09",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in Customer class",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fb9b4ba5-f04c-47f6-9483-89be7dee4670",
+      "input": "Checking Default Tests",
+      "output": "Customer details updated\nGuest customer details updated\nRegistered customer details updated",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fe175651-7551-4b9b-94b9-e465ba18d981",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All update_details methods are present",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3b2806d7-65a4-47d6-9515-c37099a98115",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "33a6c19f-0945-401b-9651-c7daff04b3a3",
+  "short_text": "To-Do List Application",
+  "content": "Imagine you are developing a simple To-Do List application for busy individuals who need to keep track of their daily tasks. Users can perform the following actions on their task list:\n\n**Add a task**: Append a new task to the end of the current task list.\n**Insert a task**: Insert a new task should be inserted at a specified index in the list.\n**Remove a task**: Remove the first occurrence of a specified task from the list.\n**Clear all tasks**: Remove all tasks from the list at once.\n\nwrite a program that takes an initial list of tasks and then perform a single action **(add, insert, remove, or clear)** based on the user's input. After performing the action, the program should output the updated task list. If the action is clear, it should print **`All tasks cleared`** instead of printing any tasks.\n\n---\n\n#### Input\n\n- First Line: An integer M, the number of initial tasks.\n- Second Line: A single line containing M space-separated strings representing the tasks.\n- Third Line: A string indicating the action (add, insert, remove, clear).\n - If the action is **`add`**, it should be followed by a string representing task.\n - If the action is **`insert`**, it should be followed by an integer index and a string representing task.\n - If the action is **`remove`**, it should be followed by a string representing task.\n - If the action is **`clear`**, it does not require any additional parameters.\n\n---\n\n#### Output\n- Print the updated list of tasks as space-separated strings on a single line.\n- If the action is clear, output **`All tasks cleared`**.\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n3\nBuy_groceries Clean_room Study\nadd Read_book\n```\n\n- The initial tasks are **`[Buy_groceries, Clean_room, Study]`**.\n- The command `add Read_book` appends `Read_book` to the end of the list, resulting in **`[Buy_groceries, Clean_room, Study, Read_book]`**.\n\nThe Expected Output\n\n```\nBuy_groceries Clean_room Study Read_book\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2ca52067-0733-48b7-a1c4-968e6111445b",
+      "code_content": "M = int(input())\ntasks = input().split()\naction = input().split()\n\nif action[0] == \"add\":\n    task = action[1]\n    tasks.append(task)\nelif action[0] == \"insert\":\n    index = int(action[1])\n    task = action[2]\n    if index <= len(tasks):\n        tasks.insert(index, task)\nelif action[0] == \"remove\":\n    task = action[1]\n    if task in tasks:\n        tasks.remove(task)\nelif action[0] == \"clear\":\n    tasks.clear()\n    print(\"All tasks cleared\")\n\nif action[0] != \"clear\":\n    for task in tasks:\n        print(task, end=\" \")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4283ee57-53e7-485f-a9e4-cbf6d36e1291",
+      "input": "3\nBuy_groceries Clean_room Study\ninsert 1 Wash_car",
+      "output": "Buy_groceries Wash_car Clean_room Study",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "77c9670d-ca52-41f3-93bd-4ecb60b33f15",
+      "input": "3\nWrite_code Debug_code Test_code\ninsert 0 Document_code",
+      "output": "Document_code Write_code Debug_code Test_code",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bcee40c1-d559-4dd4-b09d-912e7a9bbe19",
+      "input": "3\nBuy_groceries Clean_room Study\nadd Read_book",
+      "output": "Buy_groceries Clean_room Study Read_book",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bf399170-b121-49b6-ac4f-17f8fb25edda",
+      "input": "4\nTaskA TaskB TaskC TaskD\nremove TaskC",
+      "output": "TaskA TaskB TaskD",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f7b971b7-a82f-45a0-b4b3-0d276d05ca49",
+      "input": "2\nMorning_run Evening_walk\nremove Morning_run",
+      "output": "Evening_walk",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c71df491-0ddf-425d-a344-7378abc8a5d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

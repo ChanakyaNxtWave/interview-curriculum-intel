@@ -1,0 +1,25 @@
+{
+  "spreadsheet_id": "1JBad-m1Wq4tkTe4zO8Gm_f0ZYc6EydlVyLxWxwItIeA",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1JBad-m1Wq4tkTe4zO8Gm_f0ZYc6EydlVyLxWxwItIeA/edit",
+  "interview_questions_tab": "assessments",
+  "export_csv_url": "https://docs.google.com/spreadsheets/d/1JBad-m1Wq4tkTe4zO8Gm_f0ZYc6EydlVyLxWxwItIeA/gviz/tq?tqx=out:csv&sheet=assessments",
+  "column_map": {
+    "question_uuid": "Question \nUUID",
+    "question": "Question",
+    "question_type": "Question Type",
+    "skills_assessed_remarks": "Skills Assessed Remarks",
+    "remarks": "Remarks",
+    "company_name": "Company Name",
+    "role": "Role",
+    "tech_stack": "Tech Stack",
+    "optional_skills": "Optional Skills",
+    "interview_date": "Interview Round Date",
+    "product": "Product",
+    "job_type": "Job Type",
+    "job_id": "Job ID",
+    "minimum_ctc_lpa": "Minimum CTC in LPA",
+    "maximum_ctc_lpa": "Maximum CTC in LPA",
+    "round_category": "Round Category",
+    "interview_process": "Interview Process"
+  }
+}

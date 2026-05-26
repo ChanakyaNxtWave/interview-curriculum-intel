@@ -1,0 +1,103 @@
+{
+  "question_id": "8fb42bfa-e648-4ad3-88c0-1d5f4beb62bf",
+  "short_text": "Sum or Numbers",
+  "content": "Write a program that reads two numbers `A` and `B`, and checks if one of the below conditions is satisfied.\n\n* One of `A` and `B` is less than **20**.\n* The sum of `A` and `B` is between **30** and **50**.\n\nPrint the sum of `A` and `B` if one of the given conditions is satisfied. Otherwise, print `A` and `B` on each line.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\n\n---\n\n#### Output\n\nIf one of the given conditions is satisfied,\n\nThe output should be a single line containing an integer that is the sum of `A` and `B`.\n\nOtherwise, \n\nThe first line of output should be an integer containing `A`.\nThe second line of output should be an integer containing `B`.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 45` and `B = 7`,\n\n✔ One of `A` and `B` is less than **20**. (**7** is less than **20**)\n✖ The sum of `A` and `B` is between **30** and **50**. (`45 + 7 = 52`, **52** is **not** between **30** and **50**)\n\nThe output should be **52** (sum of `A` and `B`) as one of the given conditions is satisfied.\n\n<br/>\n\nFor example, if the given numbers are `A = 30` and `B = 100`,\n\n✖ One of `A` and `B` is less than **20**. (**30** and **100** are **not** less than **20**)\n✖ The sum of `A` and `B` is between **30** and **50**. (`30 + 100 = 130`, **130** is **not** between **30** and **50**)\n\nThe output should be,\n\n```\n30\n100\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4d5e39ca-f01d-40c1-a2c1-38795aef68fe",
+      "code_content": "first_number = int(input())\nsecond_number = int(input())\n\nis_less_than = (first_number < 20) or (second_number < 20)\n\nsum_of_numbers = first_number + second_number\nis_sum_between = (sum_of_numbers > 30) and (sum_of_numbers < 50)\n\nif (is_less_than or is_sum_between):\n    print(sum_of_numbers)\nelse:\n    print(first_number)\n    print(second_number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a997bba-1dad-4cd7-9145-73dccb41cd43",
+      "input": "29\n20",
+      "output": "49",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "0f04ddcd-384b-4905-9f8a-d110149e5429",
+      "input": "21\n25",
+      "output": "46",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "10c7781b-8d67-4a56-91a6-f83c41ad773d",
+      "input": "25\n29",
+      "output": "25\n29",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "71ca4f9a-0acf-4c46-a057-7f4831595d70",
+      "input": "200\n40",
+      "output": "200\n40",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "76b6ec23-9e6f-4677-9a60-8d72c7baec4d",
+      "input": "9\n50",
+      "output": "59",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "7f1e073c-9233-4bdc-9fd8-878f6a97a411",
+      "input": "22\n28",
+      "output": "22\n28",
+      "is_hidden": true,
+      "weightage": 14.0
+    },
+    {
+      "test_case_id": "8ac0c38d-0b98-4680-829b-d374dc19d291",
+      "input": "20\n45",
+      "output": "20\n45",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8ec743b3-ec7f-4603-9060-c049b3bbf639",
+      "input": "30\n100",
+      "output": "30\n100",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dbc59d64-0598-4ae7-ab04-f87c744a0b7e",
+      "input": "45\n7",
+      "output": "52",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e02fa41f-bb8c-416a-b22f-64cef9796f6e",
+      "input": "35\n18",
+      "output": "53",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fc5a3b50-7b04-47d4-ac54-d02dccd13eef",
+      "input": "15\n33",
+      "output": "48",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

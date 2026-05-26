@@ -1,0 +1,47 @@
+{
+  "question_id": "a7090718-96f3-4428-86b9-3a12dacf9d11",
+  "short_text": "Airport Polymorphism",
+  "content": "Complete the `Airport`, `MaintenanceAirport`, and `InternationalAirport` classes by following the given instructions to demonstrate polymorphism through method overriding.\n\n<details>\n\n<summary>**Features to be added to `Airport` class**</summary>\n\n- **Add below attributes**:\n  - `airport_code`: A string representing the unique code of the airport.\n  - `name`: A string representing the name of the airport.\n  - `city`: A string representing the city where the airport is located.\n\n- **Add below method**:\n  - `update_schedule()`: A method that prints `\"Updating general flight schedule\"`.\n</details>\n\n<details>\n\n<summary>**Features to be added to `MaintenanceAirport` class**</summary>\n\n- **Override `update_schedule()` method**:\n  - This method should print `\"Updating maintenance flight schedule\"` to prioritize maintenance flights.\n</details>\n\n<details>\n\n<summary>**Features to be added to `InternationalAirport` class**</summary>\n\n- **Override `update_schedule()` method**:\n  - This method should print `\"Updating international flight schedule\"` to prioritize international flights.\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The classes defined by you will be tested internally whether the methods are overridden correctly. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5fb9b6f5-b13f-4b71-87ba-3b270cc645d0",
+      "code_content": "class Airport:\n    def __init__(self, airport_code, name, city):\n        self.airport_code = airport_code\n        self.name = name\n        self.city = city\n    \n    def update_schedule(self):\n        print(\"Updating general flight schedule\")\n\nclass MaintenanceAirport(Airport):\n    def update_schedule(self):\n        print(\"Updating maintenance flight schedule\")\n\nclass InternationalAirport(Airport):\n    def update_schedule(self):\n        print(\"Updating international flight schedule\")\n\ndef default_test():\n    general_airport = Airport(\"GA123\", \"General Airport\", \"General City\")\n    maintenance_airport = MaintenanceAirport(\"MA123\", \"Maintenance Airport\", \"Maintenance City\")\n    international_airport = InternationalAirport(\"IA123\", \"International Airport\", \"International City\")\n\n    print(\"General Airport Schedule:\")\n    general_airport.update_schedule()\n\n    print(\"Maintenance Airport Schedule:\")\n    maintenance_airport.update_schedule()\n\n    print(\"International Airport Schedule:\")\n    international_airport.update_schedule()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "7540a9dd-5f04-4ff2-8819-1a602b21dd4f",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are correctly implemented.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "cb626f76-9c47-4883-9157-cc3c5b316d80",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in the Airport class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "eb23df46-3b8e-4647-a5a8-8ae7f18f6a54",
+      "input": "Checking Default Tests",
+      "output": "General Airport Schedule:\nUpdating general flight schedule\nMaintenance Airport Schedule:\nUpdating maintenance flight schedule\nInternational Airport Schedule:\nUpdating international flight schedule",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3b2806d7-65a4-47d6-9515-c37099a98115",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

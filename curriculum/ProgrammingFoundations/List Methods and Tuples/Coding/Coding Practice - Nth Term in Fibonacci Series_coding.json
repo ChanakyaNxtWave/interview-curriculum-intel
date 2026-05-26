@@ -1,0 +1,61 @@
+{
+  "question_id": "90f247c2-fb54-4582-96ba-3dac663cb5a1",
+  "short_text": "Nth Term in Fibonacci Series",
+  "content": "Write a program to recursively find the Nth term in the Fibonacci series.<br/>A Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8...<br/>The first two terms are 0 and 1. All other terms are obtained by adding the preceding two terms.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the Nth term in the  Fibonacci Series.<hr><b>Explanation</b><br/><br/>For example, if the given N is 5, your code should print the 5th term in the Fibonacci Series.<br/>\n<table style=\"background-color: transparent;border-collapse: collapse;border-spacing: 0;\">\n<thead>\n<tr>\n<th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">Term</th>\n<th style=\"border-right: 0;padding: 8px 12px;\">Number</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</td>\n<td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</td>\n</tr>\n<tr>\n<td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</td>\n<td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</td>\n</tr>\n<tr>\n<td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</td>\n<td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</td>\n</tr>\n<tr>\n<td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</td>\n<td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</td>\n</tr>\n<tr>\n<td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</td>\n<td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</td>\n</tr>\n<tr>\n<td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</td>\n<td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</td>\n</tr>\n</tbody>\n</table>\nSo the output should be 5.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "ceab8f51-599e-430e-8ffb-703e92ebab2f",
+      "code_content": "def fibonacci(n):\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\n\n\nn = int(input())\nresult = fibonacci(n)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "01d93a23-4ea5-4896-a9c0-6a3ffd6e05fd",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "174e18fe-30b4-4472-8bb0-6bffe010ad13",
+      "input": "2",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "1a10f368-233c-4e24-99aa-1992c4df24a3",
+      "input": "8",
+      "output": "21\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "6de552a2-e53a-4774-a0d3-d71b2186df15",
+      "input": "5",
+      "output": "5\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "b146a022-3666-42af-958a-a2fb270c4555",
+      "input": "20",
+      "output": "6765\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

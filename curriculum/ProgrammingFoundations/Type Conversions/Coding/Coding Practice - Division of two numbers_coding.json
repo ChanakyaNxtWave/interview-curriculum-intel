@@ -1,0 +1,61 @@
+{
+  "question_id": "f8391b16-5622-4c5e-9891-0aba78b87cad",
+  "short_text": "Division of two numbers",
+  "content": "Write a program that reads two numbers A and B and prints the division of two numbers (A / B).\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer.\r\nThe second line of input contains an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a float obtained by the division of two numbers.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are **15** and **3**, the output should be **5.0** as the division of 15 and 3 (`15 / 3`) is **5.0**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "03d85c18-75df-42f0-b205-6830f5dfd1b3",
+      "code_content": "first_number = input()\nsecond_number = input()\n\nfirst_number = int(first_number)\nsecond_number = int(second_number)\n\nresult = first_number / second_number\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "020929cc-dcf0-4031-a289-8357c3802573",
+      "input": "0\n1",
+      "output": "0.0",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "1ec85afe-63cc-4c81-b4be-86824da4d3aa",
+      "input": "5\n2",
+      "output": "2.5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3011c10a-93d1-4a2b-93d1-fe6ccdf0953e",
+      "input": "10000\n10000000",
+      "output": "0.001",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "adc00ca9-8ceb-4907-be7d-13d80473097e",
+      "input": "15\n3",
+      "output": "5.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e161c8ff-adeb-4998-9554-0ba027c85fb4",
+      "input": "9999\n9999",
+      "output": "1.0",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

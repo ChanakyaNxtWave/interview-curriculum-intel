@@ -1,0 +1,61 @@
+{
+  "question_id": "cbc73399-e40b-4af3-bda6-daed4a276ca3",
+  "short_text": "Identify the Mistake - Number Pyramid",
+  "content": "Given the number of rows N, write a program to print the number pyramid pattern similar to the pattern shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">    1\n   212\n  32123\n 4321234\n543212345\n</code></pre><hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be N rows containing the numbers in the pyramid pattern.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, the pattern should contain 5 rows as shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">    1\n   212\n  32123\n 4321234\n543212345\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "a14f0146-c612-4f92-92b5-2220b9e5ba43",
+      "code_content": "n = int(input())\nfor i in range(1, n+1):\n    spaces = \" \"*(n - i)\n    left_nums = \"\"\n    right_nums = \"\"\n    for j in range(1, i+1):\n        left_nums = str(j) + left_nums\n        right_nums = right_nums + str(j)\n    print(spaces + left_nums + right_nums[1:])\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1aad13af-ec24-45c3-aed5-548f5490eb11",
+      "input": "7",
+      "output": "      1\n     212\n    32123\n   4321234\n  543212345\n 65432123456\n7654321234567\n",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "35581b97-1774-43d1-978d-bfbb4bea764d",
+      "input": "3",
+      "output": "  1\n 212\n32123\n",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8235eacc-e69d-434d-97d2-e143da7ea999",
+      "input": "6",
+      "output": "     1\n    212\n   32123\n  4321234\n 543212345\n65432123456\n",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a492039b-c196-4e9b-a5e1-f63380c619a3",
+      "input": "5",
+      "output": "    1\n   212\n  32123\n 4321234\n543212345\n",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f265d651-0714-4f39-872b-8bc3241e39ef",
+      "input": "9",
+      "output": "        1\n       212\n      32123\n     4321234\n    543212345\n   65432123456\n  7654321234567\n 876543212345678\n98765432123456789\n",
+      "is_hidden": true,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

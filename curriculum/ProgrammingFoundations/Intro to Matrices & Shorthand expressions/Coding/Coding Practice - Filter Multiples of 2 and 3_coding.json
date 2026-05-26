@@ -1,0 +1,68 @@
+{
+  "question_id": "e6b57b0f-8413-4db1-b3a7-593e2d4cffb8",
+  "short_text": "Filter Multiples of 2 and 3",
+  "content": "Write a program that reads a line of space-separated integers and filters out numbers that are multiples of both `2` and `3`. The program should output only the numbers divisible by both `2` and `3`, in a space-separated sequence.\n\n---\n\n#### Input\n\nA single line of integers separated by spaces.\n\n---\n\n#### Output\n\nThe output should be only the numbers that are multiples of both `2` and `3`, separated by spaces.\n\n---\n\n#### Explanation\n\nIf the input is:\n\n```\n1 2 3 4 5 6 12\n```\n\nThe output should be:\n\n```\n6 12\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4707e6a4-0662-436c-8cba-b6f62d060237",
+      "code_content": "def filter_multiples(numbers):\n    return [num for num in numbers if num % 2 == 0 and num % 3 == 0]\n\ninput_line = input().split()\nnumbers = [int(x) for x in input_line]\nfiltered_numbers = filter_multiples(numbers)\n\nfor i in range(len(filtered_numbers)):\n    if i < len(filtered_numbers) - 1:\n        print(filtered_numbers[i], end=\" \")\n    else:\n        print(filtered_numbers[i])\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "06a8c6f2-cb32-46cd-98b1-7faa9a2432df",
+      "input": "18 25 30 35",
+      "output": "18 30",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "087f0826-0634-4a7d-b40f-c2a41ef82d19",
+      "input": "6 9 18",
+      "output": "6 18",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "48b9dc7c-05c8-4828-bf7c-33ba7acc79f7",
+      "input": "1 2 3 6 12 15",
+      "output": "6 12",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "668cffeb-046c-4bbc-a067-a034beaa3bc4",
+      "input": "10 12 14 15",
+      "output": "12",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7797d56a-2af5-4f9e-8c46-d72e16fd69e5",
+      "input": "3 12 15",
+      "output": "12",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a241c0ae-9edb-4377-b61b-955e5578d0d8",
+      "input": "20 24 26",
+      "output": "24",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7ced6467-af22-4d7c-96ae-bcdeb3364094",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

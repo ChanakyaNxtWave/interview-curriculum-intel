@@ -1,0 +1,61 @@
+{
+  "question_id": "ae837387-0d13-4a9b-b2e5-9e061542f1d4",
+  "short_text": "Union of Two Sets",
+  "content": "\nWrite a program that reads two strings, `S1` and `S2`,both containing space-separated strings from the user and forms sets from these strings. The program should then print the elements of the union of the two sets as space-separated strings in sorted order.\n\n---\n\n#### Input\n\n- The first line contains space-separated strings to form the first set.\n- The second line contains space-separated strings to form the second set.\n\n---\n\n#### Output\n\nThe output should be a single line containing the elements of the union of the two sets in sorted order.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana cherry\nbanana orange apple\n```\n\n- In this example, the input strings form two sets: the first set contains `apple`, `banana`, and `cherry`, while the second set includes `banana`, `orange`, and `apple`.\n- The union of these sets is `apple`, `banana`, `cherry`, and `orange`, which is then printed in sorted order.\n\nThe output should be:\n\n```\napple banana cherry orange\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "129b456d-62f2-4917-8ec9-eb42ab5818e6",
+      "code_content": "s1 = input().strip().split()\ns2 = input().strip().split()\nunique_items = set(s1) | set(s2)\n\nupdated_list = []\n\nfor item in unique_items:\n    updated_list.append(item)\n\nsorted_list=sorted(updated_list)\n\nprint(\" \".join(sorted_list))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "44ffd03e-3429-4164-8563-a15a0409ed52",
+      "input": "kathy lucas kathy lucas mia\nmia kathy",
+      "output": "kathy lucas mia",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "451b19b7-778e-4442-a15d-d47954f68324",
+      "input": "hannah igor hannah igor jack\njack igor",
+      "output": "hannah igor jack",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ae3683a5-8ff3-426e-86e2-24e2bd203e1c",
+      "input": "dave eve dave frank\nfrank eve",
+      "output": "dave eve frank",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4026e27-f988-429a-bb31-09753a27a691",
+      "input": "grace grace grace\nhannah",
+      "output": "grace hannah",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e1fc6900-3f55-478d-af9b-a557fe4eb7a6",
+      "input": "apple banana cherry\nbanana orange apple",
+      "output": "apple banana cherry orange",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "6aa1e88e-0163-4f68-a272-a8ea867c0fbd",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

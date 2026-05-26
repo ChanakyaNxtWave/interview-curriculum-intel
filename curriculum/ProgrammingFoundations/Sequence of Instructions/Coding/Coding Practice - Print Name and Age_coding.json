@@ -1,0 +1,61 @@
+{
+  "question_id": "8276658d-7a4a-492c-9f2b-1370b66b5781",
+  "short_text": "Print Name and Age",
+  "content": "Write a program that reads the name and age of a person and prints them in the given format.\n\n---\n\n#### Input\n\nThe first line of input contains a string.\nThe second line of input contains an integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string in the format shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given inputs are **Robert** and **21**, the output should be **Robert is 21 years old**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fda13e73-b963-4a0b-b31f-94df65aa79b9",
+      "code_content": "name = input()\nage = input()\n\nprint(name + \" is \" + age + \" years old\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2042e366-faff-46e8-a3ae-ef27325461dd",
+      "input": "Lucy\n18",
+      "output": "Lucy is 18 years old",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3dde17b0-0a9a-4f1e-829c-9331050d8f62",
+      "input": "Thomas\n45",
+      "output": "Thomas is 45 years old",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "724b21a6-b250-43ad-aa79-a23f49daefe0",
+      "input": "Aurora\n1",
+      "output": "Aurora is 1 years old",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e81b4ba1-a4de-4ae9-b0b9-e09ccf720003",
+      "input": "Robert\n21",
+      "output": "Robert is 21 years old",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f6f20d67-18a7-41ae-ab7a-60b4a6190a40",
+      "input": "Edward\n18",
+      "output": "Edward is 18 years old",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

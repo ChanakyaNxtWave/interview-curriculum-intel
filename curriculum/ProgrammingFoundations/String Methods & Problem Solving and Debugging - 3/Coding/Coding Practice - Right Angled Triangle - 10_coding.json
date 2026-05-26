@@ -1,0 +1,68 @@
+{
+  "question_id": "ffb70f78-eeb8-4158-9f4a-b67bc3dc8542",
+  "short_text": "Right Angled Triangle - 10",
+  "content": "Given a number `N`, write a program to print a **Right Angled Triangle** of `N` rows using stars (`*`).\n\n```\n*\n* * *\n* * * * *\n* * * * * * *\n```\n\n<MultiLineNote>\n- Each row should contain odd number of stars (`*`) starting from **1**.\n- There is a space after every star (`*`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows, each row containing an odd number of stars (`*`) as a **Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 3`,\n\n- Print the stars (`*`) in **3** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-10.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image, the Star in box indicates the star and a space (\"\\* \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n*\n* * *\n* * * * *\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "80009fd6-bb72-4fe9-b190-ee0ca2bf2968",
+      "code_content": "number_of_rows = int(input())\n\nstars = 1\n\nfor row in range(number_of_rows):\n    each_row = \"* \" * stars\n    stars = stars + 2\n    \n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "181246a6-19e0-41ab-91d7-7d6a9624b33c",
+      "input": "3",
+      "output": "* \n* * * \n* * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "527cbf45-287b-4fd7-8295-8b85b3b07da2",
+      "input": "1",
+      "output": "*",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "5e730d9e-d87f-4676-948d-9da03d9afb9b",
+      "input": "6",
+      "output": "* \n* * * \n* * * * * \n* * * * * * * \n* * * * * * * * * \n* * * * * * * * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "622af7be-37df-4bcf-bf57-9ce0c9b8c80c",
+      "input": "2",
+      "output": "* \n* * *",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "a3421607-8a87-41d7-9680-e438223394e2",
+      "input": "35",
+      "output": "* \n* * * \n* * * * * \n* * * * * * * \n* * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "eec032f3-7039-402d-a588-efa469f9590f",
+      "input": "10",
+      "output": "* \n* * * \n* * * * * \n* * * * * * * \n* * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

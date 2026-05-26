@@ -1,0 +1,352 @@
+{
+  "question_id": "78fd1115-e229-445b-8f2c-0a77b5c9496b",
+  "short_text": "Exponent of a Number",
+  "content": "Write a program that reads a number `N` and an exponent `E` and prints the result of `N` power `E` (**N<sup>E</sup>**).\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing the number `N`.\r\nThe second line of input contains an integer representing the exponent `E`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the result of `N` power `E`(**N<sup>E</sup>**).\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 3` and the exponent is `E = 2`, \r\n\r\n- The result of `N` power `E` is **9**. (**3<sup>2</sup> = 9**)\r\n\r\nThe output should be **9**.\r\n\r\n<br/>\r\n\r\nFor example, if the given number is `N = 5` and the exponent is `E = 3`, \r\n\r\n- The result of `N` power `E` is **125**. (**5<sup>3</sup> = 125**)\r\n\r\nThe output should be **125**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "69d53010-0d2a-40b4-a3f4-1b21d39b1c08",
+      "code_content": "number = int(input())\npower = int(input())\n\nprint(number ** power)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0ab42a5e-0065-4e12-a436-a964ea6f58cb",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n6\n3\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "216",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 6` and the exponent is `E = 3`, \n\n- The result of `N` power `E` is **216**. (**6<sup>3</sup> = 216**)\n\nThe output should be **216**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "117edf1f-c6ac-4aa0-b081-3dfa5dc68450",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n4\n3\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "64",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 4` and the exponent is `E = 3`, \n\n- The result of `N` power `E` is **64**. (**4<sup>3</sup> = 64**)\n\nThe output should be **64**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5880fe7d-18fa-4169-b6bb-6b0ffaed0bf7",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n10\n0\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 10` and the exponent is `E = 0`, \n\n- The result of `N` power `E` is **1**. (**10<sup>0</sup> = 1**)\n\nThe output should be **1**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0b00766a-11fd-45b5-b747-1e401e355810",
+          "short_text": "",
+          "content": "What is an exponent?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1cff85ba-15b2-4d6d-a09b-9bb5eea7ae7d",
+              "content": "The number that is added to a base.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "32630e4a-fa95-4165-b8d7-21bdcd94d354",
+              "content": "The base number in an exponent operation.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "713d92c8-0745-45ec-a900-5d66b0b79a52",
+              "content": "The number that is subtracted from a base.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "decf7b0c-66bd-49af-9330-7d3d592e5969",
+              "content": "The number of times a base is multiplied by itself.",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The number of times a base is multiplied by itself is called an exponent.\n\nFor example,\n\n**12<sup>3</sup>**\n\nHere base(**N**) = 12 and exponent(**E**) = 3.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3cbcc6e7-6021-4b1e-8e3d-0060160a2a44",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "17332282-92bc-4679-acbf-91b9ba26d0ef",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a string.\n",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "396d3ed1-d2b2-48be-8324-05f00d3e75b8",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "a5596d77-46bb-4e84-94d6-4fe9e589bf71",
+              "content": "The first line of input contains a space-separated integers.\n\nThe second line of input contains a space-separated integers.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "f116ea6a-fd47-4316-b33f-2de019f66db3",
+              "content": "The input will be multiple lines containing two comma-separated integers.",
+              "content_type": "TEXT",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be,\n\n- The first line of input contains an integer representing the number `N`.\n\n- The second line of input contains an integer representing the exponent `E`.\n\nFor example, \n\n```\n8\n5\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "51f79823-c5de-4cda-9eeb-d1a3907e40fb",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "02ccc5ab-c2c6-4f5f-b170-39127f55e63c",
+              "content": "To find the square root of the given number.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "0e062e52-836d-491c-8b4e-398c48957db9",
+              "content": "To find the factorial of the given number.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "70130d0b-a276-4559-9fbf-abdf1fa7e2d9",
+              "content": "To find the square of the given number.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "84054647-5bd7-4f7a-975c-1ca26f9da12a",
+              "content": "To find the exponent of the given number.",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and an exponent `E` and find the exponent of the given number(**N<sup>E</sup>**).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "56093317-8fb5-4c12-a1b3-58da39170b94",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "7bac6d7b-22bc-4905-bb4b-be7b17a02c5f",
+              "content": "1\n2",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "87a0d324-4b2e-4a68-ae62-6ba3987b5cad",
+              "content": "6,8",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "e8705a4d-215b-4932-b4e6-3514f39d9773",
+              "content": "7",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "fa55600a-9021-4bd3-9ed3-01108962e7b3",
+              "content": "4\n9",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n1\n2\n```\n\n**Input 2**\n\n```\n4\n9\n```\nThe above two inputs are valid because they consist of,\n\n- The first line of input contains an integer representing the number `N`.\n\n- The second line of input contains an integer representing the exponent `E`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5792a100-f907-457d-8ad1-6e56ae773f7e",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n10\n3\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1000",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 10` and the exponent is `E = 3`, \n\n- The result of `N` power `E` is **1000**. (**10<sup>3</sup> = 1000**)\n\nThe output should be **1000**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "aea3b4de-720f-44b1-95c6-4ec249dfca7f",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "58730149-24ce-4d5c-99a7-4b6adf58fcb7",
+              "content": "The output should be multiple lines containing two space-separated integers.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "70630a22-acf2-499d-af12-9756f1eea141",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "836a941e-55cc-4373-b220-95105f05c02b",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "e2a7b3f4-8ae0-497b-80f1-c7a52ba59edd",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "TEXT",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing an integer that is the result of `N` power `E`(**N<sup>E</sup>**).\n\nFor example,\n\nIf the given number is `N = 3` and the exponent is `E = 6`, \n\n- The result of `N` power `E` is **729**. (**3<sup>6</sup> = 729**)\n\nThe output should be **729**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e9a54804-015d-4949-a1ac-3f3e6f991889",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n2\n7\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "20ee8d4a-4be3-4971-a532-5fdf88fc92ce",
+              "content": "126",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "648a9dab-f7fb-4381-8d43-5d6da221512d",
+              "content": "128",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "9d2a2ccb-b3a6-4eb5-9fa7-7cc7c2081679",
+              "content": "124",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "bbc50af8-5db9-4ab9-97da-7ad961fdfe35",
+              "content": "130",
+              "content_type": "TEXT",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 2` and the exponent is `E = 7`, \n\n- The result of `N` power `E` is **128**. (**2<sup>7</sup> = 128**)\n\nThe output will be **128**.\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "11f28d14-4755-40d4-822b-2e4b0c574da5",
+      "input": "12\n5",
+      "output": "248832\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "57eae99a-8eba-4728-8ef3-b8be667b972a",
+      "input": "100\n1",
+      "output": "100\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "71e8bbe3-71fe-4b33-8880-acd5d477902e",
+      "input": "3\n2",
+      "output": "9\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "84cd1346-70f6-40c1-97b2-62eb20e71dde",
+      "input": "5\n3",
+      "output": "125\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "8d28c04a-15ef-4aec-92b0-4f8694459a15",
+      "input": "22\n2",
+      "output": "484\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

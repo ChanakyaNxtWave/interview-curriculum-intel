@@ -1,0 +1,391 @@
+{
+  "question_id": "08d6303c-8403-420a-9d18-d0373445d672",
+  "short_text": "Compare Numbers - 9",
+  "content": "Write a program that reads a three-digit number and checks if any of the below conditions is satisfied.\r\n\r\n* Each digit of the given number is greater than **7**.\r\n* The product of any two digits is **always** less than or equal to **30**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a three-digit integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if each digit of the given number is greater than **7** or the product of any two digits is always less than or equal to **30**, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is **832**,\r\n\r\n<ul style=\"list-style-type: none;padding:0;\">\r\n  <li style=\"margin:0;\">\r\n    <details style=\"margin:0;\">\r\n      <summary style=\"margin:0;padding:0;\">✖ Each digit is greater than **7**.</summary>\r\n        <ul style=\"list-style-type: none;\">\r\n          <li style=\"margin:0;padding:0;\">✔ The first digit is greater than **7**. (**8** is greater than **7**)</li>\r\n          <li style=\"margin:0;padding:0;\">✖ The second digit is greater than **7**. (**3** is not greater than **7**)</li>\r\n          <li style=\"margin:0;padding:0;\">✖ The third digit is greater than **7**. (**2** is not greater than **7**)</li>\r\n        </ul>\r\n    </details>\r\n  </li>\r\n  <li style=\"margin:0;\">\r\n    <details style=\"margin:0;\">\r\n      <summary style=\"margin:0;\">✔ The product of any two digits is **always** less than or equal to **30**.</summary>\r\n        <ul style=\"list-style-type: none;\">\r\n          <li style=\"margin:0;\">The product of first, second digits and second, third digits and third, first digits is always less than or equal to **30**.</li>\r\n          <li style=\"margin:0;\">✔ The product of the first and second digits is less than or equal to **30**. (`8 * 3 = 24`, **24** is less than or equal to **30**)</li>\r\n          <li style=\"margin:0;\">✔ The product of the second and third digits is less than or equal to **30**. (`3 * 2 = 6`, **6** is less than or equal to **30**)</li>\r\n          <li style=\"margin:0;\">✔ The product of the third and first digits is less than or equal to **30**. (`2 * 8 = 16`, **16** is less than or equal to **30**)</li>\r\n       </ul>\r\n    </details>\r\n  </li>\r\n</ul>\r\n\r\nThe output should be **True** as the product of any two digits is **always** less than or equal to **30**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9e823451-33c5-4a28-87ea-da67940379b1",
+      "code_content": "number = input()\n\nfirst_digit = number[0]\nfirst_digit = int(first_digit)\n\nsecond_digit = number[1]\nsecond_digit = int(second_digit)\n\nthird_digit = number[2]\nthird_digit = int(third_digit)\n\nis_greater = (first_digit > 7) and (second_digit > 7) and (third_digit > 7)\n\nis_first_second_product_lesser = (first_digit * second_digit) <= 30\nis_second_third_product_lesser = (second_digit * third_digit) <= 30\nis_third_first_product_lesser = (third_digit * first_digit) <= 30\n\nis_product_lesser = is_first_second_product_lesser and is_second_third_product_lesser and is_third_first_product_lesser\n\nresult = is_greater or is_product_lesser\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1d58002b-57ed-4cd6-9a13-4dcdb7542a78",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n544\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **544**,\n\n<ul style=\"list-style-type: none;padding:0;\">\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">✖ Each digit is greater than **7**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;padding:0;\">✖ The first digit is greater than **7**. (**5** is not greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\">✖ The second digit is greater than **7**. (**4** is not greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\"> ✖ The third digit is greater than **7**. (**4** is not greater than **7**)</li>\n        </ul>\n    </details>\n  </li>\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;\">✔ The product of any two digits is always less than or equal to **30**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;\">The product of first, second digits and second, third digits and third, first digits is always less than or equal to **30**.</li>\n          <li style=\"margin:0;\"> ✔ The product of the first and second digits is less than or equal to **30**. (**5 * 4 = 20**, **20** is less than or equal to **30**)</li>\n          <li style=\"margin:0;\">✔ The product of the second and third digits is less than or equal to **30**. (**4 * 4 = 16**, **16** is less than or equal to **30**)</li>\n          <li style=\"margin:0;\"> ✔ The product of the third and first digits is less than or equal to **30**. (**4 * 5 = 20**, **20** is less than or equal to **30**)</li>\n       </ul>\n    </details>\n  </li>\n</ul>\n \nThe output should be **True** as the product of any two digits is **always** less than or equal to **30**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "75b301c8-2898-4182-a0f6-4b0fa610d642",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n989\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **989**,\n<ul style=\"list-style-type: none;padding:0;\">\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">✔ Each digit is greater than **7**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;padding:0;\">✔ The first digit is greater than **7**. (**9** is greater than **7**)</li>\n<li style=\"margin:0;padding:0;\">✔  The second digit is greater than **7**. (**8** is greater than **7**)</li>\n<li style=\"margin:0;padding:0;\">✔  The third digit is greater than **7**. (**9** is  greater than **7**)</li>\n</ul>\n    </details>\n</li>\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;\">✖ The product of any two digits is always less than or equal to **30**.</summary>\n        <ul style=\"list-style-type: none;\"><li style=\"margin:0;\">The product of the first, second digits and second, third digits and third, first digits is always less than or equal to **30**.</li>\n <li style=\"margin:0;\">✖ The product of the first and second digits is less than or equal to **30**. (**9 * 8 = 72**, **72** is not less than or equal to **30**)</li>\n <li style=\"margin:0;\">✖ The product of the second and third digits is less than or equal to **30**. (**8 * 9 = 72**, **72** is not less than or equal to **30**)</li>\n <li style=\"margin:0;\"> ✖ The product of the third and first digits is less than or equal to **30**. (**9 * 8 = 72**, **72** is not less than or equal to **30**)</li>\n</ul>\n    </details>\n  </li>\n</ul>\n \n\nThe output should be **True** as each digit is greater than **7**.\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c8f4b979-a166-4253-9c77-2a5e25142f0b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n588\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **588**,\n\n<ul style=\"list-style-type: none;padding:0;\">\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">✖ Each digit is greater than **7**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;padding:0;\"> ✖ The first digit is greater than **7**. (**5** is not greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\">✔  The second digit is greater than **7**. (**8** is greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\">✔  The third digit is greater than **7**. (**8** is  greater than **7**)</li>\n        </ul>\n    </details>\n  </li>\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;\">✖ The product of any two digits is always less than or equal to **30**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;\">✖ The product of the first and second digits is less than or equal to **30**. (**5 * 8 = 40**, **40** is not less than or equal to **30**)</li>\n          <li style=\"margin:0;\"> ✖ The product of the second and third digits is less than or equal to **30**. (**8 * 8 = 64**, **64** is not less than or equal to **30**)</li>\n          <li style=\"margin:0;\">✖ The product of the third and first digits is less than or equal to **30**. (**8 * 5 = 40**, **40** is not less than or equal to **30**)</li>\n       </ul>\n    </details>\n  </li>\n</ul>\n \n\nThe output should be **False** as none of the conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "39f20523-09df-47d9-a38b-4119c6aab7bf",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "138f1a72-48cb-44b5-bfc1-5a812e65404c",
+              "content": "The input will be a single line containing a four-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "43b3c39e-8358-4904-ae7f-0e71c3f4bebe",
+              "content": "The input will be a single line containing a three-digit float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9cf9d37d-fc8a-4a48-ba87-dd34cf2bce67",
+              "content": "The input will be a single line containing a three-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d5c35fe3-1ecc-494a-87d0-4eb4fa1b838f",
+              "content": "The input will be a single line containing a two-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing a three-digit integer.\n\nFor example, **588**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3ef9503c-290c-4022-8a71-e652ab1af74c",
+          "short_text": "",
+          "content": "According to the problem description, every digit in the number should be?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1872cf46-2db7-4bb5-9191-0d99fdea0dea",
+              "content": "Equal to **7**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9023cc0f-5889-466c-8a7f-cc5715001712",
+              "content": "Greater than **7**",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bad03b34-a3bd-4646-8d76-9975cc28294a",
+              "content": "Less than **7**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "feff1081-15df-4da5-8435-f705fc3f6774",
+              "content": "Greater than **5**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, every digit of the number should be greater than **7**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "450afe09-9bd7-41c4-a0a5-64da0bff25c8",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1e29f2a3-33a7-47fd-884c-6936f7504644",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "91f20fe0-ae8e-44f1-974c-210aedb567a2",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9be763df-3f8e-4d26-b7ae-56fdde5310c6",
+              "content": "The output should be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c8d9c29f-8690-4fd7-91ca-7c3fee311bf5",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format should be a single line containing a boolean. **True** should be printed if each digit of the given number is greater than **7** or the product of any two digits is always less than or equal to **30**, otherwise **False** should be printed.\n\n\nIf the given number is **989**,\n\n<ul style=\"list-style-type: none;padding:0;\">\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">✔ Each digit is greater than **7**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;padding:0;\">✔ The first digit is greater than **7**. (**9** is greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\"> ✔  The second digit is greater than **7**. (**8** is greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\">✔  The third digit is greater than **7**. (**9** is  greater than **7**)</li>\n        </ul>\n    </details>\n  </li>\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;\">✖ The product of any two digits is always less than or equal to **30**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;\">The product of first, second digits and second, third digits and third, first digits is always less than or equal to **30**.</li>\n          <li style=\"margin:0;\">✖ The product of the first and second digits is less than or equal to **30**. (**9 * 8 = 72**, **72** is not less than or equal to **30**)</li>\n          <li style=\"margin:0;\">✖ The product of the second and third digits is less than or equal to **30**. (**8 * 9 = 72**, **72** is not less than or equal to **30**)</li>\n          <li style=\"margin:0;\"> ✖ The product of the third and first digits is less than or equal to **30**. (**9 * 8 = 72**, **72** is not less than or equal to **30**)</li>\n       </ul>\n    </details>\n  </li>\n</ul>\n\n\nThe output should be **True** as each digit is greater than **7**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "52d8ab0a-8bf0-42b9-a768-c4e5b4d941d4",
+          "short_text": "",
+          "content": "According to the problem description, the product of any two digits should be?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "16b45081-9a36-41e3-8494-16018571267f",
+              "content": "Greater than **30**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4f41eb14-8d7b-4222-a3cb-a24507de1f6b",
+              "content": "Less than **25**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "974ddb82-e33c-40a1-96a2-1f85114200b5",
+              "content": "Less than or equal to **20**",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ea026d56-c7bd-4ae0-a789-fa91568c999f",
+              "content": "Less than or equal to **30**",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the product of any two digits should be **less than or equal to 30**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5b49d1ee-beb7-4f4b-918e-c9a18523a3fe",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "287b0dea-eccb-4dc4-aa20-a4f23f905fc5",
+              "content": "To check if all the below conditions are satisfied,\n\n- Each digit of the given number is greater than **8**.\n\n- The product of any two digits is always less than or equal to **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4ac7239f-beaf-4e3c-aa7c-96b9cbd1a059",
+              "content": "checks if any of the below conditions is satisfied,\n\n- Each digit of the given number is greater than **7**.\n\n- The product of any two digits is always less than or equal to **30**.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "af85bba1-88d7-4e94-860a-88c90cecd13c",
+              "content": "checks if any of the below conditions is satisfied,\n\n- Each digit of the given number is greater than **9**.\n\n- The product of any two digits is always less than or equal to **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f191f8a2-1ae8-4777-a6d3-92fed2c5fe25",
+              "content": "To check if all the below conditions are satisfied,\n\n- Each digit of the given number is greater than **6**.\n\n- The product of any two digits is always less than or equal to **35**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a three-digit number and checks if any of the below conditions is satisfied.\n\n- Each digit of the given number is greater than **7**.\n\n- The product of any two digits is **always** less than or equal to **30**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "751f528e-769c-4804-98b1-fb82c1038e0d",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "18cdccbe-ce58-4227-b76d-f87b09e13afa",
+              "content": "356.8,607.9                                              ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1a420499-c9b6-4638-b4f4-fadfb170f2ac",
+              "content": "166",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4e887bcd-aaf8-4c63-8657-a4431834bad4",
+              "content": "198",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c30e3717-218c-4ca3-a991-dbd2c83afed4",
+              "content": "7705",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n166\n```\n\n**Input 2**\n\n```\n198                                                     \n```\nThe above two inputs are valid because they consist of a single line containing a three-digit integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "cb0c0961-3cdf-41e0-823d-9d6d704e369b",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n529\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3fe31d31-aa38-4014-b160-6fcfcd4c4839",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7ebdb8e4-cae0-4adc-b70a-0cb9374099cd",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ae344331-0ad6-4d12-81a2-0e36a8c3603a",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b441ef62-4e72-4bf3-bc91-958cb2c6a6ce",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **529**,\n\n<ul style=\"list-style-type: none;padding:0;\">\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">✖ Each digit is greater than **7**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;padding:0;\">✖ The first digit is greater than **7**. (**5** is not greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\"> ✖ The second digit is greater than **7**. (**2** is not greater than **7**)</li>\n          <li style=\"margin:0;padding:0;\">✔  The third digit is greater than **7**. (**9** is greater than **7**)</li>\n        </ul>\n    </details>\n  </li>\n  <li style=\"margin:0;\">\n    <details style=\"margin:0;\">\n      <summary style=\"margin:0;\">✖ The product of any two digits is always less than or equal to **30**.</summary>\n        <ul style=\"list-style-type: none;\">\n          <li style=\"margin:0;\">The product of first, second digits and second, third digits and third, first digits is always less than or equal to **30**.</li>\n          <li style=\"margin:0;\">✔ The product of the first and second digits is less than or equal to **30**. (**5 * 2 = 10**, **10** is less than or equal to **30**)</li>\n          <li style=\"margin:0;\">✔ The product of the second and third digits is less than or equal to **30**. (**2 * 9 = 18**, **18** is less than or equal to **30**)</li>\n          <li style=\"margin:0;\"> ✖ The product of the third and first digits is less than or equal to **30**. (**9 * 5 = 45**, **45** is not less than or equal to **30**)</li>\n       </ul>\n    </details>\n  </li>\n</ul>\n \n\nThe output should be **False** as none of the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "125ea273-a706-45b1-8469-2526a85765b4",
+      "input": "649",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "375d978f-5612-4bd7-8bd3-2576a209d90c",
+      "input": "989",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4ba70545-ae5c-4e0b-8362-754c1bb034f5",
+      "input": "832",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4bfb989d-536a-48d2-b39c-0e6cb5691b90",
+      "input": "656",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "5dbb8826-f51f-4264-aed1-093c653f3c02",
+      "input": "777",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c163fb08-4b57-4449-98cf-fd85204f287a",
+      "input": "678",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c343f383-7415-4f72-8127-28d2b4d44844",
+      "input": "167",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

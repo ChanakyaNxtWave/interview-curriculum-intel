@@ -1,0 +1,13 @@
+{
+  "unit_title": "Loops | Reading",
+  "content": "# Loops\r\n\r\nSo far we have seen that Python executes code in a sequence and each block of code is executed once.  \r\n**Loops allow us to execute a block of code several times.**\r\n\r\n## While Loop\r\n\r\nAllows us to execute a block of code several times as long as the condition is `True`. \r\n\r\n![](https://res.cloudinary.com/learning-platform/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://nkb-backend-ccbp-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/0c0e9bb7-f459-46e5-9591-71f283e8869b.PNG)\r\n\r\n### While Loop Example\r\n\r\nThe following code snippet prints the next three consecutive numbers after a given number.  \r\n\r\n\r\n#### Code\r\n\r\n```python\r\na = int(input())  \r\ncounter = 0  \r\nwhile counter < 3:  \r\n    a = a + 1  \r\n    print(a)  \r\n    counter = counter + 1  \r\n```  \r\n\r\n#### Input\r\n\r\n```\r\n\r\n4\r\n```\r\n  \r\n#### Output\r\n\r\n```\r\n5  \r\n6  \r\n7\r\n```\r\n\r\n### Possible Mistakes\r\n\r\n**1. Missing Initialization**\r\n  \r\n#### Code\r\n\r\n```python\r\na = int(input())  \r\nwhile counter < 3:  \r\n    a = a + 1  \r\n    print(a)  \r\n    counter = counter + 1  \r\nprint(\"End\")  \r\n```\r\n  \r\n#### Input\r\n\r\n```\r\n\r\n5  \r\n```\r\n  \r\n#### Output\r\n\r\n```\r\n\r\nNameError: name 'counter' is not defined\r\n```\r\n\r\n**2. Incorrect Termination Condition**\r\n\r\n#### Code\r\n\r\n```python\r\na = int(input())  \r\ncounter = 0  \r\ncondition = (counter < 3)  \r\nwhile condition:  \r\n    a = a + 1  \r\n    print(a)  \r\n    counter = counter + 1  \r\n```\r\n\r\n#### Input\r\n\r\n```\r\n\r\n10  \r\n```\r\n  \r\n#### Output\r\n\r\nThe above code runs into an infinite loop.\r\n\r\nWhile block will keep repeating as the value in condition variable is `True`.\r\n\r\n**3. Not Updating Counter Variable**\r\n\r\n#### Code\r\n\r\n```python\r\na = int(input())  \r\ncounter = 0  \r\nwhile counter < 3:  \r\n    a = a + 1  \r\n    print(a)  \r\nprint(\"End\")  \r\n```\r\n  \r\n#### Input\r\n\r\n```\r\n\r\n10  \r\n```\r\n\r\n#### Output\r\n\r\n```\r\n\r\nInfinite Loop  \r\n```\r\n\r\nAs the value of counter is not updating.",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "3195c1bf-f542-48ee-b1b8-f75b3e97b348",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "44c34a16-eeb9-4a98-8ddc-d06f2eb8db56",
+  "unit_name": "Loops | Reading",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

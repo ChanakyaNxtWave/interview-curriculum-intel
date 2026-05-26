@@ -1,0 +1,61 @@
+{
+  "question_id": "ff84f721-714c-4624-b6d7-35ca40cb48cc",
+  "short_text": "Subtraction of two numbers",
+  "content": "Write a program that reads two numbers A and B and prints the subtraction of two numbers (A - B).\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains a float.\r\nThe second line of input contains a float.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a float obtained by the subtraction of two numbers.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are **15.55** and **6.23**, the output should be **9.32** as the subtraction `15.55 - 6.23` is **9.32**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4992050b-bbf9-4d67-a81a-e639ec3610cd",
+      "code_content": "first_num = input()\nsecond_num = input()\n\nfirst_num = float(first_num)\nsecond_num = float(second_num)\n\ndiff = first_num - second_num\nprint(diff)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "308a246a-3299-4b0b-ac7b-d2b14ac93554",
+      "input": "14.23\n14.23",
+      "output": "0.0",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "3df5413d-a879-425e-b51f-2bdb2e7b55de",
+      "input": "1.4\n2.5",
+      "output": "-1.1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9f491aec-03d4-46eb-a298-aca455948483",
+      "input": "-8.8\n-1.4",
+      "output": "-7.4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bd0ee81b-6c66-43a6-9b8d-24ef15f2f3b4",
+      "input": "-1.0\n1.0",
+      "output": "-2.0",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d5e21453-e9ae-48a7-a143-ecfb28472a7d",
+      "input": "15.55\n6.23",
+      "output": "9.32",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,75 @@
+{
+  "question_id": "4988e145-ef22-4003-a68c-a1fc7f6e26d3",
+  "short_text": "Numbers in Hollow Rectangle",
+  "content": "Given two numbers `M` and `N`, write a program to print a **Hollow Rectangle** of `M` rows and `N` columns using numbers starting from **7**.\n\n```\n7 8 9 10\n7     10\n7 8 9 10\n```\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `M` rows and `N` columns containing numbers as a **Hollow Rectangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 4` and `N = 3`,\n\n- Print the numbers on **4** rows and **3** columns as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-hollow-rectangle.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Number in the box indicates the number and a space (\"7 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n7 8 9\n7   9\n7   9\n7 8 9\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bb79b3a5-072a-436b-baef-a5dbe07bcb07",
+      "code_content": "rows = int(input())\ncolumns = int(input())\n\nfor row in range(1, rows + 1):\n\n    next_number = 8\n    each_row = \"7 \"\n    \n    if row == 1 or row == rows:\n\n        for column in range(2, columns + 1):\n            each_row = each_row + str(next_number) + \" \"\n            next_number = next_number + 1\n    \n        print(each_row)\n    else:\n        hollow_spaces = \"  \" * (columns - 2)\n        each_row = each_row + hollow_spaces + str(7 + columns - 1) + \" \"\n    \n        print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "652abc77-d7ac-4ee1-aeb6-dec3c00c521d",
+      "input": "4\n3",
+      "output": "7 8 9 \n7   9 \n7   9 \n7 8 9",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8e5cf878-64b4-41aa-96a2-f87dcd3ca89e",
+      "input": "5\n8",
+      "output": "7 8 9 10 11 12 13 14 \n7             14 \n7             14 \n7             14 \n7 8 9 10 11 12 13 14",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "961d8fc5-331f-40b3-b6b1-dc8db5559047",
+      "input": "8\n6",
+      "output": "7 8 9 10 11 12 \n7         12 \n7         12 \n7         12 \n7         12 \n7         12 \n7         12 \n7 8 9 10 11 12",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a2d2c239-2f53-4081-bfb6-211b67e6f1b1",
+      "input": "16\n9",
+      "output": "7 8 9 10 11 12 13 14 15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7               15 \n7 8 9 10 11 12 13 14 15",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d1e429d3-34c0-4be9-8416-385c2b8e6dca",
+      "input": "12\n12",
+      "output": "7 8 9 10 11 12 13 14 15 16 17 18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7                     18 \n7 8 9 10 11 12 13 14 15 16 17 18",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "dca64468-d8dd-4e48-bf8c-0007797771f6",
+      "input": "1\n1",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f7b495f1-87cc-4b31-a1da-bc5260594d9f",
+      "input": "5\n9",
+      "output": "7 8 9 10 11 12 13 14 15 \n7               15 \n7               15 \n7               15 \n7 8 9 10 11 12 13 14 15",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7fd01c52-e0bb-49e8-b8fd-82ff808825da",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "9be090e5-7b33-4fb0-8945-e5efbf3149af",
+  "short_text": "Print Hello World",
+  "content": "A `print_hello_world` function is given in the prefilled code that takes an integer `n` as an argument.\n\nWrite a program that reads an integer `n` as input from the user and uses the provided `print_hello_world` function in the prefilled code to print `Hello, World!` `n` times each on a new line using recursion.\n\n---\n\n#### Input\n\nThe input will be a single line containing a single integer.\n\n---\n\n#### Output\n\nThe output should be the string `Hello, World!` printed `n` times, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given integer is `3`,\n\nThe output should be:\n\n```\nHello, World!\nHello, World!\nHello, World!\n```\n\nThe string `Hello, World!` is printed **3** times.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f00608ad-2f40-46d0-910f-68749f884b0c",
+      "code_content": "def print_hello_world(n):\n    if n <= 0:\n        return\n    print(\"Hello, World!\")\n    print_hello_world(n - 1)\n\nn = int(input().strip())\nprint_hello_world(n)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1557de09-ac50-42f5-b93a-ba079ef3fca2",
+      "input": "2",
+      "output": "Hello, World!\nHello, World!",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "646e71f1-a1eb-4df9-b4b2-d4459d188733",
+      "input": "3",
+      "output": "Hello, World!\nHello, World!\nHello, World!",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "80354728-166e-49f0-a00c-beee6cfe4498",
+      "input": "10",
+      "output": "Hello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "85b3bdd6-b65f-4d5f-b7b0-8ca15dddaa01",
+      "input": "5",
+      "output": "Hello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c105ca73-c1c4-4941-b8c9-809a473334f7",
+      "input": "1",
+      "output": "Hello, World!",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c69f4d93-265e-43a2-ae8f-89a677bf1850",
+      "input": "9",
+      "output": "Hello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!\nHello, World!",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90ba8547-9585-47d5-9248-ea6d165e7b01",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

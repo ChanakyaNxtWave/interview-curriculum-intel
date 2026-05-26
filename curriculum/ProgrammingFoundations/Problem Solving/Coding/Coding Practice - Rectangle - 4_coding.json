@@ -1,0 +1,503 @@
+{
+  "question_id": "f93b4eaf-952c-4ab6-89db-c31d3c3036f9",
+  "short_text": "Rectangle - 4",
+  "content": "Given two numbers `M` and `N`, write a program to print a **Rectangle** of `M` rows and `N` columns using stars (`*`) in the borders and zeros (`0`) inside the the rectangle.\n\n```\n* * * * * \n* 0 0 0 *\n* 0 0 0 *\n* * * * *\n```\n\n<MultiLineNote>\nThere is a space after every star (`*`) and every zero (`0`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing stars (`*`) in the borders and zeros (`0`) inside as a **Rectangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 4` and `N = 8`,\n\n- Print stars (`*`) and zeros (`0`) on 4 rows and 8 columns as shown in the given image.\n\n  - The borders of the rectangle contain stars (`*`).\n\n  - Inside of the rectangle contain zeros (`0`).\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-rectangle-4.png' widthPercent='50'/>\n\n<MultiLineNote>\n\nIn the given image, \n\n- The Zero in the box indicates zero and a space (\"0 \").\n- The Star in the box indicates star and a space (\"* \").\n\n</MultiLineNote>\n\nThe output should be,\n\n````\n* * * * * * * * \n* 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 *\n* * * * * * * *\n````",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "dd5d02c5-c531-4d1e-9327-bd606562e0dd",
+      "code_content": "m = int(input())\nn = int(input())\n\nprint(\"* \" * n)\n\nfor i in range(1, m - 1):\n    middle_zeros = \"0 \" * (n - 2)\n    row = \"* \"+ middle_zeros + \"*\"\n    print(row)\n    \nprint(\"* \" * n)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "35d643e8-2a83-4873-8968-80f24cf76ca7",
+          "short_text": null,
+          "content": "Which of the following code snippets is used to print the second row of the Rectangle when `M` and `N` are given as inputs?\r\n\r\nRectangle of **4** (`M = 4`) rows and **5** (`N = 5`) columns:\r\n\r\n```\r\n* * * * *\r\n* 0 0 0 *\r\n* 0 0 0 *\r\n* * * * *\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "311d3604-8554-412c-8913-4fcaf90a354e",
+              "content": "```python\r\nstar = ...  # string of 1 star\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(starzeroes)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3f3980cb-52bd-4fe5-bdda-451a95b1334b",
+              "content": "```python\r\nstar = ...  # string of 1 star\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(star * zeroes * star)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8da5a9fd-c388-4248-bf6d-9de7b964a29a",
+              "content": "```python\r\nstar = ...  # string of 1 star\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(star + zeroes + star)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a7b5b688-9963-4505-aafa-c5b0a0378c48",
+              "content": "```python\r\nstar = ...  # string of 1 star\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(star + star + zeroes)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fa5b143d-5d65-4cc5-83a4-9635a1af965c",
+              "content": "```python\r\nstar = ...  # string of 1 star\r\nzeroes = ... # string of zeroes in the second row\r\n\r\nprint(star + zeroes)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The second row of the rectangle is constructed by concatenating a star at the beginning, a string of zeroes, and another star at the end. The variables `star` and `zeroes` are placeholders for these segments.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "417f383b-c629-438e-8123-c38756a5383d",
+          "short_text": null,
+          "content": "Which of the following code snippets is used to print the first row of the Rectangle when `M` and `N` are given as inputs?\r\n\r\nRectangle of **4** (`M = 4`) rows and **5** (`N = 5`) columns:\r\n\r\n```\r\n* * * * *\r\n* 0 0 0 *\r\n* 0 0 0 *\r\n* * * * *\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "26b2f14d-5c25-4075-b098-c833f15909ed",
+              "content": "```python\r\nrow = \"*\" * N\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3cf6b967-d44a-41cb-b4c3-b881c137c71c",
+              "content": "```python\r\nrow = \"*\" * (N - 1)\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a6986149-21a8-45e2-80d8-b4bbaa60099c",
+              "content": "```python\r\nrow = \"* \" + N\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a775cc2e-71c9-4b56-8cf5-2761cc47b4fc",
+              "content": "```python\r\nrow = \"* \" * (N - 1)\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d3987f64-f769-4e8f-bfc6-2badad12e50a",
+              "content": "```python\r\nrow = \"* \" * N\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The asterisk operator `*` is used to repeat a string for a specific number of times. Here, the string '* ' is repeated `N` times to print the first row of stars.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4f241605-c956-477c-9de2-9422fa0e4499",
+          "short_text": null,
+          "content": "Which of the following code snippets is used to print the zeroes in the second row of the Rectangle when `M` and `N` are given as inputs?\r\n\r\nRectangle of **4** (`M = 4`) rows and **5** (`N = 5`) columns:\r\n\r\n```\r\n* * * * *\r\n* 0 0 0 *\r\n* 0 0 0 *\r\n* * * * *\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1b4b32c5-61f0-4f26-bf2a-88a90f33c306",
+              "content": "```python\r\nrow = \"0 \" * (N - 2)\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "558e67dc-3831-4b0c-a95b-ab9dbe6230f4",
+              "content": "```python\r\nrow = \"0\" * (N - 1)\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e79fb407-0232-4f63-844e-f88c3c2fcf06",
+              "content": "```python\r\nrow = \"0 \" * (N - 3)\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f7ef5817-0711-4ba3-9008-585a35d2fb81",
+              "content": "```python\r\nrow = \"0 \" * (N - 1)\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fb77f3a5-bd18-4c84-b6e5-40be272529f6",
+              "content": "```python\r\nrow = \"0 \" * N\r\nprint(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The code is constructing the string of zeroes for the middle part of the second row by repeating '0 ' (N - 2) times. As the rectangle's border is made of stars, we subtract 2 to leave space for them.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "5a0cb50b-9177-4656-b442-33d431b8dc7a",
+          "short_text": "",
+          "content": "Considering the given code snippet, which of the following code snippets is used to print the rows in the given Rectangle, when `N` is given as input? \n\n```python\nfor i in range(1, N+1):\n    is_first_row = ... # stores True if row is first row\n    is_last_row = ... # stores True if row is last row\n    is_first_or_last_row = ... # stores True if row is first or last row. Otherwise, stores False\n    ...\n```  \n\nRectangle of **4** (`M = 4`) rows and **5** (`N = 5`) columns:\n\n```\n* * * * *\n* 0 0 0 *\n* 0 0 0 *\n* * * * *\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0df73e67-193b-4b8b-bf73-9e84e0c46051",
+              "content": "```python\nrow = \"* * * * *\"\nmiddle_row = \"* 0 0 0 *\"\n\nprint(row)\n\nprint(middle_row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4bcfcc68-f6fe-46ca-8c0c-ae1b2f54ee01",
+              "content": "```python\nrow = \"* * * * *\"\nmiddle_row = \"* 0 0 0 *\"\n\nif(is_first_or_last_row):\n    print(row)\nelse:\n    print(middle_row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5f7e2a7a-21e0-471e-8424-b66211286f4f",
+              "content": "```python\nrow = \"* * * * *\"\nmiddle_row = \"* 0 0 0 *\"\n\nif(is_first_or_last_row):\n    print(middle_row)\nelse:\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7cf765f9-f239-492f-bcd6-cb05cd1433a1",
+              "content": "```python\nrow = \"* * * * *\"\nmiddle_row = \"* 0 0 0 *\"\n\nprint(row or middle_row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The given code checks if the row is the first or last row using the `is_first_or_last_row` variable. If it is, it prints a row of stars. Otherwise, it prints a row with stars as borders and zeroes inside.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "71574aae-3b2d-4e54-b71b-1b342fb78237",
+          "short_text": "",
+          "content": "Which of the following code snippets is used to print `N` rows, where `N` is given as input?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0540466c-8347-4eda-9cb4-9f709cadb01f",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(1, n):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "66e2dae8-8a6c-43d6-af92-58ae0f0721f7",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(0, n):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9d4f8920-ab57-46ba-9daa-a95907e96e7e",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(1, n+1):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f318b889-5fb8-4a13-989a-c8abe8354084",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(n):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f506ed0e-b89c-4762-a75a-f48526c780f0",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(0, n+1):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In Python, the range function can be used to iterate over a sequence of numbers. For printing `N` rows, the loop should run `N` times. Therefore, `range(1, n+1)`, `range(n)`, and `range(0, n)` are correct as they all iterate `N` times. The incorrect options `range(0, n+1)` and `range(1, n)` result in `N+1` and `N-1` iterations respectively, hence they will print more or less than `N` rows.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8eb10ba1-132f-4a0a-861d-14e43d334f53",
+          "short_text": "",
+          "content": "Which of the following concepts is used to print the given Rectangle when `M` and `N` are given as inputs?\n\nRectangle of **4** (`M = 4`) rows and **5** (`N = 5`) columns:\n\n```\n* * * * *\n* 0 0 0 *\n* 0 0 0 *\n* * * * *\n```\n\n",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5740fd07-b93a-4243-8b59-b2e94963168c",
+              "content": "String Repetition",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "79d63152-de86-4cff-97e8-65e0f4eae10a",
+              "content": "String Concatenation",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "fc79b065-0169-48f1-9665-0d17b6e1a865",
+              "content": "Loops",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Loops are used to perform repeated tasks. In this context, they iterate through the rows of the rectangle, printing stars for the border rows and zeroes for the internal rows.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "979ab2b5-9ffc-422f-a8ac-17460ec831fd",
+          "short_text": null,
+          "content": "Which of the following operators is used for string concatenation in Python?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "09e026c7-faa4-4b1f-9ffb-f710e54febc7",
+              "content": "`:`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7c42a236-aff8-45a9-b103-20e31bb98896",
+              "content": "`+`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8066d120-da50-46f9-852f-c06610c462ab",
+              "content": "`*`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a697f64c-5c3a-4351-b7da-6760b73758f9",
+              "content": "`-`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d7a2c25c-1847-4048-9c5c-fa3b7a6cac49",
+              "content": "`/`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The operator used for string concatenation in Python is the + (plus) operator. When applied to two strings, the + operator combines or concatenates the strings together, resulting in a new string that is the combination of the two original strings.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ac91479b-8442-4474-b579-eee28599e0ec",
+          "short_text": "",
+          "content": "Rearrange the given steps in order to print the Rectangle of `M` rows and `N` columns, when `M` and `N` are given as inputs?\n\n<b>Step 1:</b> Create a loop to iterate through each row of the Rectangle.\n\n<b>Step 2:</b> If the current row is on the border, print a row of stars (`*`) followed by a space. Else, print a row of zeros (`0`) with stars (`*`) at the beginning and end of the row.\n\n<b>Step 3:</b> Read `M` and `N` as inputs.\n\n<b>Step 4:</b> Check if the current row is on the border (first or last row) or inside the Rectangle.",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "13ea14db-497e-4854-b3ab-a5ca70d593d5",
+              "content": "Step 1, Step 2, Step 3, Step 4",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "7b3707d1-d0a0-4be5-be2a-faccf2b374cb",
+              "content": "Step 3, Step 1, Step 4, Step 2",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "9c076ed8-d47d-4788-8cbd-03a3c01c990d",
+              "content": "Step 2, Step 4, Step 3, Step 1",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "b5e4d098-84f3-4382-befc-9a4d04f8fcaa",
+              "content": "Step 3, Step 4, Step 1, Step 2",
+              "content_type": "TEXT",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "First, we read the inputs `M` and `N` (Step 3). Then, we iterate through each row (Step 1) and within this loop, we check if the row is on the border or not (Step 4). Based on this, we print the appropriate row (Step 2).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dc4fb715-6788-4a30-adc1-108b9e97d8ba",
+          "short_text": null,
+          "content": "Considering the given code snippet, which of the following conditions is used to check whether the **row is first row or last row** of the Rectangle when `M` and `N` are given as inputs?\r\n\r\nRectangle of **4** (`M = 4`) rows and **5** (`N = 5`) columns:\r\n\r\n```python\r\nfor i in range(1, M + 1):\r\n    condition = ______\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "51576fc2-d446-4213-92f1-43f896cee237",
+              "content": "```\r\ni == 0 or i == M\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "93ce3578-91ee-4468-af3e-163ff764c3f5",
+              "content": "```\r\ni == 0 or i == M - 1\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e44683ab-4838-4be3-96d3-403f262791b6",
+              "content": "```\r\ni == 1 or i == M\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f81c18cc-2363-4529-a273-0cec74c82dd8",
+              "content": "```\r\ni == 0 or i == M + 1\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The condition `i == 1 or i == M` checks if the current row is the first row (`i == 1`) or the last row (`i == M`). If either of these conditions is True, the current row is a border row.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dc8673a4-3aef-4afe-8304-6babd3ea475a",
+          "short_text": "",
+          "content": "Which of the following operators is used for string repetition in Python?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "44804501-5948-4a73-9e58-0040039f603c",
+              "content": "`/`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5ccbe6eb-af6a-42c8-8a80-fa36148c5dd7",
+              "content": "`-`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6d495d6d-67fb-45cb-a6e2-455285d4dcd5",
+              "content": "`:`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b00f79d3-1368-45a2-8054-bffde630edce",
+              "content": "`+`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "faa5850d-7227-479d-a24f-1c39c6b56fb3",
+              "content": "`*`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The operator used for string repetition in Python is the `*` (asterisk) operator. When applied to a string, the `*` operator allows you to repeat the string a certain number of times.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "019b741e-fc24-4122-a00a-0289d72d8113",
+      "input": "3\n3",
+      "output": "* * * \n* 0 *\n* * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "19e81dac-22e1-4155-8210-dbb32570dd64",
+      "input": "10\n2",
+      "output": "* * \n* *\n* *\n* *\n* *\n* *\n* *\n* *\n* *\n* *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "39dd0076-4e62-41fb-9c44-3bdd7372a414",
+      "input": "2\n12",
+      "output": "* * * * * * * * * * * * \n* * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3a901abd-71d1-4798-95f0-b8e93008eaa8",
+      "input": "5\n9",
+      "output": "* * * * * * * * * \n* 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 *\n* * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4ad802c8-47eb-496d-b2ee-f2525eaa4efd",
+      "input": "52\n25",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * * * * \n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 *\n* * * * * * * * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6fa54508-eba9-4700-b77d-663343c5d147",
+      "input": "4\n8",
+      "output": "* * * * * * * * \n* 0 0 0 0 0 0 *\n* 0 0 0 0 0 0 *\n* * * * * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "783f7774-ae5f-42e3-8275-3941524bac76",
+      "input": "7\n5",
+      "output": "* * * * * \n* 0 0 0 *\n* 0 0 0 *\n* 0 0 0 *\n* 0 0 0 *\n* 0 0 0 *\n* * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aca0751b-abce-4ec9-bd6f-064a88d960a7",
+      "input": "12\n7",
+      "output": "* * * * * * * \n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* 0 0 0 0 0 *\n* * * * * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "63ea0bd4-8ce7-451a-b5bd-629b2b13b9a9",
+  "short_text": "Double the Numbers",
+  "content": "Write a program that reads a line of space-separated integers and doubles its value. The program should output the results as a space-separated sequence.\n\n---\n\n#### Input\n\nA single line of integers separated by spaces.\n\n---\n\n#### Output\n\nA single line of doubled integers separated by spaces.\n\n---\n\n#### Explanation\n\nIf the input is:\n\n```\n1 2 3 4\n```\n\nThe output should be:\n\n```\n2 4 6 8\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7b0aba67-15ea-4b1d-a0d7-f9a38c766655",
+      "code_content": "def double_numbers(numbers):\n    return [num * 2 for num in numbers]\n\ninput_line = input().split()\nnumbers = [int(x) for x in input_line]\ndoubled_numbers = double_numbers(numbers)\n\n\nfor i in range(len(doubled_numbers)):\n    if i < len(doubled_numbers) - 1:\n        print(doubled_numbers[i], end=\" \")\n    else:\n        print(doubled_numbers[i])\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "117dcfec-6279-4303-b8c8-e8ff2ef37c25",
+      "input": "5 10 15",
+      "output": "10 20 30",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "14b01f77-6484-4bcf-9a60-40e1b8ee89e7",
+      "input": "4 5 6",
+      "output": "8 10 12",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "1f1db35c-2dd7-4d4e-9bd4-5804db8501cc",
+      "input": "10 20",
+      "output": "20 40",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "64d62dec-caab-4db9-83cf-35ec4d167156",
+      "input": "1 2 3 4",
+      "output": "2 4 6 8",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6dcc4ebd-fb2e-47eb-b49f-64d0b3bbab87",
+      "input": "6 7 8",
+      "output": "12 14 16",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fe415442-3cf8-4853-bcc3-562e86ef0fa4",
+      "input": "0 1 2 3",
+      "output": "0 2 4 6",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7ced6467-af22-4d7c-96ae-bcdeb3364094",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "8cf7201a-05a6-47a5-a8a9-41967f30a46c",
+  "short_text": "Max and Min Value in List of Tuples",
+  "content": "Write a program to print the maximum and minimum of all the values at index zero and index one in the list of tuples.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The next N lines will contain space-separated two integers, denoting elements of each tuple.<hr><b>Output</b><br/><br/>The first line of output should contain a tuple with the maximum and minimum value at index zero.<br/>The second line of output should contain a tuple with the maximum and minimum value at index one.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read the inputs in the next three lines. If the inputs in the next three lines are the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 5\n3 2\n5 8\n</code></pre><br/>As 5 is the maximum and 1 is the minimum in the values at index zero and 8 is the maximum and 2 is the minimum in the values at index one. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">(5, 1)\n(8, 2)\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "78afb7ef-5f47-45ef-8088-26c9ede88857",
+      "code_content": "n = int(input())\nnum_list = []\nzero_index_list = []\nfirst_index_list = []\n\nfor i in range(n):\n    values_list = input().split()\n    first_value = int(values_list[0])\n    zero_index_list.append(first_value)\n    second_value = int(values_list[1])\n    first_index_list.append(second_value)\n\nzero_index_min_max_tuple = (max(zero_index_list), min(zero_index_list))\nfirst_index_min_max_tuple = (max(first_index_list), min(first_index_list))\n\nprint(zero_index_min_max_tuple)\nprint(first_index_min_max_tuple)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "166ee1a0-e6e5-463c-ab45-637058cdbcbf",
+      "input": "3\n1 1\n1 1\n1 1",
+      "output": "(1, 1)\n(1, 1)\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "638b37c2-d1f6-4bc3-8ad7-174e02b41dd1",
+      "input": "3\n1 5\n3 2\n5 8",
+      "output": "(5, 1)\n(8, 2)\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9b093c8b-a6c0-406d-9adc-4e7330a543fe",
+      "input": "4\n1 2\n2 5\n10 1\n-3 6",
+      "output": "(10, -3)\n(6, 1)\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a8df1d05-47cd-4c9f-91ec-f54177cb68d1",
+      "input": "1\n1 1",
+      "output": "(1, 1)\n(1, 1)\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d046507d-17f6-45c6-8c38-cabbbfe7bbd0",
+      "input": "10\n-9999 100\n1119 2341\n-5559 8563\n2901 5126\n1000 1999\n-3345 -6999\n1000 1983\n9654 3678\n1023 1510\n4010 2200",
+      "output": "(9654, -9999)\n(8563, -6999)\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

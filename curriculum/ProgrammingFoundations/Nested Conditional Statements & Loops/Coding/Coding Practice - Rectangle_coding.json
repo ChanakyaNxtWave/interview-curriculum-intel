@@ -1,0 +1,61 @@
+{
+  "question_id": "41242532-3b2f-48ba-9d77-1368a284cc51",
+  "short_text": "Rectangle",
+  "content": "Write a program that reads two numbers `M` and `N`, and prints a **Rectangle** of `M` rows and `N` columns using stars (`*`).\n\n```\n*****\n*****\n*****\n*****\n```\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `M` rows and `N` columns containing stars (`*`) as a **Rectangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 4` and `N = 5`,\n\n- Print the stars (`*`) on **4** rows and **5** columns as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/rectangle.png' widthPercent='70'/>\n\nThe output should be,\n\n```\n*****\n*****\n*****\n*****\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e9ef177e-a06f-468a-b6c9-4098e48fae68",
+      "code_content": "rows = int(input())\ncolumns = int(input())\n\ncounter = 0\nwhile counter < rows:\n    print(\"*\" * columns)\n    counter = counter + 1",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "172d0c0e-ab8f-4491-b467-e7690c153346",
+      "input": "8\n8",
+      "output": "********\n********\n********\n********\n********\n********\n********\n********",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "280ee72b-da4e-4d00-a9a8-cf86617cd235",
+      "input": "4\n5",
+      "output": "*****\n*****\n*****\n*****",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "acdd56e0-5e44-41c8-9394-969c8f099822",
+      "input": "10\n1",
+      "output": "*\n*\n*\n*\n*\n*\n*\n*\n*\n*",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "de532047-3d7c-4c79-82dc-4f1517e35e88",
+      "input": "5\n7",
+      "output": "*******\n*******\n*******\n*******\n*******",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "e85f0519-c2e3-4454-b888-a72fee0168e7",
+      "input": "6\n2",
+      "output": "**\n**\n**\n**\n**\n**",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

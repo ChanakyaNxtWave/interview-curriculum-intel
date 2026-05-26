@@ -1,0 +1,68 @@
+{
+  "question_id": "8f810d48-efc1-4504-b596-d038a827c409",
+  "short_text": "Find Element in List",
+  "content": "A list `L` is given in the prefilled code.\n\nWrite a program that reads a string `S` and checks if `S` is in the given list `L`. Print **True** if `S` is present in `L` else, print **False**.\n\n```\nL = [\"5\", \"eat\", \"9.80\", \"Water\", \"python\", \"-678\", \"7685.26\", \"-2.5\", \"sing\"]\n```\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if `S` is present in `L`. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"Water\"`,\n\n- The elements in the given prefilled list `L` are **\"5\"**, **\"eat\"**, **\"9.80\"**, **\"Water\"**, **\"python\"**, **\"-678\"**, **\"7685.26\"**, **\"-2.5\"**, and **\"sing\"**.\n- The given string **\"Water\"** is present in the prefilled list `L` at the **3rd** index.\n\nThe output should be **True**.\n<br>\nFor example, if the given string is `S = \"Java\"`,\n\n- The elements in the given prefilled list `L` are **\"5\"**, **\"eat\"**, **\"9.80\"**, **\"Water\"**, **\"python\"**, **\"-678\"**, **\"7685.26\"**, **\"-2.5\"**, and **\"sing\"**.\n- The given string **\"Java\"** is not present in the prefilled list `L`.\n\nThe output should be **False**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "eb1ac11a-91b3-4ba9-bb79-7fadde47c764",
+      "code_content": "L = [\"5\", \"eat\", \"9.80\", \"Water\", \"python\", \"-678\", \"7685.26\", \"-2.5\", \"sing\"]\n\nstring = input()\n\nis_present = False\n\nfor each_item in L:\n    if each_item == string:\n        is_present = True\n        break\n\nprint(is_present)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a878c66-16f2-47bb-be61-8a4704612474",
+      "input": "Water",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "21a6e2b3-3a45-48b7-b4f8-e69e006c229c",
+      "input": "java",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "345dd4fd-1cc2-4baf-bd77-bf881be5f9bf",
+      "input": "-678",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "7d128b5d-422f-481b-b76c-68a34062b867",
+      "input": "7.64",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "80ddb8d3-bb41-4687-be28-5f1f57beb4a1",
+      "input": "dance",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "b5dcefca-1f31-40f7-b155-fc6bfebd2460",
+      "input": "python",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "653a294f-6cbb-452f-afc9-581fe340f02f",
+  "short_text": "K Sum Pairs",
+  "content": "Write a program that reads comma-separated numbers and the number `K` and then finds all the unique pairs in the given numbers whose sum is equal to `K`.\r\n\r\n---\r\n\r\n#### Input  \r\n\r\nThe first line of input contains comma-separated integers.\r\nThe second line of input contains an integer representing `K`.\r\n\r\n---\r\n\r\n#### Output  \r\n\r\nThe output should contain all the unique pairs whose sum is equal to `K`, each on a new line.\r\n\r\n---\r\n\r\n#### Explanation  \r\n\r\nIf the given comma-separated integers are `5,3,7,9,5` and `K = 12`. \r\n\r\nFollowing are the possible pairs from the given numbers.\r\n\r\n| Possible Pairs | Sum |         \r\n| :--: | :--:|\r\n|5 + 3 | 8|\r\n|`5 + 7` | **12**|\r\n|5 + 9 | 14|\r\n|5 + 5 | 10|\r\n|3 + 7 | 10|\r\n|`3 + 9` | **12**|\r\n|3 + 5 | 8|\r\n|`9 + 3` | **12**|\r\n|7 + 9 | 16|\r\n|`7 + 5` | **12**|\r\n|9 + 5 | 14|\r\n\r\nFrom the above, the `pairs` whose sum is equals to `12` are,\r\n\r\n- `5 + 7 = 12`\r\n- `3 + 9 = 12`\r\n- `9 + 3 = 12`\r\n- `7 + 5 = 12`\r\n\r\n`Sort` the above pairs and print each `unique pair` as a **tuple**. \r\n\r\nSo, the output should be,\r\n\r\n```\r\n(3, 9)\r\n(5, 7)\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "471ddc94-3d96-4a66-9437-a7fae0d9dc52",
+      "code_content": "def get_unique_pairs(int_list, pair_sum):\n    stop_index = len(int_list) - 1\n    unique_pairs_set = set()\n    for cur_index in range(stop_index):\n        num_1 = int_list[cur_index]\n        num_2 = pair_sum - num_1\n        remaining_list = int_list[cur_index+1:]\n        if num_2 in remaining_list:\n            pair = (num_1, num_2)\n            # avoid duplicates like (5,7) & (7,5)\n            sorted_pair = tuple(sorted(pair))\n            unique_pairs_set.add(sorted_pair)\n    return unique_pairs_set\n\n\ndef convert_string_to_int(str_num_list):\n    new_list = []\n    for item in str_num_list:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nstr_num_list = input().split(\",\")\npair_sum = int(input())\nint_list = convert_string_to_int(str_num_list)\nunique_pairs = get_unique_pairs(int_list, pair_sum)\nunique_pairs = list(unique_pairs)\nunique_pairs.sort()  # sort the tuples according to the first element\nfor pair in unique_pairs:\n    print(pair)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0f282f5b-597d-493d-bd34-9242b5e9f62a",
+      "input": "5,3,7,9,5\n12",
+      "output": "(3, 9)\n(5, 7)\n",
+      "is_hidden": false,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "2b1e4377-e57a-4f8e-8802-d7795a393996",
+      "input": "10,12,10,15,-1,7,6,5,4,2,1,1,1\n11",
+      "output": "(-1, 12)\n(1, 10)\n(4, 7)\n(5, 6)\n",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "44a48d2d-e8c6-4aad-8303-08f36cab355c",
+      "input": "-4,-3,-2,-1,0,1,2,3,4,5,6\n-1",
+      "output": "(-4, 3)\n(-3, 2)\n(-2, 1)\n(-1, 0)\n",
+      "is_hidden": false,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "5277f52e-c69e-484b-b0c8-844a79bd8075",
+      "input": "100,99,98,95,96,94\n194",
+      "output": "(94, 100)\n(95, 99)\n(96, 98)\n",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "86f4a105-a8f0-47c9-92b0-fef37da7523e",
+      "input": "11,13,17,19,23,374,3249\n30",
+      "output": "(11, 19)\n(13, 17)\n",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "aa8a39e1-61ba-4206-bbab-f2683a6acb23",
+      "input": "4,0\n4",
+      "output": "(0, 4)\n",
+      "is_hidden": true,
+      "weightage": 15.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,96 @@
+{
+  "question_id": "423fcd11-0ab3-4055-892e-06f186c7a078",
+  "short_text": "Difference of Two Numbers",
+  "content": "Write a program that reads three numbers `A`, `B`, and `C`, and checks if the difference between any two numbers (`A - B`, `B - C` and `C - A`) is **always** less than **25**.\n\nPrint **Difference is less than 25** if the difference between any two numbers (`A - B`, `B - C` and `C - A`) is **always** less than **25**. Otherwise, print **Difference is not less than 25**.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\nThe third line of input contains an integer representing `C`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Difference is less than 25** should be printed if the difference between any two numbers is **always** less than **25**. Otherwise, **Difference is not less than 25** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 65`, `B = 60`, and `C = 52`,\n\nThe difference between `A`, `B` (`A - B`) and the difference between `B`, `C` (`B - C`) and the difference between `C`, `A` (`C - A`) should be less than **25**.\n\n✔ The difference `A - B` is less than **25**. (`65 - 60 = 5`, **5** is less than **25**) \n✔ The difference `B - C` is less than **25**. (`60 - 52 = 8`, **8** is less than **25**) \n✔ The difference `C - A` is less than **25**. (`52 - 65 = -13`, **-13** is less than **25**)\n\nThe output should be **Difference is less than 25** as the difference between any two numbers (`A - B`, `B - C` and `C - A`) is **always** less than **25**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "dc421c63-3897-4678-8efd-134d8071b0b0",
+      "code_content": "first_number = int(input())\nsecond_number = int(input())\nthird_number = int(input())\n\nis_first_second_difference_less = (first_number - second_number) < 25\nis_second_third_difference_less = (second_number - third_number) < 25\nis_third_first_difference_less = (third_number - first_number) < 25\n\nif is_first_second_difference_less and is_second_third_difference_less and is_third_first_difference_less:\n    print(\"Difference is less than 25\")\nelse:\n    print(\"Difference is not less than 25\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "08696aba-7794-408b-a5bc-a25b738fc165",
+      "input": "100\n70\n35",
+      "output": "Difference is not less than 25",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "0ae6531c-db3c-4532-8b95-c31c6deea4be",
+      "input": "11\n12\n13",
+      "output": "Difference is less than 25",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "0cdd7d62-3c9b-4897-8431-639c78f1414e",
+      "input": "92\n67\n62",
+      "output": "Difference is not less than 25",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "192cdf3e-0a51-484a-a397-89c969e2b945",
+      "input": "0\n-3\n2",
+      "output": "Difference is less than 25",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "2ddf389e-3370-4b25-8670-5b055a95c64f",
+      "input": "70\n60\n50",
+      "output": "Difference is less than 25",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "376b47ad-e90b-4218-8ee0-2f2e308f7f14",
+      "input": "60\n47\n-1",
+      "output": "Difference is not less than 25",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "3875b79b-b689-4316-8c17-2e4cc476a34d",
+      "input": "100\n75\n80",
+      "output": "Difference is not less than 25",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "be273b43-5139-4703-8221-1c57d6a25579",
+      "input": "100\n75\n50",
+      "output": "Difference is not less than 25",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d7e3a3ac-bd00-45b3-8744-c4a294cb1960",
+      "input": "65\n60\n52",
+      "output": "Difference is less than 25",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "faafdbe0-fb70-453a-9feb-624412dc1d9d",
+      "input": "55\n65\n80",
+      "output": "Difference is not less than 25",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

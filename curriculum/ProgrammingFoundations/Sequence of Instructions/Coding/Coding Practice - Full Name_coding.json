@@ -1,0 +1,61 @@
+{
+  "question_id": "dcf44746-b47e-48e2-bf93-1a00924d3200",
+  "short_text": "Full Name",
+  "content": "A job applicant is filling out an application form. He entered his first name and last name. Your task is to print his full name by joining his first name and last name with a space.\n\n---\n\n#### Input\n\nThe first line of input contains a string (first name).\nThe second line of input contains a string (last name).\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the first name and the last name with a space.\n\n---\n\n#### Explanation\n\nFor example, if the given first name is **Harry** and the given last name is **Potter**, the output should be **Harry Potter** as the first name and last name are joined with a space.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6f1c93ff-13e5-472d-9af3-35f12318e08c",
+      "code_content": "first_name = input()\nlast_name = input()\n\nprint(first_name + \" \" + last_name)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b8b0327-2f09-49f2-a9ab-6d21359cb135",
+      "input": "Rick\nNovak",
+      "output": "Rick Novak",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4efe498f-e1ed-4ea3-85cb-1c00f60e2da7",
+      "input": "Hugo\nClive",
+      "output": "Hugo Clive",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "749b98df-15b6-4edb-a8e7-ff2f869c7ed2",
+      "input": "Harry\nPotter",
+      "output": "Harry Potter",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "81ef587d-6960-4d4e-99e3-5bd01cb64bea",
+      "input": "Mary\nBrown",
+      "output": "Mary Brown",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d79c0791-130c-46b9-ac7e-b3a2bc6ee26b",
+      "input": "Jesse\nTurner",
+      "output": "Jesse Turner",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

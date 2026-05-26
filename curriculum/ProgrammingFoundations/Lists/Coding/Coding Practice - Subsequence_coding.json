@@ -1,0 +1,75 @@
+{
+  "question_id": "f97c9628-5ca2-421c-90d2-a48cfdd0f32a",
+  "short_text": "Subsequence",
+  "content": "Given two strings, write a program to check if the second string is a subsequence of the first string.<br/>A string can be considered subsequence of other if it can be derived from the original string by ignoring or removing some characters without changing the order of the remaining characters.<br/><hr><b>Input</b><br/><br/>The first line of input will contain a string.<br/>The second line of input will contain a string.<br/><hr><b>Output</b><br/><br/>The output should be a single line containing either &quot;Yes&quot; or &quot;No&quot;.<hr><b>Explanation</b><br/><br/>For example, if the first string is &quot;abcde&quot; and the second string is &quot;ace&quot;, the output should be &quot;Yes&quot;, as the second string is a subsequence of the first string.<br/><br/>Whereas, if the first string is &quot;Google&quot;, and the second string is &quot;lg&quot;, the output should be &quot;No&quot;, as the second string is not obtained by ignoring some characters without changing the order in the first string.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "741a156a-25d4-4954-9e55-86c3a11617a7",
+      "code_content": "full_string = input()\nsubsequence = input()\nsubseq_index = 0\nsubseq_len = len(subsequence)\nfor char in full_string:\n    if char == subsequence[subseq_index]:\n        subseq_index += 1\n        if subseq_index == subseq_len:\n            break\nif subseq_index == subseq_len:\n    print(\"Yes\")\nelse:\n    print(\"No\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0b6c65ad-1b24-48cb-beff-ed5bb786bff8",
+      "input": "hooh\nPhotography",
+      "output": "No\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "5e2be74c-f960-43e5-ae55-2845aeb665a0",
+      "input": "abcde\nace",
+      "output": "Yes\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b2bf20b1-74e7-4be9-8bc2-126837210662",
+      "input": "Practice\nPractice",
+      "output": "Yes\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c183e6ad-86b2-425f-8662-1974e222ddfa",
+      "input": "Photography\nPtay",
+      "output": "Yes\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f1fb2b0c-3f51-4f83-92a7-45126043ee2e",
+      "input": "Photography\ntoo",
+      "output": "No\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "fb8297c9-b79d-4585-b645-5ca57ad07986",
+      "input": "Google\nlg",
+      "output": "No\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "fcaeb934-e444-445a-b956-12a3def346ca",
+      "input": "Photography\nhooh",
+      "output": "Yes\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,82 @@
+{
+  "question_id": "bd075133-7ae6-4d8e-a2ee-ac55b5d96f8e",
+  "short_text": "Count Odd Numbers",
+  "content": "A group of students is working on a math assignment where they need to count how many odd numbers are present between two given numbers, inclusive of both. Write a program to help the students find the count of odd numbers between two integers.\n\n<MultiLineNote>\n\nEnsure that the two integers provided as input are inclusive in the count.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of two lines:\n\n- The first line contains an integer, `low`.  \n- The second line contains an integer, `high`.\n\n---\n\n#### Output\n\nA single integer representing the count of odd numbers in the range `[low, high]`.\n\n---\n\n#### Explanation\n\nIf the input is `3 7`, the odd numbers between `3` and `7` are `3`, `5`, and `7`.  \nThe output should be `3`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "93d3b7d6-53d9-40b9-934f-6018f3324e73",
+      "code_content": "low = int(input())\nhigh = int(input())\ncount = 0\nnumber = low\nwhile number <= high:\n    if number % 2 != 0:\n        count += 1\n    number += 1\nprint(count)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b988869-8257-45b2-984f-dee09c370ad8",
+      "input": "0\n0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "4d3ddd07-1c58-4e3a-bb6c-beb3598e8149",
+      "input": "3\n7",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6dcd7f82-ced1-4e16-ba35-a30e7a8bf793",
+      "input": "10\n20",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "810cc179-6da4-4be0-8177-e84b41e32494",
+      "input": "1\n1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "89deee70-7570-485a-9b95-239d7f6f80c6",
+      "input": "2\n5",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c4aeea52-060b-4b35-9c5d-660d12a17d23",
+      "input": "100\n110",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d86b6f17-9183-4c11-804e-55b866481846",
+      "input": "7\n7",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "fa65c02c-7c62-4638-8259-f6acbe36ca85",
+      "input": "-5\n5",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "40f7871e-a9ef-4bdb-a190-a4bc7fa56437",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

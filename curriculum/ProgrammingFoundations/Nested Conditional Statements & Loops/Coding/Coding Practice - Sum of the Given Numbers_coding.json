@@ -1,0 +1,61 @@
+{
+  "question_id": "d0821345-b760-4acf-9d0e-f7b74e06651f",
+  "short_text": "Sum of the Given Numbers",
+  "content": "Given an integer N, write a program which reads N inputs and prints the sum of the given input integers.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer, N.<br/>The next N lines will contain the integers, each in a line.<hr><b>Output</b><br/><br/>The output should be the sum of the given input integers.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, then read the inputs in the next 3 lines and print the sum of the three input integers. If the given input integers in the next three lines are 8, 11, and 25, the output should be 44.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "109e39b2-fcdf-4809-b56d-fa6ad76dddcd",
+      "code_content": "number_of_inputs = int(input())\n\ncounter = 0\nsum = 0\nwhile counter < number_of_inputs:\n    number = int(input())\n    sum = (sum + number)\n    counter = (counter + 1)\n\nprint(sum)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2869e2bc-7158-4f88-a9aa-ebdd5636d6be",
+      "input": "5\n10\n2\n1000\n-293\n0",
+      "output": "719\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "805b0a1b-f9cc-48ac-98db-2619fa5f5d47",
+      "input": "3\n8\n11\n25",
+      "output": "44\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "a6d1606d-c518-4d6f-a5da-5fba9a2ad300",
+      "input": "1\n1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "e5ef2b58-5620-47c5-b050-702068fbec1d",
+      "input": "10\n111\n22\n6324\n78\n8734\n9349\n38\n41\n5356\n648234",
+      "output": "678287\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "fef4b4e6-5af1-4651-b883-96ed89f1dc8b",
+      "input": "2\n7\n20",
+      "output": "27\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

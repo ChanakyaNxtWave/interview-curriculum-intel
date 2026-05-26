@@ -1,0 +1,61 @@
+{
+  "question_id": "fae6c6a7-6817-47e6-b4a0-318633580cdf",
+  "short_text": "Identify the Mistake - N Greatest Numbers",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to print N greatest numbers in a list.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing a string of N greatest numbers in ascending order.<hr><b>Explanation</b><br/><br/>For example, if the given N is 2, the output should be &quot;8 20&quot;, as the two greatest numbers in the list are 8 and 20.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "d1702403-3a21-4ea8-bd58-bd40d5ef1110",
+      "code_content": "list_a = [5, 20, 3, 7, 6, 8]\nn = int(input())\n\nlist_a = sorted(list_a)\nlist_len = len(list_a)\nres = list_a[list_len - n:]\nfor i in range(n):\n    res[i] = str(res[i])\n\nprint(\" \".join(res))\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "660c2260-bfc7-4f8f-ab92-cc2111a932c5",
+      "input": "4",
+      "output": "6 7 8 20\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "7a38af95-e787-4a13-af67-da5b5ddd498b",
+      "input": "1",
+      "output": "20\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "aaa52977-5533-408a-aadb-9e42ac41c3b9",
+      "input": "3",
+      "output": "7 8 20\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c6856918-2e81-4058-b97b-5be168154709",
+      "input": "2",
+      "output": "8 20\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "fb5378b4-fd97-4602-84ab-2ceb6f32038a",
+      "input": "6",
+      "output": "3 5 6 7 8 20\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

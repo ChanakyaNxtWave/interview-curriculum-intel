@@ -1,0 +1,61 @@
+{
+  "question_id": "3d3c7f47-3cda-48e2-99d9-5e6f3b07c656",
+  "short_text": "Passing rounds",
+  "content": "A group of friends decided to play a game where they want to find out how many times they can pass a ball around in a circle before someone drops it. Each friend has a number that represents how many times they can pass the ball before they get tired.\n\nYour task is to **complete the method `passing_rounds()`**, which receives the number of friends (`F`) and their passing limits (a list of integers) as parameters, and calculates how many complete rounds of passing can be made before one of them cannot continue.\n\n<MultiLineNote>\n\n- A round is defined as each friend passing the ball once.\n- If a friend reaches their limit, they stop passing the ball.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe **`passing_rounds()`** method takes two parameters:\n\n - `F` : An integer **F**, the number of friends.\n - `limits` : A list of **F** integers representing the passing limits for each friend.\n\n---\n\n#### Output\n\nThe **`passing_rounds()`** method should **return a integer**, representing the total number of complete rounds that can be made before someone cannot pass anymore.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n3\n2 3 1\n```\n\nThe expected output would be :\n\n```\n1\n```\n\n- `F` = 3 (number of friends).\n- **Passing limits** = `[2, 3, 1]`.\n \nWe simulate rounds:\n\n- In the **1st** round:\n - Friend **1** passes once (limit decreases from 2 to 1).\n - Friend **2** passes once (limit decreases from 3 to 2).\n - Friend **3** passes once (limit decreases from 1 to 0).\n- After the first round, Friend **3** has reached their limit (0), so no more complete rounds can be done.\n  \nThus, the total number of complete rounds is `1`.\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "27ee8e9b-a8d2-44b5-8491-74add5d4c888",
+      "code_content": "def passing_rounds(F, limits):\n    rounds = 0\n    while True:\n        for i in range(F):\n            if limits[i] == 0:\n                return rounds\n            limits[i] -= 1\n        rounds += 1",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0da9c828-d65f-4cdc-8e70-edf96c33ee82",
+      "input": "1\n1\n",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3975b06d-7c51-4a7f-a489-763d5d8ffcae",
+      "input": "3\n1 1 1\n",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "76f91043-d9ea-4440-853a-c6e1e54376ed",
+      "input": "5\n5 5 5 5 5\n",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bd805597-fded-4822-b049-1552c96beb66",
+      "input": "3\n2 3 1\n",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "be5ba7e2-bc7e-4bdd-84fc-92fa5e09dab8",
+      "input": "4\n4 3 2 1\n",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36f6b324-5f3c-4392-9acf-5635e753ef93",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

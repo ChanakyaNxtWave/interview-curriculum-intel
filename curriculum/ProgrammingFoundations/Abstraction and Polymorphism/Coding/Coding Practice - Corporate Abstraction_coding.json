@@ -1,0 +1,47 @@
+{
+  "question_id": "c496d3d7-eb0b-4a66-ad54-ed72b2d3d2a9",
+  "short_text": "Corporate Abstraction",
+  "content": "Complete the given `CorporateTraveler` class by adding new features following the given instructions.\n\n**Existing _CorporateTraveler_ class**:\n\nThe existing `CorporateTraveler` class extends the `Traveler` abstract class and includes attributes specific to a corporate traveler. Your task is to implement the abstract methods from the `Traveler` class and add corporate-specific logic to booking and cancellation methods.\n\n<details>\n\n<summary>**Features to be added to _CorporateTraveler_ class**</summary>\n\n- **Attributes**:\n - The `CorporateTraveler` class should have the following attributes:\n  - **`id`** (int)\n  - **`name`** (str)\n  - **`contact`** (str)\n  - **`company_name`** (str)\n\n- **Methods**:\n - Implement the following abstract methods inherited from `Traveler`:\n  - **`book_ticket()`**: Should print **`Corporate booking successful for traveler {name} with company {company_name}`**.\n  - **`cancel_ticket()`**: Should print **`Corporate booking cancelled for traveler {name} with company {company_name}`**. \n - Add two new methods specific to `CorporateTraveler`:\n  - `book_corporate_ticket()`: Should integrate with **`book_ticket()`** to provide additional corporate booking logic. It should print **`Corporate-specific booking logic for company {company_name}`**.\n  - `cancel_corporate_ticket()`: Should integrate with **`cancel_ticket()`** to provide additional corporate cancellation logic. It should print **`Corporate-specific cancellation logic for company {company_name}`**.\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ca3822e6-c39c-4bf4-a407-39360eb638e3",
+      "code_content": "from abc import ABC, abstractmethod\n\nclass Traveler(ABC):\n    @abstractmethod\n    def book_ticket(self):\n        pass\n    \n    @abstractmethod\n    def cancel_ticket(self):\n        pass\n\nclass CorporateTraveler(Traveler):\n    def __init__(self, id, name, contact, company_name):\n        self.id = id\n        self.name = name\n        self.contact = contact\n        self.company_name = company_name\n    \n    def book_corporate_ticket(self):\n        print(f\"Corporate-specific booking logic for company {self.company_name}\")\n    \n    def cancel_corporate_ticket(self):\n        print(f\"Corporate-specific cancellation logic for company {self.company_name}\")\n    \n    def book_ticket(self):\n        self.book_corporate_ticket()\n        print(f\"Corporate booking successful for traveler {self.name} with company {self.company_name}.\")\n    \n    def cancel_ticket(self):\n        self.cancel_corporate_ticket()\n        print(f\"Corporate booking cancelled for traveler {self.name} with company {self.company_name}.\")\n\ndef default_test():\n    corporate_traveler = CorporateTraveler(1, \"John Doe\", \"123-456-7890\", \"Acme Corp\")\n    corporate_traveler.book_corporate_ticket()\n    corporate_traveler.cancel_corporate_ticket()\n    corporate_traveler.book_ticket()\n    corporate_traveler.cancel_ticket()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "33275e71-4a93-47c9-a2e9-68050fdcdb3e",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in CorporateTraveler class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7776636c-3e83-4771-8da7-c184e670f305",
+      "input": "Checking Default Tests",
+      "output": "Corporate-specific booking logic for company Acme Corp\nCorporate-specific cancellation logic for company Acme Corp\nCorporate-specific booking logic for company Acme Corp\nCorporate booking successful for traveler John Doe with company Acme Corp.\nCorporate-specific cancellation logic for company Acme Corp\nCorporate booking cancelled for traveler John Doe with company Acme Corp.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f2773058-1886-4a59-bbd3-a750b96f4676",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly in CorporateTraveler class.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d1f94c09-95d8-4509-b3d7-6a98e8dc300b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

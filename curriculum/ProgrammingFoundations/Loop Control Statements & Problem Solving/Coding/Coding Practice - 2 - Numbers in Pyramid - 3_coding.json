@@ -1,0 +1,61 @@
+{
+  "question_id": "527599b8-73d6-4de4-984f-d0726cb38180",
+  "short_text": "Numbers in Pyramid - 3",
+  "content": "Given a number `N`, write a program to print a **Pyramid** inside a rectangle of `N` rows using ones (`1`) to represent the pyramid and zeros (`0`) in the remaining places of the rectangle.\r\n\r\n```\r\n0 0 0 0 1 0 0 0 0 \r\n0 0 0 1 1 1 0 0 0 \r\n0 0 1 1 1 1 1 0 0 \r\n0 1 1 1 1 1 1 1 0 \r\n1 1 1 1 1 1 1 1 1 \r\n```\r\n<MultiLineNote>\r\nThere is a space after every zero (`0 `) and one (`1 `).\r\n\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing ones (`1`) as a **Pyramid** inside a rectangle of zeros (`0`) shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print zeros (`0`) and ones (`1`) on **5** rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-pyramid-3.png' widthPercent='80'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image, the Number in the box indicates the number and a space (\"1 \").\r\n\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n0 0 0 0 1 0 0 0 0 \r\n0 0 0 1 1 1 0 0 0 \r\n0 0 1 1 1 1 1 0 0 \r\n0 1 1 1 1 1 1 1 0 \r\n1 1 1 1 1 1 1 1 1 \r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8e90f1f3-cb9c-4446-8fa9-e63bcba68aad",
+      "code_content": "n = int(input())\n\nfor i in range(1, n+1):\n    zeroes = \"0 \" * (n-i)\n    ones = \"1 \" * ((2*i)-1)\n    print(zeroes + ones + zeroes)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4a750a73-e7e1-43d1-a0ed-a82ce91f0516",
+      "input": "3",
+      "output": "0 0 1 0 0 \n0 1 1 1 0 \n1 1 1 1 1 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "5c400ef6-7007-4b04-8909-c268d6e5e5d1",
+      "input": "5",
+      "output": "0 0 0 0 1 0 0 0 0 \n0 0 0 1 1 1 0 0 0 \n0 0 1 1 1 1 1 0 0 \n0 1 1 1 1 1 1 1 0 \n1 1 1 1 1 1 1 1 1 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bbee3714-2f3d-466c-90c5-00ee443bbaea",
+      "input": "8",
+      "output": "0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 \n0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 \n0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 \n0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 \n0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 \n0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 \n0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c2730a1c-4fb5-43ef-90be-710f2942a219",
+      "input": "14",
+      "output": "0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 \n0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 \n0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 \n0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 \n0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 \n0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 \n0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "da81cb66-d3bf-41ec-99f3-bd1191a247d5",
+      "input": "11",
+      "output": "0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 \n0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 \n0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 \n0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 \n0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 \n0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 \n0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

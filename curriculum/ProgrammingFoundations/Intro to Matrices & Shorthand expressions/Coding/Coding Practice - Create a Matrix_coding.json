@@ -1,0 +1,61 @@
+{
+  "question_id": "f41bf105-507d-4672-91e4-a20ffc906ec0",
+  "short_text": "Create a Matrix",
+  "content": "Write a program that reads two integers `M` and `N` from the user, which represent the number of rows and columns to create a matrix. Then, the program should create an `M x N` matrix filled with natural numbers starting from `1`. Finally, the program should print the matrix.\n\n---\n\n#### Input\n\n- The first line should contain the integer `r`, representing the row index of the matrix, using a 0-based index.\n- The second line should contain the integer `c`, representing the column index of the matrix, using a 0-based index.\n\n---\n\n#### Output\n\nThe output should be `M` lines, each containing `N` integers separated by spaces, representing the matrix.\n\n---\n\n#### Explanation\n\nFor example, if the input is `M = 3` and `N = 3`, the output should be:\n\n```\n1 2 3\n4 5 6\n7 8 9\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fad6af76-02ba-40d1-aadd-058a0aa82c03",
+      "code_content": "m = int(input())\nn = int(input())\nmatrix = []\nnumber = 1\n\nfor i in range(m):\n    row = []\n    for j in range(n):\n        row.append(number)\n        number += 1\n    matrix.append(row)\n\nfor row in matrix:\n    for x in row:\n        print(x, end=\" \")\n    print()  \n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "04e995ea-035b-4262-9dfe-5813500591d6",
+      "input": "1\n5",
+      "output": "1 2 3 4 5",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2c61c80f-a4ae-4c05-8c67-4c9aaeba7bfb",
+      "input": "4\n2",
+      "output": "1 2 \n3 4 \n5 6 \n7 8",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "30b97a95-5520-4a75-b482-ebf24c8f52bb",
+      "input": "5\n5",
+      "output": "1 2 3 4 5 \n6 7 8 9 10 \n11 12 13 14 15 \n16 17 18 19 20 \n21 22 23 24 25",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "693c086b-93c5-4f18-8aa9-e5f8785b7c92",
+      "input": "2\n4",
+      "output": "1 2 3 4 \n5 6 7 8",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c904369c-ddc5-4b7d-bc70-b40646865d08",
+      "input": "3\n3",
+      "output": "1 2 3 \n4 5 6 \n7 8 9",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "a59545d0-e460-46e3-9428-017865545731",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

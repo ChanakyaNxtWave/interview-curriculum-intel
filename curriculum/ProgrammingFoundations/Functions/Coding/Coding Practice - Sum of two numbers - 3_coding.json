@@ -1,0 +1,61 @@
+{
+  "question_id": "88ac79d0-51d3-4909-b577-e2137df0dd45",
+  "short_text": "Sum of two numbers - 3",
+  "content": "For this problem, the prefilled code will contain a function. Write a program that the given function will return the sum of the two values passed to the function.<hr><b>Input</b><br/><br/>The first line of input will contain an integer.<br/>The second line of input will contain an integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the sum of the two numbers.<hr><b>Explanation</b><br/><br/>For example, if the given numbers are 5 and 8, your code should print the sum of the given two numbers. So the output should be 13.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "2a05f145-b638-4d65-9c7e-97a1f9b39614",
+      "code_content": "def add(arg_1, arg_2):\n    result = arg_1 + arg_2\n    return result\n\n\na = int(input())\nb = int(input())\nresult = add(a, b)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "87d3b55c-8a84-47c2-8ad4-739bbc81f358",
+      "input": "-200\n-1",
+      "output": "-201\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "920ae092-b159-4091-ac88-a6302f5cf4bb",
+      "input": "-10\n10",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a99623ae-61d6-4f14-8b30-4b0d32a6ef48",
+      "input": "-200\n50",
+      "output": "-150\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b08a7821-2d9d-4e0f-af61-fc8acc2b0fcc",
+      "input": "5\n8",
+      "output": "13\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e67ea4e2-a1d9-49b0-9a95-3a44026a1c4a",
+      "input": "15\n10",
+      "output": "25\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

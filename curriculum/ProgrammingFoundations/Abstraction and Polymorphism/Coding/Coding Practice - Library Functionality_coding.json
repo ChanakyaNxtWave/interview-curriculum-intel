@@ -1,0 +1,47 @@
+{
+  "question_id": "ff86bb39-9a6d-47f3-a782-3ee70f108176",
+  "short_text": "Library Functionality",
+  "content": "Complete the given `LibraryItem` class along with its subclasses `Book` and `Magazine` by implementing the specified features as outlined below. Additionally, create an `Order` class that utilizes composition to manage library items being borrowed.\n\n<details> \n\n<summary>**Features to be added to the LibraryItem class and its subclasses**</summary>\n\n- **Attributes for the LibraryItem class**:\n    - **`title`**: A string representing the title of the item (public attribute).\n    - **`author`**: A string representing the author of the item (public attribute).\n    - **`__item_id`**: A private attribute that holds the unique identifier for each item. \n- **Methods for the `LibraryItem` class**:\n    - **`__init__(title, author, item_id)`**: Initializes the library item with its title, author, and item ID.\n    - **`display_info()`**: Displays all details of the library item.\n      - Prints out the title, author, and item ID of the library item in a formatted manner.\n\n       Title: {title}\n       Author: {author}\n       Item ID: {item_id}\n\n- **Subclasses to be created**:\n  - **`Book`** class : \n    - This subclass should inherit from **`LibraryItem`** and have an additional attribute:\n      - **`genre`**: A string representing the genre of the book.\n    - Print all the info by adding the genre in **`display_info(self)`** in the below format\n\n```\n    Title: {title}\n    Author: {author}\n    Item ID: {item_id}\n    Genre: {genre}\n```\n    \n    \n  - **`Magazine`** Class:  \n    - This subclass should also inherit from **`LibraryItem`** and have an additional attribute:\n      - **`issue_number`**: An integer representing the issue number of the magazine.\n    - Print all the info by adding the genre in **`display_info(self)`** in the below format\n    \n     ```\n     Title: {title}\n     Author: {author}\n     Item ID: {item_id}\n     Issue Number: {issue_number}\n     ```\n\n  - **`Order`** class:\n    - The Order class should have attributes:\n        - **`items_in_cart`**: A list to store library items being borrowed.\n        - **`borrower_name`**: A string representing the name of the person borrowing items.\n        - **`borrow_date`**: A date representing when items are borrowed.\n    - **Methods for the `Order` class**:\n      - **`add_item(item, quantity)`**: Adds a library item and its quantity to the order.\n        - Takes two parameters: an instance of a library item and its quantity.\n        - Appends a tuple containing the item and quantity to the list of items in cart. \n      - **`display_order_details()`**: Displays details of all items in the order.\n        - Iterates through each item in the cart and calls their respective display methods to show detailed information along with quantities.\n\n            Order Details (Borrower: {borrower_name}, Borrow Date: {borrow_date})\"\n            Title: {tittle}\n            Author: {author}\n            Item ID: {item_id}\n            Quantity: {quantity}\n            Title: {tittle}\n            Author: {author}\n            Item ID: {item_id}\n            Quantity: {quantity}\n\n     - **`display_total_items()`**: Displays total number of items borrowed.\n       - Calculates and prints the total number of items borrowed by summing up quantities from items in cart. Format : \n       \n```\nTotal Items Borrowed: {total_items}\n```\n         \n</details>\n\n<MultiLineNote>\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c7914453-efbd-4702-acc4-7cde91ea2123",
+      "code_content": "class LibraryItem:\n    def __init__(self, title, author, item_id):\n        self.title = title                    # Public attribute for item title\n        self.author = author                  # Public attribute for item author\n        self.__item_id = item_id              # Private attribute for unique item ID\n\n    def display_info(self):\n        print(f\"Title: {self.title}\")\n        print(f\"Author: {self.author}\")\n        print(f\"Item ID: {self.__item_id}\")\n\nclass Book(LibraryItem):\n    def __init__(self, title, author, item_id, genre):\n        super().__init__(title, author, item_id)  # Call to superclass constructor\n        self.genre = genre                       # Additional attribute for book genre\n\n    def display_info(self):\n        super().display_info()                   # Call to display_info method from LibraryItem class\n        print(f\"Genre: {self.genre}\")\n\nclass Magazine(LibraryItem):\n    def __init__(self, title, author, item_id, issue_number):\n        super().__init__(title, author, item_id)  # Call to superclass constructor\n        self.issue_number = issue_number          # Additional attribute for magazine issue number\n\n    def display_info(self):\n        super().display_info()                   # Call to display_info method from LibraryItem class\n        print(f\"Issue Number: {self.issue_number}\")\n\nclass Order:\n    def __init__(self, borrower_name, borrow_date):\n        self.items_in_cart = []                  # List to store items in cart\n        self.borrower_name = borrower_name       # Borrower's name\n        self.borrow_date = borrow_date           # Date of borrowing\n    \n    def add_item(self, item, quantity):\n        self.items_in_cart.append((item, quantity))   # Add item and quantity to cart\n\n    def display_order_details(self):\n        print(f\"Order Details (Borrower: {self.borrower_name}, Borrow Date: {self.borrow_date})\")\n        for item, quantity in self.items_in_cart:\n            item.display_info()\n            print(\"Quantity: {}\".format(quantity))\n          \n    def display_total_items(self):\n        total_items = sum(quantity for _, quantity in self.items_in_cart)  # Calculate total items borrowed\n        print(\"Total Items Borrowed: {}\".format(total_items))\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    book = Book(\"The Great Gatsby\", \"F. Scott Fitzgerald\", \"001\", \"Fiction\")\n    magazine = Magazine(\"National Geographic\", \"Various\", \"002\", 2023)\n    \n    order = Order(\"John Doe\", \"2024-01-01\")\n    order.add_item(book, 1)\n    order.add_item(magazine, 2)\n    \n    order.display_order_details()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "222a2c16-3bcf-4e9c-a417-febd3194a205",
+      "input": "Checking Default Tests",
+      "output": "Order Details (Borrower: John Doe, Borrow Date: 2024-01-01)\nTitle: The Great Gatsby\nAuthor: F. Scott Fitzgerald\nItem ID: 001\nGenre: Fiction\nQuantity: 1\nTitle: National Geographic\nAuthor: Various\nItem ID: 002\nIssue Number: 2023\nQuantity: 2",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "70a33489-b348-41e4-8aa9-a7996cfb111c",
+      "input": "Checking Order Methods",
+      "output": "Order Details (Borrower: John Doe, Borrow Date: 2024-01-01)\nTitle: The Great Gatsby\nAuthor: F. Scott Fitzgerald\nItem ID: 001\nGenre: Fiction\nQuantity: 1\nTitle: National Geographic\nAuthor: Various\nItem ID: 002\nIssue Number: 2023\nQuantity: 2\nPASS: All methods are working correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "82e73937-db31-4957-87ab-6c6cbfb812dd",
+      "input": "Checking Library Item Attributes",
+      "output": "PASS: All attributes are correctly defined.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

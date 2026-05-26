@@ -1,0 +1,384 @@
+{
+  "question_id": "7500c9a1-695d-443b-9f75-d3693f5a387f",
+  "short_text": "Greatest Among Remainders",
+  "content": "Write a program that reads a number `N` and finds the,\n\n- Remainder when `N` is divided by **4**.\n- Remainder when `N` is divided by **5**.\n\nPrint the greatest remainder among the two remainders when `N` is divided by **4** and **5**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the greatest remainder among the two remainders when `N` is divided by **4** and **5**.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 12`,\n\n- The remainder is **0** when `N` is divided by **4**.\n- The remainder is **2** when `N` is divided by **5**.\n- The greatest remainder among the two remainders **0** and **2** is **2**.\n\nThe output should be **2**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "3d5bb544-18e5-4d64-a02b-29e7c91cba7e",
+      "code_content": "number = int(input())\n\nremainder_1 = number % 4\nremainder_2 = number % 5\n\nif remainder_1 > remainder_2:\n    greatest_remainder = remainder_1\nelse:\n    greatest_remainder = remainder_2\n\nprint(greatest_remainder)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1e3d3a3e-951a-4f38-be9b-2d25264f4a5c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\n67\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 67`,\n\n- The remainder is `3` when `N` is divided by `4`.\n\n- The remainder is `2` when `N` is divided by `5`.\n\n- The greatest remainder among the two remainders `3` and `2` is `3`.\n\nThe output should be **3**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3f3d60c6-1bd0-4ff4-a4f9-45f5021e7911",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n80\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 80`,\n\n- The remainder is `0` when `N` is divided by `4`.\n\n- The remainder is `0` when `N` is divided by `5`.\n\n- The greatest remainder among the two remainders `0` and `0` is `0`.\n\nThe output should be **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ae4a0031-13a1-4f88-8f75-3bee3311dbef",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n14\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "4",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 14`,\n\n- The remainder is `2` when `N` is divided by `4`.\n\n- The remainder is `4` when `N` is divided by `5`.\n\n- The greatest remainder among the two remainders `2` and `4` is `4`.\n\nThe output should be **4**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "42ee8d93-9492-42fc-9539-609ff71a48ce",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n17\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1b0a67fa-00b3-461c-9038-efa7c310fe26",
+              "content": "1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "648b88bf-9ef7-4a68-90ca-2bb424b3a30c",
+              "content": "2",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bd8a51ad-9301-46be-b027-4f3850357cc6",
+              "content": "7",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c5550b07-c941-4466-8d4f-b6b5d13028f8",
+              "content": "3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 17`,\n\n- The remainder is `1` when `N` is divided by `4`.\n\n- The remainder is `2` when `N` is divided by `5`.\n\n- The greatest remainder among the two remainders `1` and `2` is `2`.\n\nThe output should be **2**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bdf70cec-c3cc-42bd-a49a-1cf1fcf573a1",
+          "short_text": "",
+          "content": "According to the problem description, what numbers should be divided by `N` to find the remainder?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "30de271d-06dc-422f-894f-b7a7250eabb2",
+              "content": "4 and 2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7f0bd8cb-4a4b-458e-b329-39652405a6fc",
+              "content": "3 and 5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cee153a5-bfc5-42b8-8da8-de952e03a067",
+              "content": "4 and 5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f6fb9d72-a13f-4bf3-a137-94eaf0a27975",
+              "content": "4 and 6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, `N` should be divided by the numbers 4 and 5 to find,\n\n- The remainder when `N` is divided by **4**.\n\n- The remainder when `N` is divided by **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c34ddb9b-0227-4b93-8c30-1b729b41d7e9",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "0ce64998-b1e6-4d4f-aebb-ecee9a25f0b9",
+              "content": "6",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "176c2791-d017-4a9f-8e6c-51f31de4a347",
+              "content": "5.6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5925a138-fe00-4438-b575-41899ceb87f7",
+              "content": "6\n12",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "94e3af75-af66-4c85-827e-036ace50075b",
+              "content": "150",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n\n150\n```\n\n**Input 2**\n\n```\n\n6\n```\n\nThe above two inputs are valid because they consist of a single line containing an integer.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c8bb6221-2a33-4159-95d7-bc0fbb65113d",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "7202fa07-ddf5-4081-ae2b-93ce8d1d6e84",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d5ad5e6b-41f2-4e26-ac90-f7f73e05ec0c",
+              "content": "The output should be a single line containing comma-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d6badb7f-a035-4749-b61d-0752c987f28c",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ebca24c6-6068-4fff-9d1b-2cc978b8789b",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing an integer, that is the greatest remainder among the two remainders when `N` is divided by `4` and `5`.\n\nFor example,\n\nIf the given number is `N = 12`,\n\n- The remainder is `0` when `N` is divided by `4`.\n\n- The remainder is `2` when `N` is divided by `5`.\n\n- The greatest remainder among the two remainders `0` and `2` is `2`.\n\nThe output should be **2**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d979631b-7737-4421-9313-9e1354813fa1",
+          "short_text": "",
+          "content": "Considering the problem description, what is meant by the greatest remainder?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "327f9f49-57b6-4b2f-bec9-aeefd957a68f",
+              "content": "The largest possible value among the two remainders.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "382cb693-ba3b-48c7-a69b-5f9f12118455",
+              "content": "The average of the two remainders.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "814442f5-f712-4648-87da-f51e79235384",
+              "content": "The smallest possible value among the two remainders.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d5625d4a-b28d-4a6a-9d2e-4d9fe2ea2a64",
+              "content": "The remainder when `N` is divided by `5`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The greatest remainder is the largest possible value among the two remainders when `N` is divided by `4` and `5`.\n\n\nFor example,\n\n- The remainder is `0` when `N` is divided by `4`.\n\n- The remainder is `2` when `N` is divided by `5`.\n\nThe largest possible value among the two remainders `0` and `2` is **2**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f127bf37-94d5-48df-b317-3be064239343",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0ec08e6f-c7ca-4d49-9710-cb15c3e92079",
+              "content": "To find the greatest remainder among the two remainders when `N` is divided by `2` and `4`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1ae79c34-5719-4261-9695-0e2f4ca372c8",
+              "content": "To find the greatest remainder among the two remainders when `N` is divided by `3` and `5`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "73079ff4-72f5-480f-9b18-c0c88e52e683",
+              "content": "To find the two remainders when `N` is divided by `4` and `5`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a3653728-d90d-440f-bf71-6eac314c7708",
+              "content": "To find the greatest remainder among the two remainders when `N` is divided by `4` and `5`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and finds the,\n\n- Remainders when `N` is divided by `4`.\n\n- Remainders when `N` is divided by `5`.\n\nThen print the greatest remainder among the two remainders when `N` is divided by `4` and `5`. ",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f48c02ea-d569-48ea-898a-2f21aa901b82",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5e216dfa-a03b-4fea-9a86-b20fa95a296f",
+              "content": "The input will be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d96bc526-f6f6-4706-b61f-4095de2d7223",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e4e558a9-2c0a-40e8-b1f8-67013669de4e",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ef9a071c-41a6-4f68-a38a-e29e892c7caa",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing the number `N`.\n\n\nFor example,\n\n```\n\n11\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "335ff228-5ca8-4d91-b3b0-9626fee8b720",
+      "input": "12",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6157ac69-32fe-4209-a987-10329a8cb02a",
+      "input": "30",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b2fe52da-6b04-4704-a53b-f488989d65ef",
+      "input": "36",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d1f240ea-2693-4c39-837f-a3cbaeb0f853",
+      "input": "24",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "dd00525b-ead6-48d1-9dee-9ab61450793c",
+      "input": "120",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "ee3da87a-0252-4156-8ff5-0284de0e73e6",
+      "input": "147",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

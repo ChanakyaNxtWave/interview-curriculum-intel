@@ -1,0 +1,33 @@
+{
+  "question_id": "266cf941-66b1-47e6-b87d-6662166003dc",
+  "short_text": "Subtract 596 from 193856",
+  "content": "Write a program that prints the result when **596** is subtracted from **193856**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f1bf2868-0de3-4960-8554-55ec7de48951",
+      "code_content": "result = 193856 - 596\n\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3155f320-d127-42e2-a3ba-aa5897464f28",
+      "input": "",
+      "output": "193260",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "6fd19a96-5db6-42a1-8a6d-e53b8b96fce6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "90c7b574-bd25-4a14-b4ce-8c1bab181236",
+  "topic_name": "Introduction to Python",
+  "course_title": "Programming Foundations"
+}

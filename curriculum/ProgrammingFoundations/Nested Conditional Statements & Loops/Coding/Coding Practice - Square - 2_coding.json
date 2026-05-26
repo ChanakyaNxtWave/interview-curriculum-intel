@@ -1,0 +1,68 @@
+{
+  "question_id": "12f3a8d6-9a50-4bae-81c6-dbf8db8dd365",
+  "short_text": "Square - 2",
+  "content": "Write a program that reads a number `N` and prints a **Square** of `N` rows and `N` columns using numbers starting from **1**.\n\n```\n111\n222\n333\n```\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing numbers as a **Square** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- Print the numbers on **4** rows and **4** columns as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/square-2.png' widthPercent='50'/>\n\nThe output should be,\n\n```\n1111\n2222\n3333\n4444\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "60cd2620-33aa-40b6-8c6d-2eb911d4e9ff",
+      "code_content": "number = int(input())\n\ncounter = 1\nwhile counter <= number:\n    row = str(counter) * number\n    print(row)\n    counter = counter + 1",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0bc09003-0e69-47fc-9823-285a0865b0e3",
+      "input": "9",
+      "output": "111111111\n222222222\n333333333\n444444444\n555555555\n666666666\n777777777\n888888888\n999999999",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "5e23726c-9984-481c-8a2f-c9c1c0aa793b",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b242c522-f946-4c4b-a716-4a7f1abc1411",
+      "input": "7",
+      "output": "1111111\n2222222\n3333333\n4444444\n5555555\n6666666\n7777777",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c8d66ca4-8b7b-4ce5-acfd-14bec6dd802b",
+      "input": "4",
+      "output": "1111\n2222\n3333\n4444",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d943eb6f-8bd8-4cb2-b188-f1c55cd17036",
+      "input": "6",
+      "output": "111111\n222222\n333333\n444444\n555555\n666666",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e4f9affb-800b-4325-85bd-768d35b2403e",
+      "input": "5",
+      "output": "11111\n22222\n33333\n44444\n55555",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

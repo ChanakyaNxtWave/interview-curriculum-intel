@@ -1,0 +1,61 @@
+{
+  "question_id": "95633405-e356-431e-b4ec-983a1d078839",
+  "short_text": "Skipping Letters",
+  "content": "You're given a word and an index position of a character. You need to write a program that prints the given word without the character at the given index.<hr><b>Input</b><br/><br/>The first line of input contains a word.<br/>The second line of input contains the index location.<hr><b>Output</b><br/><br/>The output should be a single line containing the word skipping the character at the given index location.<hr><b>Explanation</b><br/><br/>For example, if the given word is &quot;Combine&quot;, the character at the index location 4, is &quot;i&quot;, so the output without the character at the given index location is &quot;Combne&quot;",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "e8a75709-f0b7-4a45-abd0-cf013fb0ca49",
+      "code_content": "word = input()\nn = int(input())\nbefore = word[:n]\nafter = word[n+1:]\nresult = before + after\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1923a9f0-be49-490d-867a-f8a397d6393d",
+      "input": "Combine\n4",
+      "output": "Combne\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "45d23f86-da47-4dfe-8b64-277d156152ce",
+      "input": "Completeness\n0",
+      "output": "ompleteness\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "89b0aca1-9da0-47e4-8c49-83a446b6116d",
+      "input": "Special\n3",
+      "output": "Speial\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "afbe7569-53e9-453f-a4b3-fe5364562dcf",
+      "input": "Globe\n2",
+      "output": "Glbe\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c917075e-8020-49b9-96c6-5dce9a958621",
+      "input": "Whether\n1",
+      "output": "Wether\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

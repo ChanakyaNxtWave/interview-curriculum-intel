@@ -1,0 +1,61 @@
+{
+  "question_id": "706352c6-abf2-4518-9a0b-291dc88638de",
+  "short_text": "List Repetition - 2",
+  "content": "Given two integers M and N, write a program to create a list with element M repeated by N times.<hr><b>Input</b><br/><br/>The first line of input will be an integer.<br/>The second line of input will be a positive integer.<hr><b>Output</b><br/><br/>The output should be a single line containing a list with element M repeated by N times.<hr><b>Explanation</b><br/><br/>For example, if the given M and N are 5 and 4, the output should contain a list with the number 5 repeated 4 times.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[5, 5, 5, 5]\r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "34b485f0-b946-4281-91c0-a65a0a9c7bc4",
+      "code_content": "m = int(input())\nn = int(input())\n\nlist_a = [m] * n  # repeat n times\nprint(list_a)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1210300f-e5a4-4002-a1a8-c9f69490e7d5",
+      "input": "5\n4",
+      "output": "[5, 5, 5, 5]\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "592facc2-3b74-458c-a4f2-625aa12406ad",
+      "input": "0\n1",
+      "output": "[0]\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "8f305af1-4611-430d-84f0-441bbdf93311",
+      "input": "-20\n10",
+      "output": "[-20, -20, -20, -20, -20, -20, -20, -20, -20, -20]\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ce0e00a8-2a28-4acb-bfb1-e5951d27fef4",
+      "input": "-2\n8",
+      "output": "[-2, -2, -2, -2, -2, -2, -2, -2]\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e305c609-3da3-4331-aa88-1da900b1d395",
+      "input": "5\n15",
+      "output": "[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

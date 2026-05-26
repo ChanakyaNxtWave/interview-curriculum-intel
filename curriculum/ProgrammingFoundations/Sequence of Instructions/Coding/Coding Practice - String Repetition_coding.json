@@ -1,0 +1,61 @@
+{
+  "question_id": "4ef7f535-85cd-4711-bf05-2468296e4cba",
+  "short_text": "String Repetition",
+  "content": "Write a program to print the given input word three times in a single line separated by spaces",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "68778e4d-ca5f-444f-9ec3-e315a4905f55",
+      "code_content": "word = input()\nmessage = (word + ' ') * 3\nprint(message)",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "271f7a27-3946-45a0-8210-f5a3524fdd22",
+      "input": "dog",
+      "output": "dog dog dog ",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7098b20d-d1d4-4d42-9726-ba05a8cb21dd",
+      "input": "python",
+      "output": "python python python ",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "94485f04-4d35-4a2b-a1e5-ca27766480b3",
+      "input": "student",
+      "output": "student student student ",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b513ef51-c61e-4337-a309-d26db5e687b9",
+      "input": "Apple",
+      "output": "Apple Apple Apple ",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "deffc898-e868-4ca1-b691-371bc927c848",
+      "input": "children",
+      "output": "children children children ",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

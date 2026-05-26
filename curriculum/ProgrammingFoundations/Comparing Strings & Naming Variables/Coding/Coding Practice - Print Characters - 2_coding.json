@@ -1,0 +1,75 @@
+{
+  "question_id": "889cd5f6-3667-4840-933e-f4d7b9dc8b8b",
+  "short_text": "Print Characters - 2",
+  "content": "Given two Unicode values `M` and `N`, write a program to print characters with Unicode values from `M` to `N` each on a new line.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should contain all the characters with Unicode values from `M` to `N`, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 65` and `N = 70`,\n\n- The Unicode values from **65** to **70** are **65, 66, 67, 68, 69,** and **70**.\n- The characters with the above Unicode values are,\n\n| Unicode value | Character |\n| ------------- | --------- |\n| 65            | A         |\n| 66            | B         |\n| 67            | C         |\n| 68            | D         |\n| 69            | E         |\n| 70            | F         |\n\nThe output should be,\n\n```\nA\nB\nC\nD\nE\nF\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e7c4ce1f-e464-4916-9aa1-d2ab98529fca",
+      "code_content": "m = int(input())\nn = int(input())\n\nfor unicode_value in range(m, n + 1):\n    print(chr(unicode_value))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "29feabf2-2a01-42e3-bd9d-2bb1931bb115",
+      "input": "108\n122",
+      "output": "l\nm\nn\no\np\nq\nr\ns\nt\nu\nv\nw\nx\ny\nz",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "33d4da8b-a8d2-4959-b9ad-c9ae721c2e0c",
+      "input": "60\n64",
+      "output": "<\n=\n>\n?\n@",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5fbce5dc-bffb-4b5f-8527-4440d88c9fbe",
+      "input": "69\n90",
+      "output": "E\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "99713788-f4d2-4910-9041-57c925555769",
+      "input": "48\n57",
+      "output": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9abd0d30-453d-4c5e-9f4f-927d6a251e76",
+      "input": "98\n115",
+      "output": "b\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no\np\nq\nr\ns",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a8d66d3b-7af3-438a-9e65-b946126281da",
+      "input": "65\n70",
+      "output": "A\nB\nC\nD\nE\nF",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f70a5f7d-dee3-4f22-aa35-eeb79caf34f9",
+      "input": "112\n114",
+      "output": "p\nq\nr",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

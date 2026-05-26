@@ -1,0 +1,47 @@
+{
+  "question_id": "eb0b1962-19ab-4dc2-91c6-f73a77addc2b",
+  "short_text": "Abstract SupplyChain",
+  "content": "Complete the abstract class `SupplyChainPartner` and create two subclasses `Manufacturer` and `Supplier` by following the given instructions.\n\n**Abstract _SupplyChainPartner_ class**:\n\nThe `SupplyChainPartner` class is an abstract class that defines a template for supply chain partners, which includes manufacturers and suppliers. It has attributes for identification and methods for supply chain operations.\n\n<details>\n\n<summary>**Features to be added to _SupplyChainPartner_ class**</summary>\n\n- **Attributes**:\n - The `SupplyChainPartner` class should have the following attributes:\n  - `id` (int): Unique identifier for the supply chain partner.\n  - `name` (str): Name of the supply chain partner.\n  - `contact` (str): Contact information of the supply chain partner.\n- **Abstract Methods**:\n - Define an abstract method `supply()` that has no implementation.\n - Define an abstract method `receive_order()` that has no implementation.\n\n</details>\n\n<details>\n<summary>**Features to be added to _Manufacturer_ and _Supplier_ subclasses**</summary>\n\n- **Manufacturer**:\n - Implement the `supply()` method to print \"Manufacturer `name` is supplying products.\"\n - Implement the `receive_order()` method to print \"Manufacturer `name` received an order.\"\n\n- **Supplier**:\n - Implement the `supply()` method to print \"Supplier `name` is delivering products.\"\n - Implement the `receive_order()` method to print \"Supplier `name` received an order.\"\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The classes defined by you will be tested internally whether the attributes and methods are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8dcc8c91-e5c0-40b8-9278-9464f884594a",
+      "code_content": "from abc import ABC, abstractmethod\n\nclass SupplyChainPartner(ABC):\n    def __init__(self, id, name, contact):\n        self.id = id\n        self.name = name\n        self.contact = contact\n    \n    @abstractmethod\n    def supply(self):\n        pass\n\n    @abstractmethod\n    def receive_order(self):\n        pass\n\nclass Manufacturer(SupplyChainPartner):\n    def supply(self):\n        print(f\"Manufacturer {self.name} is supplying products.\")\n\n    def receive_order(self):\n        print(f\"Manufacturer {self.name} received an order.\")\n\nclass Supplier(SupplyChainPartner):\n    def supply(self):\n        print(f\"Supplier {self.name} is delivering products.\")\n\n    def receive_order(self):\n        print(f\"Supplier {self.name} received an order.\")\n\ndef default_test():\n    # This function will test the implementation of the subclasses.\n    # Do not modify this function.\n    try:\n        manufacturer = Manufacturer(1, \"Acme Corp\", \"acme@example.com\")\n        supplier = Supplier(2, \"Supply Solutions\", \"supply@example.com\")\n        \n        manufacturer.supply()  # Expected output: Manufacturer Acme Corp is supplying products.\n        manufacturer.receive_order()  # Expected output: Manufacturer Acme Corp received an order.\n        \n        supplier.supply()  # Expected output: Supplier Supply Solutions is delivering products.\n        supplier.receive_order()  # Expected output: Supplier Supply Solutions received an order.\n        \n        return \"PASS\"\n    except Exception as e:\n        return f\"FAIL: {str(e)}\"",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5778cd34-43f5-4ac4-9887-2b9b85e4408c",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present and correctly initialized.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7c8ce126-fbb3-4730-8968-ee2db0c3f199",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fa405684-0149-4a86-a937-a62eeab2773d",
+      "input": "Checking Default Tests",
+      "output": "Manufacturer Acme Corp is supplying products.\nManufacturer Acme Corp received an order.\nSupplier Supply Solutions is delivering products.\nSupplier Supply Solutions received an order.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d1f94c09-95d8-4509-b3d7-6a98e8dc300b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

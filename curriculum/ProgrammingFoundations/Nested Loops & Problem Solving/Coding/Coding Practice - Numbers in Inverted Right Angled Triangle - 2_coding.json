@@ -1,0 +1,61 @@
+{
+  "question_id": "13045bb3-a749-423a-afc4-e3625ebc34c0",
+  "short_text": "Numbers in Inverted Right Angled Triangle - 2",
+  "content": "Given a number `N`, write a program to print an **Inverted Right Angled Triangle** of `N` rows using numbers starting from `K` in descending order.\n`K` is the count of numbers that can be printed in `N` rows of an **Inverted Right Angled Triangle**.\n\nFor example, if the given number of rows is `N = 5`,\n\n- The count of numbers that can be arranged in an **Inverted Right Angled Triangle** of **5** rows is **K = 15**  (`5 + 4 + 3 + 2 + 1 = 15`)  \n\nSo, the **Inverted Right Angled Triangle** should be printed with the numbers starting from **15** (`K`) in descending order as given below.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-inverted-right-angled-triangle-2.png' widthPercent='70'/>\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing numbers starting from `K` in descending order as an **Inverted Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- The count of numbers that can be arranged in an **Inverted Right Angled Triangle** of **4** rows is **K = 10**  (`4 + 3 + 2 + 1 = 10`)  \n- Print the numbers starting from **10** in descending order on **4** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-inverted-right-angled-triangle-2.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Number in box indicates the number and a space (\"10 \")\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n10 9 8 7\n  6 5 4\n    3 2\n      1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f02913ca-f8c7-4031-8bc8-0fdedfa55b2b",
+      "code_content": "n = int(input())\n\nstart_number = 0\nfor num in range(1, n + 1):\n    start_number = start_number + num\n    \nfor row in range(n):\n    each_row = \"\"\n    left_spaces = \" \" * (2 * row)\n\n    for column in range(n - row):\n        each_row = each_row + str(start_number) + \" \"\n        start_number = start_number - 1\n        \n    each_row = left_spaces + each_row\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2c1c095c-8732-434e-b9b0-782340e3d655",
+      "input": "4",
+      "output": "10 9 8 7 \n  6 5 4 \n    3 2 \n      1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3cfaaac5-adf4-46ed-b751-9442d23c253c",
+      "input": "15",
+      "output": "120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 \n  105 104 103 102 101 100 99 98 97 96 95 94 93 92 \n    91 90 89 88 87 86 85 84 83 82 81 80 79 \n      78 77 76 75 74 73 72 71 70 69 68 67 \n        66 65 64 63 62 61 60 59 58 57 56 \n          55 54 53 52 51 50 49 48 47 46 \n            45 44 43 42 41 40 39 38 37 \n              36 35 34 33 32 31 30 29 \n                28 27 26 25 24 23 22 \n                  21 20 19 18 17 16 \n                    15 14 13 12 11 \n                      10 9 8 7 \n                        6 5 4 \n                          3 2 \n                            1",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "524975fc-9355-48b6-8b0e-cd4f44145121",
+      "input": "7",
+      "output": "28 27 26 25 24 23 22 \n  21 20 19 18 17 16 \n    15 14 13 12 11 \n      10 9 8 7 \n        6 5 4 \n          3 2 \n            1",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "856ae26d-d747-4165-af87-faa2d4d76f75",
+      "input": "2",
+      "output": "3 2 \n  1",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "d90e1c24-c355-4240-9d06-93479517e4f1",
+      "input": "5",
+      "output": "15 14 13 12 11 \n  10 9 8 7 \n    6 5 4 \n      3 2 \n        1",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

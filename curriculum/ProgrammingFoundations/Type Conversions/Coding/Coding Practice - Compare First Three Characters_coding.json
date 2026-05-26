@@ -1,0 +1,61 @@
+{
+  "question_id": "2cba14cc-77a1-4dfd-ae16-0300f6a52167",
+  "short_text": "Compare First Three Characters",
+  "content": "Write a program to check if the first three characters in the two given strings are the same.<hr><b>Input</b><br/><br/>The first line of input will be a string.<br/>The second line of input will be a string.<hr><b>Output</b><br/><br/>Print &quot;True&quot; if the the first three characters in the two given strings are the same.<br/>In all other cases print &quot;False&quot;.<hr><b>Explanation</b><br/><br/>When the given words are &quot;Apple&quot; and &quot;Application&quot;, first three characters in both the strings are the same (&quot;App&quot;)<br/><br/>When the given words are &quot;Android&quot; and &quot;Application&quot;, the first three characters in both the strings are different (&quot;And&quot; != &quot;App&quot;)",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "85a7f39e-7782-4e91-aef9-f1d8de24751f",
+      "code_content": "first_str = input()\nsecond_str = input()\n\nfirst_str_part = first_str[:3]\nsecond_str_part = second_str[:3]\n\nare_both_same = first_str_part == second_str_part\nprint(are_both_same)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "243b8457-841f-4fb0-87bd-414b3f9e198b",
+      "input": "Apple\nApplication",
+      "output": "True\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "303f1a30-c291-4945-89aa-d36604eb0691",
+      "input": "ant\nand",
+      "output": "False\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "6337ce75-0753-431c-b8c1-d21c14dc4013",
+      "input": "Banana\nBall",
+      "output": "False\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "dd2f1258-6019-471a-8a0f-873d74d9d7af",
+      "input": "Android\nApplication",
+      "output": "False\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f013336e-baf6-4816-8910-b3a3e40e6047",
+      "input": "Camera\nCamel",
+      "output": "True\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

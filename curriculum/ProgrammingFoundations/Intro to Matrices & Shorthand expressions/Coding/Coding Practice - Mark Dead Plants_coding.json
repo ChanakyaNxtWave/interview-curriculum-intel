@@ -1,0 +1,61 @@
+{
+  "question_id": "e91bf021-b006-4fad-8037-efb9de6b5104",
+  "short_text": "Mark Dead Plants",
+  "content": "In a gardening competition, participants are given a plot of land represented by a matrix. Each cell in the matrix shows the growth of plants, where a positive number indicates healthy growth and a zero indicates that the plant has died. The organizers want to ensure that if any plant dies, all plants in the same row and column should also be marked as dead. Your task is to write a program that updates the matrix according to this rule.\n\n\n<MultiLineNote>\n\n- The matrix is represented as a grid of integers **(M x N)**, where **M** is the number of rows and N is the number of columns.\n- A zero in the matrix indicates a dead plant.\n- The task is to propagate the **\"death\"** by marking all plants in the same row and column as zero.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of:\n\n- Two integers, **M** (number of rows) and **N** (number of columns).\n- The next **M** lines, each containing **N** space-separated integers, representing the growth of plants in the plot.\n\n---\n\n#### Output\n\nThe output should be the updated matrix, where all rows and columns containing a **dead plant (0)** in the original matrix are fully set to **0**.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n3 3\n1 2 0\n4 5 6\n7 8 9\n```\n\n\n**Original Matrix:**\n\n```\n1 2 0\n4 5 6\n7 8 9\n```\n\n**Dead Plant Rule:** The zero at position **(0, 2)** marks the entire **1st row** and **3rd column** as dead.\n\n**Updated Matrix:**\n\n```\n0 0 0\n4 5 0\n7 8 0\n```\n\n\n\nThe Output should be \n\n```\n0 0 0\n4 5 0\n7 8 0\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "70ad986b-17e1-4709-a34d-77e130986bf0",
+      "code_content": "def update_matrix(matrix, m, n):\n    rows_to_mark = set()\n    cols_to_mark = set()\n\n    for i in range(m):\n        for j in range(n):\n            if matrix[i][j] == 0:\n                rows_to_mark.add(i)\n                cols_to_mark.add(j)\n\n    for i in range(m):\n        for j in range(n):\n            if i in rows_to_mark or j in cols_to_mark:\n                matrix[i][j] = 0\n\n    return matrix\n\ninput_data = input().split()\nm = int(input_data[0])\nn = int(input_data[1])\nmatrix = []\n\nfor i in range(m):\n    row_input = input().split()\n    row = []\n    for num in row_input:\n        row.append(int(num))\n    matrix.append(row)\n\nupdated_matrix = update_matrix(matrix, m, n)\n\nfor row in updated_matrix:\n    for num in row:\n        print(num, end=\" \")\n    print()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4d6938cf-1c85-4507-bef8-31ba5ba2feb3",
+      "input": "2 2\n1 0\n3 4",
+      "output": "0 0 \n3 0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "776e9e2a-1e36-43f4-b89b-1c27366a7555",
+      "input": "4 4\n1 2 3 4\n0 6 7 8\n9 10 0 12\n13 14 15 16",
+      "output": "0 2 0 4 \n0 0 0 0 \n0 0 0 0 \n0 14 0 16",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8536dc47-2e11-43bc-9f02-b14aca64afd2",
+      "input": "3 3\n1 2 3\n4 5 6\n7 8 9",
+      "output": "1 2 3 \n4 5 6 \n7 8 9",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "90bf04cf-695b-4f1f-9d1b-1697870a8c2c",
+      "input": "3 3\n0 0 0\n0 0 0\n0 0 0",
+      "output": "0 0 0 \n0 0 0 \n0 0 0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ba220406-1ec8-4803-afe4-edd88b5da60d",
+      "input": "3 3\n1 2 0\n4 5 6\n7 8 9",
+      "output": "0 0 0 \n4 5 0 \n7 8 0",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "677ae02f-bf38-48da-aad5-551072778667",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

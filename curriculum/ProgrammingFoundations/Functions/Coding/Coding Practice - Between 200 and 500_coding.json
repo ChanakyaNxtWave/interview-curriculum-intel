@@ -1,0 +1,82 @@
+{
+  "question_id": "b7ddfcf9-ec98-4ae0-8936-8c08d9a8ab5e",
+  "short_text": "Between 200 and 500",
+  "content": "A function is given in the prefilled code that takes a number `N` as an argument.\n\nWrite a program that checks if `N` is between **200** and **500**.\n\nPrint **Yes** if `N` is between **200** and **500**. Otherwise, print **No**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Yes** should be printed if the given number `N` is between **200** and **500**. Otherwise, **No** should be printed by calling the given function.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 280`,\n\n- The number **280** is between **200** and **500** (`200 < 280 < 500`).\n\nThe output should be **Yes**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "54440771-ecb6-439b-a3ea-611c8854e3e7",
+      "code_content": "def is_between_200_and_500(number):\n\n    if number > 200 and number < 500:\n        print(\"Yes\")\n    else:\n        print(\"No\")\n    \n\nnumber = int(input())\n\nis_between_200_and_500(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "152ec87e-e806-484c-9eac-041fc04d1d63",
+      "input": "454",
+      "output": "Yes",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "20634f9a-4c12-4d41-abb3-f999b087f81f",
+      "input": "500",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "233b598d-62c2-4c14-bf31-95fdd2a7793a",
+      "input": "300",
+      "output": "Yes",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "2cb8aa22-3c6b-4f9a-830f-32cff837ed9d",
+      "input": "-150",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "46ae2c7e-0230-4262-a77e-71211424dad4",
+      "input": "-783",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5be15d83-6dd3-403f-8843-7b57052a6234",
+      "input": "560",
+      "output": "No",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8570d737-7a2e-44bf-b021-aecc00736b1b",
+      "input": "200",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8e0724c9-3e63-4bf0-b858-5071abdebadf",
+      "input": "280",
+      "output": "Yes",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

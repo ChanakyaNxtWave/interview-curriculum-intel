@@ -1,0 +1,75 @@
+{
+  "question_id": "d95fca7c-51e8-442a-9f23-598c8cca461f",
+  "short_text": "Upper Case Letters",
+  "content": "Given a string, write a program that prints all the uppercase letters of the given string.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the uppercase letters of the given string.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **SofTwArE**.\n\n- The characters of the given string are **S**, **o**, **f**, **T**, **w**, **A**, **r** and **E**.\n- The uppercase letters in the given string are **S**, **T**, **A** and **E**.\n\nThe output should be **STAE**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e6c5973d-b1ca-4278-8bdd-49b9e87936ae",
+      "code_content": "string = input()\n\nupper_case_letters = \"\"\n\nfor character in string:\n    is_upper = (character == character.upper())\n    if is_upper:\n        upper_case_letters = upper_case_letters + character\n\nprint(upper_case_letters)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "172889f6-41ca-407a-bbc4-c3fd7c9a1eab",
+      "input": "HACKathons",
+      "output": "HACK",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "294aeb2f-8236-4de0-aaf2-0279ced5ee70",
+      "input": "TechnicalContentDeveloper",
+      "output": "TCD",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2c3e8f0e-4412-47d4-9567-af6981856e29",
+      "input": "NxtWave",
+      "output": "NW",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2f50e13a-51cc-4a40-9a96-cb528236e15a",
+      "input": "SofTwArE",
+      "output": "STAE",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "76fb1dfe-d939-47f2-8d95-74db28a5adff",
+      "input": "DEVELOPER",
+      "output": "DEVELOPER",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "957fdc02-2cd3-44c9-8138-dcbe6f42a449",
+      "input": "UpperCaseLetters",
+      "output": "UCL",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f79f87bd-0fd6-413c-bb0d-401a2d67408d",
+      "input": "SiteReliabilityEngineer",
+      "output": "SRE",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,47 @@
+{
+  "question_id": "d8a1adce-f9a6-479f-bcf5-80fef981d782",
+  "short_text": "Airport Class",
+  "content": "Complete the given **Airport** class by adding new features by following the given instructions.\n\n**Existing _Airport_ class**:\n\nThe existing  **Airport** class has only a _pass_ statement. Remove _pass_ statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to **_Airport_** class**</summary>\n\n- **Add below attributes**\n - The **Airport** class should have the following attributes:\n   - **airport_code** (string)\n   - **name** (string)\n   - **city** (string)\n\n- **Add below methods**\n - `handle_arrivals(self)`: Prints a message `<airport_code> is handling arrivals.`\n - `handle_departures(self)`: Prints a message `<airport_code> is handling departures.`\n - `update_schedule(self)`: Prints a message `<airport_code> schedule updated.`\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not edit or delete the `default_test` code.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "97f5a8a3-6c5c-4606-957d-b7faccc9d322",
+      "code_content": "# Implement the Airport class with the specified attributes and methods\nclass Airport:\n    def __init__(self, airport_code, name, city):\n        self.airport_code = airport_code\n        self.name = name\n        self.city = city\n    \n    def handle_arrivals(self):\n        print(f\"{self.airport_code} is handling arrivals.\")\n    \n    def handle_departures(self):\n        print(f\"{self.airport_code} is handling departures.\")\n    \n    def update_schedule(self):\n        print(f\"{self.airport_code} schedule updated.\")\n        \n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    airport = Airport(airport_code=\"LAX\", name=\"Los Angeles International Airport\", city=\"Los Angeles\")\n    print(airport.airport_code)\n    print(airport.name)\n    print(airport.city)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1a4d1e65-5cea-4a76-bb98-263fd14c2c5e",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "41f71be9-c1b9-4e0a-a67b-35b27a871fbc",
+      "input": "Checking Default Tests",
+      "output": "LAX\nLos Angeles International Airport\nLos Angeles",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c9beb25c-fa23-4864-8419-c5c1a8bcd8fc",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "bc815d70-10d9-4b4a-839e-856131b68997",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

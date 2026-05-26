@@ -1,0 +1,61 @@
+{
+  "question_id": "b8c6e322-df7d-47d1-90e7-2e47892557cb",
+  "short_text": "Check Anagrams",
+  "content": "Write a program that assists a teacher in checking if two students answers to a spelling test are anagrams of each other. The teacher wants to ensure that both students have used the same letters in their answers, just arranged differently. Write a programm that reads both answers and determine if they are anagrams.\n\n\n<MultiLineNote> \n\nAn anagram means that both answers contain the same letters but in a different order. For example, if one student wrote **\"listen\"** and the other wrote **\"silent\"**, these are considered anagrams.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of two lines:\n\n- The first line contains a single string representing the first student's answer.\n- The second line contains a single string representing the second student's answer.\n\n---\n\n#### Output\n\nThe output should be a single line stating **`Yes`** if both answers are anagrams, or **`No`** if they are not.\n\n\n---\n\n#### Explanation\n\nFor example, given the following input\n\n```\nlisten\nsilent\n```\n\n- **listen** and **silent** are anagrams because both contain the same letters: '**l**', '**i**', '**s**', '**t**', '**e**', '**n**'.\n\nThe Expected Output is\n\n```\nYes\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fe3b825e-7c23-4a51-b193-7e6ea1b39efe",
+      "code_content": "answer1 = input()\nanswer2 = input()\n\nif len(answer1) != len(answer2):\n    print(\"No\")\nelse:\n    is_anagram = True\n    for char in answer1:\n        found = False\n        for j in range(len(answer2)):\n            if char == answer2[j]:\n                found = True\n                answer2 = answer2[:j] + answer2[j+1:]  \n                break\n    \n        if not found:\n            is_anagram = False\n            break\n    if is_anagram:\n        print(\"Yes\")\n    else:\n        print(\"No\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "09ba9444-8716-4128-a799-8a9ca29f4ca4",
+      "input": "teacher\nreacher",
+      "output": "No",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "38b9a71a-9dde-46a6-af34-6110778848b7",
+      "input": "listen\nsilent",
+      "output": "Yes",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "435c44b5-4f60-48c3-89b0-2e9116629acd",
+      "input": "dormitory\ndirtyroom",
+      "output": "Yes",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "90a942e7-3d7e-4923-a58c-a19bde6cf572",
+      "input": "apple\npaple",
+      "output": "Yes",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f023cc31-8296-468b-b2c4-ff667c71d31c",
+      "input": "12345\n5243169",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

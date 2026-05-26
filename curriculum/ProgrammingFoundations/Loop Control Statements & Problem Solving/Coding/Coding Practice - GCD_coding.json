@@ -1,0 +1,61 @@
+{
+  "question_id": "c7e8c179-903a-40d7-8c6c-494aa94d0eeb",
+  "short_text": "GCD",
+  "content": "Given two numbers `M` and `N`, write a program to print the **Greatest Common Divisor (G.C.D)** of the numbers `M` and `N`.\r\n\r\n<MultiLineNote>\r\n- The greatest common divisor (G.C.D) of two numbers is the largest positive factor that perfectly divides the two given numbers.\r\n- **Factors of N:**\r\n  - If a number `N` is divisible by `X`, then `X` is a factor of `N`.\r\n      - **Example**:\r\n            - If `N = 15` and `X = 3`, then **3** is a factor of **15** as **15** is divisible by **3**.\r\n            - If `N = 15` and `X = 7`, then **7** is **not** a factor of **15** as **15** is not divisible by **7**.\r\n</MultiLineNote>\r\n\r\n<MultiLineQuickTip>\r\nThe greatest common divisor (G.C.D) will be between 1 and the minimum number of the given two numbers.\r\n</MultiLineQuickTip>\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `M`.\r\nThe second line of input contains an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the **GCD** of the numbers `M` and `N`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `M = 4` and `N = 6`,\r\n\r\n- The factors of **4** are **1**, **2** and **4**.\r\n- The factors of **6** are **1**, **2**, **3** and **6**.\r\n- The common factors of **4** and **6** are **1** and **2**.\r\n- The greatest common divisor of the two numbers **4** and **6** is **2**(`2 > 1`).\r\n\r\nThe output should be **2**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fb94da2e-45e4-4777-b46c-16c8542d33f7",
+      "code_content": "m = int(input())\nn = int(input())\n\nif m > n:\n    smallest_number = n\nelse:\n    smallest_number = m\n\ngcd = smallest_number\nfor i in range(1, smallest_number+1):\n    if ((m % i) == 0) and ((n % i) == 0):\n        gcd = i\n\nprint(gcd)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1b7cbeca-7b31-452b-8932-f7e72f3593ca",
+      "input": "14\n18",
+      "output": "2\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "6e051dec-acaf-4913-907f-cc49c7103ab1",
+      "input": "5\n5",
+      "output": "5\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8f809d47-5f1f-407e-8815-9f6691c2fab7",
+      "input": "4\n6",
+      "output": "2\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9d6c4612-88ee-4164-a5c7-d2de8bd12ae1",
+      "input": "16\n9",
+      "output": "1\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "f8e12b39-6d88-434b-84e5-0dafd440b3a4",
+      "input": "72\n108",
+      "output": "36\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "9e87bd18-0c99-4a94-8599-a150f89b71a4",
+  "short_text": "Alphabets in Hollow M Shape",
+  "content": "Given a number `N`, write a program to print the letter **M** of `N` rows using alphabets.\n\n```\n    A         A\n   B B       B B\n  C   C     C   C\n D     D   D     D\nE       E E       E\n```\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing alphabets as letter `M` shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 3`,\n\n- Print the alphabets on **3** rows as shown in the image.\n\n<Img imageSrc='https://res.cloudinary.com/da7qpgps9/image/upload/v1672896953/Screenshot_from_2023-01-05_11-05-40_jydpdj.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image, the Empty box indicates a space (\" \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n  A     A\n B B   B B\nC   C C   C\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "1ee99b07-fb11-4c62-911b-972755d91a11",
+      "code_content": "rows = int(input())\n\nfor row in range(1, rows + 1):\n    spaces = \" \" * (rows - row)\n    \n    if row == 1:\n        each_row = spaces + (chr(row + 64 ) + \" \") \n    else:\n        hollow_spaces = \"  \" * (row - 2)\n        each_row = spaces + (chr(row + 64) + \" \") + hollow_spaces + (chr(row + 64) + \" \")\n\n    spaces_between_triangles = \" \" * (rows - row)\n    \n    print(each_row + spaces_between_triangles + each_row)   ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "35996348-a45f-4d66-80ca-358fafe88fab",
+      "input": "26",
+      "output": "                         A                                                   A \n                        B B                                                 B B \n                       C   C                                               C   C \n                      D     D                                             D     D \n                     E       E                                           E       E \n                    F         F                                         F         F \n                   G           G                                       G           G \n                  H             H                                     H             H \n                 I               I                                   I               I \n                J                 J                                 J                 J \n               K                   K                               K                   K \n              L                     L                             L                     L \n             M                       M                           M                       M \n            N                         N                         N                         N \n           O                           O                       O                           O \n          P                             P                     P                             P \n         Q                               Q                   Q                               Q \n        R                                 R                 R                                 R \n       S                                   S               S                                   S \n      T                                     T             T                                     T \n     U                                       U           U                                       U \n    V                                         V         V                                         V \n   W                                           W       W                                           W \n  X                                             X     X                                             X \n Y                                               Y   Y                                               Y \nZ                                                 Z Z                                                 Z",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "609c0306-458d-4429-bac5-0debe2f75c98",
+      "input": "15",
+      "output": "              A                             A \n             B B                           B B \n            C   C                         C   C \n           D     D                       D     D \n          E       E                     E       E \n         F         F                   F         F \n        G           G                 G           G \n       H             H               H             H \n      I               I             I               I \n     J                 J           J                 J \n    K                   K         K                   K \n   L                     L       L                     L \n  M                       M     M                       M \n N                         N   N                         N \nO                           O O                           O",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9265bafe-7b09-45d4-8802-c98edf23428e",
+      "input": "1",
+      "output": "A A",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a11a588d-d000-4617-942f-8f489f361da2",
+      "input": "4",
+      "output": "   A       A \n  B B     B B \n C   C   C   C \nD     D D     D",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e292d418-0a63-4859-b804-de4e812978d4",
+      "input": "2",
+      "output": " A   A \nB B B B",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fb87542a-d29b-41ae-a410-a69ccea850cd",
+      "input": "3",
+      "output": "  A     A \n B B   B B \nC   C C   C",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

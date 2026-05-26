@@ -1,0 +1,13 @@
+{
+  "unit_title": "Logical Operators | Reading Material",
+  "content": "# Logical Operators\n\nThe logical operators are used to perform logical operations on Boolean values.  \nGives `True` or `False` as the result.  \n  \nFollowing are the logical operators  \n\n- `and`  \n- `or`  \n- `not`\n\n## Logical AND Operator\n\nGives `True` if both the booleans are true else, it gives `False`\n  \n#### Code  \n  \n```python  \nprint(True and True)  \n```\n  \n#### Output  \n  \n```\n\nTrue\n```\n\n**Examples of Logical AND**\n\n#### Code\n\n```python\nprint((2 < 3) and (1 < 2))  \n```  \n\n*Step by Step Explanation*\n\n```\n(2 < 3) and (1 < 2)  \nTrue and (1 < 2)  \nTrue and True  \n```  \n  \n#### Output  \n  \n```\n\nTrue\n```\n\n## Logical OR Operator\n\nGives `True` if any one of the booleans is true else, it gives `False`\n  \n#### Code  \n  \n```python  \nprint(False or False)  \n```\n  \n#### Output  \n  \n```\n\nFalse\n```\n\n**Examples of Logical OR**\n\n#### Code  \n  \n```python  \nprint((2 < 3) or (2 < 1))  \n```\n\n*Step by Step Explanation*\n\n```\n(2 < 3) or (2 < 1)  \nTrue or (2 < 1)  \nTrue or False  \n```\n\n#### Output  \n  \n```\n\nTrue\n```\n\n## Logical NOT Operator\nGives the opposite value of the given boolean.\n  \n  \n#### Code  \n  \n```python  \nprint(not(False))  \n```\n  \n#### Output  \n  \n```\n\nTrue\n```\n\n**Examples of Logical NOT**\n\n#### Code  \n  \n```python  \nprint(not(2 < 3))  \n```\n\n\n*Step by Step Explanation*\n\n```\nnot(2 < 3)  \nnot(True)  \nFalse  \n```\n\n#### Output  \n  \n```\n\nFalse\n```\n\n### Summary\n\n1. Logical *AND* Operator gives `True` if all the booleans are true.  \n- Logical *OR* Operator gives `True` if any of the booleans are true.  \n- Logical *NOT* Operator gives the opposite value",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "d2649e84-4785-47ba-8d9c-7261ab4a4efc",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "35dfbabb-e989-46fd-8a1f-12f1a158cf84",
+  "unit_name": "Logical Operators | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

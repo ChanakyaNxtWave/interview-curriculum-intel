@@ -1,0 +1,61 @@
+{
+  "question_id": "3c54e540-fcff-4b29-9498-68fe3a3d2c7c",
+  "short_text": "Multiplication Table",
+  "content": "Write a program to print the multiplication table of the given number (N) up to ten multiples in the format &quot;N x i = M&quot;.<hr><b>Input</b><br/><br/>The first line of input will contain an integer.<hr><b>Output</b><br/><br/>The output should be ten lines containing the multiples in the given format.<hr><b>Explanation</b><br/><br/>For example, if the given number is 3, your code should print the multiplication table like<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "524ea02a-5f35-4795-9474-0977dd99eb72",
+      "code_content": "n = int(input())\n\nfor i in range(1, 11):\n    print(str(n) + \" x \" + str(i) + \" = \" + str(i*n))\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2c3054ae-dfae-4daf-8f21-6003fa1da087",
+      "input": "2020",
+      "output": "2020 x 1 = 2020\n2020 x 2 = 4040\n2020 x 3 = 6060\n2020 x 4 = 8080\n2020 x 5 = 10100\n2020 x 6 = 12120\n2020 x 7 = 14140\n2020 x 8 = 16160\n2020 x 9 = 18180\n2020 x 10 = 20200\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "854e322c-0921-47bc-a399-b1908dd45732",
+      "input": "36",
+      "output": "36 x 1 = 36\n36 x 2 = 72\n36 x 3 = 108\n36 x 4 = 144\n36 x 5 = 180\n36 x 6 = 216\n36 x 7 = 252\n36 x 8 = 288\n36 x 9 = 324\n36 x 10 = 360\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "95a42001-ab77-4eb0-abbe-804c5a0b5fcb",
+      "input": "-100",
+      "output": "-100 x 1 = -100\n-100 x 2 = -200\n-100 x 3 = -300\n-100 x 4 = -400\n-100 x 5 = -500\n-100 x 6 = -600\n-100 x 7 = -700\n-100 x 8 = -800\n-100 x 9 = -900\n-100 x 10 = -1000\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "bd2363fe-a3a9-476c-af60-8ccdf60b3387",
+      "input": "3",
+      "output": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "effa4217-3b89-4da8-96a3-d8cffd636369",
+      "input": "10",
+      "output": "10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

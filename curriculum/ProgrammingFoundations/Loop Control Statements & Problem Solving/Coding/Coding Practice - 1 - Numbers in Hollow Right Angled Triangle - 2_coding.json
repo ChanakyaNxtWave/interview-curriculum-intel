@@ -1,0 +1,68 @@
+{
+  "question_id": "ae22ca0b-c600-422b-b814-2376c5a7a4ed",
+  "short_text": "Numbers in Hollow Right Angled Triangle - 2",
+  "content": "Given a number `N`, write a program to print a **Hollow Right Angled Triangle** of `N` rows using numbers starting from **1**.\n\n```\n      1\n    2 1\n  3   1\n4 3 2 1\n```\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing numbers starting from **1** as a **Hollow Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 6`,\n\n- Print the numbers on **6** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-hollow-right-angled-triangle-2.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Number in the box indicates the number and a space (\"7 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n          1\n        2 1\n      3   1\n    4     1\n  5       1\n6 5 4 3 2 1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4fc35bbd-52d6-4e13-80d0-e07be87a149b",
+      "code_content": "rows = int(input())\n\nfor row in range(1, rows + 1):\n    if row == rows:\n        each_row = \"\"\n        \n        for column in range(rows):\n            each_row = each_row + str(rows - column) + \" \"\n        \n        print(each_row)\n    elif row == 1:\n        spaces = \" \" * (2 * rows - 2)\n        each_row = spaces + \"1 \"\n        \n        print(each_row)\n    else:\n        spaces = \" \" * (2 * (rows - row))\n        hollow_spaces = \"  \" * (row - 2)\n        each_row = spaces + (str(row) + \" \") + hollow_spaces + \"1 \"\n        \n        print(each_row)        ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "169d932a-b32b-4d47-ba12-dab021521e4c",
+      "input": "2",
+      "output": "  1 \n2 1",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "1775d9fd-0ed3-407a-bf70-edc2effbe687",
+      "input": "6",
+      "output": "          1 \n        2 1 \n      3   1 \n    4     1 \n  5       1 \n6 5 4 3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "460c7966-7155-484d-8ddc-2c01f3ee3268",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "55be3893-2d47-4dbe-adae-87ef044a90f7",
+      "input": "9",
+      "output": "                1 \n              2 1 \n            3   1 \n          4     1 \n        5       1 \n      6         1 \n    7           1 \n  8             1 \n9 8 7 6 5 4 3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7adc2afd-c5c5-46d7-bb9a-05a2494167bf",
+      "input": "13",
+      "output": "                        1 \n                      2 1 \n                    3   1 \n                  4     1 \n                5       1 \n              6         1 \n            7           1 \n          8             1 \n        9               1 \n      10                 1 \n    11                   1 \n  12                     1 \n13 12 11 10 9 8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "d425f3c1-4875-4468-8b31-623fcdf1a341",
+      "input": "8",
+      "output": "              1 \n            2 1 \n          3   1 \n        4     1 \n      5       1 \n    6         1 \n  7           1 \n8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7fd01c52-e0bb-49e8-b8fd-82ff808825da",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

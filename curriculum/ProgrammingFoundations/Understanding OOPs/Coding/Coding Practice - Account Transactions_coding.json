@@ -1,0 +1,47 @@
+{
+  "question_id": "d0c7bf26-6a5a-4bc8-a43e-643692581f65",
+  "short_text": "Account Transactions",
+  "content": "Complete the given **Account** class by adding new features by following the given instructions.\n\n**Existing _Account_ class**:\n\nThe existing **Account** class has only a _pass_ statement. Remove _pass_ statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to the _Account_ class**</summary>\n\n- **Add below attributes**\n  - The **Account** class should have the following attributes:\n    - **account_number** (int)\n    - **balance** (float)\n\n- **Add below instance methods**\n  - `withdraw(self, amount)` - This method should subtract the given amount from the account balance if sufficient funds are available. If not enough funds are available, print `Insufficient funds`.\n\n- **Add below class methods**\n  - `get_account_count(cls)` - This method should return the number of Account instances that have been created.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "3700a1db-08d2-40a9-9366-54331650dd46",
+      "code_content": "class Account:\n    _account_count = 0  # Class attribute to track the account count\n\n    def __init__(self, account_number, balance):\n        self.account_number = account_number\n        self.balance = balance\n        Account._account_count += 1\n\n    def withdraw(self, amount):\n        if self.balance >= amount:\n            self.balance -= amount\n        else:\n            print(\"Insufficient funds\")\n\n    @classmethod\n    def get_account_count(cls):\n        return cls._account_count\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    account = Account(account_number=12345, balance=1000.0)\n    account.withdraw(500.0)\n    print(account.balance)\n    print(Account.get_account_count())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6d3b4449-5d4c-4dcd-a911-0a1be25acf54",
+      "input": "Checking Default Tests",
+      "output": "500.0\n1\nPASS: Default test ran successfully.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b6212f1f-eb2b-477a-a663-7b17b171d6c5",
+      "input": "Checking methods",
+      "output": "Insufficient funds\nPASS: withdraw method works correctly.\nPASS: get_account_count method is implemented correctly.\nPASS: get_account_count is correctly annotated as a @classmethod.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ee8a607e-cd2f-4e2d-8d8c-ca9771669e33",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: Attributes are correctly implemented.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "131f81d6-8163-4839-93be-e4de5501ecaf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

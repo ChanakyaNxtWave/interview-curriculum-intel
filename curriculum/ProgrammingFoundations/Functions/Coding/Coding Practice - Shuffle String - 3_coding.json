@@ -1,0 +1,68 @@
+{
+  "question_id": "4999a2d8-bc96-4392-8e55-3c1fdbe5a212",
+  "short_text": "Shuffle String - 3",
+  "content": "A function is given in the prefilled code that takes a string `S` and `N` space-separated indices as an argument.\n\nWrite a program that prints a string by joining characters present at each index of the given N indices.\n\n\n---\n\n#### Input\n\nThe first line of input contains a string representing `S`.\nThe second line of input contains `N` space-separated integers. \n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by shuffling the characters in the order of the given `N` space-separated indices.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"tonyPh\"` and `N` space-separated indices are `4 3 0 5 1 2`,\n\n- The characters of the string **tonyPh** with indices are, \n\n|Character| Position|\n|-- | -- |\n| t | 0 |\n| o | 1 |\n| n | 2 |\n| y | 3 |\n| P | 4 |\n| h | 5 |\n\n- The string formed in the given order of  `4 3 0 5 1 2` is **Python**.\n\nThe output should be **Python**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c2263bc3-ba55-4244-813f-bde828b6e570",
+      "code_content": "def shuffle_string(string, indices_list):\n    new_string = \"\"\n    indices_list = indices_list.split()\n    \n    for index in indices_list:\n        index = int(index)\n        new_string += string[index]\n\n    return new_string\n\nstring = input()\nindices_list = input()\n\nresult = shuffle_string(string, indices_list)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "243ffbd7-9a8b-4f86-a9f4-21fe4bffac57",
+      "input": "ngamo\n3 2 0 1 4",
+      "output": "mango",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "5af7be99-d257-4a83-846f-fb8b82e753f7",
+      "input": "erviewov\n6 7 0 1 2 3 4 5",
+      "output": "overview",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "660f70cc-021f-4441-ad7c-e377800547a6",
+      "input": "ScriptJava\n6 7 8 9 0 1 2 3 4 5",
+      "output": "JavaScript",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "7053db52-560a-4ff5-aab0-38b48322b653",
+      "input": "tonyPh\n4 3 0 5 1 2",
+      "output": "Python",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "75470e3e-b7cc-475c-b04b-3b86c106a8d0",
+      "input": "goindc\n5 1 4 2 3 0",
+      "output": "coding",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b08c8fb0-73d4-4511-add0-3c3100e882e3",
+      "input": "geima\n2 3 4 0 1",
+      "output": "image",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

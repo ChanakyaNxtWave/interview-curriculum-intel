@@ -1,0 +1,68 @@
+{
+  "question_id": "45a5a23b-4e4c-40a4-8373-9138a7c5eff7",
+  "short_text": "Filter Even Numbers",
+  "content": "Write a program that reads a line of space-separated integers and keeps only the even numbers, printing them as a space-separated sequence.\n\n---\n\n#### Input\n\nA single line of integers separated by spaces.\n\n---\n\n#### Output\n\nThe output should be even numbers from the input, separated by spaces.\n\n---\n\n#### Explanation\n\nIf the input is:\n\n```\n1 2 3 4 5 6\n```\n\nThe output should be:\n\n```\n2 4 6\n```\n\nOnly even numbers are printed.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "77d441a4-9c16-4ef4-920e-3b8804c4a796",
+      "code_content": "def filter_even(numbers):\n    return [num for num in numbers if num % 2 == 0]\n\ninput_line = input().split()\nnumbers = [int(x) for x in input_line]\neven_numbers = filter_even(numbers)\n\nfor i in range(len(even_numbers)):\n    if i < len(even_numbers) - 1:\n        print(even_numbers[i], end=\" \")\n    else:\n        print(even_numbers[i])\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "30c69521-b2ed-4904-a8b1-7b2bb150c946",
+      "input": "3 6 9 12",
+      "output": "6 12",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4e139294-658b-4d3d-b520-92ea7a3bedbf",
+      "input": "4 5 6 7",
+      "output": "4 6",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "51368b78-020f-49e9-a3e1-682a7c86d3de",
+      "input": "14 18 21",
+      "output": "14 18",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5422ff82-03b4-4ff4-ae02-cad463a1a44e",
+      "input": "1 2 3 4 5 6",
+      "output": "2 4 6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8fc49d7b-4f65-4a90-9ff1-3644bab72eb4",
+      "input": "8 9 10",
+      "output": "8 10",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a7b74e0b-ac4f-4d1e-8a6e-2f3477b83256",
+      "input": "10 15 20 25",
+      "output": "10 20",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7ced6467-af22-4d7c-96ae-bcdeb3364094",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

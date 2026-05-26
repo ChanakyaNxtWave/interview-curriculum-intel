@@ -1,0 +1,54 @@
+{
+  "question_id": "326c4699-eceb-4b1c-a330-2ea70264732d",
+  "short_text": "String to Tuple",
+  "content": "Write a program that reads a string as input and converts it into a tuple where each character of the string is an element of the tuple.\n\n---\n\n#### Input\n\n- The input will be a single string.\n\n---\n\n#### Output\n\n- Print the tuple where each character of the string is an element of the tuple.\n\n---\n\n#### Example\n\nIf the input string is `Hello`, the output should be:\n\n```\n('H', 'e', 'l', 'l', 'o')\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "929017a7-3e02-4291-8371-f6a18e4d843d",
+      "code_content": "string_input = input()\ntuple_values = tuple(string_input)\nprint(tuple_values)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "44581bb5-26b8-4f6e-bd96-51b0d18edacd",
+      "input": "Hello",
+      "output": "('H', 'e', 'l', 'l', 'o')",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "650a110c-fdd2-4e9c-b265-f65cfbd42355",
+      "input": "Data",
+      "output": "('D', 'a', 't', 'a')",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "786d30c6-9635-4536-b919-a5cdaf00503b",
+      "input": "World",
+      "output": "('W', 'o', 'r', 'l', 'd')",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "d9373cd4-0e2c-4844-90c8-41c25970ddb1",
+      "input": "12345",
+      "output": "('1', '2', '3', '4', '5')",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "62237960-515f-4451-8ca9-7bf74bbb4421",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "34ec694f-e874-408e-9748-8efb8c0fd83b",
+  "short_text": "Grouping of Scores",
+  "content": "A player has collected few colored balls which have a number on them. <br/>To calculate score, we have to group the colored balls picked by user and sum up the numbers on them.<br/><br/>Write a program to create a dictionary, grouping of colored balls and the corresponding total score.<hr><b>Input</b><br/><br/>The input will be a single line containing comma-separated key-value pairs.<br/>Each key-value pair is separated by the colon character (:).<hr><b>Output</b><br/><br/>The output should be a single line containing a list of tuples of dictionary items by grouping of colored balls and the corresponding total score, where keys are sorted in alphabetical order.<hr><b>Explanation</b><br/><br/>For example if the given string is &quot;r:1,b:2,r:3&quot;, as the key &#x27;r&#x27; is repeated twice, the key &#x27;r&#x27; in the output dictionary should have the value of sum of two scores(1 + 3) in the input. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[('b', 2), ('r', 4)]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "65adac19-0022-4ab0-8ccc-a279ae9f7009",
+      "code_content": "def get_scores(ball_and_score_list):\n    ball_score_dict = {}\n    for item in ball_and_score_list:\n        pair = item.split(\":\")\n        key, value = pair[0], int(pair[1])\n        if key in ball_score_dict:\n            score = ball_score_dict[key]\n            ball_score_dict[key] = score + value\n        else:\n            ball_score_dict[key] = value\n    return ball_score_dict\n\n\nball_score_list = input().split(\",\")\nball_score_pairs = get_scores(ball_score_list)\nball_scores_items = ball_score_pairs.items()\nball_scores_items = sorted(ball_scores_items)\nprint(ball_scores_items)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0f648d78-a95a-4812-bba9-3266e805f896",
+      "input": "k:89,j:24,l:48,i:3382,h:432,p:3247,q:9374",
+      "output": "[('h', 432), ('i', 3382), ('j', 24), ('k', 89), ('l', 48), ('p', 3247), ('q', 9374)]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "104aa15e-7aef-496b-bf6e-32763f658bbe",
+      "input": "r:1,g:2,r:3,b:1,g:4",
+      "output": "[('b', 1), ('g', 6), ('r', 4)]\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "2d26dbea-bef9-4b31-a0fb-70073b8bc86f",
+      "input": "r:1,b:2,r:3",
+      "output": "[('b', 2), ('r', 4)]\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "59ad424d-fde0-4d27-aab0-cbd3cc14ec45",
+      "input": "m:0,m:1,m:2,m:3,m:4,m:5,m:6",
+      "output": "[('m', 21)]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "5bc6c155-938c-4452-ba8f-e9f8a6805334",
+      "input": "a:100,b:99,a:98,d:95,c:96,d:94",
+      "output": "[('a', 198), ('b', 99), ('c', 96), ('d', 189)]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "769093e5-58e2-4125-b690-639f0b7a81b6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6f41608c-d46f-411c-803f-6e4fd9ab3e3f",
+  "topic_name": "Problem Solving and Built-in Functions",
+  "course_title": "Programming Foundations"
+}

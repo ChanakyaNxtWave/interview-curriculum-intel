@@ -1,0 +1,377 @@
+{
+  "question_id": "394177cf-743c-4791-828b-fa3f45f1fa3d",
+  "short_text": "Zero or Positive or Negative",
+  "content": "Write a program that reads a number and checks if the given number is zero, positive or negative.\r\n\r\nPrint **Zero** if the given number is equal to **0**.\r\nPrint **Positive** if the given number is greater than **0**.\r\nPrint **Negative** if the given number is less than **0**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string. **Zero** should be printed if the given number is equal to **0**. **Positive** should be printed if the given number is greater than **0**. **Negative** should be printed if the given number is less than **0**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example,\r\n\r\n* If the given number is **-12**, the output should be **Negative** as **-12** is less than **0**.\r\n* If the given number is **15**, the output should be **Positive** as **15** is greater than **0**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bcf608be-6ea0-441b-9642-c8178177d701",
+      "code_content": "number = int(input())\nif number > 0:\n    print(\"Positive\")\nif number < 0:\n    print(\"Negative\")\nif number == 0:\n    print(\"Zero\")",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "18b6ebd8-132c-41bc-b440-39e4288a545b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n0\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Zero",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **0**, \n\n- **0** is equal to **0**,\n\nSo, the output should be **Zero**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c023cf08-d607-419e-b344-f4f53a7e1967",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n23\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Positive",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **23**,\n\n- **23** is greater than **0**,\n\nSo, the output should be **Positive**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ebca50ba-f67f-4e23-9c2e-d3f63e6542b6",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n-9\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Negative",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **-9**, \n\n- **-9** is less than **0**,\n\nSo, the output should be **Negative**",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "38bcbe47-86cf-4873-9678-78f3cb57b544",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0268680a-1ecd-4494-bea4-5a015e0a4d99",
+              "content": "The input will be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "25f25605-cf62-4640-8004-5ae210981bc1",
+              "content": "The input will be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2a2a6b20-c3a1-42f4-8923-73de8f4d6d69",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "68bf4f4e-f9ec-472f-85c0-0ee36264b2c7",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer.\n\nFor example, **45**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "86511597-7115-48fd-a39e-3e94bf27f91d",
+          "short_text": "",
+          "content": "According to the problem description, when should the `Negative` be printed?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "392dc0cf-abc7-435d-a47d-86910468a3f4",
+              "content": "Equal to `0`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "56229f1a-453c-4c9f-9f96-ae8bfc0e9333",
+              "content": "Greater than `0`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "85be4480-6a3e-48bc-b9b7-3ca82e881666",
+              "content": "Less than `0`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9c768be2-33b4-4822-8500-c07461d135a6",
+              "content": "Less than `2`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, when the given number is `less than `0`, a **Negative** will be printed.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "94153884-b27d-4fbd-8dc3-932db758af34",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "65f23f0e-6b7b-45a4-bb42-1075e993a518",
+              "content": "To check if the given number is `0` or greater than `0` or less than `0`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c03835ff-ea7e-4924-af1c-837536776047",
+              "content": "To check if the given number is greater than `0` or less than `0`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dfd31c51-476d-436a-a5a7-2babfb4507cb",
+              "content": "To check if the given number is `0` or less than `0`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f1c97843-615f-4b03-9b28-f58c393fb638",
+              "content": "To check if the given number is `0` or less than `0`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number and check if the given number is `0` or greater than `0` or less than `0`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "be5168b8-ca2e-4afe-8ec3-181517c114c1",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "378144d0-29c5-41a2-9853-7d588cfe4d23",
+              "content": "2.3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "597c5519-3f27-4c95-bf5f-86dd786ce58f",
+              "content": "9",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8842d49c-efa0-4abc-99a9-33847e91a77d",
+              "content": "15\n32",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9456f741-923a-43a3-b18e-c177b0e505fe",
+              "content": "-5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n9\n```\n\n**Input 2**\n\n```\n-5                                             \n```\nThe above two inputs are valid because they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ec2debb6-e9b8-4997-a94d-d992516525a9",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "07d1249f-9383-4345-8ecd-2b2b6addb303",
+              "content": "The output should be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "30e70589-dd13-4759-95f8-d4b53c007f42",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "92186206-13aa-4261-b45a-7b71ddc84ad9",
+              "content": "The output should be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cc6efaec-1d8e-4d8e-94a6-fc8aecf273c5",
+              "content": "The output should be a single line containing an integer.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string,\n\n- **Zero** should be printed if the given number is equal to **0**.\n\n- **Positive** should be printed if the given number is greater than **0**.\n\n- **Negative** should be printed if the given number is less than **0**.\n\n\nFor example, if the given number is **-2**,\n\n- **-12** is less than **0**\n\nSo, the output should be **Negative** ",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f314eab5-9fee-4801-a921-a296b8e8a0fc",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n-8\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0ea10007-b339-4e8f-8149-5ee7c4db0729",
+              "content": "Negative",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "333b753b-8cad-4f86-8ba2-6562da0b8ea4",
+              "content": "Zero",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8fa1637f-b3d3-42d5-9a64-684d815a87b2",
+              "content": "Positive",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "91222142-d087-46a1-848d-581ee2c01158",
+              "content": "zero",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **-8**, \n\n- **-8** is less than **0**,\n\nSo, the output should be **Negative**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ff03c8ea-02b6-4f3c-a1df-2e9ed2e29403",
+          "short_text": "",
+          "content": "From your understanding of the problem description, when should `Zero` be printed?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5b6f8bca-3c0e-471d-8950-730bb09c47e1",
+              "content": "Greater than `0`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7b34ef1c-a1b8-4d6b-8649-e9d6204fd4b6",
+              "content": "Equal to `1`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c00ddeed-aa42-4bea-b949-19dca198fbed",
+              "content": "Less than `0`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e6f31dbf-4a5a-4d43-a215-91dcfc614c37",
+              "content": "Equal to `0`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, a **Zero** should be printed when the given number is equal to `0`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "2bd5c4c7-b233-4e23-b730-7941a4b6eda4",
+      "input": "-12",
+      "output": "Negative\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3cff4e52-975e-4171-b5a4-bd2b4fdf442d",
+      "input": "-5",
+      "output": "Negative\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4b40d621-16f5-44ea-9e11-c00a273f910a",
+      "input": "1000",
+      "output": "Positive\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bd7bf5d8-fe34-40fe-96b6-bd17321d4076",
+      "input": "15",
+      "output": "Positive\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f291e998-2eb9-463a-8434-ef7341386110",
+      "input": "0",
+      "output": "Zero\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

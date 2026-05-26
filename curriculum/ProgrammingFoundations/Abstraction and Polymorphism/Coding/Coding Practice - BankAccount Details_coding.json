@@ -1,0 +1,47 @@
+{
+  "question_id": "36b2c7e4-4f08-4b6a-a0f0-19db52e9b066",
+  "short_text": "BankAccount Details",
+  "content": "Complete the BankAccount class and its subclasses by adding new features following the given instructions to demonstrate polymorphism through method overriding.\n\n\n<details>\n\n<summary>**Features to be added to `BankAccount` class**</summary>\n\n- **Add below attributes**:\n - Add below attributes in **`BankAccount`** class:\n  - The **`BankAccount`** class should have the following attributes:\n    - **`account_number`**\n    - **`balance`**\n    - **`currency`**\n - Add below methods in **`BankAccount`** class:\n  - **`withdraw(self, amount)`**: This method should reduce the balance by the specified amount if sufficient balance is available. Otherwise, it should print **`Insufficient balance`**. The balance should always be displayed after a successful withdrawal in the format:\n\n```\nWithdrawal successful. New balance: <balance> <currency>\n```\n\n- **Create the following subclasses of `BankAccount`**:\n\n- **SavingsAccount**:\n  - Override the **`withdraw`** method to allow withdrawals only if the balance remains above a minimum balance $100.\n  - If the withdrawal violates the minimum balance, print:\n\n```\nWithdrawal denied: Minimum balance of $100 required\n``` \n\n  - If the minimum balance is available after the withdrawl of the requested amount call the superclass withdraw method.\n\n- **LoanAccount**:\n\n - Override the **`withdraw`** method to allow overdraft up to a limit $500(balance can be upto -500).\n - If the withdrawal exceeds the overdraft limit, print :\n\n```\nWithdrawal denied: Overdraft limit exceeded\n```\n\n- On success, print the new balance in the below format.\n\n```\nWithdrawal successful. New balance: <balance> <currency>\n```\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes and methods are correctly implemented. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7144a43c-383b-4b7a-8589-21f5a8392f2d",
+      "code_content": "class BankAccount:\n    def __init__(self, account_number, balance, currency):\n        self.account_number = account_number\n        self.balance = balance\n        self.currency = currency\n\n    def withdraw(self, amount):\n        if amount > self.balance:\n            print(\"Insufficient balance\")\n        else:\n            self.balance -= amount\n            print(f\"Withdrawal successful. New balance: {self.balance} {self.currency}\")\n\nclass SavingsAccount(BankAccount):\n    def withdraw(self, amount):\n        # Enforce minimum balance of $100\n        if self.balance - amount < 100:\n            print(\"Withdrawal denied: Minimum balance of $100 required\")\n        else:\n            super().withdraw(amount)\n\nclass LoanAccount(BankAccount):\n    def withdraw(self, amount):\n        # Allow overdraft up to $500\n        if self.balance - amount < -500:\n            print(\"Withdrawal denied: Overdraft limit exceeded\")\n        else:\n            self.balance -= amount\n            print(f\"Withdrawal successful. New balance: {self.balance} {self.currency}\")\n\ndef default_test():\n    savings = SavingsAccount(\"123456789\", 1000, \"USD\")\n    checking = LoanAccount(\"987654321\", 500, \"USD\")\n    \n    print(\"Savings Account Balance:\", savings.balance)\n    savings.withdraw(950)  # Should fail due to minimum balance requirement\n    savings.withdraw(800)  # Should succeed\n    \n    print(\"Checking Account Balance:\", checking.balance)\n    checking.withdraw(900)  # Should succeed due to overdraft\n    checking.withdraw(2000)  # Should fail due to overdraft limit",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "70b9ae2d-8bd7-46e1-b20f-ba06e5d31135",
+      "input": "Checking Default Tests",
+      "output": "Savings Account Balance: 1000\nWithdrawal denied: Minimum balance of $100 required\nWithdrawal successful. New balance: 200 USD\nChecking Account Balance: 500\nWithdrawal successful. New balance: -400 USD\nWithdrawal denied: Overdraft limit exceeded",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8dae50e1-484f-4f1f-a80d-6edc456c2f4b",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are correctly implemented",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f21eb8b7-9bf2-41e8-97d4-04a28298ad25",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are correctly implemented",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3b2806d7-65a4-47d6-9515-c37099a98115",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "bceb669e-7fe3-4253-b8d5-3459f24d9ce4",
+  "short_text": "Random Choice",
+  "content": "Complete the function **`random_choicefrom_list`** that randomly selects and returns an element from a given list. The function should use built-in function from the random module to achieve this.\n\n<MultiLineNote>\n\nFor each test case, the output will be **TRUE** only if the **`random_choiceFrom_list`** function correctly uses **`random.choice`** to select an element from the list.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe **`random_choicefrom_list`** function takes one parameter: a list of elements as input.\n\n\n\n\n---\n\n#### Output\n\nThe **`random_choicefrom_list`** function should return a single randomly selected element from the input list.\n\n\n---\n\n\n#### Explanation\n\nThe function receives the list of strings as input. Using the **`random.choice()`** function, one element is randomly selected from the list. The result may vary each time the function is called due to randomness.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "35879f01-28f2-4414-a755-a31e673b8993",
+      "code_content": "import random\n\ndef random_choicefrom_list(elements):\n    return random.choice(elements)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "18394965-d184-43b3-bb05-be6174d22995",
+      "input": "99 -99",
+      "output": "TRUE",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "1f8ed8cd-f994-4aa1-9336-37178768a70c",
+      "input": "x y z",
+      "output": "TRUE",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "48f087e8-0f2e-4ea5-ae56-f9c14ae91adc",
+      "input": "apple banana cherry date",
+      "output": "TRUE",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "df1391b1-8b00-4c2e-aacd-9a32c5f12d3c",
+      "input": "1 2 3 4 5",
+      "output": "TRUE",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fbc6ae91-1297-4042-8149-daa59b856ef2",
+      "input": "a b c d e f g",
+      "output": "TRUE",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "be8d64eb-d56a-40c7-ac7d-fdd7e563e83d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

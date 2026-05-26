@@ -1,0 +1,61 @@
+{
+  "question_id": "70a29bef-4376-4ac0-a0e0-2b606e966097",
+  "short_text": "Combine Two Dictionaries",
+  "content": "Write a program to combine two dictionaries updating values for common keys.<hr><b>Input</b><br/><br/>The first line of input will contain space-separated strings, denoting the keys of first dictionary.<br/>The second line of input will contain space-separated integers, denoting the values of first dictionary.<br/>The third line of input will contain space-separated strings, denoting the keys of second dictionary.<br/>The fourth line of input will contain space-separated integers, denoting the values of second dictionary.<hr><b>Output</b><br/><br/>The output should be a single line containing the list of tuples of dictionary items with all the key-value pairs of two dictionaries sorted in ascending order by key.<hr><b>Explanation</b><br/><br/>For example, if the given inputs are the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Akhil Ram Raju Mohan\n1 10 15 18\nGopal Krishna Vani Ram\n21 22 19 20\n</code></pre><br/>Your code should combine the two dictionaries and if keys are in both dictionaries then the combined dictionary should contain the value of second dictionary. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[('Akhil', 1), ('Gopal', 21), ('Krishna', 22), ('Mohan', 18), ('Raju', 15), ('Ram', 20), ('Vani', 19)]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "09a65b76-3f85-4724-b931-dcba7edb4425",
+      "code_content": "def convert_string_to_int(str_num_list):\n    int_list = []\n    for str_num in str_num_list:\n        num = int(str_num)\n        int_list.append(num)\n    return int_list\n\n\ndef convert_to_key_value_pairs(keys_list, values_list):\n    dict_a = {}\n    number_of_keys = len(keys_list)\n    for i in range(number_of_keys):\n        key = keys_list[i]\n        value = values_list[i]\n        dict_a[key] = value\n    return dict_a\n\n\ndict_a_keys = input().split()\ndict_a_values = input().split()\ndict_b_keys = input().split()\ndict_b_values = input().split()\n\ndict_a_values = convert_string_to_int(dict_a_values)\ndict_b_values = convert_string_to_int(dict_b_values)\n\nstudent_details_1 = convert_to_key_value_pairs(dict_a_keys, dict_a_values)\nstudent_details_2 = convert_to_key_value_pairs(dict_b_keys, dict_b_values)\n\nstudent_details_1.update(student_details_2)\nstudent_details = student_details_1.items()\nstudent_details = sorted(student_details)\nprint(student_details)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "08168c74-eee0-4e5b-a068-6c0d8f12ea14",
+      "input": "Anjali Ravi Akbar\n1 2 3\nSuresh Gopal Latha Mohan Ashok\n20 21 22 25 30",
+      "output": "[('Akbar', 3), ('Anjali', 1), ('Ashok', 30), ('Gopal', 21), ('Latha', 22), ('Mohan', 25), ('Ravi', 2), ('Suresh', 20)]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "25ed94c0-6e4f-4c78-b61c-22f901721fb3",
+      "input": "Akhil Ram Raju Mohan\n1 10 15 18\nGopal Krishna Vani Ram\n21 22 19 20",
+      "output": "[('Akhil', 1), ('Gopal', 21), ('Krishna', 22), ('Mohan', 18), ('Raju', 15), ('Ram', 20), ('Vani', 19)]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "9720d88c-44a4-4e0c-b68d-8f254dd43736",
+      "input": "a b c d e f\n97 98 99 100 101 102\ng h i\n103 104 105",
+      "output": "[('a', 97), ('b', 98), ('c', 99), ('d', 100), ('e', 101), ('f', 102), ('g', 103), ('h', 104), ('i', 105)]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "c93e77d1-ae4e-4665-a37e-61f134ccc288",
+      "input": "a b c d e f\n97 98 99 100 101 102\na b c d g h\n97 98 99 100 103 104",
+      "output": "[('a', 97), ('b', 98), ('c', 99), ('d', 100), ('e', 101), ('f', 102), ('g', 103), ('h', 104)]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "cf1ca8d7-888d-4c1e-b025-95252c652ab0",
+      "input": "a\n97\na\n97",
+      "output": "[('a', 97)]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "769093e5-58e2-4125-b690-639f0b7a81b6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6f41608c-d46f-411c-803f-6e4fd9ab3e3f",
+  "topic_name": "Problem Solving and Built-in Functions",
+  "course_title": "Programming Foundations"
+}

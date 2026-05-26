@@ -1,0 +1,68 @@
+{
+  "question_id": "83f1ee94-e9d7-4ae0-9766-087ca0d66fd0",
+  "short_text": "Prime Number",
+  "content": "A function named `is_prime` is given in the prefilled code that takes an integer `N` and a `divisor` as arguments.\n\nWrite a program that reads an integer `N` as input from the user and uses the provided `is_prime` function in the prefilled code to check if `N` is a prime number using recursion. The program should print `Yes` if the number is prime, and `No` otherwise.\n\n<MultiLineNote>\nA prime number is a natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers. It is only divisible by 1 and itself.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will consist of a single integer `N`.\n\n---\n\n#### Output\n\nPrint `Yes` if `N` is a prime number, or `No` if it is not.\n\n---\n\n#### Explanation\n\nFor instance, if the input is:\n\n```\n5\n```\n\nThe output should be:\n\n```\nYes\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "91ad5e0e-8df0-4e65-b785-c033ce633fa6",
+      "code_content": "def is_prime(n, divisor=0):\n    if divisor == 0:\n        divisor = n - 1\n    if n <= 1:\n        return False\n    if divisor == 1:\n        return True\n    if n % divisor == 0:\n        return False\n    return is_prime(n, divisor - 1)\n\nn = int(input())\nif is_prime(n):\n    print(\"Yes\")\nelse:\n    print(\"No\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "384d8395-d471-446a-9b8e-7f1f847c681b",
+      "input": "11\n",
+      "output": "Yes",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "4a128153-6e53-4fa2-a4be-85a0747e1fd8",
+      "input": "4\n",
+      "output": "No",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "74ca36d2-c43f-4dbc-af10-33ef5b304cb9",
+      "input": "5\n",
+      "output": "Yes",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8a43cfcb-9e05-435a-870a-0175c4dd35bd",
+      "input": "9\n",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9f43b8e2-0186-46d5-9d29-dd407db21f1d",
+      "input": "2\n",
+      "output": "Yes",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d291456f-0782-423b-9b53-d7e2b8ac4aa3",
+      "input": "1\n",
+      "output": "No",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "86ab3e6f-332c-49fa-98ae-97430059e4f6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

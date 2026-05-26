@@ -1,0 +1,61 @@
+{
+  "question_id": "840b7f3e-c1f3-491f-ad11-e13a2dde04b7",
+  "short_text": "Hollow Pyramid - 3",
+  "content": "Given a number `N`, write a program to print a **Hollow Pyramid** of `2 * N` rows using pipes (`|`), backward slashes (`\\`), and forward slashes (`/`).\n\n```\n|\n| \\\n|  \\\n|   \\\n|   /\n|  /\n| /\n|\n\n```\n\n<MultiLineNote>\nThere is a space after every pipe (`|`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `2 * N` rows containing pipes (`|`), backward slashes (`\\`), and forward slashes (`/`) as a **Hollow Pyramid** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- Print pipes (`|`), backward slashes (`\\`), and forward slashes (`/`) on **8** (`2 * 4`) rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-pyramid-3.png' widthPercent='40'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates a space (\"&nbsp;\").\n- The Pipe in the box indicates the pipe and a space (\"| \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n|\n| \\\n|  \\\n|   \\\n|   /\n|  /\n| /\n|\n\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f522f2a9-bda6-479e-9970-c901fbd8d313",
+      "code_content": "n = int(input())\n\nfor row in range(n):\n    if row == 0:\n        each_row = \"|\"\n    else:\n        spaces = \" \" * row\n        each_row = \"|\" + spaces + \"\\\\\"\n    print(each_row)\nfor row in range(n):\n    if row == n - 1:\n        each_row = \"|\"\n    else:\n        spaces = \" \" * (n - row - 1)\n        each_row = \"|\" + spaces + \"/\"\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3501d737-b981-4bcf-b933-5e9d94ea66ec",
+      "input": "7",
+      "output": "|\n| \\\n|  \\\n|   \\\n|    \\\n|     \\\n|      \\\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "41bdd7f2-ed9c-4320-8d49-ca13a4af02d3",
+      "input": "4",
+      "output": "|\n| \\\n|  \\\n|   \\\n|   /\n|  /\n| /\n|",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "524a2a9f-6b4c-48f9-971e-19c39439440e",
+      "input": "36",
+      "output": "|\n| \\\n|  \\\n|   \\\n|    \\\n|     \\\n|      \\\n|       \\\n|        \\\n|         \\\n|          \\\n|           \\\n|            \\\n|             \\\n|              \\\n|               \\\n|                \\\n|                 \\\n|                  \\\n|                   \\\n|                    \\\n|                     \\\n|                      \\\n|                       \\\n|                        \\\n|                         \\\n|                          \\\n|                           \\\n|                            \\\n|                             \\\n|                              \\\n|                               \\\n|                                \\\n|                                 \\\n|                                  \\\n|                                   \\\n|                                   /\n|                                  /\n|                                 /\n|                                /\n|                               /\n|                              /\n|                             /\n|                            /\n|                           /\n|                          /\n|                         /\n|                        /\n|                       /\n|                      /\n|                     /\n|                    /\n|                   /\n|                  /\n|                 /\n|                /\n|               /\n|              /\n|             /\n|            /\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "cba76932-5209-482b-8ad4-b3e96a3d2c9f",
+      "input": "25",
+      "output": "|\n| \\\n|  \\\n|   \\\n|    \\\n|     \\\n|      \\\n|       \\\n|        \\\n|         \\\n|          \\\n|           \\\n|            \\\n|             \\\n|              \\\n|               \\\n|                \\\n|                 \\\n|                  \\\n|                   \\\n|                    \\\n|                     \\\n|                      \\\n|                       \\\n|                        \\\n|                        /\n|                       /\n|                      /\n|                     /\n|                    /\n|                   /\n|                  /\n|                 /\n|                /\n|               /\n|              /\n|             /\n|            /\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "f52ef157-b201-4871-8ecf-ebf66e132183",
+      "input": "12",
+      "output": "|\n| \\\n|  \\\n|   \\\n|    \\\n|     \\\n|      \\\n|       \\\n|        \\\n|         \\\n|          \\\n|           \\\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|",
+      "is_hidden": true,
+      "weightage": 12.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

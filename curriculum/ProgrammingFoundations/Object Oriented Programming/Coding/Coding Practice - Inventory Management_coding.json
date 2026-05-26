@@ -1,0 +1,47 @@
+{
+  "question_id": "9126f013-0ab6-4f4c-99b1-d7d11b4757f5",
+  "short_text": "Inventory Management",
+  "content": "Complete the given **Inventory** class by following the given instructions to manage a collection of products.\n\n**Existing _Inventory_ class**:\n\nThe existing **Inventory** class has only a _pass_ statement. Remove the _pass_ statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to **_Inventory_** class**</summary>\n\n- **Add below attributes**\n  - The **Inventory** class should have the following attribute:\n    - `products`: a dictionary to store product names as keys and stock levels as values.\n\n- **Add below methods**\n  - `add_product(product_name, quantity)`: Adds the given quantity to the product in the inventory. If the product does not exist, it should be added to the `products` dictionary with the given quantity.\n  - `check_stock(product_name)`: Returns the stock level of the given product. If the product does not exist, return `Product not found`.\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a1c1556e-6d45-4b05-b78c-e9a0be2880ba",
+      "code_content": "# Implement the Inventory class with the specified attributes and methods\nclass Inventory:\n    def __init__(self):\n        self.products = {}\n\n    def add_product(self, product_name, quantity):\n        if product_name in self.products:\n            self.products[product_name] += quantity\n        else:\n            self.products[product_name] = quantity\n\n    def check_stock(self, product_name):\n        return self.products.get(product_name, \"Product not found\")\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    inventory = Inventory()\n    inventory.add_product(\"Laptops\", 10)\n    inventory.add_product(\"Smartphones\", 50)\n    print(inventory.check_stock(\"Laptops\"))  # Expected output: 8\n    print(inventory.check_stock(\"Smartphones\"))  # Expected output: 50",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0e73799e-cd94-49e2-9bf5-5a0ea57d2885",
+      "input": "Checking Default Tests",
+      "output": "10\n50",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2d28bdcf-c96a-4f16-b93a-ba50a3f31dc6",
+      "input": "Checking attribute presence",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "431dc1fc-dd9c-4d0c-b974-b588ba2ba2bf",
+      "input": "Checking methods",
+      "output": "PASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36941df1-f44b-4f78-8f8d-9ae759d2d3b2",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9efc825e-7f58-45ec-be9a-7ba1f44591c1",
+  "topic_name": "Object Oriented Programming",
+  "course_title": "Programming Foundations"
+}

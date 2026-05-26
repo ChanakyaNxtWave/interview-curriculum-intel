@@ -1,0 +1,61 @@
+{
+  "question_id": "1d6d2037-6af7-4627-8da2-1a5304302261",
+  "short_text": "Count unique Key-Value pairs",
+  "content": "Write a program that reads an integer `n`, followed by `n` lines of input. Each line contains a key and a value , separated by a space. The program should create a dictionary using the provided key-value pairs and print the total number of unique keys in the dictionary.\n\n\n---\n\n#### Input\n- An integer n represents the number of key-value pairs.\n- `n` lines, where each line contains a key value pair separated by a space.\n\n---\n\n#### Output\nPrint an integer representing the total number of unique keys in the dictionary.\n\n---\n\n#### Explanation\nFor example, if the given input is:\n\n```\n4\napple 50\nbanana 30\napple 20\norange 40\n```\n\n- The program reads `4` key-value pairs. The key apple appears twice, and the program will use the last value `(20)`. The resulting dictionary will have `3` unique keys.\n\nThe output should be\n\n```\n3\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0ccf71ca-3968-409a-a17e-5b7ade432471",
+      "code_content": "n = int(input().strip())\nresult_dict = {}\n\nfor i in range(n):\n    key, value = input().strip().split()\n    result_dict[key] = int(value)\n\nprint(len(result_dict))\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00366c25-91d0-4588-8c31-2ad14f37da19",
+      "input": "3\npen 10\npencil 20\npen 5",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "24a438d1-d010-4bb3-bcdf-528ba362b41a",
+      "input": "4\napple 50\nbanana 30\napple 20\norange 40",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "60f04af0-b2c4-4207-aa0b-0eb05addb0a6",
+      "input": "1\nmarker 10",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "dff27c0f-2028-4276-b61e-703f8e236656",
+      "input": "1\npen 10",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f25baa60-f277-41f4-b59b-8d6d12034e26",
+      "input": "2\nnotebook 15\neraser 7",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b975ce0b-a0f2-41ac-b629-83f4fd930b80",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

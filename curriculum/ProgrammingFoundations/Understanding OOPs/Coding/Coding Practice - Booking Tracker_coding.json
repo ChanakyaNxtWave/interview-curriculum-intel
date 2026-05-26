@@ -1,0 +1,47 @@
+{
+  "question_id": "37c752df-9c09-423f-92b1-40e392ad3e3f",
+  "short_text": "Booking Tracker",
+  "content": "Complete the given **Booking** class by adding new features by following the given instructions.\n\n**Existing _Booking_ class**:\n\nThe existing **Booking** class has only a _pass_ statement. Remove the _pass_ statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to **_Booking_** class**</summary>\n\n- **Add below attributes**\n  - The **Booking** class should have the following instance attributes:\n    - **booking_id**\n    - **passengers**\n    - **flight**\n  \n- Increment the **booking_count** everytime when a new instance is created.\n  \n- **Add below methods**\n  - An instance method named `confirm()` that prints `Booking confirmed!`.\n  - A class method named `getbooking_count()` that keeps track of the total number of bookings made. This method should return the current count of bookings.\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not edit or delete the `default_test` code.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "cacaa3e8-a1b5-4851-ad25-953ae3b7775c",
+      "code_content": "class Booking:\n    # Class attribute to keep track of booking count\n    booking_count = 0\n\n    def __init__(self, booking_id, passengers, flight):\n        self.booking_id = booking_id\n        self.passengers = passengers\n        self.flight = flight\n        Booking.booking_count += 1\n\n    def confirm(self):\n        print(\"Booking confirmed!\")\n\n    @classmethod\n    def getbooking_count(cls):\n        return cls.booking_count\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    booking = Booking(booking_id=1, passengers=[\"Alice\", \"Bob\"], flight=\"AI-202\")\n    booking.confirm()\n    print(Booking.getbooking_count())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0fbeeb0b-070c-4ba5-aca6-cca1748b76a2",
+      "input": "Checking Default Tests",
+      "output": "Booking confirmed!\n1",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "16af7366-ea19-4f96-aea5-abfb92e63a0b",
+      "input": "Checking methods",
+      "output": "Booking confirmed!\nPASS: confirm method is implemented correctly.\nPASS: getbooking_count method is implemented correctly.\nPASS: getbooking_count is implemented correctly as a @classmethod.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e018d96e-6948-4665-a58e-d291338dc844",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: Attributes are implemented correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "131f81d6-8163-4839-93be-e4de5501ecaf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

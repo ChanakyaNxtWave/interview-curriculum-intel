@@ -1,0 +1,61 @@
+{
+  "question_id": "372abd99-f29c-4da0-9cb3-ae939a403503",
+  "short_text": "Recursive Digit Sum-2",
+  "content": "In a tech-savvy town, residents often share their phone numbers in various formats, including dashes, spaces, and parentheses. One day, a curious student decides to analyze their friends' phone numbers to find out the total sum of all the digits in each number. They want to ignore any non-digit characters to focus solely on the numerical values.\n\nYour task is to help this student by **completing the method `sum_of_phone_digit(phone_number)`.** This method should take a phone number as a **string** and return the **sum of its digits**.\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe **`sum_of_phone_digits()`** method takes one parameter `phone_number`, representing the phone number.\n\n\n---\n\n#### Output:\n\nThe **`sum_of_phone_digits()`** method should **return a integer** representing the sum of all digits in the phone number.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n123-456-7890\n```\n\n- Digits: 1,2,3,4,5,6,7,8,9,0\n- Sum: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 0 = 45\n\nThe expected output would be :\n\n```\n45\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "cf507f99-ece2-4bd4-aab2-dc5300a3dc4f",
+      "code_content": "def sum_of_phone_digits(phone_number):\n    if not phone_number:\n        return 0\n    first_char = phone_number[0]\n    if first_char.isdigit():\n        return int(first_char) + sum_of_phone_digits(phone_number[1:])\n    else:\n        return sum_of_phone_digits(phone_number[1:])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10ff43a2-d087-4d47-9e4d-1d608adf40b7",
+      "input": "123-456-7890",
+      "output": "45",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "25b2fe7a-6389-46fe-b421-f9e2265e8520",
+      "input": "555 123 789",
+      "output": "45",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "adec3295-8913-4366-84ca-89bfa823ab01",
+      "input": "(987) 654-3210",
+      "output": "45",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "be05566a-e20f-4203-9616-3d7210eb9c71",
+      "input": "8956236989",
+      "output": "65",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d783a8ac-ccfa-486a-a97e-5f763756000e",
+      "input": "800-123-4567",
+      "output": "36",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "efaa14e6-913e-41ae-b575-e2a588294405",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

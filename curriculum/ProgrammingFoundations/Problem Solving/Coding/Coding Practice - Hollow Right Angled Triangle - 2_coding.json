@@ -1,0 +1,89 @@
+{
+  "question_id": "1bd815b7-e5ed-4982-9222-1f2cbdc59b4f",
+  "short_text": "Hollow Right Angled Triangle - 2",
+  "content": "Given a number `N`, write a program to print a **Right Angled Triangle** of `N` rows using underscore (`_`), pipe (`|`), and forward slash (`/`).\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing underscore (`_`), pipe (`|`), and forward slash (`/`) as a **Right Angled Triangle** shown in the sample output. \r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- Print underscore (`_`), pipes (`|`), and forward slashes (`/`) on **6** rows as shown in the given image.\r\n  - The first row contains **6** underscores.\r\n  - The next **5** rows contain pipe (`|`) and forward slash (`/`).\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-2-v2.png' widthPercent='60'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates a space (\" \").\r\n- The Underscore in the box indicates an underscore (\"_\").\r\n- The Pipe in the box indicates a pipe (\"|\").\r\n- The Forward slash in the box indicates a forward slash (\"/\").\r\n</MultiLineNote>\r\n\r\n\r\n```\r\n______\r\n|    /\r\n|   /\r\n|  /\r\n| /\r\n|/\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d2886cdc-0222-4abe-8711-09e63e4caaa9",
+      "code_content": "n = int(input())\n\nprint(\"_\" * (n + 1))\nfor i in range(n):\n    print(\"|\" + \" \" * (n - 1 - i) + \"/\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "13ed5d84-bdce-4c21-be6b-b94667b1b5ba",
+      "input": "4",
+      "output": "_____\n|   /\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "25a68284-f09f-4d52-8d24-7f6254415f00",
+      "input": "5",
+      "output": "______\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "529b6b57-bb4d-4cac-9fc6-6f17feb150f5",
+      "input": "25",
+      "output": "__________________________\n|                        /\n|                       /\n|                      /\n|                     /\n|                    /\n|                   /\n|                  /\n|                 /\n|                /\n|               /\n|              /\n|             /\n|            /\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "675e7cbb-22a5-4055-a621-ddf7fe36c739",
+      "input": "45",
+      "output": "______________________________________________\n|                                            /\n|                                           /\n|                                          /\n|                                         /\n|                                        /\n|                                       /\n|                                      /\n|                                     /\n|                                    /\n|                                   /\n|                                  /\n|                                 /\n|                                /\n|                               /\n|                              /\n|                             /\n|                            /\n|                           /\n|                          /\n|                         /\n|                        /\n|                       /\n|                      /\n|                     /\n|                    /\n|                   /\n|                  /\n|                 /\n|                /\n|               /\n|              /\n|             /\n|            /\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "71bbd10d-506f-4c9f-88f9-15f3709f5fb8",
+      "input": "10",
+      "output": "___________\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7753a3d1-6222-474e-ae62-3f0926d76a67",
+      "input": "50",
+      "output": "___________________________________________________\n|                                                 /\n|                                                /\n|                                               /\n|                                              /\n|                                             /\n|                                            /\n|                                           /\n|                                          /\n|                                         /\n|                                        /\n|                                       /\n|                                      /\n|                                     /\n|                                    /\n|                                   /\n|                                  /\n|                                 /\n|                                /\n|                               /\n|                              /\n|                             /\n|                            /\n|                           /\n|                          /\n|                         /\n|                        /\n|                       /\n|                      /\n|                     /\n|                    /\n|                   /\n|                  /\n|                 /\n|                /\n|               /\n|              /\n|             /\n|            /\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a1551a40-279b-4d7f-8ad5-e2c2ee282193",
+      "input": "7",
+      "output": "________\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c1254855-d88d-47d7-88fc-b3ce242dd581",
+      "input": "35",
+      "output": "____________________________________\n|                                  /\n|                                 /\n|                                /\n|                               /\n|                              /\n|                             /\n|                            /\n|                           /\n|                          /\n|                         /\n|                        /\n|                       /\n|                      /\n|                     /\n|                    /\n|                   /\n|                  /\n|                 /\n|                /\n|               /\n|              /\n|             /\n|            /\n|           /\n|          /\n|         /\n|        /\n|       /\n|      /\n|     /\n|    /\n|   /\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ca091887-a2d0-4fff-90d5-380da2c0ecea",
+      "input": "3",
+      "output": "____\n|  /\n| /\n|/",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

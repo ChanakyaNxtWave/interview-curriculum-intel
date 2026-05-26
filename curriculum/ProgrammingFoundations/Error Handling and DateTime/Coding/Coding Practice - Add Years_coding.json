@@ -1,0 +1,75 @@
+{
+  "question_id": "726ea299-e1a5-45bc-bc41-817bf3cdaca4",
+  "short_text": "Add Years",
+  "content": "You are given a date D1 and an integer Y.<br/>Write a program to add the years Y to D1 and display the new date D2.<br/>Note: Assume 1 year has 365 days<br/><hr><b>Input</b><br/><br/>The first line of input will be a string, denoting the D1 in the string format similar to &quot;Jul 11 2021&quot;.<br/>The second line of input will be an integer, denoting the Y to be added.<hr><b>Output</b><br/><br/>The output should be a single line containing the new date D2.<hr><b>Explanation</b><br/><br/>For example, if the given D1 is &quot;Jul 11 2014&quot; and Y is 5. Your code should print the date which is ahead of 5 years from the D1. So the output should be<br/>2019-07-11 00:00:00",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "405992d1-2ae0-4fa8-be57-088341048680",
+      "code_content": "from datetime import datetime, timedelta\n\n# string to datetime\ndate_time_string = input()\nn = int(input())\ndate_object = datetime.strptime(date_time_string, '%b %d %Y')\n\nd_2 = date_object + timedelta(days=n*365)\nprint(d_2)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "35d6b15d-6fa7-494d-94e8-007b61e9c2b1",
+      "input": "Jul 11 2014\n5",
+      "output": "2019-07-10 00:00:00\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "38393718-2ff2-48e9-b09b-4721e908db66",
+      "input": "Jan 28 2021\n-2",
+      "output": "2019-01-29 00:00:00\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7c6a85d0-d508-44f0-b4e3-edb9650545e2",
+      "input": "Dec 18 2018\n0",
+      "output": "2018-12-18 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c8d0d4e9-cf89-41fd-b47b-09b152e1de2d",
+      "input": "Feb 29 2016\n-11",
+      "output": "2005-03-03 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "d46a4e35-08d9-49d8-a094-d851a73d1c9f",
+      "input": "Mar 12 2013\n4",
+      "output": "2017-03-11 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d89d74cc-384b-4635-88b8-7e7fdf02b314",
+      "input": "Feb 29 2000\n1",
+      "output": "2001-02-28 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e610aa3a-1810-4f4d-a784-329d5415cd2b",
+      "input": "Jan 31 2009\n5",
+      "output": "2014-01-30 00:00:00\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f543f8cb-9c90-4462-a019-4620b579057f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

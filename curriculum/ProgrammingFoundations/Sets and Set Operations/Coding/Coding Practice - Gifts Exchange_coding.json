@@ -1,0 +1,61 @@
+{
+  "question_id": "8ef4083e-51ce-408d-ac56-3324f47897a4",
+  "short_text": "Gifts Exchange",
+  "content": "In a vibrant city, two communities often exchange gifts during their annual festival. Each community has a list of items they plan to give away. However, they want to ensure that they only exchange items that both communities have in common. Your task is to help them find and print the items that appear in both lists. If there are no common items, print **`NO GIFTS`**.\n\nWrite a program that reads two lists of integers representing the item IDs from each community and prints the item IDs that are in both communities. The output should be sorted in ascending order. If there are no common items, output **`NO GIFTS`**.\n\n---\n\n#### Input\n\n- The first line contains integers separated by spaces representing item IDs from the first community.\n- The second line contains integers separated by spaces representing item IDs from the second community.\n\n\n---\n\n#### Output\n\nA single line with integers representing the common item IDs, separated by spaces and sorted in ascending order. If there are no common items, print **`NO GIFTS`**.\n\n---\n\n#### Explanation\n\nFor example If the input is \n\n```\n1 2 3 4\n2 3 5\n```\n\nThe expected output would be \n\n\n```\n2 3\n```\n\nThis is because item IDs `2` and `3` are present in both lists.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "27019281-f049-4d52-a9f2-0fc263ed72ae",
+      "code_content": "community1_items = set(input().split())\ncommunity2_items = set(input().split())\n\ncommon_items = community1_items.intersection(community2_items)\n\nif common_items:\n    sorted_common_items = sorted(common_items)\n    print(\" \".join(map(str, sorted_common_items)))\nelse:\n    print(\"NO GIFTS.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0935b6c5-1125-407d-869e-6d2bb2d7994e",
+      "input": "1 2 3\n1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "30be9a0a-04cc-4053-b90e-6903e9b00e0f",
+      "input": "3 5 4 8 8\n2 9",
+      "output": "NO GIFTS.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7eefdc6c-6a30-438b-b779-e5ef15b0ca55",
+      "input": "1 2 3 4\n2 3 5",
+      "output": "2 3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "be8019c7-c769-49a9-bd3e-2995732df1d7",
+      "input": "2 5 8 9 7\n7 8 5 6",
+      "output": "5 7 8",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f2fb8845-0b43-4326-bf7b-94026daffdee",
+      "input": "7 7 7\n3 3 3",
+      "output": "NO GIFTS.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e5e0e9f7-bf83-4d89-b157-6b712762a6e6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

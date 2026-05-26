@@ -1,0 +1,61 @@
+{
+  "question_id": "dd046779-e78a-4ed0-8ead-1d0600033a4e",
+  "short_text": "Identify the Mistake - String Formatting",
+  "content": "Given two strings, name and sport. Write a program using string formatting to concatenate the name followed by the message &quot;is playing&quot; and followed by the sport.<hr><b>Input</b><br/><br/>The first line of input will contain a string.<br/>The second line of input will contain a string.<hr><b>Output</b><br/><br/>The output should be a single line concatenating the message with the given inputs.<hr><b>Explanation</b><br/><br/>For example, if the given name is &quot;Raju&quot; and the sport is &quot;cricket&quot;, your code should print the message concatenating the name and sport. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Raju is playing Cricket\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "e2598090-092e-4eb5-a061-5c16afb6b529",
+      "code_content": "str_a = input()\nstr_b = input()\nmessage = \"{arg_1} is playing {arg_2}\"\nprint(message.format(arg_1=str_a, arg_2=str_b))\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4b2fdf99-a3fe-40de-8414-dd38b88490c2",
+      "input": "Geetha\nFootball",
+      "output": "Geetha is playing Football\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "563e4ddd-9bab-4ae1-b559-d05f15321798",
+      "input": "Raju\nCricket",
+      "output": "Raju is playing Cricket\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "611a9d51-4ef0-4410-a50c-8594450054ff",
+      "input": "Latha\nTennis",
+      "output": "Latha is playing Tennis\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "7ff55899-9851-40cd-b870-19b1c091d327",
+      "input": "Bhaskar\nGolf",
+      "output": "Bhaskar is playing Golf\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "97fe722c-7299-4abb-9332-0851b901655b",
+      "input": "Hari\nSwimming",
+      "output": "Hari is playing Swimming\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

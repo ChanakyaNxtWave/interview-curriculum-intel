@@ -1,0 +1,47 @@
+{
+  "question_id": "66b75c52-84f9-4b6a-bfa4-3693c8e830d4",
+  "short_text": "BankAccount",
+  "content": "Complete the given `BankAccount` class by adding new features by following the given instructions.\n\n<details>\n<summary>**Features to be added to `BankAccount` class**</summary>\n\n- **Add below attributes**:\n - The `BankAccount` class should have the following attributes:\n  - `owner` (public)\n  - `__balance` (private)\n  - `__secret_key` (private)\n\n- **Add below methods**:\n - `show_details()` (public): Prints the owner and balance details.\n   - Output format :\n\n```\nAccount Owner: {owner}\nAccount Balance: {balance}\n```\n - `get_balance(secret_key)` (public): Returns the balance if the correct secret key is provided, otherwise prints **`Invalid secret key`**.\n - `set_balance(new_balance, secret_key)` (public): Sets the new balance if the correct secret key is provided, otherwise prints **`Invalid secret key`**.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "637c8383-1899-4511-8462-940b444d3616",
+      "code_content": "class BankAccount:\n    def __init__(self, owner, balance, secret_key):\n        self.owner = owner\n        self.__balance = balance\n        self.__secret_key = secret_key\n    \n    def show_details(self):\n        print(\"Account Owner:\", self.owner)\n        print(\"Account Balance:\", self.__balance)\n    \n    def get_balance(self, secret_key):\n        if secret_key == self.__secret_key:\n            return self.__balance\n        else:\n            print(\"Invalid secret key\")\n            return None\n    \n    def set_balance(self, new_balance, secret_key):\n        if secret_key == self.__secret_key:\n            self.__balance = new_balance\n        else:\n            print(\"Invalid secret key\")\n\ndef default_test():\n    # Create an instance of BankAccount and test the methods\n    account = BankAccount(\"John Doe\", 5000, \"secret123\")\n    account.show_details()\n    print(\"Account Balance:\", account.get_balance(\"secret123\"))\n    account.set_balance(8000, \"secret123\")\n    print(\"Updated Account Balance:\", account.get_balance(\"secret123\"))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5206041e-ddd2-481b-8be6-095c7f8a0003",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are correctly implemented.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "755ad4e5-5df7-418c-9580-028b1dba6381",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are correctly implemented.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9a4c5351-fda3-47ee-9733-c0c8755e660d",
+      "input": "Checking Default Tests",
+      "output": "Account Owner: John Doe\nAccount Balance: 5000\nAccount Balance: 5000\nUpdated Account Balance: 8000",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3b2806d7-65a4-47d6-9515-c37099a98115",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "c03dfae0-c9ef-41d9-9295-91bbb67fcd7c",
+  "short_text": "Divisible by 6",
+  "content": "Given two numbers `M` and `N`, write a program to find the count of numbers from `M` to `N` that are divisible by **6**.\n\nPrint **No Numbers Found** if the count of numbers from `M` to `N` that are divisible by **6** is **0**. Otherwise, print the numbers from `M` to `N` that are divisible by **6** separated by a space.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing the string. **No Numbers Found** should be printed if the count of numbers from `M` to `N` that are divisible by **6** is **0**. Otherwise, space-separated numbers from `M` to `N` that are divisible by **6** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 6` and `N = 23`,\n\n- The numbers from **6** to **23** that are divisible by **6** are **6**, **12**, and **18**.\n- So, the count of numbers from **6** to **23** that are divisible by **6** is **3**.\n- The string obtained after joining the numbers from **6** to **23** that are divisible by **6** with a space is **6 12 18**.\n\nThe output should be **6 12 18**.\n\n<br/>\n\nFor example, if the given numbers are `M = 2` and `N = 5`,\n\n- There are no numbers from **2** to **5** that are divisible by **6**.\n- So, the count of numbers from **2** to **5** that are divisible by **6** is **0**.\n\nThe output should be **No Numbers Found**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c4bff455-07eb-42bc-b9c7-341d56173cb2",
+      "code_content": "m = int(input())\nn = int(input())\n\ncount = 0\nnumbers_divisible_by_6 = \"\"\n\nfor number in range(m, n + 1):\n    \n    if number % 6 == 0:\n        count = count + 1\n        numbers_divisible_by_6 = numbers_divisible_by_6 + str(number) + \" \"\n        \nif count == 0:\n    print(\"No Numbers Found\")\nelse:\n    print(numbers_divisible_by_6)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "36bc542b-8332-4e11-b82f-a84d0eca19f8",
+      "input": "979\n990",
+      "output": "984 990",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6d3b0b80-a23b-4ed3-acaa-df3510be89b8",
+      "input": "6\n23",
+      "output": "6 12 18",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7a9bebac-251d-4df4-8f2f-0a5dc6a88660",
+      "input": "2\n5",
+      "output": "No Numbers Found",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "92ead77b-cd58-4ff5-9792-e854a74ef063",
+      "input": "97\n107",
+      "output": "102",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ac361e9e-6454-4462-9a56-b3001179b6a0",
+      "input": "30\n120",
+      "output": "30 36 42 48 54 60 66 72 78 84 90 96 102 108 114 120",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "f853a00e-ab06-46a9-b763-0f3aa22e3843",
+      "input": "271\n271",
+      "output": "No Numbers Found",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "a18a4aab-a0f3-403f-a3a1-0c15f4ea0968",
+  "short_text": "Growing Bacteria",
+  "content": "A young scientist is conducting an experiment on bacteria growth. The bacteria doubles its size at a fixed rate after a specific time interval. Given the initial size of the bacteria as `X` and the number of growth intervals `N`, calculate the final size of the bacteria using the formula **X<sup>N</sup>** and rounded upto 2 decimal places.\n\n<MultiLineNote>\n\n- Use the formula **X<sup>N</sup>** to calculate the final size.\n- Round the final result upto 2 decimal places.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\n- A float `X` representing the initial size of the bacteria.\n- An integer `N` representing the number of growth intervals.\n\n---\n\n#### Output\n\nA single line with a float representing the final size of the bacteria.\n\n---\n\n#### Explanation\n\nIf the initial size of the bacteria `X` is `2.0` and the number of growth intervals `N` is `3`, the final size is **8.0** (**2.0<sup>3</sup> = 8.0**).\n\nThe output should be **8.0**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "00d7dbbd-2b5b-4fa7-a00e-ab9210f91f73",
+      "code_content": "X = float(input())\nN = int(input())\nresult = round(X ** N, 2)\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4ee733f3-22bc-4ae3-9934-22734936d9bb",
+      "input": "0.5\n5",
+      "output": "0.03",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7d247ed3-f441-48ad-8b6b-4046c760fcc7",
+      "input": "3.0\n4",
+      "output": "81.0",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9a2f63f0-f4a6-4848-9550-26de6eb2a6d9",
+      "input": "1.1\n10",
+      "output": "2.59",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9a3dd84d-9282-4f3c-95a6-5ccf67c47340",
+      "input": "1.5\n2",
+      "output": "2.25",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "de83467a-89f8-4152-97a2-68a976322e30",
+      "input": "2.0\n3",
+      "output": "8.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e12f5290-9206-4570-818e-a229b46db048",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

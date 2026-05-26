@@ -1,0 +1,61 @@
+{
+  "question_id": "7f1a4cb9-74f2-427a-8de0-9f481772dd7f",
+  "short_text": "First Negative Number",
+  "content": "Given a number `N`, write a program that reads `N` inputs and prints the first negative number among the `N` inputs.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `N`.\r\nThe next `N` lines of input contain integers.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the first negative number among the given `N` inputs.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- The given **5** numbers are,\r\n\r\n```\r\n  8\r\n 11\r\n-96\r\n 49\r\n-25\r\n ```\r\n- Negative numbers in the given numbers are **-96** and **-25**.\r\n- The first negative number among the given numbers is **-96**.\r\n\r\nThe output should be **-96**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ecba5d29-f96b-48df-9b15-b928da73b5f3",
+      "code_content": "n = int(input())\nfor i in range(n):\n    number = int(input())\n    if number < 0:\n        print(number)\n        break\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5c134618-160e-4e19-99aa-df440a2628cb",
+      "input": "10\n-9\n-2\n-100\n-2\n10\n566\n83\n32\n-982\n34",
+      "output": "-9\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "85a799d7-a97c-4394-9760-19d21cba3153",
+      "input": "1\n-18\n",
+      "output": "-18\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8f07a0c0-762f-4666-83bd-d308846db8f9",
+      "input": "3\n1\n-2\n3",
+      "output": "-2\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9d5c3f02-c150-4a53-8602-25442fa91271",
+      "input": "8\n18\n11\n96\n49\n25\n1\n0\n-1",
+      "output": "-1\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e8d17dfa-7935-47cf-aa1b-f32fcbdfc0bb",
+      "input": "5\n8\n11\n-96\n49\n-25",
+      "output": "-96\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

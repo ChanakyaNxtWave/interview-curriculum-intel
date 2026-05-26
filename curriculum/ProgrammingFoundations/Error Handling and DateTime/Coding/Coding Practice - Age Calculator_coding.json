@@ -1,0 +1,61 @@
+{
+  "question_id": "6ae74a58-3aae-4a5a-bde7-fed453c394a0",
+  "short_text": "Age Calculator",
+  "content": "You have to create a simple age calculator that determines how old a person is based on their birthdate. This tool will help users understand their age in a more detailed way, breaking it down into years, months, and days.\n\nWrite a Python program that takes the user's birthdate and the current date as input and calculates their age in years, months, and days.\n\n---\n\n#### Input\n\n- The first line contains the user's birthdate in the format **`YYYY-MM-DD`**.\n- The second line contains the current date in the format **`YYYY-MM-DD`**.\n\n---\n\n#### Output\n\nThe output should display the user's age in the following format:\n\n```\nYou are X years, Y months, and Z days old.\n```\n\n---\n\n#### Explanation\n\n\nIf the input is \n\n```\n1990-05-15\n2024-02-05\n```\n\nThe output should be\n\n```\nYou are 33 years, 8 months, and 21 days old.\n```\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b5d1fd87-4c20-41a9-94b6-e04fd7e45de8",
+      "code_content": "from datetime import datetime\n\nbirthdate_input = input()\ncurrent_date_input = input()\n\nbirthdate = datetime.strptime(birthdate_input, \"%Y-%m-%d\")\ncurrent_date = datetime.strptime(current_date_input, \"%Y-%m-%d\")\n\nage_years = current_date.year - birthdate.year\nage_months = current_date.month - birthdate.month\nage_days = current_date.day - birthdate.day\n\nif age_days < 0:\n    age_months -= 1\n    age_days += (birthdate.replace(month=birthdate.month % 12 + 1, day=1) - birthdate.replace(day=1)).days\n\nif age_months < 0:\n    age_years -= 1\n    age_months += 12\n\nprint(f\"You are {age_years} years, {age_months} months, and {age_days} days old.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "066a0b44-275f-4ada-81b7-ab0bf3c8a721",
+      "input": "2000-01-01\n2024-01-01",
+      "output": "You are 24 years, 0 months, and 0 days old.",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "175433ac-9cae-4739-ad64-5a1397058954",
+      "input": "1978-07-04\n2024-09-05",
+      "output": "You are 46 years, 2 months, and 1 days old.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4d653a32-d405-48e6-82cc-80018e6b5747",
+      "input": "1975-07-04\n2024-02-05",
+      "output": "You are 48 years, 7 months, and 1 days old.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "af6f98b2-a492-4efe-9754-bcd13e7c2009",
+      "input": "1990-05-15\n2024-02-05",
+      "output": "You are 33 years, 8 months, and 21 days old.",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b1fc935f-4ef5-44e2-86a1-746f3754029b",
+      "input": "1985-10-25\n2024-02-05",
+      "output": "You are 38 years, 3 months, and 11 days old.",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "fa01dfac-d860-47cb-afd0-a24a8349ee9b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

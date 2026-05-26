@@ -1,0 +1,82 @@
+{
+  "question_id": "66bca2f2-6d4d-4f37-a90c-bcdcc5566e22",
+  "short_text": "Sum of the Series - 2",
+  "content": "A function is given in the prefilled code that takes two numbers `X` and `N` as arguments.\n\nWrite a program that returns the **sum** of the given series up to `N` terms using Recursion.\n\n**Series:**\n\n<div style=\"background-color: #3c4257; padding: 15px; color: #f8f8f2;border-radius: 4px;margin: 10px;font-size: 18px;font-family:Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace\">\nX, X-2, X-4, X-6, ... N terms\n</div>\n\n<br/>\n\n**Terms in the given series:**\n\n| Term Number | Term             | \n| ----------- | -----------------| \n| First Term  | (X)              |            \n| Second Term | (X - 2)          |         \n| Third Term  | (X - 4)          | \n| ..          | ..               |          \n| Nth Term    | (X - 2 * (N - 1))|           \n\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `X`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the sum of the series **(X, X - 2, X - 4, ...)** up to `N` terms.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `X = 8` and `N = 3`,\n\n- The number of terms is **3**.\n- The **First term** to **Third term** in the given series are **8** (8 - 0), **6** (8 - 2) and **4** (8 - 4).\n\n  **Terms in the given series:**\n  \n  | Term Number | Term                     |\n  | ----------- | ------------------------ |\n  | First Term  | 8 - 0 (8)  |\n  | Second Term | 8 - 2 (6)  | \n  | Third Term  |8 - 4 (4) |\n\n\n\n- The sum of the series from **First** to **Third** is **18**. (`8 + 6 + 4 = 18`)\n\nThe output should be **18**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "386176ed-5baf-45ae-b9dd-6ebcdb0ae9d2",
+      "code_content": "def get_sum_of_series(number, number_of_terms):\n    \n    if number_of_terms == 1:\n        return number\n    \n    return number + get_sum_of_series(number - 2, number_of_terms - 1)\n\nnumber = int(input())\nnumber_of_terms = int(input())\n\nseries_sum = get_sum_of_series(number, number_of_terms)\nprint(series_sum)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "617e26e8-fecb-43f0-8429-a682167a8841",
+      "input": "-1\n4",
+      "output": "-16",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "927871ff-d339-4267-b623-0c150ed28bc3",
+      "input": "20\n3",
+      "output": "54",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a09fd9f1-f9a8-4ae5-828f-b103602cac43",
+      "input": "-9\n10",
+      "output": "-180",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "a65b0d63-3699-4a32-878d-921e2fd72e9f",
+      "input": "10\n10",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b1d847f5-21f3-45fc-b99e-022b0969faae",
+      "input": "32\n50",
+      "output": "-850",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b6d4c348-1dfc-41ab-a9b5-2e282f97166f",
+      "input": "8\n3",
+      "output": "18",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dfdaadbf-59c5-429a-952a-e00fd1772b9b",
+      "input": "2\n4",
+      "output": "-4",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "efebb1a1-07fc-4738-9193-a107cff138bf",
+      "input": "14\n15",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

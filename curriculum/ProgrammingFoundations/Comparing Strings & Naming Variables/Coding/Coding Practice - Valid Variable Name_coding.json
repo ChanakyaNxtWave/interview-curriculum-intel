@@ -1,0 +1,89 @@
+{
+  "question_id": "ef419696-4b31-4d4d-b749-175dd6f868c9",
+  "short_text": "Valid Variable Name",
+  "content": "Given a variable name `S`, check if `S` is a valid variable name. The variable name is valid if it contains only **upper case** letters, **lower case** letters, and **digits**. \r\n\r\nPrint **True** if `S` is a valid variable name. Otherwise, print **False**.\r\n\r\n<MultiLineNote>\r\n- The Unicode values of **upper case** letters (`A - Z`) are from **65** to **90**.\r\n- The Unicode values of **lower case** letters (`a - z`) are from **97** to **122**.\r\n- The Unicode values of **digits** (`0 - 9`) are from **48** to **57**.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string representing `S`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if `S` is a valid variable name. Otherwise, print **False**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given variable name is `S = \"eachNumber\"`,\r\n\r\n- The characters in the variable name `S` are **e, a, c, h, N, u, m, b, e,** and **r**.\r\n- The variable name `S` contains only **upper case** and **lower case** letters.\r\n\r\nThe output should be **True**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "3f561755-f7e7-409b-9e8b-1e7ec4cf7316",
+      "code_content": "variable_name = input()\n\nis_valid = True \n\nfor each_character in variable_name:\n    unicode_value = ord(each_character)\n    valid_character = (65<=unicode_value and 90>=unicode_value) or (97<=unicode_value and 122>=unicode_value) or (48<=unicode_value and 57>=unicode_value)\n    \n    if not valid_character:\n        is_valid = False\n        break \n    \nprint(is_valid)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1ab45f11-407a-44a4-b916-20c3823b41dd",
+      "input": "eachNumber",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "582dfd9e-6e3d-4a3c-9650-ba84e4b0ed08",
+      "input": "is even",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5c682a1e-b14e-4bc3-a57b-51e3a77f1511",
+      "input": "abc123",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5d2525ee-63b4-4c22-a2a2-6959daae7468",
+      "input": "StringLength",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "688ea851-9887-4c80-a6b0-f7c4fcfd1be6",
+      "input": "variable name",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "8897d585-5a20-4be0-91d5-e96826fe980c",
+      "input": "a%b",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d466764c-b0aa-496d-bfe2-d6fa65cb8b79",
+      "input": "bcd-1",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e3ec12d9-60fd-4a63-af11-867c45bf8231",
+      "input": "variable_length",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f99a691f-7198-43f2-a139-bcf919847d8f",
+      "input": "Add",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

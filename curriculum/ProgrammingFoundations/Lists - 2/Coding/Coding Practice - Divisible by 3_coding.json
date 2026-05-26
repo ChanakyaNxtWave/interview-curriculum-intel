@@ -1,0 +1,68 @@
+{
+  "question_id": "43b9012b-7928-40ff-be52-9fb466745491",
+  "short_text": "Divisible by 3",
+  "content": "Given space-separated numbers, write a program to print a list containing the given numbers that are divisible by **3** \n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list of given integers that are divisible by **3**.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `3 10 9 11 18 20`,\n\n- The given numbers are **3**, **10**, **9**, **11**, **18**, and **20**.\n- The numbers divisible by **3** from the given numbers are **3**, **9**, and **18**.\n\nThe output should be,\n\n```\n[3, 9, 18]\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6e46ab69-dd97-4a4e-88f3-db4d5c17f599",
+      "code_content": "numbers = input()\n\nnumbers_list = numbers.split()\n\ndivisible_by_3_list = []\n\nfor number in numbers_list:\n    number = int(number)\n\n    if number % 3 == 0:\n        divisible_by_3_list += [number]\n\nprint(divisible_by_3_list)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1eaf7791-c131-4c6c-84b8-3d8b9d377d7a",
+      "input": "3 10 9 11 18 20",
+      "output": "[3, 9, 18]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "267932c9-9c17-4bfa-9ac7-1789975a86d6",
+      "input": "-12 10 56",
+      "output": "[-12]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "3825f15d-74ea-41c6-a3d7-7bbae52007fa",
+      "input": "03 7854 0168 4662",
+      "output": "[3, 7854, 168, 4662]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "471ea966-c4de-47a4-b198-3fcec0b020df",
+      "input": "-14 -27 -09 -657 -894 -543 -1598",
+      "output": "[-27, -9, -657, -894, -543]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "588ea340-7ffd-461d-bcce-2087d7df8569",
+      "input": "1 74 27 66 10 12 347 591",
+      "output": "[27, 66, 12, 591]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6e9da257-9a6a-476d-ae70-9c7215abe552",
+      "input": "300 485 142 1596",
+      "output": "[300, 1596]",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

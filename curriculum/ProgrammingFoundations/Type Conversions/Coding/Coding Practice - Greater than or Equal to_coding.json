@@ -1,0 +1,144 @@
+{
+  "question_id": "c9fa74a0-6df5-444d-88d0-6fd559798773",
+  "short_text": "Greater than or Equal to",
+  "content": "Write a program that reads two numbers `A` and `B` and checks if `A` is greater than or equal to `B`. Print the result as shown in the sample output.\n\n---\n\n#### Input\n\nThe first line of input contains a float.\nThe second line of input contains a float.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string as shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 4.3` and `B = 3.2`, \n\n* `A` is greater than or equal to `B`: **True**. (**4.3** is greater than or equal to **3.2**)\n* Add the string **\"A >= B is \"** before **True**. \n\nThe output should be **A >= B is True**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f811b6da-d38d-4042-b608-8b72358a3480",
+      "code_content": "a = input()\na = float(a)\nb = input()\nb = float(b)\n\nresult = a >= b\nresult = str(result)\n\nprint(\"A >= B is \" + result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "5d91ad47-5698-471b-ad75-6d4383776dff",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n35.2\n25.2\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "A >= B is True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 35.2` and `B = 25.2`, \n\n* `A` is greater than or equal to `B`: **True**. (**35.2** is greater than or equal to **25.2**)\n* Add the string **\"A >= B is \"** before **True**. \n\nThe output should be **A >= B is True**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "68e89f6f-d541-4cff-8614-eca5c3f08bff",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n10.0\n11.1\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "A >= B is False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 10.0` and `B = 11.1`, \n\n* `A` is greater than or equal to `B`: **False**. (**10.0** is not greater than or equal to **11.1**)\n* Add the string **\"A >= B is \"** before **False**. \n\nThe output should be **A >= B is False**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "788aa038-4236-4f73-9819-d8e926924b4a",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n15.0\n15.0\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "A >= B is True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 15.0` and `B = 15.0`, \n\n* `A` is greater than or equal to `B`: **True**. (**15.0** is greater than or equal to **15.0**)\n* Add the string **\"A >= B is \"** before **True**. \n\nThe output should be **A >= B is True**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "4baad05b-e5f1-4cb0-bf83-d3f1fbaedf96",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n1.3\n1.9\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "A >= B is False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 1.3` and `B = 1.9`, \n\n* `A` is greater than or equal to `B`: **False**. (**1.3** is not greater than or equal to **1.9**)\n* Add the string **\"A >= B is \"** before **False**. \n\nThe output should be **A >= B is False**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "92923c96-34f0-4bb3-823c-298a692e24e5",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n56.1 \n23.5\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "A >= B is True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 56.1` and `B = 23.5`, \n\n* `A` is greater than or equal to `B`: **True**. (**56.1** is greater than or equal to **23.5**)\n* Add the string **\"A >= B is \"** before **True**. \n\nThe output should be **A >= B is True**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "531ceff5-f3e6-49fa-ba27-9e4ebbef8d28",
+      "input": "72.72\n-72.72",
+      "output": "A >= B is True",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7730aeb8-b91a-4349-b9d5-60de0a3bc90b",
+      "input": "1000.123\n1000.123",
+      "output": "A >= B is True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "801610e6-ad10-43ff-91d4-0f1f032e7e74",
+      "input": "9.9\n10.0",
+      "output": "A >= B is False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aae8f76e-b776-4857-b96f-3fe306295e07",
+      "input": "4.3\n3.2",
+      "output": "A >= B is True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "da1ab2c8-2cad-4022-b356-2e42e67f8be5",
+      "input": "01.23\n1.22",
+      "output": "A >= B is True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "ecb1a2d5-db1f-440e-9e10-1aa09bf545f1",
+      "input": "-4.1\n-4.0",
+      "output": "A >= B is False",
+      "is_hidden": true,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

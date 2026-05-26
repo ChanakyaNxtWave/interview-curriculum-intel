@@ -1,0 +1,68 @@
+{
+  "question_id": "1b485567-282c-428f-9fc7-9407dc291aa2",
+  "short_text": "Rounding Inputs",
+  "content": "Given a number `N`, write a program that reads `N` numbers and prints each of the given `N` numbers by rounding upto **2** decimals on a new line.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain floats.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing floats that are rounded upto **2** decimals.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 3`\n\n- The **3** numbers are **3.1415**, **2.7183**, and **5.123456**.\n\nIn the given numbers,\n\n- Rounding **3.1415** to **2** decimals is **3.14**.\n- Rounding **2.7183** to **2** decimals is **2.72**.\n- Rounding **5.123456** to **2** decimals is **5.12**.\n\nThe output should be,\n\n```\n3.14\n2.72\n5.12\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "efee64f4-a973-4d51-9647-1e18583445cb",
+      "code_content": "number = int(input())\n\nfor i in range(number):\n    float_number = float(input())\n    print(round(float_number, 2))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "7fe30213-1366-410b-88da-e3829caa2d31",
+      "input": "2\n18.9513\n12.35795",
+      "output": "18.95\n12.36",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8415f89e-1bda-491a-9c1d-8ed5572ffbe1",
+      "input": "5\n14.25836\n2.58963\n98.56248\n24.8625\n75.3159",
+      "output": "14.26\n2.59\n98.56\n24.86\n75.32",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "90a2f0ad-6889-4a29-b52b-2479e23fb1b6",
+      "input": "1\n7.536941",
+      "output": "7.54",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9e0afbe1-78d0-4b23-9c90-446a5dfcc593",
+      "input": "3\n3.1415\n2.7183\n5.123456",
+      "output": "3.14\n2.72\n5.12",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c94429fc-b79d-46ab-bbb8-8af85e1568da",
+      "input": "1\n0.999999",
+      "output": "1.0",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e755e2b7-e68e-46b0-9b70-111736d70034",
+      "input": "4\n1.03485\n2.78954\n9.1739\n5.4682\n3.3951",
+      "output": "1.03\n2.79\n9.17\n5.47",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "5d0f8f4d-2a0f-4c4d-bb6b-c659c14198fa",
+  "short_text": "Split the Sentence",
+  "content": "Given a sentence `S`. The words in the sentence `S` are separated by a space.\n\nWrite a program that prints a list containing the words in the sentence.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list that has the words in the given sentence `S`.\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"Knowledge is power\"`,\n\n- The words in the sentence **\"Knowledge is power\"** are **\"Knowledge\"**, **\"is\"**, and **\"power\"**.\n\nThe output should be,\n\n```\n['Knowledge', 'is', 'power']\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ce370033-c968-41dc-96fb-fc0007dcf66a",
+      "code_content": "sentence  = input()\n\nwords_list = sentence.split()\n\nprint(words_list)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4598bba5-1876-4f86-96c3-88f50e5d735e",
+      "input": "THE SNOW HAS COVERED THE GRASS",
+      "output": "['THE', 'SNOW', 'HAS', 'COVERED', 'THE', 'GRASS']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c4bf9db9-8b57-4d43-835e-9cef78513b38",
+      "input": "1% Improvement EverYdaY MaKes A large DiFFerence at the End",
+      "output": "['1%', 'Improvement', 'EverYdaY', 'MaKes', 'A', 'large', 'DiFFerence', 'at', 'the', 'End']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c5cc1c5b-dbd4-4834-8ce1-a1d02f35103b",
+      "input": "Intent matters over content",
+      "output": "['Intent', 'matters', 'over', 'content']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e992a9cc-10e0-4ec5-8ee9-a767b7ec4f11",
+      "input": "Knowledge is power",
+      "output": "['Knowledge', 'is', 'power']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fa7216c3-c6fb-4959-bc85-446f770cb475",
+      "input": "Python",
+      "output": "['Python']",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "6d32b774-e15b-41e9-83b2-e626c1319a00",
+  "short_text": "Budget-Friendly Pairs",
+  "content": "A group of friends is planning a dinner party and wants to order appetizers. They have a list of prices for different appetizers and a budget for the total cost. Write a program that reads a list of prices for appetizers and a budget, then identifies all unique pairs of appetizers that can be ordered without exceeding the given budget.\n\nThe output should display the pairs as tuples, **sorted in ascending order** by their first element, and if the first elements are the same, then by their **second element**.\n\n---\n\n#### Input\n\nThe input consists of:\n\n- The first line containing a comma-separated **list of integers** representing the prices of the appetizers.\n- The second line containing an **integer**, which represents the budget.\n\n---\n\n#### Output\n\nThe output should be all unique pairs of appetizer prices that sum up to the budget, printed as **tuples in sorted order**.\n\n\n---\n\n#### Explanation\n\nFor example, given the following input\n\n```\n5,3,7,9,5\n12\n```\n\n- The pairs **(5, 7)** and **(3, 9)** both sum up to **`12`**.\n- The tuples are printed in sorted order.\n\n\nThe output should be \n\n```\n(3, 9)\n(5, 7)\n\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "13d7b505-4698-47f3-be8f-c4bd1546a45e",
+      "code_content": "prices_input = input().split(',')\nprices = []\nfor price in prices_input:\n    prices.append(int(price))\n\nK = int(input())\npairs = []\n\nfor i in range(len(prices)):\n    for j in range(i + 1, len(prices)):\n        if prices[i] + prices[j] == K:\n            smaller = min(prices[i], prices[j])\n            larger = max(prices[i], prices[j])\n            pair = (smaller, larger)\n            if pair not in pairs:\n                pairs.append(pair)\n\npairs.sort()\nfor pair in pairs:\n    print(pair)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "51111412-6e09-4511-a15b-5299ceb63a05",
+      "input": "5,5,5,5,5\n10",
+      "output": "(5, 5)",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "551f42d3-564c-457b-bc10-0ccb005f3974",
+      "input": "1,2,3,4,5\n8",
+      "output": "(3, 5)",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "71142123-f76b-45f2-b6d4-86edf605b30d",
+      "input": "1,2,3,4,5\n6",
+      "output": "(1, 5)\n(2, 4)",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d2f7b7b7-29dc-4ab6-b1a1-164548545186",
+      "input": "10,15,3,7\n17",
+      "output": "(7, 10)",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f7107fdd-afd9-4bf1-9e3d-9a950a50f4a3",
+      "input": "5,3,7,9,5\n12",
+      "output": "(3, 9)\n(5, 7)",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

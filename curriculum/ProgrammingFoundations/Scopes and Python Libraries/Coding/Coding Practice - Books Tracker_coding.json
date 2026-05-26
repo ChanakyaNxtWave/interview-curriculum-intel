@@ -1,0 +1,61 @@
+{
+  "question_id": "3eeb9b1d-71c5-4024-8037-1a17b0c25a77",
+  "short_text": "Books Tracker",
+  "content": "Imagine you are developing a simple application for a library that tracks the status of books. Each book can either be available, checked out, or reserved. You have a list of books with their statuses and you want to generate a report of only the available books, along with their titles in uppercase letters.\n\nYour task is to write a program that reads the input for the number of books and their details. Each book has a title and a status. You need to filter out any books that are not available and then use `map` to convert the titles of the available books to uppercase.\n\n<MultiLineNote>\n- A book's status is represented as follows: **`available`**, **`checked out`**, or **`reserved`**.\n- Only books with the status \"available\" should be included in the final report.\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line contains an integer `N` representing the number of books.\n\n- The next `N` lines each contain a string representing the title of the book followed by its status, separated by a comma.\n\n---\n\n#### Output\n\nA list of titles of available books in uppercase letters.\n\n---\n\n#### Explanation\n\nIf you have 4 books with details as follows:\n\n- `The Great Gatsby, available`\n- `1984, checked out`\n- `To Kill a Mockingbird, reserved`\n- `Pride and Prejudice, available`\n\nThen the output should be\n\n```\n['THE GREAT GATSBY', 'PRIDE AND PREJUDICE']\n```\nBecause:\n\n- Only the first and fourth books are marked as `available`.\n- Their titles are converted to uppercase.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ab6dba55-9e2f-4395-a388-31f189b07d8c",
+      "code_content": "N = int(input())\n\nbooks = [input().strip().split(', ') for i in range(N)]\n\ndef is_available(book):\n    return book[1] == 'available'\n\ndef to_uppercase(book):\n    return book[0].upper()\n\navailable_books = filter(is_available, books)\nuppercase_titles = list(map(to_uppercase, available_books))\n\nprint(uppercase_titles)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "24a2a762-5778-4be7-b7cf-b4a692c74835",
+      "input": "5\nHarry Potter, available\nThe Hobbit, reserved\nDune, available\nBrave New World, checked out\nFahrenheit 451, available",
+      "output": "['HARRY POTTER', 'DUNE', 'FAHRENHEIT 451']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "34e9b149-f33a-4cce-ac91-98c6f1cb0663",
+      "input": "3\nMoby kick, checked out\nWar and Peace, available\nThe Catcher in the Rye, reserved",
+      "output": "['WAR AND PEACE']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4540f54e-d707-423c-8073-b38f39a1e8d3",
+      "input": "4\nThe Great Gatsby, available\n1984, checked out\nTo Kill a Mockingbird, reserved\nPride and Prejudice, available",
+      "output": "['THE GREAT GATSBY', 'PRIDE AND PREJUDICE']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9196ed4e-0d5f-4885-8850-c75caadb3ac1",
+      "input": "2\nThe Alchemist, checked out\nSapiens: A Brief History of Humankind, available",
+      "output": "['SAPIENS: A BRIEF HISTORY OF HUMANKIND']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a75ddf1a-48a6-485a-be45-6476ea3f2b45",
+      "input": "6\nThe Odyssey, reserved\nPride and Prejudice, checked out\nTo Kill a Mockingbird, checked out\nWuthering Heights, available\nJane Eyre, available\nThe Catcher in the Rye, reserved",
+      "output": "['WUTHERING HEIGHTS', 'JANE EYRE']",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7f68984f-446c-43bc-a2f6-b66d1992c341",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

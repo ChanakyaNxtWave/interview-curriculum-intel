@@ -1,0 +1,82 @@
+{
+  "question_id": "90e266e7-e4f1-4244-8d2d-d7c3490019a8",
+  "short_text": "Unicode Value of First Uppercase Letter",
+  "content": "Given a string `S`, write a program to print the Unicode value of the first uppercase character in the string `S`.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the Unicode value of the first uppercase character in the given string `S`.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"proGrammeR\"`,\n\n- The characters in the string **`proGrammeR`** are **p**, **r**, **o**, **G**, **r**, **a**, **m**, **m**, **e**, **r** and **R**.\n- The uppercase characters in the string **proGrammeR** are **G** and **R**.\n- The first uppercase character in the string **proGrammeR** is **G**.\n- The Unicode value of **G** is **71**\n\nThe output should be **71**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bd3a042c-8dfe-4afa-bb03-9e6b1501deb6",
+      "code_content": "string = input()\n\nfor each_character in string:\n    if each_character == each_character.upper():\n        print(ord(each_character))\n        break",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2a22a9e8-6ddc-48a9-86a1-7600aade5bc9",
+      "input": "EXPLANATION",
+      "output": "69",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "2ff3074f-ff99-47a9-a657-6c325646a395",
+      "input": "CoDing",
+      "output": "67",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "51c06772-f423-44c7-92d0-be3024c26606",
+      "input": "Systems",
+      "output": "83",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6e131790-711b-4f09-9961-ff8072bb8ac9",
+      "input": "gitHuB",
+      "output": "72",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6f920cc8-5145-4016-be51-889103b54e70",
+      "input": "decembeR",
+      "output": "82",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "7096d7a1-5981-472b-b6f2-49f2b0cb2e2b",
+      "input": "offeriNgs",
+      "output": "78",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8e41dbfb-bd7a-4756-86b7-c20d14a0cbcc",
+      "input": "M",
+      "output": "77",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "dd0cd9a1-7f0d-46af-8421-f0dbe6819cc6",
+      "input": "proGrammeR",
+      "output": "71",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

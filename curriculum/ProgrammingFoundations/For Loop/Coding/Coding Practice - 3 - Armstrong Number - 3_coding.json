@@ -1,0 +1,384 @@
+{
+  "question_id": "4864d8a8-9163-4a18-a400-8b9fba7e2b31",
+  "short_text": "Armstrong Number - 3",
+  "content": "Write a program that reads a number `N` and checks if `N` is an Armstrong Number.\r\n\r\nPrint **Armstrong Number** is the given number is an Armstrong Number. Otherwise, print **Not an Armstrong Number**.\r\n\r\n<MultiLineNote>\r\n\r\n**Armstrong Number**\r\n\r\nA number is said to be an **Armstrong Number** if the sum of powers of all the digits of the number is the number itself.\r\n\r\n**Example:**\r\n\r\n**1634** is an **Armstrong Number** as the sum of powers of all digits of `N` is equal to **1634**. (**1<sup>4</sup>+ 6<sup>4</sup>+ 3<sup>4</sup>+ 4<sup>4</sup> = 1634**)\r\n\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string. **Armstrong Number** should be printed if the given number is an Armstrong Number. Otherwise, print **Not an Armstrong Number**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is **54748**,\r\n\r\n* The digits in **54748** are **5**, **4**, **7**, **4** and **8**.\r\n* Number of digits in **54748** is **5**.\r\n* Sum of digits to the power of **5** is **54748**. (**5<sup>5</sup>+4<sup>5</sup>+7<sup>5</sup>+4<sup>5</sup>+8<sup>5</sup>**)\r\n* Sum of digits to the power of **5** (**54748**) is equal to the number (**54748**).\r\n\r\nThe output should be **Armstrong Number**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8d5c3666-4992-4e38-ab53-8b32f3681447",
+      "code_content": "number = input()\n\nlength = len(number)\ntotal = 0\nfor digit in number:\n    total = total + (int(digit) ** length)\n\nif total == int(number):\n    print(\"Armstrong Number\")\nelse:\n    print(\"Not an Armstrong Number\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "3a204b5e-484e-41f2-942b-305d0714e0fd",
+          "short_text": null,
+          "content": "What is the output for the given input?\r\n\r\n**Input**\r\n\r\n```\r\n92727\r\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Armstrong Number",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **92727**,\n\n- The digits in **92727** are **9**, **2**, **7**, **2** and **7**.\n\n- Number of digits in **92727** is **5**.\n\n- Sum of digits to the power of **5** is **92727**. (**9<sup>5</sup>+2<sup>5</sup>+7<sup>5</sup>**+**2<sup>5</sup>**+**7<sup>5</sup>**)\n\n- Sum of digits to the power of **5** (**92727**) is equal to the number (**92727**).\n\nThe output should be **Armstrong Number**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "97f7aab6-1d38-4d45-ae3c-b716b3f8508c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n71\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Not an Armstrong Number",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **71**,\n\n- The digits in **71** are **7** and **1**.\n\n- Number of digits in **71** is **2**.\n\n- Sum of digits to the power of **2** is **50** (**7<sup>2</sup>+ 1<sup>2</sup>**)\n\n- Sum of digits to the power of **2** (**50**) is not equal to the number (**71**).\n\nThe output should be **Not an Armstrong Number**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f503e562-a713-4369-8d61-d0c6f5d8dfc7",
+          "short_text": null,
+          "content": "What is the output for the given input?\r\n\r\n**Input**\r\n\r\n```\r\n8208\r\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Armstrong Number",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **8208**,\n\n- The digits in **8208** are **8**, **2**, **0** and **8**.\n\n- Number of digits in **8208** is **4**.\n\n- Sum of digits to the power of **4** is **8208**. (**8<sup>4</sup>+2<sup>4</sup>+0<sup>4</sup>**+**8<sup>4</sup>**)\n\n- Sum of digits to the power of **4** (**8208**) is equal to the number (**8208**).\n\nThe output should be **Armstrong Number**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0f16c306-3120-48f9-8116-97683dc248b6",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n69\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0cb4fdda-5227-4c30-81a1-22e29d74ee1f",
+              "content": "Armstrong Number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "17c72833-f904-40e0-8825-d403f55e6471",
+              "content": "not an armstrong number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b2e72ae0-0300-47a6-9086-716739a54718",
+              "content": "Not an Armstrong Number",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f7c1df0a-f251-4a78-986c-2592460596c8",
+              "content": "armstrong number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **69**,\n\n- The digits in **69** are **6** and **9**.\n\n- Number of digits in **69** is **2**.\n\n- Sum of digits to the power of **2** is **117** (**6<sup>2</sup>+ 9<sup>2</sup>**)\n\n- Sum of digits to the power of **2** (**117**) is not equal to the number (**69**).\n\nThe output should be **Not an Armstrong Number**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "37a17c82-12ad-4747-b5ff-44e451c644aa",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "30988a30-d7cc-4873-b93d-908c53a31f4e",
+              "content": "To check if `N` is a **composite Number**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3d51de76-6f7a-4d0c-97c4-9159ea9af834",
+              "content": "To check if `N` is an **Armstrong Number**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5d3ee9f6-db1e-40e4-8d5d-cb79e45d0341",
+              "content": "To check if `N` is a **Prime Number**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "637acb0b-d847-428f-985d-405bbaad7d75",
+              "content": "To check if `N` is a **positive Number**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a given number `N` and check if `N` is an **Armstrong Number** or not.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "587a7bb9-1401-4feb-b7fe-571b67b7a892",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "498ae9f6-85c4-4330-b730-81ff2273962a",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "57d172ba-7d37-442d-9ee1-577bc6f60fde",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c67dddc3-8e38-4f3e-9f18-8c7dc3841664",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c7234a31-6211-47a6-bf74-0fe52285f77d",
+              "content": "The output should be multiple lines containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string. **Armstrong Number** should be printed if the given number is an Armstrong Number. Otherwise, print **Not an Armstrong Number**.\n\nFor example,\n\nIf the given number is **58**,\n\n- The digits in **58** are **5** and **8**.\n\n- Number of digits in **58** is **2**.\n\n- Sum of digits to the power of **2** is **89** (**5<sup>2</sup>+ 8<sup>2</sup>**)\n\n- Sum of digits to the power of **2** (**89**) is not equal to the number (**58**).\n\nThe output should be **Not an Armstrong Number**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5c99b873-6725-4174-a5bb-db79bd1fec12",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6cb2e5b5-a514-42bd-9883-7313ffb8c640",
+              "content": "The input will be multiple lines containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "816a4fec-876d-4ce2-abbe-fc68b361e190",
+              "content": "The input will be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b9f05964-09fa-4702-a767-fda03e045e92",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fac1eaf0-5621-45f7-bd7f-acc791a64350",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing `N`.\n\nFor example, **56**\n\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a586a48f-9808-434a-8f79-a7ba61ca3911",
+          "short_text": "",
+          "content": "From your understanding of the problem description, what is an Armstrong Number?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "24a818d7-78be-426c-9775-daaab43cfad7",
+              "content": "Sum of powers of all the digits of the number is the number itself.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4793de1b-aa18-4a0d-92a0-6022c3962403",
+              "content": "Sum of powers of the first two digits of the number is the number itself.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8811986c-00f3-4a76-af43-cc08f5e0d43e",
+              "content": "Difference of powers of all the digits of the number is the number itself.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9af43991-99f3-48cf-8913-5c39d9d38940",
+              "content": "Product of powers of all the digits of the number is the number itself.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, **Armstrong Number** is the sum of powers of all the digits of the number is the number itself.\n\nFor example, **1634** is an **Armstrong Number** as **1<sup>4</sup>+ 6<sup>4</sup>+ 3<sup>4</sup>+ 4<sup>4</sup> = 1634**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "be0a7bf4-e420-4e09-87ca-97faf1e56e6d",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "49267524-4df4-4c12-834a-8b83fc8487f8",
+              "content": "651\n892",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ae3a08ea-4946-4349-b545-61448559936a",
+              "content": "15",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "caaadd79-1ea8-4216-8d38-d3b7c6850477",
+              "content": "89.09",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f288057f-52e4-4762-8865-deeb53f7ff32",
+              "content": "1389",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n15\n```\n\n**Input 2**\n\n```\n1389\n```\nThe above two inputs are valid because they consist of a single line containing an integer `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c9829245-8f5c-48c2-93eb-5f8d4f2ba34f",
+          "short_text": null,
+          "content": "What is the sum of the powers of all digits in `114`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2b122176-f7c6-457c-8844-73c017a61d67",
+              "content": "1<sup>4</sup> + 1<sup>4</sup> + 4<sup>4</sup> = 66",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2c21961c-31cf-4ab5-9536-c3a60bffa0a5",
+              "content": "1<sup>2</sup> + 1<sup>2</sup> + 4<sup>2</sup> = 18",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "51f51130-2327-4003-8b3d-717c75eebb21",
+              "content": "1<sup>3</sup> + 1<sup>3</sup> + 4<sup>3</sup> = 60",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b013e5f8-f7a6-4ba0-96d9-3b2b66c2ec35",
+              "content": "1<sup>3</sup> + 1<sup>3</sup> + 4<sup>3</sup> = 66",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The sum of the power of all digits of `114` is **1<sup>3</sup> + 1<sup>3</sup> + 4<sup>3</sup> = 66**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "2cb8c19d-3814-4762-90cc-6ce8f144e979",
+      "input": "54748",
+      "output": "Armstrong Number",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "add8a075-4d51-456b-9092-d407f14704b1",
+      "input": "5",
+      "output": "Armstrong Number\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b1cd4498-db45-4aa4-b37e-f11a9bee252b",
+      "input": "9473",
+      "output": "Not an Armstrong Number\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bc4a0c50-c150-4acf-bf47-d5a348eaa30e",
+      "input": "24",
+      "output": "Not an Armstrong Number\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c6d5e521-c567-45c7-a234-2b27fd0d1a3c",
+      "input": "1",
+      "output": "Armstrong Number\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fa53b37e-b60c-467d-b9c3-9227a8570fed",
+      "input": "100000",
+      "output": "Not an Armstrong Number\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

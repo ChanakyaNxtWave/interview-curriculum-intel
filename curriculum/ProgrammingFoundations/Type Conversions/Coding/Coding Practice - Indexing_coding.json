@@ -1,0 +1,61 @@
+{
+  "question_id": "8068bbeb-83ee-444d-ac68-b99cc987d171",
+  "short_text": "Indexing",
+  "content": "Given a word W and an integer N, write a program to print the character present at the index N in the word W. <hr><b>Input</b><br/><br/>The first line contains the word W <br/>The second line contains the integer N <hr><b>Explanation</b> <br/><br/>For example, when the given word W is <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">Chocolate</code> and the integer N is 2. Since the index starts from zero. The character present at index 2 is <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">o</code>. <br/> <table style=\"background-color: transparent;border-collapse: collapse;border-spacing: 0;\"> <thead> <tr> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">C</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">h</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">o</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">c</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">o</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">l</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">a</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">t</th> <th style=\"border-right: 0;padding: 8px 12px;\">e</th> </tr> </thead> <tbody> <tr> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</td> <td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">8</td> </tr> </tbody> </table> <br/>Similarly, for <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">Table</code> the character at index 1 is <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">a</code> <br/> <table style=\"background-color: transparent;border-collapse: collapse;border-spacing: 0;\"> <thead> <tr> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">T</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">a</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">b</th> <th style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;\">l</th> <th style=\"border-right: 0;padding: 8px 12px;\">e</th> </tr> </thead> <tbody> <tr> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</td> <td style=\"border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</td> <td style=\"border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</td> </tr> </tbody> </table> <hr><b>Constraints</b><br/><br/> 0 &lt;= N &lt; len(W)",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "b1a96d39-71f6-469d-9093-34a7213363d0",
+      "code_content": "word = input()\nn = input()\nn = int(n)\nprint(word[n])\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1e0fb650-578a-4771-a2a6-5ca5720aa808",
+      "input": "CCBP\n0",
+      "output": "C\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "95be71a4-fbd8-406b-bc25-b01695943586",
+      "input": "tie\n1",
+      "output": "i\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c28346a1-23cd-4f88-9d30-fd8c0d286e9e",
+      "input": "number\n3",
+      "output": "b\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c7b66e52-ffe3-4fbe-9ad8-cec6b946a768",
+      "input": "Table\n1",
+      "output": "a\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f2c217ec-7959-4c55-97e5-1e329f9fd94a",
+      "input": "Chocolate\n2",
+      "output": "o\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "dc655302-1d61-41d6-9bc2-595a3e2c9d09",
+  "short_text": "Robot Traversal",
+  "content": "Create a program to simulate a **robot navigating** through a grid of blocks. Each block in the grid contains a number, and the robot collects these numbers while moving in a **zigzag diagonal pattern**. The grid is represented as a **2D matrix** of integers.\n\nThe robot follows these rules:\n\n- The robot starts at the **top-left** corner of the grid.\n- It moves **diagonally downwards** until it reaches the edge of the grid.\n- The robot then changes direction and moves **diagonally upwards** until it reaches the edge of the grid.\n- This zigzag motion continues, **alternating between diagonally downwards and upwards**, until the robot reaches the bottom-right corner of the grid.\n  \nThe program must print the list of numbers the robot collects during its journey.\n\n\n<img src=\"https://new-assets.ccbp.in/frontend/content/programming-foundations/robot_traversal.png\"/>\n\n\n---\n\n#### Input\n\nThe input consists of:\n\n- Two integers:\n - **n**: The number of rows in the grid.\n - **m**: The number of columns in the grid.\n\n- **A** single line containing **n × m** comma-separated integers that represent the numbers in the grid row by row.\n\n---\n\n#### Output\n\nThe output should be a single **list of integers** representing the values collected by the robot in the order they were visited.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n3 3\n1,2,3,4,5,6,7,8,9\n```\n\nThe input grid is a **3 × 3** matrix:\n\n```\n1  2  3  \n4  5  6  \n7  8  9  \n```\n\n**Robot's Movement (Zigzag Diagonal Pattern) :**\n\nThe robot starts at the top-left corner of the grid and collects numbers diagonally as it moves in a zigzag pattern. Here's the detailed breakdown:\n\n1. **Start Position :**\n - The robot begins at the top-left corner (0, 0) of the grid.\n - Collect the value 1.\n2. **Diagonal Downward Movement :**\n - The robot moves diagonally downwards until it hits the edge of the grid:\n - Move to position **(0, 1)** → **Collect 2**.\n - Move to position **(1, 0)** → **Collect 4**.\n - Move to position **(2, 0)** → **Collect 7** (hits the bottom edge).\n3. **Change Direction - Diagonal Upward Movement :**\n - The robot changes direction and moves diagonally upwards:\n - Move to position **(1, 1)** → **Collect 5**.\n - Move to position **(0, 2)** → **Collect 3** (hits the top edge).\n4. **Change Direction - Diagonal Downward Movement :**\n - The robot again changes direction and moves diagonally downwards:\n - Move to position **(1, 2)** → **Collect 6**.\n - Move to position **(2, 1)** → **Collect 8**.\n5. **End at Bottom-Right Corner :**\n - Move to position **(2, 2)** → **Collect 9** (bottom-right corner).\n\n\n**Collected Numbers:**\nThe robot collects the numbers in the following order:\n\n```\n[1, 2, 4, 7, 5, 3, 6, 8, 9]\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8dbb6e43-1c33-41cb-8e57-b84705fc5351",
+      "code_content": "def zigzag_traversal(matrix):\n    rows = len(matrix)\n    cols = len(matrix[0])\n    result = []\n\n    for diag in range(rows + cols - 1):\n        if diag % 2 == 0:\n            r = min(diag, rows - 1)\n            c = diag - r\n            while r >= 0 and c < cols:\n                result.append(matrix[r][c])\n                r -= 1\n                c += 1\n        else:\n            c = min(diag, cols - 1)\n            r = diag - c\n            while c >= 0 and r < rows:\n                result.append(matrix[r][c])\n                r += 1\n                c -= 1\n\n    return result\n\nn, m = input().split()\nn, m = int(n), int(m)\nelements = input().split(',')\nelements = [int(x) for x in elements]\nmatrix = []\nindex = 0\nfor i in range(n):\n    row = []\n    for j in range(m):\n        row.append(elements[index])\n        index += 1\n    matrix.append(row)\nresult = zigzag_traversal(matrix)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6655f1d3-baf3-453f-a792-d2fb265f4ef9",
+      "input": "1 4\n1,2,3,4",
+      "output": "[1, 2, 3, 4]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8b465edf-d0fb-4d9f-b974-e1c6731c67e2",
+      "input": "4 1\n1,2,3,4",
+      "output": "[1, 2, 3, 4]",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "aa813b9d-5a19-4504-ba5b-3fddcc78c8f7",
+      "input": "3 3\n1,2,3,4,5,6,7,8,9",
+      "output": "[1, 2, 4, 7, 5, 3, 6, 8, 9]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c2566bab-7aeb-49f5-8ad9-0d94d6811dda",
+      "input": "3 2\n1,2,3,4,5,6",
+      "output": "[1, 2, 3, 5, 4, 6]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e40980d0-7f7c-4ed7-be27-aa259034c66d",
+      "input": "2 3\n1,2,3,4,5,6",
+      "output": "[1, 2, 4, 5, 3, 6]",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f065d38b-746c-48f1-ad2e-95b6dd5b62b4",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

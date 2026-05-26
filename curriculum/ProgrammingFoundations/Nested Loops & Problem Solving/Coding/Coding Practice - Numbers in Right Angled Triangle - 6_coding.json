@@ -1,0 +1,61 @@
+{
+  "question_id": "4ade893f-69d4-4314-8dd3-babd5436d9ea",
+  "short_text": "Numbers in Right Angled Triangle - 6",
+  "content": "Given a number `N`, write a program to print a **Right Angled Triangle** of `N` rows using numbers.\n\n```\n1\n1 2 1\n1 2 3 1 2\n```\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing numbers as a **Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- Consider `M` as row numbers.\n- In the first row (`M = 1`) print **1** number starting from **1** as given below.\n\n```\n1 \n```\n- In the second row (`M = 2`) print **2** numbers starting from **1** followed by (`M - 1`) numbers starting from **1** as given below.\n\n```\n1 2 1 \n```\n- In the third row (`M = 3`) print **3** numbers starting from **1** followed by (`M - 1`) numbers starting from **1** as given below.\n\n```\n1 2 3 1 2 \n```\n- In the fourth row (`M = 4`) print **4** numbers starting from **1** followed by (`M - 1`) numbers starting from **1** as given below.\n\n```\n1 2 3 4 1 2 3 \n```\nPrint the numbers on **4** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-right-angled-triangle-6.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image, the Number in the box indicates the number and a space (\"1 \")\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n1\n1 2 1\n1 2 3 1 2\n1 2 3 4 1 2 3\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e57739b8-f635-4860-bd5e-c299d595cd60",
+      "code_content": "n = int(input())\n\nfor row in range(1, n + 1):\n    each_row = \"\"\n    \n    for column in range(1, row + 1):\n        each_row = each_row + str(column) + \" \"\n        \n    for column in range(1, row):\n        each_row = each_row + str(column) + \" \"\n        \n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3769e22f-40c4-4d0a-8b7f-fb93528d12d4",
+      "input": "4",
+      "output": "1 \n1 2 1 \n1 2 3 1 2 \n1 2 3 4 1 2 3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "888285f1-c8ef-415b-958e-37bd6b452950",
+      "input": "10",
+      "output": "1 \n1 2 1 \n1 2 3 1 2 \n1 2 3 4 1 2 3 \n1 2 3 4 5 1 2 3 4 \n1 2 3 4 5 6 1 2 3 4 5 \n1 2 3 4 5 6 7 1 2 3 4 5 6 \n1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 \n1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "8b2788b1-e6d2-451a-986b-9f5a2e1ec7d2",
+      "input": "7",
+      "output": "1 \n1 2 1 \n1 2 3 1 2 \n1 2 3 4 1 2 3 \n1 2 3 4 5 1 2 3 4 \n1 2 3 4 5 6 1 2 3 4 5 \n1 2 3 4 5 6 7 1 2 3 4 5 6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9cf2e1c2-cd79-492d-adf5-2816a6e3ac0a",
+      "input": "5",
+      "output": "1 \n1 2 1 \n1 2 3 1 2 \n1 2 3 4 1 2 3 \n1 2 3 4 5 1 2 3 4",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "a54eeeaa-4400-4d73-ab7c-e2e7e652268a",
+      "input": "33",
+      "output": "1 \n1 2 1 \n1 2 3 1 2 \n1 2 3 4 1 2 3 \n1 2 3 4 5 1 2 3 4 \n1 2 3 4 5 6 1 2 3 4 5 \n1 2 3 4 5 6 7 1 2 3 4 5 6 \n1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 \n1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 \n1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 \n1 2 3 4 5 6 7 8 9 10 11 1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 11 12 1 2 3 4 5 6 7 8 9 10 11 \n1 2 3 4 5 6 7 8 9 10 11 12 13 1 2 3 4 5 6 7 8 9 10 11 12 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 1 2 3 4 5 6 7 8 9 10 11 12 13 14 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32",
+      "is_hidden": true,
+      "weightage": 13.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

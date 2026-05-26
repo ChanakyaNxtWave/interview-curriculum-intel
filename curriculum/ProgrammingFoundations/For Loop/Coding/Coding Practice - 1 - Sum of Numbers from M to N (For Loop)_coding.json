@@ -1,0 +1,377 @@
+{
+  "question_id": "229dcec3-cc0d-4756-bd8d-4576beb9012a",
+  "short_text": "Sum of Numbers from M to N (For Loop)",
+  "content": "Given two integers M and N, write a program to print the sum of the numbers from M to N.<hr><b>Input</b><br/><br/>The first line of input will contain an integer.<br/>The second line of input will contain an integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the sum of the numbers from M to N.<hr><b>Explanation</b><br/><br/>For example, if the given numbers are 2 and 6, the output should be the sum of the numbers from 2 to 6 (2 + 3 + 4 + 5 + 6), which is 20.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "c900f43f-8000-4d23-bcfa-0a21112025b5",
+      "code_content": "m = int(input())\nn = int(input())\n\ntotal = 0\nfor i in range(m, n+1):\n    total = total + i\n\nprint(total)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1cbc2071-2d59-4097-b24a-c7675ea0af2c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n4\n7\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "22",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are **4** and **7**, \n\n- The sum of the numbers from `4` to `7` is **22** `(4 + 5 + 6 + 7 = 22)`, \n\nThe output should be **22**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5c6aa82d-184d-4505-bc0a-a6a09732f273",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n8\n12\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "50",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are **8** and **12**, \n\n- The sum of the numbers from `8` to `12` is **50** `(8 + 9 + 10 + 11 + 12 = 50)`, \n\nThe output should be **50**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a525252c-b69d-44c2-a7c6-6fe4c4b2ba37",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n21\n30\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "255",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are **21** and **30**, \n\n- The sum of the numbers from `21` to `30` is **255** `(21 + 22 + 23 + 24 + 25 + 26 + 27 + 28 + 29 + 30 = 255)`, \n\nThe output should be **255**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "22960937-b51a-42eb-9d2b-ada56f860665",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n39\n45\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "705a2f47-ee1f-49b4-8c4c-fe4c7ab694b1",
+              "content": "290",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ad3aaf7a-b265-4c09-ad9e-8d513266f8f0",
+              "content": "294",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b3af752e-4f10-42d0-b981-4b60c34f2b81",
+              "content": "293",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ef5e3a8a-8919-4211-8fde-0de0f8e9a319",
+              "content": "292",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are **39** and **45**, \n\n- The sum of the numbers from `39` to `45` is **294** `(39 + 40 + 41 + 42 + 43 + 44 + 45 = 294)`, \n\nThe output should be **294**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5d75ac1e-724b-403a-9e0a-e815dadd99c5",
+          "short_text": "",
+          "content": "According to the problem description, what should be printed?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "160e0a60-a753-40b2-ab55-db8eaf922a68",
+              "content": "The average of M and N numbers",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4ed4bd3f-1893-4fa4-99cc-3a4fba4e3553",
+              "content": "The sum of M and N numbers",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "705a8f66-aa03-44e4-915e-526715517985",
+              "content": "The product of M and N numbers",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ccfa0cd5-b11c-4f1b-ba20-06e91d150e5e",
+              "content": "The sum of M to N numbers",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the sum of M to N numbers should be printed.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "95d2e0a9-6fee-4ba3-b838-3698a0493647",
+          "short_text": "",
+          "content": "According to the problem description, which numbers sum should be printed?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "37377237-fbc5-4124-937c-70907dead59b",
+              "content": "The sum of Numbers between `M` and `N`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9007998b-e7d7-457b-8519-f42826569a62",
+              "content": "The sum of 10 Numbers after `M`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f45b2250-3a9f-4b12-84ae-3e3acfcf0a0b",
+              "content": "The sum of 10 Numbers before `M`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f95002b7-dee2-4ad5-a3d9-1d5e4cf1f2cf",
+              "content": "The sum of Numbers from `M` to `N`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the sum of Numbers from `M` to `N` should be printed.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "cf8a7389-eac9-4def-8b60-f70b3cda696e",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "205c7158-6328-4d7f-9d60-ac309224069f",
+              "content": "To print the average of the numbers M and N.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3d398e85-8dd8-4c92-9662-d459dad6d76d",
+              "content": "To print the product of the numbers from M to N.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3ef19417-72d3-45f8-9c02-899026ccf78e",
+              "content": "To print the sum of the numbers from N to M.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fdabb8e7-d9c5-4b83-b393-f507db7de6b7",
+              "content": "To print the sum of the numbers from M to N.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to print the sum of numbers from **M** to **N**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "eaa6dd82-c1e3-4235-ac83-bae6b3a078f0",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "404c0d04-c4ef-409d-bd7a-4fdba698d78e",
+              "content": "3\n9",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e68193ec-ea16-4fae-8114-6121b0abe9bf",
+              "content": "10\n15",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e9955bbc-8245-41e3-ada1-588ba76f92b9",
+              "content": "10, 17",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "efe18a2c-c7a0-4e10-ba17-fa8b32b211a1",
+              "content": "3  9\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n3\n9\n```\n\n**Input 2**\n\n```\n10\n15                                           \n```\nThe above two inputs are valid because,\n\n- The first line of input contains an integer.\n\n- The second line of input contains an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f1249233-7eb5-4f1c-a678-a9ba7e639b2f",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0b019d2c-b908-4be5-800a-fcf195896c91",
+              "content": "The first line of input will contain a string.\n\nThe second line of input will contain a string.\n\n\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "94b77a4b-4c9e-4797-8300-377d0b3816ea",
+              "content": "The first line of input will contain an integer.\n\nThe second line of input will contain an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d1e327d7-3607-47ed-8e34-201eef3b321a",
+              "content": "The first line of input will contain a float.\n\nThe second line of input will contain a float.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d4f38f32-ac64-4a65-a735-deac4c5cdcfc",
+              "content": "The first line of input will contain a boolean.\n\nThe second line of input will contain a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be, \n\n- The first line of input will contain an integer representing `M`.\n\n- The second line of input will contain an integer representing `N`.\n\nFor example,\n\n```\n1\n7\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ff33f9e0-70be-4ee5-95ad-adddf616cc46",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "83d274dc-6076-4330-a021-598aaf1131bf",
+              "content": "The output should be a single line containing the sum of the numbers from M to N.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9ebcfddf-c26c-4d2b-979c-b93bc0c22845",
+              "content": "The output should be printing a float in each line, starting from m to n.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c6256239-9d47-4461-99c1-78cc1ad35a5e",
+              "content": "The output should be printing a boolean in each line, starting from X to Y.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "eb37d59e-2183-471f-b6d2-65bf21da7918",
+              "content": "The output should be a single line containing the sum of the numbers from A to B.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing an integer.\n\nFor example, if the given numbers are **2** and **6**, \n\n- The sum of the numbers from `2` to `6` is **20** `(2 + 3 + 4 + 5 + 6 = 20)`, \n\nThe output should be **20**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "536199be-2fc6-4f6d-adf2-f2ba131fbb49",
+      "input": "14\n2020",
+      "output": "2041119\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "93d03bd6-6741-49c9-84ae-9afcd768129d",
+      "input": "10\n20",
+      "output": "165\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "940a0f59-91b0-4eaa-821c-009ee7dcfd50",
+      "input": "2\n6",
+      "output": "20\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "dd332e6b-5211-4d77-8cc4-3c9a499a7115",
+      "input": "-100\n0",
+      "output": "-5050\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f678e418-4468-47a7-9fa7-890b5060c8e3",
+      "input": "-36\n36",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,384 @@
+{
+  "question_id": "534e8b97-e3c5-4005-8e96-a297a85ca48e",
+  "short_text": "Sum of N Terms in Power Series - 3",
+  "content": "Given two numbers `X` and `N`, write a program to print the **sum** of `N` terms in the given series.\n\n**Series:**\n\n<div style=\"background-color: #3c4257; padding: 15px; color: #f8f8f2;border-radius: 4px;margin: 10px;font-size: 18px;font-family:Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace\">\nX<sup>2</sup>, -X<sup>4</sup>, X<sup>6</sup>, -X<sup>8</sup>, ... N terms\n</div>\n\n<br/>\n\n**Terms in the given series:**\n\n| Term Number | Term             | Power |\n| ----------- | ---------------- | ----- |\n| First Term  | X<sup>2</sup>    | 2     |\n| Second Term | -(X<sup>4</sup>) | 4     |\n| Third Term  | X<sup>6</sup>    | 6     |\n| Fourth Term | -(X<sup>8</sup>) | 8     |\n| ..          | ..               | ..    |\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `X`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the **sum** of the series from the **first term** to the **Nth term**.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `X = 2` and `N = 6`,\n\n- Number of terms is **6**.\n- The terms from the **First Term** to the **Sixth Term** in the given series are **4** (2<sup>2</sup>), **-16** (-(2<sup>4</sup>)), **64** (2<sup>6</sup>), **-256** (-(2<sup>8</sup>)), **1024** (2<sup>10</sup>) and **-4096** (-(2<sup>12</sup>)).\n\n  **Terms in the given series:**\n\n  | Term Number | Term (X = 2)              | Power |\n  | ----------- | ------------------------- | :-----: |\n  | First Term  | 2<sup>2</sup> (4)         | 2     |\n  | Second Term | -(2<sup>4</sup>) (-16)    | 4     |\n  | Third Term  | 2<sup>6</sup> (64)        | 6     |\n  | Fourth Term | -(2<sup>8</sup>) (-256)   | 8     |\n  | Fifth Term  | 2<sup>10</sup> (1024)     | 10    |\n  | Sixth Term  | -(2<sup>12</sup>) (-4096) | 12    |\n\n- Sum of the terms from the **first term** to the **sixth term** is **-3276**. (`4 + (-16) + 64 + (-256) + 1024 + (-4096) = -3276`\n\nThe output should be **-3276**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e38728d8-e7ae-4cb0-ab4e-6821a23b9f77",
+      "code_content": "x = int(input())\nn = int(input())\n\nsum_of_terms = 0\npower = 0\n\nfor each_number in range(1, n + 1):\n\n    power = power + 2\n    term = x ** power\n\n    is_term_negative = (each_number % 2 == 0)\n    if is_term_negative:\n        term = term * (-1)\n\n    sum_of_terms = sum_of_terms + term\n\nprint(sum_of_terms)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "599df2f2-0941-49a8-9db5-7d9840c31833",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n2\n4\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "-204",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `X = 2` and `N = 4`,\n\n- Number of terms is **4**.\n\n- The terms from First Term to Fourth Term in the given series are **4** (2<sup>2</sup> ), **-16** (-(2<sup>4</sup>) ), **64** (2<sup>6</sup> ) and **-256** (-(2<sup>8</sup>)).\n\n\n|Term Number | Term (X = 2) | Power|\n|:--- | :--- |:---|\n|First Term  | 2<sup>2</sup> (4)    | 2|\n|Second Term | 2<sup>4</sup> (-16)  | 4|\n|Third Term  | 2<sup>6</sup> (64)   | 6|\n|Fourth Term | 2<sup>8</sup> (-256) | 8|\n\n\n- Sum of the terms from the First Term to the Fourth Term is **-204** (`4 + (-16) + 64 + (-256) = -204`).\n\nThe output should be **-204**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8bd23445-1384-4852-baf5-876f9fb6f165",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n-4\n2\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "-240",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `X = -4` and `N = 2`,\n\n- Number of terms is **2**.\n\n- The terms from First Term to second Term in the given series are **16** (-4<sup>2</sup> ) and **-256** (-(-4<sup>4</sup>) ).\n\n|Term Number | Term (X = -4) | Power|\n|:--- | :--- |:---|\n|First Term  | -4<sup>2</sup> (16)       | 2|\n|Second Term | -4<sup>4</sup> (-256)     | -4|\n\n- Sum of the terms from the First Term to the Second Term is **-240** (`16 + (-256) = -240 `).\n\nThe output should be **-240**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f18c54f4-e9b6-402c-af45-76cc84e629b3",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n10\n2\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "-9900",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `X = 10` and `N = 2`,\n\n- Number of terms is **2**.\n\n- The terms from First Term to Third Term in the given series are **100** (10<sup>2</sup> ), **-10000** (-(10<sup>4</sup>)).\n\n|Term Number | Term (X = 10) | Power|\n|:--- | :--- |:---|\n|First Term  | 10<sup>2</sup> (100)        | 2|\n|Second Term | 10<sup>4</sup> (-10000)      | 4|\n\n- Sum of the terms from the First Term to the Third Term is **-9900** (`100 + (-10000) = -9900`).\n\nThe output should be **-9900**\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "346a8184-5341-44ff-b095-563739b0f27a",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "19b06316-63a9-49c8-86b7-bf7b566c1f80",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c77c67c7-5f3d-4fa0-ada1-0e2a59e12f6e",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "eabc7c25-4829-48c3-aec7-3e28f4e3e58c",
+              "content": "The output should be multiple lines containing an integer.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f7e8219a-00d4-4af1-aeeb-8d912ff38071",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing an integer that is the sum of the series from the first term to the **Nth** term.\n\nFor example,\n\nIf the given numbers are `X = 9` and `N = 1`,\n\n- Number of terms is **1**.\n\n- The term from First Term in the given series is **81** (9<sup>2</sup> ).\n\n|Term Number | Term (X = 9) | Power|\n|:--- | :--- |:---|\n|First Term  | 9<sup>2</sup> (81)     | 2|\n\n- Sum of the term of the First Term is (`81`).\n\nThe output should be **81**\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "49c2a7fd-64e5-44f4-99c2-2dc6f2991e51",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "15dc68d1-91e2-47de-8c3f-4221222b5fd5",
+              "content": "1,6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "23460d74-be41-4a8c-b334-fed8f7c1a8e9",
+              "content": "8\n6\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b80e2e14-bb18-4934-83fb-d4c50d5c720b",
+              "content": "3\n16\n15",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cdb6e920-bf2b-4111-b2bf-bd5aa8a3d53e",
+              "content": "12\n4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n12\n4\n```\n\n**Input 2**\n\n```\n8\n6\n```\nThe above two inputs are valid because,\n\n- The first line of input contains an integer.\n\n- The second line of input contains an integer.\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "50f87133-45e8-4e08-941e-b2fe05a0bf53",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2e89d1e8-949d-4129-b955-6157c51c2628",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a float.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "649d572c-f523-4575-96d0-0d918dccd72a",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a string.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a33085fb-79fe-4301-bca1-71597d719ae8",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ddd51208-822d-4249-901c-786e107139b2",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a string.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program,\n\n- The first line of input contains an integer representing `X`.\n\n- The second line of input contains an integer representing `N`.\n\nFor example,\n\n```\n7\n9\n```\n\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "538e1f4b-434f-4d35-8237-6fc2667f1dcc",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "019ad4ae-4dd9-46f1-80c7-c75fbdb1c7f7",
+              "content": "To print the difference of `N` terms in the given series.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1bd2c306-3e60-444d-b7de-d77c850d65af",
+              "content": "To print the `N` terms in the given series.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1cf70f0c-c05a-477d-aece-5984f5c25fd7",
+              "content": "To print the product of `N` terms in the given series.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1d8791c7-c901-482c-bbe4-d7198fa62e21",
+              "content": "To print the sum of `N` terms in the given series.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read two numbers `X` and `N` and to print the sum of `N` terms in the given series.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "594c7493-29fe-45c3-90ec-17d881aea2b1",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n2\n3\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4d9b1045-1929-46de-87ca-1b3c0330f75b",
+              "content": "50",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "505f1c9e-6dd5-4fbe-994c-a2fb56c68b44",
+              "content": "-52",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9e7c6a2b-3fa8-46c0-9aa4-1bf0af803f48",
+              "content": "48",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fe86a3ff-4e6d-437c-b332-a0e503f7e9ca",
+              "content": "52",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `X = 2` and `N = 3`,\n\n- Number of terms is **3**.\n\n- The terms of the First Term to Third Term in the given series is **4** (2<sup>2</sup>), **-16** (-(2<sup>4</sup>)) and **64** (-(2<sup>6</sup>)).\n\n|Term Number | Term (X = 2) | Power|\n|:--- | :--- |:---|\n|First Term  | 2<sup>2</sup> (4)     | 2|\n|Second Term | 2<sup>4</sup> (-16)   | 4|\n|Third Term  | 2<sup>6</sup> (64)    | 6|\n\n\n- Sum of the term from the First Term to the Third Team is (`4 + (-16) + 64 = 52`).\n\nThe output should be **52**\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "62239fad-59a1-4181-b94f-9083cea3134e",
+          "short_text": "",
+          "content": "According to the problem description, what is to be calculated?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "29058098-a597-45cf-bb88-454a31d50049",
+              "content": "Multiplication of `N` terms",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "40f3fe22-dd57-4003-a710-ae8897d57c37",
+              "content": "Product of `N` terms",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4d06b676-5358-46cd-aad1-2fb86c071a5a",
+              "content": "Sum of `N` terms",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d4523473-c090-4c5b-8ed0-016fd63accbe",
+              "content": "Just the terms in accending order.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the sum of `N` terms in the given series should be calculated.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "82677686-e881-4e20-9b20-2eba984e155b",
+          "short_text": "",
+          "content": "From your understanding of the problem description, which is the correct series among the following?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "06d6bd75-60bf-4603-940a-342c4513b3bc",
+              "content": "X<sup>1</sup>, X<sup>2</sup>......X<sup>2N-1</sup>",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "11514dd3-0740-4e2f-a2aa-46da4d1a6734",
+              "content": "1X, 3X......2N-X",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "463d7fc3-b1c4-4fd3-8e5e-6e781b53bb2b",
+              "content": "X<sup>1</sup>, X<sup>3</sup>......X<sup>2N-1</sup>",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4647f85a-05c1-40fb-b11e-01cf1329448b",
+              "content": "X<sup>2</sup>, -X<sup>4</sup>......N terms",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the correct series form is X<sup>2</sup>, -X<sup>4</sup>, X<sup>6</sup>......X<sup>2N</sup>.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "6cb110cb-c0ce-42ab-8a0f-380549479b3a",
+      "input": "-7\n3",
+      "output": "115297",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6dc337db-0169-429a-a010-54d43aae7cc2",
+      "input": "2\n6",
+      "output": "-3276",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "966f7f31-e036-463d-9265-49a0c859979e",
+      "input": "1\n1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c6c57a0b-afbc-4b7d-8821-257120d1077b",
+      "input": "0\n100",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ced37661-3470-4db8-90c6-8989a0f4ac7f",
+      "input": "89\n1",
+      "output": "7921",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ef0afb39-4a87-4d42-9f23-002cc00dc9f2",
+      "input": "-35\n3",
+      "output": "1836766225",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

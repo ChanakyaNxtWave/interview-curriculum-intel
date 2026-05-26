@@ -1,0 +1,61 @@
+{
+  "question_id": "4fc8d4da-419c-4a59-b514-c8f72883b377",
+  "short_text": "Filter Palindromes",
+  "content": "In a cozy library, the librarian is preparing for a special event to celebrate unique literature. To make the display more interesting, she decides to feature only those book titles that are palindromes—titles that read the same forwards and backwards, like \"**Madam**\" or \"**Racecar**\".\n\nYour task is to assist the librarian by completing the method **`filter_palindromes(titles)`**. This method should ta   ke a list of book titles and **return a new list** containing only those titles that are palindromes. You must use the method **`is_palindrome(title)`** to check if each title is a palindrome using recursion. \n\n\n<MultiLineNote>\n\n- Assume palindrome checks are case-insensitive.\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe **`filter_palindromes(titles)`** method takes one parameter `titles`, a list of strings representing book titles. \n\n\n---\n\n#### Output:\n\nThe **`filter_palindromes(titles)`** method should **return a list of strings** containing only the titles that are palindromes.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n[\"Racecar\", \"Level\", \"Book\", \"Madam\"]\n```\n\n- In the given input, as per case insensitivity, \"Racecar\", \"Level\", and \"Madam\" will be identified as palindromes.\n\nThus, The expected output would be :\n\n```\n[\"Racecar\", \"Level\", \"Madam\"]\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e4a2a513-acb8-49bf-9790-03222b234587",
+      "code_content": "def is_palindrome(title):\n    title = title.lower() \n    if len(title) <= 1: \n        return True\n    if title[0] != title[-1]: \n        return False\n    return is_palindrome(title[1:-1]) \n\ndef filter_palindromes(titles):\n    if not titles: \n        return []\n    first = titles[0] \n    rest = titles[1:] \n    if is_palindrome(first): \n        return [first] + filter_palindromes(rest)\n    else:\n        return filter_palindromes(rest)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "28ecff3c-6c8e-4a60-bb2f-dc14e776a84b",
+      "input": "Rotator Deified Repaper",
+      "output": "['Rotator', 'Deified', 'Repaper']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "2e1315d1-1212-40e6-b1c4-59550a434bda",
+      "input": "Not a Palindrome",
+      "output": "['a']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "36b9c663-330c-443a-8ba1-b57c8f59d4d2",
+      "input": "Racecar Level Madam",
+      "output": "['Racecar', 'Level', 'Madam']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c8868dca-9847-4e33-86f4-b2626d8dacfc",
+      "input": "12321 12345",
+      "output": "['12321']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fa6387f7-890e-4247-a2f9-d1efb9956c90",
+      "input": "Evil olive",
+      "output": "[]",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "efaa14e6-913e-41ae-b575-e2a588294405",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

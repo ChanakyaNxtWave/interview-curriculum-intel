@@ -1,0 +1,61 @@
+{
+  "question_id": "ecbff404-2dc0-4aba-8f1b-867ed267bff1",
+  "short_text": "Count Unique Names",
+  "content": "Write a program that reads a string `S` containing space-separated strings from the user and forms a set from these strings. The program should then print the number of unique strings in the set.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated strings to form the set.\n\n---\n\n#### Output\n\nThe output should be a single integer, which represents the number of unique strings in the set.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana apple orange banana\n```\n\nThe output should be:\n\n```\n3\n```\n\nThis is because the unique strings in the input are **apple, banana,** and **orange**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f152521e-2701-4dbe-9c03-ccb7049516c0",
+      "code_content": "s = input().strip().split()\nunique_items = set(s)\nprint(len(unique_items))\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "68f920b4-250a-44d1-96d9-b023bd76d3f4",
+      "input": "dave eve dave frank",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6f096985-0811-4bcf-be17-53c9e512dcfe",
+      "input": "apple banana apple orange banana",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "73941aa5-8dd0-46af-9be0-c14501ba8edb",
+      "input": "grace grace grace",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f0e42e30-7205-44d0-b45a-4e6c301e6fb0",
+      "input": "hannah igor hannah igor jack",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f6493257-9cdd-42ac-9e2b-8c46206824b1",
+      "input": "kathy lucas kathy lucas mia",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ceb957b7-1aa1-42e3-97ba-77c6e832caae",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

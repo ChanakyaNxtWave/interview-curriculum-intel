@@ -1,0 +1,61 @@
+{
+  "question_id": "c1ed2f6a-7025-4794-b3ed-e54597065112",
+  "short_text": "Same Elements",
+  "content": "Write a program to check if all the elements in a given list are same.<hr><b>Input</b><br/><br/>The input will be a single line containing space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing either &quot;True&quot; or list of unique elements sorted in ascending order.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;45 45 45 45&quot;, as all the numbers are 45, the output should be &quot;True&quot;.<br/><br/>Whereas, if the given string is &quot;45 20 45 45 20&quot;, as all the numbers are not same, your code should print the list of unique elements sorted in ascending order. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[20, 45]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "d4186b21-5294-4fa4-b26d-f3203e37f1c7",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nnum_list = input().split()\nnum_list = convert_string_to_int(num_list)\n\nnum_set = set(num_list)\nif len(num_set) == 1:\n    print(\"True\")\nelse:\n    num_list = list(num_set)\n    num_list.sort()\n    print(num_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "41f9bf48-9f2a-4dbc-b8e3-a483e7ec2ae1",
+      "input": "1 -1 -1 1",
+      "output": "[-1, 1]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "443ce44d-5631-4271-bb40-4505ddd0c26b",
+      "input": "45 45 45 45",
+      "output": "True\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "6d2ba42c-2486-4fb5-8e96-add0a954d3e0",
+      "input": "544 692 701 893 666 690 999 123",
+      "output": "[123, 544, 666, 690, 692, 701, 893, 999]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "b13be823-e1bd-40a0-b86c-66bd84dac00e",
+      "input": "1 1 1 1 1 1 1",
+      "output": "True\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "b6bb997f-cdb1-4b9a-a3d3-68b49d410c63",
+      "input": "45 20 45 45 20",
+      "output": "[20, 45]\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

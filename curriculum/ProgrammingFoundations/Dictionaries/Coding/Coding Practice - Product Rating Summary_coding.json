@@ -1,0 +1,61 @@
+{
+  "question_id": "259699fc-f6e6-4340-9f2a-87ea55af3ad4",
+  "short_text": "Product Rating Summary",
+  "content": "You are designing a product review system for an online store. The system stores product data in a nested dictionary, where each product has a unique ID as the key. Your task is to implement a program that:\n\n- Reads product details and their reviews from the user.\n- Calculates the average rating for each product.\n- Identifies the product with the highest and lowest average ratings.\n\nThe program should output a summary dictionary containing:\n\n- The average rating for each product.\n- The product with the highest average rating.\n- The product with the lowest average rating.\n\n\n---\n\n#### Input\n\nThe input consists of:\n\n- An integer N, representing the number of products.\n- For each product:\n   - An integer **product_id** representing the product ID.\n - A string **name** representing the product name.\n - A string **category** representing the product category.\n - An integer **R**, representing the number of reviews.\n - For each review, a string **reviewer (name of the reviewer)** and an integer **rating (1 to 5)**.\n\n---\n\n#### Output\n\nThe output should be a dictionary containing:\n\n- **summary**: A dictionary where keys are product names and values are their average ratings.\n- **`highest_avg_product`**: The name of the product with the highest average rating.\n- **`lowest_avg_product`**: The name of the product with the lowest average rating.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n2  \n101  \nLaptop  \nElectronics  \n2  \nAlice 5  \nBob 4  \n102  \nSmartphone  \nElectronics  \n2  \nCharlie 3  \nDavid 2  \n```\n\nthe given input is for **two products**, where each product has specific details such as ID, name, category, and user reviews.\n\nFor the first product, the details are:\n\n- **ID**: 101\n- **Name**: Laptop\n- **Category**: Electronics\n- The product has received two reviews.\n- **Alice**, one of the reviewers, gives a **rating of 5**.\n- Bob, another reviewer, gives a **rating of 4**.\n - The average rating for Laptop is calculated as: **5 + 4 / 2 = 4.5**\n\n​\nFor the second product, the details are:\n\n- **ID**: 102\n- **Name**: Smartphone\n- **Category**: Electronics\n- This product also has two reviews:\n - Charlie gives a rating of 3.\n - David gives a rating of 2.\n- The average rating for Smartphone is determined as: **3 + 2 / 2 = 2.5**\n\nAfter calculating the average ratings for both products, the program compares them:\n\n- Laptop has the highest average rating of **4.5**.\n- Smartphone has the lowest average rating of **2.5**.\n\nThe Output should be\n\n```\n{\n    'summary': {\n        'Laptop': 4.5,\n        'Smartphone': 2.5\n    },\n    'highest_avg_product': 'Laptop',\n    'lowest_avg_product': 'Smartphone'\n}\n```\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "adcf10f3-f81e-46f9-917e-5e1adea75d65",
+      "code_content": "def review_summary():\n    products = {}\n    summary = {}\n    highest_avg_product = None\n    lowest_avg_product = None\n    highest_avg_rating = 0\n    lowest_avg_rating = None\n    \n    n = int(input())\n    for i in range(n):\n        product_id = int(input())\n        name = input()\n        category = input()\n        r = int(input())\n        \n        reviews = []\n        for i in range(r):\n            reviewer, rating = input().split()\n            reviews.append({'reviewer': reviewer, 'rating': int(rating)})\n        \n        products[product_id] = {'name': name, 'category': category, 'reviews': reviews}\n    \n    for product_id, details in products.items():\n        reviews = details['reviews']\n        if reviews:\n            avg_rating = sum(review['rating'] for review in reviews) / len(reviews)\n            summary[details['name']] = avg_rating\n            \n            if avg_rating > highest_avg_rating:\n                highest_avg_rating = avg_rating\n                highest_avg_product = details['name']\n            \n            if lowest_avg_rating is None or avg_rating < lowest_avg_rating: \n                lowest_avg_rating = avg_rating\n                lowest_avg_product = details['name']\n    \n    result = {\n        'summary': summary,\n        'highest_avg_product': highest_avg_product,\n        'lowest_avg_product': lowest_avg_product\n    }\n    return result\nresult = review_summary()\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "23d308ab-79ce-40f2-9af4-0bc930be28a6",
+      "input": "2\n101\nLaptop\nElectronics\n2\nAlice 5\nBob 4\n102\nSmartphone\nElectronics\n2\nCharlie 3\nDavid 2",
+      "output": "{'summary': {'Laptop': 4.5, 'Smartphone': 2.5}, 'highest_avg_product': 'Laptop', 'lowest_avg_product': 'Smartphone'}",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2404a114-41f6-452c-b761-e1fc47a0f0a6",
+      "input": "2\n301\nBook\nEducation\n1\nAlice 4\n302\nPen\nStationery\n3\nTom 3\nJerry 2\nJane 4",
+      "output": "{'summary': {'Book': 4.0, 'Pen': 3.0}, 'highest_avg_product': 'Book', 'lowest_avg_product': 'Pen'}",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5f714736-9fc1-41e4-b7b6-2dfac8a1938b",
+      "input": "3\n201\nTablet\nElectronics\n3\nJohn 4\nSara 5\nEmma 3\n202\nCamera\nAccessories\n2\nMike 2\nJake 4\n203\nSpeaker\nElectronics\n2\nNina 5\nSam 5",
+      "output": "{'summary': {'Tablet': 4.0, 'Camera': 3.0, 'Speaker': 5.0}, 'highest_avg_product': 'Speaker', 'lowest_avg_product': 'Camera'}",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6c3a45b3-9366-42a8-901e-768400fd0924",
+      "input": "2\n101\nProduct1\nCategory1\n2\nAlice 4\nBob 4\n102\nProduct2\nCategory2\n2\nCharlie 4\nDavid 4",
+      "output": "{'summary': {'Product1': 4.0, 'Product2': 4.0}, 'highest_avg_product': 'Product1', 'lowest_avg_product': 'Product1'}",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b82d7f87-daf6-440e-ae6e-5b4f7e80b0c3",
+      "input": "1\n101\nBook\nEducation\n3\nAlice 5\nBob 4\nCharlie 5",
+      "output": "{'summary': {'Book': 4.666666666666667}, 'highest_avg_product': 'Book', 'lowest_avg_product': 'Book'}",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f065d38b-746c-48f1-ad2e-95b6dd5b62b4",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

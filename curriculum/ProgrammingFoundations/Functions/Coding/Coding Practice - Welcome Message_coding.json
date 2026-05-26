@@ -1,0 +1,61 @@
+{
+  "question_id": "999f6c80-e2c0-46ae-af51-031de956477c",
+  "short_text": "Welcome Message",
+  "content": "For this problem, the prefilled code will contain a function. Write a program to concatenate the message &quot;Welcome &quot; followed by the given name.<hr><b>Input</b><br/><br/>The first line of input will contain a string.<hr><b>Output</b><br/><br/>The output should be a single line containing the welcome message.<hr><b>Explanation</b><br/><br/>For example, if the given name is &quot;Preethi&quot;, your code should concatenate the message &quot;Welcome &quot; followed by the name. So the output should be <br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Welcome Preethi\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "4a07884e-4d5a-40e9-b8f6-b511fb768f67",
+      "code_content": "def say_wishes(arg_1):\n    wishes = \"Welcome \" + arg_1\n    print(wishes)\n\n\nname = input()\nsay_wishes(name)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "111133f1-eafd-4ddd-86a0-a598aafeccf5",
+      "input": "Naresh Kumar",
+      "output": "Welcome Naresh Kumar\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2986b08b-a029-4cc1-adda-9179d393312d",
+      "input": "Ramya",
+      "output": "Welcome Ramya\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "637fbfdd-e6a8-4866-b343-8001ca682358",
+      "input": "hari krishna",
+      "output": "Welcome hari krishna\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "af3d15a7-ae0b-4800-a29e-0023d197dfca",
+      "input": "Preethi",
+      "output": "Welcome Preethi\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ddcce443-73ad-42e6-b261-c12440f49cbb",
+      "input": "Ramesh",
+      "output": "Welcome Ramesh\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

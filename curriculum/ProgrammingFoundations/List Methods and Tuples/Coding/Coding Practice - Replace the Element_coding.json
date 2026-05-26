@@ -1,0 +1,61 @@
+{
+  "question_id": "8c565757-d268-4fff-b87a-f96c3af68827",
+  "short_text": "Replace the Element",
+  "content": "For this problem, the prefilled code will contain a list of tuples. Write a program to replace the last number of each tuple in the list with the given number (N).<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the list of tuples with the given number.<hr><b>Explanation</b><br/><br/>For example, if the given N is 50, your code should print the list of tuples by replacing the last number of each tuple with 50. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[(10, 20, 50), (1, 50), (5, 10, 15, 50)]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "f82be2da-bbca-45b5-a938-cb56a198cea3",
+      "code_content": "num_list = [(10, 20, 30), (1, 2), (5, 10, 15, 45)]\n\nn = int(input())\n\nnew_list = []\nfor tuple_a in num_list:\n    update_tuple = tuple_a[:-1] + (n,)\n    new_list.append(update_tuple)\n\nprint(new_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5a303df3-62f1-4b51-aa2f-e3857b187820",
+      "input": "-25",
+      "output": "[(10, 20, -25), (1, -25), (5, 10, 15, -25)]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9e432dca-7b2a-4fbb-a349-3282c9bf1abb",
+      "input": "1",
+      "output": "[(10, 20, 1), (1, 1), (5, 10, 15, 1)]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c0307e60-9eee-4abc-abc6-da935897c9f1",
+      "input": "-90",
+      "output": "[(10, 20, -90), (1, -90), (5, 10, 15, -90)]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c2d1e840-869c-4f85-bdc2-7ac1e1063edf",
+      "input": "50",
+      "output": "[(10, 20, 50), (1, 50), (5, 10, 15, 50)]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "da6e36d5-a5b2-4234-ae22-c6882912e78b",
+      "input": "80",
+      "output": "[(10, 20, 80), (1, 80), (5, 10, 15, 80)]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "62237960-515f-4451-8ca9-7bf74bbb4421",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

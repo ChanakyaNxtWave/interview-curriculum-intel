@@ -1,0 +1,33 @@
+{
+  "question_id": "244aac03-2aff-4a9c-abf9-9a969dd8fe0e",
+  "short_text": "Product of 37, 61 and 391",
+  "content": "Write a program that prints the product of three numbers, **37**, **61** and **391**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0e77edb9-1a95-4bbd-864d-90c4caf1f94e",
+      "code_content": "result = 37 * 61 * 391\n\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "f42a689e-8668-4ba6-966f-b6ca72b706d2",
+      "input": "",
+      "output": "882487",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "1cab5e23-4577-4878-b5ea-7178c46658fe",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

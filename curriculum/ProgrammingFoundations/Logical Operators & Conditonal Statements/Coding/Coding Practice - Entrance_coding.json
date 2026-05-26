@@ -1,0 +1,405 @@
+{
+  "question_id": "d8551e86-04df-4ff8-adc3-88efff7f2dac",
+  "short_text": "Entrance",
+  "content": "Write a program that reads an age `A` and guardian status `S`, and checks if the age `A` is between **12** and **60** or if the guardian status `S` is equal to **yes**.\r\n\r\n<MultiLineNote>\r\n\r\nThe guardian status will be either **yes** or **no**\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing the age `A`.\r\nThe second line of input contains a string representing the guardian status `S`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if the age is between **12** and **60** or if the guardian status `S` is equal to **yes**, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given age `A = 15` and guardian status `S = \"no\"`,\r\n\r\n✔ `A` is between **12** and **60**. (**15** is between **12** and **60**)\r\n✗ `S` is equal to **yes**.\r\n\r\nThe output should be **True** as the age is between **12** and **60**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2276445a-1947-454b-b06b-0c92dd075b6e",
+      "code_content": "age = input()\nage = int(age)\n\nguardian_status = input()\n\nis_valid_age = (age > 12) and (age < 60)\nhas_guardian = (guardian_status == \"yes\")\n\nresult = is_valid_age or has_guardian\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "23512bb0-d579-4d0f-88f9-047a8593cd41",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n70\nno\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age `A = 70` and guardian status `S = no`,\n\n✗ `A` is between **12** and **60**. (**70** is not between **12** and **60**)\n\n✗ `S` is equal to **no**.\n\nThe output should be **False** as the age is not between **12** and **60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "603f33a7-5de9-46f9-b21f-8e4477d83d2e",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n20\nyes\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age `A = 20` and guardian status `S = yes`,\n\n✔ `A` is between **12** and **60**. (**20** is between **12** and **60**)\n\n✔ `S` is equal to **yes**.\n\nThe output should be **True** as the age is between **12** and **60** and the guardian status is equal to **yes**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b6eac90d-c55c-41c1-bf7d-c1ca658357e4",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n18\nno\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age `A = 18` and guardian status `S = no`,\n\n✔ A is between **12** and **60**. (**18** is between **12** and **60**)\n\n✗ S is not equal to **yes**.\n\nThe output should be **True** as the age is between **12** and **60**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0adf6903-fea2-4e9c-a83e-acd63cc7785c",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "36affe50-2021-49cc-8374-e36c14e58a99",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6b9a3721-a7f9-425f-aab0-fa1d3b9a619e",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b04eb507-733b-4997-988c-e1c2f11c6f80",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f6defd8e-2461-4962-b3b6-d02e34b15830",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean value.\n\n- **True** should be printed if the age is between **12** and **60** or if the guardian status is equal to **yes**.\n\n- Otherwise **False** should be printed.\n\nFor example,\n\nIf the given age `A = 13` and guardian status `S = yes`,\n\n✔ `A` is between **12** and **60**. (**13** is between **12** and **60**)\n\n✔ `S` is equal to **yes**.\n\nThe output should be **True** as the age is between **12** and **60** and the guardian status is equal to **yes**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "39746d46-a793-49be-bc64-7b5f667f9f92",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n60\nno\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1014d7df-fd66-4d60-813d-4882c93a68bc",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4eb40152-5c75-4683-807e-1ea8886635d1",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ac159237-dcd3-4450-8ac9-06ee05628a26",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "eab213d1-907c-477b-affb-e1770040ed99",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age `A = 60` and guardian status `S = no`,\n\n✗ `A` is between **12** and **60**. (**60** is not between **12** and **60**)\n\n✗ `S` is equal to **no**.\n\nThe output should be **False** as the age is not between **12** and **60** and the guardian status is not equal to **yes**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6ac1a645-c104-42e8-82a6-221a59f04f5b",
+          "short_text": "",
+          "content": "According to the problem description, what should be the guardian status?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1b1bb747-dfef-4d06-8f78-db3d5f2fcacb",
+              "content": "yes or no",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8afec8ca-04ad-4087-a3df-be763319033d",
+              "content": "Correct or Incorrect",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8f633cba-4255-45f9-8226-7d092645b424",
+              "content": "YES or NO",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c4741079-b483-495d-8667-d15f267ff0d1",
+              "content": "True or False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the guardian status should be either **yes** or **no**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "851a9e31-035c-4b97-a40b-178b553b8972",
+          "short_text": "",
+          "content": "According to the problem description, for the output to be `True`, the age should be between?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "02644ffa-aeed-4b81-b1f1-54f7fa83c2e6",
+              "content": "15 and 64",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "290086d8-22fa-453b-b921-cb8f9c0f5959",
+              "content": "21 and 58",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "86039f03-23b2-4e74-82fb-183b7c2c01c1",
+              "content": "40 and 75",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e09b859e-b270-40a6-a45f-7e776fa26a8e",
+              "content": "12 and 60",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the age should be between `12` and `60` for the output to be `True`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "93604071-c9f7-4330-8f7e-b4c3747733bd",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "06e3b718-4235-466e-a8dd-7484d20ac445",
+              "content": "```\n44\n62\nno\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "47b1332b-654d-4e6f-aefb-2b3e8153fdb1",
+              "content": "```\n19\nno\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7020d494-f686-4704-94c8-cbea9a3f991c",
+              "content": "```\n87\nyes\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7ca15c9e-0c9b-4376-bec8-2f0d50a4ab51",
+              "content": "```\n77, 53, yes\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n87\nyes\n```\n\n**Input 2**\n\n```\n19\nno\n```\nThe above two inputs are valid because,\n\n- The first line of input contains an interger.\n\n- The second line of input contains a string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a1ac223d-adc5-4521-a485-6c80b3d8e4dd",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1f4ad65a-d328-46b1-b002-235988de0a47",
+              "content": "To check if the age is between 21 and 66 or if the guardian status is equal to no.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6bd200c4-b531-412a-b356-21229574534f",
+              "content": "To check if the age is between 10 and 60 or if the guardian status is equal to approved.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "95f298dc-cc95-4269-9e9d-6d9531993208",
+              "content": "To check if the age is between 12 and 60 or if the guardian status is equal to yes.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b45d048a-e5c9-4792-9bb7-71830e5b307e",
+              "content": "To check if the height is between 10 and 60 or if the guardian status is equal to approved.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read an age `A` and guardian status `S`, and check if the age `A` is between **12** and **60** or if the guardian status `S` is equal to **yes**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e3937e95-18c0-4a28-a18b-1a3ff0150362",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2b390a7b-a630-4198-a80b-6b851e2c3fcc",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6e6e9b39-e77d-4bfc-afdd-54f385af0ef4",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f3457e50-bffc-4ff1-9dd8-52330ba6b5f6",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f567ef94-4897-4de3-b0f9-329375a33184",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be,\n\n- The first line of input contains an integer representing the age `A`.\n\n- The second line of input contains a string representing the guardian status `S`.\n\nFor example,\n\n```\n14\nyes\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "2bd3f2d7-684d-4cb5-874b-0a1c13df607f",
+      "input": "70\nno",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "3298aae1-38ec-4430-b418-84d255dc4207",
+      "input": "13\nno",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "3cc1593f-8595-4a96-87b0-7ce77b1b0c14",
+      "input": "5\nyes",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "4f684edf-a278-4727-a109-7a4963d7c1ad",
+      "input": "65\nyes",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "806b4581-a9b1-43e4-8272-98d09a8c9179",
+      "input": "15\nno",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9e02f142-acc7-41a9-9e9b-8473357d91c7",
+      "input": "60\nno",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b19a8436-fdb4-4532-a9ee-80bb05c5acd0",
+      "input": "10\nno",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c0172dcb-e1f3-4bef-9fd9-d7ee17aaf9b9",
+      "input": "12\nyes",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ecf93886-c42e-4afb-8619-52f346e26b2c",
+      "input": "61\nno",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

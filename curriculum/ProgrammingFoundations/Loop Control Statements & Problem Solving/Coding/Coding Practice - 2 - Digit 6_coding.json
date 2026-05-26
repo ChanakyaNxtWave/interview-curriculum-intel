@@ -1,0 +1,68 @@
+{
+  "question_id": "43c9daa7-25c1-4d09-90d1-18864e5996aa",
+  "short_text": "Digit 6",
+  "content": "Given a number `N`, write a program to print the digit **6** in `2 * N - 1` rows using stars (`*`).\n\n```\n* * * \n*    \n* * * \n*   * \n* * * \n```\n\n<MultiLineNote>\nThere is a space after every star (`*`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `2 * N - 1` rows containing stars (`*`) as the digit **6** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`, \n\n- Print the stars (`*`) on **7** (`2 * 4 - 1`) rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-6.png' widthPercent='50'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Star in the box indicates the star and a space (\"* \").\n\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n* * * * \n*      \n*      \n* * * * \n*     * \n*     * \n* * * * \n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f994c3f0-c932-4bc7-89e9-ea9c049872ab",
+      "code_content": "n = int(input())\n\nfor row in range(1, 2 * n):\n    if row == 1 or row == n or row == (2 * n - 1):\n        each_row = \"* \" * n\n    elif row < n :\n        each_row = \"* \"\n    else:\n        spaces = \" \" * (2 * (n - 2))\n        each_row = \"* \" + spaces + \"* \"\n        \n    print(each_row)\n    ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "03561ab3-731b-4d03-b231-658fda5de52f",
+      "input": "1",
+      "output": "*",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "0572456d-3b9c-4d67-a5ae-8988ef712f49",
+      "input": "3",
+      "output": "* * * \n* \n* * * \n*   * \n* * *",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "14b01bb3-274f-460a-80f0-8cb5906d78a5",
+      "input": "14",
+      "output": "* * * * * * * * * * * * * * \n* \n* \n* \n* \n* \n* \n* \n* \n* \n* \n* \n* \n* * * * * * * * * * * * * * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n*                         * \n* * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8b28c2af-f4a8-424f-ab26-df121ed155f3",
+      "input": "10",
+      "output": "* * * * * * * * * * \n* \n* \n* \n* \n* \n* \n* \n* \n* * * * * * * * * * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n* * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c8070711-faf7-4700-8742-0b793121fc3c",
+      "input": "4",
+      "output": "* * * * \n* \n* \n* * * * \n*     * \n*     * \n* * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "cc00e239-190d-4cfd-a76e-89f31ae603f0",
+      "input": "5",
+      "output": "* * * * * \n* \n* \n* \n* * * * * \n*       * \n*       * \n*       * \n* * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

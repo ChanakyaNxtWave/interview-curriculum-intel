@@ -1,0 +1,61 @@
+{
+  "question_id": "3939f6fb-cd2e-4675-ac09-fce504e69411",
+  "short_text": "Read N Inputs",
+  "content": "Given an integer N, write a program which reads N inputs and prints them.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer, N.<br/>The following N lines will contain an integer in each line.<hr><b>Output</b><br/><br/>The output should be N lines, containing an integer per line.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, then read the inputs in the next 3 lines and print them. If the given input integers in the next three lines are 8, 11, and 25, the output should be<br/><br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 0em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255, 0.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">8\n11\n25\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "466e0a1c-3fb1-40b7-a200-c3c60df65da5",
+      "code_content": "number_of_inputs = int(input())\n\ncounter = 0\nwhile counter < number_of_inputs:\n    number = int(input())\n    print(number)\n    counter = (counter + 1)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2363ee78-9078-43a8-ab9a-9e8fb519034b",
+      "input": "10\n111\n22\n6324\n78\n8734\n9349\n38\n41\n5356\n648234",
+      "output": "111\n22\n6324\n78\n8734\n9349\n38\n41\n5356\n648234\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "238e18b6-2e57-47ab-9f0d-8d70fab55df9",
+      "input": "2\n7\n20",
+      "output": "7\n20\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "41a5870d-28f6-46cc-8dc9-5788634cb011",
+      "input": "3\n8\n11\n25",
+      "output": "8\n11\n25\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6353dbd8-c93c-45f6-8b03-c638b25d0c70",
+      "input": "1\n1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "95de65ac-7e8b-42e6-9816-3f389ed42e94",
+      "input": "5\n10\n2\n1000\n-293\n0",
+      "output": "10\n2\n1000\n-293\n0\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

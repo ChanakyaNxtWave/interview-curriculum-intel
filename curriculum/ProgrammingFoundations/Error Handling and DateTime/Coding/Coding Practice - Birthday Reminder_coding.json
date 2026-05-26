@@ -1,0 +1,61 @@
+{
+  "question_id": "a03cb8c4-4055-435f-8852-8cf84bc7d3b8",
+  "short_text": "Birthday Reminder",
+  "content": "Create a birthday reminder application that alerts users of upcoming birthdays within the next 30 days. The program should take the current date and a list of names with their corresponding birthdates as input. It should then check which birthdays fall within the next 30 days from the specified current date and display them.\n\n---\n\n#### Input\n\n- The first line contains the current date in the format **`YYYY-MM-DD`**.\n- The subsequent lines contain names and their birthdates in the format Name, **`YYYY-MM-DD`**. The input ends when **`end`** is entered.\n\n---\n\n#### Output\n\nThe output should display the names of individuals with upcoming birthdays within the next 30 days in the following format:\n\n```\nUpcoming birthdays within the next 30 days:\n1. Name - Birthday on YYYY-MM-DD\n```\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n2025-11-01\nAlice, 2025-11-15\nBob, 2025-12-10\nCharlie, 2025-11-20\nDiana, 2025-10-30\nend\n```\n\nThe Expected output should be \n\n\n```\nUpcoming birthdays within the next 30 days:\n1. Alice - Birthday on 2025-11-15\n2. Charlie - Birthday on 2025-11-20\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "66babf2b-54be-41d2-a6b6-75770a178ceb",
+      "code_content": "from datetime import datetime, timedelta\n\ncurrent_date_input = input()\nbirthdays = []\n\nwhile True:\n    birthday_input = input()\n    if birthday_input == 'end':\n        break\n    birthdays.append(birthday_input)\n\ncurrent_date = datetime.strptime(current_date_input, \"%Y-%m-%d\")\nnext_month_date = current_date + timedelta(days=30)\n\nupcoming_birthdays = []\n\nfor entry in birthdays:\n    name, birthdate_str = entry.split(\", \")\n    birthdate = datetime.strptime(birthdate_str, \"%Y-%m-%d\")\n    \n    if current_date <= birthdate <= next_month_date:\n        upcoming_birthdays.append((name, birthdate_str))\n\nif upcoming_birthdays:\n    print(\"Upcoming birthdays within the next 30 days:\")\n    for i, (name, birthdate_str) in enumerate(upcoming_birthdays, start=1):\n        print(f\"{i}. {name} - Birthday on {birthdate_str}\")\nelse:\n    print(\"No upcoming birthdays within the next 30 days.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "25c10326-c7fb-4ad0-9077-76f1660cb51e",
+      "input": "2023-06-10\nOliver, 2023-06-15\nSophia, 2023-07-05\nend",
+      "output": "Upcoming birthdays within the next 30 days:\n1. Oliver - Birthday on 2023-06-15\n2. Sophia - Birthday on 2023-07-05",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6b3c359f-0de7-4ae0-a196-491be9592562",
+      "input": "2024-01-01\nEve, 2024-01-15\nFrank, 2024-02-05\nGrace, 2024-01-30\nend",
+      "output": "Upcoming birthdays within the next 30 days:\n1. Eve - Birthday on 2024-01-15\n2. Grace - Birthday on 2024-01-30",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8e12fee4-a11a-47a8-bd94-4221cb7db243",
+      "input": "2025-11-01\nAlice, 2025-11-15\nBob, 2025-12-10\nCharlie, 2025-11-20\nDiana, 2025-10-30\nend",
+      "output": "Upcoming birthdays within the next 30 days:\n1. Alice - Birthday on 2025-11-15\n2. Charlie - Birthday on 2025-11-20",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f79e51cd-eadf-4497-bd16-36bf4c74f859",
+      "input": "2023-12-25\nLiam, 2024-01-05\nMia, 2024-02-10\nNoah, 2024-01-01\nend",
+      "output": "Upcoming birthdays within the next 30 days:\n1. Liam - Birthday on 2024-01-05\n2. Noah - Birthday on 2024-01-01",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fa5c91bd-2f5a-44dd-ac4e-a3f672260e44",
+      "input": "2023-09-15\nHannah, 2023-10-01\nIvy, 2023-09-30\nJack, 2023-08-25\nend",
+      "output": "Upcoming birthdays within the next 30 days:\n1. Hannah - Birthday on 2023-10-01\n2. Ivy - Birthday on 2023-09-30",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "fa01dfac-d860-47cb-afd0-a24a8349ee9b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,13 @@
+{
+  "unit_title": "Problem Solving and Debugging | Reading Material",
+  "content": "# More Arithmetic Operators\r\n\r\n## Modulus\r\n\r\nTo find the remainder, we use Modulus operator `%`\r\n\r\n- `a % b`\r\n\r\n#### Code\r\n\r\n```python  \r\nprint(6 % 3)  \r\n```\r\n\r\n#### Output\r\n\r\n```\r\n0\r\n```\r\n\r\n#### Code\r\n\r\n```python  \r\nprint(7 % 4)  \r\n```\r\n\r\n#### Output\r\n\r\n```\r\n3\r\n```\r\n\r\n## Exponent\r\n\r\nTo calculate a power b, we use Exponent Operator `**`\r\n\r\n- `a ** b`  \r\n  \r\n#### Code\r\n\r\n```python  \r\nprint(2 ** 4)  \r\n```\r\n\r\n#### Output\r\n\r\n```  \r\n16\r\n```\r\n\r\n### Square of a number\r\n\r\nWe can find the square of a number using the exponent operator by keeping the exponent as **2**.\r\n\r\n#### Code\r\n\r\n```python  \r\nprint(5 ** 2)\r\n```\r\n\r\n#### Output\r\n\r\n```  \r\n25\r\n```\r\n\r\n### Square root of a number\r\n\r\nWe can find the square root of a number using the exponent operator to calculate the square root of a number by keeping the exponent as **0.5**\r\n\r\nAny number to the power of **0.5** we give the square root value of that number.\r\n\r\n#### Code\r\n\r\n```python  \r\nprint(16 ** 0.5)\r\n```\r\n\r\n#### Output\r\n\r\n```  \r\n4.0\r\n```",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "b481d0df-831f-410e-9c7d-9d21ea8b2f4c",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "ffe60c81-6607-4863-9a5d-dee1b4a39b00",
+  "unit_name": "Problem Solving and Debugging | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

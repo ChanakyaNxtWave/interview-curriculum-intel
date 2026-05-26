@@ -1,0 +1,47 @@
+{
+  "question_id": "d4d54c55-7f42-4d32-97c2-4acb33915e00",
+  "short_text": "Abstract PaymentWallet",
+  "content": "Implement the `PaymentWallet` class by completing the given abstract methods and integrating them into the payment process. Follow the instructions below to add the necessary features to the `PaymentWallet` class.\n\n<details>\n\n<summary>**Features to be added to **_PaymentWallet_** class**</summary>\n\n- **Add below attributes**:\n - The `PaymentWallet` class should have the following attributes:\n  - **`id`** (string): Identifier for the payment wallet.\n  - **`amount`** (float): The current balance of the wallet.\n  - **`currency`** (string): The currency of the wallet balance.\n  - **`wallet_id`** (string): A unique identifier for the wallet.\n\n- **Implement the below methods**:\n - `validate_wallet()`: This method should check if the **`wallet_id`** is valid (non-empty string). It should return `True` if valid, `False` otherwise.\n - `charge_wallet(amount_to_charge)`: This method should deduct the specified amount from the wallet balance if the amount is less than or equal to the current balance and return `True`. If the amount is greater than the balance, it should return `False`.\n - `process_payment(amount_to_charge)`: This method should call `validate_wallet()` and `charge_wallet(amount_to_charge)`. If both methods return `True`, it should print **`Payment processed successfully.`** Otherwise, it should print **`Payment failed.`**\n - `validate_payment(amount_to_charge)`: This method should return `True` if `validate_wallet()` and `charge_wallet(amount_to_charge)` both return `True`, otherwise `False`.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output test cases. The class defined by you will be tested internally whether the attributes are present or not. So in test case results, you will be shown the rough description of the tests that will be verified.\n- \n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ee26f4dc-559c-4d42-8144-16596fe16062",
+      "code_content": "from abc import ABC, abstractmethod\n\nclass Payment(ABC):\n    @abstractmethod\n    def process_payment(self, amount_to_charge):\n        pass\n\n    @abstractmethod\n    def validate_payment(self, amount_to_charge):\n        pass\n\nclass PaymentWallet(Payment):\n    def __init__(self, id, amount, currency, wallet_id):\n        self.id = id\n        self.amount = amount\n        self.currency = currency\n        self.wallet_id = wallet_id\n\n    def validate_wallet(self):\n        return bool(self.wallet_id)\n\n    def charge_wallet(self, amount_to_charge):\n        if amount_to_charge <= self.amount:\n            self.amount -= amount_to_charge\n            return True\n        return False\n\n    def process_payment(self, amount_to_charge):\n        if self.validate_wallet() and self.charge_wallet(amount_to_charge):\n            print(\"Payment processed successfully.\")\n        print(\"Payment failed.\")\n\n    def validate_payment(self, amount_to_charge):\n        return self.validate_wallet() and self.charge_wallet(amount_to_charge)\n\ndef default_test():\n    # This method will run default tests and should not be modified.\n    wallet = PaymentWallet(\"WALLET123\", 100.0, \"USD\", \"WALLETXYZ\")\n    print(wallet.validate_wallet())\n    print(wallet.charge_wallet(1000))\n    wallet.process_payment(1000)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2f0c9854-2be9-4a7f-b61b-f642f76e992c",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are correctly set.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "397cf26a-1235-4b74-a51c-b5a0fd1e0511",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ebff9b05-2271-4ca8-aaa7-bbe0325a78ff",
+      "input": "Checking Default Tests",
+      "output": "True\nFalse\nPayment failed.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d1f94c09-95d8-4509-b3d7-6a98e8dc300b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

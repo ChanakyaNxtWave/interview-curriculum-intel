@@ -1,0 +1,419 @@
+{
+  "question_id": "fb88fe9e-942d-495f-9a6f-64becc529f5d",
+  "short_text": "Print the Score - 4",
+  "content": "Write a program that reads a distance `D` in km and calculates the total score.\n\n- For the first **40** km (`0 - 40 km`), the score for each km is **2**.\n- For the next **20** km (`41 - 60 km`), the score for each km is **4**.\n- For the next **60** km (`61 - 120 km`), the score for each km is **6**.\n- For the distance above **120** km, the score for each km is **8**.\n- Apart from the above scores, there is a bonus score of **50**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `D`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the score.\n\n---\n\n#### Explanation\n\nFor example, if the given distance in km is `D = 70`,\n\nAs `D` is greater than **60** km, the total score is the sum of the score of first **40** km, score of the next **20** km, score of the remaining distance after **60** km and the bonus score.\n\nScore is **2** for each km for 0 to 40 km        =>  40 x 2  =  80\nScore is **4** for each km for 41 to 60 km      =>  20 x 4  =  80\nScore is **6** for each km for 61 to 120 km     =>  10 x 6  =  60\nScore is **8** for each km for above 120 km   =>    0 x 8  =    0\n------------------------------------------------------------\nTotal                                                              =>                  220\nBonus Score                                                 =>                    50\n------------------------------------------------------------\nTotal Score                                                   =>                  270\n------------------------------------------------------------\n\n\n<details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to calculate the score</summary>\n        <ul>\n          <li style=\"margin:0;padding:0;\">The score for each km for the first **40** km is **2**. Then the score for **40** km is **80**. (`40 * 2 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the next **20** km is **4**. Then the score for **20** km is **80**. (`20 * 4 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the above **60** km is **6**. The remaining distance after **60** km is **10** (`70 - 60 = 10`). Then the score for **10** km is **60**. (`10 * 6 = 60`)</li>\n          <li style=\"margin:0;padding:0;\">Sum of the above scores is **220** (`80 + 80 + 60 = 220`). Then the **total score** is the sum of above scores and bonus score that is **270**. (`220 + 50 = 270`)</li>\n        </ul>\n</details>\n\n<br/>\n\nThe output should be **270**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c7dd9f39-93d0-443b-b6ec-8f994c3696d6",
+      "code_content": "distance = int(input())\n\nbonus_score = 50\n\nfirst_40_score = 40 * 2\nnext_20_score = 20 * 4\nnext_60_score = 60 * 6\n\nif distance <= 40:\n    score = distance * 2\nelif distance <= 60:\n    remaining_distance = distance - 40\n    remaining_distance_score = remaining_distance * 4\n    score = first_40_score + remaining_distance_score\nelif distance <= 120:\n    remaining_distance = distance - 60\n    remaining_distance_score = remaining_distance * 6\n    score = first_40_score + next_20_score + remaining_distance_score\nelse:\n    remaining_distance = distance - 120\n    remaining_distance_score = remaining_distance * 8\n    score = first_40_score + next_20_score + next_60_score + remaining_distance_score\n\nscore = score + bonus_score\nprint(score)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "51ae1dd6-e181-487e-bad5-fe4716119ecb",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n150\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "810",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given distance in km is `D = 150`,\n\nAs `D` is greater than **120** km, the total score is the sum of the score of first **40** km, score of the next **20** km, score of the next **60** km, score of the remaining distance after **120** km and the bonus score.\n\nScore is **2** for each km for 0 to 40 km        =>  40 x 2  =  80\nScore is **4** for each km for 41 to 60 km      =>  20 x 4  =  80\nScore is **6** for each km for 61 to 120 km     =>  60 x 6  =  360\nScore is **8** for each km for above 120 km   =>    30 x 8  =    240\n------------------------------------------------------------\nTotal                                                              =>                  760\nBonus Score                                                 =>                    50\n------------------------------------------------------------\nTotal Score                                                   =>                  810\n------------------------------------------------------------\n\n\n<details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to calculate the score</summary>\n        <ul>\n          <li style=\"margin:0;padding:0;\">The score for each km for the first **40** km is **2**. Then the score for **40** km is **80**. (`40 * 2 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the next **20** km is **4**. Then the score for **20** km is **80**. (`20 * 4 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the next **60** km is **6**. Then the score for **60** km is **360**. (`60 * 6 = 360`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the above **120** km is **8**. The remaining distance after **120** km is **30** (`150 - 120 = 30`). Then the score for **30** km is **240**. (`30 * 8 = 240`)</li>\n          <li style=\"margin:0;padding:0;\">Sum of the above scores is **760** (`80 + 80 + 360 + 240 = 760`). Then the **total score** is the sum of above scores and bonus score that is **810**. (`760 + 50 = 810`)</li>\n        </ul>\n</details>\n\n<br/>\n\nThe output should be **810**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6f538ee9-4662-4100-a973-d14f9964f4e6",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n80\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "330",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given distance in km is `D = 80`,\n\nAs `D` is greater than **60** km, the total score is the sum of the score of first **40** km, score of the next **20** km, score of the remaining distance after **60** km and the bonus score.\n\nScore is **2** for each km for 0 to 40 km        =>  40 x 2  =  80\nScore is **4** for each km for 41 to 60 km      =>  20 x 4  =  80\nScore is **6** for each km for 61 to 120 km     =>  20 x 6  =  120\nScore is **8** for each km for above 120 km   =>    0 x 8  =    0\n------------------------------------------------------------\nTotal                                                              =>                  280\nBonus Score                                                 =>                    50\n------------------------------------------------------------\nTotal Score                                                   =>                  330\n------------------------------------------------------------\n\n\n<details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to calculate the score</summary>\n        <ul>\n          <li style=\"margin:0;padding:0;\">The score for each km for the first **40** km is **2**. Then the score for **40** km is **80**. (`40 * 2 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the next **20** km is **4**. Then the score for **20** km is **80**. (`20 * 4 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the above **60** km is **6**. The remaining distance after **60** km is **20** (`80 - 60 = 20`). Then the score for **20** km is **120**. (`20 * 6 = 120`)</li>\n          <li style=\"margin:0;padding:0;\">Sum of the above scores is **280** (`80 + 80 + 120 = 280`). Then the **total score** is the sum of above scores and bonus score that is **330**. (`280 + 50 = 330`)</li>\n        </ul>\n</details>\n\n<br/>\n\nThe output should be **330**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9d1cf98a-d3d3-4bdc-b681-3d6a22198f19",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n58\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "202",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given distance in km is `D = 58`,\n\nAs `D` is greater than **40** km, the total score is the sum of the score of first **40** km, score of the remaining distance after 40 km and the bonus score.\n\nScore is **2** for each km for 0 to 40 km       =>  40 x 2   =  80\nScore is **4** for each km for 41 to 60 km      =>  18 x 4   =  72\nScore is **6** for each km for 61 to 120 km     =>  0 x 6    =   0\nScore is **8** for each km for above 120 km     =>  0 x 8    =   0\n------------------------------------------------------------\nTotal                                                                           =>         152\nBonus Score                                                               =>          50\n------------------------------------------------------------\nTotal Score                                                                 =>           202\n------------------------------------------------------------\n\n\n<details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to calculate the score</summary>\n        <ul>\n          <li style=\"margin:0;padding:0;\">The score for each km for the first **40** km is **2**. Then the score for **40** km is **80**. (`40 * 2 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the next **20** km is **4**. Then the score for **18** km is **72**. (`18 * 4 = 72`)</li>\n          <li style=\"margin:0;padding:0;\">Sum of the above scores is **152** (`80 + 72 = 152`). Then the **total score** is the sum of above scores and bonus score that is **202**. (`152 + 50 = 202`)</li>\n        </ul>\n</details>\n\n<br/>\n\nThe output should be **202**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "197c49dc-bc70-494e-a0f2-2bc8fb8bc77a",
+          "short_text": "",
+          "content": "Match the below columns\n\n|Distance Range |Score for Each km |\n|---|---|\n|1) 0 - 40 km   | A) 6  |\n|2) 41 - 60 km\t| B) 8  |\n|3) 61 - 120 km\t| C) 4  |\n|4) Above 120 km | D) 2 |",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0b8cfc82-d872-40ec-a7d7-8006bff905da",
+              "content": "1-D, 2-C, 3-A, 4-B",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "0f0e3eac-680e-4256-b45e-0bfd421f35c8",
+              "content": "1-A, 2-B, 3-C, 4-D",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6c0e6ce4-bed2-4633-a838-a4a57cf665e7",
+              "content": "1-D, 2-C, 3-B, 4-A",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7fb499f8-3c2f-4e58-a3cc-804936f1091c",
+              "content": "1-B, 2-C, 3-A, 4-D",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "- For the first **40** km (`0 - 40 km`), the score for each km is **2**.\n- For the next **20** km (`41 - 60 km`), the score for each km is **4**.\n- For the next **60** km (`61 - 120 km`), the score for each km is **6**.\n- For the distance above **120** km, the score for each km is **8**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3ff062fc-54b2-457f-b863-454c68789d1a",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "094d9a92-aa91-41dc-be8d-cdaf8fb10f08",
+              "content": "To calculate the total score.\n\n- For the first **20** km (`0 - 20 km`), the score for each km is **3**.\n- For the next **40** km (`21 - 60 km`), the score for each km is **6**.\n- For the next **50** km (`61 - 110 km`), the score for each km is **9**.\n- For the distance above **110** km, the score for each km is **12**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "0d9f09a9-083f-4fc1-8d0e-cb00552f42b7",
+              "content": "To calculate the total score.\n\n- For the first **40** km (`0 - 40 km`), the score for each km is **2**.\n- For the next **20** km (`41 - 60 km`), the score for each km is **4**.\n- For the next **60** km (`61 - 120 km`), the score for each km is **6**.\n- For the distance above **120** km, the score for each km is **8**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b387014b-3c06-4a70-ae60-a6a53ec6c88e",
+              "content": "To calculate the total score.\n\n- For the first **20** km (`0 - 20 km`), the score for each km is **2**.\n- For the next **40** km (`21 - 60 km`), the score for each km is **4**.\n- For the next **50** km (`61 - 110 km`), the score for each km is **6**.\n- For the distance above **110** km, the score for each km is **8**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cc9e9a0d-c094-468b-a627-65aa78243fa3",
+              "content": "To calculate the total score.\n\n- For the first **40** km (`0 - 40 km`), the score for each km is **4**.\n- For the next **20** km (`41 - 60 km`), the score for each km is **6**.\n- For the next **60** km (`61 - 120 km`), the score for each km is **8**.\n- For the distance above **120** km, the score for each km is **10**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a distance `D` in km and calculate the total score.\n\n- For the first **40** km (`0 - 40 km`), the score for each km is **2**.\n- For the next **20** km (`41 - 60 km`), the score for each km is **4**.\n- For the next **60** km (`61 - 120 km`), the score for each km is **6**.\n- For the distance above **120** km, the score for each km is **8**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6833f1f3-5002-47f0-9d75-e77c09e032e6",
+          "short_text": "",
+          "content": "What is the bonus score given in the problem description?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "59215b07-2be4-41a9-928b-c218c45316e8",
+              "content": "40",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "61fd1d79-5109-47c5-874d-0190e0cd5c12",
+              "content": "60",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8ba5f9aa-8ba5-42d5-a2de-136e42bfec4b",
+              "content": "50",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bc48d86f-5003-40f7-8dbb-f6624dc7eea2",
+              "content": "30",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The bonus score given in the problem description is **50**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "795684a9-e9a2-47ed-a33b-984a67e6f4c6",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n100\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1a1a330a-e922-47c6-8dd9-8557be364893",
+              "content": "450",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "49cf1407-4f23-43b5-bbca-ed1cf4a09c3a",
+              "content": "460",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b0105c0a-0b7f-4774-b7e3-4eaeb1ca70a5",
+              "content": "400",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b3e005ac-4711-44ca-88d4-ee37ec3783f7",
+              "content": "445",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given distance in km is `D = 100`,\n\nAs `D` is greater than **60** km, the total score is the sum of the score of first **40** km, score of the next **20** km, score of the remaining distance after **60** km and the bonus score.\n\nScore is **2** for each km for 0 to 40 km        =>  40 x 2  =  80\nScore is **4** for each km for 41 to 60 km      =>  20 x 4  =  80\nScore is **6** for each km for 61 to 120 km     =>  40 x 6  =  240\nScore is **8** for each km for above 120 km   =>    0 x 8  =    0\n------------------------------------------------------------\nTotal                                                              =>                  400\nBonus Score                                                 =>                    50\n------------------------------------------------------------\nTotal Score                                                   =>                  450\n------------------------------------------------------------\n\n\n<details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to calculate the score</summary>\n        <ul>\n          <li style=\"margin:0;padding:0;\">The score for each km for the first **40** km is **2**. Then the score for **40** km is **80**. (`40 * 2 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the next **20** km is **4**. Then the score for **20** km is **80**. (`20 * 4 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">The score for each km for the above **60** km is **6**. The remaining distance after **60** km is **40** (`100 - 60 = 40`). Then the score for **20** km is **240**. (`40 * 6 = 240`)</li>\n          <li style=\"margin:0;padding:0;\">Sum of the above scores is **400** (`80 + 80 + 240 = 400`). Then the **total score** is the sum of above scores and bonus score that is **450**. (`400 + 50 = 450`)</li>\n        </ul>\n</details>\n\n<br/>\n\nThe output should be **450**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "82417328-64f1-4d9b-88db-6891683ba5a8",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3f4e2d7c-43b2-4703-903c-3bec5444e454",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5c1c42a8-69f8-41b1-96fa-36acea9b4564",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7018226c-e729-497c-9fa0-abf37b85d8f3",
+              "content": "The output should be multiple lines containing integers",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cf0511bf-8da5-4403-b8bc-67475d4b6340",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing an integer that is the score.\n\nFor example, if the given distance in km is `D = 40`,\n\nAs `D` is equal to **40** km, the total score is the sum of the score of first **40** km and the bonus score.\n\nScore is **2** for each km for 0 to 40 km        =>  40 x 2  =  80\nScore is **4** for each km for 41 to 60 km      =>   0 x 4  =   0\nScore is **6** for each km for 61 to 120 km     =>   0 x 6  =   0\nScore is **8** for each km for above 120 km   =>    0 x 8  =    0\n------------------------------------------------------------\nTotal                                                              =>                  80\nBonus Score                                                 =>                    50\n------------------------------------------------------------\nTotal Score                                                   =>                  130\n------------------------------------------------------------\n\n\n<details style=\"margin:0;\">\n      <summary style=\"margin:0;padding:0;\">Detailed Explanation to calculate the score</summary>\n        <ul>\n          <li style=\"margin:0;padding:0;\">The score for each km for the first **40** km is **2**. Then the score for **40** km is **80**. (`40 * 2 = 80`)</li>\n          <li style=\"margin:0;padding:0;\">Sum of the above scores is **80** . Then the **total score** is the sum of above scores and bonus score that is **130**. (`80 + 50 = 130`)</li>\n        </ul>\n</details>\n\n<br/>\n\nThe output should be **130**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "efed06af-e4f9-4157-bb2c-4fa5eb8e51e3",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "4a7b1ae0-377f-4d98-81a7-e9b8ce5bd3df",
+              "content": "96.00",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "600d9df7-b1cc-405b-afaa-5c8558b075bb",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "76835167-dbd8-4df0-8c18-650e0d591df1",
+              "content": "24\n77",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e4429fdf-3c18-4870-a75c-35a8f91aacbd",
+              "content": "209",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n12\n```\n\n**Input 2**\n\n```\n209\n```\nThe above two inputs are valid because they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f6896af3-52cb-4fdc-b409-fdd0793861e5",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "49b8ffb8-d872-4a6c-90b4-c7310c9fee7d",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5ba3eec9-1a6d-45d2-ba50-61e3122536eb",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5c9bfaa7-2e6f-422b-b86b-a8e8b7d369a6",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "91592c5a-f068-4344-abda-724da0028cd2",
+              "content": "The input will be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing `D`.\n\nFor example, **95**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "39dc8c4d-0e0c-4685-b2fc-f5a6b9d6e3ce",
+      "input": "61",
+      "output": "216",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "3c4652d1-3b85-4546-854b-427fdfb44a2b",
+      "input": "50",
+      "output": "170",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "49fe3297-e343-4877-b558-732399b43b00",
+      "input": "4",
+      "output": "58",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "629c68af-c1b2-4349-ae6b-529bf9c76e87",
+      "input": "1",
+      "output": "52",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "64126180-bd19-42ea-bc94-d8de9ac90247",
+      "input": "200",
+      "output": "1210",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a20db26e-a8b5-48d3-8b36-8740f02a7a93",
+      "input": "41",
+      "output": "134",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "bc98c107-5a69-418f-bd79-09f72fdea614",
+      "input": "120",
+      "output": "570",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e79933a3-cae4-4eb4-9362-64793d1c07c9",
+      "input": "40",
+      "output": "130",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ecd3ae48-90a8-4e98-b4b6-d33b4f9e4357",
+      "input": "60",
+      "output": "210",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ef430a2b-bc3e-4572-92c6-fc0a34cba77d",
+      "input": "70",
+      "output": "270",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fd1aa050-9bd2-4487-8a2a-15ffb21ecd6a",
+      "input": "135",
+      "output": "690",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

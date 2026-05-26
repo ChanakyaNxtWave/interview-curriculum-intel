@@ -1,0 +1,68 @@
+{
+  "question_id": "2d1c884c-d80d-43c4-9084-86135b606c74",
+  "short_text": "Find the Indices of Element",
+  "content": "A list `L` is given in the prefilled code.\n\nWrite a program that reads a number `N` and prints the index of the given number `N` in the list `L`. If there are multiple occurrences of `N`, print all indices separated by a space.\n\n```\nL = [5, 4, 10, 2, 3, 2, 5, 15, 4, 4]\n```\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing space-separated integers representing the indices of of the given number `N` in the list `L`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 10`,\n\n- Integers in the list `L` and their respective indices are,\n\n   <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n    <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: bold; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">Numbers</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">5</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">4</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">10</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">2</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">3</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">2</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">5</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">15</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">4</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;padding: 8px 12px;\">4</div>\n   </div>\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;color: #808080;font-weight: bold;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">Indices</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; font-weight: 900;vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc; 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">8</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">9</div>\n   </div>\n  \n\n- The index value of **10** is **2**.\n\nThe output should be **2**\n<br>\nFor example, if the given number is `N = 2`,\n\n- Integers in the list `L` and their respective indices are,\n\n   <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n       <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: bold; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">Numbers</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">5</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">4</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">10</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">2</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">3</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">2</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">5</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">15</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">4</div>\n       <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; text-align: center;padding: 8px 12px;\">4</div>\n   </div>\n\n   <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;color: #808080;font-weight: bold;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">Indices</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;font-weight: 900; 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;font-weight: 900;1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">8</div>\n       <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">9</div>\n   </div>\n\n \n- Value **2** is present at two different indices **3** and **5**.\n\nThe output should be **3 5**\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e2b1b5e4-4a2b-4e7a-bbef-7d81ebb7739d",
+      "code_content": "num_list = [5, 4, 10, 2, 3, 2, 5, 15, 4, 4]\nnumber = int(input())\n\nall_indices = []\n\nfor index in range(len(num_list)):\n    if number == num_list[index]:\n        all_indices.append(str(index))\n\nprint(\" \".join(all_indices))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "31017e65-a5ce-4d5b-adb7-356eda0e9fd4",
+      "input": "4",
+      "output": "1 8 9",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a7998180-abad-45e2-828e-053cf5dd1c2a",
+      "input": "5",
+      "output": "0 6",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c5cf28f3-0db6-4ccc-acc7-abe9d7cee285",
+      "input": "10",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d560309f-75dc-413d-ac88-9a300c708d43",
+      "input": "15",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e2021303-b0c8-41fb-b929-3d8cc3bf796a",
+      "input": "2",
+      "output": "3 5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fdaf6f7f-298d-452f-b511-985c819f5c12",
+      "input": "3",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

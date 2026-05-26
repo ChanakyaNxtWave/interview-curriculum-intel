@@ -1,0 +1,61 @@
+{
+  "question_id": "043fc443-2eab-463f-aef3-e378145016c3",
+  "short_text": "Print the Input - 3",
+  "content": "Write a program that reads the two words and prints the two words on two lines.\n\n---\n\n#### Input\n\nThe first line of input contains a string.\nThe second line of input contains a string.\n\n---\n\n#### Output\n\nThe first line of output should be a string containing the first word.\nThe second line of output should be a string containing the second word.\n\n---\n\n#### Explanation\n\nFor example, if the given words are **Apple** and **Banana**, the output should be\n\n```\nApple\nBanana\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "326b3b7d-b9e2-4b10-a4cd-0280f8b97a90",
+      "code_content": "first_word = input()\nsecond_word = input()\n\nprint(first_word)\nprint(second_word)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "333e8425-1882-4790-8fd9-5a59d6d4abb2",
+      "input": "Washington\nOne",
+      "output": "Washington\nOne",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "819ac644-c7fa-408a-8624-1e273432f13e",
+      "input": "Hi\nHello",
+      "output": "Hi\nHello",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dbeb32ad-f185-4509-b255-b92788adeb47",
+      "input": "Apple\nBanana",
+      "output": "Apple\nBanana",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ddcae11a-0bb9-4711-8131-e1ed0b4d4d4e",
+      "input": "CV Raman\nSrinivasa Ramanujan",
+      "output": "CV Raman\nSrinivasa Ramanujan",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f14c2044-5027-4edf-9b44-aee4ffc006e7",
+      "input": "Blue\nWhite",
+      "output": "Blue\nWhite",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

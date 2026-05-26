@@ -1,0 +1,75 @@
+{
+  "question_id": "0b05deae-bcde-44c8-9885-ca2193c125b7",
+  "short_text": "Average of Numbers from M to N",
+  "content": "Given two numbers `M` and `N`, write a program to print the sum and average of the numbers from `M` to `N` each on a new line.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe first line of output should be an integer that is the sum of the numbers from `M` to `N`.\nThe second line of output should be a float that is the average of the numbers from `M` to `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 5` and `N = 10`,\n\n- The numbers from **5** to **10** are **5, 6, 7, 8, 9,** and **10**.\n- The numbers count from **5** to **10** is **6**.\n- The sum of the numbers from **5** to **10** is **45**.\n- The average of the numbers is **7.5**(`45 / 6`).\n\nThe output should be,\n\n```\n45\n7.5\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "075805be-a6b7-4443-b80f-ea476867e2e0",
+      "code_content": "first_number = int(input())\nlast_number = int(input())\n\nsum_of_numbers = 0\naverage_of_numbers = 0\ncount = 0\n\nfor number in range(first_number, last_number + 1):\n    sum_of_numbers = sum_of_numbers + number\n    count = count + 1\n\naverage_of_numbers = sum_of_numbers / count\n\nprint(sum_of_numbers)\nprint(average_of_numbers)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "8101ed5f-ddf8-43ab-abe3-6dbb24c9bdaf",
+      "input": "48\n78",
+      "output": "1953\n63.0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8f4e8127-bae3-47b4-bd92-ee8a637aab3b",
+      "input": "13\n27",
+      "output": "300\n20.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a3ffb94a-f73a-4dac-b94f-7cfe89002345",
+      "input": "348\n789",
+      "output": "251277\n568.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a841b821-a6b4-4ee8-9b52-a2dd17669519",
+      "input": "10\n22",
+      "output": "208\n16.0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b5ac4792-d2fd-4227-9041-ecb8875d0b8b",
+      "input": "5\n10",
+      "output": "45\n7.5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c08963f8-5dbc-45b6-a4c1-ca61359f9fc2",
+      "input": "10348\n14789",
+      "output": "55829277\n12568.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f54716eb-3771-4256-9a24-0f2639e3ebfa",
+      "input": "150\n343",
+      "output": "47821\n246.5",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "b005d650-9c22-448b-b74d-3f802abfcd6d",
+  "short_text": "Hollow Diamond - 2",
+  "content": "Given the number of rows N, write a program to print the hallow diamond pattern similar to the pattern shown below.<pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">    A\r\n   B B\r\n  C   C\r\n D     D\r\nE       E\r\n D     D\r\n  C   C\r\n   B B\r\n    A\r\n</code></pre>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be (2*N - 1) rows and (2*N - 1) columns containing the alphabet characters in the hollow diamond pattern.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, the pattern should contain 9 rows and 9 columns as shown below.<pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">    A\r\n   B B\r\n  C   C\r\n D     D\r\nE       E\r\n D     D\r\n  C   C\r\n   B B\r\n    A\r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "3d6d973e-8aa7-4b0f-9a16-9511a7d85527",
+      "code_content": "n = int(input())\nalpha = 65\nfor row in range(n):\n    left_spaces = \" \" * (n - row - 1) \n    hollow_spaces = \" \" * (2 * row - 1)\n    if row == 0:\n        each_row = left_spaces + chr(alpha)\n        alpha += 1\n    else:\n        each_row = left_spaces + chr(alpha) + hollow_spaces + chr(alpha)\n        alpha += 1\n    print(each_row)\n    \nalpha -= 2\n\nfor row in range(1, n):\n    left_spaces = \" \" * row \n    hollow_spaces = \" \" * (2 * (n - row - 1) - 1)\n    if row == n - 1:\n        each_row = left_spaces + chr(alpha)\n    else:\n        each_row = left_spaces + chr(alpha) + hollow_spaces + chr(alpha)\n        alpha -= 1 \n    print(each_row)\n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2e2033c1-6a9c-4e0e-acb2-57db0ab46a6a",
+      "input": "3",
+      "output": "  A\n B B\nC   C\n B B\n  A\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6bfd6d03-2345-4443-8ad0-59cda9258b07",
+      "input": "11",
+      "output": "          A\n         B B\n        C   C\n       D     D\n      E       E\n     F         F\n    G           G\n   H             H\n  I               I\n J                 J\nK                   K\n J                 J\n  I               I\n   H             H\n    G           G\n     F         F\n      E       E\n       D     D\n        C   C\n         B B\n          A\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "758371e1-17ae-4d09-9a70-8ca0e69851cc",
+      "input": "14",
+      "output": "             A\n            B B\n           C   C\n          D     D\n         E       E\n        F         F\n       G           G\n      H             H\n     I               I\n    J                 J\n   K                   K\n  L                     L\n M                       M\nN                         N\n M                       M\n  L                     L\n   K                   K\n    J                 J\n     I               I\n      H             H\n       G           G\n        F         F\n         E       E\n          D     D\n           C   C\n            B B\n             A\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a7b281b5-9ece-4b98-8757-1080aedef796",
+      "input": "8",
+      "output": "       A\n      B B\n     C   C\n    D     D\n   E       E\n  F         F\n G           G\nH             H\n G           G\n  F         F\n   E       E\n    D     D\n     C   C\n      B B\n       A\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "f241073e-5f65-44e5-b684-90f92afd3bf3",
+      "input": "5",
+      "output": "    A\n   B B\n  C   C\n D     D\nE       E\n D     D\n  C   C\n   B B\n    A\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

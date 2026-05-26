@@ -1,0 +1,398 @@
+{
+  "question_id": "d5ff6e24-f31c-45de-be07-f468fd2ca258",
+  "short_text": "Eligibility Criteria",
+  "content": "Write a program that reads the marks in Maths `M`, Physics `P`, and Chemistry `C`, and checks if any of the below conditions is satisfied.\r\n\r\n- `M >= 70` and `P >= 60` and `C >= 60`\r\n- `M + P + C >= 180`\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `M`.\r\nThe second line of input contains an integer representing `P`.\r\nThe third line of input contains an integer representing `C`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if any of the given conditions is satisfied, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given marks are `M = 0`, `P = 100`, and `C = 100`,\r\n\r\n✗ `M >= 70` and `P >= 60` and `C >= 60` (**0** is less than **70**)\r\n✔ `M + P + C >= 180`. (`0 + 100 + 100 = 200`, **200** is greater than **180**)\r\n\r\nThe output should be **True** as one of the given conditions is satisfied.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "511831d9-7041-435c-a6e3-37ee1802c029",
+      "code_content": "maths = int(input())\nphysics = int(input())\nchemistry = int(input())\n\nare_marks_greater = maths >= 70 and physics >= 60 and chemistry >= 60\n\nmarks_sum = maths + physics + chemistry\nis_sum_greater_or_equal = marks_sum >= 180\n\nresult = are_marks_greater or is_sum_greater_or_equal\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1a3a4449-0485-4715-b3cb-0c6a94a02fb6",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n20\n80\n75\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given marks are `M = 20`, `P = 80`, and `C = 75`,\n\n✗ `M >= 70` and `P >= 60` and `C >= 60`  (**20** is less than **70**),\n\n✗ `M + P + C >= 180` ( `20 + 80 + 75 = 175`,  **175** is not greater than **180** ).\n\nThe output should be **False** as none of the given conditions is satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8062dd63-5e87-413e-b80b-4650c2ba6ce6",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n100\n118\n8\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given marks are `M = 100`, `P = 110`, and `C = 8`,\n\n✗ `M >= 70` and `P >= 60` and `C >= 60`  (**8** is less than **60**),\n\n✔ `M + P + C >= 180` ( `100 + 110 + 8 = 218`,  **218** greater than **180** ).\n\nThe output should be **True** as one of the given conditions is satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "81c69a9d-a486-483e-a51e-85b846ecb819",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n60\n60\n60\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given marks are `M = 60`, `P = 60`, and `C = 60`,\n\n✗ `M >= 70` and `P >= 60` and `C >= 60`.\n\n✔ `M + P + C >= 180` ( `60 + 60 + 60 = 180`,  **180** is greater than or equal to **180** ).\n\nThe output should be **True** as one of the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "068a1637-9b0d-48d0-bc73-a6faa3e0ba34",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "26e04bce-e4ad-44f3-a39f-c51ec07782d0",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "641c2846-cbf9-4c44-9cd3-7009a7a0b131",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c06b1a0c-e3f3-4d91-a88b-366b37186ac1",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "eeb06ff3-9f24-489c-99e6-30d6fde656e9",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean.\n\n- **True** should be printed if any of the given conditions is satisfied.\n\n- Otherwise **False** should be printed.\n\nFor example,\n\nIf the given marks are `M = 140`, `P = 30`, and `C = 220`,\n\n✗ `M >= 70` and `P >= 60` and `C >= 60`. (**30** is less than **60**)\n\n✔ `M + P + C >= 180` ( `140 + 30 + 220 = 390`,  **390** is greater than or equal to **180** ).\n\nThe output should be **True** as one of the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "12662980-a8a5-4656-a3c9-4e60b479f4fc",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "64588599-e8aa-4dfb-9c52-2adb4f64f6c2",
+              "content": "To check if,\n\n- `M = 70` and `P = 60` and `C = 60`.\n- `M + P + C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8e70b1f6-acf3-4a78-a4b2-bd33be97c9c5",
+              "content": "To check if,\n\n- `M >= 70` and `P >= 60` and `C >= 60`.\n- `M + P + C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9a218494-d8fd-4d20-88e0-14eb7cb46218",
+              "content": "To check if,\n\n- `M >= 70` or `P >= 60` or `C >= 60`.\n- `M + P + C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ca20f6c7-875d-468f-b56f-b98d9ebb7509",
+              "content": "To check if,\n\n- `M >= 70` and `P >= 60` and `C >= 60`.\n- `M - P - C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the marks in Maths `M`, Physics `P`, Chemistry `C` and check if,\n\n- `M >= 70` and `P >= 60` and `C >= 60`.\n- `M + P + C >= 180`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4dfdbf09-260e-45a9-95c8-06c5031a4316",
+          "short_text": "",
+          "content": "According to the problem description, what is the second condition?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0f7379ca-1fe6-4627-887e-848e28bf148a",
+              "content": "`M + P + C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "171a1265-3ea7-4c67-a3db-2f049c2fcec2",
+              "content": "`M + P + C <= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "73703a78-6b64-44a0-bf39-cc2c923316cc",
+              "content": "`M - P - C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "88ff8689-0a18-4885-88d3-a02b0219f290",
+              "content": "`M + P + C >= 150`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the second condition is to check if `M + P + C >= 180`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "57a205df-7f7b-4a5e-90ac-3548851dd708",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "09bd5429-c200-4fa7-ab5e-682a11a366b1",
+              "content": "The first line of the input contains a string.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "96142046-a2f8-4a1b-85e2-889513017064",
+              "content": "The first line of the input contains an integer.\n\nThe second line of input contains an integer.\n\nThe third line of input contains a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c4b0e2c7-e141-4c53-a218-3ebb18d2a5de",
+              "content": "The first line of input contains an integer.\n\nThe second line of input conatins an integer.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d38a2dca-e81a-466c-8085-46816f30eb5e",
+              "content": "The first line of the input contains a float.\n\nThe second line of input contains a float.\n\nThe third line of input contains a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be,\n\n- The first line of input contains an integer representing `M`.\n\n- The second line of input conatins an integer representing `P`.\n\n- The third line of input contains an integer representating `C`.\n\nFor example,\n\n```\n99\n141\n2\n``` ",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "914890ea-6ecf-4d49-8a24-067d288eb91c",
+          "short_text": "",
+          "content": "According to the problem description, what is the first condition?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1c6d3d64-5c4a-4d01-89a7-291b5dfa863a",
+              "content": "`M >= 60` and `P >= 60` and `C >= 60`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "28592d96-b2b3-4829-b623-7aebe9af542e",
+              "content": "`M >= 70` and `P >= 60` and `C >= 60`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "46993d3f-c0cd-4a0f-be52-56501d2eb2d8",
+              "content": "`M >= 70` and `P >= 100` and `C >= 60`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dacdf50f-7ff0-422b-9a94-91da60656dc1",
+              "content": "`M + P + C >= 180`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the first condition is to check if `M >= 70` and `P >= 60` and `C >= 60`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d240b5b8-8154-4bea-b729-f802788e399e",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "13da3c12-adc9-443b-b8e1-b22866114708",
+              "content": "```\n77 53 100\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "57f67059-b84f-47de-845a-9c05b6a04a82",
+              "content": "```\n5\n44\n62\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "88b6ed78-e737-49ed-981c-3942496a6f97",
+              "content": "```\n145\n89\n90\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "966b6ffa-c6ed-4884-83af-ef59756cb801",
+              "content": "```\nSeven\nNine\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n145\n89\n90\n```\n\n**Input 2**\n\n```\n5\n44\n62\n```\nThe above two inputs are valid because,\n\n- The first line of the input contains an integer.\n\n- The second line of input contains an integer.\n\n- The third line of input contains an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f1f8286b-84d9-4a4e-9d88-a1febbe0626b",
+          "short_text": null,
+          "content": "Which of the following is the correct output for the given input?\r\n\r\n**Input**\r\n\r\n```\r\n100\r\n30\r\n40\r\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "09ce3421-8cce-433f-be48-4ea072e3b3c6",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2761074d-492c-4b1b-a4a7-ac482cda51cd",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "88333543-7f60-4e02-8ea2-8e863556683d",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a28a4c6a-aa3e-4bff-a1f1-94951f1c02e5",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given marks are `M = 57`, `P = 83`, and `C = 109`,\n\n✗ `M >= 70` and `P >= 60` and `C >= 60`. (**57** is less than **70**)\n\n✔ `M + P + C >= 180` ( `57 + 83 + 109 = 249`,  **249** is greater than or equal to **180** ).\n\nThe output should be **True** as one of the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0ae483fa-c3d9-4c81-a524-89722f74b687",
+      "input": "20\n100\n60",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "1e39a0ba-8f33-4c13-ae59-7c8838b36a3c",
+      "input": "60\n30\n50",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "21bb7e6a-50da-42fb-991c-e4806b79cb37",
+      "input": "0\n100\n100",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4032e409-9361-4a78-82c3-ff25ae8baa00",
+      "input": "60\n70\n90",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7b6ba99b-3915-4082-b045-52a316edc0b0",
+      "input": "100\n100\n40",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "aa7aa58c-3e4f-45ce-bcc5-406f9c433ce5",
+      "input": "20\n30\n40",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "d9de0cb1-f8c7-41c6-b01f-29105bfd74ac",
+      "input": "60\n60\n70",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fea2e751-cfe3-4e6e-998b-cbd12ce1ccfc",
+      "input": "30\n40\n65",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

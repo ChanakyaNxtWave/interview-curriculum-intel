@@ -1,0 +1,61 @@
+{
+  "question_id": "a8dc1c0c-3cbf-4391-8014-05555eaff26e",
+  "short_text": "Student ID Map",
+  "content": "You are given a sequence of student names Ni and their ids Di (corresponding to the student at the same index in Ni).<br/>Write a program to print the student name and his ID from Ni and Di in alphabetical order of the name.<hr><b>Input</b><br/><br/>The first line of input will contain comma-separated strings, denoting the student names (Ni).<br/>The second line of input will contain comma-separated strings, denoting the corresponding student ids (Di).<hr><b>Output</b><br/><br/>The output should be M lines equal to the number of students.<br/>Each line in the output contains student name and his ID separated by a space in alphabetical order of the name.<hr><b>Explanation</b><br/><br/>For example, if the given student names sequence and IDs sequence are the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Anand,Ramesh,Kiran\nID102,ID101,ID100\n</code></pre><br/>Your code should print the student name and his ID from Ni and Di in alphabetical order of the name. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Anand ID102\nKiran ID100\nRamesh ID101\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "a9ce37ca-7e85-4584-a471-8783635e630c",
+      "code_content": "def convert_to_key_value_pairs(keys_list, values_list):\n    dict_a = {}\n    number_of_keys = len(keys_list)\n    for i in range(number_of_keys):\n        key = keys_list[i]\n        value = values_list[i]\n        dict_a[key] = value\n    return dict_a\n\n\nstudent_names = input().split(\",\")\nstudent_ids = input().split(\",\")\n\nstudent_details = convert_to_key_value_pairs(student_names, student_ids)\nstudent_details_items = student_details.items()\nstudent_details = sorted(student_details_items)\nfor item in student_details:\n    print(*item)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "129b5d97-f8d9-45e3-9295-bd1029b26f75",
+      "input": "Anjali,Ravi,Akbar,Mohan\nID102,ID101,ID100,ID103",
+      "output": "Akbar ID100\nAnjali ID102\nMohan ID103\nRavi ID101\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "6d72bb1c-f92f-48df-88e0-56622fe3213a",
+      "input": "Anand,Ramesh,Kiran\nID102,ID101,ID100",
+      "output": "Anand ID102\nKiran ID100\nRamesh ID101\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9d15459b-386c-4fd4-97f2-5eef8f0db73c",
+      "input": "Gopal,Latha\nID102,ID101",
+      "output": "Gopal ID102\nLatha ID101\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "f1d50dbe-b316-490e-a98c-d3b0f506fe56",
+      "input": "Anjali,Ashok,Akbar\nID102,ID101,ID100",
+      "output": "Akbar ID100\nAnjali ID102\nAshok ID101\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "f4652525-9cf0-4ead-80b4-e2af956e196c",
+      "input": "Akbar,Suresh,Gopal,Latha\nID102,ID101,ID100,104",
+      "output": "Akbar ID102\nGopal ID100\nLatha 104\nSuresh ID101\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c653449e-bc51-4aab-a83f-8a98ef71c10e",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

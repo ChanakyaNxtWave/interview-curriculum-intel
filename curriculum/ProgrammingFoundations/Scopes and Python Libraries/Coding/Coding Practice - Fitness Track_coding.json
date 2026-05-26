@@ -1,0 +1,61 @@
+{
+  "question_id": "a035717a-0712-498a-ab76-6bcd39f252d3",
+  "short_text": "Fitness Track",
+  "content": "Imagine you are developing a fitness application that tracks the daily step counts of users. You want to analyze the data to provide insights into their activity levels. Specifically, you want to calculate the total number of steps taken by users who meet a minimum daily step goal, and also categorize their step counts into different activity levels.\n\nYour task is to write a program that reads the input for the number of users and their daily step counts. Then, filter out any users whose step counts are below a specified minimum threshold. After filtering, use `map` to categorize the valid step counts into activity levels based on the following scale:\n\n- **`Active`**: 10,000 steps or more\n- **`Moderately Active`** Active: 5,000 to 9,999 steps\n- **`Sedentary`**: Below 5,000 steps\n\nFinally, use `reduce` to calculate the total number of steps from all active users.\n\n<MultiLineNote>\n\n- A user is considered active if their step count is 10,000 or more.\n- The daily step goal is specified as an integer.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line contains an integer `N` representing the number of users.\n- The second line contains an integer `M` representing the minimum daily step goal.\n- The next `N` lines each contain an integer representing the daily step count of each user.\n\n---\n\n#### Output\n\nA list of activity levels corresponding to the valid step counts and an integer representing the total number of steps from active users.\n\n---\n\n#### Explanation\n\nIf you have 4 users with step counts as follows:\n\n- 12,000 **Active** - This user's steps fall in the Active category as they have met the threshold of 10,000 steps.\n- 4,500 - This step count is not listed with an activity level because it does not meet the minimum daily step goal.\n- 8,000 **Moderately Active** - This step count qualifies as Moderately Active as it's between 5,000 and 9,999 steps.\n- 10,500 **Active** - This user's steps also fall in the Active category.\n\nThen the output should be:\n\n```\n['Active', 'Moderately Active', 'Active'] 22500\n```\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d487839c-cc63-49b5-bbfe-75e7e0155782",
+      "code_content": "from functools import reduce\n\nN = int(input())\nM = int(input())\n\nstep_counts = [int(input()) for i in range(N)]\n\ndef is_valid(step_count):\n    return step_count >= M\n\ndef categorize(step_count):\n    if step_count >= 10000:\n        return 'Active'\n    elif step_count >= 5000:\n        return 'Moderately Active'\n    else:\n        return 'Sedentary'\n\ndef sum_active_steps(total, step_count):\n    if step_count >= 10000:\n        return total + step_count\n    return total\n\nvalid_steps = filter(is_valid, step_counts)\nactivity_levels = list(map(categorize, valid_steps))\ntotal_active_steps = reduce(sum_active_steps, filter(is_valid, step_counts), 0)\n\nprint(activity_levels, total_active_steps)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3aab3a45-7fdb-4a1a-8298-6e096c0ba332",
+      "input": "6\n10000\n9500\n12000\n4000\n3000\n13000\n9000",
+      "output": "['Active', 'Active'] 25000",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "68d994d4-e922-4354-9ec0-d5a4e65f26a0",
+      "input": "3\n7000\n5000\n3000\n9000",
+      "output": "['Moderately Active'] 0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bd80dc0a-1792-45e6-bfe5-248fb3973d01",
+      "input": "2\n2000\n15000\n18000",
+      "output": "['Active', 'Active'] 33000",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d3f3d9eb-d30e-4e09-868e-21bb6ff0d1d1",
+      "input": "5\n3000\n2500\n6000\n15000\n2000\n2050",
+      "output": "['Moderately Active', 'Active'] 15000",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f2646eec-07bd-4be7-95b7-7ed0de101cd6",
+      "input": "4\n5000\n12000\n4500\n8000\n10500",
+      "output": "['Active', 'Moderately Active', 'Active'] 22500",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7f68984f-446c-43bc-a2f6-b66d1992c341",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

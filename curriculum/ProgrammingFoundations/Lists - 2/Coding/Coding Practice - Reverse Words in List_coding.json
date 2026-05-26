@@ -1,0 +1,61 @@
+{
+  "question_id": "70a0473b-33dc-409a-adec-d8f2698ff83f",
+  "short_text": "Reverse Words in List",
+  "content": "Given a list of words, write a program to reverse the words in the list.<hr><b>Input</b><br/><br/>The first line of input will contain space-separated words, denoting the elements of the list.<hr><b>Output</b><br/><br/>The output should be a single line containing a list with the elements in reverse order.<hr><b>Explanation</b><br/><br/>For example, if the given sentence is the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Banana Apple Pomegranate Strawberry Grapes Orange\r\n</code></pre><br/>Your code should print the list by reversing the words in the given sentence. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['Orange', 'Grapes', 'Strawberry', 'Pomegranate', 'Apple', 'Banana']\r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "a28cf485-49b4-4331-ad92-16e02554bcc7",
+      "code_content": "sentence = input()\nwords_list = sentence.split()\n\nreverse_words_list = words_list[::-1]\nprint(reverse_words_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10fa82b8-4556-49a1-890f-f75c4423c5e7",
+      "input": "Banana Apple Pomegranate Strawberry Grapes Orange",
+      "output": "['Orange', 'Grapes', 'Strawberry', 'Pomegranate', 'Apple', 'Banana']\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9bdddc16-29f2-4faf-8f97-2a6971c45388",
+      "input": "Google Samsung Microsoft Wipro TCS iB Hubs NxtWave",
+      "output": "['NxtWave', 'Hubs', 'iB', 'TCS', 'Wipro', 'Microsoft', 'Samsung', 'Google']\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ad338dc8-697b-479b-9348-b75a3843d126",
+      "input": "nature\n",
+      "output": "['nature']\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d0cdced3-daf2-4839-a14b-3aa79c60c38d",
+      "input": "Cricket Hockey Football Badminton Tennis Basketball Golf Volleyball Archery Boxing",
+      "output": "['Boxing', 'Archery', 'Volleyball', 'Golf', 'Basketball', 'Tennis', 'Badminton', 'Football', 'Hockey', 'Cricket']\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ee0d1a95-4270-4c2d-9dbe-332164dbca01",
+      "input": "anjali ravi akbar suresh gopal latha mohan ashok",
+      "output": "['ashok', 'mohan', 'latha', 'gopal', 'suresh', 'akbar', 'ravi', 'anjali']\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

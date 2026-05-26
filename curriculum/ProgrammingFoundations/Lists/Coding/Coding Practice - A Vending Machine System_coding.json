@@ -1,0 +1,75 @@
+{
+  "question_id": "c26f7fe7-2c01-42a3-b645-9129b80b9750",
+  "short_text": "A Vending Machine System",
+  "content": "You are designing a vending machine system where items are sorted based on their accessibility. Items with even accessibility codes should be placed in the front section of the machine for quick access, while items with odd accessibility codes should be placed in the back section. Write a program to rearrange the accessibility codes of items so that all even codes appear before the odd ones.\n\n<MultiLineNote>\n\n- An **accessibility code** is a number assigned to an item in the vending machine.\n- The relative order of even and odd codes does not matter.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a list of integers representing the accessibility codes of items.\n\n---\n\n#### Output\n\nA single line containing the rearranged list of accessibility codes.\n\n---\n\n#### Explanation\n\nIf the input is `3 1 2 4`, the output should be `[2, 4, 3, 1]`.\n\nHere, `2` and `4` are even codes, while `3` and `1` are odd codes. The program rearranges the codes to prioritize even codes in the front section of the vending machine.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "951d1a35-b610-4369-8ff9-e57e30c765c5",
+      "code_content": "codes = input().split()\neven_codes = []\nodd_codes = []\n\nfor code in codes:\n    code = int(code)\n    if code % 2 == 0:\n        even_codes += [code]\n    else:\n        odd_codes += [code]\n\nresult = even_codes + odd_codes\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "17b7dcdf-4ce8-4b40-a707-149931fedfac",
+      "input": "0 1 2 3",
+      "output": "[0, 2, 1, 3]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "18f7bcf7-b177-4332-b70b-419daaa888cf",
+      "input": "15 14 13 12 11",
+      "output": "[14, 12, 15, 13, 11]",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "860735cc-4f96-4cce-8ebb-cade451dc206",
+      "input": "1 3 5 7 2",
+      "output": "[2, 1, 3, 5, 7]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "97de56b9-797d-46e0-bb4e-ad700a734fbc",
+      "input": "3 1 2 4",
+      "output": "[2, 4, 3, 1]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "98df4190-1bdc-4d33-a0a7-88b86e186664",
+      "input": "10 9 8 7 6 5",
+      "output": "[10, 8, 6, 9, 7, 5]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aae6f42e-6fb7-4b95-8e9b-66313a68cc20",
+      "input": "1 3 5 7 2 4 6 8",
+      "output": "[2, 4, 6, 8, 1, 3, 5, 7]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "edcfd58b-d75b-431e-b718-eb57fe3b50ac",
+      "input": "2 3 4 5 6 7 8 9",
+      "output": "[2, 4, 6, 8, 3, 5, 7, 9]",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "40f7871e-a9ef-4bdb-a190-a4bc7fa56437",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

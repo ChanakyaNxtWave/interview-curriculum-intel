@@ -1,0 +1,82 @@
+{
+  "question_id": "ed4e08ff-7c67-412e-a96d-ef85563c94c9",
+  "short_text": "Square - 5",
+  "content": "Given a starting number `S` and a number `N`, write a program that prints a **Square** of `N` rows and `N` columns using numbers starting from `S`.\n\n```\n5 6 7\n5 6 7\n5 6 7\n```\n\n<MultiLineNote>\nThere is a space after every number (`3`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing the starting number `S`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows and `N` columns containing numbers starting from `S` as a **Square** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `S = 3` and `N = 4`,\n\n- Print the numbers in **4** rows and **4** columns starting from **3** as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-square-5.png' widthPercent='50'/>\n\n<MultiLineNote>\n\nIn the given image, the Number in box indicates the number and a space (\"3 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n3 4 5 6\n3 4 5 6\n3 4 5 6\n3 4 5 6\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8f20be74-7595-477f-a0dd-c1f02f4b59be",
+      "code_content": "s = int(input())\nn = int(input())\n\nfirst_row = \"\"\n\nfor row in range(n):\n    first_row = first_row + str(s + row) + \" \"\n\nfor row in range(n):\n    print(first_row)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0bd624d6-5bc9-45ba-a126-81f0e635c845",
+      "input": "8\n5",
+      "output": "8 9 10 11 12 \n8 9 10 11 12 \n8 9 10 11 12 \n8 9 10 11 12 \n8 9 10 11 12",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "1987b7c5-8c68-4d85-8140-5d53291f72fe",
+      "input": "3\n4",
+      "output": "3 4 5 6 \n3 4 5 6 \n3 4 5 6 \n3 4 5 6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3ab18cbb-c7d9-4aa0-9015-7e0f4ac5bdcc",
+      "input": "1\n1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "549824f2-c90b-4dc5-b3b9-93f3f9dd9311",
+      "input": "-5\n5",
+      "output": "-5 -4 -3 -2 -1 \n-5 -4 -3 -2 -1 \n-5 -4 -3 -2 -1 \n-5 -4 -3 -2 -1 \n-5 -4 -3 -2 -1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6c7468b2-eab0-4a69-827f-3de2d65f908e",
+      "input": "21\n10",
+      "output": "21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30 \n21 22 23 24 25 26 27 28 29 30",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "80bfe381-acdf-41c0-95a7-416115f47b67",
+      "input": "-3\n7",
+      "output": "-3 -2 -1 0 1 2 3 \n-3 -2 -1 0 1 2 3 \n-3 -2 -1 0 1 2 3 \n-3 -2 -1 0 1 2 3 \n-3 -2 -1 0 1 2 3 \n-3 -2 -1 0 1 2 3 \n-3 -2 -1 0 1 2 3",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b9591e40-a575-41dc-ab96-aae26f241746",
+      "input": "0\n7",
+      "output": "0 1 2 3 4 5 6 \n0 1 2 3 4 5 6 \n0 1 2 3 4 5 6 \n0 1 2 3 4 5 6 \n0 1 2 3 4 5 6 \n0 1 2 3 4 5 6 \n0 1 2 3 4 5 6",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "d5c070c9-8bed-4ed0-8215-e8d8da4551f3",
+      "input": "2\n2",
+      "output": "2 3 \n2 3",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

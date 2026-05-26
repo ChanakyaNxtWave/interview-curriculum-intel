@@ -1,0 +1,61 @@
+{
+  "question_id": "63ed91b9-fa5e-4668-835a-2049716781f6",
+  "short_text": "Stars",
+  "content": "Write a program that reads a word and prints the word in \"\\* \\* \\* word \\* \\* \\*\" format.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string in the format shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given word is **Magician**, the output should be \"\\* \\* \\* Magician \\* \\* \\*\".",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a640f445-49e2-4599-a374-3b2a12135b81",
+      "code_content": "word = input()\n\nresult = (\"* \" * 3) + word + (\" *\" * 3)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0f6b34fd-eb8a-456a-901c-56f71c947d3b",
+      "input": "Congratulations",
+      "output": "* * * Congratulations * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2da49ce4-ab5f-4d87-8363-6da6752179cd",
+      "input": "Winner",
+      "output": "* * * Winner * * *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "32ceb650-c3da-4dfa-bed5-40b1630e1e3a",
+      "input": "Highest Score",
+      "output": "* * * Highest Score * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4754699a-ad01-4cb8-a3ea-5de98256326a",
+      "input": "James",
+      "output": "* * * James * * *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ed869ab5-9783-4ab5-9c88-15ac068f935b",
+      "input": "Magician",
+      "output": "* * * Magician * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

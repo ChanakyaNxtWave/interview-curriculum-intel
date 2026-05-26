@@ -1,0 +1,61 @@
+{
+  "question_id": "46952747-b323-4ab3-8ac7-fdeaa05a887c",
+  "short_text": "Remove Element",
+  "content": "\nWrite a program that reads a string `S` containing space-separated strings from the user and forms a set from these strings. The program should then read a single string and remove it from the set. Finally, it should print elements of the updated set as space-separated strings in sorted order,if the string is not present, print the message `\"string not found in the set\"` followed by elements of the original set on a new line as space-separated strings in sorted order.\n\n---\n\n#### Input\n\n- The first line contains space-separated strings to form initial set.\n- The second line contains a single string to remove from the set.\n\n---\n\n#### Output\n\n- If the string is removed successfully, print the elements of the updated set as space-separated strings in sorted order.\n- If the string is not present, print `\"string not found in the set\"` and then print the strings in the original set on a new line as space-separated strings in sorted order.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana orange grape\nbanana\n```\n\n- In this example, the initial set contains `apple`, `banana`, `orange`, and `grape`. After attempting to remove `banana`, the program outputs the updated set as `apple grape orange` in sorted order.\n\nThe output should be:\n\n```\napple grape orange\n```\n\nIf the input is:\n\n```\napple banana orange\nkiwi\n```\n\n- In this case, the input set contains `apple`, `banana`, and `orange`. Since `kiwi` is not in the set, the program outputs `\"string not found in the set\"` followed by the original set as `apple banana orange` in sorted order.\n\nThe output should be:\n\n```\nstring not found in the set\napple banana orange\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c010ff89-9445-4b99-afe8-df014863aec3",
+      "code_content": "s = input().strip().split()\nunique_items = set(s)\n\nitem_to_remove = input().strip()\n\nif item_to_remove in unique_items:\n    unique_items.remove(item_to_remove)\nelse:\n    print(\"string not found in the set\")\n\nupdated_list = []\n\nfor item in unique_items:\n    updated_list.append(item)\n\nsorted_list=sorted(updated_list)\n\nprint(\" \".join(sorted_list))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2a478145-8b9e-4942-a6d0-969f1c8f3be0",
+      "input": "1 2 3 4 5\n6",
+      "output": "string not found in the set\n1 2 3 4 5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "70785aa6-d73b-4b51-ba80-3832c0a5661e",
+      "input": "apple banana orange grape\nkiwi",
+      "output": "string not found in the set\napple banana grape orange",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8e227953-9b05-4c04-a873-29e07f84fe3f",
+      "input": "red blue yellow\nblue",
+      "output": "red yellow",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f679d898-d586-4d2b-a3ba-cf7565dd1b9c",
+      "input": "apple banana orange\nkiwi",
+      "output": "string not found in the set\napple banana orange",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fe7afcc6-25ec-44f1-8af4-059215f384c6",
+      "input": "cat dog fish\nfish",
+      "output": "cat dog",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ceb957b7-1aa1-42e3-97ba-77c6e832caae",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

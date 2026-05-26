@@ -1,0 +1,61 @@
+{
+  "question_id": "18bdfb2d-9323-4818-9e1e-9c6293e6dbda",
+  "short_text": "Missing Numbers",
+  "content": "Write a program to find the missing numbers from 1 to the maximum number in the list.<hr><b>Input</b><br/><br/>The input will be a single line containing space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the list of missing numbers sorted in ascending order.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;1 2 3 5 6 7&quot;, your code should print the list of missing numbers from 1 to 7. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[4]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "7d5f4528-e995-4e71-9cd6-2e65d81afadd",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nnum_list = input().split()\nnum_list = convert_string_to_int(num_list)\nmaximum = max(num_list)\nnum_set = set(num_list)\n\nfirst_n_num_set = set(range(1, maximum+1))  # Gives a set with first N natural numbers\nmissing_num_set = first_n_num_set.difference(num_set)\nmissing_num_list = list(missing_num_set)\nmissing_num_list.sort()\nprint(missing_num_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3c1f8851-fabf-4a7e-9bea-315f27e38258",
+      "input": "1 2 3",
+      "output": "[]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "6db268e9-9208-44a8-aa7d-8ff5ae568798",
+      "input": "10 20",
+      "output": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "93f97967-b4f0-4712-a332-adfc098669f3",
+      "input": "5",
+      "output": "[1, 2, 3, 4]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "d78649c3-18f1-46dc-a663-61e9ccbd1ddd",
+      "input": "1 2 3 5 6 7 10",
+      "output": "[4, 8, 9]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "fbdca5de-8b7c-4774-99be-81101e180370",
+      "input": "1 2 3 5 6 7",
+      "output": "[4]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

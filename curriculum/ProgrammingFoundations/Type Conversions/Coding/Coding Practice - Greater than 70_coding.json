@@ -1,0 +1,137 @@
+{
+  "question_id": "89af65e9-3f73-4d9b-9f90-c2b34d855b9d",
+  "short_text": "Greater than 70",
+  "content": "Write a program that reads a number and checks if the given number is greater than **70**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the given number is greater than **70**, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given number is **86**, the output should be **True** as **86** is greater than **70**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d05099ee-4b0c-4bbf-8046-032b6cf8166a",
+      "code_content": "number = input()\nnumber = int(number)\n\nresult = number > 70\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "02a77388-3fba-4f06-93a3-11f2ebd04ff3",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n75\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is <b>75</b>, the output should be <b>True</b> as <b>75</b> is greater than <b>70</b>.",
+            "content_type": "HTML"
+          }
+        },
+        {
+          "question_id": "c4d2a46d-f00a-4e2d-92ca-fd9c76b18d7e",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n33\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is <b>33</b>, the output should be <b>False</b> as <b>33</b> is less than <b>70</b>.",
+            "content_type": "HTML"
+          }
+        },
+        {
+          "question_id": "d6abe938-ca06-4fee-a723-ebaf24acdd1a",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n70\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is <b>70</b>, the output should be <b>False</b> as <b>70</b> is equal to <b>70</b>.",
+            "content_type": "HTML"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "a7bca476-e948-4a5f-9d0e-61ead70daf68",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n69\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is <b>69</b>, the output should be <b>False</b> as <b>69</b> is less than <b>70</b>.",
+            "content_type": "HTML"
+          }
+        },
+        {
+          "question_id": "af301e8e-b4c9-4272-9ba6-6777bb8081a3",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n71\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is <b>71</b>, the output should be <b>True</b> as <b>71</b> is greater than <b>70</b>.",
+            "content_type": "HTML"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "3e02745e-7d3f-415d-ab06-f74e162527f6",
+      "input": "1252345",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "46d0e4c2-4fe4-40da-bd4f-ba8dafc659fa",
+      "input": "45",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a5c465ef-013b-4108-8193-ffb21e59019d",
+      "input": "0",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d06676af-7710-4b8c-b3e8-a8f7b9b404e0",
+      "input": "86",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f17e090b-12e5-4190-bf81-648eee6ee4f7",
+      "input": "70",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

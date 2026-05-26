@@ -1,0 +1,68 @@
+{
+  "question_id": "f992496e-56c3-4105-b75b-1cfbd40b7886",
+  "short_text": "print sequences",
+  "content": "A function named `print_numbers` is given in the prefilled code that takes a list `numbers` and an integer `n` as arguments.\n\nWrite a program that reads a string `S` containing space-separated integers as input from the user and uses the provided `print_numbers` function in the prefilled code to recursively print the entire list of integers `n` times, each on a new line, where `n` is the total number of integers provided in the input.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be the entire list of input integers printed `n` times, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given input is:\n\n```\n3 7 1\n```\n\nThere are **3** integers in the input, so the output should be:\n\n```\n3 7 1\n3 7 1\n3 7 1\n```\n\nIf the input is:\n\n```\n5 9\n```\n\nThere are **2** integers in the input, so the output should be:\n\n```\n5 9\n5 9\n```\n\nEach line contains the list of integers printed based on the number of integers provided in the input.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0679c973-5cea-4b78-a507-60addb2ccad4",
+      "code_content": "def print_numbers(numbers, n):\n    if n <= 0:\n        return\n    print(\" \".join(numbers))\n    print_numbers(numbers, n - 1)\n\ns = input().split()\nn = len(s)\n\nprint_numbers(s, n)\n\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b0e29f4-26b2-4172-857d-efd618f153c5",
+      "input": "0 0 0",
+      "output": "0 0 0\n0 0 0\n0 0 0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6a0fcf7a-41ab-4d82-ac0d-b8192137eb34",
+      "input": "5 9",
+      "output": "5 9\n5 9",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "755dd25d-a33c-442c-9bf9-21c2e453e762",
+      "input": "100 200",
+      "output": "100 200\n100 200",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "7a9c01db-8c67-47d3-9d74-762de8a87be6",
+      "input": "1 2 3 4",
+      "output": "1 2 3 4\n1 2 3 4\n1 2 3 4\n1 2 3 4",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d02207a3-1cd6-447e-9ae4-1dddbf618ce6",
+      "input": "3 7 1",
+      "output": "3 7 1\n3 7 1\n3 7 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d5f9fbc7-bb33-43af-ac35-d03bf9b0c56e",
+      "input": "-5 -10 -15",
+      "output": "-5 -10 -15\n-5 -10 -15\n-5 -10 -15",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90ba8547-9585-47d5-9248-ea6d165e7b01",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

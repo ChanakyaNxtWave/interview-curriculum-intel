@@ -1,0 +1,47 @@
+{
+  "question_id": "14855514-f6ff-4c01-9d1a-47facce2825b",
+  "short_text": "Inheritance Customer",
+  "content": "Complete the given **Customer** and **PremiumCustomer** classes by adding new features by following the given instructions.\r\n\r\n**Existing _Customer_ class**:\r\n\r\nThe existing **Customer** class should contain the necessary attributes and methods.\r\n\r\n<details>\r\n\r\n<summary>**Features to be added to **_Customer_** class**</summary>\r\n\r\n- **Add below attributes**:\r\n  - **id**\r\n  - **name**\r\n  - **address**\r\n  - **email**\r\n  - **order_history** (initialized as an empty list)\r\n  - **membership_level** (initialized as None)\r\n  - **reward_points** (initialized as 0)\r\n\r\n- **Add below methods**:\r\n  - `add_order_history(order)`: Adds an order to the customer's order history.\r\n  - `view_order_history()`: Prints the customer's order history.\r\n</details>\r\n\r\n**Existing _PremiumCustomer_ class**:\r\n\r\nThe **PremiumCustomer** class inherits from **Customer**.\r\n\r\n<details>\r\n\r\n<summary>**Features to be added to **_PremiumCustomer_** class**</summary>\r\n\r\n- **Add below methods**:\r\n  - `set_membership_level(level)`: This method assigns the given membership level **`(level)`** to the `membership_level` attribute of the premium customer, allowing them to have a designated tier.\r\n  - `add_reward_points(points)`: This method increments the reward_points attribute by the specified number of points, enabling the customer to accumulate rewards based on their purchases or loyalty benefits.\r\n  - `redeem_reward_points(points)`: This method deducts the specified number of points from `reward_points` if the customer has sufficient balance; otherwise, it prints \"**`Insufficient points`**\" to indicate that redemption is not possible due to inadequate points.\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will affect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\r\n- This coding question does not have the usual input/output test cases. The class defined by you will be tested internally to check whether the attributes are present or not. The test case results will provide a rough description of the tests being verified.\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "00d3c7fe-a782-4094-a7a2-36870669f836",
+      "code_content": "class Customer:\n    def __init__(self, id, name, address, email):\n        self.id = id\n        self.name = name\n        self.address = address\n        self.email = email\n        self.order_history = []\n\n    def add_order_history(self, order):\n        self.order_history.append(order)\n\n    def view_order_history(self):\n        for order in self.order_history:\n            print(order)\n\nclass PremiumCustomer(Customer):\n    def __init__(self, id, name, address, email, membership_level, reward_points):\n        super().__init__(id, name, address, email)\n        self.membership_level = membership_level\n        self.reward_points = reward_points\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    # Create a Customer instance\n    customer = Customer(id=1, name=\"John Doe\", address=\"123 Street, City\", email=\"john.doe@example.com\")\n    print(\"Customer ID: {}\".format(customer.id))\n    print(\"Customer Name: {}\".format(customer.name))\n    print(\"Customer Address: {}\".format(customer.address))\n    print(\"Customer Email: {}\".format(customer.email))\n    \n    # Add order history and view it\n    customer.add_order_history(\"Order1: Book\")\n    customer.add_order_history(\"Order2: Laptop\")\n    print(\"Customer Order History:\")\n    customer.view_order_history()\n    \n    # Create a PremiumCustomer instance\n    premium_customer = PremiumCustomer(id=2, name=\"Jane Doe\", address=\"456 Avenue, City\",\n                                       email=\"jane.doe@example.com\", membership_level=\"Gold\", reward_points=1000)\n    print(\"PremiumCustomer ID: {}\".format(premium_customer.id))\n    print(\"PremiumCustomer Name: {}\".format(premium_customer.name))\n    print(\"PremiumCustomer Address: {}\".format(premium_customer.address))\n    print(\"PremiumCustomer Email: {}\".format(premium_customer.email))\n    print(\"PremiumCustomer Membership Level: {}\".format(premium_customer.membership_level))\n    print(\"PremiumCustomer Reward Points: {}\".format(premium_customer.reward_points))\n    \n    # Add order history and view it for PremiumCustomer\n    premium_customer.add_order_history(\"Order1: Premium Subscription\")\n    premium_customer.add_order_history(\"Order2: Exclusive Product\")\n    print(\"PremiumCustomer Order History:\")\n    premium_customer.view_order_history()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3d73bd67-2ba3-4d00-a199-bfde35e019c5",
+      "input": "Checking Default Tests",
+      "output": "1 John Doe 123 Street, City john.doe@example.com\nOrder1: Book\n2 Jane Doe 456 Avenue, City jane.doe@example.com\nGold 500",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a0d83750-f0ff-46c9-bd0c-a624f454720e",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly in Customer and PremiumCustomer classes.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c4506c39-3c28-4aba-bfbd-7f55f1259aff",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present in Customer class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "68869c08-d1ef-4086-94f9-a567b9781d18",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "d546e58d-b733-4b03-87c5-ca4099248a32",
+  "short_text": "Convert All",
+  "content": "\nWrite a program that reads a string `S` containing space-separated strings from the user and converts this string into a list. The program should then create a set from the list to remove any duplicate strings. Finally, it should print the unique strings of the set as space-separated strings in sorted order.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated strings.\n\n---\n\n#### Output\n\nThe output should be a single line containing the unique strings of the set as space-separated strings in sorted order.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana orange apple\n```\n\n- In this example, the input contains the strings `apple`, `banana`, `orange`, and `apple`. \n- The program removes the duplicate string `apple` and outputs the unique strings in sorted order as `apple banana orange`.\n\nThe output should be:\n\n```\napple banana orange\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "82bc9252-f63e-450e-a639-9656853572e7",
+      "code_content": "s = input().strip().split()\nunique_items = set(s)\nupdated_list = []\n\nfor item in unique_items:\n    updated_list.append(item)\n\nsorted_list=sorted(updated_list)\n\nprint(\" \".join(sorted_list))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1cc3bd8f-7a7e-4670-842c-d6fa1c7146c6",
+      "input": "red blue red green",
+      "output": "blue green red",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "735cb0df-76ea-4866-bcff-0b471d840a89",
+      "input": "1 2 2 3 3 4",
+      "output": "1 2 3 4",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a5ee263e-04c7-444c-9405-f29afe8a9ded",
+      "input": "apple banana orange apple",
+      "output": "apple banana orange",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d1f0d0a1-00db-4c11-87d3-d64a6b09482e",
+      "input": "grape grape kiwi",
+      "output": "grape kiwi",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e0b39dba-538f-4e1c-b455-c49d26de886d",
+      "input": "cat dog cat mouse",
+      "output": "cat dog mouse",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ceb957b7-1aa1-42e3-97ba-77c6e832caae",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

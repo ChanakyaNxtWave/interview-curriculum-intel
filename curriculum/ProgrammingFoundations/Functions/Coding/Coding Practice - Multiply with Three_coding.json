@@ -1,0 +1,61 @@
+{
+  "question_id": "a1e10585-139f-4d77-8eb9-e5e817eccf73",
+  "short_text": "Multiply with Three",
+  "content": "For this problem, the prefilled code will contain a function. Write a program that the given function will multiply the number N with three.<hr><b>Input</b><br/><br/>The first line of input will contain an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing given number multiplied by three.<hr><b>Explanation</b><br/><br/>For example, if the given N is 2, the function should print the N multiplied by 3. So the output should be 6.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "9dba46cc-6694-4ee8-8fe6-032c77a7a437",
+      "code_content": "def multiply_with_three(arg_1):\n    result = arg_1*3\n    print(result)\n\n\nn = int(input())\nmultiply_with_three(n)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3e2b0b37-6e26-4038-a888-c885d77a3c64",
+      "input": "5",
+      "output": "15\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5e3f59da-aedb-46f2-9486-4dd3863453eb",
+      "input": "2",
+      "output": "6\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "86651a83-7223-4a8b-a21b-1174734459dc",
+      "input": "-21",
+      "output": "-63\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bcf6be84-4c25-48ea-9c34-caf9231a838d",
+      "input": "-200",
+      "output": "-600\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f48b86a9-2908-495d-a5fe-66b0b9c54709",
+      "input": "100",
+      "output": "300\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

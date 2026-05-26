@@ -1,0 +1,377 @@
+{
+  "question_id": "611f2ef1-6e5b-43fe-b05c-b02836f54e3b",
+  "short_text": "Square Root of a Number",
+  "content": "Write a program that reads a number `N` and prints the **Square Root** of `N`.\n\n<MultiLineNote>\n\nTo calculate the **Square Root** of `N`, use the `N` power **0.5** (**N<sup>0.5</sup>**).\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a float that is the **Square Root** of `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- The **Square Root** of `N` is **2.0** (**4<sup>0.5</sup> = 2.0**).\n\nThe output should be **2.0**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fbf53937-10ca-42ef-8622-d28f31fd50d9",
+      "code_content": "number = int(input())\n\nresult = number ** 0.5\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "11f089e5-796c-4ba1-b6de-a4b09cb4bbac",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n81\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "9.0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 81`,\n\n- The **Square Root** of `N` is **9.0** (**81<sup>0.5</sup> = 9.0**).\n\nThe output should be **9.0**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5e95c749-6c30-440e-9057-f6fa652f8d18",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1.0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 1`,\n\n- The **Square Root** of `N` is **1.0** (**1<sup>0.5</sup> = 1.0**).\n\nThe output should be **1.0**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f6cbbf8c-346a-426c-b4b5-f50f6c3af37a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n16\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "4.0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 16`,\n\n- The **Square Root** of `N` is **4.0** (**16<sup>0.5</sup> = 4.0**).\n\nThe output should be **4.0**.\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "02c252ad-248a-4d75-b406-ff1add73dc6f",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?\n",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "30fe7a25-dcc0-4a62-84bb-a0e6205edf68",
+              "content": "7.0",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8b103dbf-ddc1-400b-a2e0-c1a7256222a5",
+              "content": "7",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bb67c6de-0f4d-4941-bd2e-56352c9b2c1a",
+              "content": "5.0",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "cc998015-d506-46e6-b63b-ddd0884fcc4e",
+              "content": "13",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output 1**\n\n```\n7.0\n```\n\n**Output 2**\n\n```\n5.0\n```\n\nThe above two outputs are valid because they consist of a single line containing a float.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "36e9e539-af85-4c57-a61e-18b7435cffe2",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n121\n```\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "c5bc8ac6-b665-440a-86dc-9fcd07d40a0a",
+              "content": "11",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ddac4e82-9ebf-415a-87a9-71bce15758bc",
+              "content": "11.0",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e38330bc-59a1-4b7a-b50f-fae5d9033d44",
+              "content": "12.0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ea66a746-ed85-49a8-8828-c5f332ec23da",
+              "content": "13.0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 121`,\n\n- The **Square Root** of `N` is **11.0** (**121<sup>0.5</sup> = 11.0**).\n\nThe output should be **11.0**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6aa49ef5-525f-46ea-b32e-ce65c998d7be",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1c4594b5-28ae-415a-8bc6-0173774a4755",
+              "content": "The input will be a single line containing a string.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7d726312-454b-4a9e-b1e1-a0ef09a60ba7",
+              "content": "The input will be multiple lines containing two space-separated integers.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9a3d1b57-3285-4746-a0f1-175e081f5fab",
+              "content": "The input will be a single line containing an integer.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bcdc1f65-cf8a-4e1c-8fd0-5952eb3574e1",
+              "content": "The input will be a single line containing space-separated integers.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing `N`.\n\nFor example,\n\n```\n400\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6cbefe5b-cc65-470b-9aac-b533e634de0d",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "44da6ecd-0d25-4c55-9635-a86dd8aa0ca8",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4f7a1628-b40e-4bc2-9351-8a10cfdfa2da",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "76ed5733-e335-4c4f-9456-75ea88677a4c",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "97baf53c-c4e5-45d6-a8cc-663eff8dc79a",
+              "content": "The output should be a single line containing space-separated float values.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a float that is the **Square Root** of `N`.\n\nFor example, if the given number is `N = 625`,\n\n- The **Square Root** of `N` is **25.0** (**625<sup>0.5</sup> = 25.0**).\n\nThe output should be **25.0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "700d8541-f166-44d5-94fd-2c314a868e5b",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "46b912f9-189d-4543-b8b1-4a348850d706",
+              "content": "```\n25,121\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5870a124-909e-4777-99f7-21551a6513da",
+              "content": "```\n10000\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "706b15c5-0b6f-4c91-b435-3513781ea768",
+              "content": "```\n9\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d312a73a-e46e-4ff3-a6e7-c5de93cbb65d",
+              "content": "```\n400\n225\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n9\n```\n\n**Input 2**\n\n```\n10000\n```\n\nThe above two inputs are valid because they consist of a single line containing an integer.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "db958c6d-8c8c-4399-a907-8411be5e8a50",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3fe49d9c-fc9b-4531-9431-abc6c222e8d2",
+              "content": "To find the factorial of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "77319fcd-08e5-4581-b1d6-80054405c913",
+              "content": "To find the Cube of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7eafa980-1384-4105-afcb-34985b6caf6e",
+              "content": "To find the Square of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a89de68d-50f5-4d91-9e9a-ea9a57dae6aa",
+              "content": "To find the Square Root of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and find the Square Root of `N`.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e3281e37-67b8-4ea8-8133-9d6f34921da7",
+          "short_text": "",
+          "content": "What formula is used to calculate the Square Root of `N`?\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3e23d4d1-7cfe-431c-80d9-794b5164b5ed",
+              "content": "N<sup>0.5</sup>",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9287b469-4173-4cf9-b9c3-a0ba1d3c2241",
+              "content": "N * N",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b629da4c-aeaa-44ca-977c-79d176f68592",
+              "content": "N / 0.5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c6d5d55a-46c1-4578-93fb-4265be1e2f8d",
+              "content": "N<sup>2</sup>",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The formula used to calculate the Square Root of `N` is  **N<sup>0.5</sup>**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "027f08e4-f71c-449b-84e9-e2332171ebeb",
+      "input": "625",
+      "output": "25.0",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "22787e44-e6e1-4fa7-8186-551ef849ef03",
+      "input": "100",
+      "output": "10.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "673e4893-44b8-4331-a7f5-64ae9caee76f",
+      "input": "4",
+      "output": "2.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8888b6d9-34dd-422b-b177-3afa3874fdf4",
+      "input": "81",
+      "output": "9.0",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "95579839-5997-4c1a-816a-6f831d5b7c35",
+      "input": "1",
+      "output": "1.0",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

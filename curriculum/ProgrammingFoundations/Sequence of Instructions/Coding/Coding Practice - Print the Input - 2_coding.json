@@ -1,0 +1,61 @@
+{
+  "question_id": "6dd0e79f-4e28-43fe-aa10-38475fcf905d",
+  "short_text": "Print the Input - 2",
+  "content": "Write a program that reads a word and prints the word and \"###\" on two lines.\r\n\r\n<MultiLineNote>\r\nThe characters used in \"###\" are three hash symbols.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe first line of output should be a string containing the given word.\r\nThe second line of output should be a string containing \"###\".\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is **Algebra**, the output should be\r\n\r\n```\r\nAlgebra\r\n###\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "03860572-58b5-490c-bcb9-16a4c03275d2",
+      "code_content": "word = input()\n\nprint(word)\nprint(\"###\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0afc83ec-4fdc-46e0-b0e8-9522e0be787d",
+      "input": "1a2b3c",
+      "output": "1a2b3c\n###",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "0edb059d-ebac-45eb-8a7d-f2cf18b68ddf",
+      "input": "Algebra",
+      "output": "Algebra\n###",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3358edd5-f2b0-4863-b20f-f595c60027fe",
+      "input": "Calculus",
+      "output": "Calculus\n###",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6b432834-e0ef-4c1e-982a-87420bf60c8a",
+      "input": "Binary",
+      "output": "Binary\n###",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d6d598e3-913e-400d-9c8e-8bf228d0a14c",
+      "input": "z",
+      "output": "z\n###",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

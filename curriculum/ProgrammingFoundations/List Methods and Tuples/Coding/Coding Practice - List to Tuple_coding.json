@@ -1,0 +1,54 @@
+{
+  "question_id": "2d76e3b9-c43d-42a9-ae8a-1ee852408313",
+  "short_text": "List to Tuple",
+  "content": "Write a program that takes an integer `N` as input, reads `N` values to create a list, and then converts the list into a tuple.\n\n---\n\n#### Input\n\n- The first line contains an integer `N`, representing the number of elements in the list.\n- The next `N` lines contain the elements to be added to the list.\n\n---\n\n#### Output\n\n- Print the tuple created from the list.\n\n---\n\n#### Explanation\n\nIf `N=4` and the `N` values are **10, 20, 30, 40**, then the output should be:\n\n```\n('10', '20', '30', '40')\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bfdd5c45-0784-4ba2-882d-ac46b0486af2",
+      "code_content": "n = int(input())\n\nlist_values = []\nfor i in range(n):\n    value = input()\n    list_values.append(value)\n\ntuple_values = tuple(list_values)\nprint(tuple_values)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "46bf129e-b69e-4540-897b-28b5f43e8d43",
+      "input": "4\nA\nB\nC\nD",
+      "output": "('A', 'B', 'C', 'D')",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "48c447da-1da8-498b-9ec7-ee304adf3933",
+      "input": "5\nApple\nBanana\nOrange\nGrapes\nLichi",
+      "output": "('Apple', 'Banana', 'Orange', 'Grapes', 'Lichi')",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "52b4288d-8a41-47f0-a407-533cc220b31d",
+      "input": "2\nHello\nWorld",
+      "output": "('Hello', 'World')",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b11e5223-8a3c-4354-9875-aeed5efc8125",
+      "input": "4\n10\n20\n30\n40",
+      "output": "('10', '20', '30', '40')",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "62237960-515f-4451-8ca9-7bf74bbb4421",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

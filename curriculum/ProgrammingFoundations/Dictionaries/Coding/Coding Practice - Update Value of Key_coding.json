@@ -1,0 +1,61 @@
+{
+  "question_id": "ad0c49dd-4fdb-41e6-968b-6e198483c31a",
+  "short_text": "Update Value of Key",
+  "content": "For this problem, the prefilled code will contain a dictionary. Write a program to update the value of a given key.<hr><b>Input</b><br/><br/>The input will be a single line containing the strings, separated by space, denoting the key-value pair.<hr><b>Output</b><br/><br/>The output should be a single line containing the dictionary with the updated value to the given key.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;Rahim Hockey&quot;, your code should update the key &quot;Rahim&quot; with the value &quot;Hockey&quot;. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Hockey', 'Deepak': 'Boxing'}\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "2b8ce575-5e0c-4c46-a616-dd179e86322a",
+      "code_content": "students_dict = {\n    \"Ram\": \"Cricket\",\n    \"Naresh\": \"Football\",\n    \"Vani\": \"Tennis\",\n    \"Rahim\": \"Cricket\",\n    \"Deepak\": \"Boxing\"\n}\n\nkey, value = input().split()\nstudents_dict[key] = value\nprint(students_dict)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0d5964e8-4e8b-4174-8750-490dff60fd44",
+      "input": "Vani Badminton",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Badminton', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "1a33488f-37ee-48c9-ad8a-2d0dfb432696",
+      "input": "Deepak Wrestling",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Deepak': 'Wrestling'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "546aff6e-cd25-4255-88b6-45b874358f32",
+      "input": "Ram Golf",
+      "output": "{'Ram': 'Golf', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d2fb9bee-71b1-4757-8e0f-2fed32d33b13",
+      "input": "Rahim Hockey",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Hockey', 'Deepak': 'Boxing'}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e79baaec-2008-4ee4-ab5b-ec2f6149056c",
+      "input": "Naresh Chess",
+      "output": "{'Ram': 'Cricket', 'Naresh': 'Chess', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c653449e-bc51-4aab-a83f-8a98ef71c10e",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

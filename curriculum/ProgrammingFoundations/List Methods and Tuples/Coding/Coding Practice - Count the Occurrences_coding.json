@@ -1,0 +1,61 @@
+{
+  "question_id": "8338cf5e-4c64-444f-bc8f-d673d9fc5f48",
+  "short_text": "Count the Occurrences",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to count all the occurrences of the given number (N) in the list.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the count of all the occurrences of the given number (N) in the list.<hr><b>Explanation</b><br/><br/>For example, if the given N is 5, the output should be 2, as 5 has two occurrences in the list.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "edad33b2-5b9b-427c-945b-6b65f2688f4b",
+      "code_content": "nums_list = [5, 10, 20, 35, 5, 50, 20, 100, 200, 10, 150, 100, 100, 20, 20]\nnumber = int(input())\n\ncount_of_occurrences = nums_list.count(number)\nprint(count_of_occurrences)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10267723-5f54-4f93-a218-43724ed91d14",
+      "input": "50",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "2c72c352-67e3-40bf-9c47-82d752eabc9d",
+      "input": "20",
+      "output": "4\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "495260f1-dfa2-490e-8b30-826ccedb9345",
+      "input": "5",
+      "output": "2\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "59111c79-3e6b-4a45-baa9-7acaf41667b8",
+      "input": "-8",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "79ccdc12-dcf8-4939-be78-e6384a8f180b",
+      "input": "100",
+      "output": "3\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

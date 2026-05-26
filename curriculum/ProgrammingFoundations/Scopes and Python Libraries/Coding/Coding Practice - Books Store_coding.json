@@ -1,0 +1,61 @@
+{
+  "question_id": "acf6a356-0eb6-4371-a817-fc85f20f2f8a",
+  "short_text": "Books Store",
+  "content": "You are analyzing book sales data for a bookstore. Each book has a title, an author, and the number of copies sold. You want to identify books that have sold well and calculate the total revenue generated from those sales based on a fixed price per book.\n\nYour task is to write a program that reads the input for the number of books and their sales data. Each book entry consists of a title, an author, and the number of copies sold. Then filter out any books that have sold fewer than a specified minimum number of copies. After filtering, use `map` to create a list of titles of well-selling books. Finally, use `reduce` to calculate the total revenue generated from these sales.\n\n<MultiLineNote>\nThe revenue from each book is calculated as copies sold multiplied by a fixed price per book.\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line contains an integer `N` representing the number of books.\n- The second line contains an integer `C` representing the minimum copies sold threshold.\n- The next line contains a float `P` representing the price per book.\n- The next `N` lines each contain a string representing the title followed by an author and an integer for copies sold, separated by commas.\n\n---\n\n#### Output\n\nA list of titles of well-selling books and a float representing the total revenue generated from those sales rounded to two decimal places.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n4\n10\n10.99\nThe Great Gatsby, F. Scott Fitzgerald,15\n1984, George Orwell,8\nTo Kill a Mockingbird, Harper Lee,20\nPride and Prejudice, Jane Austen,5\n```\n\nFor the given input\n\n```\nThe Great Gatsby, F. Scott Fitzgerald,15\n1984, George Orwell,8\nTo Kill a Mockingbird, Harper Lee,20\nPride and Prejudice, Jane Austen,5\n```\n\n\nAnd if your minimum copies sold threshold is **10** with a price per book of **10.99**, then the output should be:\n\n```\n['The Great Gatsby', 'To Kill a Mockingbird'],1098.80\n```\n\nbecause:\n\n- The Valid book that have  more than 10 Copies sold are  **The Great Gatsby** and **To Kill a Mockingbird**.\n- The total revenue from these sales is (15 x $10.99) + (20 x $10.99) = **$1098.80**.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "acba51d3-2b7a-4b9a-8bcf-da46f5b0db86",
+      "code_content": "from functools import reduce\n\nN = int(input())\nC = int(input())\nP = float(input())\n\nbooks = [input().strip().split(',') for i in range(N)]\n\ndef has_sold_well(book):\n    return int(book[2]) >= C\n\ndef get_title(book):\n    return book[0]\n\ndef calculate_revenue(book):\n    return int(book[2]) * P\n\ndef add_revenue(total, book):\n    return total + calculate_revenue(book)\n\nwell_selling_books = list(filter(has_sold_well, books))\ntitles = list(map(get_title, well_selling_books))\ntotal_revenue = reduce(add_revenue, well_selling_books, 0)\n\nprint(titles, round(total_revenue, 2))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6d4fe507-36cf-429f-af42-252875035829",
+      "input": "2\n1\n20.00\nThe Alchemist, Paulo Coelho, 100\nThe Fault in Our Stars, John Green, 0",
+      "output": "['The Alchemist'] 2000.0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9fb2f7e6-3382-406e-8522-b30cc13c6fcc",
+      "input": "4\n10\n10.99\nThe Great Gatsby, F. Scott Fitzgerald,15\n1984, George Orwell,8\nTo Kill a Mockingbird, Harper Lee,20\nPride and Prejudice, Jane Austen,5",
+      "output": "['The Great Gatsby', 'To Kill a Mockingbird'] 384.65",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9fe79713-b92d-4015-b7e2-921497593f03",
+      "input": "3\n1\n20.00\nThe Alchemist, Paulo Coelho, 100\nThe Fault in Our Stars, John Green, 0\nhe Fault in Our Stars, John Green, 0",
+      "output": "['The Alchemist'] 2000.0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bb9ada8a-7542-4697-b72e-9af93e5623d9",
+      "input": "3\n5\n15.50\nHarry Potter and the Sorcerer's Stone, J.K.Rowling, 10\nThe Hobbit, J.R.R.Tolkien, 3\nA Game of Thrones, G.R.R.Martin, 12",
+      "output": "[\"Harry Potter and the Sorcerer's Stone\", 'A Game of Thrones'] 341.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e865da1c-bc21-4990-bfd9-0bf677b76332",
+      "input": "5\n20\n12.00\nBook A, Author A,25\nBook B, Author B,15\nBook C, Author C,30\nBook D, Author D,10\nBook E, Author E,5",
+      "output": "['Book A', 'Book C'] 660.0",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7f68984f-446c-43bc-a2f6-b66d1992c341",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

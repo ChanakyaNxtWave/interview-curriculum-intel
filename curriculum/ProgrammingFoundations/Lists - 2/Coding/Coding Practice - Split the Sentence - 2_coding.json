@@ -1,0 +1,61 @@
+{
+  "question_id": "95cb7b48-29c3-4ca8-973d-1b8a8bb7bec4",
+  "short_text": "Split the Sentence - 2",
+  "content": "Given a list of N words, write a program to print each word in a line.<hr><b>Input</b><br/><br/>The first line of input will contain space-separated words, denoting the elements of the list.<hr><b>Output</b><br/><br/>The output should be N lines containing each word in a new line in the given order.<br/><hr><b>Explanation</b><br/><br/>For example, if the given sentence is the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Banana Apple Pomegranate Strawberry Grapes Orange\r\n</code></pre><br/>Your code should print each word in a new line. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Banana\r\nApple\r\nPomegranate\r\nStrawberry\r\nGrapes\r\nOrange\r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "a53dd662-c66e-4b10-8062-a8d29f506273",
+      "code_content": "sentence = input()\nwords_list = sentence.split()\nfor word in words_list:\n    print(word)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1b52af4a-708c-43e4-a49a-629c38560eed",
+      "input": "Google Samsung Microsoft Wipro TCS iB Hubs NxtWave",
+      "output": "Google\nSamsung\nMicrosoft\nWipro\nTCS\niB\nHubs\nNxtWave\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "83655703-758c-46b7-9204-70e810e89493",
+      "input": "Banana Apple Pomegranate Strawberry Grapes Orange",
+      "output": "Banana\nApple\nPomegranate\nStrawberry\nGrapes\nOrange\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "874cb7cd-9f72-4afc-afc3-5ccc3cd0d2a1",
+      "input": "nature\n",
+      "output": "nature\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9071d81b-3937-4799-b664-434c0d0f2743",
+      "input": "anjali ravi akbar suresh gopal latha mohan ashok",
+      "output": "anjali\nravi\nakbar\nsuresh\ngopal\nlatha\nmohan\nashok\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "988b60af-6ccd-42ac-9069-2448ed8a6d3d",
+      "input": "Cricket Hockey Football Badminton Tennis Basketball Golf Volleyball Archery Boxing",
+      "output": "Cricket\nHockey\nFootball\nBadminton\nTennis\nBasketball\nGolf\nVolleyball\nArchery\nBoxing\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

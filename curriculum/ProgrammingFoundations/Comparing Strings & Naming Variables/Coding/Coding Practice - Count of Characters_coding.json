@@ -1,0 +1,75 @@
+{
+  "question_id": "ff568e7f-c014-4235-b45a-475a74019d3f",
+  "short_text": "Count of Characters",
+  "content": "Given a string `S` and a number `N`, write a program to print the count of characters in `S` whose Unicode value is equal to the given number `N`.\n\n---\n\n#### Input\n\nThe first line of input contains a string representing `S`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should contain the count of characters in the string `S` whose Unicode value is equal to the given number `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"Google\"` and the given number is `N = 111`,\n\n- The characters in the string **`Google`** are **G, o, o, g, l** and **e**.\n- The Unicode values of the above characters are,\n\n| Character | Unicode value |\n| --------- | ------------- |\n| G         | 71            |\n| **o**     | **111**       |\n| **o**     | **111**       |\n| g         | 103           |\n| l         | 108           |\n| e         | 101           |\n\n- There are **2** characters **o** and **o** with the same unicode value **111**.\n\nThe output should be **2**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8cb57e74-5d29-4f2d-b5a1-e104fc52fbe5",
+      "code_content": "string = input()\nnumber = int(input())\n\ncount = 0\n\nfor each_character in string:\n    if ord(each_character) == number:\n        count = count + 1\n\nprint(count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2d370edf-9dac-4b22-8646-babfdb6805c3",
+      "input": "pythOn\n79",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "855969d8-36cd-477a-a9f8-0c17a90d6641",
+      "input": "Google\n111",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b7610e3d-5183-4b3b-907d-83c86d18535d",
+      "input": "mississippi\n115",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bb5929fd-5854-4f33-8328-d332a0c3e3cf",
+      "input": "AAAAAAAaaaa\n65",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "de274a80-b33a-48dd-912d-b797186faaa5",
+      "input": "nonsense\n110",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f1dd60dd-b010-45d6-980b-f3a3ad407c4b",
+      "input": "contains\n32",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f1f31fc9-b4eb-4250-9b54-c32aec218b5f",
+      "input": "code-editor\n101",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

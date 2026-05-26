@@ -1,0 +1,61 @@
+{
+  "question_id": "cce75b0b-b7bf-4c37-8afb-e341cb72f314",
+  "short_text": "Difference of Two Sets",
+  "content": "\nWrite a program that reads two strings, `S1` and `S2`,both containing space-separated strings from the user and forms sets from these strings. The program should then print the elements of the difference of the two sets (i.e., elements in `S1` that are not in `S2`) as space-separated strings in sorted order.\n\n---\n\n#### Input\n\n- The first line contains space-separated strings to form the first set.\n- The second line contains space-separated strings to form the second set.\n\n---\n\n#### Output\n\nThe output should be a single line containing the elements of the difference of the two sets as space-separated strings in sorted order.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana cherry\nbanana orange apple\n```\n- In this example, the first set contains `apple`, `banana`, and `cherry`, while the second set contains `banana`, `orange`, and `apple`. \n- The difference includes elements in the first set that are not in the second set, which is `cherry`.\n\nThe output should be:\n\n```\ncherry\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8ea3010b-a89e-472c-a326-372c6a716863",
+      "code_content": "s1 = input().strip().split()\ns2 = input().strip().split()\ndifference_items = set(s1) - set(s2)\n\nupdated_list = []\n\nfor item in difference_items:\n    updated_list.append(item)\n\nsorted_list=sorted(updated_list)\n\nprint(\" \".join(sorted_list))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3e2074b2-66a7-4e7a-9410-3671b5586bf5",
+      "input": "kathy lucas mia\nmia kathy",
+      "output": "lucas",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6ee73dcb-1318-4ebd-bf06-a24542174f9b",
+      "input": "hannah igor jack\njack igor",
+      "output": "hannah",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ad9162af-85ea-4137-8d96-9fbc3e9a1c74",
+      "input": "apple banana cherry\nbanana orange apple",
+      "output": "cherry",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c8ef560a-1891-48a5-b68a-9a1d3b6e0da4",
+      "input": "grace hannah\nhannah",
+      "output": "grace",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e9d4e2fb-d99c-44bd-af20-c2e455a749a1",
+      "input": "dave eve frank\neve frank",
+      "output": "dave",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "6aa1e88e-0163-4f68-a272-a8ea867c0fbd",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,377 @@
+{
+  "question_id": "eb4718ff-e96a-45f1-abb1-a35cc0e9747b",
+  "short_text": "Greatest Among Three Numbers - 2",
+  "content": "Write a program that reads three numbers `A`, `B`, and `C`, and prints the greatest number among the three given numbers.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\nThe third line of input contains an integer representing `C`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that the greatest number among the three given numbers.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 10`, `B = 15`, and `C = 20`,\n\n* `B` is greater than `A`. (**15** is greater than **10**)\n* `B` is less than `C`. (**15** is less than **20**)\n* So, `C` is greater than `A` and `B`.\n\nThe output should be **20**.\n\n<br/>\n\nFor example, if the given numbers are `A = -10`, `B = 59`, and `C = 34`,\n\n* `B` is greater than `A`. (**59** is greater than **-10**)\n* `B` is greater than `C`. (**59** is greater than **34**)\n* So, `B` is greater than `A` and `C`.\n\nThe output should be **59**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8dec1240-beed-4812-be25-1bc28dc10064",
+      "code_content": "first_number = int(input())\nsecond_number = int(input())\nthird_number = int(input())\n\nis_first_greatest = (first_number > second_number) and (first_number > third_number)\n\nif is_first_greatest:\n    print(first_number)\nelse:\n    is_second_greatest = (second_number > third_number)\n\n    if is_second_greatest:\n        print(second_number)\n    else:\n        print(third_number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1cf365f7-f307-4f75-a601-9aab5eeb274a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n7\n-10\n8\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "8",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 7`, `B = -10`, and `C = 8`,\n\n* `A` is greater than `B`. (**7** is greater than **-10**)\n* `C` is greater than `B`. (**8** is greater than **-10**)\n* So, `C` is greater than `A` and `B`.\n\nThe output should be **8**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dfabc48b-7a80-4d6e-b335-5ca12f5e2655",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n42\n98\n17\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "98",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 42`, `B = 98`, and `C = 17`,\n\n* `B` is greater than `A`. (**98** is greater than **42**)\n* `B` is greater than `C`. (**98** is greater than **17**)\n* So, `B` is greater than `A` and `C`.\n\nThe output should be **98**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "eef95c79-aaf5-423d-9597-5bacaabe716b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n-34\n-11\n-57\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "-11",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = -34`, `B = -11`, and `C = -57`,\n\n* `B` is greater than `A`. (**-11** is greater than **-34**)\n* `B` is greater than `C`. (**-11** is greater than **-57**)\n* So, `B` is greater than `A` and `C`.\n\nThe output should be **-11**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "01888086-ce95-4c6f-baac-0ae4430a7cad",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "0d01963f-cf08-4695-a6c1-68364597fa90",
+              "content": "```\n53\n147\n290\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "496ccd3b-7d63-4cb8-8642-0c6e9437cfb8",
+              "content": "```\n8.5\n14.9\nTwo\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "94ed76bb-f002-460d-8e02-a18273c95db3",
+              "content": "```\n-72\n0\n-35\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f2496d78-0863-4794-a799-f31211c7fc36",
+              "content": "```\n88\n67\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n53\n147\n290\n```\n\n**Input 2**\n\n```\n-72\n0\n-35\n```\n\nThe above two inputs are valid because,\n\n- The first line of input contains an integer.\n\n- The second line of input contains an integer.\n\n- The third line of input contains an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "0a6cf88b-199e-4d1f-b0e4-71cd7699b5cb",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n```\n93\n30\n76\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "401a2a2d-2e31-4e75-a0f1-7a157b3eb5e3",
+              "content": "93",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9badc8a7-228f-4798-b8ff-50e347849264",
+              "content": "76, 93",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9bccda9c-20de-4b21-a560-3546723806eb",
+              "content": "30",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b7c42cb4-3269-473b-a653-021e56b18d3e",
+              "content": "76",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 93`, `B = 30`, and `C = 76`,\n\n* `A` is greater than `B`. (**93** is greater than **30**)\n* `A` is greater than `C`. (**93** is greater than **76**)\n* So, `A` is greater than `B` and `C`.\n\nThe output should be **93**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "50a12dce-ce6b-4ece-8613-a7e33a56ad5d",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n-1\n0\n1\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "03a47c56-9df3-41ad-be27-12f0bcef7cbc",
+              "content": "0 and 1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1ae406b2-a700-4ba2-9bb5-d5c413502396",
+              "content": "-1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "23c3fc41-5ce6-4a5d-969a-383bf7e6f224",
+              "content": "1",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f22d81f9-5c0b-4ef1-a036-2d091a4c6385",
+              "content": "0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = -1`, `B = 0`, and `C = 1`,\n\n* `B` is greater than `A`. (**0** is greater than **-1**)\n* `C` is greater than `B`. (**1** is greater than **0**)\n* So, `C` is greater than `A` and `B`.\n\nThe output should be **1**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "68a6c0f7-8753-42c4-813e-d310a1e03d02",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0d669612-92b3-4163-9324-6860ef1af2e0",
+              "content": "To find the greatest number among the two given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2f07f935-7785-4bc0-873b-9396f8f34353",
+              "content": "To find the smallest number among the three given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "68442f48-bdcf-4e37-a866-9aea933e7a28",
+              "content": "To find the sum of three given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dd7446a7-3a73-44e4-8fbc-97e7778c23b3",
+              "content": "To find the greatest number among the three given numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read three numbers `A`, `B`, `C` and find the greatest number among the three given numbers.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "acf547c5-41d8-41bc-a0b1-3d575c0538ec",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "335257ca-b807-4af7-a017-d12c589aecef",
+              "content": "The first line of input contains a float value.\n\nThe second line of input contains an integer.\n\nThe third line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3a394ca8-9e35-4277-9477-d05aaea68eb7",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains an integer.\n\nThe third line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ca388157-1c97-4588-8a58-dcec0f4c29c0",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f069b5be-fabc-4b32-a95d-4191b4621faa",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a boolean value.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.\n\n- The third line of input contains an integer representing `C`.\n\nFor example,\n\n```\n36\n74\n8\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bbc8944d-628a-4e5c-8eeb-1ae04f1b1c2e",
+          "short_text": "",
+          "content": "Match Column - 1 with Column - 2.\n\n| Column 1 | Column 2 |\n| :--------- | :--------- |\n| 1) What will be the output if A = 163, B = 127, and C = 154 | A) 0 |\n| 2) What will be the output if A = 62, B = -78, and C = 96 | B) 163 |\n| 3) What will be the output if A = -20, B = -190, and C = -156 | C) 96 |\n| 4) What will be the output if A = -4, B = 0, and C = -7 | D) -20 |",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1a43323c-b076-432e-94b5-a82c807783e0",
+              "content": "1-A, 2-B, 3-D, 4-C",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "20bf26ea-f6d7-4085-8644-13efcf829a8a",
+              "content": "1-C, 2-D, 3-A, 4-B",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6764a1e6-d520-4cd3-910b-18abb9c4e6bd",
+              "content": "1-B, 2-A, 3-D, 4-C",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d273c664-5036-4f02-8ca5-b5a842e0bf07",
+              "content": "1-B, 2-C, 3-D, 4-A",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 163`, `B = 127`, and `C = 154`,\n\n* `A` is greater than `B`. (**163** is greater than **127**)\n* `A` is greater than `C`. (**163** is greater than **154**)\n* So, `A` is greater than `B` and `C`.\n\nThe output should be **163**.\n\n----\n\nIf the given numbers are `A = 62`, `B = -78`, and `C = 96`,\n\n* `A` is greater than `B`. (**62** is greater than **-78**)\n* `C` is greater than `A`. (**96** is greater than **62**)\n* So, `C` is greater than `A` and `C`.\n\nThe output should be **96**.\n\n----\n\nIf the given numbers are `A = -20`, `B = -190`, and `C = -156`,\n\n* `A` is greater than `B`. (**-20** is greater than **-190**)\n* `C` is less than `A`. (**-156** is less than **-20**)\n* So, `A` is greater than `B` and `C`.\n\nThe output should be **-20**.\n\n----\n\nIf the given numbers are `A = -4`, `B = 0`, and `C = -7`,\n\n* `B` is greater than `A`. (**0** is greater than **-4**)\n* `C` is less than `B`. (**-7** is less than **0**)\n* So, `B` is greater than `A` and `C`.\n\nThe output should be **0**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c597e042-a7cd-4ef9-8c1d-65156bd0d2fa",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2484af2b-2ffd-4127-ac96-92ddb37d169c",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3a47eb01-7d2d-4e33-9845-b205ad43b38f",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4ebca39e-95af-4f6b-b2d1-de7b4592d08d",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fd7bd65c-438d-4302-9c39-28c0a40bad20",
+              "content": "The output should be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing an integer that is the greatest number among the three given numbers.\n\nFor example,\n\nIf the given numbers are `A = 23`, `B = 51`, and `C = 47`,\n\n* `B` is greater than `A`. (**51** is greater than **23**)\n* `B` is greater than `C`. (**51** is greater than **47**)\n* So, `B` is greater than `A` and `C`.\n\nThe output should be **51**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "62ab648e-caa4-4d24-85af-a56c8b43c352",
+      "input": "47\n54\n15",
+      "output": "54",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "890db84c-62ad-41d3-947c-1a7f9eca924d",
+      "input": "20\n20\n20",
+      "output": "20",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9bf3d0d3-f5ed-417f-9950-74e7f869e7aa",
+      "input": "10\n15\n20",
+      "output": "20",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c0802655-2f3b-48fd-93da-3efd97c1e73d",
+      "input": "24\n7\n1",
+      "output": "24",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e0b5d7a7-51b9-4293-90ed-44ce28131712",
+      "input": "-10\n59\n34",
+      "output": "59",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

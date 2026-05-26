@@ -1,0 +1,391 @@
+{
+  "question_id": "1672341a-9240-45b8-b1f1-4407773a8c8f",
+  "short_text": "Print N Times",
+  "content": "Write a program that reads a number `N` and prints the number **0** `N` times on `N` lines.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing an integer **0** on each line.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n* The number **0** should be printed **4** times.\n\nThe output should be,\n\n```\n0\n0\n0\n0\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8403f5e6-869e-49ce-883d-94c622673216",
+      "code_content": "number = int(input())\n\ncounter = 0\n\nwhile counter < number:\n    print(0)\n    counter = counter + 1",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "70fd18c8-9fa8-4c50-a878-219e6078e062",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n3\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "0\n0\n0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 3`,\n\n* The number **0** should be printed **3** times.\n\nThe output should be,\n\n```\n0\n0\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "946b3dca-1b2e-418b-8069-3ffefc448c67",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n6\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "0\n0\n0\n0\n0\n0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 6`,\n\n* The number **0** should be printed **6** times.\n\nThe output should be,\n\n```\n0\n0\n0\n0\n0\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c51e745f-a7d3-4b24-b9d7-6be35301ee74",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 1`,\n\n* The number **0** should be printed **1** time.\n\nThe output should be,\n\n```\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "19c52568-8770-4a0d-82e9-7b7020f2195b",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2affb1c8-9376-44c3-841c-c6f8fdb6a848",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "80e8ce88-5db3-45eb-b485-b160e44c2520",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d506c07c-35ba-482e-b8a1-f4ecbeab19a9",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e242bcc5-a9e3-4602-a057-dd4cf43a7006",
+              "content": "The input will be multiple lines containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing `N`.\n\nFor example, **20**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "22229bc6-3b81-4e30-9dd2-3f700a74168f",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1dca8253-dfcc-4bc8-bdfa-2315a2447973",
+              "content": "To print the number **0** `N` times on `N` lines.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4c5777e3-7909-49c3-b70e-400a6be98ddc",
+              "content": "To calculate the sum of `N` integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "57b50a93-326b-4f3a-a69e-c028d1635139",
+              "content": "To print the number `1` on `N` separate lines.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e421900e-5aab-4dac-a959-8814d9b3b268",
+              "content": "To print the number **0** `10` times on `N` lines.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and print the number **0** `N` times on `N` lines.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4a209787-f850-4551-a248-8590936cae71",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n8\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "22acb353-e2c3-4dc3-aa6a-c8a06790423d",
+              "content": "```\n0\n0\n0\n0\n0\n0\n0\n0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6469b578-e5e6-428f-a02f-425b5a786be1",
+              "content": "```\n0\n0\n0\n0\n0\n0\n0\n0\n0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b56580e1-45ee-4168-94e8-25389679b06b",
+              "content": "```\n0\n0\n0\n0\n0\n0\n0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d5c38f33-6066-429e-986a-1876ccb98272",
+              "content": "```\n0 0 0 0 0 0 0 0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 8`,\n\n* The number **0** should be printed **8** times.\n\nThe output should be,\n\n```\n0\n0\n0\n0\n0\n0\n0\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6d6f4f32-9bff-4e69-af57-a0b64228653e",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "09a58202-a89f-4db8-ab79-ae3e4a0f5d53",
+              "content": "The output should be `N` lines containing an integer **1** on each line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "11a87b5e-9d5d-470a-a4d4-7e1cc67ac025",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9ff68c8d-cc72-4deb-95b5-783ad7f7533f",
+              "content": "The output should be `N` lines containing an integer **2** on each line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fbace97e-01cd-410d-9b0c-4504cd6f8719",
+              "content": "The output should be `N` lines containing an integer **0** on each line.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be `N` lines containing an integer **0** on each line.\n\nFor example, if the given number is `N = 5`,\n\n* The number **0** should be printed **5** times.\n\nThe output should be,\n\n```\n0\n0\n0\n0\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a476b294-9468-4c31-b444-7f187824c7df",
+          "short_text": "",
+          "content": "As per the problem description, how many times is the number `0` printed?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1c3753ca-c491-4b33-b725-eef866b8832e",
+              "content": "`N - 1` times",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "34b87a5f-11a4-41dc-9fb1-0453fb66d078",
+              "content": "`N + 1` times",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "793e602f-2446-4622-a2d0-1316de91632a",
+              "content": "`0` times",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ae1bbecd-fdb5-4e9e-a264-d7aa542378ab",
+              "content": "`N` times",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "As per the problem description `N` times the number `0` is printed.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e4025665-a74e-48bf-a7ff-62691740af69",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "26755741-e2c2-44b6-b2ec-daa05dd0601e",
+              "content": "```\n0 0 0 0 0 0 0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7023c133-fe8e-464f-9501-6121dc6ee6bb",
+              "content": "```\n0\n0\n0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bfc7e7b5-977e-4e73-bae6-cd86affc1f11",
+              "content": "```\n0\n0\n0\n0\n0\n0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c9d27a9f-2bed-490a-98b3-1f4bc3f7aeea",
+              "content": "```\n0, 0, 0, 0\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output 1**\n\n```\n0\n0\n0\n```\n\n**Output 2**\n\n```\n0\n0\n0\n0\n0\n0\n```\n\nThe above two outputs are valid because they consist of `N` lines containing an integer **0** on each line.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f35d0b47-4d09-4168-bf91-362f29bdd01d",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "7881c415-9720-4622-9906-8e4c62f5be01",
+              "content": "8",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a996bda9-4dcd-41ed-b5c1-56afbb76af15",
+              "content": "2.6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b37e82e3-7eb9-450c-8c0d-cb8191040bb7",
+              "content": "9\n1\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d20b7f2b-8124-49d8-8c3e-be0f390d3c40",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n12\n```\n\n**Input 2**\n\n```\n8\n```\nThe above two inputs are valid because they consist of a single line containing an integer representing `N`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "01a80e9d-3bfb-4be5-84d4-6b0033f99c97",
+      "input": "4",
+      "output": "0\n0\n0\n0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "08fa23e5-a837-465a-91f6-581f10cddd35",
+      "input": "5",
+      "output": "0\n0\n0\n0\n0",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "3ce635aa-d1ae-45a8-9fad-2195529981d4",
+      "input": "7",
+      "output": "0\n0\n0\n0\n0\n0\n0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "43112278-0721-46b4-a60c-3cc21dc7860e",
+      "input": "8",
+      "output": "0\n0\n0\n0\n0\n0\n0\n0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ad3bbdc2-6ca9-4bac-9b6f-9194a991c04e",
+      "input": "2",
+      "output": "0\n0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bf2bdd4a-f4aa-4e9c-898c-59585a1fcc04",
+      "input": "50",
+      "output": "0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f8efb9df-2704-4f5b-801e-5d7857496a99",
+      "input": "1",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

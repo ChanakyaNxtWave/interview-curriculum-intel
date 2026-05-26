@@ -1,0 +1,47 @@
+{
+  "question_id": "68cf25e9-5fcd-4436-98ca-60915524e7c9",
+  "short_text": "Inheritance Orders",
+  "content": "Complete the given Order class hierarchy by adding new features to the **GroupOrder** subclass, following the given instructions.\n\n**Existing _Order_ class**:\n\nThe **Order** class handles general order functionality with attributes like **`items_in_cart`**, **delivery_speed**, and **`delivery_address`**. It also includes methods **`add_item()`** and `display_order_details()`.\n\n**Existing _PrimeOrder_ subclass**:\n\nThe **PrimeOrder** subclass inherits from **Order** and adds prime-specific attributes and methods, such as `prime_discount` and `apply_prime_discount()`.\n\n**GroupOrder subclass to be completed**:\n\nThe **GroupOrder** sub-subclass inherits from **PrimeOrder**. You need to complete the **GroupOrder** by adding the group-specific discount functionality.\n\n<details>\n\n<summary>**Features to be added to **_GroupOrder_** class**</summary>\n\n- **Add below attribute**:\n - `group_discount`: A float that represents the additional discount percentage for group orders.\n- **Implement below methods**:\n - `apply_group_discount()`: This method should apply the group discount on top of the prime discount to the total bill.\n   - Formula to calculate the Group Discount = `total_bill` x (1 - `group_discount` / 100)\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This coding question does not have the usual input/output testcases. The class defined by you will be tested internally to check whether the attributes are present or not. The test case results will provide a rough description of the tests being verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "47680725-075b-41ea-bd37-6fea35875182",
+      "code_content": "class Order:\n    def __init__(self, items_in_cart, delivery_speed, delivery_address):\n        self.items_in_cart = items_in_cart\n        self.delivery_speed = delivery_speed\n        self.delivery_address = delivery_address\n    \n    def add_item(self, item):\n        self.items_in_cart.append(item)\n    \n    def display_order_details(self):\n        print(f\"Items in Cart: {self.items_in_cart}\")\n        print(f\"Delivery Speed: {self.delivery_speed}\")\n        print(f\"Delivery Address: {self.delivery_address}\")\n\nclass PrimeOrder(Order):\n    def __init__(self, items_in_cart, delivery_speed, delivery_address, prime_discount):\n        super().__init__(items_in_cart, delivery_speed, delivery_address)\n        self.prime_discount = prime_discount\n    \n    def apply_prime_discount(self, total_bill):\n        return total_bill * (1 - self.prime_discount / 100)\n\nclass GroupOrder(PrimeOrder):\n    def __init__(self, items_in_cart, delivery_speed, delivery_address, prime_discount, group_discount):\n        super().__init__(items_in_cart, delivery_speed, delivery_address, prime_discount)\n        self.group_discount = group_discount\n    \n    def apply_group_discount(self, total_bill):\n        return total_bill * (1 - self.group_discount / 100)\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    order = Order([\"Book\", \"Laptop\"], \"Two-Day\", \"123 Main Street\")\n    prime_order = PrimeOrder([\"Headphones\", \"Charger\"], \"One-Day\", \"456 Elm Street\", 10)\n    group_order = GroupOrder([\"T-shirts\", \"Jeans\"], \"Same-Day\", \"789 Maple Avenue\", 10, 5)\n    final_bill = group_order.apply_group_discount(prime_order.apply_prime_discount(100))\n    print(final_bill)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1cb32d3c-2282-4165-be34-40106acd02a7",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present and correct in GroupOrder class.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7d3b2b34-730d-43f0-8f19-91cbd090ae8c",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: GroupOrder discount calculation is correct.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f2c6ba31-ce52-4995-b881-583078162dfb",
+      "input": "Checking Default Tests",
+      "output": "85.5",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "17461f67-a7fd-46af-96c6-62ef30dd1e19",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

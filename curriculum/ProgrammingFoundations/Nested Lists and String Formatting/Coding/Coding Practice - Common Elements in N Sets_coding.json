@@ -1,0 +1,61 @@
+{
+  "question_id": "015afcd7-21e1-424a-9a73-e9b37fe34edd",
+  "short_text": "Common Elements in N Sets",
+  "content": "Write a program to find the common elements in the N sets.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The next N lines will contain space-separated integers, denoting the elements of each set.<hr><b>Output</b><br/><br/>The output should be a single line containing the list of common elements in N sets sorted in ascending order.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read inputs in the next three lines. If the given three strings are as the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">2 4 6 8 10\n4 8 10 12 16\n5 10 15 20\n</code></pre><br/>As 10 is common in all three sets, the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[10]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "27b50a7e-84d3-4bf1-928b-81a625d13c9c",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\ndef get_intersection_of_n_sets(num_set_list):\n    result = num_set_list[0]\n    for num_set in num_set_list:\n        result = result.intersection(num_set)\n    return result\n\n\nn = int(input())\nnum_set_list = []\nfor i in range(n):\n    values_list = input().split()\n    values_list = convert_string_to_int(values_list)\n    values_set = set(values_list)\n    num_set_list.append(values_set)\n\nresult_set = get_intersection_of_n_sets(num_set_list)\nresult_list = list(result_set)\nresult_list.sort()\nprint(result_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0b553291-4eff-4cec-a968-c577a4fbb487",
+      "input": "1\n2 4 6 8 10",
+      "output": "[2, 4, 6, 8, 10]\n",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "4c6459c2-1237-4f43-ae9f-97a5afeb7e98",
+      "input": "4\n2 4 6 8 10 12\n2 4 8 12 16 10\n2 5 10 12 15 20 4\n12 10 4 8",
+      "output": "[4, 10, 12]\n",
+      "is_hidden": false,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "67345e61-ce6f-4392-a675-302414a9b58c",
+      "input": "3\n1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1",
+      "output": "[1]\n",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "98b9fa7d-eb77-4c70-acd8-cf05c5d08ddf",
+      "input": "5\n2 4 6 8 10\n2 4 6 8 10\n2 4 6 8 10\n2 4 6 8 10\n2 4 6 8 10",
+      "output": "[2, 4, 6, 8, 10]\n",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "f93047b3-802c-4db8-bbff-00a166a0afce",
+      "input": "3\n2 4 6 8 10\n4 8 10 12 16\n5 10 15 20",
+      "output": "[10]\n",
+      "is_hidden": false,
+      "weightage": 12.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

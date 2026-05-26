@@ -1,0 +1,13 @@
+{
+  "unit_title": "For Loop | Reading Material",
+  "content": "## For Loop\n\n`for` statement iterates over each item of a sequence. \n\n![](https://res.cloudinary.com/learning-platform/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://nkb-backend-ccbp-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/8e5211d8-9b4c-41e7-a83c-74ffb35abeee.PNG)\n\n*Examples of sequences:*\n\n- Sequence of Characters (string)  \n- Sequence of numbers, etc.  \n\n### For Syntax\n\n#### Code\n\n```python\nword = \"Python\"  \nfor each_char in word:  \n    print(each_char)  \n```\n\n#### Output\n\n```\nP  \ny  \nt  \nh  \no  \nn\n```\n\n## Range\n\nGenerates a sequence of integers starting from 0.\nSyntax: `range(n)`\nStops before n (n is not included).\n  \n#### Code\n\n```python\nfor number in range(3):  \n    print(number)  \n```\n  \n#### Output\n\n```\n0  \n1  \n2\n```\n\n### Range with Start and End\n\nGenerates a sequence of numbers starting from `start`  \nSyntax: `range(start, end)`\nStops before `end` (end is not included).  \n  \n#### Code\n\n```python\nfor number in range(5, 8):  \n    print(number)  \n```\n  \n#### Output\n\n```\n5  \n6  \n7\n```",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "6f1ebb1c-5777-4532-89d5-cc7dc41339e2",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "384585b9-ff4a-43a6-884a-e918abf0eaeb",
+  "unit_name": "For Loop | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

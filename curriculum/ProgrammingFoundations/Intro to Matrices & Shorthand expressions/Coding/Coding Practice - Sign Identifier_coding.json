@@ -1,0 +1,68 @@
+{
+  "question_id": "06d284d0-ac48-447f-b4e7-7ccf1d1a85cf",
+  "short_text": "Sign Identifier",
+  "content": "Write a program that reads an integer `num` and uses shorthand if-elif-else to print \"Positive\" if the number is greater than zero, \"Negative\" if less than zero, and \"Zero\" if it is zero.\n\n---\n\n#### Input\n\nAn integer representing the value of `num`.\n\n---\n\n#### Output\n\nThe output should be a single word: \"Positive\", \"Negative\", or \"Zero\".\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\n10\n```\n\nThe output should be:\n\n```\nPositive\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c5a6e69b-f33a-459c-95c6-e9beb94a2111",
+      "code_content": "num = int(input())\nprint(\"Positive\" if num > 0 else \"Negative\" if num < 0 else \"Zero\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "267ee888-7e09-4e77-a884-ff027edf1a2f",
+      "input": "0",
+      "output": "Zero",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3f1065d5-3728-423b-9ead-422b98e0de3a",
+      "input": "25",
+      "output": "Positive",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "6ff494de-76cf-41e3-a7ec-ca0d2e401eff",
+      "input": "100",
+      "output": "Positive",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "8827bde9-46f4-468b-9de0-4a8e46ff9fd2",
+      "input": "10",
+      "output": "Positive",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4f79011-3f69-468b-a09f-c273d442c5fb",
+      "input": "-1",
+      "output": "Negative",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b67fe7fd-c6b7-4d44-b87d-d90727441ed0",
+      "input": "-50",
+      "output": "Negative",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5adf6869-803e-47df-ab97-62917f9536af",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,75 @@
+{
+  "question_id": "51af5180-5ece-43bc-b012-cb3fe1f54dd6",
+  "short_text": "Reverse the Sentence",
+  "content": "Given a sentence `S`, write a program to print the reverse of the sentence.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by reversing the sentence `S`.\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"I am learning Python\"`,\n\n- The reverse of the sentence **\"I am learning Python\"** is **\"nohtyP gninrael ma I\"**.\n\nThe output should be **nohtyP gninrael ma I**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f47e1397-1671-47d8-9a21-1af36bb9f63e",
+      "code_content": "sentence = input()\n\nreversed_sentence = sentence[::-1]\n\nprint(reversed_sentence)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "02dcd6c4-c80f-43d9-b209-5e32c5dbe11b",
+      "input": "I am learning Python",
+      "output": "nohtyP gninrael ma I",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "201c9c29-02cf-4fec-907e-1669820e4ba5",
+      "input": "THERE ARE MANY PLACES TO VISIT IN INDIA",
+      "output": "AIDNI NI TISIV OT SECALP YNAM ERA EREHT",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "31efbdd1-ab63-44f3-9f89-57f04be247eb",
+      "input": "definition",
+      "output": "noitinifed",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "77edce06-36aa-4f40-8378-c23df6f531d7",
+      "input": "WoRlds APaRt",
+      "output": "tRaPA sdlRoW",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "92cc5b9e-aacf-4c76-81f2-b3bb2fec5771",
+      "input": "the train came on time",
+      "output": "emit no emac niart eht",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d2f150b1-edae-46c6-885d-3fb1556903e6",
+      "input": "ThE Cheetah iS the FasTeST LaND Animal in the World",
+      "output": "dlroW eht ni laminA DNaL TSeTsaF eht Si hateehC EhT",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f9008866-1b67-4108-a9b6-a0d98f2b30a1",
+      "input": "THE SUN RISES IN THE EAST",
+      "output": "TSAE EHT NI SESIR NUS EHT",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

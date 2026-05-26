@@ -1,0 +1,61 @@
+{
+  "question_id": "1d449e57-19e9-4fbb-9c98-6adb25d9256c",
+  "short_text": "Lucky number",
+  "content": "You are developing a simple game where players can enter their scores in a grid format. Each score is represented in a **matrix**, where each row represents a different player and each column represents a different game. Your task is to identify the \"**lucky numbers**\" in this matrix. A lucky number is defined as a number that is the smallest in its row and the largest in its column. \n\nprogram should process the matrix and print the **lucky number**, If there is no lucky number possible then print **No Lucky number found!**.\n\n<MultiLineNote>\n\n- A lucky number must be the smallest value in its respective row.\n- The same number must also be the largest value in its respective column.\n- If there are no lucky numbers, print \"**No Lucky number found!**\".\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of\n\n- Two integers **n** and **m**, where:\n\n - **n** represents the number of players (rows).\n - **m** represents the number of games (columns).\n - **A** single line containing **n × m** comma-separated integers representing the scores in the grid\n\n---\n\n#### Output\n\nThe output should be a **single integer** representing the lucky number found in the matrix, If there is no lucky number possible the print **No Lucky number found!**.\n\n---\n\n#### Explanation\n\nFor example, given the following input:\n\n```\n3 3  \n3,7,8,9,11,13,15,16,17  \n```\n\nThe input describes a **3 x 3 matrix** as follows:\n\n```\n3  7  8  \n9 11 13  \n15 16 17  \n```\n\n- In the **first row**, the smallest number is 3, but it is not the largest in its column → **Not a lucky number**.\n- In the **second row**, the smallest number is 9, but it is not the largest in its column → **Not a lucky number**.\n- In the **third row**, the smallest number is 15. In its column [3, 9, 15], the largest number is also 15 → **15** is the **lucky number**.\n\nThe Output should be \n\n```\n15\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "1a18da4e-b285-490a-a0c1-23c204efc210",
+      "code_content": "def find_lucky_number(matrix):\n    for i in range(len(matrix)):\n        row_min = min(matrix[i])\n        col_index = matrix[i].index(row_min)\n        \n        is_lucky = True\n        for j in range(len(matrix)):\n            if matrix[j][col_index] > row_min:\n                is_lucky = False\n                break\n        \n        if is_lucky:\n            return row_min\n\nn, m = input().split()\nn, m = int(n), int(m)\nelements = input().split(',')\nmatrix = []\nk = 0\n\nfor i in range(n):\n    row = []\n    for i in range(m):\n        row.append(int(elements[k]))\n        k += 1\n    matrix.append(row)\n\nresult = find_lucky_number(matrix)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b30df08-a222-481a-9553-251777b742db",
+      "input": "3 3\n1,2,3,4,5,6,7,8,9",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "64d73a4d-3bc7-4951-b257-d88ab9b6b31c",
+      "input": "4 4\n10,3,5,8,6,7,2,4,9,12,11,15,13,14,16,17",
+      "output": "13",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "88c49034-c14d-4fa0-8c8d-5f7feba907fa",
+      "input": "4 1\n4,5,6,7",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ee0a76c4-3639-4ed5-abae-ea615a923bbf",
+      "input": "1 4\n1,2,3,4",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f3db59d4-ce3d-476c-b180-e9653a807af5",
+      "input": "3 3\n3,7,8,9,11,13,15,16,17",
+      "output": "15",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f065d38b-746c-48f1-ad2e-95b6dd5b62b4",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

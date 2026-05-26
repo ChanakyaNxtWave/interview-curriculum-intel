@@ -1,0 +1,13 @@
+{
+  "unit_title": "Problem Solving - Part 6 | Reading Material",
+  "content": "# Problem Solving Session\n\n## End keyword\n\nIn Python, the `end` keyword is used in the `print()` statement to specify what should be printed at the end of the output.\n\nBy default, `print()` statement moves the cursor to the next line after printing. Using the `end` keyword, we can print the outputs on a single line.\n\n**Example**:\n\n```python\nN = 3\n\nfor i in range(N):\n    print(\"* \", end=\"\")\n```\n\n**Output**:\n\n```\n* * * \n```\n\nWe can a specify character or string with which the output will end using `end` keyword.  \n\n```python\nN = 3\n\nfor i in range(N):\n    print(\"* \", end=\"abc\")\n```\nOutput:\n\n```\n* abc* abc* abc\n```\n\nAs we can see, `*` is printed with `abc` at the end of each iteration, all on the same line.\n\n## print() statement\n\nBy default, each time you call `print()`, it takes the cursor to a new line, which means the next time you print something, it will start on a new line.\n\nThe `print()` statement without any value indicates the next output should be printed in the next line.\n\n**Example**:\n\n**Code**:\n\n```python\nN = int(input())  \n\nfor i in range(N):\n    for i in range(N):\n        print(\"*\", end=\" \")\n    print()\n```\n\n**Output**:\n\n```\n* * * \n* * * \n* * * \n```\n\n#### Solution Explanation\n\n- The outer loop iterates `N` times, and the inner loop also iterates `N` times.\n- In the inner loop, we print a star (`*`) with a space as a separator between stars in the same line as we are using `end=\" \"` keyword.\n- After printing `N` stars in the inner loop, the inner loop terminates, and `print()` is executed and the cursor moves to the next line.\n- The outer loop iterates `N` times and creates a square pattern with stars.",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "26c65505-1a5f-4145-a5ce-dbb006f336fd",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "5e6896f0-3efb-44c4-85d8-679898617af8",
+  "unit_name": "Problem Solving - Part 6 | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

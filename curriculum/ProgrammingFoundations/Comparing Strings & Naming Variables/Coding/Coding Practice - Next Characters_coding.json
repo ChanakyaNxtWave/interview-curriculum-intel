@@ -1,0 +1,75 @@
+{
+  "question_id": "8fe4d945-c5df-45c4-be39-4c825bf91e85",
+  "short_text": "Next Characters",
+  "content": "Given a string `S`, write a program to print the next characters of all characters in `S` based on the Unicode value, each on a new line.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should contain the next characters of all characters in `S` based on the Unicode value, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"coding\"`,\n\n- The characters in the given string are **c, o, d, i, n,** and **g**.\n- The next characters of all characters in `S` is,\n\n| Character - Unicode | Next character - Unicode |\n| ------------------- | ------------------------ |\n| c - 99              | d - 100                  |\n| o - 111             | p - 112                  |\n| d - 100             | e - 101                  |\n| i - 105             | j - 106                  |\n| n - 110             | o - 111                  |\n| g - 103             | h - 104                  |\n\nThe output should be,\n\n```\nd\np\ne\nj\no\nh\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "98bdd458-f2be-47ba-a7da-f11769dd4926",
+      "code_content": "string = input()\n\nfor each_character in string:\n    unicode_value = ord(each_character) + 1\n    character = chr(unicode_value)\n    \n    print(character)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4b73cc3b-6c8d-42c4-94fe-3e43b0e05840",
+      "input": "Unique",
+      "output": "V\no\nj\nr\nv\nf",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6b3e9547-bb2f-4925-8433-809f47d05952",
+      "input": "Ab#C2^45?",
+      "output": "B\nc\n$\nD\n3\n_\n5\n6\n@",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7265d1cf-2026-4fc0-9abb-5960d49f3986",
+      "input": "coding",
+      "output": "d\np\ne\nj\no\nh",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9f642663-c9e2-40b4-9e70-1c72812ac129",
+      "input": "camel-Case",
+      "output": "d\nb\nn\nf\nm\n.\nD\nb\nt\nf",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "bee9310c-6c4a-4f43-9122-2b7469722383",
+      "input": "snake_case",
+      "output": "t\no\nb\nl\nf\n`\nd\nb\nt\nf",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e5f23edd-75e0-4565-bc13-fc983deaf7b5",
+      "input": "Hello!",
+      "output": "I\nf\nm\nm\np\n\"",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e9de8aa9-378a-439d-831f-29d3a2c3f583",
+      "input": "That is a pen.",
+      "output": "U\ni\nb\nu\n!\nj\nt\n!\nb\n!\nq\nf\no\n/",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

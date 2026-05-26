@@ -1,0 +1,68 @@
+{
+  "question_id": "0ae33740-b77e-442b-a5ce-d8d57fd8e363",
+  "short_text": "Join Third Letter of Words",
+  "content": "Given a sentence `S`. The words in the sentence `S` are separated by a space. \n\nWrite a program that prints a new string by joining the third letter of each word in the sentence with the comma(`,`).\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the third letter of each word in the sentence with the comma(`,`).\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"Being More Productive\"`,\n\n- The words in the sentence **\"Being More Productive\"** are **\"Being\"**, **\"More\"**, and **\"Productive\"**.\n- The **3rd** letter in the word **\"Being\"** is **i**.\n- The **3rd** letter in the word **\"More\"** is **r**.\n- The **3rd** letter in the word **\"Productive\"** is **o**.\n- After joining the **3rd** letter of each word in the sentence with the comma(`,`) is **i,r,o**.\n\nThe output should be,\n\n```\ni,r,o\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "283588b5-42c5-465a-b45d-cca38afa4b2d",
+      "code_content": "sentence = input()\n\nstring_list = sentence.split()\n\nresult = []\n\nfor word in string_list:\n    if (len(word) > 2):\n        character = word[2]\n        result += [character]\n\ncharacter_joined_by_comma = \",\".join(result)\n\nprint(character_joined_by_comma)    ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "53da650b-234b-4f92-9476-772ce92d7fbf",
+      "input": "TeChnical Content DeVelopers Team Nxtwave",
+      "output": "C,n,V,a,t",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "780dbb04-dce9-4132-b54d-c76dba5c6eec",
+      "input": "Python Course",
+      "output": "t,u",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "78a0910c-d019-4526-9e1d-a622b2428574",
+      "input": "Being More Productive",
+      "output": "i,r,o",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9f4e4a57-1050-45d4-9f02-19386cfd3401",
+      "input": "New JaVascript liBraries are ReleaseD every wEek",
+      "output": "w,V,B,e,l,e,e",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "bb444bb9-76dd-44fe-9411-3f4d259de2ac",
+      "input": "qUeUE",
+      "output": "e",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fc62aac2-10e6-4767-8152-0e64e718ded6",
+      "input": "STACK OVERFLOW HELPS RESOLVING MORE ISSUES",
+      "output": "A,E,L,S,R,S",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

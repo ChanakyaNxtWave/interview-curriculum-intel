@@ -1,0 +1,68 @@
+{
+  "question_id": "e7d71c99-7684-4a85-9f4a-b54501364d25",
+  "short_text": "UNIX Timestamp to DateTime",
+  "content": "The Unix timestamp is a way to track time as a running total of seconds.<br/>This count starts at the Unix Epoch on January 1st, 1970, at UTC.<br/>Therefore, the Unix timestamp is merely the number of seconds between a particular date and the Unix Epoch.<br/>You are given UNIX timestamp U.<br/>Write a program to convert U to a readable date time(in UTC) and print it.<hr><b>Input</b><br/><br/>The input will be a single line containing a UNIX timestamp U.<hr><b>Output</b><br/><br/>The output should be a single line containing the timestamp in UTC DateTime format.<br/>DateTime format: YYYY-MM-DD HH:MM:SS.<br/>Time is in 24-hour format.<br/><hr><b>Explanation</b><br/><br/>For example, if the given timestamp is 1284105682 states that, that many number of seconds have passed from the reference time mentioned in the above question.<br/>Your code should print the datetime corresponds to the timestamp in UTC after the given number of seconds have passed from the reference time. So the output should be<br/>2010-09-10 08:01:22",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "79b1ddfe-395f-4e2c-86e8-5a7d8c894232",
+      "code_content": "import datetime\n\nzero = datetime.datetime(1970, 1, 1)\nseconds = datetime.timedelta(seconds=int(input()))\ndt_format = '%Y-%m-%d %H:%M:%S'\nresult_time = zero + seconds\nprint(result_time.strftime(dt_format))\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2f7aa99e-3d15-495f-be8c-bb26a14feaba",
+      "input": "1583229717",
+      "output": "2020-03-03 10:01:57\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "5fbc2df1-6a1e-4879-a136-d96fd3bff0d5",
+      "input": "1293839999",
+      "output": "2010-12-31 23:59:59\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "74b1b9e5-41bb-4158-8db3-fc403378d291",
+      "input": "1583201579",
+      "output": "2020-03-03 02:12:59\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "7ec5d766-f174-4ca8-87d7-c1276914c141",
+      "input": "979293600",
+      "output": "2001-01-12 10:00:00\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "94fbc37e-9f1c-4b82-a46f-b4f43fdf678a",
+      "input": "1284105682",
+      "output": "2010-09-10 08:01:22\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "a0ec1d50-fe58-4abb-8d64-5670eabc560b",
+      "input": "1496210400",
+      "output": "2017-05-31 06:00:00\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f543f8cb-9c90-4462-a019-4620b579057f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

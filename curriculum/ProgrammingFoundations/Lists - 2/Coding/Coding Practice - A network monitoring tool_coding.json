@@ -1,0 +1,75 @@
+{
+  "question_id": "e3df17db-427b-42b4-abbe-0c23af252770",
+  "short_text": "A network monitoring tool",
+  "content": "Imagine you are developing a network monitoring tool, and one of the tasks is to anonymize IP addresses to improve security. To achieve this, you need to replace every period (`.`) in an IP address with `[.]`. Write a program to perform this transformation on the given IP address.\n\n<MultiLineNote>\n\n- The IP address is a string that contains numbers separated by periods (`.`).\n- Your program should replace every `.` in the IP address with `[.]`.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a valid IPv4 address as a string.\n\n---\n\n#### Output\n\nA single line containing the modified IP address with each `.` replaced by `[.]`.\n\n---\n\n#### Explanation\n\nIf the input IP address is `192.168.0.1`, the output should be `192[.]168[.]0[.]1`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b4e0bf98-36a2-4056-992b-6be6b491753f",
+      "code_content": "ip_address = input()\nmodified_ip_address = \"\"\n\nfor char in ip_address:\n    if char == \".\":\n        modified_ip_address += \"[.]\"\n    else:\n        modified_ip_address += char\n\nprint(modified_ip_address)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "168e7103-5df2-4856-be06-ba7ad7db5bc4",
+      "input": "192.168.0.1",
+      "output": "192[.]168[.]0[.]1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2108014e-b97c-4a14-a86f-2cadc4c44207",
+      "input": "0.0.0.0",
+      "output": "0[.]0[.]0[.]0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "29372614-7619-47ad-a0a1-922ecbcb6525",
+      "input": "1.2.3.4",
+      "output": "1[.]2[.]3[.]4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "85b48601-59f1-4605-b3d3-5215ff510702",
+      "input": "127.0.0.1",
+      "output": "127[.]0[.]0[.]1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c2f29cfa-0cc5-41cf-99c3-84954236885d",
+      "input": "172.16.254.1",
+      "output": "172[.]16[.]254[.]1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e0fd3580-88bb-4cd5-a8e7-3696e85130f0",
+      "input": "255.255.255.255",
+      "output": "255[.]255[.]255[.]255",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ed56b142-a32a-49f2-ae3e-7bd7bf23956f",
+      "input": "10.0.1.1",
+      "output": "10[.]0[.]1[.]1",
+      "is_hidden": true,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f8f8d3e6-cb14-4001-8db6-f7641e67532d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

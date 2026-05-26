@@ -1,0 +1,61 @@
+{
+  "question_id": "b123307f-c2ae-4ccd-8994-7d5c77654420",
+  "short_text": "Nested List",
+  "content": "Write a program to read N lines of inputs and create a nested list with each line as a list.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer N.<br/>The next N lines will contain space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the nested list.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read the inputs in the next three lines.<br/>If the given three strings are as the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 2 3 4\n10 20 30\n5 10 15 20\n</code></pre><br/>Your code should print the nested list with each line of input as a list in it.<br/>So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[[1, 2, 3, 4], [10, 20, 30], [5, 10, 15, 20]]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "fedbf6f3-6cbb-4b79-a88f-dd34ca87debe",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nn = int(input())\nnum_list = []\n\nfor i in range(n):\n    list_a = input().split()\n    list_a = convert_string_to_int(list_a)\n    num_list.append(list_a)\n\nprint(num_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2c8280ff-91fd-4adc-888c-e13775dfc691",
+      "input": "5\n1\n1\n1\n1\n1",
+      "output": "[[1], [1], [1], [1], [1]]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "3785df1f-d017-4f6c-8d03-ff5418670e8c",
+      "input": "1\n-10",
+      "output": "[[-10]]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "90635e58-f9d3-4ee7-9eee-dbf917a3728c",
+      "input": "6\n-50 20 3 88 17 3 11 200 1800\n544 692 701 893 666 690 999 123\n2018 2016 1990 1931 0 -2000\n-232 -789\n1 3 5 7 9\n2 4 6 8 10\n",
+      "output": "[[-50, 20, 3, 88, 17, 3, 11, 200, 1800], [544, 692, 701, 893, 666, 690, 999, 123], [2018, 2016, 1990, 1931, 0, -2000], [-232, -789], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c317df3c-3094-46a9-ab6b-2fb8dfe65417",
+      "input": "3\n1 2 3 4\n10 20 30\n5 10 15 20",
+      "output": "[[1, 2, 3, 4], [10, 20, 30], [5, 10, 15, 20]]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "f585bb2b-6889-4db3-9174-49384e5477bf",
+      "input": "4\n-50 20 3\n88 17\n3 11\n200 1800",
+      "output": "[[-50, 20, 3], [88, 17], [3, 11], [200, 1800]]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

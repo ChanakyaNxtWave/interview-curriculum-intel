@@ -1,0 +1,61 @@
+{
+  "question_id": "ddb42446-800d-47c6-ac6f-ceed50121e1f",
+  "short_text": "Half String",
+  "content": "Write a program that reads a string and prints the first half part of the string.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string that is half of the given string.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given string is **Amazon**,\r\n\r\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\r\n   <div style=\"display: table-cell; vertical-align: inherit;font-weight: bold; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">A</div>\r\n   <div style=\"display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">m</div>\r\n   <div style=\"display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">a</div>\r\n   <div style=\"color: #808080;display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">z</div>\r\n   <div style=\"color: #808080;display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">o</div>\r\n   <div style=\"color: #808080;display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center;border-right: 0;padding: 8px 12px;\">n</div>\r\n</div>\r\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\r\n   <div style=\"display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\r\n   <div style=\"display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\r\n   <div style=\"display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\r\n   <div style=\"color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\r\n   <div style=\"color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\r\n   <div style=\"color: #808080;display: table-cell; vertical-align: inherit;border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\r\n</div>\r\n\r\n* The first half part of the string contains **Ama**.\r\n* The second half part of the string contains **zon**.\r\n\r\nThe output should be **Ama**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "91bb735f-358b-4c53-b81a-cd6b4307c265",
+      "code_content": "word = input()\nlength_of_the_word = len(word)\nhalf_length = length_of_the_word/2\nhalf_length = int(half_length)\nhalf_word = word[:half_length]\nprint(half_word)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0d7152e3-5001-40d5-ab82-de90a3fc5083",
+      "input": "Amazon",
+      "output": "Ama\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9638f31e-0eb5-40b1-9b92-5487be5e9417",
+      "input": "Fire",
+      "output": "Fi",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e139f4b2-5dd4-4534-ba67-4cf2cc01f206",
+      "input": "Very Good Days",
+      "output": "Very Go\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "efe3ebbf-94e4-4a28-a04d-bdfa19312574",
+      "input": "song",
+      "output": "so\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fd2f5742-f662-4fb9-b70f-1f366dabf855",
+      "input": "Bottle",
+      "output": "Bot\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

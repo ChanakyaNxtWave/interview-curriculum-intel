@@ -1,0 +1,405 @@
+{
+  "question_id": "93632301-51f1-485d-a483-d894a2aa2d67",
+  "short_text": "Vowels in a String",
+  "content": "Given a string `S`, write a program to find the vowels in the given string `S`.\n\nPrint the resultant string by joining all the vowels in the string `S`.\n\n<MultiLineNote>\nThe Vowels are **a**, **e**, **i**, **o**, and **u**.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the vowels in the string `S`.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"container\"`,\n\n- The characters in the string **container** are **c**, **o**, **n**, **t**, **a**, **i**, **n**, **e** and **r**.\n- The vowels in the string **container** are **o**, **a**, **i** and **e**.\n- The string obtained by joining all the vowels (**o**, **a**, **i** and **e**) is **oaie**.\n\nThe output should be **oaie**.\n\n<br/>\n\nFor example, if the given string is `S = \"queue\"`,\n\n- The characters in the string **queue** are **q**, **u**, **e**, **u**, and **e**.\n- The vowels in the string **queue** are **u**, **e**, **u**, and **e**.\n- The string obtained by joining all the vowels (**u**, **e**, **u**, and **e**.) is **ueue**.\n\nThe output should be **ueue**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0b41669c-12bf-4683-b969-f657d76d9c7f",
+      "code_content": "string = input()\n\nresult = \"\"\n\nfor character in string:\n    if ((character == \"a\") or (character == \"e\") or (character == \"i\") or (character == \"o\") or (character == \"u\")):\n        \n        result = result + character\n        \nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "097864d9-4962-4996-8992-4ded8b7035a3",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nlavender\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "aee",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = \"lavender\"`.\n\n- The characters in the string `lavender` are **l**, **a**, **v**, **e**, **n**, **d**, **e** and **r**.\n\n- The vowels in the string `lavender` are **a**, **e** and **e**.\n\n- The string obtained by joining all the vowels (**a**, **e** and **e**) is **aee**.\n\nThe output should be **aee**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "76016bf7-5191-4b84-b750-90df16640a46",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nsunflower\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "uoe",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = \"sunflower\"`.\n\n- The characters in the string `sunflower` are **s**, **u**, **n**, **f**, **l**, **o**, **w**, **e** and **r**.\n\n- The vowels in the string `sunflower` are **u**, **o** and **e**.\n\n- The string obtained by joining all the vowels (**u**, **o** and **e**) is **uoe**.\n\nThe output should be **uoe**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f1f2b9aa-aa1c-4dc3-a4a0-6fd2d9a4633a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nmagnolia\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "aoia",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = \"magnolia\"`.\n\n- The characters in the string `magnolia` are **m**, **a**, **g**, **n**, **o**, **l**, **i** and **a**.\n\n- The vowels in the string `magnolia` are **a**, **o**, **i** and **a**.\n\n- The string obtained by joining all the vowels (**a**, **o**, **i** and **a**) is **aoia**.\n\nThe output should be **aoia**.\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "288a9915-d085-45f4-a650-0e8ab48bdd28",
+          "short_text": "",
+          "content": "According to the problem description, how should the output be printed?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "181e97f4-4acc-472e-a156-fb377497f704",
+              "content": "each vowel in a new line",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "273b035a-c35f-473e-a549-e8bde90560b8",
+              "content": "vowels separated by a comma",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8b1400ce-2dd1-4614-ba9a-1e9e6cb83fcd",
+              "content": "vowels separated by a space",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f5ab9838-e78f-4db2-be12-d8817a221bd8",
+              "content": "Joining all the vowels",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the output should be printed by joining all the vowels in a string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9a1550ee-9f77-4a0d-9865-6175fce33a60",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "4539b60e-6244-4ed4-a6b9-88de5e23c211",
+              "content": "space",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6619125f-f638-42ca-ac68-b64a7df09a42",
+              "content": "m, o, o, n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6b8d2230-da8f-4b37-b94c-8c7340953ab8",
+              "content": "e\na\nr\nt\nh",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ebb21e6b-3486-4f8a-af6a-7dc4008585f0",
+              "content": "waterfall",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\nspace\n```\n\n**Input 2**\n\n```\nwaterfall\n```\nThe above two inputs are valid because they consist of a single line containing a string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "afe75f03-bf06-4c6a-b6ea-d562629a770f",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5280ba03-6928-4334-be67-cc0f79546361",
+              "content": "The input will be multiple lines containing a string.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6e6f9ca0-b6f9-4bec-a892-c803a8c1632f",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "db88d151-9a8d-425b-813c-888a34bcdd3b",
+              "content": "The input will be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f34f6538-bc62-4b8b-9403-8d2493520a93",
+              "content": "The input will be a single line containing a string.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing a string representing `S`.\n\nFor example, **lotus**\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c6d5baf6-100d-4db2-85c5-2ef029906eb9",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4bff8907-0c8a-47c5-bd05-954b7de0e257",
+              "content": "The output should be a single line containing a string. ",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "97b867bc-a78c-43ef-bd14-49b8c6095194",
+              "content": "The output should be a single line containing a boolean value. ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f09023e4-1fe7-400f-aa41-f8ed21757733",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ff7991e9-7855-4b17-b27e-57b19aa2774c",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string obtained by joining the vowels in the string `S`.\n\nFor example,\n\nIf the given string is `S = \"rose\"`.\n\n- The characters in the string `rose` are **r**, **o**, **s** and **e**.\n\n- The vowels in the string `rose` are **o** and **e**.\n\n- The string obtained by joining all the vowels (**o** and **e**) is **oe**.\n\nThe output should be **oe**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d61b380c-9449-484b-803e-26e8f4f98e77",
+          "short_text": "",
+          "content": "From your understanding of the problem description, what are vowels?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0a064e3b-a564-4375-900b-d6a537e2f8ae",
+              "content": "a, b, c, d, e",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "26ad9755-a951-49c7-86d6-d34a610f3a95",
+              "content": "a, e, i, o, u",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5061c433-fa9c-44cc-b183-05ba1a92ce0c",
+              "content": "a, e, i, n, u",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a9e9d183-6c4a-4694-a1b2-97030db82701",
+              "content": "a, e, i, o, s",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, vowels are **a**, **e**, **i**, **o** and **u** .",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ea1797a5-90ca-4f45-a2aa-55e508613f69",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\ncrossandra\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "204b94d6-6ccf-43e4-a52c-42df9f2debec",
+              "content": "oaa",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "80162e8a-4f79-4c42-aef1-282ae4dd5f11",
+              "content": "o, a, a",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "84d13e08-aab1-4d38-8f8a-264c93d7c367",
+              "content": "o\na\na",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ded088e6-58f2-45f4-8649-4ca1e9d5ff4d",
+              "content": "oao",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = \"crossandra\"`.\n\n- The characters in the string `crossandra` are **c**, **r**, **o**, **s**, **s**, **a**, **n**, **d**, **r** and **a**.\n\n- The vowels in the string `crossandra` are **o**, **a** and **a**.\n\n- The string obtained by joining all the vowels (**o**, **a** and **a**) is **oaa**.\n\nThe output should be **oaa**\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "feb9e7b1-4b7c-4222-8b88-f7eef73f2c69",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "01b6de90-4f61-4d56-92c9-5bb90dfefa7e",
+              "content": "To print the resultant string by giving a space between vowels in the string `S`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "057cf08a-e2ea-4980-9932-13e640903430",
+              "content": "To print the resultant string by joining all the vowels in the string `S`.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a130c372-30cf-474f-9627-7c3a93379b31",
+              "content": "To print the resultant string by joining all the vowels in the string `S` in a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bc59a877-d501-4a7d-83ff-883cb7b12bc8",
+              "content": "To print the resultant string by removing all the vowels in the string `S`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a string `S`,  find the vowels in the given string and print the resultant string by joining all the vowels in the string `S`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "2aedaf97-be0c-4f93-a207-43e95a2f1426",
+      "input": "eagle",
+      "output": "eae",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "36911179-b013-4b58-a4aa-c6f0e4c2c9ca",
+      "input": "owl",
+      "output": "o",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "3c9947c7-6dff-4a10-974e-1d11cd0b20cb",
+      "input": "education",
+      "output": "euaio",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4358a376-933b-4808-941f-3f755a4cf743",
+      "input": "container",
+      "output": "oaie",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "63def61c-cd4f-429d-a18a-4302ce5ad940",
+      "input": "jump",
+      "output": "u",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "be411f4b-7fc8-4eb4-b3f1-17ff234b6af7",
+      "input": "queue",
+      "output": "ueue",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "edd5c622-c03a-4d71-bcd6-64d598a2b48b",
+      "input": "language",
+      "output": "auae",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fac395ff-d7a4-4cd1-b2b8-2c298ef197de",
+      "input": "unicorn",
+      "output": "uio",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ff386151-f392-49c4-a474-5ade64fc2cb2",
+      "input": "arabian sea",
+      "output": "aaiaea",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

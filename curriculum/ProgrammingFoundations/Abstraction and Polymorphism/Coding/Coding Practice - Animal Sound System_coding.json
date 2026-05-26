@@ -1,0 +1,40 @@
+{
+  "question_id": "8d7fa9ec-ab42-46d5-a849-e96f211907fc",
+  "short_text": "Animal Sound System",
+  "content": "You are tasked with creating a simple class hierarchy for an animal sound system. Your goal is to implement a base class called `Animal` and several derived classes that represent different types of animals. Each animal should provide a specific sound when requested.\n\nExisting `Animal` class:\n\nThe existing `Animal` class has only a pass statement. You need to remove the pass statement and implement the required features as outlined below.\n\n<details> \n\n<summary> Features to be added to the `Animal` class </summary>\n\n- **Base Class:**\n    - Create a base class called Animal with a method **`make_sound()`**.\n- **Derived Classes** :\n  - Implement the following derived classes:\n    - `Dog`: Represents a dog. The `make_sound()` method should print: **`Dog says: Woof!`**\n    - `Cat`: Represents a cat. The `make_sound()` method should print: **`Cat says: Meow!`**\n    - `Cow`: Represents a cow. The `make_sound()` method should print: **`Cow says: Moo!`**\n</details> \n\n<MultiLineNote>\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8339b44d-ea29-48c7-85eb-d01c60fbe33a",
+      "code_content": "class Animal:\n    def make_sound(self):\n        pass  # Base method to be overridden\n\nclass Dog(Animal):\n    def make_sound(self):\n        print(\"Dog says: Woof!\")\n\nclass Cat(Animal):\n    def make_sound(self):\n        print(\"Cat says: Meow!\")\n\nclass Cow(Animal):\n    def make_sound(self):\n        print(\"Cow says: Moo!\")\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    animals = [Dog(), Cat(), Cow()]\n    for animal in animals:\n        animal.make_sound()  # Should call the make_sound method for each animal",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "bd5cd6c9-770f-433b-8833-85eb93709183",
+      "input": "Checking Animal Classes",
+      "output": "PASS: All classes are correctly defined.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f9223d6a-04a7-47cf-b2d3-04bf33c51819",
+      "input": "Checking Default Tests",
+      "output": "Dog says: Woof!\nCat says: Meow!\nCow says: Moo!",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

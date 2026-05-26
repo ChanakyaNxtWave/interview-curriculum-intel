@@ -1,0 +1,623 @@
+{
+  "catalog_id": "KPs-ProgrammingFoundations",
+  "source_file": "KPs-ProgrammingFoundations.csv",
+  "count": 88,
+  "knowledge_points": [
+    {
+      "source_kp_id": "KP_GLOBAL_0001",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "label": "for loop iteration patterns",
+      "label_enum": "FOR_LOOP_ITERATION_PATTERNS",
+      "description": "Mastery involves using `for` loops to iterate over sequences (lists, strings, ranges) and applying common patterns such as counting, accumulating, or transforming each element in the collection."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0002",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000002",
+      "label": "while loop and condition-based iteration",
+      "label_enum": "WHILE_LOOP_AND_CONDITION_BASED_ITERATION",
+      "description": "Mastery involves using `while` loops to repeat a block of code as long as a condition remains `True`, including correctly initializing, updating, and terminating the loop variable to avoid infinite loops."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0003",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000003",
+      "label": "conditional logic in python",
+      "label_enum": "CONDITIONAL_LOGIC_IN_PYTHON",
+      "description": "Mastery involves using `if`, `elif`, and `else` statements to control program flow based on evaluated conditions, including constructing compound conditions with logical and comparison operators."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0004",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000004",
+      "label": "implicit type compatibility",
+      "label_enum": "IMPLICIT_TYPE_COMPATIBILITY",
+      "description": "Mastery involves understanding when Python automatically handles operations between compatible types (e.g., `int` and `float` in arithmetic) and recognizing when implicit coercion does not apply, such as mixing `str` and `int`."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0005",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000005",
+      "label": "string indexing and slicing",
+      "label_enum": "STRING_INDEXING_AND_SLICING",
+      "description": "Mastery involves accessing individual characters using 0-based indexing (e.g., `s[0]`) and extracting substrings using slice notation (e.g., `s[start:end]`), including negative indices and omitted bounds."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0006",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000006",
+      "label": "string operations in python",
+      "label_enum": "STRING_OPERATIONS_IN_PYTHON",
+      "description": "Mastery involves applying common string operations including concatenation (`+`), repetition (`*`), length retrieval (`len()`), and membership testing (`in`), as well as built-in methods like `upper()`, `lower()`, `strip()`, and `replace()`."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0007",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000007",
+      "label": "input handling in python",
+      "label_enum": "INPUT_HANDLING_IN_PYTHON",
+      "description": "Mastery involves using `input()` to read user input as a string and applying type conversion functions like `int()` or `float()` to transform the input into the appropriate data type for further processing."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0008",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000008",
+      "label": "variable assignment in python",
+      "label_enum": "VARIABLE_ASSIGNMENT_IN_PYTHON",
+      "description": "Mastery involves using the `=` operator to bind values to named variables, including reassigning variables, performing multiple assignment, and understanding that variable names reference objects in memory."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0009",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000009",
+      "label": "syntax error handling",
+      "label_enum": "SYNTAX_ERROR_HANDLING",
+      "description": "Mastery involves identifying and correcting common Python syntax errors such as missing colons, incorrect indentation, mismatched parentheses, and misspelled keywords that prevent the program from running."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0010",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000010",
+      "label": "output formatting in python",
+      "label_enum": "OUTPUT_FORMATTING_IN_PYTHON",
+      "description": "Mastery involves producing formatted output using f-strings (e.g., `f'{value:.2f}'`), the `.format()` method, and `print()` with `sep` and `end` parameters to control the display of values with desired precision, alignment, or separators."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0012",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000012",
+      "label": "type conversion in python",
+      "label_enum": "TYPE_CONVERSION_IN_PYTHON",
+      "description": "Mastery involves explicitly converting values between data types using built-in functions such as `int()`, `float()`, `str()`, and `bool()`, and understanding when and why such conversions are necessary."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0013",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000013",
+      "label": "arithmetic calculations in python",
+      "label_enum": "ARITHMETIC_CALCULATIONS_IN_PYTHON",
+      "description": "Mastery involves using Python's arithmetic operators (`+`, `-`, `*`, `/`, `//`, `%`, `**`) to perform calculations on numeric values, and understanding operator precedence when combining multiple operations in an expression."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0014",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000014",
+      "label": "list creation and updates",
+      "label_enum": "LIST_CREATION_AND_UPDATES",
+      "description": "Mastery involves creating lists using literals or `list()`, and modifying them using methods such as `append()`, `insert()`, `extend()`, `remove()`, and `pop()` to add, update, or delete elements."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0015",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000015",
+      "label": "list indexing and slicing",
+      "label_enum": "LIST_INDEXING_AND_SLICING",
+      "description": "Mastery involves accessing individual list elements by their index (e.g., `lst[0]`, `lst[-1]`) and extracting sublists using slice notation (e.g., `lst[start:end:step]`), including the use of negative indices."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0016",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000016",
+      "label": "nested loops in python",
+      "label_enum": "NESTED_LOOPS_IN_PYTHON",
+      "description": "Mastery involves placing one `for` or `while` loop inside another to iterate over multi-dimensional structures such as grids or matrices, and coordinating the inner and outer loop variables to achieve the desired traversal pattern."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0017",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000017",
+      "label": "logical error identification",
+      "label_enum": "LOGICAL_ERROR_IDENTIFICATION",
+      "description": "Mastery involves reading and tracing code to detect logical errors — bugs where the program runs without crashing but produces incorrect results — by comparing expected vs. actual output and identifying the flawed condition, operator, or algorithm."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0018",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000018",
+      "label": "recursion and call stack",
+      "label_enum": "RECURSION_AND_CALL_STACK",
+      "description": "Mastery involves writing recursive functions that include a clear base case to stop recursion and a recursive step that reduces the problem, while understanding how each function call is pushed onto and popped from the call stack."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0019",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000019",
+      "label": "code reading and tracing",
+      "label_enum": "CODE_READING_AND_TRACING",
+      "description": "Mastery involves manually stepping through Python code line by line, tracking variable values at each step, and predicting the output of a program without executing it, including tracing through loops and function calls."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0020",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000020",
+      "label": "built-in functions in python",
+      "label_enum": "BUILT-IN_FUNCTIONS_IN_PYTHON",
+      "description": "Mastery involves using Python's built-in functions such as `len()`, `range()`, `type()`, `abs()`, `max()`, `min()`, `sum()`, `sorted()`, and `enumerate()` to perform common operations without importing additional modules."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0021",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000021",
+      "label": "dictionaries in python",
+      "label_enum": "DICTIONARIES_IN_PYTHON",
+      "description": "Mastery involves creating dictionaries using `{}` or `dict()`, accessing and updating values by key (e.g., `d[key]`, `d.get(key)`), and iterating over keys, values, or key-value pairs using `.keys()`, `.values()`, and `.items()`."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0022",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000022",
+      "label": "list mutability and references",
+      "label_enum": "LIST_MUTABILITY_AND_REFERENCES",
+      "description": "Mastery involves understanding that lists are mutable and that assignment creates a reference rather than a copy, recognizing the difference between shallow and deep copies (e.g., using `list.copy()` or `copy.deepcopy()`), and predicting how in-place modifications affect shared references."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0023",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000023",
+      "label": "set operations in python",
+      "label_enum": "SET_OPERATIONS_IN_PYTHON",
+      "description": "Mastery involves using Python set operations including union (`|`), intersection (`&`), difference (`-`), and symmetric difference (`^`) to compare and combine sets, as well as membership testing with `in`."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0024",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000024",
+      "label": "string combination operations",
+      "label_enum": "STRING_COMBINATION_OPERATIONS",
+      "description": "Mastery involves combining strings through concatenation (`+`), repetition (`*`), and `join()` (e.g., `', '.join(lst)`), selecting the appropriate method based on the context and the data being combined."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0025",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000025",
+      "label": "logical operators in python",
+      "label_enum": "LOGICAL_OPERATORS_IN_PYTHON",
+      "description": "Mastery involves using `and`, `or`, and `not` to form compound boolean expressions, understanding short-circuit evaluation, and correctly applying these operators to combine conditions in `if` statements and loops."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0026",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000026",
+      "label": "defining and calling functions",
+      "label_enum": "DEFINING_AND_CALLING_FUNCTIONS",
+      "description": "Mastery involves defining reusable functions with `def`, specifying parameters, writing the function body, using `return` to output a value, and invoking the function by passing appropriate arguments."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0027",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000027",
+      "label": "nested conditionals in python",
+      "label_enum": "NESTED_CONDITIONALS_IN_PYTHON",
+      "description": "Mastery involves placing one `if/elif/else` block inside another to implement hierarchical decision logic, and recognizing when nested conditionals can be simplified using `elif` or logical operators."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0028",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000028",
+      "label": "class hierarchies and inheritance",
+      "label_enum": "CLASS_HIERARCHIES_AND_INHERITANCE",
+      "description": "Mastery involves designing multi-level class hierarchies where child classes inherit attributes and methods from parent classes (e.g., `class Child(Parent):`), and understanding how Python resolves method calls through the Method Resolution Order (MRO)."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0029",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000029",
+      "label": "string methods in python",
+      "label_enum": "STRING_METHODS_IN_PYTHON",
+      "description": "Mastery involves applying Python's built-in string methods such as `split()`, `join()`, `strip()`, `replace()`, `find()`, `startswith()`, `endswith()`, `lower()`, and `upper()` to transform and search string data."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0030",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000030",
+      "label": "sorting and uniqueness",
+      "label_enum": "SORTING_AND_UNIQUENESS",
+      "description": "Mastery involves using `sorted()` and `list.sort()` to arrange elements in ascending or descending order, and using `set()` or `dict.fromkeys()` to eliminate duplicate values from a collection."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0031",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000031",
+      "label": "class methods in python",
+      "label_enum": "CLASS_METHODS_IN_PYTHON",
+      "description": "Mastery involves defining instance methods with `self`, class methods with `@classmethod` and `cls`, and static methods with `@staticmethod`, understanding when each type is appropriate and how they differ in access to instance and class state."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0032",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000032",
+      "label": "variable scope in python",
+      "label_enum": "VARIABLE_SCOPE_IN_PYTHON",
+      "description": "Mastery involves understanding local, enclosing, global, and built-in (LEGB) scopes, predicting which variable binding is resolved in a given context, and using `global` or `nonlocal` keywords when necessary to modify outer-scope variables."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0034",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000034",
+      "label": "boolean logic in python",
+      "label_enum": "BOOLEAN_LOGIC_IN_PYTHON",
+      "description": "Mastery involves evaluating boolean expressions using `True`, `False`, comparison operators, and logical operators (`and`, `or`, `not`), and understanding Python's truthy/falsy rules for non-boolean values such as `0`, `None`, and empty containers."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0035",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000035",
+      "label": "class and instance members",
+      "label_enum": "CLASS_AND_INSTANCE_MEMBERS",
+      "description": "Mastery involves distinguishing between class-level attributes (shared by all instances) and instance-level attributes (set via `self` in `__init__`), and understanding how attribute lookup proceeds from instance to class."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0036",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000036",
+      "label": "function arguments and parameters",
+      "label_enum": "FUNCTION_ARGUMENTS_AND_PARAMETERS",
+      "description": "Mastery involves defining functions with positional parameters, default values, `*args` for variable positional arguments, and `**kwargs` for variable keyword arguments, and correctly passing arguments when calling such functions."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0037",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000037",
+      "label": "comparison operators in python",
+      "label_enum": "COMPARISON_OPERATORS_IN_PYTHON",
+      "description": "Mastery involves using Python's comparison operators (`==`, `!=`, `<`, `>`, `<=`, `>=`) to compare numeric, string, and other values, and understanding that comparison returns a boolean result that can be used directly in conditional statements."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0038",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000038",
+      "label": "string comparison logic",
+      "label_enum": "STRING_COMPARISON_LOGIC",
+      "description": "Mastery involves comparing strings using `==`, `!=`, `<`, and `>` operators, understanding that comparisons are case-sensitive and based on Unicode (lexicographic) order, and using `.lower()` or `.upper()` to perform case-insensitive comparisons."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0039",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000039",
+      "label": "python object model",
+      "label_enum": "PYTHON_OBJECT_MODEL",
+      "description": "Mastery involves understanding that everything in Python is an object with an identity (`id()`), type (`type()`), and value, and distinguishing between identity comparison (`is`) and equality comparison (`==`), as well as mutable vs. immutable objects."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0040",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000040",
+      "label": "set methods in python",
+      "label_enum": "SET_METHODS_IN_PYTHON",
+      "description": "Mastery involves using set methods such as `.add()`, `.remove()`, `.discard()`, `.pop()`, `.update()`, `.intersection()`, `.union()`, and `.difference()` to modify and query sets."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0041",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000041",
+      "label": "data structures in python",
+      "label_enum": "DATA_STRUCTURES_IN_PYTHON",
+      "description": "Mastery involves selecting the appropriate built-in data structure (list, tuple, set, or dictionary) for a given problem based on characteristics such as ordering, mutability, uniqueness, and key-value association."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0042",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000042",
+      "label": "operator precedence in python",
+      "label_enum": "OPERATOR_PRECEDENCE_IN_PYTHON",
+      "description": "Mastery involves correctly predicting the evaluation order of expressions involving multiple operators by applying Python's precedence rules (e.g., `**` before `*` before `+`), and using parentheses to explicitly control evaluation order."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0043",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000043",
+      "label": "class instantiation and objects",
+      "label_enum": "CLASS_INSTANTIATION_AND_OBJECTS",
+      "description": "Mastery involves creating instances of a class by calling it like a function (e.g., `obj = MyClass(args)`), understanding that `__init__` is invoked automatically, and accessing instance attributes and methods via dot notation."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0044",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000044",
+      "label": "list methods in python",
+      "label_enum": "LIST_METHODS_IN_PYTHON",
+      "description": "Mastery involves using built-in list methods such as `append()`, `extend()`, `insert()`, `remove()`, `pop()`, `index()`, `count()`, `sort()`, and `reverse()` to manipulate list contents in place."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0045",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000045",
+      "label": "object oriented programming fundamentals",
+      "label_enum": "OBJECT_ORIENTED_PROGRAMMING_FUNDAMENTALS",
+      "description": "Mastery involves understanding and applying the four pillars of OOP — encapsulation, abstraction, inheritance, and polymorphism — by defining classes with attributes and methods, creating objects, and modeling real-world entities as code."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0046",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000046",
+      "label": "working with modules in python",
+      "label_enum": "WORKING_WITH_MODULES_IN_PYTHON",
+      "description": "Mastery involves importing standard library and third-party modules using `import`, `from ... import`, and `import ... as`, and using module-level functions and constants (e.g., `math.sqrt()`, `os.path.join()`)."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0047",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000047",
+      "label": "exception handling in python",
+      "label_enum": "EXCEPTION_HANDLING_IN_PYTHON",
+      "description": "Mastery involves using `try`, `except`, `else`, and `finally` blocks to gracefully handle runtime errors, catching specific exception types (e.g., `ValueError`, `TypeError`, `ZeroDivisionError`), and optionally re-raising or logging exceptions."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0049",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000049",
+      "label": "encapsulation and access control",
+      "label_enum": "ENCAPSULATION_AND_ACCESS_CONTROL",
+      "description": "Mastery involves bundling data and methods within a class and using naming conventions — single underscore `_attr` for protected and double underscore `__attr` for private — to restrict direct access and signal intended visibility to other code."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0050",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000050",
+      "label": "default and keyword arguments",
+      "label_enum": "DEFAULT_AND_KEYWORD_ARGUMENTS",
+      "description": "Mastery involves defining functions with default parameter values (e.g., `def f(x, n=10):`) and calling functions using keyword arguments (e.g., `f(x=5, n=3)`) to make function calls more explicit and flexible."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0051",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000051",
+      "label": "python keywords and identifiers",
+      "label_enum": "PYTHON_KEYWORDS_AND_IDENTIFIERS",
+      "description": "Mastery involves recognizing Python's reserved keywords (e.g., `if`, `for`, `return`, `class`, `None`) that cannot be used as identifiers, and following naming rules and conventions (snake_case, descriptive names) when declaring variables, functions, and classes."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0052",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000052",
+      "label": "working with sets in python",
+      "label_enum": "WORKING_WITH_SETS_IN_PYTHON",
+      "description": "Mastery involves creating sets using `{}` or `set()`, understanding that sets are unordered and contain only unique hashable elements, and applying set operations (union, intersection, difference) to solve problems involving membership and uniqueness."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0053",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000053",
+      "label": "functions and return values",
+      "label_enum": "FUNCTIONS_AND_RETURN_VALUES",
+      "description": "Mastery involves using the `return` statement to output a value from a function, understanding that a function without an explicit `return` returns `None`, and storing or using the returned value in the calling context."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0054",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000054",
+      "label": "data types in python",
+      "label_enum": "DATA_TYPES_IN_PYTHON",
+      "description": "Mastery involves identifying and working with Python's core built-in data types — `int`, `float`, `str`, `bool`, `list`, `tuple`, `set`, and `dict` — understanding their characteristics, and using `type()` to inspect the type of a value."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0055",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000055",
+      "label": "abstract classes and interfaces",
+      "label_enum": "ABSTRACT_CLASSES_AND_INTERFACES",
+      "description": "Mastery involves defining abstract base classes using `abc.ABC` and the `@abstractmethod` decorator to enforce that subclasses implement specific methods, effectively creating a contract that concrete classes must satisfy."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0056",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000056",
+      "label": "class attributes and variables",
+      "label_enum": "CLASS_ATTRIBUTES_AND_VARIABLES",
+      "description": "Mastery involves defining class-level attributes that are shared across all instances, distinguishing them from instance attributes set in `__init__`, and understanding how modifying a class attribute affects all instances unless overridden at the instance level."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0057",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000057",
+      "label": "membership operators in python",
+      "label_enum": "MEMBERSHIP_OPERATORS_IN_PYTHON",
+      "description": "Mastery involves using the `in` and `not in` operators to test whether a value exists within a sequence (string, list, tuple) or a collection (set, dict), and understanding the performance implications across different data structures."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0058",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000058",
+      "label": "method overriding in python",
+      "label_enum": "METHOD_OVERRIDING_IN_PYTHON",
+      "description": "Mastery involves redefining a method in a subclass that has the same name as a method in the parent class to provide specialized behavior, and optionally calling the parent's implementation using `super().method_name()`."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0059",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000059",
+      "label": "higher order functions in python",
+      "label_enum": "HIGHER_ORDER_FUNCTIONS_IN_PYTHON",
+      "description": "Mastery involves using functions that accept other functions as arguments or return them as values, including built-in higher-order functions like `map()`, `filter()`, and `sorted()` with a `key` parameter, as well as defining custom higher-order functions."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0060",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000060",
+      "label": "class constructors and initialization",
+      "label_enum": "CLASS_CONSTRUCTORS_AND_INITIALIZATION",
+      "description": "Mastery involves defining the `__init__` method to initialize an object's instance attributes when it is created, and understanding that `__init__` is automatically called by Python when a new instance is instantiated."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0061",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000061",
+      "label": "python syntax",
+      "label_enum": "PYTHON_SYNTAX",
+      "description": "Mastery involves writing syntactically valid Python code by correctly using indentation to define blocks, colons after compound statements, proper quoting for strings, and adhering to the rules that govern expressions, statements, and program structure."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0062",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000062",
+      "label": "comprehensions in python",
+      "label_enum": "COMPREHENSIONS_IN_PYTHON",
+      "description": "Mastery involves using list comprehensions (e.g., `[expr for x in iterable if cond]`), dict comprehensions (e.g., `{k: v for k, v in items}`), and set comprehensions to create collections concisely from existing iterables."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0063",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000063",
+      "label": "list traversal and aggregation",
+      "label_enum": "LIST_TRAVERSAL_AND_AGGREGATION",
+      "description": "Mastery involves iterating over a list using a `for` loop or built-in functions, and computing aggregate values such as sum, count, minimum, or maximum using `sum()`, `len()`, `min()`, and `max()`, or via an accumulator pattern."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0064",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000064",
+      "label": "type checking and introspection",
+      "label_enum": "TYPE_CHECKING_AND_INTROSPECTION",
+      "description": "Mastery involves using `type()` to retrieve an object's exact type, `isinstance()` to check if an object is an instance of a class or its subclasses, and `hasattr()` or `dir()` to inspect an object's attributes and methods at runtime."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0065",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000065",
+      "label": "nested lists and matrices",
+      "label_enum": "NESTED_LISTS_AND_MATRICES",
+      "description": "Mastery involves creating and working with lists of lists to represent 2D data structures (matrices), accessing elements using double indexing (e.g., `matrix[row][col]`), and iterating over rows and columns using nested `for` loops."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0066",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000066",
+      "label": "sequence unpacking in python",
+      "label_enum": "SEQUENCE_UNPACKING_IN_PYTHON",
+      "description": "Mastery involves using tuple/list unpacking to assign multiple values from a sequence in a single statement (e.g., `a, b, c = [1, 2, 3]`), including extended unpacking with `*` (e.g., `first, *rest = lst`) and unpacking in `for` loops."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0067",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000067",
+      "label": "date and time operations",
+      "label_enum": "DATE_AND_TIME_OPERATIONS",
+      "description": "Mastery involves using Python's `datetime` module to create, compare, and perform arithmetic on dates and times, including adding or subtracting durations using `timedelta` and extracting components like year, month, day, hour, and minute."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0068",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000068",
+      "label": "augmented assignment operators",
+      "label_enum": "AUGMENTED_ASSIGNMENT_OPERATORS",
+      "description": "Mastery involves using augmented assignment operators (`+=`, `-=`, `*=`, `/=`, `//=`, `%=`, `**=`) as shorthand for updating a variable by applying an arithmetic operation to its current value."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0069",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000069",
+      "label": "tuple basics in python",
+      "label_enum": "TUPLE_BASICS_IN_PYTHON",
+      "description": "Mastery involves creating tuples using parentheses or comma-separated values (including single-element tuples with a trailing comma), accessing elements by index, and understanding that tuples are immutable, making them suitable for fixed collections."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0070",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000070",
+      "label": "floating point numbers in python",
+      "label_enum": "FLOATING_POINT_NUMBERS_IN_PYTHON",
+      "description": "Mastery involves working with `float` values in Python, understanding that floating-point arithmetic can introduce precision errors (e.g., `0.1 + 0.2 != 0.3`), and using `round()` or the `decimal` module when exact precision is required."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0071",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000071",
+      "label": "character encoding in python",
+      "label_enum": "CHARACTER_ENCODING_IN_PYTHON",
+      "description": "Mastery involves converting between characters and their integer Unicode code points using `ord()` and `chr()`, and understanding how character encoding (e.g., ASCII, UTF-8) maps characters to numeric values."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0072",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000072",
+      "label": "object composition",
+      "label_enum": "OBJECT_COMPOSITION",
+      "description": "Mastery involves building complex objects by including instances of other classes as attributes (has-a relationship), rather than using inheritance, to achieve code reuse and model real-world relationships more accurately."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0073",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000073",
+      "label": "variable naming and declaration",
+      "label_enum": "VARIABLE_NAMING_AND_DECLARATION",
+      "description": "Mastery involves declaring variables with meaningful names that follow Python conventions (snake_case, no reserved keywords, starting with a letter or underscore), and understanding that variables are created upon first assignment without explicit type declarations."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0074",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000074",
+      "label": "date parsing and formatting",
+      "label_enum": "DATE_PARSING_AND_FORMATTING",
+      "description": "Mastery involves using `datetime.strptime()` to parse date strings into `datetime` objects and `datetime.strftime()` to format `datetime` objects back into strings, using format codes such as `%Y`, `%m`, `%d`, `%H`, and `%M`."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0075",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000075",
+      "label": "hashability in python",
+      "label_enum": "HASHABILITY_IN_PYTHON",
+      "description": "Mastery involves understanding that only immutable objects (e.g., integers, strings, tuples) are hashable and can be used as dictionary keys or set elements, while mutable objects (e.g., lists, dicts) are not hashable and will raise a `TypeError` if used as keys."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0076",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000076",
+      "label": "polymorphism in python",
+      "label_enum": "POLYMORPHISM_IN_PYTHON",
+      "description": "Mastery involves writing code that operates uniformly on objects of different types through a shared interface, leveraging method overriding in subclasses so that the same method call produces type-appropriate behavior at runtime."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0077",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000077",
+      "label": "random number generation in python",
+      "label_enum": "RANDOM_NUMBER_GENERATION_IN_PYTHON",
+      "description": "Mastery involves using the `random` module to generate random numbers (e.g., `random.random()`, `random.randint(a, b)`), shuffle sequences (`random.shuffle()`), and make random selections from a list (`random.choice()`, `random.sample()`)."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0078",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000078",
+      "label": "code comments and documentation",
+      "label_enum": "CODE_COMMENTS_AND_DOCUMENTATION",
+      "description": "Mastery involves writing single-line comments with `#` and multi-line docstrings with triple quotes (`\"\"\"`) to explain the purpose of functions, classes, and modules, and following conventions such as PEP 257 for docstring formatting."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0079",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000079",
+      "label": "collection operations in python",
+      "label_enum": "COLLECTION_OPERATIONS_IN_PYTHON",
+      "description": "Mastery involves performing common operations across Python's built-in collections (lists, tuples, sets, dicts) including iteration, membership testing, length retrieval, and applying appropriate collection-specific methods to manipulate or query data."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0080",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000080",
+      "label": "rounding numbers in python",
+      "label_enum": "ROUNDING_NUMBERS_IN_PYTHON",
+      "description": "Mastery involves using the built-in `round(number, ndigits)` function to round floating-point numbers to a specified number of decimal places, and understanding Python's banker's rounding (round-half-to-even) behavior."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0081",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000081",
+      "label": "python help and documentation",
+      "label_enum": "PYTHON_HELP_AND_DOCUMENTATION",
+      "description": "Mastery involves using the built-in `help()` function and `__doc__` attribute to access documentation for modules, classes, and functions directly in the interpreter, and navigating the official Python documentation to look up syntax, parameters, and examples."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0082",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000082",
+      "label": "modular programming",
+      "label_enum": "MODULAR_PROGRAMMING",
+      "description": "Mastery involves organizing code into separate, reusable modules (`.py` files) and packages (directories with `__init__.py`), and importing functionality across modules using `import` and `from ... import` to promote code reuse and maintainability."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0083",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000083",
+      "label": "pass statement in python",
+      "label_enum": "PASS_STATEMENT_IN_PYTHON",
+      "description": "Mastery involves using the `pass` statement as a no-operation placeholder in syntactically required but intentionally empty blocks such as function stubs, class bodies, or empty `if` branches, allowing code to run without errors during development."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0084",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000084",
+      "label": "escape sequences in strings",
+      "label_enum": "ESCAPE_SEQUENCES_IN_STRINGS",
+      "description": "Mastery involves using escape sequences within string literals to represent special characters, including `\\n` (newline), `\\t` (tab), `\\\\` (backslash), `\\'` and `\\\"` (quotes), and using raw strings (e.g., `r'...'`) to suppress escape processing."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0085",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000085",
+      "label": "decorators in python",
+      "label_enum": "DECORATORS_IN_PYTHON",
+      "description": "Mastery involves applying and defining decorators using the `@decorator` syntax to wrap a function with additional behavior, understanding that a decorator is a higher-order function that accepts a function and returns a modified version of it."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0086",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000086",
+      "label": "string immutability",
+      "label_enum": "STRING_IMMUTABILITY",
+      "description": "Mastery involves understanding that Python strings are immutable — individual characters cannot be modified in place — and that string operations such as `replace()` or `+` always return new string objects rather than modifying the original."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0087",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000087",
+      "label": "stack data structure",
+      "label_enum": "STACK_DATA_STRUCTURE",
+      "description": "Mastery involves implementing a stack (LIFO) using a Python list, where `append()` pushes an element onto the top and `pop()` removes and returns the top element, and applying the stack pattern to problems such as balanced parentheses checking or expression evaluation."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0088",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000088",
+      "label": "array manipulation techniques",
+      "label_enum": "ARRAY_MANIPULATION_TECHNIQUES",
+      "description": "Mastery involves performing common array (list) manipulation operations such as reversing (`list[::-1]` or `list.reverse()`), flattening nested lists, rotating elements, and in-place vs. out-of-place modifications to transform array data."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0138",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000138",
+      "label": "computing and programming basics",
+      "label_enum": "COMPUTING_AND_PROGRAMMING_BASICS",
+      "description": "Mastery involves understanding foundational computing concepts including what software, hardware, and programs are, the role of programming languages in instructing computers, and the basic flow of writing, running, and debugging a simple program."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0531",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000531",
+      "label": "array traversal and indexing",
+      "label_enum": "ARRAY_TRAVERSAL_AND_INDEXING",
+      "description": "Mastery involves iterating over array (list) elements using index-based (`for i in range(len(arr))`) and element-based (`for elem in arr`) loops, accessing elements by position, and applying traversal patterns to search, update, or aggregate array contents."
+    },
+    {
+      "source_kp_id": "KP_GLOBAL_0720",
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000720",
+      "label": "loop break continue pass statements",
+      "label_enum": "LOOP_BREAK_CONTINUE_PASS_STATEMENTS",
+      "description": "Mastery involves iterating over an iterable element and conditionally breaking, skipping the loop iteration using break, continue statements. Also, using pass as a placeholder wherever needed avoiding syntax errors"
+    }
+  ]
+}

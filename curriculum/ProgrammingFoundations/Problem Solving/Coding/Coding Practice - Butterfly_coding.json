@@ -1,0 +1,75 @@
+{
+  "question_id": "9a445136-b125-4dd4-8ef1-46ff96737d45",
+  "short_text": "Butterfly",
+  "content": "Given a number `N`, write a program to print a **Butterfly** of `(2 * N) - 1` rows using stars (`*`).\n\n````\n*         * \n* *     * *  \n* * * * * * \n* *     * * \n*         *\n````\n\n<MultiLineNote>\nThere is a space after every star (`*`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `(2 * N) - 1` rows containing stars (`*`) as a **Butterfly** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`, \n\n- Print the stars (`*`) on **7** rows `((2 * 4) - 1)` as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-butterfly.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates the two spaces (\"&nbsp;&nbsp;\").\n- The Star in the box indicates the star and a space (\"* \")\n\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*             * \n* *         * * \n* * *     * * * \n* * * * * * * * \n* * *     * * * \n* *         * * \n*             *\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8149c584-e9b1-4780-809e-bb5a085db0b4",
+      "code_content": "number = int(input())\n\nfor each_number in range(1, number + 1):\n    stars = \"* \" * each_number\n    spaces = \"  \" * (2 * (number - each_number))\n    each_row = stars + spaces + stars\n    print(each_row)\n    \nfor each_number in range(1, number):\n    stars = \"* \" * (number - each_number)\n    spaces = \"  \" * (2 * each_number)\n    each_row = stars + spaces + stars\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "28185970-bfbf-41a4-8237-4e1152bf9774",
+      "input": "6",
+      "output": "*                     * \n* *                 * * \n* * *             * * * \n* * * *         * * * * \n* * * * *     * * * * * \n* * * * * * * * * * * * \n* * * * *     * * * * * \n* * * *         * * * * \n* * *             * * * \n* *                 * * \n*                     *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "36a792f0-8c36-4a42-80f4-6230fd166e0b",
+      "input": "1",
+      "output": "* *",
+      "is_hidden": true,
+      "weightage": 19.0
+    },
+    {
+      "test_case_id": "4466d977-4500-4b35-b469-e205ed384092",
+      "input": "2",
+      "output": "*     * \n* * * * \n*     *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5fd83910-8305-45e6-8328-0962f0568e84",
+      "input": "23",
+      "output": "*                                                                                         * \n* *                                                                                     * * \n* * *                                                                                 * * * \n* * * *                                                                             * * * * \n* * * * *                                                                         * * * * * \n* * * * * *                                                                     * * * * * * \n* * * * * * *                                                                 * * * * * * * \n* * * * * * * *                                                             * * * * * * * * \n* * * * * * * * *                                                         * * * * * * * * * \n* * * * * * * * * *                                                     * * * * * * * * * * \n* * * * * * * * * * *                                                 * * * * * * * * * * * \n* * * * * * * * * * * *                                             * * * * * * * * * * * * \n* * * * * * * * * * * * *                                         * * * * * * * * * * * * * \n* * * * * * * * * * * * * *                                     * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * *                                 * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * *                             * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * *                         * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * *                     * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * *                 * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * *             * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * *         * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * *     * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * *     * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * *         * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * *             * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * *                 * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * *                     * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * *                         * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * *                             * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * *                                 * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * *                                     * * * * * * * * * * * * * * \n* * * * * * * * * * * * *                                         * * * * * * * * * * * * * \n* * * * * * * * * * * *                                             * * * * * * * * * * * * \n* * * * * * * * * * *                                                 * * * * * * * * * * * \n* * * * * * * * * *                                                     * * * * * * * * * * \n* * * * * * * * *                                                         * * * * * * * * * \n* * * * * * * *                                                             * * * * * * * * \n* * * * * * *                                                                 * * * * * * * \n* * * * * *                                                                     * * * * * * \n* * * * *                                                                         * * * * * \n* * * *                                                                             * * * * \n* * *                                                                                 * * * \n* *                                                                                     * * \n*                                                                                         *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bbc9870a-09e0-4b1a-ad76-16963927ef46",
+      "input": "4",
+      "output": "*             * \n* *         * * \n* * *     * * * \n* * * * * * * * \n* * *     * * * \n* *         * * \n*             *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d3297bee-d58e-4a38-b1b0-cd21b07cd9b0",
+      "input": "11",
+      "output": "*                                         * \n* *                                     * * \n* * *                                 * * * \n* * * *                             * * * * \n* * * * *                         * * * * * \n* * * * * *                     * * * * * * \n* * * * * * *                 * * * * * * * \n* * * * * * * *             * * * * * * * * \n* * * * * * * * *         * * * * * * * * * \n* * * * * * * * * *     * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * *     * * * * * * * * * * \n* * * * * * * * *         * * * * * * * * * \n* * * * * * * *             * * * * * * * * \n* * * * * * *                 * * * * * * * \n* * * * * *                     * * * * * * \n* * * * *                         * * * * * \n* * * *                             * * * * \n* * *                                 * * * \n* *                                     * * \n*                                         *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f35e4ae4-d4ab-4f5b-a7f4-8f4e89fbe300",
+      "input": "5",
+      "output": "*                 * \n* *             * * \n* * *         * * * \n* * * *     * * * * \n* * * * * * * * * * \n* * * *     * * * * \n* * *         * * * \n* *             * * \n*                 *",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

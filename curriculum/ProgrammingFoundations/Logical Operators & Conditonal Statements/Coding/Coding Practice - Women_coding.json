@@ -1,0 +1,377 @@
+{
+  "question_id": "d971d87a-c98a-4959-8265-35024135c181",
+  "short_text": "Women",
+  "content": "Write a program that reads three strings `A`, `B`, and `C`, and checks if one of the given strings is equal to **woman**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains a string `A`.\r\nThe second line of input contains a string `B`.\r\nThe third line of input contains a string `C`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if one of the given strings is equal to **woman**, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given strings are `A = \"man\"`, `B = \"woman\"`, and `C = \"man\"`,\r\n\r\n✗ `A` is equal to **woman**. (**man** is not equal to **woman**)\r\n✔ `B` is equal to **woman**. (**woman** is equal to **woman**)\r\n✗ `C` is equal to **woman**. (**man** is not equal to **woman**)\r\n\r\nThe output should be **True** as one of the given strings is equal to **woman**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d3b543cd-6950-4a44-9211-84e3353aa023",
+      "code_content": "first_person = input()\nsecond_person = input()\nthird_person = input()\n\nresult = (first_person == \"woman\") or (second_person == \"woman\") or (third_person == \"woman\")\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "20ca5ccf-c034-40ff-a2f8-32c99dce2976",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nmen\nwoman\ngirl\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given strings are, `A = men`, `B = woman`, `C = girl`\n\n✗ `A` is equal to **men**. (**men** is not equal to **woman**)\n\n✔ `B` is equal to **woman**. (**woman** is equal to **woman**)\n\n✗ `C` is equal to **girl**. (**girl** is not equal to **woman**)\n\nThe output should be **True** as one of the strings is equal to **woman**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4335c86f-871a-49f0-9ffd-21fbacf67c3c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nmen\nboy\nman\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given strings are `A = men`, `B = boy` ,`C = man`,\n\n✗ `A` is equal to **men**. (**men**  is not equal to **woman**)\n\n✗ `B` is equal to **boy**. (**boy** is not equal to **woman**)\n\n✗ `C` is equal to **man**. (**man** is not equal to **woman**)\n\nThe output should be **False** as no string is equal to **woman**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5819f80d-334b-4df0-9604-88cc7c53ad45",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\nwoman\nwoman\nwoman\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given strings are `A = woman`, `B = woman` , `C = woman`,\n\n✔ `A` is equal to **woman**. (**woman** is equal to **woman**)\n\n✔ `B` is equal to **woman**. (**woman** is equal to **woman**)\n\n✔ `C` is equal to **woman**. (**woman** is equal to **woman**)\n\nThe output should be **True** as all the strings are equal to **woman**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "147b782a-a4ad-4f7d-adad-7e0303d2f919",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "064b47d9-a392-483a-8642-2755bf7f73cb",
+              "content": "To check if one of the given strings is equal to **girl**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b470bb99-da94-467f-acb2-614c728e2829",
+              "content": "To check if one of the given strings is equal to **men**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f0651fb1-e59e-4c38-a170-8dd8bf199694",
+              "content": "To check if two of the given strings are equal to **women**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fff72ea1-a3ba-489b-bcbd-78d23113eba4",
+              "content": "To check if one of the given strings is equal to **woman**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read three strings `A`, `B` and `C` and check if one of the given strings is equal to **woman**. \n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1a2fcc94-f827-4bbd-b266-92992276ed1f",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\ngirl\ngirl\nwoman\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "32981f7f-cc9d-4bfc-9671-8decb3bd40d4",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "72be82b5-cd21-45a3-8831-335b0a3c17ce",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "843a0dc9-d995-422b-b544-c42938be0cf3",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "fe2e0652-bc86-4329-a0c2-5ecb534e4b38",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given strings are `A = girl`, `B = girl`, `C = woman`, \n\n✗ `A` is equal to **girl**. (**girl** is not equal to **woman**)\n\n✗ `B` is equal to **girl**. (**girl** is not equal to **woman**)\n\n✔ `C` is equal to **woman**. (**woman** is equal to **woman**)\n\nThe output should be **True** as one of the strings is equal to woman (`C` = **woman**).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "28e9f178-8193-4170-b4b3-ec70055e52b6",
+          "short_text": "",
+          "content": "According to the problem description, one of the given strings should equal to?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1ce57ab5-ea5a-4b89-9fb7-fbdee2c1870f",
+              "content": "men",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7431f220-e97a-4e08-8bdb-e41086ee2352",
+              "content": "woman",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a9a369e9-a8c2-4288-8bae-b54b5c1f1dff",
+              "content": "boy",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fd4924fc-db22-4f4b-96a3-0e883791ecc4",
+              "content": "women",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "As per the problem description, one of the given strings should be equal to **woman**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5919b163-3e74-4a91-abea-7352a7d6e176",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "1d445791-62a1-4933-94fd-83810f8c544e",
+              "content": "```\nmen\nboy\ngirl\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "1fb7f208-c115-49f8-8728-5048086cf0f0",
+              "content": "```\ngirl  boy  woman\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2f6af3d7-9f89-47da-bbdd-1f1a8494028a",
+              "content": "```\nwomen, men, woman\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c6490e4c-3084-4a18-8f2f-3c305058e671",
+              "content": "```\nmen\nwoman\nmen\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\nmen\nwoman\nmen\n```\n\n**Input 2**\n\n```\nmen\nboy\ngirl\n```\nThe above two inputs are valid because,\n\n- The first line of input contains a string `A`.\n\n- The second line of input contains a string `B`.\n\n- The third line of input contains a string `C`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "89900c1b-d834-4555-8032-2f0300187389",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2a57b905-19e3-4eb7-9a84-994c96296583",
+              "content": "The first line of input contains a float.\n\nThe second line of input contains a string.\n\nThe yhird line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5bcb9b72-8c62-4ba6-8a4b-288699cdf789",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a string.\n\nThe third line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "773d0794-26a4-43e9-b716-4a5501f97d62",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.\n\nThe third line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "84de5e30-8c88-413a-8b82-7b0119bf5543",
+              "content": "The first line of input contains a float.\n\nThe second line of input contains a float.\n\nThe third line of input contains a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be,\n\n- The First line of input contains a string representing `A`.\n                 \n- The Second line of input contains a string representing `B`.\n                                         \n- The Third line of input contains a string representing `C`.\n\nFor example,\n\n```\nmen          \nwoman   \nwomen\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9cb0b979-27b9-4d19-981f-aee8c93dbe17",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "29204b1d-f1ac-4603-836f-866b06eda7be",
+              "content": "The output should be a single line containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "485d5cc5-afc4-4558-8473-df031062f8a4",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "aeafc1a3-c389-4494-aa00-7814e1ee12ac",
+              "content": "The output should be a single line containing an float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ee6a9c86-dd67-40ef-b441-9f7b6146e934",
+              "content": "The output should be a multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean value.\n\n- **True** should be printed if one of the given string is **woman**. \n- Otherwise **False** should be printed.\n\nFor example,\n\nIf the given strings are `A = women`, `B = woman`, `C = girl`,\n\n✗ `A` is equal to **women**. (**women** is not equal to **woman**)\n\n✔ `B` is equal to **woman**. (**woman** is equal to **woman**)\n\n✗ `C` is equal to **girl**. (**girl** is not equal to **woman**)\n\nThe output should be **True** as one of the strings is equal to woman (`B` = **woman**).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e5ebe6bc-2978-478e-87ea-751beedf7549",
+          "short_text": "",
+          "content": "Considering the problem description, how many strings must equal **woman** for the output to be `True`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3cbaf155-1955-48a1-a225-a0367016bfad",
+              "content": "two",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b84151cf-d937-4366-bde0-06f2631408d9",
+              "content": "zero",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f40d9d55-8bc9-4f67-b6f4-49d6318efdc0",
+              "content": "three",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f9f9ade8-556b-4959-99fd-37c14192ea49",
+              "content": "one",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the problem description, **one** of the given strings must equal **woman** for the output to be `True`?",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "2b84e524-3032-44bd-85e6-797d9aebd67a",
+      "input": "woman\nwoman\nwoman",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4a1256eb-a4b7-44ea-95ca-38a4e6fd894d",
+      "input": "man\nman\nman",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dafda81c-35e8-4829-843c-417d673f4acd",
+      "input": "man\nwoman\nwoman",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "edd12829-d91b-460e-a0ac-7a0e8a43cd7e",
+      "input": "woman\nman\nman",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f523ebfb-25d2-4cd9-89df-930f09a6bd33",
+      "input": "man\nwoman\nman",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

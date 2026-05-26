@@ -1,0 +1,75 @@
+{
+  "question_id": "41d34b41-12af-4afa-b138-e7e757f37474",
+  "short_text": "Hollow Square - 2",
+  "content": "Given a number `N`, write a program that prints a **Hollow Square** of `N + 2` rows using pluses (`+`), hyphens (`-`), and pipes (`|`) . The first and last row contain pluses(`+`) and hyphens(`-`), and the middle rows contain pipes(`|`) as shown below.\r\n\r\n```\r\n+ - - - +\r\n|       |\r\n|       |\r\n|       |\r\n+ - - - +\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every character.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N + 2` lines containing pluses (`+`), hyphens (`-`) and pipes (`|`) as a **Hollow Square** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`,\r\n\r\n- The **Hollow Square** should contain **7** lines. (`5 + 2 = 7`)\r\n- The first and last lines should contain **2** pluses (`+`) and **5** hyphens (`-`), as shown below.\r\n\r\n```\r\n+ - - - - - +\r\n```\r\n\r\n- The middle **5** lines should contain two pipes (`|`) with **10** spaces between them, as shown below.\r\n\r\n```\r\n\r\n|           |\r\n|           |\r\n|           |\r\n|           |\r\n|           |\r\n```\r\n\r\n- The final **Hollow Square** is as shown in the given image.\r\n\r\n<Img imageSrc='https://res.cloudinary.com/dqqdcnmqn/image/upload/v1672229085/Screenshot_from_2022-12-28_17-34-23_ecgjtl.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image,\r\n\r\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\r\n- The Plus in the box indicates a plus and a space (\"+ \").\r\n- The Hyphen in the box indicates a hyphen and a space (\"- \").\r\n- The Pipe in the box indicates a pipe and a space (\"| \").\r\n  </MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n+ - - - - - +\r\n|           |\r\n|           |\r\n|           |\r\n|           |\r\n|           |\r\n+ - - - - - +\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e6dce586-0d73-447a-8a64-f13fc7fdf4a4",
+      "code_content": "n = int(input())\n\nhyphens = \"- \" * n\nfirst_row = \"+ \" + hyphens + \"+\"\nlast_row = \"+ \" + hyphens + \"+\"\n\nprint(first_row)\n\nfor row in range(n):\n    spaces = \"  \" * n\n    each_row = \"| \" + spaces + \"|\"\n    \n    print(each_row)\n    \n\nprint(last_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0382a594-1cfb-4725-a9c8-ac07e7783f02",
+      "input": "10",
+      "output": "+ - - - - - - - - - - +\n|                     |\n|                     |\n|                     |\n|                     |\n|                     |\n|                     |\n|                     |\n|                     |\n|                     |\n|                     |\n+ - - - - - - - - - - +",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "2f179991-48dc-43f4-ba23-cd312511526f",
+      "input": "6",
+      "output": "+ - - - - - - +\n|             |\n|             |\n|             |\n|             |\n|             |\n|             |\n+ - - - - - - +",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "7099b1f2-9721-490b-ae49-fede3df555c8",
+      "input": "1",
+      "output": "+ - +\n|   |\n+ - +",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "7262e46d-340a-469c-bcad-7cb56672b770",
+      "input": "2",
+      "output": "+ - - +\n|     |\n|     |\n+ - - +",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "91a5fa68-4c31-4224-b413-125522ccdd3b",
+      "input": "25",
+      "output": "+ - - - - - - - - - - - - - - - - - - - - - - - - - +\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n|                                                   |\n+ - - - - - - - - - - - - - - - - - - - - - - - - - +",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9b2f9911-ea30-4301-943f-e6ccbfcb247f",
+      "input": "3",
+      "output": "+ - - - +\n|       |\n|       |\n|       |\n+ - - - +",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "da80675f-1d2e-4efc-aafa-8bed8b4a355e",
+      "input": "5",
+      "output": "+ - - - - - +\n|           |\n|           |\n|           |\n|           |\n|           |\n+ - - - - - +",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

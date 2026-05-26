@@ -1,0 +1,61 @@
+{
+  "question_id": "0da2aee2-a58a-4f30-8aa6-8faf8a36a33d",
+  "short_text": "Print the Middle Element",
+  "content": "\nWrite a program that reads an integer **N** from the user, representing the size of an **N x N** matrix. The program should then read **N x N** elements of the matrix and print the middle element located on the main diagonal of the matrix.\n\n<MultiLineNote>\n- If the value of `N` is even then position of middle element will be ((N//2)-1,(N//2)-1).\n- If the value of `N` is odd then position of middle element will be (N//2,N//2).\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line of input will be a single integer **N**, representing the number of rows and columns of the matrix. \n- The next **N** lines will each contain **N** space-separated integers, representing the elements of the matrix.\n\n---\n\n#### Output\n\nThe output should be a single line containing the middle element located on the main diagonal of the matrix.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\n3\n1 2 3 \n4 5 6\n7 8 9\n```\n\nYour code should print the element at position (1,1), which is `5`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8e96e7a8-0e7d-458e-adf3-6a7f3cb72136",
+      "code_content": "n = int(input())\n\nmatrix = []\n\nfor i in range(n):\n    row = input().split()\n    new_row = []\n    for element in row:\n        new_row.append(int(element))\n    matrix.append(new_row)\n\nif n % 2 == 0:\n    middle_position = n // 2 - 1\nelse:\n    middle_position = n // 2\n\nmiddle_element = matrix[middle_position][middle_position]\nprint(middle_element)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "03b48c8d-065d-410d-a2d4-f611e3d2a5a5",
+      "input": "4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "268e9432-b55b-4e75-b47e-a36410c98880",
+      "input": "1\n42\n",
+      "output": "42",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a6d4a687-5ead-4730-851a-efc6041b09fb",
+      "input": "3\n1 2 3\n4 5 6\n7 8 9\n",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aed6fcd9-41f0-4394-9ec9-3283c5e9ae65",
+      "input": "5\n1 2 3 4 5\n6 7 8 9 10\n11 12 13 14 15\n16 17 18 19 20\n21 22 23 24 25\n",
+      "output": "13",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b012291d-eaec-41c4-b5f4-f87eeba2d076",
+      "input": "6\n1 2 3 4 5 6\n7 8 9 10 11 12\n13 14 15 16 17 18\n19 20 21 22 23 24\n25 26 27 28 29 30\n31 32 33 34 35 36\n",
+      "output": "15",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "a59545d0-e460-46e3-9428-017865545731",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

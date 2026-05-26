@@ -1,0 +1,103 @@
+{
+  "question_id": "e359e188-0c1b-40d7-b09e-025c02152281",
+  "short_text": "Valid String",
+  "content": "Write a program that reads a string `S` and checks if the length of `S` is between **2** and **7** or the first character of `S` is **not equal** to **\"a\"**.\n\nPrint **Valid String** if the length of `S` is between **2** and **7** or the first character of `S` is **not equal** to **\"a\"**. Otherwise, print **Not a Valid String**.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Valid String** should be printed if the length of `S` is between **2** and **7** or the first character of `S` is **not equal** to **\"a\"**. Otherwise, **Not a Valid String** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given string `S = \"apple\"`,\n\n✔ The length of `S` is between **2** and **7**. (The length of **apple** is **5**. **5** is between **2** and **7**)\n✖ The first character of `S` is **not equal** to **\"a\"**. (The first character of **apple** is **equal** to **a**)\n\nThe output should be **Valid String** as the length of `S` is between **2** and **7**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "72ce6286-e3a3-4818-a986-f3bde983141e",
+      "code_content": "string = input()\n\nstring_length = len(string)\n\nis_between = (string_length > 2) and (string_length < 7)\nis_not_equal = string[0] != \"a\"\n\nif (is_between or is_not_equal):\n    print(\"Valid String\")\nelse:\n    print(\"Not a Valid String\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "130558a8-5bfe-4bf5-b669-a519b532ddc1",
+      "input": "dictionary123",
+      "output": "Valid String",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "13a386b9-6d07-4421-861e-aa968ebc5c95",
+      "input": "ant",
+      "output": "Valid String",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3367f577-6877-4c7a-b4e0-adc0bb0f5c82",
+      "input": "amazing",
+      "output": "Not a Valid String",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "713b403a-8e94-4b16-ac68-7fdb788b7e34",
+      "input": "n",
+      "output": "Valid String",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "80e3628c-aea8-48a2-bf80-2793a7055758",
+      "input": "accurate",
+      "output": "Not a Valid String",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "950be208-a564-4932-b84b-c0d368b17ca4",
+      "input": "course",
+      "output": "Valid String",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "957d546a-c1e7-41b9-ae4e-11bc4224aed7",
+      "input": "a",
+      "output": "Not a Valid String",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c9d03a48-0a26-4ff4-9a6a-65077e06027e",
+      "input": "atlantic",
+      "output": "Not a Valid String",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d2327e3d-ec8d-44dd-b159-ee6fa9446097",
+      "input": "an",
+      "output": "Not a Valid String",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f2873f3e-7412-43ec-a8df-03ec1b5a9ed3",
+      "input": "out",
+      "output": "Valid String",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f2b34d44-3968-4992-a4a1-a619b84496f6",
+      "input": "apple",
+      "output": "Valid String",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

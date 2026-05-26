@@ -1,0 +1,384 @@
+{
+  "question_id": "acedaa95-a248-4ecd-958a-2e3b38c680d6",
+  "short_text": "Go for a Walk",
+  "content": "Write a program that reads a temperature and checks if the given temperature is between **15** and **40**.\n\nPrint **Can go for a walk** if the given temperature is between **15** and **40**, otherwise print **Cannot go for a walk**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Can go for a walk** should be printed if the temperature is between **15** and **40**, otherwise **Cannot go for a walk** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given temperature is **26**,\n\n* **26** is greater than **15**.\n* **26** is less than **40**.\n* So, **26** is between **15** and **40**.\n\nThe output should be **Can go for a walk** as **26** is between **15** and **40**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "93c9af30-11ce-4c20-8ae3-1092bab9e3ad",
+      "code_content": "temperature = int(input())\n\nif temperature > 15 and temperature < 40:\n    print(\"Can go for a walk\")\nelse:\n    print(\"Cannot go for a walk\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "3488ba59-1b97-44be-86e8-5e013651a48f",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n39\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Can go for a walk",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given temperature is **39**,\n\n- **39** is greater than **15**.\n\n- **39** is less than **40**.\n\n- So, **39** is between **15** and **40**.\n\nThe output should be **Can go for a walk** as **39** is between **15** and **40**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a920e409-8d9b-4402-b4c6-e6ee9a433286",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n18\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Can go for a walk",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given temperature is **18**,\n\n- **18** is greater than **15**.\n\n- **18** is less than **40**.\n\n- So, **18** is between **15** and **40**.\n\nThe output should be **Can go for a walk** as **18** is between **15** and **40**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e7e23734-3986-490d-87a4-febab6b52b66",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n52\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Cannot go for a walk",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given temperature is **52**,\n\n- **52** is greater than **15**.\n\n- **52** is not less than **40**.\n\n- So, **52** is not between **15** and **40**.\n\nThe output should be **Cannot go for a walk** as **52** is not between **15** and **40**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "3cd5ae5f-5bd5-4dbe-a10c-7f372314fa39",
+          "short_text": "",
+          "content": "From your understanding of the problem, what is the temperature to not go for a walk?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "c78550e2-0239-4c3f-bd7e-1021faf28cfd",
+              "content": "Above 60",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c8ebc7aa-ef8f-46f5-b65b-540d26347e24",
+              "content": "Below 10",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cbcffca9-b295-4158-8721-17b568a78359",
+              "content": "Between 15 and 40",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cd5b0a68-614e-4e13-b843-c94c7566a0de",
+              "content": "Below 15 and above 40",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the temperature to not go for a walk is below **15** and above **40**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "493ff68f-e810-441e-93d6-fa0ba7283e85",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5deb57e1-0bbf-431e-b822-480470378552",
+              "content": "To check if the given temperature is between 10 and 30.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6b930f1b-1e5d-441c-b603-4954215dc260",
+              "content": "To check if the given temperature is between 15 and 55.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d2e910f3-a7f7-4db2-b5ab-1cd8d206d13e",
+              "content": "To check if the given temperature is between 5 and 25.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ee0c5964-fef0-4d42-afb4-bb9fb551dfd5",
+              "content": "To check if the given temperature is between 15 and 40.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the temperature and check if the given temperature is between **15** and **40**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a8cf9e08-a975-403b-8a6f-5ce91e74e917",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "19976596-1449-447a-85ca-1914ea9c5b3b",
+              "content": "The input will be a single line containing space-separated integer.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "39055fa4-dbb1-4a59-8787-8b82c7d15cc1",
+              "content": "The input will be a single line containing a string.\n\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e222265c-506b-45c1-a648-87064c2c32f8",
+              "content": "The input will be a single line containing an integer.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f30d6299-b66d-468f-8bde-9d835e376a75",
+              "content": "The input will be a single line containing comma-separated integer.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program should be a single line containing an integer.\n\nFor example, **34**\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bb93cc77-9b8b-4f38-aa67-efca0b3fb9c8",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n12\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1cc3ca80-75c4-4706-be56-01a31b967fdb",
+              "content": "Cannot go for a walk",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "1e62acb9-c886-443b-9d17-fb702e01b047",
+              "content": "cannot go for walk",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "468e4bb7-fc7b-4a3d-aa9d-3d889d595f0c",
+              "content": "Can go for a walk",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6e7ccb26-84fa-41bb-b159-840477b813d9",
+              "content": "can go for walk",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given temperature is **12**,\n\n- **12** is not greater than **15**.\n\n- **12** is less than **40**.\n\n- So, **26** is between **15** and **40**.\n\nThe output should be **Cannot go for a walk** as 12 is not between **15** and **40**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e0786087-da8e-411c-9258-c75c1e2e456e",
+          "short_text": "",
+          "content": "According to the problem description, what should be the temperature to `go for a walk`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "81b699e8-943b-4727-8127-2378ad3b7505",
+              "content": "Between 15 and 30",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "87d2776f-aac7-4e38-8eaa-44c4c796a5ee",
+              "content": "Between 20 and 40",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "90600cac-94c8-410e-976f-6dfe697ad8f1",
+              "content": "Between 15 and 40",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e5f21092-1792-4543-9764-639186031dca",
+              "content": "Between 10 and 25",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the temperature to go for a walk is between **15** and **40**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "efcbc366-d8b7-4c31-be29-9d01db79dff4",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4c6afd50-f0c1-4078-bf9b-d81f7f02532c",
+              "content": "The output should be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "61a42c48-3a4b-4343-aceb-e3e3dfb92a0b",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "78c5a114-d031-458b-97e5-98aaa71bf339",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fa9ee4fe-7627-4f52-9a36-7f90b8b50dd8",
+              "content": "The output should be a single line containing a float.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string. **Can go for a walk** should be printed if the temperature is between **15** and **40**, otherwise **Cannot go for a walk** should be printed.\n\n\nFor example, if the given temperature is **20**,\n\n- **20** is greater than **15**\n\n- **20** is less than **40**\n\n- So, **20** is between **15** and **40**\n\nThe output should be **Can go for a walk** as `20` is between **15** and **40**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fdb1ce47-563d-468f-900e-fb8c2e00b28a",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "6b0dd52b-3e1c-41c3-a9ea-5a23c5aa97d7",
+              "content": "6, 89",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7bfe0b94-eb61-4c5f-aacd-c07adeeb33b2",
+              "content": "45, 48, 49\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cb2077e3-5ae4-4f26-ad5a-0fbaa6ac4c55",
+              "content": "14",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ef8b076a-f300-477d-b7ae-2be6f389a9f1",
+              "content": "58",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n58\n```\n\n**Input 2**\n\n```\n14                                                \n```\nThe above two inputs are valid because they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "1302bc1a-d46a-4a10-bd5e-f663a375bf62",
+      "input": "5",
+      "output": "Cannot go for a walk",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6b83f824-b446-46ed-b401-3f54d2ed56ab",
+      "input": "40",
+      "output": "Cannot go for a walk",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b1e8ba6e-935c-4c3c-93d6-b1bb4f5d85ff",
+      "input": "15",
+      "output": "Cannot go for a walk",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c9211174-b1cc-4233-8b8c-b5c665d85325",
+      "input": "26",
+      "output": "Can go for a walk",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e2b96e01-68a4-49fa-b3bf-95e9eed7ba30",
+      "input": "-10",
+      "output": "Cannot go for a walk",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e3e4de1f-db3e-461d-83ee-9308730f94d2",
+      "input": "16",
+      "output": "Can go for a walk",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

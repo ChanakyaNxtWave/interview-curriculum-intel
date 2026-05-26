@@ -1,0 +1,61 @@
+{
+  "question_id": "51f40efe-6760-421f-b150-24c3bee7fbb6",
+  "short_text": "Squares",
+  "content": "Write a program to create a dictionary that contains keys as numbers from 1 to N and values are square of keys.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the dictionary with key-value pairs from 1 to N.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, your code should print a dictionary with keys (1, 2, 3) and values (1, 4, 9). So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">{1: 1, 2: 4, 3: 9}\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "077ae57b-7554-4c20-b179-b821702410fa",
+      "code_content": "n = int(input())\n\nsquare_dict = {}\nfor num in range(1, n+1):\n    square_dict[num] = num*num\n\nprint(square_dict)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "197c598b-65a8-4cb8-a989-85ad721abba0",
+      "input": "4",
+      "output": "{1: 1, 2: 4, 3: 9, 4: 16}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "1cb25ef9-cdca-4224-b764-79e424a7110c",
+      "input": "5",
+      "output": "{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "7c7d46d6-d189-427f-b90b-5b6c49950f80",
+      "input": "12",
+      "output": "{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "8baa9c46-bbd8-4939-b30c-798e423e4baa",
+      "input": "7",
+      "output": "{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49}\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c5923007-23a1-488c-9135-d922687ca57b",
+      "input": "3",
+      "output": "{1: 1, 2: 4, 3: 9}\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c653449e-bc51-4aab-a83f-8a98ef71c10e",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

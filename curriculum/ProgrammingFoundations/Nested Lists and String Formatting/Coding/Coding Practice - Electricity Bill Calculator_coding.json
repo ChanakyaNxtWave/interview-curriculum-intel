@@ -1,0 +1,61 @@
+{
+  "question_id": "8c23972a-69ab-4e8e-8781-328cc9243daf",
+  "short_text": "Electricity Bill Calculator",
+  "content": "You are tasked with developing a program that calculates the **total electricity bill** based on the **number of units consumed**. The user will provide a string containing details related to their electricity consumption, including valid unit values mixed with irrelevant information such as previous balances or payments.\n\nWrite a program that do :\n\n- Extract valid unit values from the input string.\n- **Sum up the total units** consumed.\n- Calculate the total electricity bill using the following pricing structure:\n\n<MultiLineNote>\n\n**Pricing Structure**\n\n- For the first 100 units: **$0.50 per** unit.\n- For the next 100 units (from 101 to 200): **$0.75** per unit.\n- For the next 100 units (from 201 to 300): **$1.00** per unit.\n- For any units above 300: **$1.50** per unit.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of a single string containing multiple entries in the format **Units: value**, mixed with irrelevant information such as balances or payments.\n\n---\n\n#### Output\n\nThe output should be:\n\n- **Total Units Consumed**: The sum of all valid units extracted from the input.\n- **Total Bill**: The total electricity bill calculated based on the pricing structure, formatted with a dollar sign **($)** before the integer part and printed to two decimal places.\n\n---\n\n#### Explanation\n\nif the input is\n\n```\nUnits: 50, Previous Balance: $20, \nUnits: 70, Payment Received: $30,\nUnits: 100\n```\n\n\n- Extract valid unit values: **50, 70, and 100**.\n- Sum up the total units: **50 + 70 + 100 = 220**.\n- **Calculate the bill:**\n - First **100** units: 100 × 0.50 = **50.00**\n - Next **100** units: 100 × 0.75 = **75.00**\n - Remaining **20** units: 20 × 1.00 = **20.00**\n- Total Bill: **50.00 + 75.00 + 20.00** = **`145.00`**.\n\nThe output should be\n\n```\nTotal Units Consumed: 220  \nTotal Bill: $145.00\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fef328a0-ce55-4cbf-a8fe-4e57b6200bc3",
+      "code_content": "def calculate_electricity_bill(input_string):\n    units = []\n    parts = input_string.split(',')\n    \n    for part in parts:\n        if \"Units:\" in part:\n            value = part.split(\":\")[1].strip()\n            if value.isdigit():\n                units.append(int(value))\n    \n    total_units = 0\n    for unit in units:\n        total_units += unit\n    \n    total_bill = 0\n    remaining_units = total_units\n\n    if remaining_units > 0:\n        if remaining_units >= 100:\n            total_bill += 100 * 0.50\n            remaining_units -= 100\n        else:\n            total_bill += remaining_units * 0.50\n            remaining_units = 0\n\n    if remaining_units > 0:\n        if remaining_units >= 100:\n            total_bill += 100 * 0.75\n            remaining_units -= 100\n        else:\n            total_bill += remaining_units * 0.75\n            remaining_units = 0\n\n    if remaining_units > 0:\n        if remaining_units >= 100:\n            total_bill += 100 * 1.00\n            remaining_units -= 100\n        else:\n            total_bill += remaining_units * 1.00\n            remaining_units = 0\n\n    if remaining_units > 0:\n        total_bill += remaining_units * 1.50\n\n    return total_units, total_bill\n\ninput_string = input()\ntotal_units, total_bill = calculate_electricity_bill(input_string)\n\nprint(\"Total Units Consumed:\", total_units)\nprint(f\"Total Bill: ${total_bill:.2f}\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1ca73e9c-32a0-47df-9102-1a0ef5d87762",
+      "input": "Units: 50, Previous Balance: $20, Units: 70, Payment Received: $30, Units: 100",
+      "output": "Total Units Consumed: 220\nTotal Bill: $145.00",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "598ddf1a-6304-4868-a3f9-e5694efac9a6",
+      "input": "Units: 200",
+      "output": "Total Units Consumed: 200\nTotal Bill: $125.00",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7b03f61b-3451-4c95-8123-d497205dab9f",
+      "input": "Units: 50, Units: 50, Units: 50, Payment: $30",
+      "output": "Total Units Consumed: 150\nTotal Bill: $87.50",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b69cad98-607a-4fb0-8a2e-b6e3b9bfcc9b",
+      "input": "Previous Balance: $100, Units: 300, Adjustment: -50",
+      "output": "Total Units Consumed: 300\nTotal Bill: $225.00",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f2c87c0f-8d15-4f9d-ac36-b66b6c5598ea",
+      "input": "Units: 500,Payment: $200, Balance:900",
+      "output": "Total Units Consumed: 500\nTotal Bill: $525.00",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "31b98c83-ce6b-4729-9efa-be5bbf2fb78c",
+  "short_text": "Cumulative Sum",
+  "content": "Given a number `N`, write a program to read `N` numbers and print the cumulative sum after each input, each on a new line.\n\n<SingleLineNote>\nCumulative sum is the sum of all the previous inputs and the current input. \n</SingleLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain integers.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing an integer that is the cumulative sum after each input, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 5`,\n\n- The **5** given inputs are **8**, **11**, **-96**, **49** and **85**.\n- The cumulative sum after each input is,\n\n| input | Cumulative Sum              |\n| ----- | --------------------------- |\n| 8     | 8                           |\n| 11    | 19 (8 + 11)                 |\n| -96   | -77 (8 + 11 + -96)          |\n| 49    | -28 (8 + 11 + -96 + 49)     |\n| 85    | 57 (8 + 11 + -96 + 49 + 85) |\n\nSo the output should be,\n\n```\n8\n19\n-77\n-28\n57\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "623aec02-54fe-422a-bf49-75d3043ffdf7",
+      "code_content": "n = int(input())\n\ntotal = 0\nfor i in range(n):\n    number = int(input())\n    total = total + number\n    print(total)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6e445656-7263-42f8-9252-2222da99d66e",
+      "input": "7\n8\n2\n0\n-20\n-89\n1024\n64664",
+      "output": "8\n10\n10\n-10\n-99\n925\n65589",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "9af11197-9280-42ce-b25a-a76afc73a25d",
+      "input": "5\n8\n11\n-96\n49\n85",
+      "output": "8\n19\n-77\n-28\n57",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a8882b23-e9f8-4140-8ce9-b83667a2e3b4",
+      "input": "11\n55555\n-3493\n9839\n151\n1\n25\n196\n241\n3\n-30000\n800",
+      "output": "55555\n52062\n61901\n62052\n62053\n62078\n62274\n62515\n62518\n32518\n33318",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "de6ea8ff-7a73-4aab-8e93-62badadee4c5",
+      "input": "4\n240\n38\n93\n62",
+      "output": "240\n278\n371\n433",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e89f9df5-9663-4bd3-a236-ddc36f744003",
+      "input": "8\n24\n11\n2020\n16\n7\n19\n14\n10",
+      "output": "24\n35\n2055\n2071\n2078\n2097\n2111\n2121",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

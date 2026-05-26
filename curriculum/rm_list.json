@@ -1,0 +1,7 @@
+{
+  "description": "Units and content excluded from KP mapping and curriculum ingestion. Matching items are skipped by discover_content().",
+  "excluded_unit_names": [],
+  "excluded_unit_titles": [],
+  "excluded_learning_resource_ids": [],
+  "excluded_content_ids": []
+}

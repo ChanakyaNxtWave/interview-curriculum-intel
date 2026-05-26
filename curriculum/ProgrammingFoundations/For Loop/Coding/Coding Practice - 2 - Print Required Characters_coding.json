@@ -1,0 +1,75 @@
+{
+  "question_id": "341b6b68-7df3-4a0c-9503-0857de1673a6",
+  "short_text": "Print Required Characters",
+  "content": "Write a program that reads a string and prints the **a** and **z** characters in the string.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should contain all the **a** and **z** characters in the string, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **zigzag**,\n\n- The characters in the string **zigzag** are **z**, **i**, **g**, **z**, **a** and **g**.\n- The **a** and **z** characters in the string are **zza**.\n\nThe output should be,\n\n```\nz\nz\na\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "dcf06290-2e5c-4341-9a43-494692bdc87b",
+      "code_content": "string = input()\n\nfor each_character in string:\n    if (each_character == \"a\") or (each_character == \"z\"):\n        print(each_character)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "11a27d91-9185-4973-93b0-0569214ac8fa",
+      "input": "zigzag",
+      "output": "z\nz\na",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "2081b279-cc0f-4e11-9aaa-1d4da8d3ba8d",
+      "input": "australian zoo",
+      "output": "a\na\na\nz",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "36b1a963-ed78-409c-8558-9644d7afd0eb",
+      "input": "adoze",
+      "output": "a\nz",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "728513db-9a65-415c-b9d8-68d8d7bc0329",
+      "input": "zoologist",
+      "output": "z",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8e6adc39-4190-4a9c-b1e8-40ba39966a29",
+      "input": "america",
+      "output": "a\na",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "dfd391ad-d20e-4612-b77f-8c75ab9c00cb",
+      "input": "india",
+      "output": "a",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "e3cc39ba-1aba-453c-a766-4c8dc9a79c7e",
+      "input": "zap",
+      "output": "z\na",
+      "is_hidden": false,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

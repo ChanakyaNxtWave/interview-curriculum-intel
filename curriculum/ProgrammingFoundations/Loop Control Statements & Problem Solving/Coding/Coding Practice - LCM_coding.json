@@ -1,0 +1,61 @@
+{
+  "question_id": "250fd05b-626d-47ec-9b32-2811127c74e7",
+  "short_text": "LCM",
+  "content": "Given two numbers `M` and `N`, write a program to print the **Least Common Multiple (L.C.M)** of the numbers `M` and `N`.\r\n\r\n<MultiLineNote>\r\n- The least common multiple (L.C.M) of two numbers is the smallest positive factor that is perfectly divisible by the two given numbers.\r\n\r\n- A multiple of a number is a number that is the product of a given number and some other number.\r\n  - **Example** : 7 X 2 = 14 , **14** is a multiple of **7**.\r\n\r\n</MultiLineNote>\r\n\r\n<MultiLineQuickTip>\r\nA least common multiple always starts from the maximum number of the given two numbers.\r\n</MultiLineQuickTip>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `M`.\r\nThe second line of input contains an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the **LCM** of the numbers `M` and `N`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `M = 2` and `N = 3`,\r\n\r\n- The multiples of **2** are **2**, **4**, **6**, **8**, **10**, **12**, **18**,....\r\n- The multiples of **3** are **3**, **6**, **9**, **12**, **15**, **18**,....\r\n- The common multiples of the two numbers **2** and **3** are **6**, **12**, **18**, ....\r\n- The least common multiple of the two numbers **2** and **3** is **6** (`6 < 12 < 18 < ..`).\r\n\r\nThe output should be **6**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2b9fa304-2995-457a-a05a-4551a6f3f362",
+      "code_content": "m = int(input())\nn = int(input())\n\nif m > n:\n    greatest_number = m\nelse:\n    greatest_number = n\n\n\n\nfor number in range(greatest_number, (m*n + 1)):\n    if ((number % m) == 0) and ((number % n) == 0):\n        lcm = number\n        break\n\nprint(lcm)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "258f566f-8066-471b-bed4-0c6fe834dc59",
+      "input": "16\n9",
+      "output": "144\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "2e11e0ae-db4f-4c3d-8dbf-67b53b2c5776",
+      "input": "5\n5",
+      "output": "5\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "349eee34-9c22-4a2d-90fd-1e604f2e6464",
+      "input": "2\n3",
+      "output": "6",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "4b2ba235-1adc-4a61-a7a4-c26abbc8a5a1",
+      "input": "20\n15",
+      "output": "60\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "75cfb52d-70fa-4a60-97fe-01deec4e0dfd",
+      "input": "14\n18",
+      "output": "126\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

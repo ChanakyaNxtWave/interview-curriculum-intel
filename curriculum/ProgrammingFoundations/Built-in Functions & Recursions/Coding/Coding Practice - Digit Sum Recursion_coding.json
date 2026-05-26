@@ -1,0 +1,61 @@
+{
+  "question_id": "6152e8d4-40c6-444d-b35a-fa4a0dbd2ea9",
+  "short_text": "Digit Sum Recursion",
+  "content": "In an ancient kingdom, there was a wise king who loved numbers. He believed that understanding numbers could reveal secrets about his kingdom. One day, he received a large number from his advisor and wanted to find out the sum of its digits to gain insight into its significance.\n\nYour task is to **complete the method `sum_of_digits()`**, which receives an integer `n` as a parameter, and returns the sum of its digits.\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes a **single integer** as parameter `n`, representing a number.\n\n---\n\n#### Output\n\nThe method should **return a single integer** representing the sum of the digits of n.\n\n\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n12345\n```\n\n- The digits are: **1, 2, 3, 4, 5**\n- Their sum is **1 + 2 + 3 + 4 + 5**= **`15`**\n\nThe expected output would be :\n\n```\n15\n\n```\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d5482629-6304-4b95-8a3c-7601434a5b5a",
+      "code_content": "def sum_of_digits(n):\n    if n == 0:\n        return 0\n    return (n % 10) + sum_of_digits(n // 10)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "05e79fbe-4e2e-4b2b-80dc-6111487c000e",
+      "input": "12345",
+      "output": "15",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2fdfd90a-42c0-4f96-99eb-5c5af94b9e2a",
+      "input": "9865",
+      "output": "28",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "35876357-12e5-41f0-a479-4b8edff91b70",
+      "input": "326598",
+      "output": "33",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c18d882d-5e1d-4f8a-9767-7a296ccaf851",
+      "input": "50",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dc3f9876-699d-4b37-ba8a-bde90dd6cb01",
+      "input": "2145",
+      "output": "12",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "83df0765-d00f-4be4-9557-91ec0ad42c22",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "42c16fd4-ff15-46fa-a16c-ba6db5aca0e8",
+  "short_text": "Join Words",
+  "content": "Write a program that reads two words and prints the resultant word by joining the two words.\n\n---\n\n#### Input\n\nThe first line of input contains a string.\nThe second line of input contains a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the two words.\n\n---\n\n#### Explanation\n\nFor example, if the given words are **Milk** and **shake**. The output should be **Milkshake**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "51ca41e5-723c-486c-94a5-d020a8fa0937",
+      "code_content": "first_word = input()\nsecond_word = input()\n\nprint(first_word + second_word)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "02fa4095-dc14-4613-8c4b-2120cd7c23cc",
+      "input": "Time\nline",
+      "output": "Timeline",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "26e1fe1d-aefe-4e75-92e7-d08381439b84",
+      "input": "It\nself",
+      "output": "Itself",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4da5c2e3-0ba7-4139-aa6c-4eeef43e940a",
+      "input": "Milk\nshake",
+      "output": "Milkshake",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bb079026-b297-4258-9576-dbf221601194",
+      "input": "No\nbody",
+      "output": "Nobody",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "dc732a8a-7457-4066-a55f-ed3ad3fcbb48",
+      "input": "Cater\npillar",
+      "output": "Caterpillar",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

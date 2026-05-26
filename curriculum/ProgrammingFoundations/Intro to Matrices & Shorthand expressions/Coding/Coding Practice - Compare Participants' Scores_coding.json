@@ -1,0 +1,61 @@
+{
+  "question_id": "beb7802b-2c05-41c0-9578-80294641c41c",
+  "short_text": "Compare Participants' Scores",
+  "content": "In a competition, participants' scores are recorded in a matrix format, where each row represents a participant's scores across different rounds. Your task is to write a program that compares the scores of two participants and identifies who has the maximum score in each round. The output should clearly indicate which participant scored higher for each round.\n\n\n\n---\n\n#### Input\n\nThe input consists of:\n\n- The first line contains space-separated integers representing the scores of Participant 1 across multiple rounds.\n- The second line contains space-separated integers representing the scores of Participant 2 across the same number of rounds.\n\nBoth lines will contain the same number of integers.\n\n\n---\n\n#### Output\n\nThe output should be a list of strings, where each string represents the result of a specific round.\n\nPossible values in the list are:\n\n - **Participant 1**: If Participant 1 has a higher score in a round.\n - **Participant 2**: If Participant 2 has a higher score in a round.\n - **Tie**: If both participants have the same score in a round.\n\n\n---\n\n#### Explanation\n\nIf the inputs is\n\n```\n85 90 78\n88 76 90\n```\nIn this example:\n\n- **Round 1**: Participant 1 scores 85, Participant 2 scores 88 → **Participant 2**\n- **Round 2**: Participant 1 scores 90, Participant 2 scores 76 → **Participant 1**\n- **Round 3**: Participant 1 scores 78, Participant 2 scores 90 → **Participant 2**\n\nThe Output should be \n\n`[\"Participant 2\", \"Participant 1\", \"Participant 2\"]`\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a2b2170f-028e-4733-a2a1-65a859e4c9a0",
+      "code_content": "def compare_scores(scores_participant_1, scores_participant_2):\n    results = []\n    for i in range(len(scores_participant_1)):\n        results.append(\n            \"Participant 1\" if scores_participant_1[i] > scores_participant_2[i] else \n            \"Participant 2\" if scores_participant_1[i] < scores_participant_2[i] else \n            \"Tie\"\n        )\n    return results\n\nscores_participant_1 = [int(x) for x in input().split()]\nscores_participant_2 = [int(x) for x in input().split()]\n\nresult = compare_scores(scores_participant_1, scores_participant_2)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2913dc9b-96b1-47ae-b001-7740b3a7fea5",
+      "input": "0\n1",
+      "output": "['Participant 2']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2ce2323e-654b-447f-8811-00ec1e9c3835",
+      "input": "85 90 78\n88 76 90",
+      "output": "['Participant 2', 'Participant 1', 'Participant 2']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "330cd23e-72f8-41f4-87bc-906d414a5f0a",
+      "input": "90 80 70 60\n10 100 100 100",
+      "output": "['Participant 1', 'Participant 2', 'Participant 2', 'Participant 2']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "76c90073-dde9-4ad1-b00c-b7a0778c71a2",
+      "input": "50 50 50 50 50 50 60\n50 50 50 50 50 50 90",
+      "output": "['Tie', 'Tie', 'Tie', 'Tie', 'Tie', 'Tie', 'Participant 2']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ecf969c1-a5f9-4821-879b-b3ccfedab9d3",
+      "input": "100\n100",
+      "output": "['Tie']",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "677ae02f-bf38-48da-aad5-551072778667",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

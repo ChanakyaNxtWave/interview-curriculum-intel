@@ -1,0 +1,68 @@
+{
+  "question_id": "aabca6d7-84c8-4e64-b797-4e1228ed964f",
+  "short_text": "Alphabets in Square",
+  "content": "Given a number `N`, write a program to print a **Square** of `N` rows using letters. \n\n```\nA B C \nA B C \nA B C \n```\n\n<MultiLineQuickTip>\n\nTo print the letters in a Square,\n\n-  Create a string that contains all capital letters. (**\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"**).\n-  Use String Indexing to access the letters in string **\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"**.\n</MultiLineQuickTip>\n\n<MultiLineNote>\nThere is a space after every letter.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing letters as a **Square** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`, \n\n- Print the letters on **4** rows as shown in the given image.\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-alphabets-in-square.png' widthPercent='60'/>\n\n<MultiLineNote>\nIn the given image, the Letter in the box indicates the letter and a space (\"A \").\n</MultiLineNote>\n\nThe output should be,\n\n```\nA B C D \nA B C D \nA B C D \nA B C D \n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f56aef0a-635b-4f39-80e8-ba9e3ffdfd85",
+      "code_content": "string = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\nn = int(input())\n\nfor i in range(n):\n    each_row = \"\"\n    \n    for row in range(n):\n        each_row = each_row + string[row] + \" \"\n    \n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "11974b3c-5488-4890-a30b-829ec0eacbea",
+      "input": "26",
+      "output": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z \nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "18218cce-9cfa-47c9-91fc-f4483bc8d481",
+      "input": "1",
+      "output": "A",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "1935a101-02c1-4174-91ad-b843b3662b7d",
+      "input": "7",
+      "output": "A B C D E F G \nA B C D E F G \nA B C D E F G \nA B C D E F G \nA B C D E F G \nA B C D E F G \nA B C D E F G",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "80d6a507-97b2-40ce-9314-0ae4e2002e42",
+      "input": "11",
+      "output": "A B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K \nA B C D E F G H I J K",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a1f2ef08-42e5-402f-babd-8d5147c13d00",
+      "input": "4",
+      "output": "A B C D \nA B C D \nA B C D \nA B C D",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ce2ebd09-0e52-463f-9aea-5817d0bcbede",
+      "input": "2",
+      "output": "A B \nA B",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

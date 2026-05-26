@@ -1,0 +1,33 @@
+{
+  "question_id": "8b4dd406-49b5-4911-925c-aa94bc7633fb",
+  "short_text": "List Reassignment",
+  "content": "Write a program that assigns the list `list_a` given in the prefilled code to another list `list_b`.\n\nReassign `list_a` to a new list `[60, 70, 80]`.  \n\nThen print both `list_a` and `list_b`.\n\n---\n\n#### Output\n\nThe output should display both `list_a` and `list_b` after the reassignment, each on a new line, in the format shown in the sample output.\n\n---\n\n#### Explanation\n\nInitially, both `list_a` and `list_b` refer to the same list `[10, 20, 30, 40, 50]`.  \nHowever, when `list_a` is reassigned to a new list `[60, 70, 80]`, `list_b` still points to the original list.\n\nFor example, the output will be:\n\n```\nlist_a: [60, 70, 80]\nlist_b: [10, 20, 30, 40, 50]\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e0338b62-0cec-4cc7-9b12-a7c1f593c67e",
+      "code_content": "list_a = [10, 20, 30, 40, 50]\nlist_b = list_a\n\nlist_a = [60, 70, 80]\n\nprint(\"list_a:\", list_a)\nprint(\"list_b:\", list_b)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "b8de1191-ad9a-4967-a12d-9ccf1b9fb3df",
+      "input": "",
+      "output": "list_a: [60, 70, 80]\nlist_b: [10, 20, 30, 40, 50]",
+      "is_hidden": false,
+      "weightage": 15.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

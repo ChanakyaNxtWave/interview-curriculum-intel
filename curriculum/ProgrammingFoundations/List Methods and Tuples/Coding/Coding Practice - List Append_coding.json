@@ -1,0 +1,61 @@
+{
+  "question_id": "bd99a2c1-2b70-43be-a9e6-7edb6502b35d",
+  "short_text": "List Append",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to add the given word at the end of the list.<hr><b>Input</b><br/><br/>The input will be a single line containing a string.<hr><b>Output</b><br/><br/>The output should be a single line containing the list by adding the word at the end of the list.<hr><b>Explanation</b><br/><br/>For example, if the given word is &quot;Golf&quot;, your code should add the word at the end of the list. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['Cricket', 'Hockey', 'Football', 'Badminton', 'Golf']\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "85ddd4aa-345d-4631-a7ae-73bed89b33c7",
+      "code_content": "sports_list = ['Cricket', 'Hockey', 'Football', 'Badminton']\nsport = input()\nsports_list.append(sport)\nprint(sports_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "27e5a71d-f810-4c7c-991b-1ed014e7540d",
+      "input": "boxing",
+      "output": "['Cricket', 'Hockey', 'Football', 'Badminton', 'boxing']\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "4639b7d4-5906-43e4-abd3-444e52eebe58",
+      "input": "Archery",
+      "output": "['Cricket', 'Hockey', 'Football', 'Badminton', 'Archery']\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "6e164c95-353a-46dc-8fd0-bdce4ee68ca0",
+      "input": "Volleyball",
+      "output": "['Cricket', 'Hockey', 'Football', 'Badminton', 'Volleyball']\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "b92c7a44-9f6d-4852-8712-49a972cb35c2",
+      "input": "Tennis",
+      "output": "['Cricket', 'Hockey', 'Football', 'Badminton', 'Tennis']\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bbfa8dd9-5d94-4302-a373-c9481bf488fd",
+      "input": "Golf",
+      "output": "['Cricket', 'Hockey', 'Football', 'Badminton', 'Golf']\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

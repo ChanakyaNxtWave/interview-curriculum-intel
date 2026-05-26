@@ -1,0 +1,391 @@
+{
+  "question_id": "24f1d404-6521-45e7-b778-b27f21c9f8a9",
+  "short_text": "Divisible by 10 or 5",
+  "content": "Write a program that reads a number `N` and checks if `N` is divisible by **5** and **10**.\n\nPrint **Divisible by 10** if `N` is divisible by **10**.\nPrint **Divisible by 5** if `N` is divisible by **5** but **not** divisible by **10**.\nPrint **Not Divisible by 10 or 5** if `N` is **not** divisible by **10** and `N` is **not** divisible by **5**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Divisible by 10** should be printed if `N` is divisible by **10**. **Divisible by 5** should be printed if `N` is divisible by **5** but **not** divisible by **10**. **Not Divisible by 10 or 5** should be printed if `N` is **not** divisible by **10** and **5**.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 15`,\n\n✖ `N` is divisible by **10**. (**15** is **not** divisible by **10**)\n✔ `N` is divisible by **5** but **not** divisible by **10**. (**15** is divisible by **5**. **15** is **not** divisible by **10**)\n\nThe output should be **Divisible by 5** as `N` is divisible by **5** but **not** divisible by **10**.\n\n<br/>\n\nFor example, if the given number is `N = 11`,\n\n✖ `N` is divisible by **10**. (**11** is **not** divisible by **10**)\n✖ `N` is divisible by **5** but **not** divisible by **10**. (**11** is **not** divisible by **5** and **10**)\n\nThe output should be **Not Divisible by 10 or 5** as `N` is **not** divisible by **10** and **5**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "45d81578-51fd-4952-bdd0-42bb154ad83c",
+      "code_content": "number  = int(input())\n\nis_divisible_by_10 = (number % 10 == 0)\nis_divisible_by_5 = (number % 5 == 0)\n\nif is_divisible_by_10:\n    print(\"Divisible by 10\")\nelif is_divisible_by_5:\n    print(\"Divisible by 5\")\nelse:\n    print(\"Not Divisible by 10 or 5\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "83cef222-34cf-4d38-9725-f19cdc4cbc8a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n7\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Not Divisible by 10 or 5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 7`,\n\n✖ `N` is divisible by **10**. (**7** is not divisible by **10**)\n✖ `N` is divisible by **5** but **not** divisible by **10**. (**7** is not divisible by **5** and **10**)\n\nThe output should be **Not Divisible by 10 or 5** as `N` is **not** divisible by **10** and **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a990c574-fad2-4aa0-bb45-0cdae3763de2",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n100\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Divisible by 10",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 100`,\n\n✔ `N` is divisible by **10**. (**100** is divisible by **10**)\n✔ `N` is divisible by **5**. (**100** is divisible by **5**)\n\nThe output should be **Divisible by 10** as `N` is divisible by **10**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fc6ec7a1-9727-48f4-b67e-67f465b26df5",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n35\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Divisible by 5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 35`,\n\n✖ `N` is divisible by **10**. (**35** is not divisible by **10**)\n✔ `N` is divisible by **5** but **not** divisible by **10**. (**35** is divisible by **5** but it is not divisible by **10**)\n\nThe output should be **Divisible by 5** as `N` is divisible by **5** but **not** divisible by **10**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "007a12b6-6a9f-4191-82ef-dcd7919f5168",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n10\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "b9426ba9-0cea-460f-80f0-7afbf74499ca",
+              "content": "Divisible by 10",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bc65b391-1897-4dc7-be59-903251be57c2",
+              "content": "Not divisible by 10",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d5f3b8a9-aebe-4a2a-8756-bfecb33732e3",
+              "content": "Not Divisible by 10 or 5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f67bd8ff-f014-4b1b-a82e-298da63d7efe",
+              "content": "Divisible by 5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 10`,\n\n✔ `N` is divisible by **10**. (**10** is divisible by **10**)\n✔ `N` is divisible by **5**. (**10** is divisible by **5**)\n\nThe output should be **Divisible by 10** as `N` is divisible by **10**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "12920524-33e3-4b50-8697-e6c90bd7eb0d",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4a2e74d4-ad35-4772-bd40-1b4df1b8afaa",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e2e67bc0-3d92-4f9b-bba2-394dbfad48b8",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f7adcc11-af4e-410f-9a21-d29fd2e89fad",
+              "content": "The input will be multiple lines containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fe50ce15-3463-434c-b357-4c064ec65b71",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing `N`.\n\nFor example, **55**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5246c1e5-3ea4-4295-ac37-d816ed452444",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "18e5723e-7426-4131-aa1b-55df2b2cb848",
+              "content": "To check if `N` is divisible by **2** and **3**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "360c447a-c697-4e8d-8934-e6cfcc8fc1c0",
+              "content": "To check if `N` is divisible by **5** and **10**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9017191a-cd78-4e0e-97ef-82f8398bc689",
+              "content": "To check if `N` is divisible by **7** and **11**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9cd64373-e438-454b-8ce8-d2e8fbb596bc",
+              "content": "To check if `N` is multiplied by **5** and **10**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and check if `N` is divisible by **5** and **10**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "67c5e608-abe4-4fd9-9961-470bc49cd552",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "695db6a1-e44d-4bc8-9cf4-3ebc0a08364a",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "daf08ca5-b087-48e2-a789-bf45ca29f08a",
+              "content": "The output should be multiple lines containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e2a3b848-5c70-46c5-befe-2f8ad3370e8b",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e8e86276-69af-459e-96a0-a02896dd38c0",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string.\n\n- **Divisible by 10** should be printed if `N` is divisible by **10**.\n- **Divisible by 5** should be printed if `N` is divisible by **5** but **not** divisible by **10**.\n- **Not Divisible by 10 or 5** should be printed if `N` is **not** divisible by **10** and **5**.\n\n**Example - 1**\n\nIf the given number is `N = 120`,\n\n✔ `N` is divisible by **10**. (**120** is divisible by **10**)\n✔ `N` is divisible by **5**. (**120** is divisible by **5**)\n\nThe output should be **Divisible by 10** as `N` is divisible by **10**.\n\n----\n\n**Example - 2**\n\nIf the given number is `N = 95`,\n\n✖ `N` is divisible by **10**. (**95** is not divisible by **10**)\n✔ `N` is divisible by **5** but **not** divisible by **10**. (**95** is divisible by **5** but it is not divisible by **10**)\n\nThe output should be **Divisible by 5** as `N` is divisible by **5** but **not** divisible by **10**.\n\n----\n\n**Example - 3**\n\nIf the given number is `N = 37`,\n\n✖ `N` is divisible by **10**. (**37** is not divisible by **10**)\n✖ `N` is divisible by **5** but **not** divisible by **10**. (**37** is not divisible by **5** and **10**)\n\nThe output should be **Not Divisible by 10 or 5** as `N` is **not** divisible by **10** and **5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d4d87a49-bf01-4411-bcd7-4612689bd553",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "65cb6e6b-c715-47f7-90de-6d2e25dbdee8",
+              "content": "Divisible by 10 and 5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "78b62673-ce53-412d-8997-a694d8d7bdb0",
+              "content": "Divisible by 10",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a4bf89b5-bd28-4f26-91ff-78eb9abb86ce",
+              "content": "None of the above",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bf12ef0c-c655-406a-a898-2d9a63b670bb",
+              "content": "Divisible by 5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output - 1**\n\n```\nDivisible by 10\n```\n\n**Output - 2**\n\n```\nDivisible - 5\n```\n\nThe above two outputs are valid because they consist of a single line containing a string.\n\n- **Divisible by 10** should be printed if `N` is divisible by **10**.\n- **Divisible by 5** should be printed if `N` is divisible by **5** but **not** divisible by **10**.\n- **Not Divisible by 10 or 5** should be printed if `N` is **not** divisible by **10** and **5**. ",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f302c0cf-1589-419b-8294-511ff1c31bbc",
+          "short_text": "",
+          "content": "According to the problem description, which of the following numbers are divisible by `5` but not divisible by `10`?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "263e7551-ef6f-4563-8f20-b9368496bb5b",
+              "content": "110",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "933046b2-5792-445f-b1ca-73bfe5f3fad9",
+              "content": "75",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bebdd03b-1dd1-41ab-8aec-c1dafe43ee98",
+              "content": "35",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f0f8388e-41ca-4373-a14e-27621ff2f7f8",
+              "content": "10",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the numbers that are divisible by `5` but not divisible by `10` are **35** and **75**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f738dd58-a2ab-43ce-8ce9-719be9cb64f9",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "1a1a2e12-3d8a-4e2c-9e78-8a40afa1143d",
+              "content": "70",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "51a795b5-21c5-428e-aa37-41fdb310c408",
+              "content": "16\n45",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cfb92831-978b-47ee-8fc6-bc618b4b2833",
+              "content": "39.2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d4fd3987-4dc8-4000-a8b0-8f6d923f85e7",
+              "content": "115",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n70\n```\n\n**Input 2**\n\n```\n115\n```\nThe above two inputs are valid because they consist of a single line containing an integer `N`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0f3f6200-33b3-45b7-8ac0-01413ad1afe7",
+      "input": "100",
+      "output": "Divisible by 10",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "21144921-abdb-49f5-a988-8b38feb78db9",
+      "input": "7",
+      "output": "Not Divisible by 10 or 5",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "70aadb54-1da6-4f37-86ac-b80c21a02adb",
+      "input": "10",
+      "output": "Divisible by 10",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7aa4a7bb-fe92-40b3-8ab8-69245bd92d55",
+      "input": "11",
+      "output": "Not Divisible by 10 or 5",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b741195b-4b01-4249-913e-3fdbd44c8e4c",
+      "input": "5",
+      "output": "Divisible by 5",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c2df3e52-44f0-4797-86c3-928b5b4af617",
+      "input": "0",
+      "output": "Divisible by 10",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ff410a61-4418-4fd5-9a43-500a543cb6cc",
+      "input": "15",
+      "output": "Divisible by 5",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

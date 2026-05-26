@@ -1,0 +1,82 @@
+{
+  "question_id": "0e4e8bdf-62ce-46a8-ab7b-a630a4686296",
+  "short_text": "Compare Sum of the Digits",
+  "content": "Write a program that reads a two digit number `N`. The `N` consists of only two digits. Check if the sum of the digits of `N` is greater than **7**.\n\n---\n\n#### Input\n\nThe input will be a single line containing a two digit integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the sum of the digits of the two digit number `N` is greater than **7**, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\n\nFor example, if the given two digit number `N` is **45**\n\n* The digits in `N` (**45**) are **4** and **5**.\n* Sum of digits of **45** is **9**. (`4 + 5 = 9`)\n\nThe output should be **True** as the sum of digits **9** is greater than **7**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bf54c6b3-861e-47bb-8de9-7628a43f691a",
+      "code_content": "number = input()\n\nfirst_digit = number[0]\nfirst_digit = int(first_digit)\n\nsecond_digit = number[1]\nsecond_digit = int(second_digit)\n\nsum_of_digits = first_digit + second_digit\nresult = sum_of_digits > 7\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "120d1dc1-0057-4610-8b35-d3eeb54acf60",
+      "input": "70",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3b968a94-8a08-46e8-a5fc-35b1273cf597",
+      "input": "90",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "625eba5f-e01d-4d90-9c1d-2b493dcece0b",
+      "input": "12",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "67d878ae-db6d-4547-8f37-77b5073d4fa1",
+      "input": "33",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "743c88b5-f6fe-48fc-bbee-49e90cb9f1c3",
+      "input": "62",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9a9a36f0-3434-4d66-a92c-d7cb6c9b13d8",
+      "input": "34",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cb628de0-9b9e-498b-8c6c-918965e3d573",
+      "input": "56",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "fdba0667-c337-48be-8ed2-6594aa9ba0c4",
+      "input": "45",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

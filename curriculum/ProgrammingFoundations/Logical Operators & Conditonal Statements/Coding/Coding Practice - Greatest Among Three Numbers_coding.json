@@ -1,0 +1,61 @@
+{
+  "question_id": "2ff66a60-951e-4687-94b9-6ceb3ba421b2",
+  "short_text": "Greatest Among Three Numbers",
+  "content": "Write a program that reads three numbers `A`, `B` and `C` and prints the greatest among the three numbers.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `A`.\r\nThe second line of input contains an integer representing `B`.\r\nThe third line of input contains an integer representing `C`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the greatest among the three numbers.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `A = 2`, `B = 5` and `C = 7`,\r\n\r\n- The greatest among `A` and `B` is `B`. (**5** is greater than **2**)\r\n- The greatest among `B` and `C` is `C`. (**7** is greater than **5**)\r\n\r\nThe output should be **7** as it is the greatest among the three numbers.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "93393925-2b0b-473b-949f-27835bcb65d7",
+      "code_content": "a = int(input())\nb = int(input())\nc = int(input())\n\nif a > b:\n    greatest_number = a\nelse:\n    greatest_number = b\n\nif c > greatest_number:\n    greatest_number = c\n\nprint(greatest_number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6bb6fa50-1564-4fe2-b3d9-c7beb9e9fc97",
+      "input": "11\n11\n11",
+      "output": "11\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8085c670-45ad-4120-a186-06c150241af0",
+      "input": "2\n5\n7",
+      "output": "7\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9a77ee8c-19a8-4784-9a15-d3ff4974bb52",
+      "input": "20\n8\n10",
+      "output": "20\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e9e7a82e-88c4-4247-8401-3343c3843c0b",
+      "input": "24\n20\n50",
+      "output": "50\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ff6251eb-80db-496f-8dc5-a077113e1782",
+      "input": "3\n5\n2",
+      "output": "5\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

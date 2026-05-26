@@ -1,0 +1,13 @@
+{
+  "unit_title": "Variables and Data Types | Reading Material",
+  "content": "# Variables and Data Types\r\n\r\n**Variables**\r\n\r\nVariables are like containers for storing values.\r\nValues in the variables can be changed.\r\n\r\n**Values**\r\n\r\nConsider that variables are like containers for storing information.\r\nIn context of programming, this information is often referred to as value.\r\n\r\n## Data Type\r\n\r\nIn programming languages, every value or data has an associated type to it known as data type.\r\nSome commonly used data types\r\n\r\n- String\r\n- Integer\r\n- Float\r\n- Boolean\r\n\r\nThis data type determines how the value or data can be used in the program. For example, mathematical operations can be done on Integer and Float types of data.\r\n\r\n**String**\r\n\r\nA String is a stream of characters enclosed within quotes.\r\nStream of Characters\r\n\r\n- Capital Letters ( A – Z )\r\n- Small Letters ( a – z )\r\n- Digits ( 0 – 9 )\r\n- Special Characters (~ ! @ # $ % ^ . ?,)\r\n- Space\r\n\r\n\r\nSome Examples\r\n\r\n- `\"Hello World!\"`\r\n- `\"some@example.com\"`\r\n- `\"1234\"`\r\n\r\n<MultiLineNote>\r\nThe Stream of characters enclosed within quotes (**Both single quotes and Double quotes**) are considered as **strings**.\r\n\r\n* 'hello'\r\n* \"hello\"\r\n</MultiLineNote>\r\n\r\n\r\n**Integer**\r\n\r\nAll whole numbers (positive, negative and zero) without any fractional part come under Integers.\r\nExamples\r\n\r\n` ...-3, -2, -1, 0, 1, 2, 3,...`\r\n\r\n\r\n**Float**\r\n\r\nAny number with a decimal point\r\n`24.3, 345.210, -321.86`\r\n\r\n**Boolean**\r\n\r\nIn a general sense, anything that can take one of two possible values is considered a Boolean. Examples include the data that can take values like \r\n\r\n- `True or False`\r\n- `Yes or No`\r\n- `0 or 1` \r\n- `On or Off`, etc.\r\n\r\nAs per the Python Syntax, `True` and `False` are considered as Boolean values.\r\nNotice that both start with a capital letter.\r\n\r\n### Assigning Value to Variable\r\n\r\nThe following is the syntax for assigning an integer value `10` to a variable `age`\r\n\r\n```python\r\nage = 10\r\n```\r\n\r\nHere the equals to `=` sign is called as **Assignment Operator** as it is used to assign values to variables.",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "f32e19bb-90b4-4a86-9e8b-0a81fb4f1fdd",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "32aa5427-e439-4305-be93-7dc294eb495b",
+  "unit_name": "Variables and Data Types | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "90c7b574-bd25-4a14-b4ce-8c1bab181236",
+  "topic_name": "Introduction to Python",
+  "course_title": "Programming Foundations"
+}

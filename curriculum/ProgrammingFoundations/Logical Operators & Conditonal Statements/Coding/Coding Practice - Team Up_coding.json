@@ -1,0 +1,398 @@
+{
+  "question_id": "8268250c-a7b3-40e3-9878-2d4aeb4b3161",
+  "short_text": "Team Up",
+  "content": "Write a program that reads the scores `A` and `B` of two players and checks if one of the scores is greater than **300** and the sum of the scores is less than **500**.\n\nPrint **Can team up** if one of the scores is greater than **300** and the sum of the scores is less than **500**, otherwise print **Cannot team up**.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing the score `A`.\nThe second line of input contains an integer representing the score `B`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Can team up** should be printed if one of the scores is greater than **300** and the sum of the scores is less than **500**, otherwise **Cannot team up** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given scores are `A = 350` and `B = 134`,\n\n✔ One of the scores is greater than **300** (**350** is greater than **300**).\n✔ The sum of scores is less than **500** (`350 + 134 = 484`, **484** is less than **500**).\n\nThe output should be **Can team up** as one of the scores is greater than **300** and the sum of the scores is less than **500**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fa11de2c-2021-4c2f-a83b-e1f4b615ae35",
+      "code_content": "score_1 = int(input()) \nscore_2 = int(input())\n\nsum_of_scores = score_1 + score_2\n\nif (score_1 > 300 or score_2 > 300) and (sum_of_scores < 500):\n    print(\"Can team up\")\nelse:\n    print(\"Cannot team up\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "21296d2c-e513-417f-ab8e-d7c10ac6b676",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n305\n145\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Can team up",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": " If the given scores are `A = 305` and `B = 145`,\n\n✔ One of the scores is greater than **300** (**305** is greater than **300**).\n\n✔ The sum of scores is less than 500 (`305 + 145 = 450`, **450** is less than **500**).\n\nThe output should be **Can team up** as one of the scores is greater than **300** and the sum of the scores is less than **500**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8b1cedc4-19fe-4bbe-a5d4-4b2f1933786b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n301\n201\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Cannot team up",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": " If the given scores are `A = 301` and `B = 201`,\n\n✔ One of the scores is greater than **300** (**301** is greater than **300**).\n\n✖ The sum of scores is less than 500 (`301 + 201 = 502`, **502** is not less than **500**).\n\nThe output should be **Cannot team up** as the sum of the scores is not less than **500**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c65e972e-737f-4476-8eb8-b757ffd7e819",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n209\n240\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Cannot team up",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given scores are `A = 209` and `B = 240`,\n\n✖ One of the scores is greater than **300** (**209** or **240** are not greater than **300**).\n\n✔ The sum of scores is less than **500** (`209 + 240 = 449`, **449** is less than **500**).\n\nThe output should be **Cannot team up** as one of the scores is not greater than **300**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "151e3007-aa73-4ad8-b665-569a696f75e0",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "748553d5-4b5f-4070-8da6-f3d5774feefd",
+              "content": "To check if one of the scores is greater than `300` and the sum of the scores is less than `500`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8978379b-bf0d-4416-b97b-348abf13f4ce",
+              "content": "To check if one of the scores is less than `500` and the sum of the scores is greater than `300`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c9c28123-82ec-4b7d-af02-f4d15ae6feb4",
+              "content": "To check if one of the scores is greater than `500` and the sum of the scores is less than `300`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cabd0095-9f25-4200-87da-abfa7066f09c",
+              "content": "To check if one of the scores is less than `300` and the sum of the scores is greater than `500`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the scores `A` and `B` of two players and check if one of the scores is greater than **300** and the sum of the scores is less than **500**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5f52ec38-edc9-4dbf-ae9c-ce64aee85876",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "509598e2-1693-4752-8017-ce43a4cf7479",
+              "content": "- The first line of input contains an integer `A`.\n\n- The second line of input contains a string `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c378094d-0b0f-4080-811b-e8168f6aae27",
+              "content": "- The first line of input contains an integer `A`.\n\n- The second line of input contains an integer `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ddef0e19-eb66-43d8-a981-c2367553de07",
+              "content": "- The first line of input contains a string `A`.\n\n- The second line of input contains a string `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fe058f3c-5055-4951-b1fd-79c0ac6f968c",
+              "content": "- The first line of input contains a string `A`.\n\n- The second line of input contains an integer `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be, \n\n- The first line of input contains an integer representing the score `A`.\n\n- The second line of input contains an integer representing the score `B`.\n\nFor example,\n\n```\n200\n300\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6a466a17-c515-44dd-9417-f6b7439b0f88",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "09830602-1467-4687-ac49-7954e9f0cd2f",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3f3553ed-967b-494e-af08-83fbaee19857",
+              "content": "The output should be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "71581c4c-548b-4a2b-8dfe-1b21be48328f",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "dd981747-c172-42f8-a926-4613244f9652",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string. **Can team up** should be printed if one of the scores is greater than **300** and the sum of the scores is less than **500**, otherwise **Cannot team up** should be printed.\n\nFor example, if the given scores are `A = 315` and `B = 154`,\n\n✔ One of the scores is greater than **300** (**315** is greater than **300**).\n\n✔ The sum of scores is less than 500 (`315 + 154 = 469`, **469** is less than **500**).\n\nThe output should be **Can team up** as one of the scores is greater than **300** and the sum of the scores is less than **500**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8530d5a9-d93e-4ed8-a892-cdb72700f763",
+          "short_text": "",
+          "content": "According to the problem, what should the sum of scores be for the output to be `Can team up`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1d4d2d89-4033-44a1-832e-7d5e6f9a6ba9",
+              "content": "Equal to 500",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "323cc721-792b-4069-8858-ae8f6ff75bfd",
+              "content": "greater than 400",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b26e7891-cf77-4317-ad4f-295dbc6d1070",
+              "content": "Greater than 500",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "be2340f7-7477-4abb-9e44-e005ab7dfbff",
+              "content": "Less than 500",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the sum of the scores should be `less than 500` for the output to be `Can team up`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a8137ff4-6c42-4efc-bf5c-bf51d37cf4a2",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n299\n250\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "24d0eabf-010f-4b72-9d17-0c57c65c6d5b",
+              "content": "Cannot team up",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "92c26c0d-cbf3-4684-956f-cb3cc7138a1d",
+              "content": "Can team up",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e0100508-a6d9-4de1-93e8-3f87bde4eb74",
+              "content": "cannot team up",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f49c17fa-b4fd-4b13-919c-1ee0f82537cb",
+              "content": "can team up",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": " If the given scores are `A = 299` and `B = 250`,\n\n✖ One of the scores is greater than **300** (**299** or **250** are not greater than **300**).\n\n✖ The sum of scores is less than 500 (`299 + 250 = 549`, **549** is not less than **500**).\n\nThe output should be **Cannot team up** as both the given conditions are not satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "aa6c4b6a-7576-444b-a212-2e17366b3d43",
+          "short_text": "",
+          "content": "From your understanding of the problem description, what should one of the scores be for the output to be `Can team up`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "19f5ff64-1a6d-48a5-9746-047b9816488f",
+              "content": "Equal to 300",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1d4219ea-8afd-4918-9468-4da968523e49",
+              "content": "Greater than 300",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9979d1e8-fa1c-4180-b33a-4673b6adb5e6",
+              "content": "Less 300",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d2ed1f50-ee25-41b7-8694-3e08d4774cab",
+              "content": "Greater than 250",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, one of the scores should be `greater than 300` for the output to be `Can team up`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "dc4fdbc9-a45e-494e-ad89-9af9a45c8275",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "1cba3f6d-5585-499f-892f-847208010fc2",
+              "content": "109, 600",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c28ac8ba-315b-4a8c-80b1-a3b7971a9c7e",
+              "content": "943 800",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ccefdd20-f615-4ebc-984f-85d3c887b3d4",
+              "content": "126\n300",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "de9f87d3-3e8c-4125-bf42-c892638fc243",
+              "content": "349\n280",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n349\n280\n```\n\n**Input 2**\n\n```\n126\n300                                                \n```\nThe above two inputs are valid because,\n\n- The first line of input contains an integer `A`.\n\n- The second line of input contains an integer `B`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0db001e0-597e-40a8-9254-cf81966b04dd",
+      "input": "350\n150",
+      "output": "Cannot team up",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "1d6cf11e-8249-4d05-b86a-a8f56a0b93a4",
+      "input": "300\n200",
+      "output": "Cannot team up",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "3965d34c-a690-4f72-ae6b-8548d4e7713c",
+      "input": "4\n400",
+      "output": "Can team up",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "549df834-4f7b-4731-ab78-a216d57e3225",
+      "input": "350\n134",
+      "output": "Can team up",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7006fd4a-7a73-4888-b4a8-e1d981b3bc62",
+      "input": "450\n82",
+      "output": "Cannot team up",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "985a37ab-0c01-4d82-ad6f-fe00c0d3731c",
+      "input": "100\n300",
+      "output": "Cannot team up",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ae71ae11-5219-4223-830e-60fc3abc46fa",
+      "input": "301\n100",
+      "output": "Can team up",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "fec51534-f27b-453c-a8c8-e15a7c5c6910",
+      "input": "300\n300",
+      "output": "Cannot team up",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

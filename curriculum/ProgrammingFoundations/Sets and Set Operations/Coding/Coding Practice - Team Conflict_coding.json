@@ -1,0 +1,61 @@
+{
+  "question_id": "5c816366-dc7c-4430-86f8-306834e57716",
+  "short_text": "Team Conflict",
+  "content": "In a community sports league, there are two different teams: Team A and Team B. Each team consists of players who have registered to participate in the league. The league organizers want to ensure that there are no overlapping players between the two teams to maintain fairness in competition. As the league coordinator, your task is to determine if the two teams have any players in common. If they do share any players, it could lead to conflicts during matches.\n\nWrite a program that **reads two lists of strings** representing the players in **Team A** and **Team B**, and outputs whether the teams have any players in common.\n\n---\n\n#### Input\n\n- The first line contains strings separated by spaces representing players in **Team A**.\n- The second line contains strings separated by spaces representing players in **Team B**.\n\n---\n\n#### Output\n\nThe output should be a single line indicating whether the teams have common players: **`Teams have common players.`** or **`Teams do not have common players.`**\n\n---\n\n#### Explanation\n\nFor example If the input is \n\n```\nAlice Bob Charlie\nDavid Eve Frank\n```\n\nThe expected output would be \n\n```\nTeams do not have common players.\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6e5587a0-3e22-4e1a-9cb1-32f5ca222ede",
+      "code_content": "team_a = input().split()\nteam_b = input().split()\n\nif set(team_a).isdisjoint(set(team_b)):\n    print(\"Teams do not have common players.\")\nelse:\n    print(\"Teams have common players.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0c6317b0-a24a-452c-b821-a211b626ffd1",
+      "input": "Sophia Jackson Liam\nMason Sophia Ethan",
+      "output": "Teams have common players.",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4f4b05ae-11f6-4a01-9488-9fbad7e17ec6",
+      "input": "Alice Bob Charlie\nDavid Eve Frank",
+      "output": "Teams do not have common players.",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5fd310d0-b818-40cf-bc38-e89cf268a1e2",
+      "input": "John Sarah Mike\nSarah Tom Jerry",
+      "output": "Teams have common players.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7f5f93a0-f927-4465-a825-2388d863e165",
+      "input": "Liam Emma Noah\nOlivia Ava Isabella",
+      "output": "Teams do not have common players.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9db21572-04b5-4cb5-97f7-e9566bde942b",
+      "input": "Lucas Mia Grace\nZoe Lily Harper",
+      "output": "Teams do not have common players.",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e5e0e9f7-bf83-4d89-b157-6b712762a6e6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

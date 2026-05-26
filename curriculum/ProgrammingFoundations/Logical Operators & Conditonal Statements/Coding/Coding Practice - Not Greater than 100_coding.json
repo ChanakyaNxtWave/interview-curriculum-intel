@@ -1,0 +1,68 @@
+{
+  "question_id": "b072eb9b-3d74-4245-bbb5-89fe27db6821",
+  "short_text": "Not Greater than 100",
+  "content": "Write a program that reads two numbers `A` and `B`, and checks if the sum of `A` and `B` is **not greater than 100**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `A`.\r\nThe second line of input contains an integer representing `B`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if the sum of `A` and `B` is not greater than **100**, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `A = 30` and `B = 20`,\r\n\r\n- The sum of `A` and `B` is **50** (`30 + 20 = 50`).\r\n\r\nThe output should be **True** as the sum of `A` and `B` is **not greater than 100**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4bf59b8b-994e-4551-b957-e29dc2f19e0d",
+      "code_content": "first_number = input()\nfirst_number = int(first_number)\n\nsecond_number = input()\nsecond_number = int(second_number)\n\nsum_of_numbers = first_number + second_number\nis_greater_than = sum_of_numbers > 100\n\nresult = not(is_greater_than)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "18803385-3b7d-45f9-9ff4-5be1e28d01d6",
+      "input": "30\n20",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "1acb25ed-a1e5-4286-999e-cd81f76f0934",
+      "input": "101\n0",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "840d49ab-4db8-4d54-b3c5-1876bd2eb779",
+      "input": "60\n70",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "85c29cf0-bea0-4569-9478-386e25de1dd0",
+      "input": "-99\n198",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "99e39c51-91a4-47a0-97d3-47a0ed6da774",
+      "input": "55\n45",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "da6d4466-6b73-4a0b-aea8-1da8b97a961f",
+      "input": "2343\n-1983",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

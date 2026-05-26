@@ -1,0 +1,61 @@
+{
+  "question_id": "87114f28-b11e-4490-9cd0-11d7c5938249",
+  "short_text": "List of Lists to List of Tuples",
+  "content": "Write a program to convert the list of lists to a list of tuples.<hr><b>Input</b><br/><br/>The first line of input will contain an integer (N), denoting the number of lists.<br/>The next N lines will contain space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing a list with N tuples in the order of inputs given.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read the inputs in the next three lines and print them as a list of tuples.<br/>If the given three strings are as the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 2 3 4\n10 20 30\n5 10 15 20\n</code></pre><br/>Your code should print each line of input as a tuple, such that making a list of three tuples. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[(1, 2, 3, 4), (10, 20, 30), (5, 10, 15, 20)]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "24b4d6a7-b947-48f1-9185-6daf0c1de247",
+      "code_content": "def convert_nested_list_to_list_of_tuples(nested_list):\n    tuples_list = []\n    for each_list in nested_list:\n        tuple_a = tuple(each_list)\n        tuples_list.append(tuple_a)\n    return tuples_list\n\n\ndef convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nn = int(input())\nnum_list = []\n\nfor i in range(n):\n    list_a = input().split()\n    list_a = convert_string_to_int(list_a)\n    num_list.append(list_a)\n\n\ntuples_list = convert_nested_list_to_list_of_tuples(num_list)\nprint(tuples_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "04c3f381-ceff-4d35-a3aa-f6d1837b4cb3",
+      "input": "6\n-50 20 3 88 17 3 11 200 1800\n544 692 701 893 666 690 999 123\n2018 2016 1990 1931 0 -2000\n-232 -789\n1 3 5 7 9\n2 4 6 8 10\n",
+      "output": "[(-50, 20, 3, 88, 17, 3, 11, 200, 1800), (544, 692, 701, 893, 666, 690, 999, 123), (2018, 2016, 1990, 1931, 0, -2000), (-232, -789), (1, 3, 5, 7, 9), (2, 4, 6, 8, 10)]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "0663a59b-6913-45c2-9a73-13ca6855a53c",
+      "input": "3\n1 2 3 4\n10 20 30\n5 10 15 20",
+      "output": "[(1, 2, 3, 4), (10, 20, 30), (5, 10, 15, 20)]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "58f5b37d-5086-4541-9bfe-dca1841f20b2",
+      "input": "5\n1\n1\n1\n1\n1",
+      "output": "[(1,), (1,), (1,), (1,), (1,)]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a7aafca6-3e52-4306-81ea-c43c579c62ab",
+      "input": "1\n-10",
+      "output": "[(-10,)]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "bc785a23-dbf8-4162-8851-b7298e8a2672",
+      "input": "4\n-50 20 3\n88 17\n3 11\n200 1800",
+      "output": "[(-50, 20, 3), (88, 17), (3, 11), (200, 1800)]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

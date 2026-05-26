@@ -1,0 +1,68 @@
+{
+  "question_id": "7e62936d-8396-4eba-8ced-6393b181019b",
+  "short_text": "Print the Input - 5",
+  "content": "A function is given in the prefilled code that takes the word `S` as an argument.\n\nWrite a program that reads a word `S` and print the given word by calling the function.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that is passed as an argument to the function.\n\n---\n\n#### Explanation\n\nFor example, if the given word is `S = \"Javascript\"`,\n\n- The word **Javascript** should be passed as an argument.\n\nThe output should be **Javascript**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ae24d26b-6400-4573-b05a-ddd194555256",
+      "code_content": "def print_arg(string):\n    \n    print(string)\n\nstring = input()\n\nprint_arg(string)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1007e2d0-a949-455f-b69a-74b8fd87cec6",
+      "input": "Javascript",
+      "output": "Javascript",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2abcc24e-9223-4c94-a72d-73cf045f0dc5",
+      "input": "Microsoft Visual Basic",
+      "output": "Microsoft Visual Basic",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "508794d9-6bec-41ff-81fb-bd82e9d0a6b1",
+      "input": "HTML",
+      "output": "HTML",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "5e5df2d2-d249-4def-b035-c43003a149dd",
+      "input": "c",
+      "output": "c",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5f3e424f-1f0f-4f27-bd08-8458a6d9d890",
+      "input": "CsS",
+      "output": "CsS",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a4081699-d037-4e9c-9428-8ca69755203c",
+      "input": "Core Java",
+      "output": "Core Java",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

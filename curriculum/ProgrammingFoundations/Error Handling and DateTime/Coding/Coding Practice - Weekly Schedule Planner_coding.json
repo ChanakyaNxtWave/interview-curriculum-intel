@@ -1,0 +1,61 @@
+{
+  "question_id": "a065acce-0bdd-4325-91bf-c50a6f4071a0",
+  "short_text": "Weekly Schedule Planner",
+  "content": "You are developing a weekly schedule planner for users to track their tasks. This tool will help users manage their time effectively by displaying tasks that are due with in the next 7 days from a specified current date.\n\nWrite a program that allows users to input tasks along with their due dates. The program should display all tasks that are due with in the next 7 days from the specified current date.\n\n\n---\n\n#### Input\n\n- The first line contains the current date in the format **`YYYY-MM-DD`**.\n- The subsequent lines contain tasks in the format Task description, **`YYYY-MM-DD`**. The input ends when an **`end`** line is entered.\n\n---\n\n#### Output\n\n\nThe output should display all tasks due with in the next 7 days from the specified current date in the following format:\n\n```\nTasks due with in the next 7 days:\n1. Task description - Due on YYYY-MM-DD\n```\n\nIf there are no due tasks means print\n\n```\nNo tasks due with in the next 7 days.\n```\n\n---\n\n#### Explanation\n\nIf the input is \n\n```\n2025-11-01\nFinish project report, 2025-11-15\nBuy groceries, 2025-11-10\nDoctor appointment, 2025-11-20\nend\n```\n\nThe Expected output is\n\n```\nNo tasks due with in the next 7 days.\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "71cbdb0a-d625-4d6d-aa8a-80a3907e9b25",
+      "code_content": "from datetime import datetime, timedelta\n\ncurrent_date_input = input()\ntasks = []\n\nwhile True:\n    task_input = input()\n    if task_input == 'end':\n        break\n    tasks.append(task_input)\n\ncurrent_date = datetime.strptime(current_date_input, \"%Y-%m-%d\")\nend_of_week = current_date + timedelta(days=7)\n\ndue_tasks = []\n\nfor task in tasks:\n    description, due_date_str = task.split(\", \")\n    due_date = datetime.strptime(due_date_str, \"%Y-%m-%d\")\n    \n    if current_date <= due_date <= end_of_week:\n        due_tasks.append((description, due_date_str))\n\nif due_tasks:\n    print(\"Tasks due with in the next 7 days:\")\n    for i, (description, due_date_str) in enumerate(due_tasks, start=1):\n        print(f\"{i}. {description} - Due on {due_date_str}\")\nelse:\n    print(\"No tasks due with in the next 7 days.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "31b5995b-8df4-4891-971d-46c86ae75237",
+      "input": "2024-03-10\nPrepare presentation, 2024-03-15\nSubmit tax forms, 2024-03-12\nPlan team outing, 2024-03-20\nend",
+      "output": "Tasks due with in the next 7 days:\n1. Prepare presentation - Due on 2024-03-15\n2. Submit tax forms - Due on 2024-03-12",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "56401edc-e8f1-417b-ae62-5b826520d490",
+      "input": "2025-11-01\nFinish project report, 2025-11-15\nBuy groceries, 2025-11-10\nDoctor appointment, 2025-11-20\nend",
+      "output": "No tasks due with in the next 7 days.",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a3dd02e8-6030-4594-bc5d-0ec9b8b85bc0",
+      "input": "2023-12-25\nNew Year party planning, 2024-01-01\nGrocery shopping, 2023-12-30\nDoctor's appointment, 2024-01-02\nend",
+      "output": "Tasks due with in the next 7 days:\n1. New Year party planning - Due on 2024-01-01\n2. Grocery shopping - Due on 2023-12-30",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ead26cec-bf8e-4e62-8b58-78fa4b25f7c3",
+      "input": "2024-05-01\nSubmit assignment, 2024-05-05\nTeam meeting, 2024-05-03\nConference call, 2024-05-10\nend",
+      "output": "Tasks due with in the next 7 days:\n1. Submit assignment - Due on 2024-05-05\n2. Team meeting - Due on 2024-05-03",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ec11f5e6-97a9-4227-8241-a4b69bcdb868",
+      "input": "2023-09-15\nProject deadline, 2023-09-20\nBudget review meeting, 2023-09-18\nClient presentation, 2023-09-25\nend",
+      "output": "Tasks due with in the next 7 days:\n1. Project deadline - Due on 2023-09-20\n2. Budget review meeting - Due on 2023-09-18",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "fa01dfac-d860-47cb-afd0-a24a8349ee9b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

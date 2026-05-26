@@ -1,0 +1,377 @@
+{
+  "question_id": "ed06ecaa-e714-497a-a80f-f65611ec1689",
+  "short_text": "Compare Digits - 2",
+  "content": "Write a program to check if the given two digit number is greater than 25 and its first digit is greater than its second digit.<hr><b>Input</b><br/><br/>The first line of the input will be a two digit integer<hr><b>Output</b><br/><br/>Print &quot;True&quot; if the number is greater than 25 and its first digit is greater than its second digit.<br/>In all other cases print &quot;False&quot;.<hr><b>Explanation</b><br/><br/>When the given number is 24: <br/>✖ Greater than 25<br/>✖ First digit greater than second digit (2 is less than 4)<br/><br/>When the given number is 42:<br/>✔ Greater than 25<br/>✔ First digit greater than second digit (4 is greater than 2)",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "30a05caf-e13f-4601-9d9f-d961a01f4be4",
+      "code_content": "a = input()\n\nis_above = int(a) > 25\n\nfirst_digit = a[0]\nsecond_digit = a[1]\n\nfirst_digit = int(first_digit)\nsecond_digit = int(second_digit)\n\nis_greater = first_digit > second_digit\n\nresult = is_above and is_greater\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0cba5b3c-bbc1-408b-bf21-c0e23917053c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n54\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `54`,\n\n✔ Greater than **25**. (**54** is greater than **25**)    \n                              \n✔ First digit is greater than the second digit. (**5** is greater than **4**)\n\nThe output should be **True** as all the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "0f217a70-cf58-456e-8534-c3f6340a1787",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n67\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is, `67`\n\n✔ Greater than **25**. (**67** is greater than **25**)\n                          \n✖ First digit is greater than the second digit. (**6** is not greater than **7**)\n\nThe output should be **False** as all the given conditions are not satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "54aca4e3-57ec-4cd4-8b8b-4bd1c73ea4a7",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n25\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `25`,\n\n✖ Greater than **25**. (**25** is not greater than **25**) \n\n✖ First digit is greater than the second digit. (**2** is less than **5**) \n\nThe output should be **False** as all the given conditions are not satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "1d8facbb-e05b-4a44-8291-bb12c7ce65df",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n62\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "86d3d05c-f113-4a53-83d9-db0c61afd8d7",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9081d8b2-12f9-4e3d-891f-8dd5ec1ce67a",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a1ddfbac-16ed-4260-ad69-8e7b5514a172",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d76be4f7-9e00-4aa1-b5a7-ef11fda7c351",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is **62**,\n\n✔ Greater than **25**. (**62** is greater than **25**)    \n                              \n✔ First digit is greater than the second digit. (**6** is greater than **2**)\n\nThe output should be **True** as all the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "2a46638e-91b7-427b-ba62-d96d39b8f7fb",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "04ab792f-9e14-4871-9882-7f380c5aee04",
+              "content": "753",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "90762645-a174-474f-b240-5f7cd8a01e60",
+              "content": "67",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a6e9f764-99a1-4545-bd84-ba320484d859",
+              "content": "20",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b0519572-5886-4c74-9829-2ea819e2d806",
+              "content": "3                               ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n20\n```\n\n**Input 2**\n\n```\n67                                                          \n```\nThe above two inputs are valid because they consist of a single line containing a two-digit integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4914fc60-fbf3-44cb-852b-5a8f3c3d31cf",
+          "short_text": "",
+          "content": "According to the problem description, what is the first condition?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "10e7b472-435c-4137-9a6c-c1e7949cb7be",
+              "content": "The given number is greater than **20**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "24a5ce99-3f85-4ce1-8da0-ecd059d019ce",
+              "content": "The given number is less than **25**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "25586e37-d714-4824-9f51-32b6d5b8c314",
+              "content": "The given number is greater than **25**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5c3be6e4-05c1-4d39-a0fe-62fdb2acee31",
+              "content": "The given number is equal to **25**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the first condition is,\n\n- The given number is greater than **25**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "53926465-67eb-41a4-9de4-a00866476fda",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "40067a93-06c4-42f4-bca0-3b73716d1c96",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "76c81f2e-31bf-4448-a680-c98dac163a46",
+              "content": "The input will be a single line containing a three-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7dd7ced8-be7a-47e0-97ac-099d4016abb6",
+              "content": "The input will be a single line containing a two-digit integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "fbd36f14-f5bb-4733-88cb-3eedce46d558",
+              "content": "The input will be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing two digit integer.\n\nFor example, **24**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6b59ce8c-25b9-4bea-9902-1a8c99db0a10",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "13639225-90b0-4417-a6b2-64fdd12a3a34",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "26566fff-f5f3-4cab-bb88-3942c194833e",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3662e485-62d5-4faf-bd91-55a8bb325134",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "98b6b777-35d3-4d1b-8526-f5a970ea1ab9",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be print **True** if the number is greater than **25** and its first digit is greater than the second digit. Otherwise, print **False**.\n\nFor example, \n\nIf the given number is **90**,\n\n✔ Greater than **25**. (**90** is greater than **25**)    \n                              \n✔ First digit is greater than the second digit. (**9** is greater than **0**)\n\nThe output should be **True** as all the given conditions are satisfied.\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7b11a33d-3718-4fc2-8aea-b38aad310c7b",
+          "short_text": "",
+          "content": "According to the problem description, what is the second condition? ",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "49154c59-bc84-4887-af31-5b7cdf2e5dbf",
+              "content": "The second digit should be an odd number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "494a4c30-87fa-4cb1-961b-2e8e34d35153",
+              "content": "The first digit should be a prime number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "efedee50-12c4-4ce6-8170-64a16ec8baeb",
+              "content": "The first digit should be greater than the second digit.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ff93adf6-707f-4f97-b70f-7d7eee31d8ab",
+              "content": "The first digit should be less than the second digit.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the second condition is, \n\n- The first digit should be greater than the second digit.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e3f91f28-0a82-4988-bd14-49d6fa135877",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "04cf9df3-c12a-484d-89a1-4759425a7849",
+              "content": "To check if the given two-digit number is greater than **20** and its first digit is greater than its second digit.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "51612b82-2a62-451a-9541-36c9b8450828",
+              "content": "To check if the given two-digit number is greater than **25** and its first digit is less than its second digit.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "60b10980-f72b-4a10-9743-f82f04c3e3e7",
+              "content": "To check if the given two-digit number is less than **25** and its first digit is less than its second digit.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "91e23d80-4744-4c16-ae77-e6d35a72b2a3",
+              "content": "To check if the given two-digit number is greater than **25** and its first digit is greater than its second digit.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a two-digit integer and check if,\n\n- The given two-digit number is greater than **25**.\n\n- The first digit is greater than its second digit.\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "06518d6e-0d1d-4b14-93a6-19350309cc92",
+      "input": "33",
+      "output": "False\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "173dd291-a451-4cb0-95ba-467eb5dd1a5e",
+      "input": "56",
+      "output": "False\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4dbcfd1f-5c61-49b8-84af-10157e06ae5a",
+      "input": "10",
+      "output": "False\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "72a427b3-1433-4c4d-830b-01ea173b05f1",
+      "input": "24",
+      "output": "False\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8772211b-986d-40df-9c91-8db09a36646c",
+      "input": "42",
+      "output": "True\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

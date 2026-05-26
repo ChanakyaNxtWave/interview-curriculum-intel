@@ -1,0 +1,61 @@
+{
+  "question_id": "a0a4273f-fddd-477f-945a-55771dfd56af",
+  "short_text": "Smallest Number in the List - 2",
+  "content": "Write a program to print the smallest number in the list.<hr><b>Input</b><br/><br/>The input will be a single line containing the comma-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the smallest number in the list.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;2,4,-1,5&quot;, your code should print the smallest number in the list. So the output should be -1.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "e7b80984-d94d-4cdc-9532-69f5b7b0bd8a",
+      "code_content": "numbers = input()\nnums_list = numbers.split(\",\")\n\nlength_of_nums_list = len(nums_list)\nfor i in range(length_of_nums_list):\n    nums_list[i] = int(nums_list[i])\n\nnums_list = sorted(nums_list)\nsmallest_number = nums_list[0]\nprint(smallest_number)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "297ff769-f678-48ef-b75b-6ca7a3c08da8",
+      "input": "10,3,19,93,891,37",
+      "output": "3\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "400889fe-c087-4f19-81dc-0d2c7ddd1b73",
+      "input": "1,1,1,1,1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8fdfda7a-f390-44c9-9512-8c1189a8da20",
+      "input": "2,3,-1,5",
+      "output": "-1\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e2b191f3-9aa9-4535-a157-193749d19dc0",
+      "input": "3",
+      "output": "3\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "f5156b7a-b4af-47bd-b953-6dd3b9cf1c9c",
+      "input": "30,52,24,19",
+      "output": "19\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

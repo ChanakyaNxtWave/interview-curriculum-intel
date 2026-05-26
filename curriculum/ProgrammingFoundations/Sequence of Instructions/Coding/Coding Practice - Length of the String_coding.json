@@ -1,0 +1,61 @@
+{
+  "question_id": "177b4220-cf2f-4099-b164-a1444b04a5b4",
+  "short_text": "Length of the String",
+  "content": "Write a program that reads a word and prints the length of the word.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the number of characters in the word.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is **Software**, the number of characters in the word is **8**.\r\n\r\nThe output should be **8**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "da9738c9-0446-4e80-af7c-ac268408cc91",
+      "code_content": "message = input()\nlength = len(message)\nprint(length)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "19c230fd-330e-4264-8342-b36ee4d06a2c",
+      "input": "Hardware",
+      "output": "8",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "788bd9a9-a7cd-4c8d-8bd9-00f6b8a67150",
+      "input": "Champion",
+      "output": "8",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "ba4777bc-47c2-4ef5-831d-e5b254a1d1e9",
+      "input": "Student",
+      "output": "7\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "ee3cac11-428f-4dd2-9b10-ad54b416cc07",
+      "input": "Strawberry",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "fdc541dd-bdca-4d4f-aeae-31dd60a50a7a",
+      "input": "Software",
+      "output": "8\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

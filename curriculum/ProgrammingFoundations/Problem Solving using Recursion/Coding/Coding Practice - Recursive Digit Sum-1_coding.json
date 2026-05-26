@@ -1,0 +1,61 @@
+{
+  "question_id": "00d7deb7-a676-4bc6-93a1-7800044ba26b",
+  "short_text": "Recursive Digit Sum-1",
+  "content": "In a vibrant city, an event planner is preparing for a grand gala and needs to determine how many unique ways the guests can be arranged at the tables. Each arrangement is important for ensuring that guests are seated in an optimal manner. The planner realizes that the number of unique arrangements for n guests is given by the factorial of n, denoted as n!.\n\n\nYour task is to help the event planner by **completing the method `arrangements(n)`.** This method should take an integer **`n`** and return the value of **`n!`** (the factorial of n).\n\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes one parameter `n`, an integer representing the number of guests. \n\n\n---\n\n#### Output:\n\nThe method should **return a integer**  representing the total number of unique arrangements for n guests.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n5\n```\n\n- The unique arrangements will be 5!.\n- 5!= 5 × 4 × 3 × 2 × 1 = **`120`**\n\n\nThe expected output would be :\n\n```\n120\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a779aa22-a1b2-4437-8f94-bf49eb7855ba",
+      "code_content": "def arrangements(n):\n    if (n==1 or n==0):\n        return 1 \n    return (n * arrangements(n - 1))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1403e106-8b76-424a-afdf-9cdff0003bfb",
+      "input": "10",
+      "output": "3628800",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "40523af6-2532-4576-8305-d020c8665851",
+      "input": "5",
+      "output": "120",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4cb2c246-2358-40d1-9b5b-01483688fe76",
+      "input": "4",
+      "output": "24",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c97f9e69-3a57-4fe7-9f1c-be3f0fd9ea41",
+      "input": "9",
+      "output": "362880",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f8d3dba0-4044-4409-a48b-b1299874227f",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "efaa14e6-913e-41ae-b575-e2a588294405",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

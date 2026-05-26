@@ -1,0 +1,68 @@
+{
+  "question_id": "01d1ddd2-8e2a-44ff-b510-e8c7b8cf8560",
+  "short_text": "Inverted Pyramid",
+  "content": "Given a number `N`, write a program to print an **Inverted Pyramid** of `N` rows using stars (`*`).\r\n\r\n```\r\n*****\r\n ***\r\n  *\r\n```\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing stars (`*`) as an **Inverted Pyramid** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`,\r\n\r\n- The stars (`*`) should be printed on **4** rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-pyramid.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates one space (\" \").\r\n- The Star in the box indicates a star  (\"*\").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n*******\r\n *****\r\n  ***\r\n   *\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5b211030-f4e2-44b1-8cea-eea6761d0bad",
+      "code_content": "number_of_rows = int(input())\n\nfor row in range(number_of_rows):\n    spaces = \" \" * row\n    stars = \"*\" * (2 * (number_of_rows - row) - 1)\n    \n    each_row = spaces + stars\n    \n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00e75cc6-6195-470f-8957-5d7865436292",
+      "input": "1",
+      "output": "*",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "53dcedbe-6ea9-46ed-a67e-edc046a687e8",
+      "input": "4",
+      "output": "*******\n *****\n  ***\n   *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6bef0ab3-c36c-4f06-a11c-fe1b27a33408",
+      "input": "36",
+      "output": "***********************************************************************\n *********************************************************************\n  *******************************************************************\n   *****************************************************************\n    ***************************************************************\n     *************************************************************\n      ***********************************************************\n       *********************************************************\n        *******************************************************\n         *****************************************************\n          ***************************************************\n           *************************************************\n            ***********************************************\n             *********************************************\n              *******************************************\n               *****************************************\n                ***************************************\n                 *************************************\n                  ***********************************\n                   *********************************\n                    *******************************\n                     *****************************\n                      ***************************\n                       *************************\n                        ***********************\n                         *********************\n                          *******************\n                           *****************\n                            ***************\n                             *************\n                              ***********\n                               *********\n                                *******\n                                 *****\n                                  ***\n                                   *",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "956bafd7-d346-4862-9103-8ac066e9b713",
+      "input": "5",
+      "output": "*********\n *******\n  *****\n   ***\n    *",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "cf725da3-714e-483d-9797-43ba0c7e715a",
+      "input": "2",
+      "output": "***\n *",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ec65abd8-47d0-495b-9773-c4ad3b188302",
+      "input": "9",
+      "output": "*****************\n ***************\n  *************\n   ***********\n    *********\n     *******\n      *****\n       ***\n        *",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

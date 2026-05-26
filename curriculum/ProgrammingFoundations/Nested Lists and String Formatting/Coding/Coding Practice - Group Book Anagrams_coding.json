@@ -1,0 +1,61 @@
+{
+  "question_id": "14679fa4-0eba-4baf-ae2b-9dfeb7e2a0f3",
+  "short_text": "Group Book Anagrams",
+  "content": "Write a program that helps a librarian organize a collection of books by grouping them based on their titles. The librarian wants to group books that have the same letters but in different arrangements, known as anagrams. For example, the titles \"listen\" and \"silent\" should be grouped together because they are anagrams of each other. Wire a program that reads a list of strings, representing book titles and output groups of anagrams. \n\n<MultiLineNote> \n\n- An anagram means that two or more words contain the same letters arranged differently. For instance, \"evil\" and \"vile\" are anagrams. \n- The program should print all unique groups of anagrams from the list of titles provided. \n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of a single line containing a list of space-separated strings, where each string represents a book title.\n\n---\n\n#### Output\n\nThe output should print:\n\n - Each group of anagrams as a list of titles on a new line.\n - Each list should contain titles that are anagrams of each other.\n - The order of the groups should be based on the first appearance of an anagram group in the input.\n\n---\n\n#### Explanation\n\nFor example, given the following input\n\n```\nSilent Listen Hamlet Melath Love Lost\n```\n\n- **Silent** and **Listen** are anagrams because they use the same letters arranged differently.\n- **Hamlet** and **Melath** are anagrams of each other as they consist of the same letters.\n- **Love** and **Lost** do not have any anagrams in the list\n\nThe output should be \n\n```\n['Silent', 'Listen']\n['Hamlet', 'Melath']\n['Love']\n['Lost']\n```\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "890f73f9-b065-446f-886b-43b837cafbfa",
+      "code_content": "def group_anagrams(titles):\n    anagram_groups = []\n\n    for title in titles:\n        sorted_title = ''.join(sorted(title))\n        found_group = False\n\n        for group in anagram_groups:\n            if sorted_title == ''.join(sorted(group[0])):  \n                group.append(title)  \n                found_group = True\n                break\n        if not found_group:\n            anagram_groups.append([title])\n\n    return anagram_groups\n\ninput_titles = input().split()\nresult = group_anagrams(input_titles)\nfor i in result:\n    print(i)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "51f9fa7e-5c39-43cb-9a59-a20c7002cf43",
+      "input": "a b c d e f g h i j k l m n o p q r s t u v w x y z",
+      "output": "['a']\n['b']\n['c']\n['d']\n['e']\n['f']\n['g']\n['h']\n['i']\n['j']\n['k']\n['l']\n['m']\n['n']\n['o']\n['p']\n['q']\n['r']\n['s']\n['t']\n['u']\n['v']\n['w']\n['x']\n['y']\n['z']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "654fb491-2eae-4e4e-8198-fb30cd61be61",
+      "input": "silent listen hamlet melath love lost",
+      "output": "['silent', 'listen']\n['hamlet', 'melath']\n['love']\n['lost']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "859b10cd-d09d-4365-9ca9-246be2bae8e7",
+      "input": "listen silent enlists google inlets",
+      "output": "['listen', 'silent', 'inlets']\n['enlists']\n['google']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bf88cec0-25f3-48e4-9bb4-c10041cdcf79",
+      "input": "abc bca cab xyz",
+      "output": "['abc', 'bca', 'cab']\n['xyz']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f926e519-2a51-44e8-b019-de17549960f8",
+      "input": "rat tar art",
+      "output": "['rat', 'tar', 'art']",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

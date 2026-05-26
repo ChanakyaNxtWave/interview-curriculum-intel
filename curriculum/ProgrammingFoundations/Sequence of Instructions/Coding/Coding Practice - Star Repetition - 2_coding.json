@@ -1,0 +1,75 @@
+{
+  "question_id": "255a852f-dff0-41a3-a2e0-09994c1e62c6",
+  "short_text": "Star Repetition - 2",
+  "content": "Write a program that reads a word and prints the first letter of the given word and stars (`*`) instead of the other letters.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing the first letter of the given word and stars (`*`) instead of the other letters.\r\n\r\n--- \r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is **Queue**,\r\n\r\n* The number of letters in the word **Queue** is **5**. We have to print the first letter **Q**.\r\n* Now, without the first letter, there are **4** letters. So, we have to print **4** stars (`*`).\r\n\r\nThe output should be **Q\\*\\*\\*\\***.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5f9ce01c-02e1-405a-aecc-b2831371e178",
+      "code_content": "word = input()\n\nword_length = len(word)\n\nfirst_character = word[0]\nnumber_of_stars = word_length - 1\n\nresult = first_character + (\"*\" * number_of_stars)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "01790e3a-7e43-41e2-8fbd-eb177c99070f",
+      "input": "ALEXANDER",
+      "output": "A********",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "1711831e-1209-489d-a30c-dc913269c48c",
+      "input": "6",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "3152eccd-e11d-4f66-a975-7e88a696a65c",
+      "input": "John",
+      "output": "J***",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4d582b68-ecdd-40ae-a1fb-b8af51c68271",
+      "input": "Supercalifragilisticexpialidocious",
+      "output": "S*********************************",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6a51b929-dbce-47c5-b964-6d17e560f5fb",
+      "input": "Password",
+      "output": "P*******",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8bc4a0dc-41ab-4f7b-aa39-614eb5ac78d0",
+      "input": "hidden",
+      "output": "h*****",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b5d9f395-8950-43e5-9ea0-3d62f9ef2249",
+      "input": "Queue",
+      "output": "Q****",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

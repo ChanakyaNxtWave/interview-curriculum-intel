@@ -1,0 +1,75 @@
+{
+  "question_id": "4f917605-da92-4f82-8520-5eb06fcba548",
+  "short_text": "Mode of Numbers",
+  "content": "Given comma-separated numbers, write a program to find the **Mode** of the given numbers.\r\n\r\n<MultiLineNote>\r\n**Mode** is the number that occurs more times than other numbers in the list.\r\n\r\nFor example, if the given list of numbers are **6**, **3**, **9**, **3**, **6**, **6**, **5**, **9**, **3**,\r\n\r\nThe number **6** occurred **3** times.\r\nThe number **3** occurred **3** times.\r\nThe number **9** occurred **2** times.\r\nThe number **5** occurred **1** time.\r\n \r\nThe **Modes** are **6** and **3**, as they occurred more times than the other numbers in the given list.\r\n \r\nIf there are multiple modes, print the mode that occurs first in the given numbers.\r\n\r\nAmong **6** and **3**, **6** occurs first in the given numbers.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing comma-separated integers.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the **Mode** of the given numbers.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given comma-separated numbers are **1,5,9,1,4,7,5,3,5,6,8,5**.\r\n\r\n- The numbers with their respective number of occurrences,\r\n\r\n| Number | Number of Occurrences |\r\n| ------ | --------------------- |\r\n| 1      | 2                     |\r\n| **5**  | **4**                 |\r\n| 9      | 1                     |\r\n| 4      | 1                     |\r\n| 7      | 1                     |\r\n| 3      | 1                     |\r\n| 6      | 1                     |\r\n| 8      | 1                     |\r\n\r\n- The number **5** occured **4** times that is more than other numbers occurrences.\r\n\r\nThe output should be **5**.\r\n\r\n---\r\n\r\nFor example, if the given comma-separated numbers are **6,3,9,3,6,6,5,9,3**.\r\n\r\n- The numbers with their respective number of occurrences,\r\n\r\n| Number | Number of Occurrences |\r\n| ------ | --------------------- |\r\n| **6**  | **3**                 |\r\n| **3**  | **3**                 |\r\n| 9      | 2                     |\r\n| 5      | 1                     |\r\n\r\n\r\n- The numbers **6** and **3** occured **3** times that is more than other numbers occurrences.\r\n\r\n- If there are multiple modes, print the mode that occurs first in the given numbers.\r\n \r\n- Among **6** and **3**, **6** occurs first in the given numbers.\r\n\r\nThe output should be **6**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0028ed0b-bfe9-4f4f-9bb8-18dbd0694ce8",
+      "code_content": "numbers_list = input().split(\",\")\n\nlargest_frequency = 0\nmode = 0\n\nfor number in numbers_list:\n    each_frequency = numbers_list.count(number)\n    if each_frequency > largest_frequency:\n        largest_frequency = each_frequency\n        mode = number\n        \nprint(mode)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "20058e13-568e-4bf1-a84e-642f100635a0",
+      "input": "1,5,9,1,4,7,5,3,5,6,8,5",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3e361d91-6523-40f6-ae49-97d4fdb407b0",
+      "input": "-7,25,-7,-57,58,25,-57,25,10,3,7,6,4,-7",
+      "output": "-7",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "896be9e7-89e1-493b-ada8-197313e31c49",
+      "input": "6,3,9,3,6,6,5,9,3",
+      "output": "6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8e9ba032-5169-41c3-add7-aa54853d5860",
+      "input": "38674,521541",
+      "output": "38674",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "d31e2c9b-55bf-4709-9697-62dd770dfffb",
+      "input": "42324,14535,4354362",
+      "output": "42324",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "eed1cb17-9e1a-4713-90e7-82a7b260ed63",
+      "input": "4,1,2,2,3,5",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ef3f1ec6-88f5-4c21-81e0-29f76401f656",
+      "input": "-4,-10,-4,46,23,68,47,61,-4,23,68",
+      "output": "-4",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

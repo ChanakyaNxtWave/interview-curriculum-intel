@@ -1,0 +1,82 @@
+{
+  "question_id": "ce472e48-8450-4ec7-8e3b-672a672400d9",
+  "short_text": "Print Characters - 3",
+  "content": "Given a number `N`, write a program that reads `N` Unicode values and prints a string by joining the characters of given `N` Unicode values.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the characters of given `N` Unicode values.\n\n---\n\n#### Explanation\n\nFor example, if the given number `N = 3`,\n\n- Given **3** Unicode values are,\n\n```\n67\n97\n114\n```\n- The characters with the above Unicode values are,\n\n| Unicode value | Character |\n| ------------- | --------- |\n| 67            | C         |\n| 97            | a         |\n| 114           | r         |\n\n- After joining the characters of the Unicode values **67** (`C`), **97**(`a`) and **114**(`r`) is **Car**\n\nThe output should be **Car**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "683e9e04-5476-4507-bca1-ecf0901683a0",
+      "code_content": "number = int(input())\nstring = \"\"\n\nfor i in range(number):\n    unicode_value = int(input())\n    each_character = chr(unicode_value)\n    string = string + each_character\n    \nprint(string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "101d36f7-6c61-4e8c-9213-fe7cc18eb7fc",
+      "input": "2\n84\n111",
+      "output": "To",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "118796b3-f218-40fe-b7fe-40084ee4b802",
+      "input": "5\n73\n110\n100\n105\n97",
+      "output": "India",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "410088b6-13d9-4126-8b75-7accc3e3bae9",
+      "input": "1\n75",
+      "output": "K",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4d33d7cb-aac6-4820-a0f9-c0b7539ca15a",
+      "input": "8\n108\n101\n97\n114\n110\n105\n110\n103",
+      "output": "learning",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b8162a8c-2b81-4c3c-8e6e-be4dc4ea45f7",
+      "input": "1\n82",
+      "output": "R",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bc4be138-3b64-4b77-9fe4-a9c3cbf776dd",
+      "input": "3\n67\n97\n114",
+      "output": "Car",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bfd6a1b8-a62f-41e7-b10f-a623e702b879",
+      "input": "9\n66\n105\n110\n97\n114\n121\n64\n48\n49",
+      "output": "Binary@01",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c6b34c11-59b3-47c0-bf0f-3c8035473236",
+      "input": "7\n99\n99\n98\n112\n52\n46\n48",
+      "output": "ccbp4.0",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

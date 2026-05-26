@@ -1,0 +1,61 @@
+{
+  "question_id": "d5ee12f8-052c-417e-9d78-da9f13028dd5",
+  "short_text": "Librarian Book Budget",
+  "content": "A librarian is planning to buy a set of books for the library. The cost of the books increases with each additional book purchased. Specifically, the first book costs k dollars, the second book costs 2k dollars, the third book costs 3k dollars, and so on.\n\nThe librarian has n dollars budgeted for this purchase. She wants to buy w books in total. However, she realizes that her budget might not be enough to cover the total cost of all the books.\n\nWrite a program to determine how much money the librarian needs to borrow from her savings to buy all the books. If she has enough money, you should return 0.\n\n---\n\n#### Input\n\nThe first line contains three positive integers k, n, and w\nWhere:\n\n- **`k`** is the cost of the first book,\n- **`n`** is the amount of money she currently has,\n- **`w`** is the number of books she wants to buy.\n\n---\n\n#### Output\n\nThe output should be the amount of dollars that the librarian must borrow from her savings. If she doesn't have to borrow money, output 0.\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n5 20 3\n```\n\nThe total cost for buying 3 books would be:\n\n- First Book : 1 x k = **5**\n- Second Book : 2 x k = **10**\n- Thrid Book : 3 x k = **15**\n\n**Total cost** =  5 + 10 + 15 = **30**\n\nThe Expected Output\n\n```\n10\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6d00b615-65eb-40d9-aac2-8f2e13d81ae4",
+      "code_content": "def calculate_borrowed_amount(k, n, w):\n    total_cost = (w * (w + 1) // 2) * k\n    borrowed_amount = total_cost - n\n    return max(0, borrowed_amount)\n\n\ninp = input().split()\nk,n,w = int(inp[0]),int(inp[1]),int(inp[2])\nprint(calculate_borrowed_amount(k, n, w))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2260515c-c634-4046-814c-dbf7706110e9",
+      "input": "0 10 10",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2da83e36-1e14-4eaa-b0e8-1602627269c0",
+      "input": "5 20 3",
+      "output": "10",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3b126221-609b-48a5-bf1a-e6eb79dfe593",
+      "input": "9 18 27",
+      "output": "3384",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8128fa29-0ce5-4b30-b0dd-34cae2c469f3",
+      "input": "1 30 50",
+      "output": "1245",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b3f40e41-fcc2-4221-9177-910affba713a",
+      "input": "10 30 10",
+      "output": "520",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c71df491-0ddf-425d-a344-7378abc8a5d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

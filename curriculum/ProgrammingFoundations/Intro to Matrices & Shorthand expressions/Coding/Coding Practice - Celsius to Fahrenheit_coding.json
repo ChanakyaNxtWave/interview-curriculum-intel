@@ -1,0 +1,68 @@
+{
+  "question_id": "49fd7cbd-4e6d-4940-b41c-506a12be7364",
+  "short_text": "Celsius to Fahrenheit",
+  "content": "Write a program that reads a temperature in Celsius and converts it to Fahrenheit. Use shorthand if-else to label the result as `Cold` if the Fahrenheit temperature is below 50°F; otherwise, print `Warm`.\n\n\n<MultiLineNote>\nUse the formula `F = C * 9/5 + 32` for the conversion from Celsius to Fahrenheit.\n</MultiLineNote>\n\n#### Input\n\nA line containing a single integer representing the Celsius temperature.\n\n---\n\n#### Output\n\nThe output is a single word: `Cold` or `Warm`.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\n10\n```\n\nThe output should be:\n\n```\nWarm\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e47c3c06-d94f-4491-bf13-bb9f024acac8",
+      "code_content": "celsius = int(input())\nfahrenheit = celsius * 9/5 + 32\nprint(\"Cold\" if fahrenheit < 50 else \"Warm\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5f28ba59-1f83-4ba0-8c1d-ab41897fe0b8",
+      "input": "40",
+      "output": "Warm",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "82c9b20f-95b9-4ab0-a711-38a99373ccb6",
+      "input": "22",
+      "output": "Warm",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9b2d3b82-645e-4342-942f-35836b7acc72",
+      "input": "3",
+      "output": "Cold",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b259ae31-1d30-49f8-9a07-7315252beb62",
+      "input": "10",
+      "output": "Warm",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bf56a005-97b8-49c7-9b52-865986aac52b",
+      "input": "35",
+      "output": "Warm",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cc993a97-8968-4561-9f66-f911b204977b",
+      "input": "22",
+      "output": "Warm",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5adf6869-803e-47df-ab97-62917f9536af",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

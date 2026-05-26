@@ -1,0 +1,61 @@
+{
+  "question_id": "7012ca9d-642d-4e60-a1c5-133735bd4bd6",
+  "short_text": "Rotate D Times",
+  "content": "Write a program that reads the comma-separated integers and a positive integer `D`, then rotates the numbers `D` times to the left, and prints the rotated list.\r\n\r\n---\r\n\r\n#### Input  \r\nThe first line of input will be comma-separated integers.\r\n\r\nThe second line of input will be a positive integer representing `D`.\r\n\r\n---\r\n\r\n#### Output  \r\nThe output should be a single line containing a rotated **list**.\r\n\r\n---\r\n\r\n#### Explanation  \r\nFor example, if the given comma-separated integers are **`1,2,3,4,5`** and the positive integer `D = 2`,\r\n<img src=\"https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/Image+Pasted+at+2023-3-30+14-06.png\" alt=\"list rotation\">\r\n\r\nAfter rotating the comma-separated integers **2** times by left, the elements are  `3`, `4`, `5`, `1`, and `2`.\r\n\r\nSo, the output should be,\r\n\r\n```\r\n [3, 4, 5, 1, 2]\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "02c6813c-3ade-4e52-b288-f292f31ad104",
+      "code_content": "def convert_string_to_int(str_num_list):\n    new_list = []\n    for item in str_num_list:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nstr_num_list = input().split(\",\")\nrotate_times = int(input())\n\nint_list = convert_string_to_int(str_num_list)\nlen_of_list = len(int_list)\nval = rotate_times % len_of_list\n\nfirst_part = int_list[0:val]\nsecond_part = int_list[val:]\nsecond_part.extend(first_part)\nprint(second_part)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0be516f3-1af7-4df6-89f5-eae4a0637ce3",
+      "input": "3,4,5,6\n6",
+      "output": "[5, 6, 3, 4]\n",
+      "is_hidden": true,
+      "weightage": 15.0
+    },
+    {
+      "test_case_id": "397fa6b9-7588-458c-9c25-ad4197c0d960",
+      "input": "1,2,3,4,5\n2",
+      "output": "[3, 4, 5, 1, 2]\n",
+      "is_hidden": false,
+      "weightage": 15.0
+    },
+    {
+      "test_case_id": "89b52a53-3c3a-466f-97bc-44d855905fee",
+      "input": "1,3,5,7,9,11\n25",
+      "output": "[3, 5, 7, 9, 11, 1]\n",
+      "is_hidden": false,
+      "weightage": 15.0
+    },
+    {
+      "test_case_id": "b4a11768-5ef6-4fd4-bf3a-85765f087343",
+      "input": "6,8,9\n3",
+      "output": "[6, 8, 9]\n",
+      "is_hidden": true,
+      "weightage": 15.0
+    },
+    {
+      "test_case_id": "d3d84056-34f7-4672-968c-c955e5ed04b4",
+      "input": "10,12,10,15,-1,7,6,5,4,2,1,1,1\n11",
+      "output": "[1, 1, 10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1]\n",
+      "is_hidden": true,
+      "weightage": 15.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

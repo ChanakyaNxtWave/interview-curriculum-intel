@@ -1,0 +1,47 @@
+{
+  "question_id": "181132d9-5363-4e53-a8f9-93ffdb4fe4e5",
+  "short_text": "Inheritance Banking",
+  "content": "Complete the given **SavingsAccount** class by adding new features by following the given instructions.\n\n**Existing _Account_ class**:\n\nThe **Account** class models a general banking account with attributes for `account_number` and `balance` and a method to `withdraw()` money from the account.\n\n**Existing _CheckingAccount_ class**:\n\nThe **CheckingAccount** class is a subclass of **Account** that adds an `overdraft_limit` attribute and a `charge_fee()` method.\n\n**Features to be added to _SavingsAccount_ class**:\n\nThe **SavingsAccount** class should inherit from **CheckingAccount**. You need to add the following features to the **SavingsAccount** class:\n\n<details>\n\n<summary>**Features to be added to **_SavingsAccount_** class**</summary>\n\n- **Add below attributes**:\n - The **SavingsAccount** class should have an additional attribute `interest_rate`.\n- **Add below methods**:\n - Implement an `apply_interest()` method that increases the account balance by the amount of interest earned, which is the balance multiplied by the interest rate.\n  -  To calculate Insterest Use **Interest = Balance * Interest Rate**\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This coding question does not have the usual input/output testcases. The class defined by you will be tested internally to check whether the attributes and methods are present or not. The test case results will provide a rough description of the tests being verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0e353ba3-d64c-4a8a-9384-66d568f46278",
+      "code_content": "class Account:\n    def __init__(self, account_number, balance):\n        self.account_number = account_number\n        self.balance = balance\n\n    def withdraw(self, amount):\n        if amount > self.balance:\n            print(\"Insufficient balance!\")\n        else:\n            self.balance -= amount\n\nclass CheckingAccount(Account):\n    def __init__(self, account_number, balance, overdraft_limit):\n        super().__init__(account_number, balance)\n        self.overdraft_limit = overdraft_limit\n    \n    def charge_fee(self, fee):\n        self.balance -= fee\n\nclass SavingsAccount(CheckingAccount):\n    def __init__(self, account_number, balance, overdraft_limit, interest_rate):\n        super().__init__(account_number, balance, overdraft_limit)\n        self.interest_rate = interest_rate\n    \n    def apply_interest(self):\n        interest_earned = self.balance * self.interest_rate\n        self.balance += interest_earned\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    savings_account = SavingsAccount(account_number=\"12345678\", balance=1000, overdraft_limit=500, interest_rate=0.05)\n    print(savings_account.account_number)\n    print(savings_account.balance)\n    print(savings_account.overdraft_limit)\n    savings_account.apply_interest()\n    print(savings_account.balance)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "872e9cf7-8d31-4ad0-a730-f7e5ebd25385",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9b3fb829-fa36-4289-88c2-751d4a3a14dc",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: Method 'apply_interest()' is implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "dc6369fd-6357-465d-a60c-f35f51040fc9",
+      "input": "Checking Default Tests",
+      "output": "12345678\n1000\n500\n1050.0",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "17461f67-a7fd-46af-96c6-62ef30dd1e19",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

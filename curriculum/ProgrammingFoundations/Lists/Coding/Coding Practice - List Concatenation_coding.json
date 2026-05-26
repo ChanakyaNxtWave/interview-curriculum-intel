@@ -1,0 +1,61 @@
+{
+  "question_id": "9b75e06d-d540-4eae-ad51-82610a7ae772",
+  "short_text": "List Concatenation",
+  "content": "For this problem, the prefilled code will contain a list. You need to concatenate the given number to the list. The first list should have the number concatenated at the beginning. The second list should have the number concatenated at the end.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer.<hr><b>Output</b><br/><br/>The first line of output should be a list containing the given number at the beginning of the list.<br/>The second line of output should be a list containing the given number at the end of the list.<hr><b>Explanation</b><br/><br/>For example, if the given number is 20, by adding this to the existing list, the output should be as below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[20, 10, 20, 40, 100]\n[10, 20, 40, 100, 20]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "68b1fe11-a23b-4fab-8c91-03b439b026eb",
+      "code_content": "num_list = [10, 20, 40, 100]\nn = int(input())\n\nfirst_list = [n] + num_list\nsecond_list = num_list + [n]\n\nprint(first_list)\nprint(second_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "18609278-8187-4ab6-b3bc-617c9b5bb63a",
+      "input": "99",
+      "output": "[99, 10, 20, 40, 100]\n[10, 20, 40, 100, 99]\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "98255ffd-a56a-4d9d-9b55-8aa22c288d9a",
+      "input": "-86",
+      "output": "[-86, 10, 20, 40, 100]\n[10, 20, 40, 100, -86]\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b6c651a4-2e14-4f9e-a86d-4e8e851ef252",
+      "input": "0",
+      "output": "[0, 10, 20, 40, 100]\n[10, 20, 40, 100, 0]\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cfc73e69-2b8b-4822-b5da-de5a6257b860",
+      "input": "-100",
+      "output": "[-100, 10, 20, 40, 100]\n[10, 20, 40, 100, -100]\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e7bd7569-f33d-447a-b342-e98f24b5acae",
+      "input": "20",
+      "output": "[20, 10, 20, 40, 100]\n[10, 20, 40, 100, 20]\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

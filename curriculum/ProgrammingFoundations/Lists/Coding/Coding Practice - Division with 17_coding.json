@@ -1,0 +1,75 @@
+{
+  "question_id": "d8e407bd-763a-4e2e-9e60-470508aa834d",
+  "short_text": "Division with 17",
+  "content": "Given a number `N`, write a program that reads `N` inputs and prints the number without decimals of the quotient of `N` inputs when each input is divided by **17**, each on a new line.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain integers.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing the number without decimals of the quotient of `N` inputs when each input is divided by **17**, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 3`,\n\n- The three inputs are **5**, **98**, and **376**.\n\n- The quotient when **5** is divided by **17** is **0.294**. (`5 / 17 = 0.294`)\n  - The number without decimals of **0.294** is **0**.\n- The quotient when **98** is divided by **17** is **5.764**. (`98 / 17 = 5.764`)\n  - The number without decimals of **5.764** is **5**.\n- The quotient when **376** is divided by **17** is **22.117**. (`376 / 17 = 22.117`)\n  - The number without decimals of **22.117** is **22**.\n\nThe output should be,\n\n```\n0\n5\n22\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "548732c2-51dc-4def-8d24-7f50da4868c3",
+      "code_content": "number = int(input())\n\nfor each_number in range(number):\n    value = int(input())\n    \n    quotient = value // 17\n    \n    print(quotient)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "048045a4-2c86-4781-93f5-d1bd960fcd59",
+      "input": "5\n34\n57\n76\n23\n-38",
+      "output": "2\n3\n4\n1\n-3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "126aad7b-a53c-443a-ba7d-a34470a747a2",
+      "input": "7\n-9043869\n8720130\n-732482\n-1293584\n49783\n1997223\n6749200",
+      "output": "-531993\n512948\n-43088\n-76094\n2928\n117483\n397011",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "16932c8a-4ba6-4d38-b10a-55130abc9d3a",
+      "input": "3\n5\n98\n376",
+      "output": "0\n5\n22",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2cf89df7-605b-4d11-9053-3e5f1187c024",
+      "input": "2\n-3456\n-237",
+      "output": "-204\n-14",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d45ebf76-6004-455a-a6af-2a41071b913a",
+      "input": "4\n167\n669\n398\n245",
+      "output": "9\n39\n23\n14",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ed62f8e4-c236-4555-bd02-a8e1977efd16",
+      "input": "1\n91",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f674d026-6fa3-438c-9219-45cda06197ae",
+      "input": "6\n-46786\n52130\n-3248\n12345\n8753\n98723",
+      "output": "-2753\n3066\n-192\n726\n514\n5807",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "495578c0-94f1-4668-aea5-832a80712fdb",
+  "short_text": "Pyramid - 3",
+  "content": "Given a number `N`, write a program to print a **Pyramid** of `2 * N - 1` rows using stars (`*`).\r\n\r\n````\r\n* \r\n* * \r\n* * * \r\n* * \r\n*\r\n````\r\n\r\n<MultiLineNote>\r\nThere is a space after every star (`*`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `2 * N - 1` rows containing stars (`*`) as a **Pyramid** shown in the sample output. \r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 3`, \r\n\r\n- Print the stars (`*`) on **5** rows (`2 * 3 - 1`) as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-pyramid-3.png' widthPercent='50'/>\r\n\r\n<MultiLineNote>\r\nIn the given image, the Star in the box indicates a star and a space (\"* \").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n````\r\n* \r\n* * \r\n* * * \r\n* * \r\n*\r\n````",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7f1f9cf3-3b4d-47b0-b9aa-d8967ad84d2b",
+      "code_content": "number = int(input())\n\nfor each_number in range(number):\n    stars = \"* \" * (each_number + 1)\n    print(stars)\n    \nfor each_number in range(number):\n    stars = \"* \" * (number - each_number - 1)\n    print(stars)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "080fbeb8-ee26-4355-b73a-94b003d2f355",
+      "input": "1",
+      "output": "*",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "2c3a9ee3-4aba-427b-8b7c-5211a1d4aec2",
+      "input": "6",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n*",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "416c81b4-6773-4f6d-8410-088645bcf15a",
+      "input": "15",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * \n* * * * * * * * \n* * * * * * * \n* * * * * * \n* * * * * \n* * * * \n* * * \n* * \n*",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "5c723be2-3077-495f-aa3d-3890b0df863a",
+      "input": "4",
+      "output": "* \n* * \n* * * \n* * * * \n* * * \n* * \n*",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "90131d2b-2702-4419-a244-5d4cbe8ce521",
+      "input": "2",
+      "output": "* \n* * \n*",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "e8266bb2-ae4d-4e1e-9761-9b8ad8ed5002",
+      "input": "3",
+      "output": "* \n* * \n* * * \n* * \n*",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

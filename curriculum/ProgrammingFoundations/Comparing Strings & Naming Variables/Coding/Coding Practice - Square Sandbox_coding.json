@@ -1,0 +1,61 @@
+{
+  "question_id": "4e80189a-d356-4e2d-853b-43e7709267de",
+  "short_text": "Square Sandbox",
+  "content": "A group of friends is planning to build a square-shaped sandbox for children in their neighborhood. They need to determine the diagonal distance across the sandbox to plan the placement of decorative items. Write a program to calculate the diagonal length of the sandbox based on the side length provided by the friends.\n\n<MultiLineNote>\n\nTo calculate the diagonal of a square, use the formula:  \n**Diagonal = (side_length<sup>2</sup> + side_length<sup>2</sup>)<sup>0.5</sup>**.  \nThis formula is derived from the Pythagorean theorem, which relates the sides of a right triangle.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing an integer `side_length`, representing the length of one side of the sandbox.\n\n---\n\n#### Output\n\nA single line with a float value showing the diagonal length of the sandbox, rounded to two decimal places.\n\n---\n\n#### Explanation\n\nIf the `side_length` is `5`, the diagonal length is calculated as:  \n**Diagonal = (5<sup>2</sup> + 5<sup>2</sup>)<sup>0.5</sup> = 7.07**.  \n\nThe output should be **7.07**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9d75d2b9-d0b3-4aa1-a23d-71742dd6e917",
+      "code_content": "side_length = int(input())\ndiagonal = (side_length ** 2 + side_length ** 2) ** 0.5\nprint(round(diagonal, 2))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a3c6d8d-06bb-4dff-a8aa-67ed26c0df7b",
+      "input": "15",
+      "output": "21.21",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "6d4b6b6f-96b5-4999-b129-0d432b63c84d",
+      "input": "5",
+      "output": "7.07",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8a62de5f-a98e-4cbd-ba2f-ec86c7945b5f",
+      "input": "10",
+      "output": "14.14",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a5f145e2-cd8e-473e-80e3-265d769f6983",
+      "input": "12",
+      "output": "16.97",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e2e085b5-4214-4b8a-8f34-44802af65e2e",
+      "input": "20",
+      "output": "28.28",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e12f5290-9206-4570-818e-a229b46db048",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

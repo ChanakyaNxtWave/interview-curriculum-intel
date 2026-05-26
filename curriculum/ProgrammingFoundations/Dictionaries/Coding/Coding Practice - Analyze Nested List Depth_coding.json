@@ -1,0 +1,61 @@
+{
+  "question_id": "6e94ff7c-cb0c-411d-8ca1-20f7f7b97914",
+  "short_text": "Analyze Nested List Depth",
+  "content": "You are tasked with creating a program that allows users to input a nested list structure as a string. The program will calculate and print the maximum depth of the nested list.\n\nThe depth of a nested list is defined as the number of levels of nesting:\n\n- The outermost list has a depth of 1.\n- Each additional nested list increases the depth by 1.\n\nWrite a program that reads the input string, validate it as a well-formed nested list, and determine the maximum depth of the list.\n\n---\n\n#### Input\n\nThe input consists of a single string representing a valid nested list.\n\n---\n\n#### Output\n\nThe output should be a single integer representing the maximum depth of the nested list.\n\n---\n\n#### Explanation\n\nIf the input is,\n\n```\n[1, [2, [3]], [4]]\n```\n\nIn the nested list **[1, [2, [3]], [4]**], the maximum depth is calculated as follows:\n\n1. **Level 1** (Outermost list):\n - The list starts with **1** at depth **1**.\n2. **Level 2** (First Nested List):\n - Inside the main list, we encounter a nested list **[2, [3]]**.\n - The element **2** is at depth **2**.\n3. **Level 3** (Second Nested List):\n - Inside **[2, [3]]**, there is another nested list **[3]**.\n - The element 3 is at depth **3**.\n4. **Level 2** (Another Element):\n - Back in the main list, the element **4** is encountered.\n - Since it is not nested further, it remains at depth **2**.\n\nThe maximum depth of the list is **3**, because the deepest level of nesting contains the number **3**.\n\nThe Output should be\n\n```\n3\n```\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "72e89893-6019-44f3-b93b-dafdc172192f",
+      "code_content": "def max_depth_of_nested_list(s):\n    current_depth = 0\n    max_depth = 0\n    \n    for char in s:\n        if char == '[': \n            current_depth += 1\n            max_depth = max(max_depth, current_depth)\n        elif char == ']': \n            current_depth -= 1\n    \n    return max_depth\n\nnested_list_string = input()\nresult = max_depth_of_nested_list(nested_list_string)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "365fd0e4-a98c-4db1-ab7b-27f01665fbda",
+      "input": "[1, [2, [3]], [4]]",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5481ea2a-5eb5-4000-8727-448102c0ff2a",
+      "input": "[1, [2, [3, [4, [5]]]]]",
+      "output": "5",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6b7c0f79-1cfc-424e-964a-a587e502329b",
+      "input": "[0]",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "86722656-d3a3-40e2-b8e7-464cea0eca51",
+      "input": "[1,[2,[6,[7]]]]",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e94878ad-b343-42e1-96cf-c6c85445b45b",
+      "input": "[1, 2, 3]",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f065d38b-746c-48f1-ad2e-95b6dd5b62b4",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

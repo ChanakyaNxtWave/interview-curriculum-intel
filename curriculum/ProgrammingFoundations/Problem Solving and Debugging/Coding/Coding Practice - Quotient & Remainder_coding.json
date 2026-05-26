@@ -1,0 +1,391 @@
+{
+  "question_id": "ff372bc1-f0b9-4a9c-9e02-28a4270ca8b7",
+  "short_text": "Quotient & Remainder",
+  "content": "Write a program that reads two numbers `A` and `B` and prints the Quotient and Remainder when `A` is divided by `B`.\n\n<MultiLineNote>\n\nFor Example, if **5** is divided by **2** (**5/2**),\n\n_Divisor <--_  2 ) 5 ( 2  _--> Quotient_\n                           _4_      \n                    _---------_\n                           _1_  _--> Remainder_\n                         \n- Quotient is **2** (Quotient should be an integer).\n- Remainder is **1**\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\n\n---\n\n#### Output\n\nThe first line of output should be an integer that is the Quotient.\nThe second line of output should be an integer that is the Remainder.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 5` and `B = 2`,\n\n- The Quotient is **2** when **5** is divided by **2**.\n- The Remainder is **1** when **5** is divided by **2**.\n\nThe output should be,\n\n```\n2\n1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7e0cb9dd-d2b3-4735-a688-8f799df76b6d",
+      "code_content": "first_number = int(input())\nsecond_number = int(input())\n\nquotient = first_number / second_number\nquotient = int(quotient)\nremainder = first_number % second_number\n\nprint(quotient)\nprint(remainder)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0e98616c-cb43-4116-9ccd-315cb6449421",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n40\n20\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "2\n0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 40` and `B = 20`,\n\n- The Quotient is `2` when `40` is divided by `20`.\n\n- The Remainder is `0` when `40` is divided by `20`.\n\nThe output should be,\n\n```\n\n2\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8d6abf76-37c3-4243-892b-73af4228b683",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n7\n2\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "3\n1",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 7` and `B = 2`,\n\n- The Quotient is `3` when `7` is divided by `2`.\n\n- The Remainder is `1` when `7` is divided by `2`.\n\nThe output should be,\n\n```\n\n3\n1\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a691c1f7-01ec-4f78-aaf5-d19ddcf42352",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n52\n1\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "52\n0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 52` and `B = 1`,\n\n- The Quotient is `52` when `52` is divided by `1`.\n\n- The Remainder is `0` when `52` is divided by `1`.\n\nThe output should be,\n\n```\n\n52\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "456f64f0-fad1-4a26-933b-d027c9efe24b",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0202f6a8-885c-460c-b5a5-662047085d16",
+              "content": "To find the Divisor when `A` is divided by `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "32e724ef-cc87-41b0-9322-27dd0a20e4bd",
+              "content": "To find the Quotient when `A` is divided by `B`.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6675ea4f-4216-47d1-bffc-fb734adc58aa",
+              "content": "To find the Quotient and Remainder when `A` is divided by `B`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ad889557-7ef1-4330-a8be-49948da2cd03",
+              "content": "To find the Remainder when `A` is divided by `B`.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read two numbers `A` and `B` and find the Quotient and Remainder when `A` is divided by `B`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5a5fd97b-0110-43d2-8d55-e202fd513964",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n32\n7\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "584767d3-9aa5-4da9-af7e-0845b7ac7b64",
+              "content": "1\n4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5fa77702-e09a-4b1f-9e33-b4e2efaff37a",
+              "content": "1\n2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9082b727-c560-4411-9565-e3d36217d193",
+              "content": "4\n1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e0eded90-21e5-4aa1-a179-dcbf0b097ef0",
+              "content": "4\n4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 32` and `B = 7`,\n\n- The Quotient is `4` when `32` is divided by `7`.\n\n- The Remainder is `4` when `32` is divided by `7`.\n\nThe output should be,\n\n```\n\n4\n4\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "93360dcb-fbff-4fc5-9c82-509d7487e913",
+          "short_text": "",
+          "content": "What is meant by a Quotient?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2c95daa3-166c-4784-9f12-8d48cb2ba08b",
+              "content": "A resultant number that is produced when one number is divided by another.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "44235724-5c65-414c-8f82-cd30665ebe8f",
+              "content": "A number that is produced when one number is subtracted from another.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6188081e-1d8a-445b-b54b-ac69da7a5ed7",
+              "content": "The value that is left after division.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "70cd0b4d-22f0-4008-91d0-75caebddb54f",
+              "content": "A number that is produced when one number is multiplied by another.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "A quotient is a resultant number when one number is divided by the other number.\n\nFor example,\n\n```\n\nDivisor <--  2 ) 5 ( 2  --> Quotient\n                 4\n             ---------\n                 1  --> Remainder\n                    \n```\n\nFrom the above example the Quotient is `2`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9c8203e3-661b-4205-a3d9-a3f9fed3f98d",
+          "short_text": "",
+          "content": "Considering the given description the Quotient should be ______.",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1cf7bbc3-18e0-4d22-b283-c2152f8a5c5c",
+              "content": "a decimal number",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1e9186cd-b5b8-416b-aa13-e70b8bbfc081",
+              "content": "a float",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5150ec51-66c5-4ca0-9d3d-aa6a844ddb5d",
+              "content": "a string",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7e9f57fb-8e5b-4df4-99b5-392a13ab0a29",
+              "content": "an integer",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the given description, the Quotient should be an integer.\n\nFor example,\n\nIf **9** is divided by **2** `(9/2)`,\n\n```\nDivisor <--   2) 9 ( 4  --> Quotient\n                 8\n             ---------\n                 1  --> Remainder\n\n```\n\n- Quotient is `4` (**Quotient should be an integer**).\n\n- Remainder is `1`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a8ec5044-8035-4e8a-9a42-8ff02860bbb6",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "663a74e6-672a-4fa9-ab7e-fdff60383d55",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6e87bd44-b38e-4c20-999e-70d93a3781f1",
+              "content": "The first line of output should be a string.\n\nThe second line of output should be a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8f3c362a-5255-45ff-a418-b8e540f43ccb",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "da5b95ae-6145-4a82-8770-096202c0ca2f",
+              "content": "The first line of output should be an integer.\n\nThe second line of output should be an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be,\n\n- The first line of output should be an integer representing the Quotient.\n\n- The second line of output should be an integer representing the Remainder.\n\nFor example,\n\nIf the given numbers are `A = 15` and `B = 3`,\n\n- The Quotient is `5` when `15` is divided by `3`.\n\n- The Remainder is `0` when `15` is divided by `3`.\n\nThe output should be,\n\n```\n\n5\n0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bf35caa8-7ddb-42c7-b3d4-a6b713a1f6f2",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "73f528a2-0c25-4744-85ef-1ec528da29ca",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a6e65ec2-8362-4ae2-ab3f-1c2cc27e5ef7",
+              "content": "The first line of input contains a float.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e3395b1b-03f4-411b-a096-f58150330912",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f6f0d7ef-a5e8-4b80-91b6-d529def2ccbc",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.\n\nFor example,\n\n```\n205\n42\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d6485e39-ec69-40fe-b436-8db2ac9a1002",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "04d52018-fa42-4acf-afb4-3916982e4cb8",
+              "content": "22",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2d422167-d618-4d88-92f1-33c88702ca57",
+              "content": "58\n12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ee91465e-7a35-4b9d-a833-144360be2b0d",
+              "content": "19\n2.5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f9c60f13-21e8-421f-8e09-4fb5f40650fa",
+              "content": "18\n4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n18\n4\n```\n\n**Input 2**\n\n```\n58\n12\n```\n\nThe above two inputs are valid because,\n\n- The first line of input contains an integer.\n\n- The second line of input contains an integer.\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0a084ade-7dd4-499d-809a-9ff0cdc3080e",
+      "input": "5\n2",
+      "output": "2\n1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3aad426c-4f33-4506-b057-c7f7b1d91f13",
+      "input": "6000\n2",
+      "output": "3000\n0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4604ad27-6d4b-4b5b-aed9-42af92765bdd",
+      "input": "30\n10",
+      "output": "3\n0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "600124d8-cc41-4398-8dfb-d252a8ff6d16",
+      "input": "5486\n325",
+      "output": "16\n286",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9d774adc-cc03-4c78-b235-7520bea7b092",
+      "input": "1234\n1",
+      "output": "1234\n0",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b4aed024-b983-4a8a-9a29-4bdb53b937b3",
+      "input": "34\n34",
+      "output": "1\n0",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cc109d8c-1323-4057-bc79-6ac4fd9baad1",
+      "input": "4321\n5",
+      "output": "864\n1",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

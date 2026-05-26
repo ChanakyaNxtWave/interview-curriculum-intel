@@ -1,0 +1,61 @@
+{
+  "question_id": "43712c9f-82b1-400f-9580-5bc77e8bb496",
+  "short_text": "Shuffle String",
+  "content": "Given a string and `N` indices, where `N` is the length of the string. Write a program to print the string after shuffling the characters in the order of the given `N` indices.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input will contain a string.\r\nThe next N lines will contain an integer on each line.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing the shuffled string.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given string is `goindc`,\r\n\r\n- The length of the string is **6**.\r\n- The given **6** indices are **5**, **1**, **4**, **2**, **3** and **0**.\r\n- The character present at index **5** is **c**, at index **1** is **o**, at index **4** is **d**, at index **2** is **i**, at index **3** is **n** and at index **0** is **g**.\r\n- The shuffled string is **coding**.\r\n\r\nThe output should be **coding**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "67d2dfd3-6d1b-428c-baa8-bbb52ccff6d8",
+      "code_content": "word = input()\n\nlen_of_word = len(word)\n\nshuffled_word = \"\"\nfor i in range(len_of_word):\n    index = int(input())\n    shuffled_word = shuffled_word + word[index]\n\nprint(shuffled_word)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a72999c-f098-4569-938b-d7f3cf46534d",
+      "input": "abc\n0\n1\n2\n",
+      "output": "abc\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "1b53d07a-9ca4-4825-8099-1568c37f03fe",
+      "input": "wrpoe\n2\n3\n0\n4\n1",
+      "output": "power\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "1fc25c1e-8414-4f61-a618-7ca938895672",
+      "input": "goindc\n5\n1\n4\n2\n3\n0\n",
+      "output": "coding\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "bd3adb3f-6fb6-4bf0-9370-55a1e598faf5",
+      "input": "optsr\n3\n1\n0\n4\n2",
+      "output": "sport\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c6d437b8-41c6-406b-bada-ee2e4a9ab44e",
+      "input": "eimag\n1\n2\n3\n4\n0\n",
+      "output": "image\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "c60dd549-5caa-4e1f-8386-8b286c38da19",
+  "short_text": "Consecutive Sum Triangle",
+  "content": "Given a list of integers, write a program to print a consecutive sum triangle.<br/>Consecutive Sum Triangle is a triangle, where the first level contains all elements in the inputs. <br/>From next level, print the sum of consecutive elements of the previous level.<hr><b>Input</b><br/><br/>The input will be a single line containing comma-separated integers.<hr><b>Output</b><br/><br/>The output should be M number of lines equal to the length of the given list.<br/>Each line should contain a list of consecutive sum of numbers of the previous line.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;3,5,7,9&quot;, as the input list contain four numbers, the output should be four lines.<br/>The first line of the triangle should contain all the elements.<br/>The second line should be the sum of consecutive elements of the previous line, which is the first line.<br/>[3+5, 5+7, 7+9] -&gt; [8, 12, 16]<br/>Similarly for the next lines until a single element occurs in the last line.<br/>So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[3, 5, 7, 9]\n[8, 12, 16]\n[20, 28]\n[48]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "d6ef7e43-ce62-4459-96d0-a70ce601ddff",
+      "code_content": "def get_con_sum_list(int_list):\n    con_sum_list = []\n    end_index = len(int_list) - 1\n    for i in range(end_index):\n        con_sum = int_list[i] + int_list[i + 1]\n        con_sum_list.append(con_sum)\n    return con_sum_list\n\n\ndef print_sum_triangle(int_list):\n    while len(int_list) > 1:\n        con_sum_list = get_con_sum_list(int_list)\n        print(con_sum_list)\n        int_list = con_sum_list\n\n\ndef convert_string_to_int(str_num_list):\n    new_list = []\n    for item in str_num_list:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nstr_num_list = input().split(\",\")\nint_list = convert_string_to_int(str_num_list)\nprint(int_list)\nprint_sum_triangle(int_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3114e993-887a-43b1-976b-c8fcb8ed453e",
+      "input": "8,6",
+      "output": "[8, 6]\n[14]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "31790ffd-93b6-405c-a048-a54415ab7db8",
+      "input": "89,24,48,3382,432,3247,9374",
+      "output": "[89, 24, 48, 3382, 432, 3247, 9374]\n[113, 72, 3430, 3814, 3679, 12621]\n[185, 3502, 7244, 7493, 16300]\n[3687, 10746, 14737, 23793]\n[14433, 25483, 38530]\n[39916, 64013]\n[103929]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "ae62151a-31a8-4e3a-8e8d-069ad1e8ef85",
+      "input": "3,5,7,9",
+      "output": "[3, 5, 7, 9]\n[8, 12, 16]\n[20, 28]\n[48]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "bd785c94-bf7e-438c-960a-a8c2cdeb4a63",
+      "input": "0,1,2,3,4,5,6",
+      "output": "[0, 1, 2, 3, 4, 5, 6]\n[1, 3, 5, 7, 9, 11]\n[4, 8, 12, 16, 20]\n[12, 20, 28, 36]\n[32, 48, 64]\n[80, 112]\n[192]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "eb1ccb45-e80e-48eb-9a28-50b404fb5c28",
+      "input": "100,99,98,95,96,94",
+      "output": "[100, 99, 98, 95, 96, 94]\n[199, 197, 193, 191, 190]\n[396, 390, 384, 381]\n[786, 774, 765]\n[1560, 1539]\n[3099]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "769093e5-58e2-4125-b690-639f0b7a81b6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6f41608c-d46f-411c-803f-6e4fd9ab3e3f",
+  "topic_name": "Problem Solving and Built-in Functions",
+  "course_title": "Programming Foundations"
+}

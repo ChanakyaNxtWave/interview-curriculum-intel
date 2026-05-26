@@ -1,0 +1,61 @@
+{
+  "question_id": "1c6fdb83-70f9-4ce8-b3e6-9c1362d2de71",
+  "short_text": "Prime Numbers from 1 to N",
+  "content": "Given a number `N`, write a program to print all the **Prime Numbers** from **1** to `N`.\r\n\r\n<MultiLineNote>\r\nA **Prime Number** is a positive integer greater than **1** that has no factors other than **1** and itself.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should contain the **Prime Numbers** from **1** to `N`, each on a new line.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 10`,\r\n\r\n- The numbers from **1** to **10** are **1, 2, 3, 4, 5, 6, 7, 8, 9,** and **10**.\r\n- The numbers that has no factors other than **1** and itself from **1** to **10** are **2, 3, 5,** and **7**.\r\n  The output should be\r\n\r\n```\r\n2\r\n3\r\n5\r\n7\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a4ea2966-8221-4f60-8cb5-5ac5109a96a3",
+      "code_content": "n = int(input())\n\nfor number in range(2, n+1):\n    no_of_factors = 0\n    for i in range(2, number):\n        if (number % i) == 0:\n            no_of_factors = no_of_factors + 1\n\n    if no_of_factors == 0:\n        print(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "532519a7-64b5-405d-b8c3-e95104abbf2f",
+      "input": "44",
+      "output": "2\n3\n5\n7\n11\n13\n17\n19\n23\n29\n31\n37\n41\n43\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "57270c01-ca2a-4591-93d5-ba9efd0db05a",
+      "input": "10",
+      "output": "2\n3\n5\n7\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8866a702-8527-41f8-990d-d9c3c0ba6080",
+      "input": "37",
+      "output": "2\n3\n5\n7\n11\n13\n17\n19\n23\n29\n31\n37\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9e671686-eb24-4017-8d92-098a8b5cb647",
+      "input": "50",
+      "output": "2\n3\n5\n7\n11\n13\n17\n19\n23\n29\n31\n37\n41\n43\n47\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c81ca4dc-e951-43a3-bef6-f98c42babfab",
+      "input": "25",
+      "output": "2\n3\n5\n7\n11\n13\n17\n19\n23\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

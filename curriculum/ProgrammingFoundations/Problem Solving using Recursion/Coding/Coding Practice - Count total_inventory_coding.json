@@ -1,0 +1,61 @@
+{
+  "question_id": "bc728529-995d-4659-b0bf-4856f50aa26e",
+  "short_text": "Count total_inventory",
+  "content": "A shopkeeper has a list of integers representing the quantity of each item in stock and wants the total sum of all these quantities.\n\n\nYour task is to help the event planner by **Complete the method `total_inventory(items)`** that takes a list of integers and returns their sum.\n\n\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe **`total_inventory()`** method takes one parameter `items`, a list of integers representing the quantities of different items. \n\n\n---\n\n#### Output:\n\nThe **`total_inventory()`** method should **return a integer**, representing the total sum of all quantities in stock.\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n10 5 15 20\n```\n\n- Sum of the quantities of the given will 10 + 5 + 15 + 20 = **`50`** \n\n\nThus, The expected output would be :\n\n```\n50\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "3123214b-f144-46f1-838c-6b1d3d55b8c4",
+      "code_content": "def total_inventory(items):\n    if not items:\n        return 0\n    return items[0] + total_inventory(items[1:])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "253fbcdb-35ff-49ec-86fb-4c37fee6a0b0",
+      "input": "0 30 20 10 30 50 302 70 50",
+      "output": "562",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4906f8aa-c2ec-4b15-808e-19e72740b70b",
+      "input": "50 60 80 90",
+      "output": "280",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "94821179-ab22-4c16-b25a-cc4a5aad7fae",
+      "input": "10 5 15 20",
+      "output": "50",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c352570b-021c-4cbf-aaec-086476f38079",
+      "input": "1 2 3",
+      "output": "6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "cbe4ce5f-4805-4994-a2bd-14fa1ceb5462",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "efaa14e6-913e-41ae-b575-e2a588294405",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

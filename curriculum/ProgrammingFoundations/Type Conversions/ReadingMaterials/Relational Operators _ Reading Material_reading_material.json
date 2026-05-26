@@ -1,0 +1,13 @@
+{
+  "unit_title": "Relational Operators | Reading Material",
+  "content": "# Relational Operators\n\nRelational Operators are used to compare values.    \nGives `True` or `False` as the result of a comparison.    \n    \nThese are different relational operators    \n\n| Operator | Name |  \n|-----------|-----|  \n| > | Is greater than  |  \n| < | Is less than  |  \n| == | Is equal to  |  \n| <= | Is less than or equal to |  \n| >= | Is greater than or equal to |    \n| != | Is not equal to  |  \n    \n#### Code  \n  \n```python  \nprint(5 < 10)\nprint(2 > 1)\n```  \n  \n#### Output  \n  \n```\nTrue\nTrue  \n```\n\n### Possible Mistakes\n\n**Mistake - 1**\n\n#### Code\n\n```python  \nprint(3 = 3)  \n```\n\n#### Output\n\n```\n\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?  \n```\n\n**Mistake - 2**\n  \n#### Code\n\n```python  \nprint(2 < = 3)  \n```\n\n#### Output\n\n```  \n\nSyntaxError: invalid syntax  \n```\n\nSpace between relational operators `==`, `>=`, `<=` , `!=` is not valid in Python.\n\n\n### Comparing Numbers\n\n#### Code  \n  \n```python  \nprint(2 <= 3)  \nprint(2.53 >= 2.55)  \n```\n  \n#### Output  \n  \n```\nTrue  \nFalse\n```\n\n### Comparing Integers and Floats\n\n#### Code  \n  \n```python  \nprint(12 == 12.0)  \nprint(12 == 12.1)  \n```\n  \n#### Output  \n  \n```\nTrue  \nFalse\n```\n\n\n### Comparing Strings\n\n#### Code  \n  \n```python  \nprint(\"ABC\" == \"ABC\")  \nprint(\"CBA\" != \"ABC\")  \n```\n  \n#### Output  \n  \n```\nTrue  \nTrue\n```\n\n\n### Case Sensitive\n\n#### Code  \n  \n```python  \nprint(\"ABC\" == \"abc\")  \n```\n  \n#### Output  \n  \n```\n\nFalse  \n```\n  \nPython is case sensitive. \nIt means `X` (Capital letter) and `x` (small letter) are not the same in Python.\n\n## Strings and Equality Operator\n\n#### Code  \n  \n```python  \nprint(True == \"True\")  \nprint(123 == \"123\")  \nprint(1.1 == \"1.1\")  \n```\n\n#### Output  \n  \n```\nFalse  \nFalse\nFalse\n```",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "548e32e0-a3e9-477c-b9e0-efce9b6a6562",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "e03da18b-8523-445e-81e9-8519b1c16a61",
+  "unit_name": "Relational Operators | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

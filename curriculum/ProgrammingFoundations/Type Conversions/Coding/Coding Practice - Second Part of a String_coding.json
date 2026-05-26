@@ -1,0 +1,61 @@
+{
+  "question_id": "78c009e2-3814-48fa-a645-5ae4e97ba69d",
+  "short_text": "Second Part of a String",
+  "content": "Write a program that reads a string and prints the second part of the string that has digits.\r\n\r\n<MultiLineNote>\r\nThe given string contains 2 parts\r\n\r\n* The first part contains only two characters.\r\n* The second part contains only digits.\r\n\r\nExample: OF63, ab395\r\n\r\n</MultiLineNote>\r\n\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the second part of the string that has digits.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given string is **OF63**,\r\n\r\n* The first part of the string contains **OF**.\r\n* The second part of the string contains **63**.\r\n\r\nThe output should be **63**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "aad5d2d7-ae80-4da7-88ef-230b33d77a1c",
+      "code_content": "string = input()\n\nstart_index = 2\nnumber = string[start_index:]\nnumber = int(number)\n\nprint(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0c53b83c-c243-4251-ab52-7dbad8d9bbe0",
+      "input": "OF63",
+      "output": "63",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8ea7e31b-7283-44de-acc9-93dc66f3008f",
+      "input": "QA1000",
+      "output": "1000",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "94cadbbd-fd92-4e29-b621-9491cae5bfd3",
+      "input": "ZA9",
+      "output": "9",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9553d6fb-88d0-453d-8ba0-018b2f0c73f7",
+      "input": "ab395",
+      "output": "395",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a61a6ab3-cea3-4bb2-a0fe-1cf8be357173",
+      "input": "Az1006",
+      "output": "1006",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

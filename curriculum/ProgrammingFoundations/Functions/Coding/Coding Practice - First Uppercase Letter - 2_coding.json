@@ -1,0 +1,82 @@
+{
+  "question_id": "2cfc9d2c-0907-4b3a-b319-f85f9c987c44",
+  "short_text": "First Uppercase Letter - 2",
+  "content": "A function is given in the prefilled code that takes a string `S` as an argument.\n\nWrite a program to return the first uppercase letter in the given string `S`.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that is the first uppercase letter in the given string `S`.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"javaScripT\"`,\n\n- The characters of the string are **j**, **a**, **v**, **a**, **S**, **c**, **r**, **i**, **p**, and **T**.\n- The uppercase letters in the given string are **S** and **T**.\n- The first uppercase letter is **S**.\n\nThe output should be **S**.\n\n<br/>\n\nFor example, if the given string is `S = \"reactJS\"`,\n\n- The characters of the string are  **r**, **e**, **a**, **c**, **t**, **J** and **s**.\n- The uppercase letters in the given string are **J** and **S**\n- The first uppercase letter is **J**.\n\nThe output should be **J**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2a852eb9-894b-4f52-809f-8d51ebe2f26e",
+      "code_content": "def get_first_upper_letter(string):\n\n    for each_character in string:\n        if each_character == each_character.upper():\n            first_upper_case_letter = each_character\n            break\n    return first_upper_case_letter\n\nstring = input()\nupper_case_character = get_first_upper_letter(string)\nprint(upper_case_character)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3ba4ad96-e3b5-465e-9e4e-d105311f0c57",
+      "input": "indiAn",
+      "output": "A",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4ed7df13-5434-43aa-8c19-9d1ac8308b89",
+      "input": "inDuctioN",
+      "output": "D",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "52ef58b8-75a5-4d3b-9f4b-79230932e7f3",
+      "input": "weLfare",
+      "output": "L",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "78b8ec81-5710-4a23-b8fd-0b111d8c6796",
+      "input": "generaTor",
+      "output": "T",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "7e71a7f1-9e20-4806-a278-d71d90e1fb91",
+      "input": "javaScripT",
+      "output": "S",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "90cb15e7-7e5a-4d2e-9489-a661136763e7",
+      "input": "reactJS",
+      "output": "J",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9578f1ee-c061-4c54-ba63-517033c95b93",
+      "input": "BaseBall",
+      "output": "B",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d2c21d80-a524-4c94-8690-deff84ff85d4",
+      "input": "mississiPPi",
+      "output": "P",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

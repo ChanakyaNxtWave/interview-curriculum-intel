@@ -1,0 +1,33 @@
+{
+  "question_id": "ce1dd195-9458-49a2-b173-6c319e98955b",
+  "short_text": "Compound Assignment with Lists",
+  "content": "Write a program that assigns the list `list_a` given in the prefilled code to another list `list_b`.  \n\nUse the `+=` operator to append `[30, 40]` to `list_a`.  \n\nFinally, print both `list_a` and `list_b`.\n\n---\n\n#### Output\n\nThe output should display both `list_a` and `list_b`, each on a new line, after the compound assignment in the format shown in the sample output.\n\n---\n\n#### Explanation\n\nInitially, both `list_a` and `list_b` refer to the same list `[10, 20]`.  \nUsing the `+=` operator to append `[30, 40]` modifies `list_a` in place, so both `list_a` and `list_b` will reflect this change.\n\nFor example, the output will be:\n\n```\nlist_a: [10, 20, 30, 40]\nlist_b: [10, 20, 30, 40]\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f7389be2-1dec-4773-94b2-bb6baaa9f1c2",
+      "code_content": "list_a = [10, 20]\nlist_b = list_a\nlist_a += [30, 40]\n\nprint(\"list_a:\", list_a)\nprint(\"list_b:\", list_b)\n\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "e5c9ddee-073f-4eea-b1d9-5c18f273372a",
+      "input": "",
+      "output": "list_a: [10, 20, 30, 40]\nlist_b: [10, 20, 30, 40]",
+      "is_hidden": false,
+      "weightage": 15.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

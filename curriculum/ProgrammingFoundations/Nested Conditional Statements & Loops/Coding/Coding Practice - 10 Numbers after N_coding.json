@@ -1,0 +1,377 @@
+{
+  "question_id": "1ecd10a6-53a2-4067-af44-a09604ee7552",
+  "short_text": "10 Numbers after N",
+  "content": "Write a program that reads a number `N` and prints **10** numbers after `N`.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should contain **10** numbers after `N`, each on a new line.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 2`,\r\n\r\n* The **10** numbers after **2** are **3**, **4**, **5**, **6**, **7**, **8**, **9**, **10**, **11** and **12**.\r\n\r\nThe output should be,\r\n\r\n```\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10\r\n11\r\n12\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e477ee52-dfde-47e9-9057-cbb1b4889e54",
+      "code_content": "number = int(input())\n\ncounter = 0\n \nwhile counter < 10:  \n    counter = counter + 1\n    number = number + 1  \n    print(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0a18866d-ade4-48cc-b8b4-a4619f4ed489",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n0\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 0`,\n\n* The **10** numbers after **0** are **1**,  **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9** and **10**.\n\nThe output should be,\n\n```\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9d0ea57e-afa9-4a28-97fb-f41c6bb0505b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n4\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5\n6\n7\n8\n9\n10\n11\n12\n13\n14",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 4`,\n\n* The **10** numbers after **4** are **5**, **6**, **7**, **8**, **9**, **10**, **11**, **12**, **13** and **14**.\n\nThe output should be,\n\n```\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f7a6af19-3614-4279-8732-9ef357acfa69",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n9\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "10\n11\n12\n13\n14\n15\n16\n17\n18\n19",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 9`,\n\n* The **10** numbers after **9** are **10**, **11**, **12**, **13**, **14**, **15**, **16**, **17**, **18** and **19**.\n\nThe output should be,\n\n```\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "3ed5e71a-3237-4e45-85c6-c38f331311e8",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "28c278db-2b22-4006-a7bc-06368eb8a332",
+              "content": "```\n24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4b5d13e7-e2dc-42e9-8b95-0a55e24a700b",
+              "content": "```\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4cad4f5a-997c-4234-ba11-d7ba3df65235",
+              "content": "```\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8fb503c1-b938-4b6c-9c7c-97765fe240ef",
+              "content": "```\n2\n4\n6\n8\n10\n12\n14\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output 1**\n\n```\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n```\n\n**Output 2**\n\n```\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n```\n\nThe above two outputs are valid because they contain **10** numbers and each is on a new line.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "49fc7c93-0231-4bf6-97e6-ea97f146ad86",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "323b8e4e-71f6-4d0b-a8ca-7befdc5de59a",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b8935b66-534e-43dd-b9a2-8f4c70e157f9",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e3502f89-0d0b-49d8-9612-a72cd5cfdd81",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ed319fba-faaa-4d8c-aa91-ccf5aac27b92",
+              "content": "The input will be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing `N`.\n\nFor example, **20**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "85c437f4-98bc-4688-999b-66040dce0219",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "51818503-67ad-4d57-9a7c-03e8b09a4cdb",
+              "content": "Print `10` numbers before the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "938b304b-b735-4f51-8d74-6c881fe28d5c",
+              "content": "Print `10` numbers after the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ba346e45-c8d9-44e5-8376-ec82fd22addb",
+              "content": "Print `10` characters after the given character.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d7c316c2-2fcf-4375-a0ba-39136ecbee07",
+              "content": "Print `10` even numbers after the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the number `N` and print **10** numbers after the given number `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "951327fd-f9c2-4b55-90ab-d43977ced4e5",
+          "short_text": "",
+          "content": "How many numbers should print after the number `N`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1840015d-4df5-46da-8628-31072e1bd4af",
+              "content": "10",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b7447949-fd9d-4ce5-9684-2c979d78fbc8",
+              "content": "20",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c8d360ac-736d-4837-914f-a4b8e1fd4440",
+              "content": "9",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d6c244b9-20f0-4882-baec-571e6298acf2",
+              "content": "11",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "`10` numbers should print after the number `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a2bdeb4a-469f-4934-acf4-b0ea965f785e",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "54fcba24-5f7d-4fc6-9c20-c37395797442",
+              "content": "The output should contain **12** numbers after `N`, each on a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b3eb08c3-f9b9-4cad-95e9-2ce58929ca6d",
+              "content": "The output should contain **10** numbers after `N`, each on a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d140da80-b661-4a74-a548-08e8c813a503",
+              "content": "The output should contain **10** numbers after `N`, in a single line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d307bed3-5414-4802-a117-c0c3b61e2d76",
+              "content": "The output should contain **10** strings after `N`, each on a new line.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should contain **10** numbers after `N`, each on a new line.\n\nFor example, \n\nIf the given number is `N = 5`,\n\n* The **10** numbers after **5** are **6**, **7**, **8**, **9**, **10**, **11**, **12**, **13**, **14** and **15**.\n\nThe output should be,\n\n```\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d0cb4b9d-d848-4409-921e-33ce825fde90",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "1e4219c9-4c0f-4d39-a56d-2c8a5a4d6fa6",
+              "content": "6\n14",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b5d72e28-dd05-4df4-91b4-f2273c9cc2fc",
+              "content": "25",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ed4527c1-2178-4eb5-a315-f8e1d36ada42",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f3fab1a6-2f13-42cb-bfef-ca02ceae702b",
+              "content": "13.0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n12\n```\n\n**Input 2**\n\n```\n25\n```\nThe above two inputs are valid because they consist of a single line containing an integer `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e4d75581-3d3f-4d81-bda2-73870196c7fd",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n50\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4a2e40c2-111c-46e5-ab74-59a594c510d4",
+              "content": "```\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "75175501-73ab-40de-a09b-d490ad5e6564",
+              "content": "```\n41\n42\n43\n44\n45\n46\n47\n48\n49\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8da9d5d0-3f13-4cff-a6d3-bd3acbd00cad",
+              "content": "```\n50\n52\n54\n56\n58\n60\n62\n64\n66\n68\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9a371478-508e-4786-afb8-71ae915e1cdf",
+              "content": "```\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 50`,\n\n* The **10** numbers after **50** are **51**,  **52**, **53**, **54**, **55**, **56**, **57**, **58**, **59** and **60**.\n\nThe output should be,\n\n```\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "4fbc7f9e-3166-43ff-9660-fc05f1a69c10",
+      "input": "35",
+      "output": "36\n37\n38\n39\n40\n41\n42\n43\n44\n45",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9ef0ae2c-8658-4dec-82c4-a83f95549f2c",
+      "input": "60",
+      "output": "61\n62\n63\n64\n65\n66\n67\n68\n69\n70",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "b4b0e7c1-924b-438e-9410-33cc8684f066",
+      "input": "95",
+      "output": "96\n97\n98\n99\n100\n101\n102\n103\n104\n105",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "ca1c06cd-0cbd-4491-8d44-e7f72fdd199d",
+      "input": "11",
+      "output": "12\n13\n14\n15\n16\n17\n18\n19\n20\n21",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "db2ee88c-4815-4b8d-8270-065da03ffcac",
+      "input": "2",
+      "output": "3\n4\n5\n6\n7\n8\n9\n10\n11\n12",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

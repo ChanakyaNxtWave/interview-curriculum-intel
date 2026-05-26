@@ -1,0 +1,89 @@
+{
+  "question_id": "312ad2b5-6eb7-4062-8aeb-b8307ede5014",
+  "short_text": "First Even Number",
+  "content": "Given a number `N`, write a program that reads `N` inputs and prints the first **Even** number among the `N` inputs.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the first **Even** number among the given `N` inputs.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 6`,\n\n- The given **6** numbers are,\n\n```\n3\n5\n4\n6\n1\n2\n```\n- Even numbers in the given numbers are **4, 6,** and **2**\n- The first even number among the given numbers is **4**.\n\nThe output should be **4**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7626b5a0-8f63-4900-b15d-e1fb0b142d54",
+      "code_content": "n = int(input())\n\nfor i in range(n):\n    each_number = int(input())\n    is_even = (each_number % 2 == 0)\n    \n    if is_even:\n        print(each_number)\n        break",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1242180f-317e-47c8-bea5-bd110d632491",
+      "input": "1\n-52",
+      "output": "-52",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "240ab247-db79-4776-a7eb-c70329919abf",
+      "input": "3\n-55\n-66\n-98",
+      "output": "-66",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "676efa65-c733-4d39-b49e-336cecdad854",
+      "input": "7\n21\n15\n59\n32\n60\n47\n36",
+      "output": "32",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6aa09d87-8997-4071-8378-00b021f89be2",
+      "input": "4\n22\n34\n58\n966",
+      "output": "22",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "8d2a3c66-2e38-475f-bb69-a299403d03e8",
+      "input": "3\n11111\n2\n-5",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b8925f96-d87a-4393-8879-962914c6e016",
+      "input": "6\n13\n15\n21\n25\n37\n50",
+      "output": "50",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f838cd0e-03ea-406f-b0aa-e9874a4e5f34",
+      "input": "5\n-100\n55\n65\n28\n96",
+      "output": "-100",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f98443cc-5189-4e47-bd26-bd01bfcd6aa6",
+      "input": "6\n3\n5\n4\n6\n1\n2",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fc16fb92-a127-4de0-aefb-4da91cd50fdb",
+      "input": "2\n17\n0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

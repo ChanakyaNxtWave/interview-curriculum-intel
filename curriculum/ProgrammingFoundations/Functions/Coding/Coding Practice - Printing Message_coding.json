@@ -1,0 +1,61 @@
+{
+  "question_id": "e1d88ca1-d7b0-41b2-b456-063398b40c0c",
+  "short_text": "Printing Message",
+  "content": "For this problem, the prefilled code will contain a function. Write a function with two arguments that prints the message as expected<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Akhil is 15 years old.\n</code></pre><hr><b>Input</b><br/><br/>The first line of input will contain a string.<br/>The second line of input will contain a positive integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the message.<hr><b>Explanation</b><br/><br/>For example, if the given person name is &quot;Akhil&quot; and the age is 15, your code should print the message as shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">Akhil is 15 years old.\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "9ab0a642-78b6-4288-8403-7caf2116648c",
+      "code_content": "def message(arg_1, arg_2):\n    msg = arg_1 + \" is \" + str(arg_2) + \" years old.\"\n    print(msg)\n\n\nname = input()\nage = int(input())\nmessage(name, age)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "656015a2-dbcc-4b3a-9e11-1ae687c8e42a",
+      "input": "Gopal\n35",
+      "output": "Gopal is 35 years old.\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "88a3dbfe-5feb-42bc-8e90-dcdef3b83421",
+      "input": "Akhil\n15",
+      "output": "Akhil is 15 years old.\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8e3f86e8-d025-40af-af14-89829f1519dd",
+      "input": "Neha\n10",
+      "output": "Neha is 10 years old.\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e2c01677-4053-4f6c-9479-aed163acf665",
+      "input": "Latha\n55",
+      "output": "Latha is 55 years old.\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "f6c3d5c2-8802-4739-9fa9-eee644b3437c",
+      "input": "Naresh Kumar\n9",
+      "output": "Naresh Kumar is 9 years old.\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

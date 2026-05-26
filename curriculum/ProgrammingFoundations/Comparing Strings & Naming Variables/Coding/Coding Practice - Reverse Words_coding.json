@@ -1,0 +1,96 @@
+{
+  "question_id": "2c7d7902-d543-4c1f-ae3f-fd05ae04baf2",
+  "short_text": "Reverse Words",
+  "content": "In a small library, books are arranged on shelves with titles labeled in a mix of uppercase and lowercase letters, along with some special characters. A librarian wants to reverse the sequence of letters in each title while keeping the positions of special characters and spaces unchanged. Write a program to help the librarian achieve this.\n\n<MultiLineNote>\n\n- Letters include both uppercase (`A-Z`) and lowercase (`a-z`) characters.\n- Special characters such as `!`, `@`, `#`, etc., and spaces remain in their original positions.\n- Only the letters in the titles should be reversed.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a string `S`, representing the title of a book.\n\n---\n\n#### Output\n\nA single line with the title string after reversing only the letters.\n\n---\n\n#### Explanation\n\nIf the input is `Ab,c De!f`, the reversed title should be `fe,D cb!A`. Here, only the letters are reversed, while special characters and spaces remain unchanged.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6b16c199-1416-4546-a362-dfbece63f0a2",
+      "code_content": "S = input()\nn = len(S)\nresult = ''  \nletters = ''  \nfor i in range(n - 1, -1, -1):\n    char = S[i]\n    if ('A' <= char <= 'Z') or ('a' <= char <= 'z'):\n        letters += char\nletter_index = 0\nfor i in range(n):\n    char = S[i]\n    if ('A' <= char <= 'Z') or ('a' <= char <= 'z'):\n        result += letters[letter_index]\n        letter_index += 1\n    else:\n        result += char\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "05b38ce0-b2ee-4b89-b3d3-6cd9c7299e69",
+      "input": "Keep Calm & Code On",
+      "output": "nOed oCml & aCpe eK",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "25eb1f35-6238-4874-8950-ae031b19c037",
+      "input": "abc!def ghi",
+      "output": "ihg!fed cba",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5e55268e-de6f-449e-8b07-d377d6696b20",
+      "input": "123!abc#XYZ$",
+      "output": "123!ZYX#cba$",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6b904380-0d95-4611-a64c-a539d5e20280",
+      "input": "a!@#$%^&*()z",
+      "output": "z!@#$%^&*()a",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "82cf517d-ed22-4c93-9d2f-23576c196ce0",
+      "input": "!!!!",
+      "output": "!!!!",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "98a5b3a6-e700-4ffd-b708-fd82400ad6f6",
+      "input": "Python@3.9",
+      "output": "nohtyP@3.9",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9e6cbd91-a9f5-4d71-b188-9abf73b4d4a9",
+      "input": "Lorem Ipsum! Dolor Sit Amet.",
+      "output": "temAt iSrol! oDmus pIm eroL.",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a4829b6c-cec4-4f66-a0df-e2165b467e89",
+      "input": "Ab,c De!f",
+      "output": "fe,D cb!A",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4f8131c-6b28-43d1-9dce-a36cc4cb579c",
+      "input": "Hello, World!",
+      "output": "dlroW, olleH!",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e51934df-e72b-48b7-9418-9e4c1c868062",
+      "input": "123!abc",
+      "output": "123!cba",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e12f5290-9206-4570-818e-a229b46db048",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

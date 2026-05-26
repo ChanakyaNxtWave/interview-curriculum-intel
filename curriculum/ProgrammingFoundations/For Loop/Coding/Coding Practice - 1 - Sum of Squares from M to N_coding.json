@@ -1,0 +1,75 @@
+{
+  "question_id": "41507b40-b202-47b7-b7bc-861b81b08b6e",
+  "short_text": "Sum of Squares from M to N",
+  "content": "Write a program that reads two numbers `M` and `N`, and prints the sum of squares of numbers from `M` to `N`.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the sum of squares of numbers from `M` to `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 2` and `N = 4`,\n\n- Numbers from **2** to **4** are **2**, **3**, and **4**.\n- The squares of numbers from **2** to **4** are **4**, **9**, and **16**.\n- The sum of the squares of numbers from **2** to **4** is **29**. (**4 + 9 + 16 = 29**)\n\n|Number (X) | Square of Number (X<sup>2</sup>)| Previous Sum | Previous Sum + (X<sup>2</sup>) = Current Sum |\n|---|---| -- |---|\n|2 | 4 | 0 |0 + 4 = 4 |\n|3 | 9 | 4 |4 + 9 = 13 |\n|4 | 16 | 13 |13 + 16  = 29 |\n\nThe output should be **29**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "1e9ff231-a60c-491f-a902-6fa5a3d75aea",
+      "code_content": "start_number = int(input())\nend_number = int(input())\n\nsum_of_squares = 0\n\nfor number in range(start_number, end_number + 1):\n    square = number ** 2\n    sum_of_squares = sum_of_squares + square\n    \nprint(sum_of_squares)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0d027130-feeb-4f81-9bac-5eb1f8122d33",
+      "input": "-7\n12",
+      "output": "790",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "22dbae0f-d585-4930-90a8-3cecd7a00907",
+      "input": "9\n47",
+      "output": "35516",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "2c063cef-bb6a-498b-9498-e3d702c4b833",
+      "input": "3\n8",
+      "output": "199",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "73b2504f-9e6b-44ea-9eba-cf3a2d60e037",
+      "input": "2\n4",
+      "output": "29",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c50e6716-fff3-4879-9809-26e41c296912",
+      "input": "-5\n-2",
+      "output": "54",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ce1741a2-2de8-4330-adf0-e9b71952f510",
+      "input": "56\n170",
+      "output": "1595165",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e69b1326-b9ba-4efd-a394-3369aecafd61",
+      "input": "698\n1324",
+      "output": "661410805",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "02d10da8-6fb1-414f-8d0c-d6c72781f9fb",
+  "short_text": "Repeated String Match",
+  "content": "In a world where **string manipulation** is crucial for various applications, you are tasked with determining how many times a base string can be repeated to form another target string. This is particularly useful in scenarios such as text processing, pattern recognition, and data compression.\n\nWrite a program that **reads two strings**, a base string A and a target string B. Your goal is to find the minimum number of times you need to repeat the string A so that it contains the string B as a substring. If it is not possible to achieve this even after multiple repetitions, print **-1**.\n\n---\n\n#### Input\n\nThe input consists of:\n\n- Two strings:\n - The first **string A** (the base string).\n - The second **string B** (the target substring).\n\n---\n\n#### Output\n\nThe output should be an **integer** representing the minimum number of times A must be repeated to contain B as a substring. If it cannot be achieved, output **-1**.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\nabcd\ncdabcdab\n```\n\nIn this example:\n\n- The base string **A** is \"**abcd**\".\n- The target substring **B** is \"**cdabcdab**\".\n\nBy repeating A three times, we get \"**abcdabcdabcd**\", which contains \"**cdabcdab**\" as a substring.\n\nThe Output should be\n\n```\n3\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c40ada79-1216-4495-b6e4-e4098b842565",
+      "code_content": "def repeated_string_match(A, B):\n    count = 1\n    repeated_A = A\n    \n    while len(repeated_A) < len(B):\n        repeated_A += A\n        count += 1\n        \n    if B in repeated_A:\n        return count\n    if B in repeated_A + A:\n        return count + 1\n    \n    return -1\n\nA = input().strip()\nB = input().strip()\nprint(repeated_string_match(A, B))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4f6c1ecf-d00d-4942-b1ec-26c93abeb6b5",
+      "input": "hello\nlohellohe",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "56ea5bae-98e3-40f3-9d5e-d79a38f1d8ca",
+      "input": "abcd\nxyz",
+      "output": "-1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "61b89ea2-2862-4ea1-aa9c-9081dbd3a0ef",
+      "input": "abcd\ncdabcdab",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "77f2e3e3-cc71-4585-a58d-648c71a5ac7e",
+      "input": "xyz\nxyzxyzxyz",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b340a66a-8a37-4618-91ef-3dd62b328fca",
+      "input": "a\naaabaaa",
+      "output": "-1",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

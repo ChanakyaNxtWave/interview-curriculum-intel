@@ -1,0 +1,61 @@
+{
+  "question_id": "bee4395b-fc4c-4904-be03-a2c10ef9b9f2",
+  "short_text": "Reverse the digits",
+  "content": "Write a program to reverse the digits of a given two-digit number.<hr><b>Input</b><br/><br/>The input will be a single line containing a integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the reverse of the given two-digit number.<hr><b>Explanation</b><br/><br/>For example, if the given two-digit number is 21, the reverse of 21 is 12.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "c1c600e2-956d-4aaf-b535-0f067fa51d84",
+      "code_content": "word = input()\nfirst_digit = word[0]\nsecond_digit = word[1]\nreversed_number = second_digit + first_digit\nprint(reversed_number)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5b365c55-8142-475d-8fd2-b11d8a61eba2",
+      "input": "11",
+      "output": "11\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "71cb64d4-de9a-4d54-93a4-5a3c513f5878",
+      "input": "21",
+      "output": "12\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "adb35dd7-46da-4096-ad65-96594c5b5a19",
+      "input": "42",
+      "output": "24\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b361d6eb-55d8-4eec-ac4a-d444ecf69d21",
+      "input": "98",
+      "output": "89\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f0870c0a-e717-42a8-a3f4-5482759fe9a7",
+      "input": "69",
+      "output": "96\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

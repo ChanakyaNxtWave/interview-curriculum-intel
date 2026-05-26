@@ -1,0 +1,75 @@
+{
+  "question_id": "9c7b5a96-dc86-4f0c-9de4-b387c3c09541",
+  "short_text": "Hollow Right Angled Triangle - 4",
+  "content": "Given a number `N`, write a program to print a **Hollow Right Angled Triangle** of `N` rows using pluses (`+`) and hashes (`#`).\r\n\r\nThe first line contains hashes (`#`) and the next `N - 1` lines contain pluses (`+`)\r\n\r\n```\r\n# # # # # #\r\n+       +\r\n+     +\r\n+   +\r\n+ +\r\n+\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every plus (`+`) and every hash (`#`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing hashes (`#`) and pluses (`+`) as a **Hollow Right Angled Triangle** as shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 6`,\r\n\r\n- Print Hashes (`#`) and Pluses (`+`) on **6** rows as shown in the given image.\r\n  - The first row contains Hashes (`#`).\r\n  - The next **5** (`6 - 1`) rows contain Pluses (`+`).\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-4.png' widthPercent='65'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\r\n- The Hash in the box indicates hash and a space (\"# \").\r\n- The Plus in the box indicates a plus and a space (\"+ \").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n# # # # # #\r\n+       +\r\n+     +\r\n+   +\r\n+ +\r\n+\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e8dcffe3-8ebe-4d83-8273-cb2efaf8b3e0",
+      "code_content": "n = int(input())\n\nfirst_row = \"# \" * n \nprint(first_row)\n\nfor i in range(1, n - 1):\n    middle_spaces_count = (2 * n) - (2 * (i + 1)) - 2\n    middle_spaces = \" \" * middle_spaces_count\n    row = \"+ \" + middle_spaces + \"+ \"\n    print(row)\n\nif(n > 1):\n    last_row = \"+\"\n    print(last_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00e74393-1547-4f8a-ae4f-ab5051761095",
+      "input": "7",
+      "output": "# # # # # # # \n+         + \n+       + \n+     + \n+   + \n+ + \n+",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "0c4d8d34-8d7a-4906-ac97-1d9a3cb3f8e7",
+      "input": "10",
+      "output": "# # # # # # # # # # \n+               + \n+             + \n+           + \n+         + \n+       + \n+     + \n+   + \n+ + \n+",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "2a21d8c5-9026-456a-8519-aa25957ca5d5",
+      "input": "25",
+      "output": "# # # # # # # # # # # # # # # # # # # # # # # # # \n+                                             + \n+                                           + \n+                                         + \n+                                       + \n+                                     + \n+                                   + \n+                                 + \n+                               + \n+                             + \n+                           + \n+                         + \n+                       + \n+                     + \n+                   + \n+                 + \n+               + \n+             + \n+           + \n+         + \n+       + \n+     + \n+   + \n+ + \n+",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2b39595b-a9f3-4f3f-b9f8-673803a55917",
+      "input": "1",
+      "output": "#",
+      "is_hidden": true,
+      "weightage": 19.0
+    },
+    {
+      "test_case_id": "780e617d-18c8-4986-b582-3d0f89eeab31",
+      "input": "6",
+      "output": "# # # # # # \n+       + \n+     + \n+   + \n+ + \n+",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9a5f7ae3-57b3-499b-bb0a-5a8365fc4555",
+      "input": "5",
+      "output": "# # # # # \n+     + \n+   + \n+ + \n+",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f1d030a5-4c4d-4826-846e-12f05c418d54",
+      "input": "2",
+      "output": "# # \n+",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

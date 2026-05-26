@@ -1,0 +1,47 @@
+{
+  "question_id": "c94b2b05-d64c-412f-a994-237a04c8fda9",
+  "short_text": "SavingsAccount Interest",
+  "content": "Complete the given **SavingsAccount** class by adding new features according to the following instructions.\n\n**Existing _SavingsAccount_ class**:\n\nThe existing **SavingsAccount** class has only a _pass_ statement. Remove the _pass_ statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to the _SavingsAccount_ class**</summary>\n\n- **Add the following attributes**:\n  - `account_number`: A string representing the account number.\n  - `balance`: A float representing the current balance of the account.\n  - `interest_rate`: A float representing the annual interest rate (as a percentage).\n\n- **Add the following methods**:\n  - `calculate_interest()`: This method should calculate the interest based on the current balance and interest rate. It should return the interest amount without changing the balance.\n    - Formula to calculate the interest `Interest = Balance * (Interest Rate / 100)`\n  - `apply_interest()`: This method should apply the calculated interest to the balance by increasing the balance with the interest amount.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes and methods are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e7cad428-4a8e-4f5c-8520-6c2793658514",
+      "code_content": "class SavingsAccount:\n    def __init__(self, account_number, balance, interest_rate):\n        self.account_number = account_number\n        self.balance = balance\n        self.interest_rate = interest_rate\n    \n    def calculate_interest(self):\n        return (self.balance * self.interest_rate) / 100\n    \n    def apply_interest(self):\n        interest_amount = self.calculate_interest()\n        self.balance += interest_amount\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    account = SavingsAccount(account_number=\"12345678\", balance=1000.0, interest_rate=5.0)\n    print(account.account_number)\n    print(account.balance)\n    print(account.interest_rate)\n    interest = account.calculate_interest()\n    print(interest)\n    account.apply_interest()\n    print(account.balance)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0968f767-341c-4f6f-9faa-4f3e30ef8577",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "dbdf304c-5463-4613-acec-fe4eedfee8dc",
+      "input": "Checking if methods are implemented",
+      "output": "PASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fd1cc62b-e37c-417e-a3a1-89a7a6611161",
+      "input": "Checking Default Tests",
+      "output": "12345678\n1000.0\n5.0\n50.0\n1050.0",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "bc815d70-10d9-4b4a-839e-856131b68997",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

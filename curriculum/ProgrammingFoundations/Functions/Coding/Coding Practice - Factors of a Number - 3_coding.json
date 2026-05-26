@@ -1,0 +1,75 @@
+{
+  "question_id": "b313791c-d12b-4634-9d73-557592325415",
+  "short_text": "Factors of a Number - 3",
+  "content": "A function is given in the prefilled code that takes a number `N` as an argument.\n\nWrite a program that returns the factors of the given number `N` separated by a space as shown in the sample output.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string of space separated numbers that are factors of `N` as shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 6`,\n\n- The factors of **6** are **1**, **2**, **3**, and **6**.\n\nThe output should be, \n\n```\n1 2 3 6\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d00e6395-1eea-4999-ad2f-870f9c8f391a",
+      "code_content": "def factors_of_n(number):\n    factors = []\n    \n    for each_number in range(1, number + 1):\n        if number % each_number == 0:\n            factors += [str(each_number)]\n    \n    factors_separated_by_space = \" \".join(factors)\n            \n    return factors_separated_by_space\n\n\nnumber = int(input())\nresult = factors_of_n(number)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1e909ca2-8d50-4c35-9322-1fb072287688",
+      "input": "519",
+      "output": "1 3 173 519",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "1f0d4d79-54c5-43e2-b553-05cf4ad23d98",
+      "input": "7",
+      "output": "1 7",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2ee27c37-63eb-445b-b59b-e89168b3afe9",
+      "input": "10",
+      "output": "1 2 5 10",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8dd9b126-cfab-483c-8272-9032ac6d09e7",
+      "input": "6",
+      "output": "1 2 3 6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9e6e9338-f8d7-477e-90f7-d7a817a39a14",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c0bfa797-4b17-4f6c-9d5f-e0b8112be6a7",
+      "input": "15",
+      "output": "1 3 5 15",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fff1f27d-1f10-4ca5-8acd-9a5e00d860e4",
+      "input": "54",
+      "output": "1 2 3 6 9 18 27 54",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

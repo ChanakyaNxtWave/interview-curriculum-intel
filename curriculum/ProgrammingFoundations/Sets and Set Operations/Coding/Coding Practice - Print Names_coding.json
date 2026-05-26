@@ -1,0 +1,61 @@
+{
+  "question_id": "9630f6df-1ad3-4acd-beff-5ce74e34b921",
+  "short_text": "Print Names",
+  "content": "Write a program that reads a string `S` containing space-separated strings from the user and forms a set from these strings. The program should then Print each element of the updated set on a new line in sorted order.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated strings to form the set.\n\n---\n\n#### Output\n\nThe program should output each each element of the updated set on a new line in sorted order.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana orange grape\n```\n\n- In this example, the input contains the strings `apple`, `banana`, `orange`, and `grape`. \n- After removing duplicates and sorting, the elements in the set are printed in alphabetical order: `apple`, `banana`, `grape`, and `orange`.\n\nThe output should be:\n\n```\napple\nbanana\ngrape\norange\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "72bdf57e-e184-4fbd-a37f-37be6d7015d9",
+      "code_content": "s = input().strip().split()\nunique_items = set(s)\n\nupdated_list = []\n\nfor item in unique_items:\n    updated_list.append(item)\n\nsorted_list=sorted(updated_list)\n\nfor item in sorted_list:\n   print(item)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "537b9543-174a-49f3-8912-15be4d5f6025",
+      "input": "apple banana orange grape",
+      "output": "apple\nbanana\ngrape\norange",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "613703c7-2710-405b-8cde-63f4471fb1ec",
+      "input": "hannah igor hannah igor jack",
+      "output": "hannah\nigor\njack",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "75d0b5dd-3a2b-4b78-85ff-34695a51a717",
+      "input": "kathy lucas kathy lucas mia",
+      "output": "kathy\nlucas\nmia",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7f78a096-6592-44ab-a29b-5e4a2e0642fd",
+      "input": "dave eve dave frank",
+      "output": "dave\neve\nfrank",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f3b04ed0-b12c-4fac-a219-2fca3f1eb32e",
+      "input": "grace grace grace",
+      "output": "grace",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ceb957b7-1aa1-42e3-97ba-77c6e832caae",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

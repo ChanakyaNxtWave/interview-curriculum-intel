@@ -1,0 +1,144 @@
+{
+  "question_id": "0cf39d38-7994-441d-a6cc-660821417ff7",
+  "short_text": "Equal to",
+  "content": "Write a program that reads two words and checks if the given two words are the same.\n\n---\n\n#### Input\n\nThe first line of input contains a string.\nThe second line of input contains a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the given two words are the same, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given words are **Jam** and **Jam**, \n\nThe output should be **True** as both the words **Jam** and **Jam** are the same.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "31bd6cb0-679f-4fdb-ad19-94de53a97be9",
+      "code_content": "first_word = input()\nsecond_word = input()\n\nresult = first_word == second_word  \nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0398ddff-cb20-405c-9989-7497acf7d5ff",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\nS\nS\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given words are <b>S</b> and <b>S</b>. The output should be <b>True</b> as both the words <b>S</b> and <b>S</b> are the same.",
+            "content_type": "HTML"
+          }
+        },
+        {
+          "question_id": "0ef18427-06ba-4d11-bc0e-edd8958e7f38",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\nWeek\nWeak\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given words are <b>Week</b> and <b>Weak</b>. The output should be <b>False</b> as both the words <b>Week</b> and <b>Weak</b> are not same.",
+            "content_type": "HTML"
+          }
+        },
+        {
+          "question_id": "c137fadc-e1de-4e1a-a9da-61645cdb1bc7",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\nReel\nReel\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given words are <b>Reel</b> and <b>Reel</b>. The output should be <b>True</b> as both the words <b>Reel</b> and <b>Reel</b> are the same.",
+            "content_type": "HTML"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "80aad9c5-55c1-4a9b-b4b6-80941081fd46",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\nReel\nReal\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given words are <b>Reel</b> and <b>Real</b>. The output should be <b>False</b> as both the words <b>Reel</b> and <b>Real</b> are not same.",
+            "content_type": "HTML"
+          }
+        },
+        {
+          "question_id": "a046a650-73b5-4900-9b21-b3c7208d572f",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\nWeek\nWeek\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given words are <b>Week</b> and <b>Week</b>. The output should be <b>True</b> as both the words <b>Week</b> and <b>Week</b> are the same.",
+            "content_type": "HTML"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "3818d6d8-0a6f-46e3-9f77-1f31dc5e881a",
+      "input": "Jam\nJam",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "45814586-e198-419a-ba3c-a98608bae09a",
+      "input": "season\nreason",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "4c3b509e-212f-4552-bdf2-a797a3472730",
+      "input": "PreFeRenCe\nPreFeRenCe",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "545284a7-4f0d-45ca-9204-9aa4222e51dc",
+      "input": "Dog\nCow",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4c07a7a-a796-4e4a-b48c-508079df41ba",
+      "input": "motorcycle\nMotorcycle",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "d6b89e5d-e636-430e-acd4-db3fc2e2c901",
+      "input": "Screen\nScreen",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

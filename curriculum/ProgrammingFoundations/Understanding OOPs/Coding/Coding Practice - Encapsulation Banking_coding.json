@@ -1,0 +1,47 @@
+{
+  "question_id": "eaa0580d-6f15-40d1-bd98-2102810dfe86",
+  "short_text": "Encapsulation Banking",
+  "content": "Complete the given **CheckingAccount** class by adding new features by following the given instructions.\n\n**Existing _CheckingAccount_ class**:\n\nThe existing **CheckingAccount** class has only a `pass` statement. Remove the `pass` statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to _CheckingAccount_ class**</summary>\n\n- **Add below attributes**\n  - The **CheckingAccount** class should have the following attributes:\n    - **account_number**: A string representing the account number.\n    - **balance**: A float representing the current balance of the account.\n    - **overdraft_limit**: A float representing the limit to which the account can be overdrawn.\n\n- **Add below methods**\n  - **withdraw(amount)**: This method should decrease the balance by the amount specified. If the withdrawal would cause the balance to fall below the overdraft limit, the method should print \"Insufficient funds\" and not perform the withdrawal.\n  - **charge_fee(fee)**: This method should deduct a fee from the balance.\n  - **get_balance()**: This method should return the current balance of the account.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d820b681-7553-4de2-8335-8a7403b26d92",
+      "code_content": "class CheckingAccount:\n    def __init__(self, account_number, balance, overdraft_limit):\n        self.account_number = account_number\n        self.balance = balance\n        self.overdraft_limit = overdraft_limit\n\n    def withdraw(self, amount):\n        if self.balance - amount < self.overdraft_limit:\n            print(\"Insufficient funds\")\n        else:\n            self.balance -= amount\n\n    def charge_fee(self, fee):\n        self.balance -= fee\n\n    def get_balance(self):\n        return self.balance\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    account = CheckingAccount(account_number=\"123456789\", balance=1000.0, overdraft_limit=-500.0)\n    print(account.account_number)\n    print(account.balance)\n    print(account.overdraft_limit)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "18ded490-da7d-475c-a8d8-17354b278946",
+      "input": "Checking methods",
+      "output": "Insufficient funds\nPASS\nPASS\nPASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b53b7a9f-7054-47f6-8243-9996dea5d54b",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ecf0dd93-08b2-43f5-8f55-7bd5d1a57960",
+      "input": "Checking Default Tests",
+      "output": "123456789\n1000.0\n-500.0",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "bc815d70-10d9-4b4a-839e-856131b68997",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

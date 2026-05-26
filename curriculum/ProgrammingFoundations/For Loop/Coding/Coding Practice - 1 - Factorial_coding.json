@@ -1,0 +1,61 @@
+{
+  "question_id": "e73ff989-199e-40de-b0b4-1c32f027f0da",
+  "short_text": "Factorial",
+  "content": "Write a program to print the factorial of `N`.Factorial is the product of all positive integers less than or equal to `N`.\r\n\r\n<MultiLineNote>\r\n\r\nThe **factorial** of **0** is **1**.\r\n</MultiLineNote>\r\n\r\n----\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a positive integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\nThe output should be a single line containing the factorial of the given number `N`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`, \r\n\r\n- The factorial of **4** is **24** .`(4 × 3 × 2 × 1 = 24)`\r\n\r\nSo, the output should be **24**.\r\n\r\n\r\nFor example, if the given number is `N = 7`, \r\n\r\n- The factorial of **7** is **5040**. `(7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040)`\r\n\r\nSo the output should be **5040**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2033e890-7b02-42fc-9f59-736a67e3d700",
+      "code_content": "number = int(input())\n\nfactorial = 1\nfor i in range(1, number + 1):\n    factorial = factorial * i\n\nprint(factorial)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "8391d7eb-11f4-445b-a170-d2f717aa5754",
+      "input": "7",
+      "output": "5040\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "94f3e064-d60f-4b91-a6ef-89ddc1ec41d7",
+      "input": "0",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b3c9e0eb-73bb-4336-a615-7e9f432812ea",
+      "input": "4",
+      "output": "24\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c19d7f7b-f3b2-4dca-ac52-4951ea32651e",
+      "input": "14",
+      "output": "87178291200\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c1c35423-b58a-4b6b-a661-8e14b297982d",
+      "input": "10",
+      "output": "3628800\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "7862c64e-a0ae-457e-9a0b-4d879eeb63be",
+  "short_text": "Grade Mapping",
+  "content": "Imagine you are a teacher who wants to analyze the scores of your students in a recent exam. You have a list of scores, and you want to apply a grading scale to these scores. However, you want to first ensure that only scores above a certain threshold are considered for grading. \n\nYour task is to write a program that reads the input for the number of students and their scores. Then, filter out any scores that are below the threshold and use `map` to convert the valid scores into letter grades based on the following scale:\n\n- **A**: 90 and above\n- **B**: 80 to 89\n- **C**: 70 to 79\n- **D**: 60 to 69\n- **F**: Below 60\n\n<MultiLineNote>\n\n- A score is considered valid if it is greater than or equal to the specified threshold.\n- The grading scale is applied only to valid scores.\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line contains an integer `N`, representing the number of students.\n- The second line contains an integer `T`, representing the threshold score.\n- The next `N` lines each contain an integer representing the score of each student.\n\n---\n\n#### Output\n\nA list of letter grades corresponding to the valid scores.\n\n---\n\n#### Explanation\n\nIf you have 5 students with scores as follows:\n\n- 95\n- 82\n- 58\n- 76\n- 90\n\nAnd if your threshold is set at **60**, then the output should be \n\n```\n['A', 'B', 'C', 'A']\n```\nBecause:\n\n- Scores below **60** (like **58**) are filtered out.\n- The valid scores **95**, **82**, **76**, and **90** correspond to grades **A**, **B**, **C**, and **A** respectively.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "fa8ca7a2-03da-417c-8ebc-874cf69e0ae7",
+      "code_content": "N = int(input())\nT = int(input())\n\nscores = [int(input()) for i in range(N)]\n\ndef is_valid(score):\n    return score >= T\n\ndef grade(score):\n    if score >= 90:\n        return 'A'\n    elif score >= 80:\n        return 'B'\n    elif score >= 70:\n        return 'C'\n    elif score >= 60:\n        return 'D'\n    else:\n        return 'F'\n\nvalid_scores = filter(is_valid, scores)\ngrades = list(map(grade, valid_scores))\n\nprint(grades)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6e6a7e6e-ae5f-481f-bf70-649d1bc54baf",
+      "input": "3\n50\n45\n55\n60",
+      "output": "['F', 'D']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ae56d508-8ce0-4d4d-ad68-52bfcafcd475",
+      "input": "5\n60\n95\n82\n58\n76\n90",
+      "output": "['A', 'B', 'C', 'A']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d43d8533-b144-47d3-a879-2e7680864ad4",
+      "input": "5\n80\n80\n90\n70\n60\n50",
+      "output": "['B', 'A']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f38afe6a-4169-4f6b-bc8a-7c1746da0207",
+      "input": "4\n70\n65\n85\n90\n55",
+      "output": "['B', 'A']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fe9e3c16-21d0-479e-982a-e8c20933c62a",
+      "input": "6\n75\n88\n92\n67\n54\n73\n80",
+      "output": "['B', 'A', 'B']",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7f68984f-446c-43bc-a2f6-b66d1992c341",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

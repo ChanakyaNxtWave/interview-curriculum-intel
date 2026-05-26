@@ -1,0 +1,75 @@
+{
+  "question_id": "b392b23c-e3c5-4845-ab21-b7bb51a721f5",
+  "short_text": "Sum of N Terms in the Series - 2",
+  "content": "Given two numbers `X` and `N`, write a program to find the sum of `N` terms in the given series. Then, print the sum by rounding up to **4** decimals in the given series.\n\n**Series:**\n\n<div style=\"background-color: #3c4257; padding: 15px; color: #f8f8f2;border-radius: 4px; margin: 10px;font-size: 18px;font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace\">\nX,X<sup>2</sup>,X<sup>3</sup>,X<sup>4</sup>, ... N terms\n</div>\n\n<br/>\n\n**Terms in the given series:**\n\n| Term Number | Term          | Power |\n| ----------- | ------------- | ----- |\n| First Term  | X<sup>1</sup> | 1     |\n| Second Term | X<sup>2</sup> | 2     |\n| Third Term  | X<sup>3</sup> | 3     |\n| Fourth Term | X<sup>4</sup> | 4     |\n| ..          | ..            | ..    |\n\n---\n\n#### Input\n\nThe first line of input contains a float representing `X`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a float representing the sum of the series **(X,X<sup>2</sup>,X<sup>3</sup>,X<sup>4</sup>,...)** rounded up to **4** decimals up to `N` terms.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `X = 2.16` and `N = 4`,\n\n- Number of terms is **4**.\n\n- The terms from the **first term** to the **fourth term** in the given series are **2.16** (2.16<sup>1</sup>), **4.6656** (2.16<sup>2</sup>), **10.077696** (2.16<sup>3</sup>), **21.76782336** (2.16<sup>4</sup>).\n\n**Terms in the given series:**\n\n| Term Number | Term (X = 2.16)                | Power |\n| ----------- | ------------------------------ | ----- |\n| First Term  | 2.16<sup>1</sup> (2.16)        | 1     |\n| Second Term | 2.16<sup>2</sup> (4.6656)      | 2     |\n| Third Term  | 2.16<sup>3</sup> (10.077696)   | 3     |\n| Fourth Term | 2.16<sup>4</sup> (21.76782336) | 4     |\n\n- The sum of the series up to **4** terms is **38.67111936**. (`2.16 + 4.6656 + 10.077696 + 21.76782336 = 38.67111936`)\n- The sum of the series rounded up to **4** decimals is **38.6711**.\n\nThe output should be **38.6711**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "bca9c3bc-4e90-4e10-bd13-471b4cdc8a0c",
+      "code_content": "x = float(input())\nnumber = int(input())\n\nsum_of_numbers = 0\n\nfor power in range(1, number + 1):\n    term = x ** power\n    sum_of_numbers += term\n\n\nprint(round(sum_of_numbers, 4))\n\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10c5441d-8fcd-463a-8ba0-b15b774f0dc7",
+      "input": "0.999999\n5",
+      "output": "5.0",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "35b38875-1621-4826-8d84-f7505802e986",
+      "input": "2.16\n4",
+      "output": "38.6711",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4757f471-c4fc-41a2-8944-5a49d92ead87",
+      "input": "3.14\n3",
+      "output": "43.9587",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7f819e51-c4db-47bd-a154-8857d9c6d624",
+      "input": "10.5864\n4",
+      "output": "13869.1988",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "b25d066b-0c9c-497c-bcd6-62c685eef075",
+      "input": "9.15275\n1",
+      "output": "9.1527",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "b365bdbb-a117-413e-bd25-36a0107a744d",
+      "input": "7.41\n15",
+      "output": "12889417708892.857",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e16802e5-f8c0-4775-91a5-5e440f49405f",
+      "input": "5.789\n7",
+      "output": "263379.2558",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

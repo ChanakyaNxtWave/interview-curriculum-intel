@@ -1,0 +1,75 @@
+{
+  "question_id": "6ce90345-b4b3-4481-8f08-d376b9fa0291",
+  "short_text": "M pattern with *",
+  "content": "Given a number `N`, write a program to print the letter **M** of `N` rows with two **Solid Right Angled Triangles** of `N` rows using stars (`*`).\n\n````\n*                     * \n* *                 * * \n* * *             * * * \n* * * *         * * * * \n* * * * *     * * * * * \n* * * * * * * * * * * *\n````\n\n<MultiLineNote>\nThere is a space after every star (`*`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing stars (`*`) as the letter **M** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 6`, \n\n- Print the stars (`*`) on **6** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-mpattern-with-stars.png' widthPercent='90'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates the two spaces (\"&nbsp;&nbsp;\").\n- The Star in box indicates the star and a space (\"* \")\n\n</MultiLineNote>\n\nThe output should be,\n\n````\n*                     * \n* *                 * * \n* * *             * * * \n* * * *         * * * * \n* * * * *     * * * * * \n* * * * * * * * * * * *\n````",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "cfb8d364-b884-4e82-90a9-4836c3128fa8",
+      "code_content": "no_of_rows = int(input())\n\nfor each_number in range(1, no_of_rows + 1):\n    first_triangle_stars = \"* \" * each_number\n    first_triangle_spaces = \"  \" * (no_of_rows - each_number)\n\n    first_triangle = first_triangle_stars + first_triangle_spaces\n    \n    second_triangle_spaces = \"  \" * (no_of_rows - each_number)\n    second_triangle_stars = \"* \" * each_number\n\n    second_triangle = second_triangle_spaces + second_triangle_stars\n\n    print(first_triangle + second_triangle)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "588cb104-9d06-41a9-8450-fca1220ba242",
+      "input": "5",
+      "output": "*                 * \n* *             * * \n* * *         * * * \n* * * *     * * * * \n* * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5ed74d3f-6ec2-4a1b-a9b3-8cf2fadfbfb9",
+      "input": "20",
+      "output": "*                                                                             * \n* *                                                                         * * \n* * *                                                                     * * * \n* * * *                                                                 * * * * \n* * * * *                                                             * * * * * \n* * * * * *                                                         * * * * * * \n* * * * * * *                                                     * * * * * * * \n* * * * * * * *                                                 * * * * * * * * \n* * * * * * * * *                                             * * * * * * * * * \n* * * * * * * * * *                                         * * * * * * * * * * \n* * * * * * * * * * *                                     * * * * * * * * * * * \n* * * * * * * * * * * *                                 * * * * * * * * * * * * \n* * * * * * * * * * * * *                             * * * * * * * * * * * * * \n* * * * * * * * * * * * * *                         * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * *                     * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * *                 * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * *             * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * *         * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * *     * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "674bdfc8-4d0b-4837-a8be-00ec4dfa6714",
+      "input": "4",
+      "output": "*             * \n* *         * * \n* * *     * * * \n* * * * * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9ddb2e75-c715-4e23-88c1-9fe311a5dda4",
+      "input": "1",
+      "output": "* *",
+      "is_hidden": true,
+      "weightage": 19.0
+    },
+    {
+      "test_case_id": "c16c789d-ad4c-499e-8737-1a2ab776fc32",
+      "input": "10",
+      "output": "*                                     * \n* *                                 * * \n* * *                             * * * \n* * * *                         * * * * \n* * * * *                     * * * * * \n* * * * * *                 * * * * * * \n* * * * * * *             * * * * * * * \n* * * * * * * *         * * * * * * * * \n* * * * * * * * *     * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c73ff2c8-6c59-4dd6-b872-3ca07d3940e0",
+      "input": "2",
+      "output": "*     * \n* * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c9c1a4fe-0f26-4d59-a2fd-e3452a60bf91",
+      "input": "6",
+      "output": "*                     * \n* *                 * * \n* * *             * * * \n* * * *         * * * * \n* * * * *     * * * * * \n* * * * * * * * * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

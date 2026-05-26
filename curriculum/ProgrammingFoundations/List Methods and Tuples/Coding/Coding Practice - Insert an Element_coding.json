@@ -1,0 +1,61 @@
+{
+  "question_id": "b4a8032b-6098-431b-8c28-7439bdf4e07a",
+  "short_text": "Insert an Element",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to insert a number (N) at the given index (I) location in the list.<hr><b>Input</b><br/><br/>The first line of input will contain an integer (N).<br/>The second line of input will contain a positive integer (I).<hr><b>Output</b><br/><br/>The output should be a single line containing the list with the number at the given index location.<hr><b>Explanation</b><br/><br/>For example, if the given N is 30 and I is 2, your code should insert 30 in the list at index 2. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[10, 20, 30, 40, 50, 60]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "b485146a-d9ca-4eb3-8a0e-99148d9ce608",
+      "code_content": "nums_list = [10, 20, 40, 50, 60]\nvalue = int(input())\nindex = int(input())\n\nnums_list.insert(index, value)\nprint(nums_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "135869da-a309-47b1-a864-d4bf1f995ab4",
+      "input": "70\n6",
+      "output": "[10, 20, 40, 50, 60, 70]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "1365a525-8534-4091-95dd-1f5b6fce9da6",
+      "input": "-10\n0",
+      "output": "[-10, 10, 20, 40, 50, 60]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "3bf41e74-27fd-42f0-a8ec-9a1a4fd3ddd1",
+      "input": "1\n1",
+      "output": "[10, 1, 20, 40, 50, 60]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "40a1192d-7dd4-4242-a2fd-951ec4cdb58b",
+      "input": "30\n2",
+      "output": "[10, 20, 30, 40, 50, 60]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "46da0e5e-f570-448e-b1f2-abcd505e1fe0",
+      "input": "-18\n3",
+      "output": "[10, 20, 40, -18, 50, 60]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

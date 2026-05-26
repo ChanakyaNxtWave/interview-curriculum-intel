@@ -1,0 +1,75 @@
+{
+  "question_id": "f29e98d0-9390-4fc4-ab93-81183c8993f4",
+  "short_text": "Floor",
+  "content": "Write a program that reads a Room Number and checks if the **Number** in the given Room Number is less than **30**.  \n\nThe Room Numbers are in the format of `R1`, `R35`, etc. \n\nPrint **Ground Floor** if the **Number** is less than **30**. Otherwise, print **Not Ground Floor**.\n\n<MultiLineNote>\n\nIn the Room Number, \n\n- The first character contains the character \"**R**\".\n- The remaining characters contain a **Number**. \n\n**Example:** `R1`, `R35`, etc.\n\n- If the Room Number is `R35`, the **Number** in Room Number is **35**.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Ground Floor** should be printed if the **Number** in Room Number is less than **30**. Otherwise, **Not Ground Floor** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given Room Number is **R27**,\n\n  <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">R</div>\n     <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">2</div>\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; padding: 8px 12px;\">7</div>\n  </div>\n  <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n  </div>\n\n<br/>\n\n* The first character of the Room Number is **R**.\n* The remaining characters of the Room Number is **27**. So, the **Number** in Room Number is **27**.\n* **27** is less than **30**.\n\nThe output should be **Ground Floor** as the room number is less than **30**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d7510f6c-6359-4d1f-93a9-f2b34557bc35",
+      "code_content": "room_number = input()\n\nnumber = room_number[1:]\nnumber = int(number)\n\nif (number < 30):\n    print(\"Ground Floor\")\nelse:\n    print(\"Not Ground Floor\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "204c87e9-8bc7-45b0-a8bb-c66d0a6a95d0",
+      "input": "R29",
+      "output": "Ground Floor",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3c79f2c8-0b93-4e9b-b9e1-6f86bffdd5b9",
+      "input": "R5",
+      "output": "Ground Floor",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "67dde995-76b6-4513-9dab-3cd5bed8fc30",
+      "input": "R400",
+      "output": "Not Ground Floor",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6905218e-f963-4e5c-83e1-84adf120f404",
+      "input": "R401",
+      "output": "Not Ground Floor",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "785af201-acdb-4958-82d4-9389832939be",
+      "input": "R27",
+      "output": "Ground Floor",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4a27e28-7d4f-45fe-9948-22dbff809dfd",
+      "input": "R31",
+      "output": "Not Ground Floor",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "cfabcb5c-32b4-4f1a-9f8d-3b855b038a92",
+      "input": "R30",
+      "output": "Not Ground Floor",
+      "is_hidden": true,
+      "weightage": 12.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

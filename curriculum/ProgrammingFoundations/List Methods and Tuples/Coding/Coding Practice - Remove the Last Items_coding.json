@@ -1,0 +1,61 @@
+{
+  "question_id": "02960e9e-4eb7-46ef-8299-84b839189214",
+  "short_text": "Remove the Last Items",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to remove the last N items in the list.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the list without the last N items.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, your code should remove the last three elements in the list. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift']\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "8ec11b25-aa83-4671-baa4-cd7c8bccdd3a",
+      "code_content": "programming_languages = ['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift', 'SQL', 'PHP', 'JavaScript']\n\nn = int(input())\nfor i in range(n):\n    programming_languages.pop()\nprint(programming_languages)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "45e1c2e2-be43-43e5-968a-4d36c1e5d2bc",
+      "input": "0",
+      "output": "['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift', 'SQL', 'PHP', 'JavaScript']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "5f947fd5-d5f1-4fb1-b6b3-caa8057cfadd",
+      "input": "3",
+      "output": "['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift']\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6b642ce2-30fd-494c-814b-7c2aeb9c6457",
+      "input": "14",
+      "output": "[]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "94b79449-078f-48cb-b91a-ff990257daba",
+      "input": "1",
+      "output": "['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift', 'SQL', 'PHP']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9801f8d1-5e4b-42f9-a65a-bf6593b53783",
+      "input": "4",
+      "output": "['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R']\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "4f69094e-2345-4d2d-9780-6e3c69d525de",
+  "short_text": "Right Angled Triangle - 5",
+  "content": "Given a number `N`, write a program to print the **Right Angled Triangle** of `N` rows using stars (`*`).\r\n\r\n```\r\n  *\r\n **\r\n***\r\n```\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing stars (`*`) as the **Right Angled Triangle** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`,\r\n\r\n- Print the stars (`*`) on **4** rows as shown in the given image. \r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-5.png' widthPercent='70'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates one space (\" \").\r\n- The Star in the box indicates a star (\"*\").\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n   *\r\n  **\r\n ***\r\n****\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4b4a1f8b-7148-4ed0-b038-0833e49649a6",
+      "code_content": "rows = int(input())\n\nfor each_number in range(1, rows + 1):\n    \n    spaces = \" \" * (rows - each_number)\n    stars = \"*\" * (each_number)\n    print(spaces + stars)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5edd9f8b-3bc2-4f34-830c-705dc431024c",
+      "input": "20",
+      "output": "                   *\n                  **\n                 ***\n                ****\n               *****\n              ******\n             *******\n            ********\n           *********\n          **********\n         ***********\n        ************\n       *************\n      **************\n     ***************\n    ****************\n   *****************\n  ******************\n *******************\n********************",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "6906ee90-6459-4380-a4d3-2f78e45fb380",
+      "input": "1",
+      "output": "*",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "6ebeb0e9-5cee-43a8-b4df-44d09ae6c2cc",
+      "input": "27",
+      "output": "                          *\n                         **\n                        ***\n                       ****\n                      *****\n                     ******\n                    *******\n                   ********\n                  *********\n                 **********\n                ***********\n               ************\n              *************\n             **************\n            ***************\n           ****************\n          *****************\n         ******************\n        *******************\n       ********************\n      *********************\n     **********************\n    ***********************\n   ************************\n  *************************\n **************************\n***************************",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "949f2e2e-b70c-4d2b-88e2-ec02347c61db",
+      "input": "4",
+      "output": "   *\n  **\n ***\n****",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dd2ea807-3390-4ee2-b523-0142edc36daf",
+      "input": "9",
+      "output": "        *\n       **\n      ***\n     ****\n    *****\n   ******\n  *******\n ********\n*********",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

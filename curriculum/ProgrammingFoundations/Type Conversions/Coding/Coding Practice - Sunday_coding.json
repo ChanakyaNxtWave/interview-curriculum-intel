@@ -1,0 +1,151 @@
+{
+  "question_id": "61eed1d0-1329-44b8-96a3-2bf133859f71",
+  "short_text": "Sunday",
+  "content": "Write a program that reads a day number and checks if the given day is a Sunday.\n\n|Day | Day Number|\n|--- | ---|\n|Monday | 1|\n|Tuesday | 2|\n|Wednesday | 3|\n|Thursday | 4|\n|Friday | 5|\n|Saturday | 6|\n|Sunday | 7|\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the given day is Sunday, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, \n\n* if the given day number is **7**, the output should be **True** as **7** is equal to the day number of Sunday which is **7**.\n\n* if the given day number is **4**, the output should be **False** as **4** is not equal to the day number of Sunday which is **7**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "81e36cde-81e7-4ba7-929e-9e4025981997",
+      "code_content": "day_number = input()\nday_number = int(day_number)\n\nresult = day_number == 7\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "150eabd7-a852-4c04-8227-d248e33d3cdf",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n8\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **8**, the output should be **False** as **8** is not equal to the day number of Sunday which is **7**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1602fa4f-ff9c-427e-b7fb-65cb05bd26e8",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n3\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **3**, the output should be **False** as **3** is not equal to the day number of Sunday which is **7**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "acdae918-bac5-4d7d-a522-8062996f2fc3",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n7\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **7**, the output should be **True** as **7** is  equal to the day number of Sunday which is **7**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "d57e8d96-f8ca-4d73-94fe-85b38a362508",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n6\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **6**, the output should be **False** as **6** is not equal to the day number of Sunday which is **7**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fa5773ea-5998-4c2c-a882-6bee42192959",
+          "short_text": "",
+          "content": "What should be the output of your code for the below input?\n\n<b>Input</b> \n\n```\n10\n\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given day number is **10**, the output should be **False** as **10** is not equal to the day number of Sunday which is **7**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "61f5fa1c-ba9e-4b1b-9a75-e21aeab629a6",
+      "input": "1",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "65c76b33-bc9a-4675-905f-8e487675f87e",
+      "input": "7",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "aafd0ea6-058b-4243-a953-64008968bd06",
+      "input": "3",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c827f16f-6993-4ed6-b7ae-7fb64d3c3531",
+      "input": "4",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ca32e771-e541-4f71-81c3-a01069b835b3",
+      "input": "6",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e007a265-3ea9-466c-9451-5b562c9555dc",
+      "input": "5",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f3d5c7f8-0035-4dfc-b441-48e00e4ca4b3",
+      "input": "2",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,75 @@
+{
+  "question_id": "d95d1df1-6fce-4b8b-aeb6-c0d5ecc1326b",
+  "short_text": "Count Prime Numbers",
+  "content": "In a science fair, a student needs to find out how many prime numbers exist below a given number `N`. The student believes that understanding prime numbers can help them design an efficient algorithm for encrypting messages.\n\nWrite a program that determines the total count of prime numbers less than the given number `N`.\n\n<MultiLineNote>\n\n1. A **prime number** is a number greater than 1 that has no divisors other than 1 and itself.\n2. The number `N` is not included in the count.\n3. If `N` is less than or equal to `2`, the output should be `0` since there are no prime numbers below `2`.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing an integer `N`.\n\n---\n\n#### Output\n\nA single line with an integer representing the count of prime numbers less than `N`.\n\n---\n\n#### Explanation\n\nIf `N` is `10`, the prime numbers below `10` are `2, 3, 5, 7`. The output should be `4`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7856a0b2-e87c-4ba2-b287-41027108f287",
+      "code_content": "N = int(input())\n\ncount = 0\nfor num in range(2, N):\n    is_prime = True\n    for divisor in range(2, round(num**0.5) + 1):\n        if num % divisor == 0:\n            is_prime = False\n            break\n    if is_prime:\n        count += 1\n\nprint(count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "332a90b6-32c6-41bf-80fe-8262b263cc59",
+      "input": "10",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4e7467a3-dbdb-432e-b64c-112f3a1a04f9",
+      "input": "100",
+      "output": "25",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "522874c4-1a1f-4d94-93a4-ff7a16622ce4",
+      "input": "2",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "753be322-8473-4b16-b8f9-f7e4dd043785",
+      "input": "50",
+      "output": "15",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a14ab98f-d898-4ea7-a979-a5e076f5bf6b",
+      "input": "1",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "d90f6652-2dda-4283-8aae-f71d895e2203",
+      "input": "0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "f0c944e2-3369-4c7f-aa0d-5002adb7e7bf",
+      "input": "15",
+      "output": "6",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e12f5290-9206-4570-818e-a229b46db048",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

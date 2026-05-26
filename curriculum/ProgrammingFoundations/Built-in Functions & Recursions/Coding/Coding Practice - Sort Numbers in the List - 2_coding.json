@@ -1,0 +1,75 @@
+{
+  "question_id": "d2a10fa7-5544-473e-9d71-a9c3ced790a3",
+  "short_text": "Sort Numbers in the List - 2",
+  "content": "Given comma-separated numbers, write a program to print a list containing given numbers in **Descending** order. \n\n---\n\n#### Input\n\nThe input will be a single line containing comma-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list that has the given numbers in **Descending** order.\n\n---\n\n#### Explanation\n\nFor example, if the given comma-separated numbers are `16,25,1,5`,\n\n- The given numbers are **16**, **25**, **1**, and **5**.\n- The **Descending** order of numbers is **25**, **16**, **5**, and **1**.\n\nThe output should be,\n\n```\n[25, 16, 5, 1]\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "128b2218-fc8f-406d-84e4-ad2b25e1c547",
+      "code_content": "numbers_list = input().split(\",\")\nnew_list = []\n\nfor each_number in numbers_list:\n    number = int(each_number)\n    new_list += [number]\n\nreverse_sorted_list = sorted(new_list, reverse = True)\n\nprint(reverse_sorted_list)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "09636dac-503a-41b6-8449-d712644d69f5",
+      "input": "-20,-67,-2,4,25,36",
+      "output": "[36, 25, 4, -2, -20, -67]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "32213e4a-adde-45ea-87fe-ab57cf375531",
+      "input": "87,98,76,899,41,56,97,14",
+      "output": "[899, 98, 97, 87, 76, 56, 41, 14]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "3a7b14eb-3130-48ce-9196-33c07de4a8a2",
+      "input": "-3,-7,-25,-1,-50",
+      "output": "[-1, -3, -7, -25, -50]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "614d66ab-158f-49b7-afa5-9280419d9b37",
+      "input": "16,25,1,5",
+      "output": "[25, 16, 5, 1]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6bf50673-4061-48bc-8adf-a9e29e755938",
+      "input": "870,980,762,8999,431,567,9798,1234",
+      "output": "[9798, 8999, 1234, 980, 870, 762, 567, 431]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6f284541-4ef2-40b3-a5ad-cb4401727d68",
+      "input": "80,80,62,999,31,67,798,234",
+      "output": "[999, 798, 234, 80, 80, 67, 62, 31]",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e883e8ce-a61f-4b3d-a439-15e60f46d257",
+      "input": "90",
+      "output": "[90]",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

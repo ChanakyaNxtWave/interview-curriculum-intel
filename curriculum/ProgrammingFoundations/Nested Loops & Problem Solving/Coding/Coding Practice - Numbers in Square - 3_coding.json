@@ -1,0 +1,61 @@
+{
+  "question_id": "4bfb4dd4-97e0-42d9-afb8-0bf5412b25e7",
+  "short_text": "Numbers in Square - 3",
+  "content": "Given a number `N`, write a program to print a **Square** of `N` rows using numbers starting from **1**.\r\n\r\n```\r\n1 2 3 4\r\n5 6 7 8\r\n9 10 11 12\r\n13 14 15 16\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every number.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing numbers starting from **1** as a **Square** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 3`,\r\n\r\n- Print the numbers on **3** rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-square-3.png' widthPercent='60'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image, the Number in the box indicates the number and a space (\"1 \")\r\n\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n1 2 3\r\n4 5 6\r\n7 8 9\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d16a2298-677c-4d63-8f0a-d78f13821c6c",
+      "code_content": "n = int(input())\n\nnumber = 1\nfor rows in range(n):\n    each_row = \"\"\n    for colums in range(n):\n        each_row = each_row + (str(number) + \" \")\n        number = number + 1\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "34fb846b-4f58-4a1d-b508-967647d5f0aa",
+      "input": "2",
+      "output": "1 2 \n3 4 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "3a1f0363-923d-473b-95c3-f3843b35ecbb",
+      "input": "5",
+      "output": "1 2 3 4 5 \n6 7 8 9 10 \n11 12 13 14 15 \n16 17 18 19 20 \n21 22 23 24 25 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "6ff28487-5321-4d28-9eb4-cb9d105853eb",
+      "input": "3",
+      "output": "1 2 3 \n4 5 6 \n7 8 9 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9bfa6de2-f246-44a5-9c60-c67eade6e4d7",
+      "input": "11",
+      "output": "1 2 3 4 5 6 7 8 9 10 11 \n12 13 14 15 16 17 18 19 20 21 22 \n23 24 25 26 27 28 29 30 31 32 33 \n34 35 36 37 38 39 40 41 42 43 44 \n45 46 47 48 49 50 51 52 53 54 55 \n56 57 58 59 60 61 62 63 64 65 66 \n67 68 69 70 71 72 73 74 75 76 77 \n78 79 80 81 82 83 84 85 86 87 88 \n89 90 91 92 93 94 95 96 97 98 99 \n100 101 102 103 104 105 106 107 108 109 110 \n111 112 113 114 115 116 117 118 119 120 121 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ebb1f0bc-6dbf-4698-b98d-65ad794dfeaf",
+      "input": "14",
+      "output": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 \n15 16 17 18 19 20 21 22 23 24 25 26 27 28 \n29 30 31 32 33 34 35 36 37 38 39 40 41 42 \n43 44 45 46 47 48 49 50 51 52 53 54 55 56 \n57 58 59 60 61 62 63 64 65 66 67 68 69 70 \n71 72 73 74 75 76 77 78 79 80 81 82 83 84 \n85 86 87 88 89 90 91 92 93 94 95 96 97 98 \n99 100 101 102 103 104 105 106 107 108 109 110 111 112 \n113 114 115 116 117 118 119 120 121 122 123 124 125 126 \n127 128 129 130 131 132 133 134 135 136 137 138 139 140 \n141 142 143 144 145 146 147 148 149 150 151 152 153 154 \n155 156 157 158 159 160 161 162 163 164 165 166 167 168 \n169 170 171 172 173 174 175 176 177 178 179 180 181 182 \n183 184 185 186 187 188 189 190 191 192 193 194 195 196 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

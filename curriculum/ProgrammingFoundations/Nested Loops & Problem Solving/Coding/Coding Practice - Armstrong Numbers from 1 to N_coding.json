@@ -1,0 +1,75 @@
+{
+  "question_id": "3f6705b4-c90c-40cc-83df-ff6e062f3f3c",
+  "short_text": "Armstrong Numbers from 1 to N",
+  "content": "Given a number `N`, write a program to print **Armstrong numbers** from **1** to **N** each on a new line.\r\n\r\n<MultiLineNote>\r\n\r\nA number `N` is an Armstrong Number, if the sum of each digit to the power of `L` is equal to `N`. Where `L` is the count of digits in `N`.\r\n\r\nFor example if the given number `N = 153`,\r\n\r\n- There are **3** (`L = 3`) digits in **153** are **1**, **2**, **3** .\r\n- The sum of each digit in **153** to the power of **3** is,\r\n- Sum = (1 <sup> 3</sup> )+ (5 <sup> 3 </sup>) +( 3 <sup> 3 </sup>) = 1 + 125 + 27 = **153**\r\n\r\nThe sum of each digit in **153** to the power of **3** is equal to **153**.\r\nSo, **153** is an **Armstrong Number**.\r\n\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should contain the **Armstrong numbers** from **1** to `N`, each on a new line.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 200`,\r\n\r\n- The **Armstrong numbers** from **1** to **200** are **1, 2, 3, 4, 5, 6, 7, 8, 9, 153**.\r\n\r\n  - There is only **1** digit in **1** is **1**.\r\n  - The sum of each digit in **1** to the power of **1** is **1**. (**1<sup>1</sup>**)\r\n  - The sum of each digit in **1** to the power of **1** is equal to the number **1**.\r\n\r\n  So, the number **1** is an **Armstrong number**.\r\n  <br>\r\n\r\n  - There are **3** digits in **153** are **1**, **5** and **3**.\r\n  - The sum of each digit in **153** to the power of **3** is **153**. (**1<sup>3</sup>+5<sup>3</sup>+3<sup>3</sup>**).\r\n  - The sum of each digit in **153** to the power of **3** is equal to the number **153**.\r\n\r\n  So, the number **153** is an **Armstrong number**.\r\n\r\nThe output should be,\r\n\r\n```\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n153\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "53a5b28c-8b36-4983-a3bf-60ff124c5bc8",
+      "code_content": "n = int(input())\n\nfor number in range(1, n + 1):\n    sum_of_power_of_digits = 0\n    number = str(number)\n    power = len(number)\n   \n    \n    for each_digit in number:\n        each_digit = int(each_digit)\n        sum_of_power_of_digits = sum_of_power_of_digits + (each_digit ** power)\n    \n    number = int(number)\n    is_armstrong = sum_of_power_of_digits == number\n\n    if is_armstrong:\n        print(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "307c74d8-5d21-4fe5-bfdb-5b7aafe0f134",
+      "input": "3000",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n153\n370\n371\n407\n1634",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "39c57600-f0d2-4418-89d2-019ed7377205",
+      "input": "40000",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n153\n370\n371\n407\n1634\n8208\n9474",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "4e343674-e12b-4529-bcfe-eec86ae32194",
+      "input": "200",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n153",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "89cb3213-3957-446c-acf4-8bd2350be5dd",
+      "input": "2000",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n153\n370\n371\n407\n1634",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "b07d6d61-e713-453a-a9cc-4329a2d9ce75",
+      "input": "5",
+      "output": "1\n2\n3\n4\n5",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c516d8ba-3a31-4fd3-ab3a-e88449e0d090",
+      "input": "3",
+      "output": "1\n2\n3",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ff356943-87aa-45e6-b8f6-a266b619f112",
+      "input": "10",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "ee44c092-7be4-421a-8835-30575c493351",
+  "short_text": "Checking",
+  "content": "Write a program that reads a string `S` containing space-separated strings from the user and form a set from these strings. The program should then read a string on a new line and check if it is an element of the set. Print `True` if the string is present in the set.Otherwise, print `False`.\n\n---\n\n#### Input\n\nThe input consists of two lines:\n\n- The first line contains space-separated strings to form the set.\n- The second line contains a single string to check if it is in the set.\n\n---\n\n#### Output\n\nThe output should be a single boolean value (`True` or `False`), indicating whether the string is a element of the set.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana orange\nbanana\n```\n\n- In this example, the input set contains `apple`, `banana`, and `orange`. \n- Since `banana` is in the set, the output is `True`.\n\nThe output should be:\n\n```\nTrue\n```\n\nIf the input is:\n\n```\napple banana orange\ngrape\n```\n\n- In this example, the input set contains `apple`, `banana`, and `orange`. \n- Since `grape` is not in the set, the output is `False`.\n\nThe output should be:\n\n```\nFalse\n```\n\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "24b490cf-bc7b-4f44-ba5e-c4dd8f55106d",
+      "code_content": "s = input().strip().split()\nunique_items = set(s)\nitem_to_check = input().strip()\n\nif item_to_check in unique_items:\n    print(True)\nelse:\n    print(False)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "41506700-e953-4237-88b0-a010df5a4b8c",
+      "input": "grace grace grace\ngrace",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9720e833-d21b-4341-8015-7264660af253",
+      "input": "apple banana orange\nbanana",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9d53fcd4-d12f-4928-bbe5-c251eae359c2",
+      "input": "apple banana orange\ngrape",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c2bfcee4-b870-4343-9d63-f7fcf08e8b6c",
+      "input": "kathy lucas kathy lucas mia\nmia",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "fb77ebed-5d1f-4f4a-a4b1-bffa4f6a0646",
+      "input": "hannah igor hannah igor jack\njack",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ceb957b7-1aa1-42e3-97ba-77c6e832caae",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

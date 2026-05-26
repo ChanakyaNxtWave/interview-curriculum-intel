@@ -1,0 +1,75 @@
+{
+  "question_id": "a0aeba0e-a1dc-4646-b8e5-a6eb51175251",
+  "short_text": "Print Numbers Divisible by T",
+  "content": "Write a program that reads two numbers `N` and `T`, and prints all the numbers from **1** to `N` that are divisible by `T`.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe second line of input contains an integer representing `T`.\n\n---\n\n#### Output\n\nThe output should contain all the numbers from **1** to `N` that are divisible by `T`, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `N = 10` and `T = 3`,\n\n- Numbers from **1** to **10** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9**, and **10**.\n- Numbers from **1** to **10** that are divisible by **3** are **3**, **6** and **9**.\n\nThe output should be,\n\n```\n 3\n 6\n 9\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "03f441b8-8a32-4772-936f-cdb19842ab1b",
+      "code_content": "n = int(input())\nt = int(input())\n\nfor each_number in range(1, n + 1):\n    if(each_number % t == 0):\n        print(each_number)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "221a19ae-e2c6-4748-a952-786d4dab0fcc",
+      "input": "37\n19",
+      "output": "19",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "2fb5bcf0-31bf-40c7-973a-d6bb8a2bc043",
+      "input": "10\n3",
+      "output": "3\n6\n9",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "44f37edb-e51f-4227-982c-a316e824b0c3",
+      "input": "2\n2",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6ffce9e3-8412-40b8-9c8c-f76147617fab",
+      "input": "100\n10",
+      "output": "10\n20\n30\n40\n50\n60\n70\n80\n90\n100",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a82c5717-eb17-4442-9122-a1dd05b5b910",
+      "input": "255\n16",
+      "output": "16\n32\n48\n64\n80\n96\n112\n128\n144\n160\n176\n192\n208\n224\n240",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c05c1e3f-526f-4404-bdad-0b697c139b64",
+      "input": "21\n5",
+      "output": "5\n10\n15\n20",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f302cf6f-447e-4adb-8cbb-75a8134da574",
+      "input": "7\n1",
+      "output": "1\n2\n3\n4\n5\n6\n7",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

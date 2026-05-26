@@ -1,0 +1,47 @@
+{
+  "question_id": "0818a074-43e3-498e-abbc-d4abca31136d",
+  "short_text": "Encapsulation Booking",
+  "content": "Complete the `Booking` class by adding new features following the instructions below. You will implement the logic for private attribute access and modification, reinforcing the concept of encapsulation.\n\n<details>\n\n<summary>**Features to be added to `Booking` class**</summary>\n\n- **Attributes**:\n - `booking_id` (public)\n - `passengers` (public)\n - `flight` (public)\n - `__confirmationstatus` (private)\n - `__paymentdetails` (private)\n\n- **Methods**:\n - `__getconfirmationstatus()` (private): Should return the value of the private `__confirmationstatus` attribute.\n - `confirm(secret_key, payment_details)` (public): Should update the `__confirmationstatus` to `True` and set the `__paymentdetails` if the provided `secret_key` matches the class's secret key. It should print **`Booking confirmed.`** if successful, otherwise **`Invalid secret key.`**\n - `checkin()` (public): Should print **`Check-in complete.`** if the booking is confirmed, otherwise **`Please confirm your booking first.`**\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output test cases. The class defined by you will be tested internally whether the attributes are present or not. So in test cases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f7a25ff1-45c7-4863-be3d-4a90d7ee2d2e",
+      "code_content": "class Booking:\n    secret_key = \"CONFIRM123\"  # This is a class variable representing the secret key for all Booking instances.\n    \n    def __init__(self, booking_id, passengers, flight):\n        self.booking_id = booking_id\n        self.passengers = passengers\n        self.flight = flight\n        self.__confirmationstatus = False\n        self.__paymentdetails = None\n\n    def __getconfirmationstatus(self):\n        return self.__confirmationstatus\n\n    def confirm(self, secret_key, payment_details):\n        if secret_key == Booking.secret_key:\n            self.__confirmationstatus = True\n            self.__paymentdetails = payment_details\n            print(\"Booking confirmed.\")\n        else:\n            print(\"Invalid secret key.\")\n\n    def checkin(self):\n        if self.__getconfirmationstatus():\n            print(\"Check-in complete.\")\n        else:\n            print(\"Please confirm your booking first.\")\n\ndef default_test():\n    booking = Booking(booking_id=123, passengers=2, flight=\"LX197\")\n    print(\"Booking ID:\", booking.booking_id)\n    print(\"Passengers:\", booking.passengers)\n    print(\"Flight:\", booking.flight)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "8824d025-d744-4b59-9b92-e9de4931884e",
+      "input": "Checking Default Tests",
+      "output": "Booking ID: 123\nPassengers: 2\nFlight: LX197",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b48175c1-3f53-4a45-83eb-6f3bc787531a",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present and have correct privacy settings.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d72dd60e-2dd1-48a4-8e19-70b6d46088a3",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b3b31675-d5ff-4676-b8b1-31ff0ba46159",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

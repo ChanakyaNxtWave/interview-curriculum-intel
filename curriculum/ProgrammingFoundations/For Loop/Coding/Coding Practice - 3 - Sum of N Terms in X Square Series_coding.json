@@ -1,0 +1,68 @@
+{
+  "question_id": "e690d882-66aa-4549-85b2-1d94e7c3697e",
+  "short_text": "Sum of N Terms in X Square Series",
+  "content": "Given two numbers `X` and `N`, write a program to print the **sum** of `N` terms in the given series.\n\n**Series:**\n\n<div style=\"background-color: #3c4257; padding: 15px; color: #f8f8f2;border-radius: 4px; margin: 10px;font-size: 18px;font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace\">\n(X)<sup>2</sup>, (XX)<sup>2</sup>, (XXX)<sup>2</sup>, ... N terms\n</div>\n\n<br/>\n\n**Terms in the given series:**\n\n| Term Number | Term                        | Number of X's |\n| ----------- | --------------------------- | ------------- |\n| First Term  | (X)<sup>2</sup>             | 1             |\n| Second Term | (XX)<sup>2</sup>            | 2             |\n| Third Term  | (XXX)<sup>2</sup>           | 3             |\n| ..          | ..                          | ..            |\n| Nth Term    | (XXXX...upto N)<sup>2</sup> | N             |\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `X`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the **sum** of the series from the **First Term** to the **Nth Term**.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `X = 4` and `N = 3`,\n\n- The number of terms is **3**.\n- The terms from **First term** to **Third term** in the given series are **16** (4<sup>2</sup>), **1936** (44<sup>2</sup>), and **197136** (444<sup>2</sup>).\n\n  **Terms in the given series:**\n\n  | Term Number | Term                     | Number of X's (4's) |\n  | ----------- | :------------------------: | ------------------- |\n  | First Term  | 4<sup>2</sup> (16)       | 1                   |\n  | Second Term | 44<sup>2</sup> (1936)    | 2                   |\n  | Third Term  | 444<sup>2</sup> (197136) | 3                   |\n\n- The **sum** of the terms from the **First Term** to the **Third Term** is **199088**. (`16 + 1936 + 197136 = 199088`)\n\nThe output should be **199088**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "02326b6f-331f-4adf-bd44-6323e7bd7086",
+      "code_content": "x = int(input())\nn = int(input())\n\nsum_of_terms = 0\n\nfor each_number in range(1, n + 1):\n\n    number = str(x)*each_number\n    term = int(number) ** 2\n    sum_of_terms = sum_of_terms + term\n\nprint(sum_of_terms)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "18b39684-3e51-4ceb-8014-ec9ffa087159",
+      "input": "12\n0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "233b4880-ff75-49bd-95e6-585d944ddd7a",
+      "input": "245\n2",
+      "output": "60145170050",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "8512295e-1ed4-412d-849c-a224d270fe26",
+      "input": "7\n4",
+      "output": "61091436",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "90f19200-0fb4-48cd-98fa-63bd260f72fe",
+      "input": "0\n1",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "c0c04739-98e9-4cba-8626-4708a3f9fcfa",
+      "input": "5\n10",
+      "output": "31175957095024317250",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "f27df5d7-0b8a-4ff6-aea4-5e64cc7e5407",
+      "input": "4\n3",
+      "output": "199088",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "dac0dd05-e274-4011-9967-ac1df0682ac0",
+  "short_text": "Pair of Numbers",
+  "content": "Given a number `N`, write a program to print the count of pairs containing numbers `A`, `B` from **1** to `N` such that the sum of the numbers is equal to `N`, where `A` < `B`.\n\n`A` is the first number, `B` is the second number in a pair.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer which is the count of pairs whose sum is equal to `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 7`,\n\n- The possible pairs from **1** to **7** where `A < B` are\n\n```\n(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7),\n(2, 3), (2, 4), (2, 5), (2, 6), (2, 7),\n(3, 4), (3, 5), (3, 6), (3, 7),\n(4, 5), (4, 6), (4, 7),\n(5, 6), (5, 7),\n(6, 7)\n```\n\n- From the possible pairs, the pairs (**A**, **B**) whose sum (`A + B`) is equal to **7** (`N`) are,\n\n```\n(1, 6)\n(2, 5)\n(3, 4)\n```\n\n- The count of pairs whose sum is equal to **7** is **3**.\n\nThe output should be **3**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "658d996c-4d63-451f-a5d0-79a1f4efb6b1",
+      "code_content": "n = int(input())\n\nnumber_of_pairs = 0\n\nfor num in range(1, n):\n    if n - num < n  and num < n - num:\n        number_of_pairs = number_of_pairs + 1\nprint(number_of_pairs)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a131190-81fb-48a6-93d3-9ae7e952b091",
+      "input": "1000",
+      "output": "499",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "28868569-c5ff-478f-b405-e7baf62e61e1",
+      "input": "7",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3435da57-f545-47a9-a58a-b00e386b90b5",
+      "input": "3",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "7d110c7e-c100-4312-a3be-f0b39e69e1b5",
+      "input": "65",
+      "output": "32",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "cf567c15-dea5-4b53-bf63-4166621d40b1",
+      "input": "2",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "de7cba70-77d2-46f2-8d99-d9d0cc7076be",
+      "input": "10",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

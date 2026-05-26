@@ -1,0 +1,61 @@
+{
+  "question_id": "7ffec1a1-c699-4556-abfb-519148c6962e",
+  "short_text": "List Methods",
+  "content": "Consider a list (nums_list = []). Write a program to perform the following commands on the list<br/>  1. insert I E - insert the integer E at index I<br/>  2. append E - insert integer E at the end of the list<br/>  3. pop - remove the last element<br/>  4. remove E - remove the first occurrence of integer E<br/>  5. sort - sort the list in ascending order<br/>  6. print - print the list<hr><b>Input</b><br/><br/>The first line of input will contain an integer (N).<br/>The next N lines will contain the commands described above to be performed on the list each in a line.<hr><b>Output</b><br/><br/>For each command of type print, print the list on a new line.<hr><b>Explanation</b><br/><br/>Initialize your list and read in the value of N followed by N lines of commands where each command will be of the types listed above. Iterate through each command in order and perform the corresponding operation on your list.<br/><br/>For example, if the given N is 5, read the commands in the next five lines. If the given five commands are<br/><br/><li><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">append 5</code> - append 5 to the list, <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">nums_list = [5]</code></li>\n<li><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">insert 0 2</code> - insert 2 at index 0, <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">nums_list = [2, 5]</code></li>\n<li><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">append 1</code> - append 1 to the list, <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">nums_list = [2, 5, 1]</code></li>\n<li><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">sort</code> - sort the list, <code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">nums_list = [1, 2, 5]</code></li>\n<li><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;background-color: rgba(0,0,0,.05);border-radius: 3px;padding: 2px 4px;\">print</code> - print the list</li><br/>So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[1, 2, 5]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "85f9e94e-25d0-40ed-9848-c105c6177343",
+      "code_content": "n = int(input())\n\nnums_list = []\nfor i in range(n):\n    command = input().split()\n    if command[0] == 'insert':\n        index = int(command[1])\n        value = int(command[2])\n        nums_list.insert(index, value)\n    elif command[0] == 'append':\n        value = int(command[1])\n        nums_list.append(value)\n    elif command[0] == 'pop':\n        nums_list.pop()\n    elif command[0] == \"remove\":\n        value = int(command[1])\n        nums_list.remove(value)\n    elif command[0] == \"sort\":\n        nums_list.sort()\n    elif command[0] == \"print\":\n        print(nums_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1a07ece0-96fa-48f3-bf5d-465dac330aa9",
+      "input": "7\nprint\nappend 8\nappend 7\ninsert 2 1\nremove 8\npop\nprint",
+      "output": "[]\n[7]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "1c31232b-6255-42cf-b672-58fc940a9456",
+      "input": "5\nappend 5\ninsert 0 2\nappend 1\nsort\nprint",
+      "output": "[1, 2, 5]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "2d891199-d407-4313-b630-09cc5b8d146d",
+      "input": "15\nappend 1\nappend 20\nappend -200\ninsert 3 -1\nsort\npop\nprint\nappend -50\ninsert 2 -8\nsort\nprint\nappend 893\nremove -1\nappend 1000\nprint",
+      "output": "[-200, -1, 1]\n[-200, -50, -8, -1, 1]\n[-200, -50, -8, 1, 893, 1000]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "3aee7c13-4c25-4440-a201-18d4fae77f97",
+      "input": "11\ninsert 0 5\ninsert 1 10\ninsert 0 6\nprint\nremove 6\nappend 9\nappend 1\nsort\nprint\npop\nprint",
+      "output": "[6, 5, 10]\n[1, 5, 9, 10]\n[1, 5, 9]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "aa6bb822-67f3-4d09-82e3-3f58dab546d7",
+      "input": "20\nappend 1\nappend 20\nappend 701\nappend -200\ninsert 3 -1\nprint\nsort\npop\nremove -1\nprint\nappend -50\ninsert 2 -8\nsort\nprint\nremove -200\nappend 893\ninsert 4 -20\nremove -20\nappend 1000\nprint",
+      "output": "[1, 20, 701, -1, -200]\n[-200, 1, 20]\n[-200, -50, -8, 1, 20]\n[-50, -8, 1, 20, 893, 1000]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

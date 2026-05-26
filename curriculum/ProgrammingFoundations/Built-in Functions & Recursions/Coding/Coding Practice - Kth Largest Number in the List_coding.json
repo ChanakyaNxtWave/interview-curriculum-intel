@@ -1,0 +1,61 @@
+{
+  "question_id": "a23b403c-d1e1-4f19-a82d-9bf6d75890b5",
+  "short_text": "Kth Largest Number in the List",
+  "content": "Write a program to print the Kth largest number in the list.<hr><b>Input</b><br/><br/>The first line of input will contain comma-separated integers.<br/>The second line of input will contain an integer (K).<hr><b>Output</b><br/><br/>The output should be a single line containing the Kth largest number in the list.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;2,3,-1,5&quot; and K is 2, your code should print the second largest number in the list. So the output should be 3.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "3a6e3261-0d3d-40c4-8006-5eac9d5aac2d",
+      "code_content": "numbers = input()\nk = int(input())\n\nnums_list = numbers.split(\",\")\n\nlength_of_nums_list = len(nums_list)\nfor i in range(length_of_nums_list):\n    nums_list[i] = int(nums_list[i])\n\nnums_list = sorted(nums_list)\nkth_largest_number = nums_list[-k]\nprint(kth_largest_number)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2729dd2d-c314-4ad9-869d-6a8dd907e46f",
+      "input": "10,3,19,93,891,37\n5",
+      "output": "10\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "5e5cd6c8-3796-493f-997e-72604184062c",
+      "input": "30,52,24,19\n1",
+      "output": "52\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "8856568b-4d04-4d8d-ba8a-1214222279f2",
+      "input": "2,3,-1,5\n2",
+      "output": "3\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a26f44be-b066-45f1-a033-964b29ecf26f",
+      "input": "1,1,1,1,1\n4",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fc789951-9d7b-40a6-a1dd-1097ad18d62f",
+      "input": "3\n0",
+      "output": "3\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "c5845b18-1bf2-4b68-a926-dd5dd0d5a9c9",
+  "short_text": "Unique_Arrangements",
+  "content": "In a magical forest, there is a wise old owl who loves to keep track of the number of ways to arrange the leaves that fall from the trees each autumn. Each tree produces a certain number of leaves, and the owl wants to know how many unique arrangements can be made with those leaves.\n\nYour task is to **complete the method `find_unique_arrangements()`**, which receives an integer `n` as a parameter, and returns the number of unique arrangements that can be made with n leaves.\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes one parameter `n` (integer), representing the number of leaves.\n\n---\n\n#### Output\n\nThe method should **return a single integer** representing the total number of unique arrangements.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n5\n```\n\n- The number of leaves is **5**.\n- The total arrangements are `120` **(5! = 5 × 4 × 3 × 2 × 1 = 120)**.\n  \nThe expected output would be :\n\n```\n120\n```\n\n  \n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0093f4ca-e4e7-4814-a6d9-781bd6b704ab",
+      "code_content": "def find_unique_arrangements(n):\n    if n == 0 or n == 1:\n        return 1\n    return n * find_unique_arrangements(n - 1)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1dbcdf5e-d142-4e23-8ffe-a88d555c009b",
+      "input": "12",
+      "output": "479001600",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "26d56325-52f4-42d4-822b-6c6fbab78ac5",
+      "input": "6",
+      "output": "720",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3ae857c4-8e48-492d-a47e-f081f3102159",
+      "input": "5",
+      "output": "120",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "50950ed0-52c7-4d66-bf83-45f99f1b85fd",
+      "input": "32",
+      "output": "263130836933693530167218012160000000",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fc6fe3aa-ed1c-4eed-8295-a1dd1360d31c",
+      "input": "10",
+      "output": "3628800",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "83df0765-d00f-4be4-9557-91ec0ad42c22",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

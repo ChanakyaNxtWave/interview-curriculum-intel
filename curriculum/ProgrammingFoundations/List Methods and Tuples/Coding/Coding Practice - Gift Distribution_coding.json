@@ -1,0 +1,61 @@
+{
+  "question_id": "88770ee7-9248-4fb8-827b-c25df409226f",
+  "short_text": "Gift Distribution",
+  "content": "In a small village, there is a tradition where villagers exchange gifts during the annual festival. Each villager has a specific number of gifts they want to give away, and they can only give one gift to each of their friends. However, there is a catch: each villager can only give gifts to friends who have fewer gifts than they do.\n\nThis year, the village council wants to know how many villagers will be left without receiving any gifts. Your task is to help them determine this by reading the number of villagers and the number of gifts each villager has.\n\nWrite a program that calculates how many villagers will not receive any gifts based on the conditions provided. \n\n\n---\n\n#### Input\n\n- The first line contains an integer n, the number of villagers.\n- The second line contains n space-separated integers representing the number of gifts each villager has\n\n---\n\n#### Output\n\nPrint the number of villagers who will not receive any gifts.\n\n---\n\n#### Explanation\n\nGiven the input,\n\n```\n5\n1 2 3 4 \n2 3 1 4 2\n```\n\n- If there are 5 villagers with the following number of gifts: 2 3 1 4 2, then:\n - **Villager 1** can receive gifts from Villager 2 and Villager 4.\n - **Villager 2** can receive gifts from Villager 4.\n - **Villager 3** can receive gifts from Villager 1, Villager 2, Villager 4, Villager 5.\n - **Villager 4** can not recevie gifts from any villager as there are no other greater gifts.\n - **Villager 5** can receive gifts from Villager 2, Villager 4.\n \nSo only **`Villager 4`** will not receive any gifts, making the output **`1`**.\n\n\n\nThe Expected Output\n\n```\n1\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6ac77cb1-881c-430d-b1f8-9a1121cdf5ff",
+      "code_content": "n = int(input())\ninp = list(input().split())\ngifts = []\n\nfor gift in inp:\n  gifts.append(gift)\nno_gift_count = 0\n\nfor i in range(n):\n    received_gift = False\n    for j in range(n):\n        if i != j and gifts[i] < gifts[j]:\n            received_gift = True\n            break\n    if not received_gift:\n        no_gift_count += 1\n\nprint(no_gift_count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2ebaa436-f312-4fdf-85b7-175cb57d4be2",
+      "input": "3\n1 2 3",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7f5dc761-6658-4699-8f59-a2aa24ca86e0",
+      "input": "4\n5 5 5 5",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e8afd483-bc6b-4adf-bcf5-4c0596c92f0d",
+      "input": "5\n2 3 1 4 2",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ed3e4486-0cc0-4f7b-b848-0db6be4f4b9a",
+      "input": "6\n0 0 0 0 0 0",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f0bfd1eb-2300-4350-96e4-89fef6b7f933",
+      "input": "5\n1 2 3 4 5",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c71df491-0ddf-425d-a344-7378abc8a5d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

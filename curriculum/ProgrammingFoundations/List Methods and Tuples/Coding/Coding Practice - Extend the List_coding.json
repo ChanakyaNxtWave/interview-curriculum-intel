@@ -1,0 +1,75 @@
+{
+  "question_id": "28100b73-4155-476f-8788-cef1152d39d9",
+  "short_text": "Extend the List",
+  "content": "A list `L` is given in the prefilled code.\n\nWrite a program that reads space-separated strings and prints a list obtained by adding given space-separated strings to the end of the list `L`.\n\n```\nL = [\"5\", \"7\", \"Rohit\", \"Virat\", \"Dhoni\"]\n```\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated strings.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list obtained by adding given space-separated strings to the end of the given list `L`.\n\n---\n\n#### Explanation\n\nFor example, if the given space-separated strings are **Surya Rahul Ishan Gill**,\n\n- The given prefilled list is `L = [\"5\", \"7\", \"Rohit\", \"Virat\", \"Dhoni\"]`.\n- The given strings are **\"Surya\"**, **\"Rahul\"**, **\"Ishan\"**, and **\"Gill\"**.\n- The strings when added to the end of the list `L` are **\"5\"**, **\"7\"**, **\"Rohit\"**, **\"Virat\"**, **\"Dhoni\"**, **\"Surya\"**, **\"Rahul\"**, **\"Ishan\"**, and **\"Gill\"**.\n\nThe output should be,\n\n```\n[\"5\", \"7\", \"Rohit\", \"Virat\", \"Dhoni\", \"Surya\", \"Rahul\", \"Ishan\", \"Gill\"]\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a82c441c-c79f-4878-80a6-0f759be9263e",
+      "code_content": "L = [\"5\", \"7\", \"Rohit\", \"Virat\", \"Dhoni\"]\n\nlist_a = input().split(\" \")\n\nL.extend(list_a)\nprint(L)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "15cb6f3a-ef02-4e88-b575-1e0e9135bfe8",
+      "input": "Never gonna give you up",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', 'Never', 'gonna', 'give', 'you', 'up']",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "1f6dfee9-a681-4e43-92c0-b66e420b7379",
+      "input": "0 48 159 -756 python",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', '0', '48', '159', '-756', 'python']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "54d1b0d6-928a-4de9-8cf5-888b326d0b66",
+      "input": "Surya Rahul Ishan Gill",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', 'Surya', 'Rahul', 'Ishan', 'Gill']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6c9f060f-91f1-4dc7-ad5f-d776d70993a9",
+      "input": "apple carrot b12",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', 'apple', 'carrot', 'b12']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6cba4627-1e1d-4a5e-905d-b741e4205f43",
+      "input": "-54 -684 Javascript -69 Julia -54 coding",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', '-54', '-684', 'Javascript', '-69', 'Julia', '-54', 'coding']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9f5bd23a-16df-4379-9050-cbeb826259f6",
+      "input": "Never gonna let you down",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', 'Never', 'gonna', 'let', 'you', 'down']",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e3c4bb98-673c-4d14-973e-9012005139d7",
+      "input": "apple orange banana",
+      "output": "['5', '7', 'Rohit', 'Virat', 'Dhoni', 'apple', 'orange', 'banana']",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,82 @@
+{
+  "question_id": "d755920c-6c01-4a55-bbf8-d43972b18cf9",
+  "short_text": "Smallest among N inputs",
+  "content": "Given a number `N`, write a program that reads `N` inputs and prints the **Smallest Number** of them after each input, each on a new line.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `N`.\r\nThe next `N` lines of input contain integers.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` lines containing the **Smallest Number** of them after each input, each on a new line.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 3`,\r\n\r\n- The **3** inputs are **32**, **6** and **29**.\r\n- The Smallest among the input **32** is **32**.\r\n- The Smallest among the inputs **32** and **6** is **6**.\r\n- The Smallest among the inputs **32**, **6** and **29** is **6**.\r\n\r\nThe output should be,\r\n\r\n```\r\n32\r\n6\r\n6\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b4cd5974-d674-4f5a-966d-58cc2b1a2c9e",
+      "code_content": "n = int(input())\nsmallest_number = 999999999\nfor num in range(n):\n    number = int(input())\n    if number < smallest_number:\n        smallest_number = number\n    print(smallest_number)\n        ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "207554e4-915c-4070-9cb5-8539ab016c62",
+      "input": "3\n4\n4\n4",
+      "output": "4\n4\n4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4ac7f1a5-e996-42c8-97cf-7c89314f17f9",
+      "input": "9\n-275478\n975793\n1105600\n-23632797\n344321\n-837890\n567234543\n12632457\n563782",
+      "output": "-275478\n-275478\n-275478\n-23632797\n-23632797\n-23632797\n-23632797\n-23632797\n-23632797",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4e1b08dd-d48c-4f52-9f9c-880ee1e4c0cd",
+      "input": "7\n216\n2978\n365\n45790\n451\n76567\n889",
+      "output": "216\n216\n216\n216\n216\n216\n216",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "538cb9fd-0095-443b-b967-00fb2074f287",
+      "input": "8\n-78690\n-97610\n-3456\n-6549\n-9065\n-10000\n-43255\n-3724",
+      "output": "-78690\n-97610\n-97610\n-97610\n-97610\n-97610\n-97610\n-97610",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "5e68bc2c-1e31-4786-99bb-f33da1f69f4b",
+      "input": "5\n109\n156\n-129\n96\n210",
+      "output": "109\n109\n-129\n-129\n-129",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8005e7b8-3f68-49c8-9b44-d0ff533094f5",
+      "input": "1\n90",
+      "output": "90",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "98f9d21e-92f2-4584-bae6-0c144a46839a",
+      "input": "3\n32\n6\n29",
+      "output": "32\n6\n6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b6e3dc4c-ca42-42f2-8892-feb533baea4b",
+      "input": "6\n1357890\n-24793\n11560\n2354632\n378900\n-43219",
+      "output": "1357890\n-24793\n-24793\n-24793\n-24793\n-43219",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ddb43d47-f837-421c-8361-f9b035af1706",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

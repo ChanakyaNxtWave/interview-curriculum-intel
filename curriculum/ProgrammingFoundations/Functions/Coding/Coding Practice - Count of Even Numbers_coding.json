@@ -1,0 +1,75 @@
+{
+  "question_id": "8ce08f77-c135-4154-884d-235b613d1631",
+  "short_text": "Count of Even Numbers",
+  "content": "A function is given in the prefilled code, that takes `N` space-separated integers as an argument.\n\nWrite a program to return the count of even numbers among the given `N` space-separated numbers.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string of `N` space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the count of even numbers among the given `N` space-separated numbers.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `2 3 4 5 6 7 8`,\n\n- The even numbers among the given numbers are **2**, **4**, **6**, and **8**.\n- The count of even numbers is **4**.\n\nThe output should be **4**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "30ca815d-58fe-43f5-98ff-da5ca7a413a5",
+      "code_content": "def get_even_numbers_count(numbers):\n    even_count = 0\n    numbers = numbers.split()\n\n    for number in numbers:\n        number = int(number)\n        if number % 2 == 0:\n            even_count += 1\n    \n    return even_count\n\nnumbers = input()\nresult = get_even_numbers_count(numbers)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "116ff0cf-fe38-4f7d-96b1-9d9226787c08",
+      "input": "1 3 4 5 7 9 11",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2bab8b1b-4769-4a5d-8446-8f66fb9c5f08",
+      "input": "8956 4577 1264 2894 20 8 186 486 452 120 321 3578 1584",
+      "output": "11",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "5682b2f8-f9a3-4336-a859-ef127d8962e2",
+      "input": "85 45 156 569 264 512",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8c5242ff-542d-4cc3-9376-246d53e15e22",
+      "input": "1 3 5 7 9",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b59e82df-4b3d-4f8d-b8f8-69d4b2c9b797",
+      "input": "6 8 10 12 14 16 18",
+      "output": "7",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d457c27d-b854-4363-a059-62ffbdbae9c0",
+      "input": "33 44 55 66",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "da3b3d5d-2611-4d63-a69b-22f57b35c144",
+      "input": "2 3 4 5 6 7 8",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

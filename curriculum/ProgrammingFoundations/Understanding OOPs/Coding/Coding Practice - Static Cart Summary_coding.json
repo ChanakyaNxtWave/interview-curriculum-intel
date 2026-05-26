@@ -1,0 +1,47 @@
+{
+  "question_id": "2e060738-1e7e-4372-8e45-2e0f8cda6382",
+  "short_text": "Static Cart Summary",
+  "content": "Complete the given **Cart** class by adding a static method to summarize the cart contents. Follow the instructions below to implement the required features.\n\n**Existing _Cart_ class**:\n\nThe existing **Cart** class has an `items` dictionary to store item names as keys and quantities as values. Your task is to add a static method that provides a summary of the cart.\n\n<details>\n\n<summary>**Features to be added to the _Cart_ class**</summary>\n\n- **Add a static method**\n  - The static method `cart_summary()` should not take any parameters.\n  - It should print `Your cart has a total of X items.` where X is the total quantity of items in the cart.\n  - If the cart is empty, it should print `Your cart is empty.`.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the test case **Checking Default Tests** is given by the `default_test` function in the prefilled code.\n- This Coding question does not have the usual input/output test cases. The class defined by you will be tested internally whether the method is present or not. So in test cases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7ea912a6-434c-4830-804b-99ded9d98849",
+      "code_content": "class Cart:\n    # Initialize the items dictionary to store cart items\\\n    items_len =0\n    def __init__(self):\n        self.items = {}\n        Cart.items_len = len(self.items)\n    # Static method to summarize the cart contents\n    @staticmethod\n    def cart_summary():\n        # print(lne)\n        if (Cart.items_len != 0):\n            print('Your cart a total of {} items.' )\n        else:\n            print('Your cart is empty.')\n        \n        \n        \n    # Implement the cart_summary() static method here\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    cart = Cart()\n    cart.items = {'apple': 2, 'banana': 3, 'cherry': 1}\n    Cart.cart_summary()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a76d071-e61b-410b-9945-4e40b6a9f597",
+      "input": "Checking Default Tests",
+      "output": "Your cart is empty.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b5ddf2cb-e8ab-4bf8-b03e-a99d0c747324",
+      "input": "Checking cart_summary static method",
+      "output": "Your cart is empty.\nPASS: cart_summary static method is implemented correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f366313d-0775-48c6-af91-96d9cf7b3f5a",
+      "input": "Checking static method annotation",
+      "output": "PASS: cart_summary is correctly annotated as a @staticmethod.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "131f81d6-8163-4839-93be-e4de5501ecaf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

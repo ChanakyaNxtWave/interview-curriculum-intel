@@ -1,0 +1,61 @@
+{
+  "question_id": "6a635ee1-13df-4487-8231-49b4e5caf9a4",
+  "short_text": "Print Names",
+  "content": "Write a program that reads two strings, `S1` and `S2`,both containing space-separated strings from the user and forms sets from these strings. The program should then check whether the two sets are disjoint (i.e., whether they have no common elements) and print the result. If the two sets are disjoint, print `True`.Otherwise, print `False`.\n\n---\n\n#### Input\n\nThe input consists of two lines:\n\n- The first line contains space-separated strings to form the first set.\n- The second line contains space-separated strings to form the second set.\n\n---\n\n#### Output\n\nThe output should be a single boolean value (`True` or `False`), indicating whether the two sets are disjoint.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana orange\ngrape kiwi\n```\n- In this example, the first set contains `apple`, `banana`, and `orange`, while the second set contains `grape` and `kiwi`. \n- Since there are no common elements between the two sets, the output is `True`.\n\nThe output should be:\n\n```\nTrue\n```\n\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4883bbf3-6341-4ab6-893d-54345a7660fc",
+      "code_content": "s1 = input().strip().split()\ns2 = input().strip().split()\nis_dijoint = set(s1).isdisjoint(set(s2))\nprint(is_dijoint)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3162a415-faf8-40c7-98ac-ba487ad7c3fe",
+      "input": "kathy lucas mia\nmia kathy",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "4004d19f-bcec-45f7-bd90-1fd539b38d5a",
+      "input": "apple banana orange\ngrape kiwi",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6187b911-86e1-4962-8ddd-b2b912f35a58",
+      "input": "hannah igor jack\njack igor",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "72533eb5-24a0-49ad-8aa1-57dfeb45e726",
+      "input": "dave eve frank\neve frank",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "cb12191d-8db0-43a3-ba89-07965a508c57",
+      "input": "grace hannah\nhannah",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "6aa1e88e-0163-4f68-a272-a8ea867c0fbd",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

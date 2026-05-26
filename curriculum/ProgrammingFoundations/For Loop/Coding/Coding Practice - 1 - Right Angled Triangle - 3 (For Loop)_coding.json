@@ -1,0 +1,377 @@
+{
+  "question_id": "d9e7a242-4a6d-43db-86a3-ed258c137db9",
+  "short_text": "Right Angled Triangle - 3 (For Loop)",
+  "content": "Write a program that reads a number `N` and prints a **Right Angled Triangle** of `N` rows using stars (`*`) and pluses (`+`).\n\nThe first `N - 1` rows contains stars (`*`) and the `Nth` row contains pluses (`+`).\n\n```\n*\n* *\n* * *\n* * * *\n+ + + + +\n```\n\n<MultiLineNote>\nThere is a space after every star (`*`) and every plus (`+`).\nUse **For** Loop.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing stars (`*`) and pluses (`+`) as a **Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- Print stars (`*`) and pluses (`+`) on **4** rows as shown in the given image.\n  * The first **3** rows should contain stars (`*`).\n  * The **4th** row should contain `N` pluses (`+`).\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/right-angled-triangle-3.png' widthPercent='50'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star (`*`) and every plus (`+`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*\n* *\n* * *\n+ + + +\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "44fbc64d-f889-47fc-b953-4898323a689d",
+      "code_content": "number_of_rows = int(input())\n\nfor each_number in range(1, number_of_rows + 1):\n    if each_number == number_of_rows:\n        print(\"+ \" * each_number)\n    else:\n        print(\"* \" * each_number)\n        ",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "1e64f459-fee1-4c4e-992d-091d4db2efdc",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Output**\n\n```\n*\n* *\n* * *\n* * * *\n+ + + + +\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "For example, if the given number is `N = 5`,\n\n- Print stars (`*`) and pluses (`+`) on **5** rows as shown in the given image.\n  * The first **4** rows should contain stars (`*`).\n  * The **5th** row should contain `N` pluses (`+`).\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/5Screenshot+from+2023-04-13+21-12-38.png' widthPercent='50'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star (`*`) and every plus (`+`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*\n* *\n* * *\n* * * *\n+ + + + +\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "34d98648-f4f7-41c9-8b43-0c0147e05972",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Output**\n\n```\n*\n+ +\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "2",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "For example, if the given number is `N = 2`,\n\n- Print stars (`*`) and pluses (`+`) on **2** rows as shown in the given image.\n  * The first row should contain stars (`*`).\n  * The **2nd** row should contain `N` pluses (`+`).\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/2Screenshot+from+2023-04-13+20-37-38.png' widthPercent='50'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star (`*`) and every plus (`+`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*\n+ +\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9b6a13d5-e610-42ee-a10d-0d73be5f49ac",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Output**\n\n```\n*\n* *\n+ + +\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "For example, if the given number is `N = 3`,\n\n- Print stars (`*`) and pluses (`+`) on **3** rows as shown in the given image.\n  * The first **2** rows should contain stars (`*`).\n  * The **3rd** row should contain `N` pluses (`+`).\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/3Screenshot+from+2023-04-13+20-42-35.png' widthPercent='50'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star (`*`) and every plus (`+`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*\n* *\n+ + +\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "1629ad2e-0e29-49b7-9d2d-2327a99d8a5d",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "a3bc8071-9a87-4622-a7eb-ff710965c76e",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b4c1bb05-a698-4861-8f2a-62cacf7a3c11",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "c9355386-5edf-465a-970f-7900a0d2eba4",
+              "content": "The input will be multiple lines containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fdb07ebb-3c72-49c8-9593-c67e0553d3ed",
+              "content": "The input will be a single line containing a boolean.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing `N`.\n\nFor example, **12**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7a7a6857-d0bf-47f5-af23-32ab24c6c350",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "18f84a1c-0780-4e3e-bd71-80f44a9774cc",
+              "content": "To print an Acute Triangle of `N` rows using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "92aca3f6-1c66-491c-8873-944c450bd81a",
+              "content": "To print a Right Angled Triangle of `N` rows using stars (`+`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c7c065ce-5fdf-4d7b-9f35-f4ea7fe2e9c9",
+              "content": "To print a Triangle of `N` rows using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f2fe009a-5533-4ca4-aeb6-aae8b0212b9d",
+              "content": "To print a Right Angled Triangle of `N` rows using stars (`*`) and pluses (`+`).",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and prints a **Right Angled Triangle** of `N` rows using stars (`*`) and pluses (`+`).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "889e57c8-bae8-4fd8-af1d-3bf66959ad4d",
+          "short_text": "",
+          "content": "According to the problem description, which loop should be used in the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1f25dbaf-d79e-4049-a9c4-66e8a20bbb5e",
+              "content": "do-while loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "31c706ec-ae87-4c9d-8765-1ce80d94398c",
+              "content": "Nested loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "37a17c44-14d6-4255-97ba-4f96d2d65891",
+              "content": "While loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ef982cc4-8ed3-4a42-9628-5c543de7b725",
+              "content": "For loop",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, a **For loop** should be used in the program.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a519212f-4ee7-463a-9e81-90ddaac3f509",
+          "short_text": "",
+          "content": "According to the problem description, what is used to make Right Angled Triangle?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2932559c-6ea8-4492-8055-1dc15debd45c",
+              "content": "(`@`) and (`+`)",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6c52773c-2324-4bd5-be02-e52c83a5c8a3",
+              "content": "(`*`) and (`+`)",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b22f1c1d-38e1-4b88-91c1-76676fe041c3",
+              "content": "(`@`)",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f81a0a7f-42b0-458c-9ddb-11bcb20b730e",
+              "content": "(`*`) and (`#`)",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, stars (`*`) and pluses (`+`) are used to make **Right Angled Triangle**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c4cf0584-7cc9-4a39-8ced-423ac7de57af",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n6\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4ebce8e9-30e9-4a37-ad46-25b7a82615f9",
+              "content": "```\n******\n******\n******\n******\n******\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6e5fd480-0be2-4824-a05f-1fa5ec1b8cc3",
+              "content": "```\n*\n* *\n* * *\n* * * *\n* * * * *\n+ + + + + +\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9b5bb92c-8629-402e-b055-bdf66238db6e",
+              "content": "```\n******\n******\n******\n******\n******\n******\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c48d6e0b-bc39-4294-b539-62b42048f131",
+              "content": "```\n*\n* *\n* * *\n* * * *\n* * * * *\n* * * * * *\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "For example, if the given number is `N = 6`,\n\n- Print stars (`*`) and pluses (`+`) on **6** rows as shown in the given image.\n  * The first **5** rows should contain stars (`*`).\n  * The **6th** row should contain `N` pluses (`+`).\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/6Screenshot+from+2023-04-13+21-10-11.png' widthPercent='50'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star (`*`) and every plus (`+`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*\n* *\n* * *\n* * * *\n* * * * *\n+ + + + + +\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e3a9342a-f04f-4ee8-a56d-5776258bf02f",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5e3aafdd-21aa-4df0-9e23-a478c6b60786",
+              "content": "The output should be `N` rows containing stars (`*`) and pluses (`+`) as a Right Angled Triangle.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "88a0a825-b569-49c0-8242-74da535ca483",
+              "content": "The output should be `N` rows containing stars (`+`) as a Right Angled Triangle.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ad02db3f-d2c3-44e3-bf70-7229ae8d41a5",
+              "content": "The output should be `N` rows containing stars (`*`) and pluses (`+`) as a Triangle.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c2edb038-cbd1-46aa-aeb4-6ae7df92b054",
+              "content": "The output should be `N` rows containing stars (`#`) as a Right Angled Triangle.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be `N` rows containing stars (`*`) and pluses (`+`) as a **Right Angled Triangle**.\n\nFor example, if the given number is `N = 5`,\n\n- Print stars (`*`) and pluses (`+`) on **5** rows as shown in the given image.\n  * The first **4** rows should contain stars (`*`).\n  * The **5th** row should contain `N` pluses (`+`).\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/5Screenshot+from+2023-04-13+21-12-38.png' widthPercent='50'/>\n\n<MultiLineNote>\nIn the given image, there is a space after every star (`*`) and every plus (`+`).\n</MultiLineNote>\n\n\nThe output should be,\n\n```\n*\n* *\n* * *\n* * * *\n+ + + + +\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f59117c2-540e-4fb3-89fc-c12f9d6d88a4",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "1e2cf3ad-84f3-4834-a937-e5db586cd5bd",
+              "content": "10",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "30b9014c-bc3f-4139-9ad8-dfd857051e14",
+              "content": "25",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "337dde8a-2318-4e94-b7e5-00529ff1b483",
+              "content": "11,17",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3e84c5e7-7bd7-45cd-86a7-25f6209dfd8a",
+              "content": "45\n12",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n10\n```\n\n**Input 2**\n\n```\n25                                       \n```\n\nThe above two inputs are valid because they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "7b2e7a6d-ad96-4686-b358-18e5de73e80f",
+      "input": "25",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * \n+ + + + + + + + + + + + + + + + + + + + + + + + +",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "809f7521-eb8e-4b96-a3f6-da84f33eb048",
+      "input": "4",
+      "output": "* \n* * \n* * * \n+ + + +",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "825ac468-0fed-481b-a327-28a1288258c3",
+      "input": "11",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * * * \n* * * * * * * * * * \n+ + + + + + + + + + +",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "9e07380a-e10f-4b23-b605-e0a5edc393b1",
+      "input": "36",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n* * * * * * * * \n* * * * * * * * * \n* * * * * * * * * * \n* * * * * * * * * * * \n* * * * * * * * * * * * \n* * * * * * * * * * * * * \n* * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +",
+      "is_hidden": true,
+      "weightage": 13.0
+    },
+    {
+      "test_case_id": "fbe9ad0c-3660-4efa-80fe-510de7ce78a0",
+      "input": "8",
+      "output": "* \n* * \n* * * \n* * * * \n* * * * * \n* * * * * * \n* * * * * * * \n+ + + + + + + +",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

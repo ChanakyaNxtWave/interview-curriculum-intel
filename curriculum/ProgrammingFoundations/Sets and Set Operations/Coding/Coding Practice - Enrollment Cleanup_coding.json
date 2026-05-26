@@ -1,0 +1,61 @@
+{
+  "question_id": "0a76b479-a366-429b-aaa0-479609ecbe8a",
+  "short_text": "Enrollment Cleanup",
+  "content": "You are developing a student enrollment system for a university. The system allows students to enroll in various courses. However, during the enrollment process, students sometimes mistakenly enroll in the same course multiple times. Your task is to create a program that processes a list of student enrollments and removes any duplicate enrollments, ensuring that each student is only enrolled in each course once.\n\nWrite a program that reads a list of strings representing student enrollments in the format **`studentID_courseID`** and outputs the list with duplicates removed. The output should maintain the order of the first occurrence of each enrollment.\n\n\n\n---\n\n#### Input\n\nThe first line containing strings separated by spaces representing student enrollments.\n\n---\n\n#### Output\n\nThe output should be the unique enrollments, separated by spaces, maintaining the order of their first appearance.\n\n---\n\n#### Explanation\n\nFor example If the input is \n\n```\n123_CS101 456_MATH101 123_CS101 \n```\n\nThe expected output would be \n\n\n```\n123_CS101 456_MATH101 \n```\n\nThis is because the enrollments `123_CS101` was repeated and should only appear once.\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f46b1052-74bd-4248-8806-e9f317df23a6",
+      "code_content": "enrollments = input().split()\n\nunique_enrollments = []\nseen = set()\n\nfor enrollment in enrollments:\n    if enrollment not in seen:\n        seen.add(enrollment)\n        unique_enrollments.append(enrollment)\n\nprint(\" \".join(unique_enrollments))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "577fbeb9-bb90-44d5-a76e-50cafd7a472f",
+      "input": "555_BIO101 666_CHEM102 777_MATH201 555_BIO101 888_CHEM102",
+      "output": "555_BIO101 666_CHEM102 777_MATH201 888_CHEM102",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c9c85a9e-884f-42cc-8798-f2a3454718ca",
+      "input": "111_CS301 222_CS301 333_CS401 222_CS301 444_CS501",
+      "output": "111_CS301 222_CS301 333_CS401 444_CS501",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e2b807ae-f4ed-4b3f-bb8d-e636d2355d7a",
+      "input": "999_MATH102 888_MATH102 777_CS201 999_MATH102 666_MATH102",
+      "output": "999_MATH102 888_MATH102 777_CS201 666_MATH102",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e5b81428-e9d9-4296-8403-98d82f2227df",
+      "input": "123_CS101 456_MATH101 123_CS101",
+      "output": "123_CS101 456_MATH101",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f6904972-b8df-43e7-bee8-5e409d68e9df",
+      "input": "101_ENGL201 202_SCI101 101_ENGL201 303_HIST202 404_SCI101",
+      "output": "101_ENGL201 202_SCI101 303_HIST202 404_SCI101",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e5e0e9f7-bf83-4d89-b157-6b712762a6e6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

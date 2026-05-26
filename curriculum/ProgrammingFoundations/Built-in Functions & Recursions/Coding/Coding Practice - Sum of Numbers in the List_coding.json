@@ -1,0 +1,75 @@
+{
+  "question_id": "2a2be73a-68c9-4428-bfb5-81ea1966de2c",
+  "short_text": "Sum of Numbers in the List",
+  "content": "Given space-separated numbers, write a program to print the **sum** of the given numbers.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the **sum** of the given numbers.\n\n---\n\n#### Explanation\n\nFor example, if the given space-separated numbers are `3 4 7 8`,\n\n- The given numbers are **3**, **4**, **7**, and **8**.\n- The **sum** of **3**, **4**, **7**, and **8** is **22**. (`3 + 4 + 7 + 8 = 22`)\n\nThe output should be **22**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7104182a-8e58-47fd-8f89-7f356bfee846",
+      "code_content": "numbers_list = input().split()\nnew_list = []\n\nfor each_number in numbers_list:\n    number = int(each_number)\n    new_list += [number]\n    \nsum_of_numbers = sum(new_list)\n\nprint(sum_of_numbers)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0a16c4d0-f949-4f4d-952d-e5f1749da2e1",
+      "input": "23 48 69 77 95",
+      "output": "312",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2e74bd7c-be83-41a3-81d9-4a881dcf246c",
+      "input": "3 4 7 8",
+      "output": "22",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "672c973f-a23f-4cb8-b9bf-dd15a58c6dce",
+      "input": "98765 23145 54627 68748 76839 12345 27289",
+      "output": "361758",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7287d4df-5888-457e-89d7-f1120e04dc61",
+      "input": "2050 4700 -3500 -3675 500 -200",
+      "output": "-125",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b34c99e1-8c4e-457c-9723-4f41da899fee",
+      "input": "-5 -36 -8 -29 -15",
+      "output": "-93",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c92ae473-4ffa-4fae-a637-4f16fac2d2e7",
+      "input": "525 -525",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e513ac76-b23b-4f8a-9992-074dd7440b48",
+      "input": "9",
+      "output": "9",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b969e34b-9836-4c11-9c76-5bb9fca9360b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

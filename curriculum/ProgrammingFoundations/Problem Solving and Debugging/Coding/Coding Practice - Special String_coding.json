@@ -1,0 +1,391 @@
+{
+  "question_id": "0c07412e-414a-41a7-8af8-1da54a861e45",
+  "short_text": "Special String",
+  "content": "Write a program that reads a string `S` and checks if all the given conditions are satisfied.\n\n- The first three characters of `S` is **NXT**.\n- The remaining characters of `S` contain a Number. Number is divisible by **2** or **7**.\n\nPrint **Special String** if all the given conditions are satisfied. Otherwise, print **Not a Special String**.\n\n\n<MultiLineQuickTip>\n\nMake sure the number is converted to an **integer** before doing any operations like Division (`/`), Remainder (`%`), etc.\n\n**Example:** `S = NXT1234` \n\n- The number in **NXT1234** is **1234**. \n- **1234** should be converted to an integer before doing any operations.\n\n</MultiLineQuickTip>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Special String** should be printed if all the given conditions are satisfied. Otherwise, **Not a Special String** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `A = NXT1234`,\n\n✔ The first three characters of `S` is **NXT**. (The first three characters of **NXT1234** is equal to **NXT**)\n✔ The remaining characters of `S` is divisible by **2** or **7**. (The remaining characters of **NXT1234** is **1234**. **1234** is divisible by **2**)\n\nThe output should be **Special String** as all the given conditions are satisfied.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0a73a979-683f-4a14-ab27-174bf2d9227d",
+      "code_content": "string = input()\n\nfirst_3_characters = string[0:3]\n\nis_equal = (first_3_characters == \"NXT\")\n\nnumber = string[3:]\nnumber = int(number)\n\nis_divisible_by_2 = (number % 2 == 0) \nis_divisible_by_7 = (number % 7 == 0)\nis_divisible_by_2_or_7 = is_divisible_by_2 or is_divisible_by_7\n\nresult = is_equal and is_divisible_by_2_or_7\n\nif result:\n    print(\"Special String\")\nelse:\n    print(\"Not a Special String\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "371a6bea-47c3-48c0-92ae-f8805bc9419d",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\nNXT168\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Special String",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S` = `NXT168`,\n\n✔ The first three characters of `S` is `NXT`. (The first three characters of `NXT168` is equal to `NXT`)\n\n✔ The remaining characters of `S` is divisible by `2` or `7`. (The remaining characters of `NXT168` is `168`. `168` is divisible by `7`)\n\nThe output should be **Special String** as all the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6cba0b8f-dbd5-4ea7-ace8-4a6e02265220",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\nNXT24\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Special String",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S = NXT24`,\n\n✔ The first three characters of `S` is **NXT**. (The first three characters of **NXT24** is equal to **NXT**)\n\n✔ The remaining characters of `S` is divisible by **2** or **7**. (The remaining characters of **NXT24** is **24**. `24` is divisible by **2**)\n\nThe output should be **Special String** as all the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d497facc-730a-40ff-a0ff-57c5f413744e",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\nXNT654\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Not a Special String",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S` = `XNT654`,\n\n✖ The first three characters of `S` is `NXT`. (The first three characters of `XNT654` is not equal to `NXT`)\n\n✔ The remaining characters of `S` is divisible by `2` or `7`. (The remaining characters of `XNT654` is `654`. `654` is divisible by `2`)\n\nThe output should be **Not a Special String** as one of the given conditions is not satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "1bc2921a-4b1d-49f7-ace3-898b83a15ff0",
+          "short_text": "",
+          "content": "What is the Quick Tip provided in the question?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0411ebe7-d8db-4ed2-b498-748af3ce33b4",
+              "content": "Convert the number into a string before doing any operations like division (/) and the remainder (%).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "27c59622-3971-4307-9e4d-10cff6597149",
+              "content": "Convert the number into an integer before doing any operations like division (/) and the remainder (%).",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "88f55f90-21b7-41fb-b3fa-aa3b5bbf9450",
+              "content": "Convert the number into a float before doing any operations like division (/) and the remainder (%).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bb43d05d-f7ec-4315-b263-86b60f82135d",
+              "content": "Convert the number into a two-digit number before doing any operations like division (/) and the remainder (%).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The Number in the string should be converted into an **integer** before doing any operations like Division `(/)`, Remainder `(%)`, etc.\n\nFor example,\n\nIf `S` = `NXT34` \n\n- The number in `NXT34` is `34`.\n\n- `34` should be converted to an integer before doing any operations.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3607c5a8-8a5a-493b-80e7-6409113d7a43",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "43161631-4850-447d-aafc-bcd415eabacd",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "88818655-d374-4df1-b2e0-a40ad53be74f",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c6af63da-1a37-4511-8046-c7de02ae5a9a",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e4d3e02f-c552-414b-beef-51b1ce6f8cf9",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string. \n\n**Special String** should be printed if all the given conditions are satisfied. Otherwise, **Not a Special String** should be printed.\n\nFor example,\n\nIf the given string is `S` = `NXT104`,\n\n✔ The first three characters of `S` is `NXT`. (The first three characters of `NXT104` is equal to `NXT`)\n\n✔ The remaining characters of `S` is divisible by `2` or `7`. (The remaining characters of `NXT104` is `104`. `104` is divisible by `2`)\n\nThe output should be **Special String** as all the given conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "92ae4378-86e3-4365-9afa-ce2f8d9198b9",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n\nIND954\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "17551c58-0739-4357-8310-7b1c49dd234e",
+              "content": "Not a Special String",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3b595991-f247-4d49-b478-313cde427729",
+              "content": "not a special string",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "59dcb7f7-006d-4f7b-b965-48bfcfe8bf8c",
+              "content": "Special String",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f2a495f1-165d-4212-8ec5-7c009609a19a",
+              "content": "special string",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given string is `S` = `IND954`,\n\n✖ The first three characters of `S` is `NXT`. (The first three characters of `IND954` is not equal to `NXT`)\n\n✔ The remaining characters of `S` is divisible by `2` or `7`. (The remaining characters of `IND954` is `954`. `954` is divisible by `2`)\n\nThe output should be **Not a Special String** as one of the given conditions is not satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "976f5f1e-3ab0-4eb0-aa62-4257225752c8",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "39bf8355-9dbe-4c65-9b24-6e1211776b9d",
+              "content": "NXT64\nNXT86",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6ae34a61-3b35-4860-a9e6-444e6705e7f2",
+              "content": "PYTH12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "709a6d47-b827-4487-96a8-6fb975ffb57d",
+              "content": "NXT14",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "810ce5e7-d051-47b7-bf47-2a2822b92176",
+              "content": "NXT12.3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n\nNXT14\n```\n\n**Input 2**\n\n```\n\nPYTH12\n```\n\nThe above two inputs are valid because they consist of a single line containing a string `S`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a8d91690-95fd-402d-a35f-0f61a4d7033d",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1763392a-203f-491e-ae78-cd9e48780024",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3d4c49d8-82d2-4f2a-a403-c1a433c4c96f",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8c189c18-b21f-4f3f-abd7-3467091cb0d8",
+              "content": "The input will be multiple lines containing two space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "aa924a9c-f072-4c95-bd85-176eeeb2e4de",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing a string representing `S`.\n\nFor example, **NXT798**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d419ccd0-f8bb-415f-b004-c2f31903363f",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "36d52ad2-9dd9-458f-b884-228dd5f10898",
+              "content": "To check if all the given conditions are satisfied.\n\n- The first three characters of S are NXT.\n\n- If the remaining characters of S contain a number. The number is divisible by 2.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "46d9da2d-dfdd-4f2b-b5ba-c04f7856ab88",
+              "content": "To check if all the given conditions are satisfied.\n\nThe first three characters of S are NXT.\n\nIf the remaining characters of S contain a number. The number is divisible by 4 or 7.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bb3fa41e-11a2-4331-be3a-44f5abfe43e5",
+              "content": "To check if all the given conditions are satisfied.\n\n- The first three characters of S are NXT.\n\n- If the remaining characters of S contain a number. The number is divisible by 2 or 7.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "faf5ce19-7e5b-46fc-b836-7659ad25bb05",
+              "content": "To check if all the given conditions are satisfied.\n\n- The first three characters of S are XTN.\n\n- If the remaining characters of S contain a number. The number is divisible by 2 or 7.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a string `S` and check if all the given conditions are satisfied.\n\n- The first three characters of `S` are `NXT`.\n\n- The remaining characters of `S` contain a number. The number is divisible by `2` or `7`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e0f7b95a-0873-4f24-9162-38957a732ae4",
+          "short_text": "",
+          "content": "What should be the first three characters of the string to satisfy the first condition?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1cb97a03-f3c8-4df2-af2f-3f521b4c7de5",
+              "content": "XYZ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "48a3522f-d229-43d9-b78b-ce19bcf92f90",
+              "content": "NXT",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "87eb9ec1-2b9e-4158-b0af-9ee0516a6436",
+              "content": "TXN",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ed7925e1-56b4-49a5-9418-243191db5b20",
+              "content": "XNT",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The first three characters of the input string should be `NXT` to satisfy the first condition.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "1b188e81-24c6-4315-bb64-b9b626c284e4",
+      "input": "PRA49",
+      "output": "Not a Special String",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4eb039f2-732c-4a0f-8591-e14f6b2b0fc3",
+      "input": "NXT841",
+      "output": "Not a Special String",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "5379844b-3e13-4cab-a707-442d0086c7c5",
+      "input": "CCB9",
+      "output": "Not a Special String",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "579fa94e-00f2-4ac0-bb39-daf1355a3535",
+      "input": "NXT6286",
+      "output": "Special String",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9fae9d21-9646-464c-95ab-ca96bec9358c",
+      "input": "NXT50297",
+      "output": "Not a Special String",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b5bc8ac0-949e-4ecd-824a-2dcff88636a8",
+      "input": "NXT88011",
+      "output": "Special String",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "cc47cf80-04ed-4626-80d1-cc29a3e38fc2",
+      "input": "NXT1234",
+      "output": "Special String",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

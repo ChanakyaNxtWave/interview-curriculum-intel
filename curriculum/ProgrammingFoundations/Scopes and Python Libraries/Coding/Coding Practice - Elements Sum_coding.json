@@ -1,0 +1,61 @@
+{
+  "question_id": "4a05f50f-2b4d-40ee-bbba-2eace18ad8d2",
+  "short_text": "Elements Sum",
+  "content": "Complete the function **`sum_elements`** that calculates the sum of all elements in a list using Python's Built-in function from the functools module. The function should take a list of **integers** as input and return their sum.\n\n\n---\n\n#### Input\n\nThe method **`sum_elements`** takes one parameter: a list of **integers** called **numbers**.\n\n---\n\n#### Output\n\nThe method **`sum_elements`** should return the sum of all the **integers** in the input list **numbers**.\n\n---\n\n\n#### Explanation\n\nThe method receives the list **`[10, -10, 20, -20]`** as input. Using the built-in function:\n\n- First, **10** and **-10** are added to give **0**.\n- Next, **0** is added to **20** to give **20**.\n  \nFinally, **20** is added to **-20** to give **`0`**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "25f3fc9e-12ef-44c2-bb31-58dbc08d9553",
+      "code_content": "from functools import reduce\n\ndef add(x, y):\n    return x + y\n\ndef sum_elements(numbers):\n    return reduce(add, numbers)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3b68598c-8bfe-4a98-a5d1-3d53ea322594",
+      "input": "100",
+      "output": "100",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4fb453c3-7be7-46a6-8955-f69c1eeefd8f",
+      "input": "1 2 3 4 5",
+      "output": "15",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "98745ff9-cfc7-4706-bb07-934bc027c5ec",
+      "input": "10 -10 20 -20",
+      "output": "0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9e9ed7db-1a3d-4c80-966e-dfe3d901d2af",
+      "input": "0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fc3778ca-7aed-4efd-9455-a1d18ac26ba6",
+      "input": "50 25 25 0",
+      "output": "100",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "be8d64eb-d56a-40c7-ac7d-fdd7e563e83d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

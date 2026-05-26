@@ -1,0 +1,61 @@
+{
+  "question_id": "0e665d4d-ca1e-4f75-9362-8d25dd37d667",
+  "short_text": "Event Countdown Timer",
+  "content": "You are organizing a major conference. To enhance the experience for attendees, you want to create a countdown timer that displays how much time is left until the event starts. This countdown will be featured on the conference website, serving as a reminder for participants to register and prepare for the event.\n\n\nWrite a Python program that takes both the current date and time as well as the event date and time as input. The program should then calculate the time remaining until the event starts and display this information in a clear and readable format, breaking it down into years, months, days, hours, and minutes.\n\n\n---\n\n#### Input\n\n- The first line contains the current date in the format `YYYY-MM-DD`.\n- The second line contains the current time in the format `HH:MM`.\n- The third line contains the event date in the format `YYYY-MM-DD`.\n- The fourth line contains the event time in the format `HH:MM`.\n\n---\n\n#### Output\n\nThe output should display the time remaining until the event in a readable format, such as:\n\n```\nTime remaining until the event: X year(s), Y month(s), Z day(s), A hour(s), B minute(s)\n```\n---\n\n#### Explanation\n\nIf the input is \n\n```\n2024-02-05\n17:15\n2025-12-01\n09:00\n```\n\nThe Expected Output should be\n\n```\nTime remaining until the event: 1 year(s), 9 month(s), 29 day(s), 15 hour(s), 45 minute(s)\n    ```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a78570b0-8b3a-4630-b571-72c6ead2f320",
+      "code_content": "from datetime import datetime\n\n\ncurrent_date_input = input() \ncurrent_time_input = input() \n\n\nevent_date_input = input() \nevent_time_input = input() \n\ncurrent_datetime = datetime.strptime(current_date_input + \" \" + current_time_input, \"%Y-%m-%d %H:%M\")\n\n\nevent_datetime = datetime.strptime(event_date_input + \" \" + event_time_input, \"%Y-%m-%d %H:%M\")\n\ntime_remaining = event_datetime - current_datetime\n\ndays_remaining = time_remaining.days\n\ntotal_seconds = time_remaining.total_seconds()\nhours_remaining = int((total_seconds % 86400) // 3600)\nminutes_remaining = int((total_seconds % 3600) // 60)\n\nyears_remaining = days_remaining // 365\nmonths_remaining = (days_remaining % 365) // 30\ndays_remaining = (days_remaining % 365) % 30\n\nprint(f\"Time remaining until the event: {years_remaining} year(s), {months_remaining} month(s), {days_remaining} day(s), {hours_remaining} hour(s), {minutes_remaining} minute(s)\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6dd37f58-a84a-45fe-b57d-d4564c5e7e70",
+      "input": "2025-01-01\n12:00\n2025-05-20\n18:00",
+      "output": "Time remaining until the event: 0 year(s), 4 month(s), 19 day(s), 6 hour(s), 0 minute(s)",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "7af57691-722f-44e0-9b9a-3cfcd401fdd8",
+      "input": "2023-01-01\n00:00\n2023-12-31\n23:59",
+      "output": "Time remaining until the event: 0 year(s), 12 month(s), 4 day(s), 23 hour(s), 59 minute(s)",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b09b0c99-f9ca-4017-815c-af3ba9c78bf0",
+      "input": "2024-11-30\n23:59\n2025-01-01\n00:01",
+      "output": "Time remaining until the event: 0 year(s), 1 month(s), 1 day(s), 0 hour(s), 2 minute(s)",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "b8c8f827-a9fd-42c5-96de-c25d8f1ee884",
+      "input": "2024-02-05\n17:15\n2024-07-15\n14:30",
+      "output": "Time remaining until the event: 0 year(s), 5 month(s), 10 day(s), 21 hour(s), 15 minute(s)",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d9cfc841-ac9f-4e87-8d6a-ca4de9aea527",
+      "input": "2024-02-05\n17:15\n2025-12-01\n09:00\n",
+      "output": "Time remaining until the event: 1 year(s), 9 month(s), 29 day(s), 15 hour(s), 45 minute(s)",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "fa01dfac-d860-47cb-afd0-a24a8349ee9b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

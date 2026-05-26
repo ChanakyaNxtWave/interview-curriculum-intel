@@ -1,0 +1,68 @@
+{
+  "question_id": "98a7ce1e-df34-41fe-a25b-1d935293d31b",
+  "short_text": "Count of Mondays",
+  "content": "You are given two years A and B.<br/>Write a program to count the number of Mondays M, which is the 1st day of the month from year A to year B(including B).<hr><b>Input</b><br/><br/>The input will be a single line containing the two space-separated integers, denoting the years A and B.<hr><b>Output</b><br/><br/>For example, if the given years are 2015 and 2017, the dates which contain Mondays as their month starting weekday from 2015 to 2017 are <br/>2015-06-01<br/>2016-02-01<br/>2016-08-01<br/>2017-05-01<br/>So the output should be 4.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "2017ade2-0de6-4729-b892-8cde83c18af2",
+      "code_content": "from datetime import datetime\n\nyear_a, year_b = input().split()\n\nmondays = 0\nmonths = range(1, 13)\nfor year in range(int(year_a), int(year_b)+1):\n    for month in months:\n        date_time_object = datetime(year, month, 1)\n        name_of_weekday = datetime.strftime(date_time_object, \"%A\")\n        if name_of_weekday == \"Monday\":\n            mondays += 1\n\nprint(mondays)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "39829b78-c45e-454a-96ac-816158b405ad",
+      "input": "2013 2020",
+      "output": "13\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "4c6090f2-94fd-4193-9d80-ac9387936162",
+      "input": "2015 2017",
+      "output": "4\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "510f2fe2-c3c0-4b2b-b65f-a29c5dbfb783",
+      "input": "2015 2016",
+      "output": "3\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6c974e09-ed03-4e99-836d-130d15572f90",
+      "input": "2021 2021",
+      "output": "3\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "8eab8473-c137-420e-97ee-a4bb539b4023",
+      "input": "2000 2019",
+      "output": "33\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fcca13e6-6f17-4f27-a9ff-a59c81032a3b",
+      "input": "1995 2019",
+      "output": "43\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f543f8cb-9c90-4462-a019-4620b579057f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

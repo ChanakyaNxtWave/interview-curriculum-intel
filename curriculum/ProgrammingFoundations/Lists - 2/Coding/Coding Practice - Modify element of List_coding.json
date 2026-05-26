@@ -1,0 +1,33 @@
+{
+  "question_id": "78c994fd-6a28-444a-81d0-5979a2a5e07a",
+  "short_text": "Modify element of List",
+  "content": "Write a program that assigns the list `list_a` given in the prefilled code to another list `list_b`.  \n\nThe program should read an integer `x` from the user, representing the position (1-based index) of the element to modify in `list_b`, and change it to **100**. \n \nFinally, the program should print both `list_a` and `list_b`.\n\n---\n\n#### Input\n\nThe first line contains an integer `x`, which represents the position of the element in `list_b` to be modified.\n\n---\n\n#### Output\n\nThe output should display both `list_a` and `list_b` after modifying the `x`th element, each on a new line.\n\n---\n\n#### Explanation\n\nIf the input is `x = 3`, the program should modify the third element of both `list_a` and `list_b` to `100`, as illustrated in the sample output.\n\n```\nlist_a: [10, 20, 100, 40, 50] \nlist_b: [10, 20, 100, 40, 50]\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9caa5d87-eee6-4439-8630-1356c627da01",
+      "code_content": "list_a = [10, 20, 30, 40, 50]\nlist_b = list_a\nx = int(input())\n\nlist_b[x - 1] = 100\n\nprint(\"list_a:\", list_a)\nprint(\"list_b:\", list_b)\n\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0656386e-12cb-4517-b496-5c1b04800f6f",
+      "input": "3",
+      "output": "list_a: [10, 20, 100, 40, 50]\nlist_b: [10, 20, 100, 40, 50]",
+      "is_hidden": false,
+      "weightage": 15.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

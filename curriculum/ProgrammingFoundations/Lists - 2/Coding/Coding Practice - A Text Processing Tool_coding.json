@@ -1,0 +1,96 @@
+{
+  "question_id": "f2dd8622-e382-4b3b-b472-7ad7eadb7331",
+  "short_text": "A Text Processing Tool",
+  "content": "A company is developing a text processing tool to analyze user input. One of the features they want is to reverse the prefix of a given word up to a specific character. Your task is to implement this feature. Given a string `word` and a character `ch`, reverse the prefix of the string up to and including the first occurrence of `ch`. If the character `ch` does not exist in the string, return the string as it is.\n\n<MultiLineNote>\n\n- A **prefix** is the part of the string from the start up to a specific character.\n- If `ch` is not found in the string, the string remains unchanged.\n- Consider only the first occurrence of `ch` in the string for the reversal.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nTwo inputs:\n1. A string `word`.\n2. A character `ch`.\n\n---\n\n#### Output\n\nA single line containing the updated string after reversing the prefix.\n\n---\n\n#### Explanation\n\nIf the `word` is `\"developer\"` and `ch` is `'e'`, the prefix `\"de\"` (up to the first occurrence of `'e'`) will be reversed, resulting in `\"edveloper\"`. If `ch` is not present, return `\"developer\"` as is.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d46efef5-7c2f-4488-927e-47f27dd018c1",
+      "code_content": "word = input()\nch = input()\n\nindex = -1\nfor i in range(len(word)):\n    if word[i] == ch:\n        index = i\n        break\n\nif index != -1:\n    prefix = word[:index + 1]\n    reversed_prefix = prefix[::-1]\n    updated_word = reversed_prefix + word[index + 1:]\nelse:\n    updated_word = word\n\nprint(updated_word)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2bf11088-7214-4799-ad81-8b70156afd8d",
+      "input": "example\na",
+      "output": "axemple",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "76c95545-cd79-4bcf-a577-31c888fdd3fa",
+      "input": "coding\no",
+      "output": "ocding",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "93c4c6dd-f0ff-46c7-8b73-5681d0656830",
+      "input": "programming\nz",
+      "output": "programming",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bca139da-4feb-47ce-aaf3-8d03d2c0f78e",
+      "input": "world\nw",
+      "output": "world",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c0c8be75-528e-4043-8885-79cd808b3dda",
+      "input": "developer\ne",
+      "output": "edveloper",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c89ededa-6c25-40b5-9b23-c078991cbe1f",
+      "input": "testing\nt",
+      "output": "testing",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "cd2d7035-82a9-42e5-b050-bcd3dc2d639c",
+      "input": "python\ny",
+      "output": "ypthon",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ce548e2e-16a3-42f6-8784-8562be91aa56",
+      "input": "singlechar\ns",
+      "output": "singlechar",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "db269a4d-8f0b-40e4-a42d-4c534811fa45",
+      "input": "hello\no",
+      "output": "olleh",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "deb9457b-c045-4da7-ba6b-93bed61d270d",
+      "input": "nospecialchar\n$",
+      "output": "nospecialchar",
+      "is_hidden": true,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f8f8d3e6-cb14-4001-8db6-f7641e67532d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

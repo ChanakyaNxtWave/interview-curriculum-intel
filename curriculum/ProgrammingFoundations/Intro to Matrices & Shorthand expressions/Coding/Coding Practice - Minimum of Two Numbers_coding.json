@@ -1,0 +1,68 @@
+{
+  "question_id": "4412d589-980c-45b0-bcf7-6cff8956541d",
+  "short_text": "Minimum of Two Numbers",
+  "content": "Write a program that reads two integers `a` and `b` and uses shorthand if-else to print the smaller of the given two numbers.\n\n---\n\n#### Input\n\nA line containing two integers, `a` and `b`, separated by space.\n\n---\n\n#### Output\n\nThe output is the smaller of the two integers.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\n5 10\n```\n\nThe output should be:\n\n```\n5\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b92fad6c-7910-41fe-a008-c242fa18af93",
+      "code_content": "inp = input().split()\na = int(inp[0])\nb = int(inp[1])\nprint(a if a < b else b)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1f2819e7-0107-4278-bd97-fbc96b3ac867",
+      "input": "-10 -5",
+      "output": "-10",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "22a7180f-d4df-4fa3-936e-02b80412d2a4",
+      "input": "100 200",
+      "output": "100",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "901e107e-4471-4c75-b160-60264403a18e",
+      "input": "5 10",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ba94807f-f54c-4e4d-a563-56827d4a11fc",
+      "input": "50 40",
+      "output": "40",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "df2eff7e-c88c-4a61-a4bf-b818b82a0d98",
+      "input": "8 4",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e2d5621d-1ea5-4436-9160-ad19c82acad2",
+      "input": "30 30",
+      "output": "30",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5adf6869-803e-47df-ab97-62917f9536af",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

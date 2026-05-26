@@ -1,0 +1,377 @@
+{
+  "question_id": "da413f6d-47ac-4ba9-a797-1e3de2f179e0",
+  "short_text": "Factors of a Number",
+  "content": "Given a number `N`, write a program to print the factors of the number `N`.\r\n\r\n<MultiLineNote>\r\n\r\n**Factors of N:**\r\n\r\nIf a number `N` is divisible by `X`, then `X` is a factor of `N`.\r\n\r\n**Example:**\r\n\r\nIf `N = 15` and `X = 3`, then **3** is a factor of **15** as **15** is divisible by **3**.\r\n\r\nIf `N = 15` and `X = 7`, then **7** is **not** a factor of **15** as **15** is not divisible by **7**.\r\n\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a positive integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should contain all the factors of the given number, each on a new line. \r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 6`,\r\n\r\n- The number **6** is divisible by the numbers **1**, **2**, **3** and **6**.\r\n- So, the factors of the number **6** are **1**, **2**, **3** and **6**.\r\n\r\nThe output should be,\r\n\r\n```\r\n1\r\n2\r\n3\r\n6\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "db17fb73-b17a-4bd1-be16-d12fff4fc491",
+      "code_content": "number = int(input())\n\nfor i in range(1, number+1):\n    if (number % i) == 0:\n        print(i)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "63ea8c2e-e7e6-435d-bfc8-3d586191440d",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n24\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1\n2\n3\n4\n6\n8\n12\n24",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 24`,\n\n- The number **24** is divisible by the numbers **1**, **2**, **3**, **4**, **6**, **8**, **12** and **24**.\n\n- So, the factors of the number **24** are **1**, **2**, **3**, **4**, **6**, **8**, **12** and **24**.\n\nThe output should be,\n\n```\n1\n2\n3\n4\n6\n8\n12\n24\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "96f766bc-aaff-4dc8-8b0b-0836f0cdc2a4",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n12\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1\n2\n3\n4\n6\n12",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 12`,\n\n- The number **12** is divisible by the numbers **1**, **2**, **3**, **4**, **6** and **12**.\n\n- So, the factors of the number **12** are **1**, **2**, **3**, **4**, **6** and **12**.\n\nThe output should be,\n\n```\n1\n2\n3\n4\n6\n12\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9ff37f5f-fb47-4412-9d29-1963670cb9ef",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n8\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1\n2\n4\n8",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 8`,\n\n- The number **8** is divisible by the numbers **1**, **2**, **4** and **8**.\n\n- So, the factors of the number **8** are **1**, **2**, **4** and **8**.\n\nThe output should be,\n\n```\n1\n2\n4\n8\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "080c7d16-cc97-4d60-a295-a408fa604cea",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0ed0b733-ef3e-4bdd-a5a6-3247fb4700dc",
+              "content": "The output should contain all the factors of the given number, each on a single line. ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8c36b3c9-475e-4570-9034-8f96eee4c1b5",
+              "content": "The output should contain all the factors of the given number, each on a new line. ",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a88a23d3-302a-4167-a913-bc2c77ec08ee",
+              "content": "The output should contain all the numbers from **1** to the given number, each on a new line. ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b8e243a9-087c-42b9-a8d8-18de0b155111",
+              "content": "The output should contain only the first three factors of the given number, each on a new line. ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should contain all the factors of the given number, each on a new line. \n\n\nFor example,\n\nIf the given number is `N = 5`,\n\n- The number **5** is divisible by the numbers **1** and **5**.\n\n- So, the factors of the number **5** are **1** and **5**.\n\nThe output should be,\n\n```\n1\n5\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1aefa1eb-63db-4502-b319-db0fcd445fc3",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n35\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2ff75ed9-0b9e-4887-a089-ee5758ff6f96",
+              "content": "1 5 7 35",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "60582354-1e8e-4b1b-89ef-900f4741eba8",
+              "content": "1\n5\n7\n35",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "af6229c7-e2d4-48f8-8432-99e66d8a9b0b",
+              "content": "1, 5, 7, 35",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "badf938b-1e7c-4c59-bdfb-ba3022632f98",
+              "content": "1\n2\n3\n4\n5\n7\n35",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 35`,\n\n- The number **35** is divisible by the numbers **1**, **5**, **7** and **35**.\n\n- So, the factors of the number **35** are **1**, **5**, **7** and **35**.\n\nThe output should be,\n\n```\n1\n5\n7\n35\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5f49ef0d-017c-4cb1-b4cf-3b1fe3d6f3e8",
+          "short_text": "",
+          "content": "According to the problem description, if `N = 86`, how many factors does the number `N` contain?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0efcd579-c911-439b-b0fb-fe81a0c10cb0",
+              "content": "3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6939eac0-c6f9-44f2-8801-a42189b78250",
+              "content": "6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8a1a0ce7-eb3d-4231-b06b-42569d960e6b",
+              "content": "4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8fee49f9-8128-4613-a85e-270a3a89a142",
+              "content": "5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 86`,\n\n- The number **86** is divisible by the numbers **1**, **2**, **43** and **86**.\n\n- So, the factors of the number **86** are **1**, **2**, **43** and **86**.\n\nSo, the number **86** contains **4** factors.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6f71392b-8151-45ff-a2e2-49384ef62700",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "4fb8b6b2-061e-4709-891e-ce1abbb5a618",
+              "content": "5\n8",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5485e48c-2156-4bd3-8111-ef9272adce50",
+              "content": "-89",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b31cc692-5d6e-46ab-a54f-4a12b3aa283e",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b9c32158-1ed3-4059-bcbf-fd4ddc36d740",
+              "content": "98",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n98\n```\n\n**Input 2**\n\n```\n12\n```\nThe above two inputs are valid because they consist of a single line containing a positive integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "95c33611-1992-4b20-850d-9f710cffef71",
+          "short_text": "",
+          "content": "From your undertsanding of the problem description, what is a factor?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5034c065-68a6-4121-81e9-82f0da1f3624",
+              "content": "If a number `N` is divisible by `X`, then `X` is a factor of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6bd41d33-5ea3-4e3d-bda1-c9ef3b644452",
+              "content": "If a number `N` is divisible by `X`, then `X` is a multiple of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b87b301d-defc-49e0-9341-5c64aeca0a92",
+              "content": "If a number `N` is not divisible by `X`, then `X` is a factor of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c695e351-1c53-4121-97a8-966161131ff5",
+              "content": "If a number `N` is divisible by `X`, then `X` is not a factor of `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, If a number `N` is divisible by `X`, then `X` is a factor of `N`.\n\nExample:\n\nIf `N = 15` and `X = 3`, then `3` is a factor of `15` as `15` is divisible by `3`.\n\nIf `N = 15` and `X = 7`, then `7` is not a factor of `15` as `15` is not divisible by `7`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b7730dbd-7d5e-477c-86d5-5cdfb5e54f7c",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1998b4cc-f3c4-4343-8a2f-1ac14362d7ae",
+              "content": "To print the differences of the number `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "65069763-9571-4e74-832c-123b9492b9ea",
+              "content": "To print the multiples of the number `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8db82b53-b38b-4246-ac1b-8ffa83c194cd",
+              "content": "To print the sum of the number `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fba42048-10c3-429c-ae4c-a67bfeb154ef",
+              "content": "To print the factors of the number `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the number `N` and to print the factors of the number `N`.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d059c6bf-fd39-4931-aa8a-ab451003463f",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0ffe16e9-6897-41c2-a7a8-9fb8eee2e757",
+              "content": "The input will be multiple lines containing a positive integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "29a434de-ac18-4a95-8251-60b50ae39fd8",
+              "content": "The input will be a single line containing a negative integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5839df21-e12d-43fa-afe9-76ef03e176a5",
+              "content": "The input will be a single line containing a positive float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e36a7ff5-ec51-4a66-8197-22ff7b0d770c",
+              "content": "The input will be a single line containing a positive integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing a positive integer.\n\nFor example, **48**\n\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "04300d7f-761f-48e8-bf4b-73aa2c813142",
+      "input": "22",
+      "output": "1\n2\n11\n22\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "08272737-0249-4764-849f-5320ac111448",
+      "input": "14",
+      "output": "1\n2\n7\n14\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "3db2f9fb-fe93-4bbb-bc95-f9993564258c",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "72daf4d5-6e70-420f-b010-186dc50aa27c",
+      "input": "18",
+      "output": "1\n2\n3\n6\n9\n18\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9ac4a500-ea54-4b60-8f2d-d5d70a8f6526",
+      "input": "6",
+      "output": "1\n2\n3\n6\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

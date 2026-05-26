@@ -1,0 +1,61 @@
+{
+  "question_id": "6449c975-4076-41cb-9903-d2f8b6c74955",
+  "short_text": "Cubes of N Numbers (For Loop)",
+  "content": "Write a program that reads a number `N` and prints the cube of numbers from **1** to `N`.\n\n<MultiLineNote>\n* The cube of a number `X` is `X` power **3**.(**X<sup>3</sup>**)\n* Use the **For** loop to iterate over the range of numbers.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing integers that are the cubes of numbers from **1** to `N`.\n\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 3`,\n\n- The numbers from **1** to **3** are **1**, **2** and **3**.\n- The cubes of numbers from **1** to **3** are **1**, **8**, and **27**.\n\n|Number (N) | Cube of N (N<sup>3</sup>)| \n|---|---|---|\n|1 | 1 | \n|2 | 8 | \n|3 | 27 |\n\nThe output should be,\n\n```\n1\n8\n27\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "adb36613-6464-4612-8778-c5d9c35b8f18",
+      "code_content": "number = int(input())\n\nfor each_num in range(1, number + 1):\n    print(each_num ** 3)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00727f7e-7495-4e16-95f5-74b5f3005151",
+      "input": "3",
+      "output": "1\n8\n27",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5d2a09c5-e51a-45c4-b2c8-7191781f1f06",
+      "input": "5",
+      "output": "1\n8\n27\n64\n125",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9484ef4a-f40c-47ce-ae6a-50a2268dc945",
+      "input": "14",
+      "output": "1\n8\n27\n64\n125\n216\n343\n512\n729\n1000\n1331\n1728\n2197\n2744",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ac21fa19-4dcb-497e-a5ea-e296388a3561",
+      "input": "9",
+      "output": "1\n8\n27\n64\n125\n216\n343\n512\n729",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e2dcbdc2-26f8-4496-a21e-fd7bd603da60",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ad396947-a6fc-4dc5-b3ec-221c6a4e9d0d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

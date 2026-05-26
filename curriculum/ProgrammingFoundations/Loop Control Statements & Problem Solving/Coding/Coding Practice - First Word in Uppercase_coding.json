@@ -1,0 +1,61 @@
+{
+  "question_id": "f68a86b5-a61e-4db8-82a2-448e58887519",
+  "short_text": "First Word in Uppercase",
+  "content": "Given a sentence `S`, write a program to print a new sentence by changing all letters of the first word in the sentence `S` to upper case.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string representing the sentence `S`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string, obtained by changing all letters of the first word in the sentence `S` to upper case.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given sentence is ` S = \"Python is a programming language.\"`,\r\n\r\n- The words in the sentence **\"Python is a programming language\"** are **\"Python\"**, **\"is\"**, **\"a\"**, **\"programming\"** and **\"language.\"**.\r\n- The first word in the sentence **\"Python is a programming language\"** is **\"Python\"**.\r\n- The new sentence after changing all letters of the first word **\"Python\"** in the given sentence to upper case is **\"PYTHON is a programming language.\"**.\r\n\r\nThe output should be **PYTHON is a programming language.**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "17fa255e-6a74-4fb9-bd4f-8fe1c97bb3a3",
+      "code_content": "sentence = input()\n\nfirst_space_index = 0\nfor char in sentence:\n    if char == \" \":\n        break\n    first_space_index = first_space_index + 1\n\nupper_case_word = sentence[:first_space_index].upper()\nnew_sentence = upper_case_word + sentence[first_space_index:]\n\nprint(new_sentence)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "46ad4ca3-80e9-4c5f-90e2-45ebc9683e07",
+      "input": "how are you?",
+      "output": "HOW are you?\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "6f95b000-ee11-4671-943e-12a97ec95b8d",
+      "input": "Python is a programming language.",
+      "output": "PYTHON is a programming language.\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9507469a-d754-4538-acbf-bbfd8b28ba21",
+      "input": "Gita plays cricket.",
+      "output": "GITA plays cricket.\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "ca209ade-a507-4696-8993-dfe1472b6e93",
+      "input": "Apple is a fruit.",
+      "output": "APPLE is a fruit.\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "d6c03f5e-f8a7-4bf0-a960-4aa82cb5d96e",
+      "input": "Algorithm is a set of instructions.",
+      "output": "ALGORITHM is a set of instructions.\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

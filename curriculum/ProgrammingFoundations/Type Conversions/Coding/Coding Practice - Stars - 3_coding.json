@@ -1,0 +1,61 @@
+{
+  "question_id": "f9930aee-6134-4990-b953-99f49ca70b0c",
+  "short_text": "Stars - 3",
+  "content": "Write a program that reads a number `N` and prints three lines with each line containing `N` stars (`*`).\r\n\r\n<MultiLineNote>\r\nThere is a space after each star.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be three lines containing `N` number of space-separated stars (`*`) in each line.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is **4**, the output should be three lines containing four space-separated stars (`*`) in each line.\r\n\r\n\r\n```\r\n* * * * \r\n* * * * \r\n* * * * \r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5dff7326-2227-4643-b92a-eda4fd8cbd9e",
+      "code_content": "count = input()\ncount = int(count)\n\nprint(\"* \" * count)\nprint(\"* \" * count)\nprint(\"* \" * count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "36622dee-700f-4bfb-8682-92e6078ad2b8",
+      "input": "1",
+      "output": "* \n* \n*",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "48e530b1-4b24-4e17-b773-946c5972746f",
+      "input": "5",
+      "output": "* * * * * \n* * * * * \n* * * * *",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "60961820-def3-48e8-845f-5197ce8bfb83",
+      "input": "3",
+      "output": "* * * \n* * * \n* * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "732b2a85-cfcc-402f-a743-02ac29375594",
+      "input": "4",
+      "output": "* * * * \n* * * * \n* * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "932dd895-d798-44ab-b5cf-f8be22aff4ae",
+      "input": "0",
+      "output": "",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "96d3f95d-da92-4167-97aa-c610bde9c668",
+  "short_text": "2 Series",
+  "content": "Given a number `N`, write a program to print the `N` terms in the given series, each on a new line.\n\n**Series:**\n\n<div style=\"background-color: #3c4257; padding: 15px; color: #f8f8f2;border-radius: 4px;margin: 10px;font-size: 18px;font-family:Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace\">\n2, 22, 222, 2222, .... N terms\n</div>\n\n<br/>\n\n**Terms in the given series:**\n\n| Term Number | Term             | Number of 2's |\n| ----------- | ---------------- | ------------- |\n| First Term  | 2                | 1             |\n| Second Term | 22               | 2             |\n| Third Term  | 222              | 3             |\n| ..          | ..               | ..            |\n| Nth Term    | 2222... (upto N) | N             |\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` lines containing the terms from **First Term** to **Nth Term** in the given series.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 6`,\n\n- The number of terms is **6**.\n- Print the terms from **First Term** to **Sixth Term** in the given series.\n\n**Terms in the given series:**\n\n| Term Number | Term   | Number of 2's |\n| ----------- | ------ | ------------- |\n| First Term  | 2      | 1             |\n| Second Term | 22     | 2             |\n| Third Term  | 222    | 3             |\n| Fourth Term | 2222   | 4             |\n| Fifth Term  | 22222  | 5             |\n| Sixth Term  | 222222 | 6             |\n\nThe output should be,\n\n```\n2\n22\n222\n2222\n22222\n222222\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "97d847a1-a89d-4fb0-af9c-2315ca2e3f03",
+      "code_content": "number = int(input())\n\nfor each_number in range(1, number + 1):\n    \n    term = \"2\" * each_number\n    term = int(term)\n    print(term)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "13515ea8-117d-493b-ab62-8d7e1a66464a",
+      "input": "50",
+      "output": "2\n22\n222\n2222\n22222\n222222\n2222222\n22222222\n222222222\n2222222222\n22222222222\n222222222222\n2222222222222\n22222222222222\n222222222222222\n2222222222222222\n22222222222222222\n222222222222222222\n2222222222222222222\n22222222222222222222\n222222222222222222222\n2222222222222222222222\n22222222222222222222222\n222222222222222222222222\n2222222222222222222222222\n22222222222222222222222222\n222222222222222222222222222\n2222222222222222222222222222\n22222222222222222222222222222\n222222222222222222222222222222\n2222222222222222222222222222222\n22222222222222222222222222222222\n222222222222222222222222222222222\n2222222222222222222222222222222222\n22222222222222222222222222222222222\n222222222222222222222222222222222222\n2222222222222222222222222222222222222\n22222222222222222222222222222222222222\n222222222222222222222222222222222222222\n2222222222222222222222222222222222222222\n22222222222222222222222222222222222222222\n222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222\n22222222222222222222222222222222222222222222\n222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222\n22222222222222222222222222222222222222222222222\n222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222\n22222222222222222222222222222222222222222222222222",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "37c28053-c456-40b1-aa3c-0a5336b9521c",
+      "input": "1",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "432cd839-c097-4170-8234-1fd6aa7b6ef6",
+      "input": "32",
+      "output": "2\n22\n222\n2222\n22222\n222222\n2222222\n22222222\n222222222\n2222222222\n22222222222\n222222222222\n2222222222222\n22222222222222\n222222222222222\n2222222222222222\n22222222222222222\n222222222222222222\n2222222222222222222\n22222222222222222222\n222222222222222222222\n2222222222222222222222\n22222222222222222222222\n222222222222222222222222\n2222222222222222222222222\n22222222222222222222222222\n222222222222222222222222222\n2222222222222222222222222222\n22222222222222222222222222222\n222222222222222222222222222222\n2222222222222222222222222222222\n22222222222222222222222222222222",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "442ea5d5-de73-4026-8896-f11b989e3ed7",
+      "input": "3",
+      "output": "2\n22\n222",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "543da8c3-f12d-44f9-b0a6-43e3ccdf4b05",
+      "input": "15",
+      "output": "2\n22\n222\n2222\n22222\n222222\n2222222\n22222222\n222222222\n2222222222\n22222222222\n222222222222\n2222222222222\n22222222222222\n222222222222222",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "892a5148-b919-4dff-9aaa-22cc26f3a476",
+      "input": "6",
+      "output": "2\n22\n222\n2222\n22222\n222222",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

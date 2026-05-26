@@ -1,0 +1,75 @@
+{
+  "question_id": "9ef0e0b1-185f-443e-8888-e7781ccb1d82",
+  "short_text": "Hollow Pyramid - 2",
+  "content": "Given a number `N`, write a program to print a **Hollow Pyramid** of `2 * N - 1` rows using numbers.\n\n```\n1\n2 2\n3   3\n4     4\n3   3\n2 2\n1\n```\n\n<MultiLineNote>\nThere is a space after every number (`1`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `2 * N - 1` rows containing numbers as a **Hollow Pyramid** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- Print Numbers on **7** rows (`2 * 4 - 1`) as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-pyramid-2.png' widthPercent='50'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Number in the box indicates the number and a space (\"1 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n1\n2 2\n3   3\n4     4\n3   3\n2 2\n1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "416ee0a5-d9fb-4829-884b-3d631ffeef1d",
+      "code_content": "number = int(input())\n\nfor each_number in range(1, number + 1):\n    if each_number == 1:\n        each_row = str(each_number)\n        print(each_row)\n    else:\n        hollow_spaces = \"  \" * (each_number - 2)\n        each_row = str(each_number)+ \" \" + hollow_spaces + str(each_number)\n        print(each_row)\n\nfor each_number in range(1, number):\n    if each_number == (number - 1):\n        each_row = str(1)\n        print(each_row)\n    else:\n        hollow_spaces = \" \" * ((2 * number) - (2 * each_number) - 3)\n        each_row = str(number - each_number)  + hollow_spaces + str(number - each_number)\n        print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "7037f5e5-e5bf-4594-96de-4a3635a6cf68",
+      "input": "15",
+      "output": "1\n2 2\n3   3\n4     4\n5       5\n6         6\n7           7\n8             8\n9               9\n10                 10\n11                   11\n12                     12\n13                       13\n14                         14\n15                           15\n14                         14\n13                       13\n12                     12\n11                   11\n10                 10\n9               9\n8             8\n7           7\n6         6\n5       5\n4     4\n3   3\n2 2\n1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8b3338a5-4580-4d67-8781-113b530f1bb8",
+      "input": "2",
+      "output": "1\n2 2\n1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "99d86f7e-088e-439d-9ece-c8468330a1ec",
+      "input": "33",
+      "output": "1\n2 2\n3   3\n4     4\n5       5\n6         6\n7           7\n8             8\n9               9\n10                 10\n11                   11\n12                     12\n13                       13\n14                         14\n15                           15\n16                             16\n17                               17\n18                                 18\n19                                   19\n20                                     20\n21                                       21\n22                                         22\n23                                           23\n24                                             24\n25                                               25\n26                                                 26\n27                                                   27\n28                                                     28\n29                                                       29\n30                                                         30\n31                                                           31\n32                                                             32\n33                                                               33\n32                                                             32\n31                                                           31\n30                                                         30\n29                                                       29\n28                                                     28\n27                                                   27\n26                                                 26\n25                                               25\n24                                             24\n23                                           23\n22                                         22\n21                                       21\n20                                     20\n19                                   19\n18                                 18\n17                               17\n16                             16\n15                           15\n14                         14\n13                       13\n12                     12\n11                   11\n10                 10\n9               9\n8             8\n7           7\n6         6\n5       5\n4     4\n3   3\n2 2\n1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9f53f7e3-1c53-4787-a4ce-2c1082f41efa",
+      "input": "7",
+      "output": "1\n2 2\n3   3\n4     4\n5       5\n6         6\n7           7\n6         6\n5       5\n4     4\n3   3\n2 2\n1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a96e11af-512b-46ff-9a1a-490a3c55ed8a",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 19.0
+    },
+    {
+      "test_case_id": "cc984378-497e-46e5-803a-e0509eb6d337",
+      "input": "4",
+      "output": "1\n2 2\n3   3\n4     4\n3   3\n2 2\n1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d8a86fb7-3064-4802-b4b2-ee47a49ce545",
+      "input": "3",
+      "output": "1\n2 2\n3   3\n2 2\n1",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

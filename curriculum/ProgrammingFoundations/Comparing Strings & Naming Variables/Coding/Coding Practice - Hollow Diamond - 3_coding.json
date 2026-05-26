@@ -1,0 +1,61 @@
+{
+  "question_id": "9aa6c953-05d3-46e6-86a2-d9afbc3c3e84",
+  "short_text": "Hollow Diamond - 3",
+  "content": "Given an integer N, write a program to print the hollow diamond pattern in 2*N rows and 2*N columns, similar to the pattern shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">* * * * * * * * * * \r\n* * * *     * * * * \r\n* * *         * * * \r\n* *             * * \r\n*                 * \r\n*                 * \r\n* *             * * \r\n* * *         * * * \r\n* * * *     * * * * \r\n* * * * * * * * * * \r\n</code></pre><hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be 2*N rows and 2*N columns containing the asterisk(*) characters in the hollow diamond pattern.<br/>Note: There is a space after each asterisk(*) character.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, the pattern should contain 10 rows and 10 columns as shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">* * * * * * * * * * \r\n* * * *     * * * * \r\n* * *         * * * \r\n* *             * * \r\n*                 * \r\n*                 * \r\n* *             * * \r\n* * *         * * * \r\n* * * *     * * * * \r\n* * * * * * * * * * \r\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "8f748f99-81e9-47f2-8b03-d66504f8d0a5",
+      "code_content": "n = int(input())\nfor row in range(0, n):  # Upper Hollow Diamond\n    stars_count = n - row\n    left_stars = \"* \" * stars_count\n    hollow_spaces = \"  \" * (2*row)\n    right_stars = \"* \" * stars_count\n    print(left_stars + hollow_spaces + right_stars)\n\nfor row in range(1, n+1):  # Lower Hollow Diamond\n    stars_count = n - row\n    stars = \"* \" * row\n    hollow_spaces = \"  \" * (2*stars_count)\n    print(stars + hollow_spaces + stars)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "22e89952-db61-404c-baf4-c013b5b6b5a7",
+      "input": "8",
+      "output": "* * * * * * * * * * * * * * * * \n* * * * * * *     * * * * * * * \n* * * * * *         * * * * * * \n* * * * *             * * * * * \n* * * *                 * * * * \n* * *                     * * * \n* *                         * * \n*                             * \n*                             * \n* *                         * * \n* * *                     * * * \n* * * *                 * * * * \n* * * * *             * * * * * \n* * * * * *         * * * * * * \n* * * * * * *     * * * * * * * \n* * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "22fedf2e-998e-4e2d-a813-750e788500df",
+      "input": "5",
+      "output": "* * * * * * * * * * \n* * * *     * * * * \n* * *         * * * \n* *             * * \n*                 * \n*                 * \n* *             * * \n* * *         * * * \n* * * *     * * * * \n* * * * * * * * * * \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8811263a-4578-4195-95c8-79a49d8c59ae",
+      "input": "3",
+      "output": "* * * * * * \n* *     * * \n*         * \n*         * \n* *     * * \n* * * * * * \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "a0022b1c-c81e-4b91-b689-0c93d0b48c7f",
+      "input": "11",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * *     * * * * * * * * * * \n* * * * * * * * *         * * * * * * * * * \n* * * * * * * *             * * * * * * * * \n* * * * * * *                 * * * * * * * \n* * * * * *                     * * * * * * \n* * * * *                         * * * * * \n* * * *                             * * * * \n* * *                                 * * * \n* *                                     * * \n*                                         * \n*                                         * \n* *                                     * * \n* * *                                 * * * \n* * * *                             * * * * \n* * * * *                         * * * * * \n* * * * * *                     * * * * * * \n* * * * * * *                 * * * * * * * \n* * * * * * * *             * * * * * * * * \n* * * * * * * * *         * * * * * * * * * \n* * * * * * * * * *     * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "fb85c02f-b7e6-4dc4-ae03-c9dd501dfe29",
+      "input": "14",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * *     * * * * * * * * * * * * * \n* * * * * * * * * * * *         * * * * * * * * * * * * \n* * * * * * * * * * *             * * * * * * * * * * * \n* * * * * * * * * *                 * * * * * * * * * * \n* * * * * * * * *                     * * * * * * * * * \n* * * * * * * *                         * * * * * * * * \n* * * * * * *                             * * * * * * * \n* * * * * *                                 * * * * * * \n* * * * *                                     * * * * * \n* * * *                                         * * * * \n* * *                                             * * * \n* *                                                 * * \n*                                                     * \n*                                                     * \n* *                                                 * * \n* * *                                             * * * \n* * * *                                         * * * * \n* * * * *                                     * * * * * \n* * * * * *                                 * * * * * * \n* * * * * * *                             * * * * * * * \n* * * * * * * *                         * * * * * * * * \n* * * * * * * * *                     * * * * * * * * * \n* * * * * * * * * *                 * * * * * * * * * * \n* * * * * * * * * * *             * * * * * * * * * * * \n* * * * * * * * * * * *         * * * * * * * * * * * * \n* * * * * * * * * * * * *     * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "5edd8253-6c47-4832-a96b-32f51dc3d33b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

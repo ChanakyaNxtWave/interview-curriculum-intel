@@ -1,0 +1,82 @@
+{
+  "question_id": "71679a89-37f0-4dc9-826e-055184bc63c0",
+  "short_text": "Check First Letter and Last Letter of Word",
+  "content": "Given space-separated words, write a program to check if the first letter and last letter of each word are the same.\n\n<MultiLineNote>\nConsider both uppercase and lowercase letters as the same.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated strings.\n\n---\n\n#### Output\n\nThe output should contain boolean values. For each word, **True** should be printed if the first and last letter are the same. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given space-separated words are `\"water Noon river\"`,\n\n- The given words are **\"water\"**, **\"Noon\"**, and **\"river\"**.\n- In the word **\"water\"**, the first letter (**w**) and the last letter (**r**) are different.\n- In the word **\"Noon\"**, the first letter (**N**) and the last letter (**n**) are same. \n- In the word **\"river\"**, the first letter (**r**) and the last letter (**r**) are same.\n\nThe output should be,\n\n```\nFalse\nTrue\nTrue\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "08c7f4f7-792a-4915-80dd-fb10d0eb6457",
+      "code_content": "words = input().split()\n\nfor each_word in words:\n    each_word = each_word.lower()\n\n    first_letter = each_word[0]\n    last_letter = each_word[-1]\n\n    if first_letter == last_letter:\n        print(\"True\")\n    else:\n        print(\"False\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "04cd7dca-52e3-48a5-957a-f8c38acbd870",
+      "input": "comiC Book Dosed awake loyal tree maxim",
+      "output": "True\nFalse\nTrue\nFalse\nTrue\nFalse\nTrue",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "09b7f21a-5443-4981-b43e-1a95fc476654",
+      "input": "Racer",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "17035eb4-ddb2-48c2-8b5e-c49f70065ec9",
+      "input": "Civic aroma critic dawn surf eye",
+      "output": "True\nTrue\nTrue\nFalse\nFalse\nTrue",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a3b8aef5-4f08-42de-ab65-443d449af8e8",
+      "input": "TREES",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d1ca73c5-1593-4d98-a431-cc0e0aba2105",
+      "input": "Clock run",
+      "output": "False\nFalse",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d45815e5-7cb8-41bd-acb6-61ea598873c3",
+      "input": "water Noon river",
+      "output": "False\nTrue\nTrue",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "db0f0c62-d2c9-430e-a848-4218f1e61c6d",
+      "input": "eat play dance work label",
+      "output": "False\nFalse\nFalse\nFalse\nTrue",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dde5e2a4-0a32-4e94-850f-6d9a859fd29d",
+      "input": "GANG onto noun SKITS sees bulb seas high level",
+      "output": "True\nTrue\nTrue\nTrue\nTrue\nTrue\nTrue\nTrue\nTrue",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

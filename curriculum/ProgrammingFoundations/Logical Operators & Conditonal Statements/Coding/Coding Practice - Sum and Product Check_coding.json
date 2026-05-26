@@ -1,0 +1,391 @@
+{
+  "question_id": "a36afd65-c081-4117-85ef-7ca2c664ebee",
+  "short_text": "Sum and Product Check",
+  "content": "Write a program that reads two numbers `A` and `B` and checks if both the sum and the product of the given numbers have less than three digits.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `A`.\r\nThe second line of input contains an integer representing `B`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if both the sum and the product of the given numbers have less than three digits, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `A = 17` and `B = 4`,\r\n\r\n✔ The sum of `A` and `B` has less than three digits. (`17 + 4 = 21`, **21** has less than three digits)\r\n✔ The product of `A` and `B` has less than three digits. (`17 * 4 = 68`. **68** has less than three digits)\r\n\r\nThe output should be **True** as both the sum and the product of the given numbers have less than three digits.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "3945bf66-7715-4390-95b9-e0b2ebe82edc",
+      "code_content": "first_number = input()\nfirst_number = int(first_number)\n\nsecond_number = input()\nsecond_number = int(second_number)\n\nsum_of_numbers = first_number + second_number\nsum_of_numbers = str(sum_of_numbers)\nsum_digits_count = len(sum_of_numbers)\nis_sum_length_less_than_three = sum_digits_count < 3\n\nproduct_of_numbers = first_number * second_number\nproduct_of_numbers = str(product_of_numbers)\nproduct_digits_count = len(product_of_numbers)\nis_product_length_less_than_three = product_digits_count < 3\n\nresult = is_sum_length_less_than_three and is_product_length_less_than_three\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "37ac0519-b279-4b2d-acda-63e59aadbb89",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n34\n2\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 34` and `B = 2`,\n\n✔ The sum of `A` and `B` has less than three digits. (`34+2= 36`, **36** has less than three digits)\n\n✔ The product of `A `and `B` has less than three digits. (`34*2= 68`, **68** has less than three digits)\n\n\nThe output should be **True** as both the sum and the product of the given numbers have less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a3d7a76c-2f7a-4812-a707-d8dbc907d935",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n16\n5\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 16` and `B = 5`,\n\n✔ The sum of `A` and `B` has less than three digits. (`16+5= 21`, **21** has less than three digits)\n\n✔ The product of `A` and `B` has less than three digits. (`16*5=80`, **80** has less than three digits)\n\nThe output should be **True** as both the sum and the product of the given numbers have less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ee5d6716-29ec-46f9-9ae8-3071ab45456b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n75\n25\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 75` and `B = 25`\n\n\n✖ The sum of `A` and `B` has less than three digits. (`75+25= 100`, **100** has three digits)\n\n✖ The product of `A `and `B` has less than three digits. (`75*25=1875`, **1875** has more than three digits) \n\nThe output should be **False** as both the sum and the product of the given numbers have not less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "088609b3-300a-44cf-ba72-dd90ed958ce5",
+          "short_text": "",
+          "content": "According to the problem description,  both the sum and the product of the given numbers should be?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2feb80f2-fbf2-479b-8ccb-15dd97d2d7b6",
+              "content": "Equal to two digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "311cb474-4a15-45c0-942a-bca6d428bae0",
+              "content": "Greater than three digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "91d99996-1ac5-497a-a183-fd6a50aa470d",
+              "content": "Less than three digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "adbdf79e-55d2-428e-a2ae-ebf18b2b331a",
+              "content": "Less than four digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, both the sum and the product of the given numbers have less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "418c239f-09fb-40de-a62a-c602fcacd89d",
+          "short_text": "",
+          "content": "According to the problem description, what does the product of two numbers `A` and `B` mean?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1309c6ad-7fd8-47d8-a84f-249ffbc0a76c",
+              "content": "A * B ",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "16a34160-ad39-4a22-a078-f9614de045f4",
+              "content": "A + B",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4fadea91-a549-4385-8f5f-5ae6dc2cca55",
+              "content": "A % B",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ab3ceea6-9939-486f-b912-65605ad3194c",
+              "content": "A - B",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the product of two numbers `A` and `B` mean **A * B**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5f0ac074-9be5-40eb-86ee-ab1463ae8d88",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0428a78d-7cee-45d8-af93-5825d7cc9b2f",
+              "content": "The first line of input contains a string.     \n\nThe second line of input contains a string.                                      ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "50cd2e36-cf57-4778-9352-d64bc26db106",
+              "content": "The first line of input contains a float.\n\nThe second line of input contains a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7341bd7f-96ce-4990-bd54-d10ed0969719",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains a float.\n                                                                                      \n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7eec0ef3-6af2-4013-b8a9-0708cc982a93",
+              "content": "The first line of input contains an integer.    \n\nThe second line of input contains an integer.                                     ",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program is,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.\n\n\nFor example,  \n\n```\n16                                                                                           \n5\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7abbf37e-b2a0-4cb1-890b-e9832278f2d8",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "04c01105-9636-4735-81d4-aaab5e3afd7f",
+              "content": "60\n58",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "47cc329a-b686-4c67-bf3c-337bf47bc6d1",
+              "content": "35.8, 67.9                                              ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "860d92a9-757a-4e72-bc65-ccc306b867de",
+              "content": "20\n25",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "917e1323-5c4d-47d5-9b40-8fa702966a71",
+              "content": "77, 53",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n20\n25\n```\n\n**Input 2**\n\n```\n60\n58                                                          \n```\nThe above two inputs are inputs because they consist of,\n\n- The first line of input contains an integer `A`.  \n               \n- The second line of input contains an integer `B`.                                     \n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "abba49cc-59f1-4616-8d37-1e0041697597",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "686463f3-799e-4fa1-ab72-ef9259461132",
+              "content": "To check if both the sum and the product of the given numbers have more than three digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9411ca25-b42d-4e90-8911-c9d9662a6ee7",
+              "content": "To check if both the difference and the product of the given numbers have less than four digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a186d855-c9da-437a-a8db-e3f437f4cdf3",
+              "content": "To check if both the sum and the product of the given numbers have less than three digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d135923b-cf93-41b2-a58f-5e1b57db819a",
+              "content": "To check if both the remainder and the product of the given numbers have less than three digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a two numbers and checks if both the sum and the product of the given numbers have less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "be9096b3-aa65-47ce-bfc7-289ba2bf87cb",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3b18dc63-7d8c-467b-b9a0-781ce5f34735",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9792669d-fad1-4945-9e2a-eaa953e81228",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a439ff17-2e16-4c2b-a12c-3cd8c5df8a57",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f316644f-f08e-4034-a3ad-b0a21a995d7d",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean. **True** should be printed if both the sum and the product of the given numbers have less than three digits, otherwise **False** should be printed.\n\nFor example, the given numbers are `A = 3` and `B = 15`,\n\n✔ The sum of `A` and `B` has less than three digits. (`3 + 15 = 18`, **18** has less than three digits)  \n\n✔ The product of `A` and `B` has less than three digits. (`3 * 15 = 45`, **45** has less than three digits)\n\n\nThe output should be True as both the sum and the product of the given numbers have less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f703f1bc-5f97-48d6-9593-eb00ba24afb2",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n16\n23\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0d1ab86c-2e81-4cfd-94ee-038132c7ecd8",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "354d07fc-a963-457c-9543-3dc8d079e8bb",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9486dd88-97ef-48bd-a2a0-0c84bf89223f",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b2430fda-4364-495e-a0f4-51949d1fa8b3",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 16 ` and `B = 23`\n\n✔ The sum of `A` and `B` has less than three digits. (`16+23= 39`, **39** has less than three digits)\n\n✖ The product of `A` and `B` has less than three digits. (`16*23= 368`, **368** has three digits)\n\nThe output should be **False** as both the sum and the product of the given numbers have not less than three digits.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "3a43714c-eb51-435c-b0c4-be06aa310f0c",
+      "input": "4\n12",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "3c55b2fe-6c7a-4383-a50a-e5cdb5ae31c2",
+      "input": "17\n4",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8016d4d2-7b44-4322-8fab-ca7cedb8ee22",
+      "input": "1\n99",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "b5322623-1a63-4166-bc14-2f3b0ab60ab2",
+      "input": "1\n0",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b734c9ce-99cd-4dd8-890e-96d49f33e32a",
+      "input": "33\n11",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e544c553-368c-4dc3-ba35-629531e7643b",
+      "input": "0\n100",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ed43b69f-b319-46f2-87d6-99b01b47efe5",
+      "input": "12\n100",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

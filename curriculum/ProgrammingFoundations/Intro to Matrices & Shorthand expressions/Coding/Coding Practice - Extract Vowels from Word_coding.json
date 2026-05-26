@@ -1,0 +1,68 @@
+{
+  "question_id": "b873d6c8-839f-4c59-8384-e650715e707d",
+  "short_text": "Extract Vowels from Word",
+  "content": "Write a program that reads an string and finds all vowels in it. The program should output the vowels found in the input string.\n\n---\n\n#### Input\n\nThe input contains a single string.\n\n---\n\n#### Output\n\nThe vowels from the string, each separated by a space, on one line.\n\n---\n\n#### Explanation\n\nIf the input is:\n\n```\nPython\n```\n\nThe output should be:\n\n```\no\n```\n\n\n\n\n\n\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f3461da7-e134-4ae7-b946-b0674c9db269",
+      "code_content": "def extract_vowels(word):\n    vowels = \"aeiouAEIOU\"\n    return [char for char in word if char in vowels]\n\nword = input()\nvowel_list = extract_vowels(word)\nprint(\" \".join(vowel_list))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2ad0c44e-3dbb-4506-ae87-bf81085140e2",
+      "input": "Environment",
+      "output": "E i o e",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5b85a10b-bbc8-4f51-8d8e-13bcac04d8db",
+      "input": "Vowel",
+      "output": "o e",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9d9384a0-146b-4228-8bde-85c0dd7c8c27",
+      "input": "Education",
+      "output": "E u a i o",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4d33009-8f8e-42f2-9877-bb9b5fd8e2e5",
+      "input": "Programming",
+      "output": "o a i",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e47b8935-cd2a-4a86-bde7-1889821c8e10",
+      "input": "Python",
+      "output": "o",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fe912d59-a1d9-400a-929a-546ffdece202",
+      "input": "Amazing",
+      "output": "A a i",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7ced6467-af22-4d7c-96ae-bcdeb3364094",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

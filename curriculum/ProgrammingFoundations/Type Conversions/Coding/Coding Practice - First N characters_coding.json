@@ -1,0 +1,61 @@
+{
+  "question_id": "73cb00dd-43f0-489b-8385-e5b2ede7d9be",
+  "short_text": "First N characters",
+  "content": "Write a program that reads a word and a number N and prints the first N characters of the word.\n\n---\n\n#### Input\n\nThe first line of input contains a string.\nThe second line of input contains an integer.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that is the part of the word.\n\n---\n\n#### Explanation\n\nFor example, if the given word is **Superman** and the number **N** is **5**,\n\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">S</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">u</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">p</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">e</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">r</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">m</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">a</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; text-align: center;border-right: 0;padding: 8px 12px;\">n</div>\n</div>\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\n   <div style=\"font-family: 'Roboto';font-weight: 900;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</div>\n</div>\n\n<br/>\n\nThe output should be **Super** as the first 5 characters of the word are **Super**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ca852704-3d3d-420b-852f-a0e2aef4da87",
+      "code_content": "word = input()\nno_of_characters = input()\nno_of_characters = int(no_of_characters)\n\nend_index = no_of_characters\npart = word[:end_index]\nprint(part)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0b27cb36-865f-4ee7-be7a-4565a0364d4e",
+      "input": "TURTLE\n6",
+      "output": "TURTLE",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "29bf7509-4001-444f-a908-2ec03e5b6a5c",
+      "input": "Handshake\n4",
+      "output": "Hand",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "2ba4b6a3-e735-4e61-90b1-e3eef37a41bc",
+      "input": "impossible\n2",
+      "output": "im",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "423ad6be-0433-44b8-9b2c-8f84994b4f9b",
+      "input": "Superman\n5",
+      "output": "Super",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "88f22770-7417-426b-ae05-fe4229c16c82",
+      "input": "Pneumonoultramicroscopicsilicovolcanoconiosis\n24",
+      "output": "Pneumonoultramicroscopic",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

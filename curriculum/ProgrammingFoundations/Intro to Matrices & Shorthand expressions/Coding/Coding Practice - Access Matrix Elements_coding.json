@@ -1,0 +1,61 @@
+{
+  "question_id": "f20886b8-1150-4bac-8b26-194ebd5e5847",
+  "short_text": "Access Matrix Elements",
+  "content": "Write a program that uses a predefined `3 x 3` matrix filled with natural numbers from `1` to `9`. The program should then read two integers representing the row and column indices, and then print the specific element from the matrix based on those indices.\n\n<MultiLineNote>\nThe values of both row and column indices must be in the range of **0** to **2** (not including the value **3**).\n</MultiLineNote>\n\n---\n\n#### Input\n\n- The first line should contain the integer `r`, representing the row index of the matrix, using a 0-based index.\n- The second line should contain the integer `c`, representing the column index of the matrix, using a 0-based index.\n\n---\n\n#### Output\n\nThe output should be the value of the element at the given row and column of the matrix.\n\n---\n\n#### Explanation\n\nA `3 x 3` matrix filled with natural numbers from `1` to `9` looks like this:\n\n```\n1 2 3\n4 5 6\n7 8 9\n```\n\nIn this matrix, the element at row `r` and column `c` can be accessed using zero-based indexing. For example:\n\n- If the input is `r = 1` and `c = 2`, the output should be `6`, which is located at the second row and third column of the matrix.\n- Row 1 (second row): \n4 5 **6**\n- Column 2 (third column): 3 **6** 9\n  \nThus, the value at position `(1, 2)` is `6`. \n\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "810185ad-6b97-4678-bc4c-8bf1cc25a52e",
+      "code_content": "matrix = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9]\n]\n\nr = int(input())\nc = int(input())\nprint(matrix[r][c])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "027a53ac-315a-4f8c-b3de-463c6e64192e",
+      "input": "1\n0",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "0fecd877-f9db-464e-961b-3d7c351442aa",
+      "input": "1\n2",
+      "output": "6",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "18ad3f34-1a2d-4f7a-b4a4-f40999c768d5",
+      "input": "0\n2",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "391d6402-1ab8-4ce0-8eef-6442ca9802b8",
+      "input": "0\n0",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f2c9a142-bef4-478a-8dba-bc56f30cbcc7",
+      "input": "2\n2",
+      "output": "9",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "a59545d0-e460-46e3-9428-017865545731",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

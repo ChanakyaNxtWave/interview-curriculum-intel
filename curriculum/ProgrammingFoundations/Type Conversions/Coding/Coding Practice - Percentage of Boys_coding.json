@@ -1,0 +1,68 @@
+{
+  "question_id": "8a541c75-292c-4372-8894-6abb63271abb",
+  "short_text": "Percentage of Boys",
+  "content": "Write a program that reads the percentage of girls in a class and prints the percentage of boys in the class.\r\n\r\n<MultiLineNote>\r\nTotal Percentage of Boys and Girls in a class is 100.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the percentage of boys in the class.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given percentage of girls in the class is **30**, \r\n\r\n* The total percentage is **100**.\r\n* The percentage of girls **30** should be removed from the total percentage **100** to get the percentage of boys in the class.\r\n\r\nThe output should be **70**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ee7a2043-8bae-46df-bd1d-adc38c4c616a",
+      "code_content": "girls_percentage = input()\ngirls_percentage = int(girls_percentage)\n\nboys_percentage = 100 - girls_percentage\nprint(boys_percentage)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "466a5839-c727-4d4b-beac-f7d0610d108a",
+      "input": "30",
+      "output": "70",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "50cc3363-9f6a-4044-aff4-c8da2eb09fc5",
+      "input": "90",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6371a113-00c2-4f4d-99d1-4bea7d50ebed",
+      "input": "80",
+      "output": "20",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bd8549dd-86ad-4d1c-8b38-6e27fa91cb26",
+      "input": "0",
+      "output": "100",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d57a50a7-2afb-4356-9dda-7615e13db335",
+      "input": "50",
+      "output": "50",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ea318785-d68f-4570-91f3-74a4763d7773",
+      "input": "100",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

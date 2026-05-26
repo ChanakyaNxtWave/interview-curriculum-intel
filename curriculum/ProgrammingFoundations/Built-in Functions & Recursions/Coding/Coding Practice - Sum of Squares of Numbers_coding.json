@@ -1,0 +1,75 @@
+{
+  "question_id": "839e1b6c-fbf7-4698-bbdc-802f18170bab",
+  "short_text": "Sum of Squares of Numbers",
+  "content": "A function is given in the prefilled code that takes a list `L` as an argument.\n\nWrite a program that returns the sum of the squares of the numbers in the list `L` using Recursion.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the sum of the squares of the numbers in the list `L` that is passed as an argument.\n\n---\n\n#### Explanation\n\nFor example, if the given space-separated numbers are `5 2 4`,\n\n- The squares of the given numbers are **25**, **4**, **16**.\n- The sum of the squares of the given numbers is **45** (`25 + 4 + 16 = 45`).\n\nThe output should be **45**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "08f53a82-d09d-4d00-b066-5f63e262a6db",
+      "code_content": "def get_sum_of_squares(numbers):\n    each_number = int(numbers[0])\n\n    if len(numbers) == 1:\n        return each_number ** 2\n    \n        \n    return each_number ** 2 + get_sum_of_squares(numbers[1:])\n    \nnumbers = input().split()\n\nsquares_sum = get_sum_of_squares(numbers)\nprint(squares_sum)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6c20f546-05be-40e5-afc8-fd8338291431",
+      "input": "67 0",
+      "output": "4489",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8579343b-716d-4a41-b97e-fca595f087ea",
+      "input": "3 -10 1 6",
+      "output": "146",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bdfb18c0-cfae-47ea-b0bd-bbf1643f7e7c",
+      "input": "5 2 4",
+      "output": "45",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "ca4acc3e-5572-465c-b298-386c92770fa0",
+      "input": "-9",
+      "output": "81",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "cd912301-e318-4765-9226-4c4fdced3011",
+      "input": "44488 87 879 8 1 2 4 3 9 0",
+      "output": "1979962529",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e06c24f8-28c6-4260-9ba1-2e7eb5ce155c",
+      "input": "32 659 258",
+      "output": "501869",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e19ccea0-0f23-4b3d-8ce9-363dc7ac3677",
+      "input": "741 859 1548 9848 -6",
+      "output": "100666406",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

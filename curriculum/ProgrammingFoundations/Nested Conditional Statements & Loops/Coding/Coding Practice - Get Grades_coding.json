@@ -1,0 +1,371 @@
+{
+  "question_id": "314f5264-adc5-4887-bf6a-7bd1a01068eb",
+  "short_text": "Get Grades",
+  "content": "Write a program to calculate the grade of the student based on the marks he/she scored.\r\n\r\n----\r\n\r\n**Input**\r\n\r\nThe input will be a single line containing a float value representing `N`.\r\n\r\n----\r\n\r\n**Output**\r\n\r\nThe output should be a single line containing a string representing the grade of the student.\r\n\r\n- **A** should be printed if the given marks are greater than **85**.\r\n- **B** should be printed if the given marks are greater than **70** and less than or equal to **85**.\r\n- **C** should be printed if the given marks are greater than or equal to **60** and less than or equal to **70**.\r\n- **F** should be printed if the given marks are less than **60**.\r\n\r\n----\r\n\r\n**Explanation**\r\n\r\nIf the given input `N = 70.5`,\r\n\r\n✖ `N` is greater than **85**. (**70.5** is not greater than **85**)\r\n✔ `N` is greater than **70** and less than or equal to **85**. (**70.5** is greater than **70** and less than or equal to **85**)\r\n✖ `N` is greater than or equal to **60** and less than or equal to **70**. (**70.5** is greater than or equal to **60** and not less than or equal to **70**)\r\n✖ `N` is less than **60**. (**70.5** is not less than **60**)\r\n\r\nThe output should be **B** as `N` is greater than **70** and less than or equal to **85**.\r\n\r\n----\r\n\r\nIf the given input `N = 90`,\r\n\r\n✔ `N` is greater than **85**. (**90** is greater than **85**)\r\n✖ `N` is greater than **70** and less than or equal to **85**. (**90** is greater than **70** and not less than or equal to **85**)\r\n✖ `N` is greater than or equal to **60** and less than or equal to **70**. (**90** is greater than or equal to **60** and not less than or equal to **70**)\r\n✖ `N` is less than **60**. (**90** is not less than **60**)\r\n\r\nThe output should be **A** as `N` is greater than **85**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "965e8f8f-77ac-444f-8d17-c91abcb8b323",
+      "code_content": "marks = float(input())\n\nif marks > 85:\n    print(\"A\")\nelif marks > 70:\n    print(\"B\")\nelif marks >= 60:\n    print(\"C\")\nelse:\n    print(\"F\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "869b816e-3fc2-4ae0-8ee2-8d1fb98e7c9c",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n64.8\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "C",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given input `N = 64.8`,\n\n✖ `N` is greater than **85**. (**64.8** is not greater than **85**)\n✖ `N` is greater than **70** and less than or equal to **85**. (**64.8** is not greater than **70** and less than or equal to **85**)\n✔ `N` is greater than or equal to **60** and less than or equal to **70**. (**64.8** is greater than or equal to **60** and less than or equal to **70**)\n✖ `N` is less than **60**. (**64.8** is not less than **60**)\n\nThe output should be **C** as `N` is greater than or equal to **60** and less than or equal to **70**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "adb0aa49-8296-4577-9343-a40f33de1c5b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n82.7\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "B",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given input `N = 82.7`,\n\n✖ `N` is greater than **85**. (**82.7** is not greater than **85**)\n✔ `N` is greater than **70** and less than or equal to **85**. (**82.7** is greater than **70** and less than or equal to **85**)\n✖ `N` is greater than or equal to **60** and less than or equal to **70**. (**82.7** is not greater than or equal to **60** and not less than or equal to **70**)\n✖ `N` is less than **60**. (**82.7** is not less than **60**)\n\nThe output should be **B** as `N` is greater than **70** and less than or equal to **85**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e9b00faa-8085-4839-8db8-91854b079b54",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n100.0\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "A",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given input `N = 100.0`,\n\n✔ `N` is greater than **85**. (**100.0** is greater than **85**)\n✖ `N` is greater than **70** and less than or equal to **85**. (**100.0** is greater than **70** and not less than or equal to **85**)\n✖ `N` is greater than or equal to **60** and less than or equal to **70**. (**100.0** is greater than or equal to **60** and not less than or equal to **70**)\n✖ `N` is less than **60**. (**100.0** is not less than **60**)\n\nThe output should be **A** as `N` is greater than **85**",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "22517b9e-823f-4168-a40f-2aa6425ed25d",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n60.0\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5df652ed-f35e-45c1-b182-af3c37ef3b3a",
+              "content": "A",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6161c2f3-4d14-437a-b7dc-a8954ecb2b2a",
+              "content": "F",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "93ee568c-2d69-4da7-bde3-0b38bd085d9c",
+              "content": "C",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b13c3da7-ef79-4d11-b68e-899299171b1a",
+              "content": "B",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given input `N = 60.0`,\n\n✖ `N` is greater than **85**. (**60.0* is not greater than **85**)\n✖ `N` is greater than **70** and less than or equal to **85**. (**60.0** is not greater than **70** and less than or equal to **85**)\n✔ `N` is greater than or equal to **60** and less than or equal to **70**. (**60.0** is greater than or equal to **60** and less than or equal to **70**)\n✖ `N` is less than **60**. (**60.0** is not less than **60**)\n\nThe output should be **C** as `N` is greater than or equal to **60** and less than or equal to **70**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "2bd02bab-9e1d-4151-9e93-aba52118cc8b",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "04a3154a-c705-425c-ab9d-eecb631e5c18",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6e870417-8264-4804-a03a-23ec7ffffc7e",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8c6a1934-8d9e-4ac3-a6dd-e0f1f400667e",
+              "content": "The input will be a single line containing a float value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b3e75ea7-a01d-4593-9459-ca948e658271",
+              "content": "The input will be multiple lines containing float values.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing a float value representing the marks of a student.\n\nFor example, **75.10**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "31576420-74b9-4779-b63c-8011a796a713",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0cb1b530-4593-4145-b3b1-1fd8aa3d1df9",
+              "content": "100",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3830b89d-7597-4089-a47b-5a4caf16f39a",
+              "content": "C",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "950b78e5-7e03-4428-819b-dca9051796eb",
+              "content": "Pass",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "cba76550-9391-4e8f-807e-24f7d08a3172",
+              "content": "B",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output - 1**\n\n```\nB\n```\n\n**Output - 2**\n\n```\nC\n```\n\nThe above two outputs are valid because they consist of a single line containing a string.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "496fc57d-86bf-4bb7-95f0-5b7710c49ca2",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "60976e15-77b0-42f1-9e68-a180a6834119",
+              "content": "59.9",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "69f08183-19e6-4980-aebc-fd71d7ccce16",
+              "content": "Seventy",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8240efd4-9203-4925-9720-00d2939dff22",
+              "content": "92.3",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d47db593-d133-4fca-a9ef-7103af22ecf7",
+              "content": "88.7\n63",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n59.9\n```\n\n**Input 2**\n\n```\n92.3\n```\n\nThe above two inputs are valid because they consist of a single line containing float values.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a09e7bda-ca68-4cac-b61f-4c6110ef502c",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0baf10f8-d13c-4ff1-8071-1c550d53540c",
+              "content": "To calculate the sum of the marks scored.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3b5221eb-5c2b-4dfb-816f-00371624e3f3",
+              "content": "To calculate the grade of the student based on the marks scored.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3efd15da-f837-4786-881e-c764371b9be6",
+              "content": "To calculate the average grade of the class based on the marks of the students.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the marks and calculate the grade of the student based on the marks scored.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d775b9af-dd93-431d-989f-4d2918de104f",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "25fa93a0-83fb-46d3-822a-d8edc23dcb84",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f25fb343-bc3d-4ad7-9bb8-98b801e265bd",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f2b43701-e569-4fc9-adb0-8fa17a55f3af",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f80cbfd4-be84-4384-bac4-024ba2421aad",
+              "content": "The output should be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string representing the grade based on the marks of a student.\n\n- **A** should be printed if the given marks are greater than **85**.\n- **B** should be printed if the given marks are greater than **70** and less than or equal to **85**.\n- **C** should be printed if the given marks are greater than or equal to **60** and less than or equal to **70**.\n- **F** should be printed if the given marks are less than **60**.\n\nFor example,\n\nIf the given input `N = 38.5`,\n\n✖ `N` is greater than **85**. (**38.5* is not greater than **85**)\n✖ `N` is greater than **70** and less than or equal to **85**. (**38.5** is not greater than **70** and less than or equal to **85**)\n✖ `N` is greater than or equal to **60** and less than or equal to **70**. (**38.5** is not greater than or equal to **60** and less than or equal to **70**)\n✔ `N` is less than **60**. (**38.5** is less than **60**)\n\nThe output should be **F** as `N` is less than **60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "db619658-0379-46b4-be15-3a666fa0e4eb",
+          "short_text": "",
+          "content": "What are the grades mentioned in the problem description?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "036ac9b7-00ed-48e8-af2c-ffcd797d34e9",
+              "content": "A, B, C, D",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2b8d764b-bdba-4774-8aeb-ae76512bc604",
+              "content": "A, B, C, F",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b7c7f36c-c9aa-4620-bbcd-a5a3dfbf3099",
+              "content": "B, C, D, F",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f20e6de0-d298-4630-942c-9dc067e3f14b",
+              "content": "A, B, C, D, F",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The grades that are mentioned in the problem description are **A**, **B**, **C**, and **F**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "12fe285c-9540-4195-9580-56c6b63e565c",
+      "input": "70.5",
+      "output": "B\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "192703e5-da4b-405d-ae6b-d870081dee69",
+      "input": "65.0",
+      "output": "C\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "50efe41f-dabe-4843-9f2f-034f2696eb2e",
+      "input": "85",
+      "output": "B\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d9978248-95df-496e-a32f-fb72e8dbd671",
+      "input": "90",
+      "output": "A\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e68de4f0-55a9-4f68-888f-afe4a49f1963",
+      "input": "7.0",
+      "output": "F\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

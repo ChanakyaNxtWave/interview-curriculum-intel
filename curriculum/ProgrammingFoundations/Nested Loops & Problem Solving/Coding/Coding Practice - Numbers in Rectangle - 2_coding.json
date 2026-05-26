@@ -1,0 +1,61 @@
+{
+  "question_id": "382bba15-5734-436f-a7b3-a83c9aa0e018",
+  "short_text": "Numbers in Rectangle - 2",
+  "content": "Given two numbers `M` and `N`, write a program to print a **Rectangle** of `M` rows and `N` columns using numbers starting from **1**.\r\n\r\n```\r\n1 2 3 4\r\n5 6 7 8\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every number.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing M.\r\nThe second line of input contains an integer representing N.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `M` rows and `N` columns containing numbers as a **Rectangle** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `M = 2` and `N = 3`,\r\n\r\n- Print the numbers on **2** rows and **3** columns as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-rectangle-2.png' widthPercent='50'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image, the Number in box indicates the number and a space (\"1 \")\r\n\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n1 2 3\r\n4 5 6\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c08b748f-3822-4262-b9a5-b056f9326401",
+      "code_content": "m = int(input())\nn = int(input())\n\nnumber = 1\nfor rows in range(m):\n    each_row = \"\"\n    for columns in range(n):\n        each_row = each_row + str(number) + \" \"\n        number = number + 1\n    print(each_row)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1bf1929e-79ee-433f-8a05-ed267aadc222",
+      "input": "2\n3",
+      "output": "1 2 3 \n4 5 6 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "3502d2b4-df91-4eb0-bf21-15116d1aff00",
+      "input": "14\n3",
+      "output": "1 2 3 \n4 5 6 \n7 8 9 \n10 11 12 \n13 14 15 \n16 17 18 \n19 20 21 \n22 23 24 \n25 26 27 \n28 29 30 \n31 32 33 \n34 35 36 \n37 38 39 \n40 41 42 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "3b824428-e31c-4034-8360-f7c090f7af38",
+      "input": "9\n2",
+      "output": "1 2 \n3 4 \n5 6 \n7 8 \n9 10 \n11 12 \n13 14 \n15 16 \n17 18 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9f5b336c-5bb2-432e-a64c-6e814b308317",
+      "input": "7\n5",
+      "output": "1 2 3 4 5 \n6 7 8 9 10 \n11 12 13 14 15 \n16 17 18 19 20 \n21 22 23 24 25 \n26 27 28 29 30 \n31 32 33 34 35 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bde0290f-17a4-4cff-a1fd-8ea2016e7b3b",
+      "input": "6\n4",
+      "output": "1 2 3 4 \n5 6 7 8 \n9 10 11 12 \n13 14 15 16 \n17 18 19 20 \n21 22 23 24 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

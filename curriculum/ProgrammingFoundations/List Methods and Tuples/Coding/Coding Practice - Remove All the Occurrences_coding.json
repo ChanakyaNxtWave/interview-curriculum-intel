@@ -1,0 +1,61 @@
+{
+  "question_id": "06c4bd69-9fe0-4cf9-b999-6ee1619083af",
+  "short_text": "Remove All the Occurrences",
+  "content": "For this problem, the prefilled code will contain a list. Write a program to remove all the occurrences of the given number (N) in a list.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the list without the number (N).<br/>Note: The order of numbers in the output list should be same as in the input list.<hr><b>Explanation</b><br/><br/>For example, if the given N is 5, your code should print the list by removing 5 at all the occurrences. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[10, 20, 35, 50, 20, 100, 200, 10, 150, 100, 100]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "55aafb45-95f5-4fac-8ad6-dd021653f78b",
+      "code_content": "nums_list = [5, 10, 20, 35, 5, 50, 20, 100, 200, 10, 150, 100, 100]\nnumber = int(input())\n\ncount_of_occurrences = nums_list.count(number)\n\nfor i in range(count_of_occurrences):\n    nums_list.remove(number)\n\nprint(nums_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4f093074-4f1a-48f7-a02e-da9a81d5b282",
+      "input": "1",
+      "output": "[5, 10, 20, 35, 5, 50, 20, 100, 200, 10, 150, 100, 100]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "980b7072-1e26-40fe-af97-cd07a2c52a7e",
+      "input": "100",
+      "output": "[5, 10, 20, 35, 5, 50, 20, 200, 10, 150]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "afee2bcc-c841-44b7-a5a6-9e02efd9e580",
+      "input": "-9",
+      "output": "[5, 10, 20, 35, 5, 50, 20, 100, 200, 10, 150, 100, 100]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "c34dbd3c-bdfa-4f63-8f69-b7c6d8ef5100",
+      "input": "5",
+      "output": "[10, 20, 35, 50, 20, 100, 200, 10, 150, 100, 100]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "cc52d227-5b98-4981-bcbd-07a365576e29",
+      "input": "10",
+      "output": "[5, 20, 35, 5, 50, 20, 100, 200, 150, 100, 100]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "37f5f67a-f211-442d-babe-10e265bd5102",
+  "short_text": "Convert String to List",
+  "content": "Given a string, write a program to convert the string into a list.<hr><b>Input</b><br/><br/>The input will be a single line containing a string.<hr><b>Output</b><br/><br/>The output should be a single line containing a list with all the characters in the given string.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;Python&quot;, the output should be <br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['P', 'y', 't', 'h', 'o', 'n']\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "6b847fc1-b451-4f54-86a8-c23433fcc78b",
+      "code_content": "word = input()\nword_list = list(word)\nprint(word_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "15599f18-97d2-48bd-9f8c-80f690589435",
+      "input": "Python",
+      "output": "['P', 'y', 't', 'h', 'o', 'n']\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4186af4b-cdc4-430a-a9db-ebba7bed508a",
+      "input": "Temperature",
+      "output": "['T', 'e', 'm', 'p', 'e', 'r', 'a', 't', 'u', 'r', 'e']\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "948d4537-a0fe-41cb-a9a7-b491c83d7000",
+      "input": "Keyboard",
+      "output": "['K', 'e', 'y', 'b', 'o', 'a', 'r', 'd']\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a6cd9983-4dc6-4be7-b491-8b1279184949",
+      "input": "Contemporary",
+      "output": "['C', 'o', 'n', 't', 'e', 'm', 'p', 'o', 'r', 'a', 'r', 'y']\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f2e4b615-85cf-4603-bb03-89b761f0bb16",
+      "input": "Country",
+      "output": "['C', 'o', 'u', 'n', 't', 'r', 'y']\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

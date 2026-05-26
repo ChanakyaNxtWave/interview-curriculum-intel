@@ -1,0 +1,61 @@
+{
+  "question_id": "096a6bf4-3251-4551-8ba1-8f0cd34d9ce6",
+  "short_text": "Kilometers to Meters",
+  "content": "Write a program to take the number of kilometers as input and convert into meters and print the number of meters.<br/>Note: 1 Kilometer = 1000 Meters<hr><b>Input</b><br/><br/>The first line of input contains the number of kilometers.<br/>The input will have a decimal part.<hr><b>Output</b><br/><br/>The first line of output contains the number of meters.<br/>The output should be an integer.<hr><b>Explanation</b><br/><br/>For example, 1.2 kilometers is equals to 1200 meters",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "05e3c1f6-c3d8-4fe1-9f4b-1cfe1085e310",
+      "code_content": "kilometers = input()\nkilometers = float(kilometers)\n\nmeters = kilometers * 1000\n\nmeters = int(meters)\nprint(meters)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3f282560-0343-4d77-af49-b450bd8f3e60",
+      "input": "3.5",
+      "output": "3500\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "54d299ac-c4ef-4a6c-b48d-155745adda86",
+      "input": "20.9",
+      "output": "20900\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "65fe609f-6839-4b95-bb24-89385b564a3c",
+      "input": "5.2",
+      "output": "5200\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "989b4f9d-01f6-45d9-b10d-845ccba2b705",
+      "input": "1.2",
+      "output": "1200\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c54dd930-58e7-450b-a11b-79f46e3cf6f3",
+      "input": "10.0",
+      "output": "10000\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

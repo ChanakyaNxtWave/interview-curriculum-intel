@@ -1,0 +1,61 @@
+{
+  "question_id": "5f4d0919-58b0-4040-9e39-1d163fa00467",
+  "short_text": "Numbers in Hollow Rectangle - 3",
+  "content": "Given two numbers `M` and `N`, write a program to print a **Hollow Rectangle** of `M` rows and `N` columns that contains numbers starting from **K** in descending order. **K** is the count of numbers that can be printed in `M` rows and `N` columns of a **Rectangle**.\n\nFor example, if the given number of rows and columns is `M = 3` and `N = 5`,\n\n- The count of numbers that can be arranged in a **Rectangle** of **3** rows and **5** columns is **K = 15** (`3 * 5 = 15`).\n\nSo, the **Hollow Rectangle** should be printed with the numbers starting from **15**(`K`) in descending order as given below.\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-hollow-rectangle-3.png' widthPercent='70'/>\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `M` rows and `N` columns containing numbers starting from `K` in descending order as a **Hollow Rectangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 3` and `N = 6`,\n\n- The count of numbers that can be arranged in a **Rectangle** of **3** rows and **6** columns is **K = 18** (`3 * 6 = 18`).\n- Print the numbers starting from **18** in descending order on **3** rows and **6** columns as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-hollow-rectangle-3-v2.png' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\n- The Number in the box indicates the number and a space (\"18 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n18 17 16 15 14 13\n12         7\n6 5 4 3 2 1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "08660bf4-a538-47ab-95f8-05ce42ac6e4e",
+      "code_content": "m = int(input())\nn = int(input())\n\nk = m * n\nhollow_spaces = n - 2\n\nfor row in range(m):\n    each_row = \"\"\n    if row == 0 or row == m -1:\n        for each_number in range(n):\n            each_row = each_row + str(k) + \" \"\n            k = k - 1\n    else:\n        each_row = str(k) + \" \"\n        k = k - hollow_spaces - 1\n        each_row = each_row + \"  \"* (hollow_spaces) + str(k)\n        k = k - 1\n    \n    print(each_row)\n    \n    \n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2cc1e8d5-fabb-47e6-b78d-5d3caf580f5a",
+      "input": "8\n4",
+      "output": "32 31 30 29 \n28     25\n24     21\n20     17\n16     13\n12     9\n8     5\n4 3 2 1",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "58a8ca07-a99f-482d-9602-1ea8068ffd78",
+      "input": "3\n6",
+      "output": "18 17 16 15 14 13 \n12         7\n6 5 4 3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "742e201e-f238-4774-858f-f35b7549a6c8",
+      "input": "16\n9",
+      "output": "144 143 142 141 140 139 138 137 136 \n135               127\n126               118\n117               109\n108               100\n99               91\n90               82\n81               73\n72               64\n63               55\n54               46\n45               37\n36               28\n27               19\n18               10\n9 8 7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "7e66513c-7ec0-474c-96e5-2e0ba8f7604a",
+      "input": "5\n3",
+      "output": "15 14 13 \n12   10\n9   7\n6   4\n3 2 1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "88e8ce9c-21cc-4c61-938f-dddea579a5ba",
+      "input": "4\n7",
+      "output": "28 27 26 25 24 23 22 \n21           15\n14           8\n7 6 5 4 3 2 1",
+      "is_hidden": true,
+      "weightage": 11.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

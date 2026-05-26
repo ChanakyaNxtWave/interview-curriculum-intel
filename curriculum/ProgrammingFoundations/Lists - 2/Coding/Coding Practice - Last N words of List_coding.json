@@ -1,0 +1,82 @@
+{
+  "question_id": "8c5d16e5-8636-44b5-9912-15d57f211c55",
+  "short_text": "Last N words of List",
+  "content": "Given space-separated words `S` and a number `N`. Write a program that creates a list using space-separated words and prints the last `N` words of the list in reverse order.\n\n---\n\n#### Input\n\nThe first line of input contains a string representing `S`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list that has the last `N` words of `S` in reverse order.\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"This is my favourite cookie\"`, and the number is `N = 4`,\n\n- The words in the `S` are **This, is, my, favourite, cookie**.\n- The last **4** words in `S` are **\"is\"**, **\"my\"**, **\"favourite\"** and **\"cookie\"**.\n- The reverse order of the last **4** words is **\"cookie\"**, **\"favourite\"**, **\"my\"**, and **\"is\"**.\n\nThe output should be,\n\n```\n['cookie', 'favourite', 'my', 'is']\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "483db58c-b69e-429a-9d5f-4733d6723aab",
+      "code_content": "sentence = input()\nnumber = int(input())\n\nwords = sentence.split()\n\nwords_list = words[-number:]\nresultant_list = words_list[::-1]\n\nprint(resultant_list)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0e64deaf-273e-4754-b979-9c0e7587a938",
+      "input": "The book was on the table\n6",
+      "output": "['table', 'the', 'on', 'was', 'book', 'The']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "58268285-5796-49ef-9e1e-1747b69c12ed",
+      "input": "IT'S RAINING HARD\n2",
+      "output": "['HARD', 'RAINING']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "6f9cb628-4464-43bd-9b86-807dcb57a124",
+      "input": "This is my favourite cookie\n4",
+      "output": "['cookie', 'favourite', 'my', 'is']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7afdb461-15b3-4833-983c-77881a974bb9",
+      "input": "Run like the wind\n3",
+      "output": "['wind', 'the', 'like']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "9dbff894-a8f5-4c54-9ba8-3a68dd97cdbd",
+      "input": "tHEre ArE many PaiNTings in the Museum\n5",
+      "output": "['Museum', 'the', 'in', 'PaiNTings', 'many']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c8bb3b61-9541-48e4-b988-734452c6b609",
+      "input": "TUPLE IS A BUILT IN DATA STRUCTURE IN PYTHON\n7",
+      "output": "['PYTHON', 'IN', 'STRUCTURE', 'DATA', 'IN', 'BUILT', 'A']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f926abb6-a6e5-48f3-a1c0-6f34a5f85dee",
+      "input": "CouNTrieS\n1",
+      "output": "['CouNTrieS']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fbf66959-09f5-488b-ae8a-0d149b82dbca",
+      "input": "a piece of cake\n2",
+      "output": "['cake', 'of']",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

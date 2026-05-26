@@ -1,0 +1,47 @@
+{
+  "question_id": "16b79206-3c4d-4cdc-a91e-e70b90e01021",
+  "short_text": "Encapsulation Banking",
+  "content": "Complete the `Account` class by adding new features by following the given instructions.\n\n<details>\n\n<summary>**Features to be added to `Account` class**</summary>\n\n- **Add below attributes**:\n - The `Account` class should have the following attributes:\n  - **`account_number`** (public)\n  - **`balance`** (public)\n  - **`__pincode`** (private)\n\n- **Implement the following methods**:\n  - A private method called **`__validatepin(self, pin)`** that takes a pin number as an argument and returns `True` if it matches the account's pincode, otherwise `False`.\n  - A public method called **`deposit(self, amount)`** that takes an amount and adds it to the account balance.\n  - A public method called **`withdraw(self, amount, pin)`** that takes an amount and a pin number as arguments, checks if the pin is valid using `__validatepin`, and if valid, deducts the amount from the balance. If the pin is invalid, print `\"Invalid PIN\"`. If the balance is insufficient, print `\"Insufficient balance\"`.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will affect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b9ce0290-00bc-43df-8897-1f6c88bb1249",
+      "code_content": "class Account:\n    def __init__(self, account_number, balance, pincode):\n        self.account_number = account_number\n        self.balance = balance\n        self.__pincode = pincode\n    \n    def __validatepin(self, pin):\n        return pin == self.__pincode\n\n    def deposit(self, amount):\n        self.balance += amount\n\n    def withdraw(self, amount, pin):\n        if self.__validatepin(pin):\n            if self.balance >= amount:\n                self.balance -= amount\n            else:\n                print(\"Insufficient balance\")\n        else:\n            print(\"Invalid PIN\")\n\ndef default_test():\n    account = Account(\"123456789\", 1000, \"1234\")\n    print(\"Account Number:\", account.account_number)\n    print(\"Initial Balance:\", account.balance)\n    account.deposit(500)\n    print(\"Balance after deposit:\", account.balance)\n    account.withdraw(200, \"1234\")\n    print(\"Balance after withdrawal:\", account.balance)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "19ffbf37-667d-46cc-92e1-c3290f0921da",
+      "input": "Checking Default Tests",
+      "output": "Account Number: 123456789\nInitial Balance: 1000\nBalance after deposit: 1500\nBalance after withdrawal: 1300",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c32f5545-3fe1-4165-8cc3-99d341f1691e",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: All attributes are present and have correct visibility",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d562610e-9911-4690-9d63-d3e0375308a9",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: All methods are implemented correctly",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b3b31675-d5ff-4676-b8b1-31ff0ba46159",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

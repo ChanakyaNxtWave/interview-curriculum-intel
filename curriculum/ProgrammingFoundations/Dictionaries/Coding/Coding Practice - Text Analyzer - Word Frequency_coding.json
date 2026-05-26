@@ -1,0 +1,61 @@
+{
+  "question_id": "f07e66ed-2935-497f-81b9-f9890da3ac59",
+  "short_text": "Text Analyzer - Word Frequency",
+  "content": "You are a software developer working on a text analysis tool for a writing application. Your task is to implement a program that counts the occurrences of each unique word across a list of sentences provided by the user. The program should be case-insensitive, meaning that \"Hello\" and \"hello\" should be treated as the same word. The output should display the unique words along with their respective counts in a dictionary format, preserving the order of their first appearance in the input sentences.\n\n<MultiLineNote>\n\n- The program should be case-insensitive, meaning that \"**Hello**\" and \"**hello**\" are treated as the same word.\n- The user signals the end of input by typing \"**END**\" (case-sensitive) on a new line.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of:\n\n- A series of sentences entered by the user, where each sentence is entered on a new line.\n- The input process stops when the user types **`END`** on a new line.\n\n---\n\n#### Output\n\nThe output should be a dictionary where the keys are unique words (in **lowercase**) and the values are their respective counts.\n\n\n---\n\n#### Explanation\n\nIf, the input is\n\n``` \nHello world  \nThis is a test  \nHello again world\nEND  \n```\n\n- **First sentence**: \"Hello world\" → Words: ['hello', 'world'].\n- **Second sentence**: \"This is a test\" → Words: ['this', 'is', 'a', 'test'].\n- **Third sentence**: \"Hello again world\" → Words: ['hello', 'again', 'world'].\n\n\n**Word Frequencies:**\n\n- '**hello**': **2**\n- '**world**': **2**\n- '**this**': **1**\n- '**is**': **1**\n- '**a**': **1**\n- '**test**': **1**\n- '**again**': **1**\n\n\nThe output should be \n\n\n```\n{\n    'hello': 2, \n    'world': 2, \n    'this': 1, \n    'is': 1, \n    'a': 1, \n    'test': 1, \n    'again': 1\n}  \n```\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "18bf1455-4048-4dda-a7d0-6d58a079b164",
+      "code_content": "sentences = []\nwhile True:\n    line = input()\n    if line == 'END':\n        break\n    sentences.append(line)\nword_count = {}\n\nfor sentence in sentences:\n    words = sentence.lower().split()\n    \n    for word in words:\n        if word in word_count:\n            word_count[word] += 1\n        else:\n            word_count[word] = 1\n\nprint(word_count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "050fe8b8-3515-4227-89fa-84b551b9c494",
+      "input": "Hello world\nThis is a test\nHello again world\nEND",
+      "output": "{'hello': 2, 'world': 2, 'this': 1, 'is': 1, 'a': 1, 'test': 1, 'again': 1}",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "64c2808f-edc5-4df0-92ae-196aec05cc93",
+      "input": "Hello world\nAmazing This is amazing\nEND",
+      "output": "{'hello': 1, 'world': 1, 'amazing': 2, 'this': 1, 'is': 1}",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b67e32cb-f0cb-4157-9c1d-7b64463cba94",
+      "input": "END",
+      "output": "{}",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "be48b38f-7a6f-4319-ad99-939402a91c3f",
+      "input": "2025 is here\n2025 brings new opportunities\nEND",
+      "output": "{'2025': 2, 'is': 1, 'here': 1, 'brings': 1, 'new': 1, 'opportunities': 1}",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d01c0d42-9b31-49ba-b8e9-edf8321d7d16",
+      "input": "Python\npython\nPYTHON\nEND",
+      "output": "{'python': 3}",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f065d38b-746c-48f1-ad2e-95b6dd5b62b4",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "dc07780b-7456-422d-b713-4c79decc42f7",
+  "short_text": "Diamond",
+  "content": "Given a number `N`, write a program to print a **Diamond** of `(2 * N) - 1` rows using stars (`*`).\r\n\r\n```\r\n   *\r\n  * *\r\n * * *\r\n* * * *\r\n * * *\r\n  * *\r\n   *\r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every star (`*`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `(2 * N) - 1` rows containing stars (`*`) as a **Diamond** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 3`,\r\n\r\n- Print stars (`*`) on **5** (`(2 * 3) - 1`) rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-diamond.png' widthPercent='50'/>\r\n\r\n<MultiLineNote>\r\nIn the given image,\r\n\r\n- The Empty box indicates a space (\" \").\r\n- The Star in the box indicates a star (\"*\").\r\n</MultiLineNote>\r\n\r\n```\r\n  * \r\n * * \r\n* * * \r\n * * \r\n  * \r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f80218cd-3cc2-4913-9d61-c1340b2a8aeb",
+      "code_content": "n = int(input())\n\nk = n - 1\nfor i in range(1, n+1):\n    spaces = \" \" * k\n    stars = \"* \" * i\n    print(spaces+stars)\n    k = k - 1\n\nk = n\nfor i in range(1, n):\n    spaces = \" \" * i\n    stars = \"* \" * (k - i)\n    print(spaces+stars)\n\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2944d047-a714-4b05-a661-ccc69345c692",
+      "input": "8",
+      "output": "       * \n      * * \n     * * * \n    * * * * \n   * * * * * \n  * * * * * * \n * * * * * * * \n* * * * * * * * \n * * * * * * * \n  * * * * * * \n   * * * * * \n    * * * * \n     * * * \n      * * \n       * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "423b1f14-8705-4a7d-b3bb-660a5ea3da75",
+      "input": "5",
+      "output": "    * \n   * * \n  * * * \n * * * * \n* * * * * \n * * * * \n  * * * \n   * * \n    * \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "66188e8a-3e66-40ab-b241-53cd411dd502",
+      "input": "13",
+      "output": "            * \n           * * \n          * * * \n         * * * * \n        * * * * * \n       * * * * * * \n      * * * * * * * \n     * * * * * * * * \n    * * * * * * * * * \n   * * * * * * * * * * \n  * * * * * * * * * * * \n * * * * * * * * * * * * \n* * * * * * * * * * * * * \n * * * * * * * * * * * * \n  * * * * * * * * * * * \n   * * * * * * * * * * \n    * * * * * * * * * \n     * * * * * * * * \n      * * * * * * * \n       * * * * * * \n        * * * * * \n         * * * * \n          * * * \n           * * \n            * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c23c13d1-2892-4ff9-8165-0bd5d4f2b2b7",
+      "input": "10",
+      "output": "         * \n        * * \n       * * * \n      * * * * \n     * * * * * \n    * * * * * * \n   * * * * * * * \n  * * * * * * * * \n * * * * * * * * * \n* * * * * * * * * * \n * * * * * * * * * \n  * * * * * * * * \n   * * * * * * * \n    * * * * * * \n     * * * * * \n      * * * * \n       * * * \n        * * \n         * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "fcc07d89-295f-4739-bb9b-8e7dcaf74b6b",
+      "input": "3",
+      "output": "  * \n * * \n* * * \n * * \n  * \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

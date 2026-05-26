@@ -1,0 +1,377 @@
+{
+  "question_id": "3bd215a5-334a-4a29-9833-8b99e84f3c32",
+  "short_text": "Sum of N Natural Numbers",
+  "content": "Write a program that reads a number `N` and prints the **sum** of `N` Natural Numbers.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output  \r\n\r\nThe output should be a single line containing an integer that is the **sum** of `N` Natural Numbers.\r\n\r\n---\r\n\r\n#### Explanation  \r\n\r\nFor example, if the given number is `N = 6`, \r\n\r\n* The numbers from **1** to **6** are **1**, **2**, **3**, **4**, **5** and **6**.\r\n* The **sum** of the numbers is **21**. (`1 + 2 + 3 + 4 + 5 + 6 = 21`)\r\n\r\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\r\n|---|---|---|\r\n|1 | 0 | 0 + 1 = 1 |\r\n|2 | 1 | 1 + 2 = 3|\r\n|3 | 3 | 3 + 3 = 6|\r\n|4 | 6 | 6 + 4 = 10|\r\n|5 | 10| 10 + 5 = 15|\r\n|6 | 15 | 15 + 6 = 21|\r\n\r\nThe output should be **21**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "818ee7f6-6872-4ee6-92c9-3f2821f02fbe",
+      "code_content": "number = int(input())\n\ncounter = 0\nsum_of_numbers = 0\nwhile counter < number:\n    counter = counter + 1\n    sum_of_numbers = sum_of_numbers + counter\n\nprint(sum_of_numbers)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "0c5ef736-269e-44c2-bf3c-e08748fba437",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n8\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "36",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 8`, \n\n* The numbers from **1** to **8** are **1**, **2**, **3**, **4**, **5**, **6**, **7** and **8**.\n\n* The **sum** of the numbers is **36**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8  = 36`)\n\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\n|---|---|---|\n|1 | 0 | 0 + 1 = 1 |\n|2 | 1 | 1 + 2 = 3|\n|3 | 3 | 3 + 3 = 6|\n|4 | 6 | 6 + 4 = 10|\n|5 | 10| 10 + 5 = 15|\n|6 | 15 | 15 + 6 = 21|\n|7 | 21 | 21 + 7 = 28|\n|8 | 28 | 28 + 8 = 36|\n\nThe output should be **36**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "326c26d9-08b1-4c8f-85ff-d3373d25f6e6",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n10\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "55",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 10`, \n\n* The numbers from **1** to **10** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9** and **10**.\n\n* The **sum** of the numbers is **55**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55`)\n\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\n|---|---|---|\n|1 | 0 | 0 + 1 = 1 |\n|2 | 1 | 1 + 2 = 3|\n|3 | 3 | 3 + 3 = 6|\n|4 | 6 | 6 + 4 = 10|\n|5 | 10| 10 + 5 = 15|\n|6 | 15 | 15 + 6 = 21|\n|7 | 21 | 21 + 7 = 28|\n|8 | 28 | 28 + 8 = 36|\n|9 | 36 | 36 + 9 = 45|\n|10 | 45 | 45 + 10 = 55|\n\nThe output should be **55**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f64f759d-d72c-42c4-b758-0cbba1a665f3",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "15",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 5`, \n\n* The numbers from **1** to **5** are **1**, **2**, **3**, **4** and **5**.\n\n* The **sum** of the numbers is **15**. (`1 + 2 + 3 + 4 + 5 = 15`)\n\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\n|---|---|---|\n|1 | 0 | 0 + 1 = 1 |\n|2 | 1 | 1 + 2 = 3|\n|3 | 3 | 3 + 3 = 6|\n|4 | 6 | 6 + 4 = 10|\n|5 | 10| 10 + 5 = 15|\n\nThe output should be **15**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0db18605-39db-4d44-8c4c-b2a4c36f122d",
+          "short_text": "",
+          "content": "What is the sum of the first `25` natural numbers?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "30e2ddb6-a72e-43b4-9d28-0bebe210baf2",
+              "content": "300",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5a391eba-e751-43d2-8c90-9f7c55685e22",
+              "content": "320",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "be00404d-5f70-429b-a91a-58d21f91e396",
+              "content": "325",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "df581874-ed7b-496c-aef1-5a71ec2904bd",
+              "content": "330",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 25`, \n\n* The numbers from **1** to **25** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9**, **10**, **11**, **12**, **13**, **14**, **15**, **16**, **17**, **18**, **19**, **20**, **21**, **22**, **23**, **24** and **25**.\n\n* The **sum** of the numbers is **325**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20 + 21 + 22 + 23 + 24 +25 = 325`)\n\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\n|---|---|---|\n|1 | 0 | 0 + 1 = 1 |\n|2 | 1 | 1 + 2 = 3|\n|3 | 3 | 3 + 3 = 6|\n|4 | 6 | 6 + 4 = 10|\n|5 | 10| 10 + 5 = 15|\n|6 | 15 | 15 + 6 = 21|\n|7 | 21 | 21 + 7 = 28|\n|8 | 28 | 28 + 8 = 36|\n|9 | 36 | 36 + 9 = 45|\n|10 | 45 | 45 + 10 = 55|\n|11 | 55 | 55 + 11 = 66|\n|12 | 66 | 66 + 12 = 78|\n|13 | 78 | 78 + 13 = 91|\n|14 | 91 | 91 + 14 = 105|\n|15 | 105 | 105 + 15 = 120|\n|16 | 120 | 120 + 16 = 136|\n|17 | 136 | 136 + 17 = 153|\n|18 | 153 | 153 + 18 = 171|\n|19 | 171 | 171 + 19 = 190|\n|20 | 190 | 190 + 20 = 210|\n|21 | 210 | 210 + 21 = 231|\n|22 | 231 | 231 + 22 = 253|\n|23 | 253 | 253 + 23 = 276|\n|24 | 276 | 276 + 24 = 300|\n|25 | 300 | 300 + 25 = 325|\n\nThe output should be **325**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "1a12d620-17ec-42dc-817e-685675bd9fba",
+          "short_text": "",
+          "content": "What is a natural number?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "51f1a5d0-8fbb-4e21-8279-438c5693fdc0",
+              "content": "Natural numbers include negative numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a68f464c-3273-4226-b5fc-b34be4032119",
+              "content": "Natural numbers are positive integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ec4012e8-ce37-4bdf-8189-f5ff73e6f49e",
+              "content": "Natural numbers include fractions and decimals.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fffc464c-1011-4f2b-9ece-1443a3f2b440",
+              "content": "Natural numbers include zero.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Natural numbers are positive integers. They start from 1 and include all positive integers such as 1, 2, 3, 4, 5, and so on. ",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4dfe9339-451c-45d1-af4b-f8991d3d0f8e",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "353a1f3c-b338-49d1-b483-809d138a1116",
+              "content": "18",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "36d403fe-fd6f-4720-a249-57055431135f",
+              "content": "26.00",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7d0b6c8e-7103-480d-98f9-e0b2bf64e1b9",
+              "content": "9\n13\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "eda5dd63-1c17-42c1-b0b4-d72ced841137",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n12\n```\n\n**Input 2**\n\n```\n18\n```\nThe above two inputs are valid because they consist of a single line containing an integer `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "58b55be3-b8ae-49f3-8b63-7d9085027f01",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2f8cf110-7109-4cbc-8cfa-513c803c086d",
+              "content": "To find the product of `N` natural numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "74e66b57-d0f0-4c87-b831-11f5816e649f",
+              "content": "To find the sum of `N` natural numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "907af10c-300b-452e-8ba0-dec09a145dec",
+              "content": "To find the sum of `N` odd numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9324e79b-4287-487b-84db-e981d6a83df2",
+              "content": "To find the sum of `N` prime numbers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and find the **sum** of `N` Natural Numbers.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5c15ded9-211a-44b8-8a3a-43c5af163aa1",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "18cb3ae6-1505-4f85-a804-2290b551a6aa",
+              "content": "The output should be multiple lines containing space-separated boolean values.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2db25264-384e-4cac-a3ec-94e5de20e061",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6a149e98-2641-41e8-bf03-727b3fdabbb5",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "cb6d8684-6dca-4c9d-b0c2-e25bebf07cf9",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing an integer that is the **sum** of `N` Natural Numbers.\n\nFor example, if the given number is `N = 4`, \n\n* The numbers from **1** to **4** are **1**, **2**, **3** and **4**.\n* The **sum** of the numbers is **10**. (`1 + 2 + 3 + 4 = 10`)\n\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\n|---|---|---|\n|1 | 0 | 0 + 1 = 1 |\n|2 | 1 | 1 + 2 = 3|\n|3 | 3 | 3 + 3 = 6|\n|4 | 6 | 6 + 4 = 10|\n\nThe output should be **10**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8bf5bec2-e521-4b27-a732-3cb345cc4002",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n20\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "104222f7-def1-43d4-9230-9601c570f964",
+              "content": "210",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4d8105f1-c1e2-409d-a91a-8fb6706ff7c4",
+              "content": "200",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "96670921-b938-4491-9988-6cebf5388fd5",
+              "content": "190",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b3212816-8271-4f20-aa65-78451eb9e2f4",
+              "content": "220",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 20`, \n\n* The numbers from **1** to **20** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9**, **10**, **11**, **12**, **13**, **14**, **15**, **16**, **17**, **18**, **19** and **20**.\n\n* The **sum** of the numbers is **210**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20 = 210`)\n\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\n|---|---|---|\n|1 | 0 | 0 + 1 = 1 |\n|2 | 1 | 1 + 2 = 3|\n|3 | 3 | 3 + 3 = 6|\n|4 | 6 | 6 + 4 = 10|\n|5 | 10| 10 + 5 = 15|\n|6 | 15 | 15 + 6 = 21|\n|7 | 21 | 21 + 7 = 28|\n|8 | 28 | 28 + 8 = 36|\n|9 | 36 | 36 + 9 = 45|\n|10 | 45 | 45 + 10 = 55|\n|11 | 55 | 55 + 11 = 66|\n|12 | 66 | 66 + 12 = 78|\n|13 | 78 | 78 + 13 = 91|\n|14 | 91 | 91 + 14 = 105|\n|15 | 105 | 105 + 15 = 120|\n|16 | 120 | 120 + 16 = 136|\n|17 | 136 | 136 + 17 = 153|\n|18 | 153 | 153 + 18 = 171|\n|19 | 171 | 171 + 19 = 190|\n|20 | 190 | 190 + 20 = 210|\n\nThe output should be **210**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e8fcce0c-e6a0-4f98-b75e-c529f353f161",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "23479655-b77e-48e6-9c12-fa553f179d0c",
+              "content": "The input will be multiple lines containing space-separated boolean values.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "587f4b43-5562-44e5-97c6-f889ddb340e7",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "69285052-e3cd-4dc4-9571-9ad201c88aff",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "eba9fc54-54b0-4674-b0fd-83c24e91fea4",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing `N`.\n\nFor example, **20**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "01765b6a-b1ae-416a-99fc-c50ec44fc3fa",
+      "input": "6",
+      "output": "21\n",
+      "is_hidden": false,
+      "weightage": 0.0
+    },
+    {
+      "test_case_id": "36196166-8a85-4632-b5e5-3cdb56806241",
+      "input": "94682",
+      "output": "4482387903\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "6a88ca75-03b2-4f8c-8eee-6eec6e1d2cde",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "bb1e62bc-f92d-4f9c-a5cc-1090951bd974",
+      "input": "3",
+      "output": "6\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "ddad07f6-8462-4854-b653-a00244f04559",
+      "input": "3258",
+      "output": "5308911\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

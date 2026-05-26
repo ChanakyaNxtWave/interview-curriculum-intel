@@ -1,0 +1,68 @@
+{
+  "question_id": "e5804d9e-fead-4d44-8ba7-3cd23ae0d926",
+  "short_text": "Python File",
+  "content": "Given a file name with the file extension, write a program that checks if the given file is a Python file.\n\nPrint **True** if the file is a Python file. Otherwise, print **False**.\n\n<MultiLineNote>\n- A file extension is added to the end of a file name to identify the file's format.\n- A Python file has the extension **.py**.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the file is a Python file. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given file name is **add_numbers.py**,\n\n- The given file name **add_numbers.py** ends with the extension **.py**.\n\nThe output should be **True**, as the given file is a Python file.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2baaa4a0-2dfd-49a4-89dd-d60ab60f33fe",
+      "code_content": "file_name = input()  \n\nis_python_file = file_name.endswith(\".py\") \n\nprint(is_python_file)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0f326242-406c-49cc-8500-40ebee4f99e1",
+      "input": "patterns.py",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "316d20fd-e909-454e-8859-2e4e03599e4f",
+      "input": "while_loop",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "4e784bf5-0230-414b-af4d-16db3bbf3273",
+      "input": "card.html",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "636bb5b7-e651-4ab8-a624-f728b99ecd84",
+      "input": "prime_numbers.py",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "97b2dc2a-8342-495a-bda2-d92d38bb9593",
+      "input": "add_numbers.py",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a744af0c-9e1a-4528-b1c9-d2271ab802a3",
+      "input": "palindrome.java",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

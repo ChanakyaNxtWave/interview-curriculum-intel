@@ -1,0 +1,68 @@
+{
+  "question_id": "f9608f4b-9135-4d47-bd05-e6011b496058",
+  "short_text": "Message Casing",
+  "content": "\nA software company is developing an intelligent text editor that helps writers ensure their content follows specific capitalization rules. Your task is to implement a feature that validates whether a word follows one of these capitalization rules:\n\n1. All letters in the word are uppercase (e.g., \"HELLO\").\n2. All letters in the word are lowercase (e.g., \"hello\").\n3. Only the first letter in the word is uppercase, and the rest are lowercase (e.g., \"Hello\").\n\nWrite a program to check if a given word follows one of these rules.\n\n<MultiLineNote>\n\n- **Uppercase letters**: Letters from `A` to `Z`.\n- **Lowercase letters**: Letters from `a` to `z`.\n- If the word satisfies any of the above rules, it is considered valid. Otherwise, it is invalid.\n- The word will contain only alphabetical characters, and its length will be between **1 and 100**.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a string `word`.\n\n---\n\n#### Output\n\nA single line with the output `true` if the word follows the capitalization rules, otherwise `false`.\n\n---\n\n#### Explanation\n\n- If the input word is `\"USA\"`, all letters are uppercase, so the output is `true`.\n- If the input word is `\"leetcode\"`, all letters are lowercase, so the output is `true`.\n- If the input word is `\"Google\"`, only the first letter is uppercase, so the output is `true`.\n- If the input word is `\"FlaG\"`, it does not follow any of the rules, so the output is `false`.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f0e2a82c-276a-4041-a4ed-f572c614d486",
+      "code_content": "word = input()\n\nis_all_uppercase = True\nfor char in word:\n    if ord(char) < 65 or ord(char) > 90:\n        is_all_uppercase = False\n        break\n\nis_all_lowercase = True\nfor char in word:\n    if ord(char) < 97 or ord(char) > 122:\n        is_all_lowercase = False\n        break\n\nis_capitalized = False\nif ord(word[0]) >= 65 and ord(word[0]) <= 90:\n    is_capitalized = True\n    for char in word[1:]:\n        if ord(char) < 97 or ord(char) > 122:\n            is_capitalized = False\n            break\n\nif is_all_uppercase or is_all_lowercase or is_capitalized:\n    print(\"true\")\nelse:\n    print(\"false\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "30d2ea0a-0742-48f3-9b92-644e01e35d51",
+      "input": "hELLo",
+      "output": "false",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "5cdff434-8bd3-4945-9864-f0d9f7edab05",
+      "input": "FlaG",
+      "output": "false",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6d34e92d-ed7a-4b67-a498-62a6df195720",
+      "input": "USA",
+      "output": "true",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7625688b-35e2-4431-a56f-08c72e3276d3",
+      "input": "Hello",
+      "output": "true",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "cc9938c4-c748-409d-8d28-11ea46d14fc9",
+      "input": "javaScript",
+      "output": "false",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f5058cf3-1361-4f14-8313-c0760bffecb7",
+      "input": "PYTHON",
+      "output": "true",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e12f5290-9206-4570-818e-a229b46db048",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

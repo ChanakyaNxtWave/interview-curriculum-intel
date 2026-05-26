@@ -1,0 +1,61 @@
+{
+  "question_id": "0e2cf93d-48ff-4cbe-b153-4e4ae5237065",
+  "short_text": "List of Unique Tuples",
+  "content": "Write a program to print the lists which contain the unique elements in the given list of lists.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The next N lines will contain space-separated integers, denoting elements of each list.<hr><b>Output</b><br/><br/>The output should be a single line containing the list of lists with unique elements in the order of inputs given.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read the inputs in the next three lines. If the inputs in the next three lines are the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 2 3\n5 10 15\n10 20 10 30\n</code></pre><br/>As the third list contains duplicate elements, the output list should not contain the third list. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[[1, 2, 3], [5, 10, 15]]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "eae7854a-c127-4590-a485-11fca9fc0da1",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nn = int(input())\nnum_list = []\nfor i in range(n):\n    values_list = input().split()\n    values_list = convert_string_to_int(values_list)\n    values_set = set(values_list)\n    is_equal = len(values_list) == len(values_set)\n    if is_equal:\n        num_list.append(values_list)\n\nprint(num_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "07be8005-4cbf-4849-b253-5cc1fb6bf064",
+      "input": "3\n1 1\n1 1\n1 1",
+      "output": "[]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "0a378323-f1c6-4d02-9e0b-5b0985dd674b",
+      "input": "4\n1 2 3 3 4\n2 3 4 5\n10 20 30\n3 6 9 12 3",
+      "output": "[[2, 3, 4, 5], [10, 20, 30]]\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "2d3bba5c-f86e-4212-a5b3-d8e9c0b7f780",
+      "input": "3\n1 2 3\n5 10 15\n10 20 10 30",
+      "output": "[[1, 2, 3], [5, 10, 15]]\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "3f4a5bd8-1d26-4a2b-9463-45ca8e915d8e",
+      "input": "10\n-99 100\n1 2 30\n-5 8 20\n2 5 10\n10 20 100\n-36 893\n7 7 7\n9 3 9\n10 15 20\n4 22 44",
+      "output": "[[-99, 100], [1, 2, 30], [-5, 8, 20], [2, 5, 10], [10, 20, 100], [-36, 893], [10, 15, 20], [4, 22, 44]]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "c14e4504-3a60-41f6-bfc9-6f6a1becc68e",
+      "input": "1\n1 1",
+      "output": "[]\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

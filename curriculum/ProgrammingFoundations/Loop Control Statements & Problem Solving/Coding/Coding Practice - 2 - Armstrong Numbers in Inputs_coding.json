@@ -1,0 +1,68 @@
+{
+  "question_id": "1a68a964-dfb4-4c41-bd86-b98b94a80604",
+  "short_text": "Armstrong Numbers in Inputs",
+  "content": "Given a number `N`, write a program that reads `N` inputs and prints the **Armstrong Numbers** in the given inputs each on a new line.\n\n<MultiLineNote>\n\nA number `N` is an Armstrong Number, if the sum of each digit to the power of `L` is equal to `N`. Where `L` is the count of digits in `N`.\n\nFor example if the given number `N = 153`,\n\n- There are **3** (`L = 3`) digits in **153** are **1**, **2**, **3** .\n- The sum of each digit in **153** to the power of **3** is,\n - Sum = (1 <sup> 3</sup> )+ (5 <sup> 3 </sup>) +( 3 <sup> 3 </sup>) = 1 + 125 + 27 = **153**\n\nThe sum of each digit in **153** to the power of **3** is equal to **153**.\nSo, **153** is an **Armstrong Number**.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain integers.\n\n---\n\n#### Output\n\nThe output should contain all the **Armstrong Numbers** in the given `N` inputs, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- The **4** inputs are,\n\n```\n8\n27\n153\n374\n\n```\n- The Armstrong numbers among **8**, **27**, **153** and **374** are **8** and **153**.\n    \n    - There is only **1** digit in **8** is **8**.\n    - The sum of each digit in **8** to the power of **1** is **8**. (**8<sup>1</sup>**)\n    - The sum of each digit in **8** to the power of **1** is equal to the number **8**.\n    \n    So, the number **8** is an **Armstrong number**.\n    <br>\n    - There are **3** digits in **153** are **1**, **5** and **3**.\n    - The sum of each digit in **153** to the power of **3** is **153**. (**1<sup>3</sup>+5<sup>3</sup>+3<sup>3</sup>**).\n    - The sum of each digit in **153** to the power of **3** is equal to the number **153**.\n    \n    So, the number **153** is an **Armstrong number**.\n    \n\nThe output should be,\n\n```\n8\n153\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "34fc209c-4cad-4468-b5b8-fd701583aa46",
+      "code_content": "n = int(input())\n\nfor each_number in range(n):\n    value = int(input())\n    \n    string = str(value)\n    power = len(string)\n    sum_of_digits = 0\n    \n    for integer_char in string:\n        sum_of_digits = sum_of_digits + int(integer_char) ** power\n    \n    if sum_of_digits == value:\n        print(value)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "21a45f2a-d9ec-4e28-b52d-85d65d152975",
+      "input": "4\n8\n27\n153\n374",
+      "output": "8\n153",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "54487d3b-5d21-4e74-a101-fc7bc55ca110",
+      "input": "5\n6\n9\n135\n54748\n60000",
+      "output": "6\n9\n54748",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "575c90f5-1ef9-4ae2-a723-bd334aa0047e",
+      "input": " 1\n9",
+      "output": "9",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6d7d5dc9-b546-4d91-8f05-c43e4f753686",
+      "input": "5\n1\n5\n370\n500\n1000",
+      "output": "1\n5\n370",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "83f82b49-0c8c-47a3-9995-ac94dceb1735",
+      "input": "9\n2\n153\n365\n371\n407\n1000\n8208\n9474\n10000",
+      "output": "2\n153\n371\n407\n8208\n9474",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9bd5b5ae-0589-4b06-881b-a0d8a82ff6d3",
+      "input": "1\n1634",
+      "output": "1634",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

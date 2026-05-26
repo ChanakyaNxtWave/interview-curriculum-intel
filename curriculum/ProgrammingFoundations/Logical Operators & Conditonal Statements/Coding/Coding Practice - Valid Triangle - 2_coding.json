@@ -1,0 +1,68 @@
+{
+  "question_id": "e96a6bad-0d8a-4392-9172-5620a1a18691",
+  "short_text": "Valid Triangle - 2",
+  "content": "Write a program that reads the three angles `A`, `B`, and `C` of a Triangle and checks if the sum of the three angles of the Triangle is equal to **180**.\r\n\r\nPrint the Triangle as given below if the sum of the three angles of the Triangle is equal to **180**. Otherwise, print **Not a Valid Triangle**.\r\n\r\n```\r\n*\r\n**\r\n***\r\n```\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing angle `A`.\r\nThe second line of input contains an integer representing angle `B`.\r\nThe third line of input contains an integer representing angle `C`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be three lines containing a Triangle as shown in the sample output if the sum of `A`, `B` and `C` is equal to **180**.\r\n\r\nOtherwise, the output should be a single line containing the string **Not a Valid Triangle**.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given three angles of the Triangle are `A = 60`, `B = 45`, and `C = 75`,\r\n\r\n* The sum of the three angles of the Triangle is equal to **180**. (`60 + 45 + 75 = 180`)\r\n\r\n* The output should be the Triangle as given below,\r\n\r\n```\r\n*\r\n**\r\n***\r\n```\r\n\r\nTo print the Triangle, print a star on the first line, two stars on the second line and three stars on the third line.\r\n\r\n<br>\r\n\r\nFor example, if the given three angles of the Triangle are `A = 80`, `B = 90` and `C = 100`, \r\n\r\n* The sum of the three angles of the Triangle is **not** equal to **180**. (`80 + 90 + 100 = 270`)\r\n\r\n* The output should be **Not a Valid Triangle**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ca102e25-e377-4ff4-8993-3375f1349778",
+      "code_content": "first_angle = int(input())\nsecond_angle = int(input())\nthird_angle = int(input())\n\nsum_of_three_angles = first_angle + second_angle + third_angle\n\nif sum_of_three_angles == 180:\n    print(\"*\")\n    print(\"*\" * 2)\n    print(\"*\" * 3)\nelse:\n    print(\"Not a Valid Triangle\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "21486e07-3540-4131-bcbe-131c74b52fa2",
+      "input": "45\n45\n90",
+      "output": "*\n**\n***",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "247091cd-5c43-4f52-8fc6-cfd4e7e7bd36",
+      "input": "1\n178\n1",
+      "output": "*\n**\n***",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "58245c8c-d37e-4e5b-b612-a36d7708c024",
+      "input": "60\n45\n75",
+      "output": "*\n**\n***",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7535562c-37c1-4404-ba87-60ef5f9d3be2",
+      "input": "80\n90\n100",
+      "output": "Not a Valid Triangle",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "878ab2e4-d639-4fd7-9767-e3e3b2064764",
+      "input": "250\n100\n10",
+      "output": "Not a Valid Triangle",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "97008926-28ad-4169-8347-9ee8db860bab",
+      "input": "1\n160\n1",
+      "output": "Not a Valid Triangle",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

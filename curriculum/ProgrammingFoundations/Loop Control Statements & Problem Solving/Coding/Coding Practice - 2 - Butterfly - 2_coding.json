@@ -1,0 +1,61 @@
+{
+  "question_id": "82b8990a-c4ef-4d52-81a1-ebc097dfc7ae",
+  "short_text": "Butterfly - 2",
+  "content": "Given a number `N`, write a program to print a **Butterfly** of `2 * N` rows using stars (`*`).\r\n\r\n```\r\n*                 * \r\n* *             * * \r\n* * *         * * * \r\n* * * *     * * * * \r\n* * * * * * * * * * \r\n* * * * * * * * * * \r\n* * * *     * * * * \r\n* * *         * * * \r\n* *             * * \r\n*                 * \r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every star (`*`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `2 * N` rows containing stars (`*`) as a **Butterfly** shown in the sample output.\r\n\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 5`, \r\n\r\n- Print the stars (`*`) on **10** (`2 * 5`) rows as shown in the given image.\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-butterfly-2.png' widthPercent='80'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image,\r\n\r\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\r\n- The Star in the box indicates the star and a space (\"* \").\r\n\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n\r\n```\r\n*                 * \r\n* *             * * \r\n* * *         * * * \r\n* * * *     * * * * \r\n* * * * * * * * * * \r\n* * * * * * * * * * \r\n* * * *     * * * * \r\n* * *         * * * \r\n* *             * * \r\n*                 * \r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "800134ce-7aa9-4f72-b38a-79e249c7499c",
+      "code_content": "n = int(input())\n\nfor i in range(1, n + 1):\n    stars = \"* \" * i\n    middle_spaces = \"  \" * (2 * (n - i))\n    print(stars + middle_spaces + stars)\n\nfor i in range(n):\n    stars = \"* \" * (n - i)\n    middle_spaces = \"  \" * (2 * i)\n    print(stars + middle_spaces + stars)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "6ba6e154-9c9f-4834-be91-066eef3ba59b",
+      "input": "3",
+      "output": "*         * \n* *     * * \n* * * * * * \n* * * * * * \n* *     * * \n*         * \n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "a3596be8-43c2-4eca-a218-9f1e3429dfd1",
+      "input": "14",
+      "output": "*                                                     * \n* *                                                 * * \n* * *                                             * * * \n* * * *                                         * * * * \n* * * * *                                     * * * * * \n* * * * * *                                 * * * * * * \n* * * * * * *                             * * * * * * * \n* * * * * * * *                         * * * * * * * * \n* * * * * * * * *                     * * * * * * * * * \n* * * * * * * * * *                 * * * * * * * * * * \n* * * * * * * * * * *             * * * * * * * * * * * \n* * * * * * * * * * * *         * * * * * * * * * * * * \n* * * * * * * * * * * * *     * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * *     * * * * * * * * * * * * * \n* * * * * * * * * * * *         * * * * * * * * * * * * \n* * * * * * * * * * *             * * * * * * * * * * * \n* * * * * * * * * *                 * * * * * * * * * * \n* * * * * * * * *                     * * * * * * * * * \n* * * * * * * *                         * * * * * * * * \n* * * * * * *                             * * * * * * * \n* * * * * *                                 * * * * * * \n* * * * *                                     * * * * * \n* * * *                                         * * * * \n* * *                                             * * * \n* *                                                 * * \n*                                                     * \n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "b85fa741-b732-4539-ab9f-fc2e415b4294",
+      "input": "11",
+      "output": "*                                         * \n* *                                     * * \n* * *                                 * * * \n* * * *                             * * * * \n* * * * *                         * * * * * \n* * * * * *                     * * * * * * \n* * * * * * *                 * * * * * * * \n* * * * * * * *             * * * * * * * * \n* * * * * * * * *         * * * * * * * * * \n* * * * * * * * * *     * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * *     * * * * * * * * * * \n* * * * * * * * *         * * * * * * * * * \n* * * * * * * *             * * * * * * * * \n* * * * * * *                 * * * * * * * \n* * * * * *                     * * * * * * \n* * * * *                         * * * * * \n* * * *                             * * * * \n* * *                                 * * * \n* *                                     * * \n*                                         * \n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "cc229568-280d-42ce-ad9a-0e1caaa38f3d",
+      "input": "5",
+      "output": "*                 * \n* *             * * \n* * *         * * * \n* * * *     * * * * \n* * * * * * * * * * \n* * * * * * * * * * \n* * * *     * * * * \n* * *         * * * \n* *             * * \n*                 * \n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d53f2df5-c6ec-4511-95d5-19e85168186a",
+      "input": "8",
+      "output": "*                             * \n* *                         * * \n* * *                     * * * \n* * * *                 * * * * \n* * * * *             * * * * * \n* * * * * *         * * * * * * \n* * * * * * *     * * * * * * * \n* * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * \n* * * * * * *     * * * * * * * \n* * * * * *         * * * * * * \n* * * * *             * * * * * \n* * * *                 * * * * \n* * *                     * * * \n* *                         * * \n*                             * \n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "154d9958-8829-4adf-9632-1d158f645429",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

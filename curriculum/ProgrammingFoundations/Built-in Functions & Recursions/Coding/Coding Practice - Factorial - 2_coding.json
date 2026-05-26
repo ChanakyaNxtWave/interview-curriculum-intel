@@ -1,0 +1,61 @@
+{
+  "question_id": "a7075486-7687-41ea-8af8-6b37dda95378",
+  "short_text": "Factorial - 2",
+  "content": "Write a program to print the factorial of `N`.Factorial is the product of all positive integers less than or equal to `N`.\r\n\r\n<MultiLineNote>\r\n\r\nThe **factorial** of **0** is **1**.\r\n</MultiLineNote>\r\n\r\n----\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a positive integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\nThe output should be a single line containing the factorial of the given number `N`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`, \r\n\r\n- The factorial of **4** is **24** .`(4 × 3 × 2 × 1 = 24)`\r\n\r\nSo, the output should be **24**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "7ec886eb-92fe-4ad6-953e-2514df2e628b",
+      "code_content": "def compute_factorial(n):\n    if n <= 0:  # Base case\n        return 1\n    else:\n        return n * compute_factorial(n - 1)  # Recursion\n\n\nnum = int(input())\nresult = compute_factorial(num)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2a4360fc-b80d-414c-b216-3766038d48b7",
+      "input": "5",
+      "output": "120\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "2acf771d-14fc-4d16-870e-f06d052d4d07",
+      "input": "4",
+      "output": "24\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "330d1186-081f-4e3b-bafc-c1b899994089",
+      "input": "0",
+      "output": "1\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "4e2e3a3a-428d-43c5-9a69-1be51d966063",
+      "input": "7",
+      "output": "5040\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e7f4c757-ab2b-4c2e-90b7-f07c308f1ac1",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

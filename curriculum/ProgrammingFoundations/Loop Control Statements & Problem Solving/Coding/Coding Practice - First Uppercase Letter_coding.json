@@ -1,0 +1,75 @@
+{
+  "question_id": "40f28d8d-7170-40d7-9556-708e54596868",
+  "short_text": "First Uppercase Letter",
+  "content": "Given a string `S`, write a program to print the uppercase letter that appears first in the string `S`.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string representing `S`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string representing uppercase letter that appears first in the string `S`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given string is `S = superHeroeS`,\r\n\r\n- The uppercase letters in the string **\"superHeroeS\"** are **\"H\"** and **\"S\"**.\r\n- The first uppercase letter that appears first in the string **\"superHeroeS\"** is **\"H\"**.\r\n\r\nThe output should be **H**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "1c631fa6-6acf-4292-9a91-37b24dc34ff0",
+      "code_content": "s = input()\n\nfor character in s:\n    if character.isdigit():\n        continue\n    else:\n        if character.upper() == character:\n                print(character)\n                break\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0e42d5c7-0efd-4da4-a3c3-6bd48d95e44c",
+      "input": "28July1914",
+      "output": "J\n",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "693b4751-91ef-400d-9a6f-ffc6b1450e95",
+      "input": "computerS",
+      "output": "S\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "8b2f9ab2-7e1e-4daf-a2e5-3cb8ef609296",
+      "input": "superHeroeS",
+      "output": "H",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ca9720da-a9d0-4f2e-824b-da332484a150",
+      "input": "C",
+      "output": "C\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cb1484d2-1f79-4f07-8b92-b97168ff459c",
+      "input": "298kelvinDegrees",
+      "output": "D\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ddb4e05d-e4c6-47b7-a69a-9454ce536013",
+      "input": "100Meters",
+      "output": "M\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "f3976d7a-2ddd-4d45-ade5-5c248222af7f",
+      "input": "FantasticBeasts",
+      "output": "F\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "afa726bf-b97f-4084-a133-80be6079e633",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "ffb2a68c-a11e-4f8c-a71a-b0c8a3f81c86",
+  "short_text": "Return the Given Argument",
+  "content": "For this problem, the prefilled code will contain a function. Write a program to return the value passed to the function.<hr><b>Input</b><br/><br/>The first line of input will contain an integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the value returned by the function.<hr><b>Explanation</b><br/><br/>For example, if the given integer is 20, the output should be 20, as the function returns the same value.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "9be061df-55e0-4c09-969a-e4a7db805f1b",
+      "code_content": "def func(arg_1):\n    return arg_1\n\n\nn = int(input())\nresult = func(n)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "07736f4c-3cc6-440b-82b8-f127a195b197",
+      "input": "-21",
+      "output": "-21\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2eb91636-f221-4de0-9435-003368d67a69",
+      "input": "20",
+      "output": "20\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c091a8ab-87b6-414e-98dc-826148bbc6d5",
+      "input": "100",
+      "output": "100\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c9622343-583d-4b75-b552-cdf1b6aee8ba",
+      "input": "5",
+      "output": "5\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ee39a17d-c97a-4dad-87b7-047ddabb6d9b",
+      "input": "-200",
+      "output": "-200\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "d935a52b-ae14-4000-bd60-6064ed15bc7c",
+  "short_text": "N Terms in Fibonacci Series",
+  "content": "Write a program to recursively create a list of N Fibonacci terms.<br/>A Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8...<br/>The first two terms are 0 and 1. All other terms are obtained by adding the preceding two terms.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing a list with N Fibonacci terms.<hr><b>Explanation</b><br/><br/>For example, if the given N is 5, your code should print the list of five Fibonacci terms. So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[0, 1, 1, 2, 3]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "0623d591-04fc-40a6-9a86-35d5f11cb2df",
+      "code_content": "def fibonacci(n):\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n-1)+fibonacci(n-2)\n\n\ndef get_fibonacci_series(n):\n    fibonacci_series = []\n    for i in range(n):\n        term = fibonacci(i)\n        fibonacci_series.append(term)\n    return fibonacci_series\n\n\nn = int(input())\nresult = get_fibonacci_series(n)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0ae9a770-c0dc-4493-a177-07e4a5d5e624",
+      "input": "8",
+      "output": "[0, 1, 1, 2, 3, 5, 8, 13]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "70f4df88-7ad3-4e2c-b77d-9215284fc217",
+      "input": "5",
+      "output": "[0, 1, 1, 2, 3]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "7cde05b0-0a16-465b-8499-93e470461857",
+      "input": "1",
+      "output": "[0]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "d51f0e6c-5c57-45d1-b733-e80e34bf1d42",
+      "input": "20",
+      "output": "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "faf5f92c-619a-448e-9ce3-a64337bc46ca",
+      "input": "2",
+      "output": "[0, 1]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f054b33-4063-4527-8a2a-dfa892158418",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

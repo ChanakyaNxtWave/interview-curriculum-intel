@@ -1,0 +1,61 @@
+{
+  "question_id": "9129f793-b1ef-4be7-bd4c-8f9453032775",
+  "short_text": "Check Last Part of a String",
+  "content": "Write a program that reads two words `A` and `B` and checks if the second word `B` is the last part of the first word `A`.\n\n---\n\n#### Input\n\nThe first line of input contains a string representing `A`.\nThe second line of input contains a string representing `B`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the second word `B` is the last part of the first word `A`, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given words are `A = Blackhole` and `B = hole`,\n\nThe output should be **True** as **hole** is the last part of the word **Blackhole**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "333db43a-593f-460e-8d37-2c78ebb21acc",
+      "code_content": "first_word = input()\nsecond_word = input()\n\nfirst_word_length = len(first_word)\nsecond_word_length = len(second_word)\n\nstart_index = first_word_length - second_word_length\npart = first_word[start_index:]\n\nresult = part == second_word\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "36ac1361-8609-4d4d-8a5d-f880c57b0379",
+      "input": "boomerang\nboom",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "55b53bec-4c06-440b-9add-00dd5a7c5225",
+      "input": "Blackhole\nhole",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5ff87d08-d50d-460f-a536-500b812c8e18",
+      "input": "code editor\ncode",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "b47802f3-5c50-4701-b264-f71b94fdcb2a",
+      "input": "developer\ndevelop",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e2cd5454-58f5-418c-b0a8-a7046826c0af",
+      "input": "nxtwave ccbp\nccbp",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

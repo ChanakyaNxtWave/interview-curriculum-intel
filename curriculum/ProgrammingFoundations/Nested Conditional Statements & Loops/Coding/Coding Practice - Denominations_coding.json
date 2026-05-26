@@ -1,0 +1,398 @@
+{
+  "question_id": "b3f33f8a-d13a-492f-b7fc-cdac18cd2e69",
+  "short_text": "Denominations",
+  "content": "Write a program that reads an amount `A` and prints the minimum number of **5** and **1** rupee notes required for the given amount.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing the amount `A`.\n\n---\n\n#### Output\n\nThe first line of output should be a string containing the required number of **5** rupee notes as shown in the sample output.\n\nThe second line of output should be a string containing the required number of **1** rupee notes as shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given amount `A = 16`,\n\n* The number of **5** rupee notes required for **16** is **3**. (`16 / 5 = 3.2`)\n  * The remaining amount is **1**. (`16 - (5 * 3) = 1`)\n* The number of **1** rupee notes required for **1** is **1**. (`1 / 1 = 1`)\n\nNumber of **5** rupee notes => 5 x 3 = 15\nNumber of **1** rupee notes  => 1 x 1  =   1\n----------------------------------------\nTotal                                   =>               16\n----------------------------------------\n\nThe output should be,\n\n```\n5:3\n1:1\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "481ce802-7547-402b-ae45-87140876b137",
+      "code_content": "amount = int(input())\n\nno_of_5s = amount / 5\nno_of_5s = int(no_of_5s)\nno_of_1s = amount % 5\n\nprint(\"5:\" + str(no_of_5s))\nprint(\"1:\" + str(no_of_1s))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "112d7551-91ff-45e6-bc4b-a7c4ec981e63",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n21\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5:4\n1:1",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 21`,\n\n- The number of **5** rupee notes required for **21** is **4**. (`21 / 5 = 4.2`)\n\n  - The remaining amount is **1**. (`21 - (5 * 4) = 1`)\n\n- The number of **1** rupee notes required for **1** is **1**. (`1 / 1 = 1`)\n\nNumber of 5 rupee notes => 5 x 4 = 20\nNumber of 1 rupee notes =>  1 x 1  =   1\n----------------------------------------\nTotal                                   =>               21\n----------------------------------------\n\nThe output should be,\n\n```\n5:4\n1:1\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9600c348-bb5f-44fd-84eb-264c73332c02",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n100\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5:20\n1:0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 100`,\n\n- The number of **5** rupee notes required for **100** is **20**. (`100 / 5 = 20`)\n\n  - The remaining amount is **0**. (`100 - (5 * 20) = 0`)\n\n- Since the remaining amount is **0**, there is no need for **1** rupee notes.\n\nNumber of **5** rupee notes => 5 x 20 = 100\nNumber of **1** rupee notes =>  1 x   0  =    0\n----------------------------------------\nTotal                                   =>                100\n----------------------------------------\n\nThe output should be,\n\n```\n5:20\n1:0\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c91c1a7b-0de2-4faf-b8bd-8a1482864697",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n67\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5:13\n1:2",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 67`,\n\n- The number of **5** rupee notes required for **67** is **13**. (`67 / 5 = 13.4`)\n\n  - The remaining amount is **2**. (`67 - (5 * 13) = 2`)\n\n- The number of **1** rupee notes required for 2 is 2. (`2 / 1 = 2`)\n\nNumber of 5 rupee notes => 5 x 13 = 65\nNumber of 1 rupee notes =>  1 x   2  =  2\n----------------------------------------\nTotal                                   =>                67\n----------------------------------------\n\nThe output should be,\n\n```\n5:13\n1:2\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "40b97aa3-d54f-4995-8095-790c3d69f36c",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "13894742-e794-4755-8333-4d40a4f6573b",
+              "content": "The input will be multiple lines containing two space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "326e7a8e-a19f-465e-aeb3-8cc902131ee8",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "37e73181-2165-4018-b74a-5bfd66978032",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8eb0b7d8-650d-4541-be38-d74a7d5f4ef1",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing the amount `A`.\n\nFor example, **86**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "573e6888-ec96-4326-89d2-7b95a3ffa3f5",
+          "short_text": "",
+          "content": "Considering the given description, how do we calculate the number of 5 rupee notes required for the given amount?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "56675b77-44b5-4439-a054-f747735b930e",
+              "content": "By subtracting the amount from the next highest multiple of 5.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "768d75c5-b2dc-4062-90ba-cdec2234e761",
+              "content": "By dividing the amount by 1.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7f0879da-f22e-4bb4-af83-fa91f35bac40",
+              "content": "By dividing the amount by 5.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "840eb007-4922-487f-8566-5f0d0c2e9f78",
+              "content": "By dividing the amount by 10.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the given description, we can calculate the number of **5** rupee notes required for the given amount by dividing the amount by **5**.\n\nFor example,\n\nIf the given amount `A = 30`,\n\n- The number of **5** rupee notes required for **30** is **6**. (`30 / 5 = 6`)\n\n- Number of **5** rupee notes => 5 x 6 = 30.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5c948151-67b4-40c2-b09c-92229dffc396",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "a2e39678-030f-4bf8-befa-c5062d3bf7b7",
+              "content": "1000",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b0d08569-89d5-4a4b-aadc-22f59a7e0886",
+              "content": "501\n24",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c252626a-6372-4c40-bf74-311aad57aa56",
+              "content": "64.21",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e40550de-a98d-469a-aed0-afb68462bf8a",
+              "content": "120",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n120\n```\n\n**Input 2**\n\n```\n1000\n```\nThe above two inputs are valid because they consist of a single line containing an integer `A`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "631fad5a-6969-49e2-9db8-301518090f5c",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n114\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0a209903-76ff-4ed4-a32e-23466010f6b9",
+              "content": "22\n4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4bb96e73-339c-4f7d-abbd-1cef99c482b4",
+              "content": "5:22\n1:4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ad6a4d1c-f3df-49b0-96fd-f5d674eeb32c",
+              "content": "1:4\n5:22",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e5e994e4-a143-4bf7-a6be-035d2da9756c",
+              "content": "5:22\n1:5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 114`,\n\n- The number of **5** rupee notes required for **114** is **22**. (`114 / 5 = 22.8`)\n\n  - The remaining amount is **4**. (`114 - (5 * 22) = 4`)\n\n- The number of **1** rupee notes required for **4** is **4**. (`4 / 1 = 4`)\n\nNumber of **5** rupee notes => 5 x 22 = 110\nNumber of **1** rupee notes =>  1 x  4  =     4\n----------------------------------------\nTotal                                   =>                114\n----------------------------------------\n\nThe output should be,\n\n```\n5:22\n1:4\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9019d636-cede-4bc9-95da-c5ec3fb096ea",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0d5f7e81-ba2c-4325-9e36-af718b34b50b",
+              "content": " To calculate the minimum number of 10 and 1 rupee notes required for a given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b5869216-0ffc-4e59-a92a-87aae4227afd",
+              "content": " To calculate the minimum number of 5 and 1 rupee notes required for a given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b5af08c7-2b11-46a3-b853-2fd7340ccdbd",
+              "content": " To calculate the minimum number of 1 rupee notes required for a given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d10c7b37-7764-4801-b390-bbcbf56ec24b",
+              "content": " To calculate the minimum number of 5 rupee notes required for a given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read an amount `A` and calculate the minimum number of 5 and 1 rupee notes required for a given amount.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ce76f75f-03eb-4354-a759-ad8906f015ba",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "31aa4449-63e2-465e-80d1-c995bede0612",
+              "content": "The first line of output should be an integer.\n\nThe second line of output should be an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "da58c0c3-eb26-433f-a327-4bb0bbc72918",
+              "content": "The first line of output should be a string.\n\nThe second line of output should be a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ddc42e44-5073-47e9-bfd3-858acce0e205",
+              "content": "The first line of output should be a string.\n\nThe second line of output should be an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fad6bad6-85b6-4b36-b1f9-3fd8e1576544",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be,\n\n- The first line of output should be a string containing the required number of **5** rupee notes.\n\n- The second line of output should be a string containing the required number of **1** rupee notes.\n\nFor example,\n\nIf the given amount `A = 48`,\n\n- The number of **5** rupee notes required for **48** is **9**. (`48 / 5 = 9.6`)\n\n  - The remaining amount is **3**. (`48 - (5 * 9) = 3`)\n\n- The number of **1** rupee notes required for **3** is **3**. (`3 / 1 = 3`)\n\nNumber of 5 rupee notes => 5 x 9 = 45\nNumber of 1 rupee notes =>  1 x 3  =   3\n----------------------------------------\nTotal                                   =>               48\n----------------------------------------\n\nThe output should be,\n\n```\n5:9\n1:3\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f002ff9f-b9b9-4bca-be36-17459cd91bfc",
+          "short_text": "",
+          "content": "Considering the given description, how many `1` rupee notes are required for the amount of 159?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0e550b4c-4470-4023-be8a-44d6ef78dc46",
+              "content": "14",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8a07e9f8-1d45-4c88-a85d-a2daa1070c86",
+              "content": "4",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a2f5d047-0525-458d-8351-78c4bc3a306e",
+              "content": "31",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b2afbb62-8950-4a2b-ad33-11681e1c621e",
+              "content": "159",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the given description, **4** `1` rupee notes are required for the amount of 159.\n\n- The number of **5** rupee notes required for **159** is **31**. (`159 / 5 = 31.8`)\n\n  - The remaining amount is **4**. (`159 - (5 * 31) = 4`)\n\n- The number of **1** rupee notes required for **4** is **4**. (`4 / 1 = 4`)\n\nNumber of **5** rupee notes => 5 x 31 = 155\nNumber of **1** rupee notes =>  1 x  4  =     4\n----------------------------------------\nTotal                                   =>                159\n----------------------------------------",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "00e40306-3b99-4d9e-9fb3-813ac31b7a93",
+      "input": "4",
+      "output": "5:0\n1:4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "0f406d6f-d373-4b94-8392-5c2b13b90284",
+      "input": "102",
+      "output": "5:20\n1:2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2854bbd7-c5f5-4919-afb2-222492251df3",
+      "input": "75",
+      "output": "5:15\n1:0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "4eccaf1d-c389-4b69-b221-a44c4ce0a84a",
+      "input": "16",
+      "output": "5:3\n1:1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "90802244-eaa2-45ce-b6e9-4a9d24a6b5d2",
+      "input": "999999999999",
+      "output": "5:199999999999\n1:4",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "afbcb02b-f331-4180-838e-d03b8ba930fd",
+      "input": "0",
+      "output": "5:0\n1:0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "cf3201e6-4814-4ec5-b76b-7e3bc2b56e9f",
+      "input": "38",
+      "output": "5:7\n1:3",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d40f9261-fc6d-4492-903b-ce5bdf6d6a63",
+      "input": "5",
+      "output": "5:1\n1:0",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

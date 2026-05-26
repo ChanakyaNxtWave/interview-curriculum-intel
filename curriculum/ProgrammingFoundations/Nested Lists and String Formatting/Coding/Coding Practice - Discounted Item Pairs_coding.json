@@ -1,0 +1,61 @@
+{
+  "question_id": "4e21f989-67d1-434d-b6a7-2b1fe1a50bfa",
+  "short_text": "Discounted Item Pairs",
+  "content": "A store is running a sale, and you want to find pairs of items that can be purchased together within a given budget after applying a discount on their total cost. You are provided with a **list of integers** representing item prices, the **budget** (integer), and the **discount** (integer) applied to the total cost. Write a program to identify all unique pairs of items that can be purchased without exceeding the budget after the discount is applied.\n\n<MultiLineNote>\n\n- At least one pair will always be available based on the problem statement.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input consists of:\n\n- The first line containing a **comma-separated list of integers** representing the prices of items.\n- The second line containing an **integer** representing the total budget.\n- The third line containing an **integer** representing the discount applied to the total cost.\n\n---\n\n#### Output\n\nThe output should be all unique pairs of item prices that can be purchased together within the budget (after applying the discount), printed as **tuples** in **ascending order**.\n\n\n---\n\n#### Explanation\n\nFor example, given the following input\n\n```\n10,20,30,40,50\n45\n5\n```\n\n- The list of item prices is **[10, 20, 30, 40, 50]**, the budget is **`45`**, and the discount is **5**.\n- Each pair of items is checked to see if their combined cost minus the discount is less than or equal to the budget.\n- The pairs that satisfy the condition are:\n - **(10, 20)** because **10 + 20 - 5 = 25**, which is less than **45**.\n - **(10, 30)** because **10 + 30 - 5 = 35**, which is less than **45**.\n - **(10, 40)** because **10 + 40 - 5 = 45**, which is equal to the budget.\n - **(20, 30)** because **20 + 30 - 5 = 45**, which is equal to the budget.\n- The pairs are sorted in **ascending order** based on the first element, and if the first elements are the same, based on the second element.\n\n\n```\n(10, 20)\n(10, 30)\n(10, 40)\n(20, 30)\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "619b93e2-d4aa-4e41-87e9-c0a04a83bc48",
+      "code_content": "prices_input = input().split(',')\nprices = []\nfor price in prices_input:\n    prices.append(int(price))\n\nbudget = int(input())\ndiscount = int(input())\n\npairs = []\nfor i in range(len(prices)):\n    for j in range(i + 1, len(prices)):\n        total_cost = prices[i] + prices[j] - discount\n        if total_cost <= budget:\n            pair = (min(prices[i], prices[j]), max(prices[i], prices[j]))\n            if pair not in pairs:\n                pairs.append(pair)\n\npairs.sort()\n\nfor pair in pairs:\n    print(pair)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2fe66bd9-0c64-4242-809a-384561249995",
+      "input": "5,15,25,35\n10\n5",
+      "output": "",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7e33383f-da1f-46bf-85d2-92258340c0d8",
+      "input": "-5,10,15,-10,5\n15\n5",
+      "output": "(-10, -5)\n(-10, 5)\n(-10, 10)\n(-10, 15)\n(-5, 5)\n(-5, 10)\n(-5, 15)\n(5, 10)\n(5, 15)",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a35039a2-8ad1-49d4-a70c-5e5b3a699852",
+      "input": "10,20,30,40,50\n45\n5",
+      "output": "(10, 20)\n(10, 30)\n(10, 40)\n(20, 30)",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b1cf2c72-9ddf-4e73-ab42-8a5bb5831392",
+      "input": "10,10,10,10\n15\n5",
+      "output": "(10, 10)",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b70b0680-c19b-4411-8088-ce6b195b0157",
+      "input": "10,20,30,20,10,40\n35\n5",
+      "output": "(10, 10)\n(10, 20)\n(10, 30)\n(20, 20)",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d7ae9440-fd06-48f8-a9cc-b36f78831faf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

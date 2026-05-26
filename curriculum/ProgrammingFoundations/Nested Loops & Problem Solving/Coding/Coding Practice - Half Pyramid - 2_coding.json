@@ -1,0 +1,61 @@
+{
+  "question_id": "3dd6e440-73e8-4f90-abd0-134cc2184bca",
+  "short_text": "Half Pyramid - 2",
+  "content": "Write a program to print the numbers in the given N number of rows in the following half pyramid pattern.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 \n2 3 \n4 5 6 \n7 8 9 10 \n11 12 13 14 15\n</code></pre><hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be N rows containing numbers in the half pyramid pattern.<br/>Note: There is a space after each number.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, your code should print the consecutive numbers in the five rows in the half pyramid pattern.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "6a78f956-f1ef-4fa0-ad8c-296512ee7a7f",
+      "code_content": "number = int(input())\n\nk = 1\nfor i in range(1, number+1):\n    pattern = \"\"\n    for j in range(1, i+1):\n        pattern = pattern + (str(k) + \" \")\n        k = k + 1\n\n    print(pattern)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3e2777de-ce98-4fb1-899b-fdab89c52bb4",
+      "input": "2",
+      "output": "1 \n2 3 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "69713bd6-0554-4916-b448-62262a234812",
+      "input": "11",
+      "output": "1 \n2 3 \n4 5 6 \n7 8 9 10 \n11 12 13 14 15 \n16 17 18 19 20 21 \n22 23 24 25 26 27 28 \n29 30 31 32 33 34 35 36 \n37 38 39 40 41 42 43 44 45 \n46 47 48 49 50 51 52 53 54 55 \n56 57 58 59 60 61 62 63 64 65 66 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8e90f2df-0a02-4c77-bf0c-94dcae96324f",
+      "input": "5",
+      "output": "1 \n2 3 \n4 5 6 \n7 8 9 10 \n11 12 13 14 15 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "c3298af3-a253-413a-ba95-01c6137749ff",
+      "input": "14",
+      "output": "1 \n2 3 \n4 5 6 \n7 8 9 10 \n11 12 13 14 15 \n16 17 18 19 20 21 \n22 23 24 25 26 27 28 \n29 30 31 32 33 34 35 36 \n37 38 39 40 41 42 43 44 45 \n46 47 48 49 50 51 52 53 54 55 \n56 57 58 59 60 61 62 63 64 65 66 \n67 68 69 70 71 72 73 74 75 76 77 78 \n79 80 81 82 83 84 85 86 87 88 89 90 91 \n92 93 94 95 96 97 98 99 100 101 102 103 104 105 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "d4b051a3-cb06-4056-8827-4c8dc288b577",
+      "input": "4",
+      "output": "1 \n2 3 \n4 5 6 \n7 8 9 10 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

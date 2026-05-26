@@ -1,0 +1,47 @@
+{
+  "question_id": "b2e5662c-c368-4820-9648-3c6333d6812c",
+  "short_text": "Inventory Management",
+  "content": "Complete the given **Inventory** class by adding new features by following the given instructions.\r\n\r\n**Existing _Inventory_ class**:\r\n\r\nThe existing **Inventory** class has only a _pass_ statement. Remove _pass_ statement and add the new features as mentioned in the given instructions.\r\n\r\n<details>\r\n\r\n<summary> **Features to be added to **_Inventory_** class** </summary>\r\n\r\n- **Add below attribute**\r\n  - The **Inventory** class should have a **products** dictionary attribute to keep track of product names and their corresponding prices.\r\n- **Add below methods**\r\n  - `add_product(self, product_name, price)`: This instance method should add the **product_name** as a key and **price** as a value to the **products** dictionary.\r\n  - `get_total_inventory_value(products)`:\r\n    - This method should calculate and return the total value of all products in the inventory.\r\n    - **Note**: It takes a parameter products, which is a dictionary containing product names and their prices.\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will effect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\r\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results you will be shown the rough description of the tests that will be verified.\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "8ee52c1e-38e9-49cb-8943-bbac569ceac9",
+      "code_content": "class Inventory:\n    def __init__(self):\n        self.products = {}\n\n    def add_product(self, product_name, price):\n        self.products[product_name] = price\n\n    @staticmethod\n    def get_total_inventory_value(products):\n        return sum(products.values())\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    inventory = Inventory()\n    inventory.add_product(\"Laptop\", 50000)\n    inventory.add_product(\"Phone\", 15000)\n    print(inventory.products)\n    print(Inventory.get_total_inventory_value(inventory.products))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2b48b21c-6544-434b-971f-b61a4cb99281",
+      "input": "Checking Default Tests",
+      "output": "{'Laptop': 50000, 'Phone': 15000}\n65000",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "48995abb-1f13-4786-9cdc-6b89dd5bb2f6",
+      "input": "Checking methods",
+      "output": "PASS: add_product method is implemented correctly.\nPASS: get_total_inventory_value is correctly annotated as a @staticmethod.\nPASS: get_total_inventory_value static method is implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e93dd631-def9-4401-8a22-b51d1288ddeb",
+      "input": "Checking if 'products' attribute exists",
+      "output": "PASS: 'products' attribute is correctly implemented.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "131f81d6-8163-4839-93be-e4de5501ecaf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

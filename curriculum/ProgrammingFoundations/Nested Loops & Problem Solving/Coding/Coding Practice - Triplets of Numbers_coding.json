@@ -1,0 +1,68 @@
+{
+  "question_id": "5f3ba863-7375-42bc-b38c-6010477c01ee",
+  "short_text": "Triplets of Numbers",
+  "content": "Given a number `N`, write a program to print the count of triplets containing numbers `A`, `B` and `C` from **1** to `N` such that the sum of the numbers is equal to `N`, where `A` < `B` < `C`.\n\n`A` is the first number, `B` is the second number, and `C` is the third number in a triplet.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer which is the count of triplets whose sum is equal to `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 10`,\n\n- The triplets from **1** to **10**, such that `A + B + C = N` where `A < B < C` are\n\n```\n(1, 2, 7)\n(1, 3, 6)\n(1, 4, 5)\n(2, 3, 5)\n```\n\n- The count of triplets whose sum is equal to **10** is **4**.\n\nThe output should be **4**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f0b32f46-6038-46fd-b2b3-f3fd574be665",
+      "code_content": "n = int(input())\n\nnumber_of_pairs = 0\nfor first_number in range(1, n):\n    for second_number in range(first_number + 1, n):\n        if n - (first_number + second_number) < n and first_number < second_number < n - (first_number + second_number):\n            number_of_pairs = number_of_pairs + 1 \nprint(number_of_pairs)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10b8fb9d-94de-47e7-9db7-8f15631cf0bf",
+      "input": "10",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "152a71a4-b9ea-475e-bf7c-a8360f259347",
+      "input": "12",
+      "output": "7",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "19308351-794a-4702-97ba-3c6ee5df27b1",
+      "input": "35",
+      "output": "85",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "23ed1abd-9568-4bc7-88eb-72c0367b42e4",
+      "input": "99",
+      "output": "768",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "43213769-9fef-4cd5-b2cd-0fae05ec3e16",
+      "input": "6",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "6c5345d3-d95b-4ece-a597-751e6e8ff320",
+      "input": "5",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e85e3e01-6a13-456f-bbfb-5bce2bff8c92",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

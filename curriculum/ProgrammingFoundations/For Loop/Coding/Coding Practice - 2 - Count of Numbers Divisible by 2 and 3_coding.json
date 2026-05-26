@@ -1,0 +1,75 @@
+{
+  "question_id": "686f100a-39e8-4a14-a3b3-b66a26a70a7e",
+  "short_text": "Count of Numbers Divisible by 2 and 3",
+  "content": "Write a program that reads a number `N` and prints the count of numbers from **1** to `N` that are divisible by both **2** and **3**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the count of numbers from **1** to `N` that are divisible by both **2** and **3**.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 12`,\n\n- Numbers from **1** to **12** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9**, **10**, **11** and **12**.\n- Numbers from **1** to **12** that are divisible by both **2** and **3** are **6** and **12**.\n- The count of numbers from **1** to **12** that are divisible by both **2** and **3** is **2**.\n\nThe output should be **2**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "5cdabe91-2c87-4fa8-9fcf-28007334ed9c",
+      "code_content": "n = int(input())\ncount  = 0\n\nfor number in range(1, n + 1):\n    if number % 2 == 0 and number % 3 == 0 :\n        count = count + 1\n        \nprint(count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1fe23985-fd90-444d-ba0a-7701c9d16be8",
+      "input": "21",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2114ce4b-8659-4edf-8748-3a89d5b881fe",
+      "input": "16",
+      "output": "2",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "3f153363-ddd2-428b-96f3-99bf28863680",
+      "input": "1576",
+      "output": "262",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "81e1a32c-6d0a-447a-a238-4f33d9316dd5",
+      "input": "10",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a82263d3-9977-4eba-b545-614e94886da8",
+      "input": "25485",
+      "output": "4247",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b1f9a960-ea57-41a8-b120-2ec19276d475",
+      "input": "660",
+      "output": "110",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d5c5fb4a-cb5c-46e7-b9ba-f6af5d662f6c",
+      "input": "12",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

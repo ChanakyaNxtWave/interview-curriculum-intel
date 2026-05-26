@@ -1,0 +1,68 @@
+{
+  "question_id": "4927c98b-9326-43a7-8a71-e23e7306aa9a",
+  "short_text": "Secured URL",
+  "content": "Given an URL, write a program that checks if the given URL is a secured URL.\n\nPrint **True** if the given URL is a secured URL. Otherwise, print **False**.\n\n<MultiLineNote>\nThe url that starts with **https://** is a secured url\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the URL is secured. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given URL is **https://docs.google.com**,\n\n- The given URL **https://docs.google.com** starts with **https://**.\n\nThe output should be **True**, as the URL is secured.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e8d70548-d306-48ff-92cb-6e1774eb3f7d",
+      "code_content": "url = input()\n\nis_secure_url = url.startswith(\"https://\")  \n\nprint(is_secure_url)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "060fe766-3032-4242-9383-bea5e8e22c6e",
+      "input": "https://www.w3.org/",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "0af3dbbd-c094-4eaf-9e24-1a31b68bdf79",
+      "input": "learning.ccbp.in",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "338f1f64-f53a-4d01-8623-043716fee3ed",
+      "input": "http://docs.google.com",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "756859db-19a6-4a8e-8109-63beda02d8e2",
+      "input": "www.w3.org/",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8c7f55b3-5ba2-4a1c-a712-2c8fef76dd18",
+      "input": "https://docs.google.com",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b4b038ff-b530-4c63-bc19-24864851dc93",
+      "input": "https://www.bbc.com/",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

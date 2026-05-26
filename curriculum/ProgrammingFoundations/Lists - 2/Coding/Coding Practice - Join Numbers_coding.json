@@ -1,0 +1,68 @@
+{
+  "question_id": "a8e71956-15d0-4eab-a60e-83ef2fdb6382",
+  "short_text": "Join Numbers",
+  "content": "Given space-separated numbers.\n\nWrite a program that prints a string by joining the given space-separated numbers with the comma(`,`).\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the given space-separated numbers with the comma(`,`).\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `24 45 86 57 88`,\n\n- Given number are **24**, **45**, **86**, **57** and **88**.\n- After joining numbers with a comma (`,`) is **24,45,86,57,88**.\n\nThe output should be,\n\n```\n24,45,86,57,88\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4e9859cb-8f5a-4a26-8c22-f769ff3bc264",
+      "code_content": "numbers = input()\n\nnumbers_list = numbers.split()\nnumbers_joined_by_comma = \",\".join(numbers_list)\n\nprint(numbers_joined_by_comma)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "16bb51d3-192a-4067-83f3-3adcdf978ef3",
+      "input": "24 45 86 57 88",
+      "output": "24,45,86,57,88",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "1a5d5529-17b1-460c-85f6-82df0de69f3b",
+      "input": "5738060",
+      "output": "5738060",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "82f53937-304b-4d72-8ad2-f89cd90c26b3",
+      "input": "12079 73 -9 -72769504 29732 7895 920 35",
+      "output": "12079,73,-9,-72769504,29732,7895,920,35",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c9ba2e8d-1521-44fd-adcd-ece6bfc561c5",
+      "input": "-15684 3130 -415 60",
+      "output": "-15684,3130,-415,60",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e2ae2658-5d07-4393-b1ce-2ada2ccb2965",
+      "input": "109 2 46",
+      "output": "109,2,46",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f0729609-29eb-4342-aba8-d33d163784ee",
+      "input": "-1235 -6349835",
+      "output": "-1235,-6349835",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,391 @@
+{
+  "question_id": "85f0b8dc-7a89-4194-86fa-44971c3124c4",
+  "short_text": "Sum of K Powers - 2",
+  "content": "Given a number `N`, write a program to print the sum of the **Kth** power of all the digits in the given number.\n\n**K** indicates the number of digits of the number `N`.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the sum of the **Kth** power of all the digits of the number `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 24753`,\n\n- The digits of **24753** are **2**, **4**, **7**, **5**, and **3**.\n- The number of digits of **24753** is **5**. So, the value of **K** is **5**.\n- The **5** (**K**) power of all the digits of **24753** are **32**, **1024**, **16807**, **3125**, and **243**.\n- The sum of the **5** (**K**) power of all the digits is **21231**. (**2<sup>5</sup> \\+ 4<sup>5</sup> \\+ 7<sup>5</sup> \\+ 5<sup>5</sup> \\+ 3 <sup>5</sup> = 21231**)\n\nThe output should be **21231**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "850074f0-250c-4da4-9b86-8b424d57a3e6",
+      "code_content": "number = input()\n\nnum_of_digits = len(number)\nsum_of_powers = 0\n\nfor each_digit in number:\n    each_digit_power = int(each_digit) ** num_of_digits\n    sum_of_powers = sum_of_powers + each_digit_power\n\nprint(sum_of_powers)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "2557d55e-e7ff-4da7-bef1-58163f4e99d0",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n100\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 100`,\n\n- The digits of **100** are **1**, **0** and **0**.\n\n- The number of digits of **100** is **3**. So, the value of **K** is **3**.\n\n- The **3** (**K**) power of all the digits of **100** are **1**, **0** and **0**.\n\n- The sum of the **3** (**K**) power of all the digits is **1**. (**1<sup>3</sup>+ 0<sup>3</sup>+ 0<sup>3</sup> = 1**).\n\nThe output should be **1**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "499a7642-a7d6-4438-825b-d312f652bf1a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n135\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "153",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 135`,\n\n- The digits of **135** are  **1**, **3** and **5**.\n\n- The number of digits of **135** is **3**. So, the value of **K** is **3**.\n\n- The **3** (**K**) power of all the digits of **135** are  **1**, **27** and **125**.\n\n- The sum of the **3** (**K**) power of all the digits is **153**. (**1<sup>3</sup>+ 3<sup>3</sup>+ 5<sup>3</sup> = 153**)\n\nThe output should be **153**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e4d42b3b-90b1-4135-8696-a0ef4068dac8",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n68\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "100",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 68`,\n\n- The digits of **68** are **6** and **8**.\n\n- The number of digits of **68** is **2**. So, the value of **K** is **2**.\n\n- The **2** (**K**) power of all the digits of **68** are **36** and **64**.\n\n- The sum of the **2** (**K**) power of all the digits is **100**. (**6<sup>2</sup>+ 8<sup>2</sup> = 100**)\n\nThe output should be **100**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0dc4cb68-a9a2-4c5c-96b5-fea834d107aa",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3f39c0c4-7800-4dd6-aed3-b528a1ba1033",
+              "content": "To find the sum of the **Kth** power of all the digits in the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7fd92214-3736-4dc5-a4a9-ab53369489db",
+              "content": "To find the product of the **Kth** power of all the digits in the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9adab1df-dd02-4a8c-9388-5b6694d2ce41",
+              "content": "To find the difference of the **Kth** power of all the digits in the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bf7817c6-65d1-41e6-994d-ca5870a46fbd",
+              "content": "To find the divisibility of the **Kth** power of all the digits in the given number.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a given number `N` and to find the sum of the **Kth** power of all the digits in the given number.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "59202994-d8c6-4a0c-966a-33637b1ce476",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n444\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2637b803-a27a-416a-ae87-4ccdf9af8ca1",
+              "content": "202",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5615dae6-3c5a-40fd-b50f-5fc62c96dbdd",
+              "content": "192",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b632c240-424c-443f-aaf4-1d8a88161052",
+              "content": "180",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e1b1d0c6-4253-4a5d-a417-bcb2e11a744f",
+              "content": "24",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 444`,\n\n- The digits of **444** are **4**, **4** and **4**.\n\n- The number of digits of **444** is **3**. So, the value of **K** is **3**.\n\n- The **3** (**K**) power of all the digits of **444** are **64**,**64** and **64**.\n\n- The sum of the **3** (**K**) power of all the digits is **192**. (**4<sup>3</sup>+ 4<sup>3</sup>+ 4<sup>3</sup> = 192**)\n\nThe output should be **192**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "79b55e86-a8c2-4483-b07e-4f27be207ef4",
+          "short_text": "",
+          "content": "From your understanding of the problem description, what does `K` indicate?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "48f70985-d6df-451e-a526-86ef522f90a8",
+              "content": "A fixed digit",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6585ea77-d14a-4337-8fbf-c847ea1ce9c3",
+              "content": "The last digit",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7ed51aef-5404-4cf1-befa-5215f21f57f1",
+              "content": "The number of digits",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9eae1b61-2872-48d9-bdb5-a0a19a109dea",
+              "content": "The first digit",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, **K** indicates the number of digits in `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7b8cf690-fd24-469e-8cf2-63e9a23741fd",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "57745bff-f8b4-4688-995c-f837a8fc9b17",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "59b3469c-779e-45f6-949e-3db5fb295c45",
+              "content": "The input will be a single line containing a float.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7965e708-82d1-4d66-ba05-8033893887a1",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "98bd77d6-1b73-4ced-8828-c3a1d0defc06",
+              "content": "The input will be multiple lines containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing `N`.\n\nFor example, **562**\n\n\n\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a548788c-edf2-4d67-b646-7270e577a5fa",
+          "short_text": "",
+          "content": "According to the problem description, what is to be calculated?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4f7486fd-fe9a-41cf-8ad3-9c9d59d542b4",
+              "content": "Sum of **Kth** power of all the digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8a9f3c53-128d-4e52-aeef-c4a78b6f953b",
+              "content": "Product of **Kth** power of all the digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b3de585e-3f10-44ef-9d89-102700476cfb",
+              "content": "Division of the digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c4f3d9f9-cb01-4cb7-ad67-cf35a262e473",
+              "content": "Difference in the digits.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the sum of the **Kth** power of all the digits in the given number.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c9fa91b3-ce49-4cd4-8e27-422d9a6f3ad8",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0c04c640-22ea-4088-b263-6967f1209bdd",
+              "content": "The output should be multiple lines containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "25cc9692-b2aa-46e3-92d8-f938d6ac7e4e",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "26c00bfb-d07d-4a92-a9de-3b733f6ba883",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "98f1cf16-2f88-4b2a-8744-f1f699b05606",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing an integer that is the sum of the **Kth** power of all the digits of the number `N`.\n\nFor example,\n\nIf the given number is `N = 23`,\n\n- The digits of **23** are **2** and **3**.\n\n- The number of digits of **23** is **2**. So, the value of **K** is **2**.\n\n- The **2** (**K**) power of all the digits of **23** are **4** and **9**.\n\n- The sum of the **2** (**K**) power of all the digits is **13**. (**2<sup>2</sup>+ 3<sup>2</sup>  = 13**)\n\nThe output should be **13**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d6b6de64-0337-4e1a-9552-9174500e253e",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "11f28180-914a-4100-b2f2-05a5fdef7b09",
+              "content": "89.09",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "55cac942-43d1-41d1-998a-a598fc0aeb26",
+              "content": "65\n89",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8fc9a492-6d66-4004-bde2-80bd7c1909d2",
+              "content": "987",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "be2ff0c4-7522-4c34-9371-2a8b92a3ee14",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n\n```\n987\n```\n\n**Input 2**\n\n```\n12\n```\nThe above two inputs are valid because they consist of a single line containing an integer `N`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "1bd41784-daea-42a0-9d8e-1b249b214d13",
+      "input": "43",
+      "output": "25",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "48769c63-1bb5-47ba-b790-cf3353206dc8",
+      "input": "17",
+      "output": "50",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8deb8267-018f-4d2a-ba9f-923c1cc1fe90",
+      "input": "965",
+      "output": "1070",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c358b86e-110e-40ab-8e1b-218a5e44d54b",
+      "input": "845248639",
+      "output": "668431249",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "dbb4b859-5b65-4332-8711-5d09bc275dfd",
+      "input": "24753",
+      "output": "21231",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "de1440bb-bc84-496b-bccb-35d5afcd2c50",
+      "input": "0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "eccca781-ecc3-4377-b075-2494914440d0",
+      "input": "903820",
+      "output": "794378",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

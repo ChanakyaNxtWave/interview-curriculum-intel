@@ -1,0 +1,82 @@
+{
+  "question_id": "d851cb9c-29d9-4834-bf46-704f8b8ed75b",
+  "short_text": "Star Repetition - 4",
+  "content": "Write a program that reads a word and prints the first two and the last two letters of the word and prints the stars (`*`) instead of the remaining letters.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string that has the first two and the last two letters of the word and stars (`*`) instead of the remaining letters.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is **message**, \r\n\r\n* The number of letters in the word **message** is **7**. \r\n* The first two and the last two letters are **me**, **ge**.\r\n* The number of letters excluding the first two and last two letters in a word is **3**.\r\n* **3** stars should be printed between the first two and the last two letters.\r\n\r\nThe output should be **me\\*\\*\\*ge**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f65c8ed6-0bf1-429c-8be9-b48d71725d0d",
+      "code_content": "word = input()\n\nword_length = len(word)\nnumber_of_stars = word_length - 4\n\nfirst_two_characters = word[:2]\nlast_two_characters = word[word_length - 2:]\n\nresult = first_two_characters + \"*\" * number_of_stars + last_two_characters\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0eb95add-0473-4b9a-ab95-74fc856ee84d",
+      "input": "message",
+      "output": "me***ge",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "492bcc2c-76b8-4099-be31-259a41b1bad0",
+      "input": "daily_routine",
+      "output": "da*********ne",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "4d86b9b0-0fe5-4fb6-ba74-255e6099b948",
+      "input": "hello1234",
+      "output": "he*****34",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "5bb11146-f2cd-45d4-9531-04fd244712bc",
+      "input": "123456&",
+      "output": "12***6&",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "88498330-adcc-4ad6-b81e-81127a5f9ccc",
+      "input": "12345",
+      "output": "12*45",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8b20856c-31c4-4b3b-80ac-466313b52f27",
+      "input": "fruits",
+      "output": "fr**ts",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "ee5ebf12-c0e4-4549-aa22-ce8dcef16754",
+      "input": "dealing@yourself",
+      "output": "de************lf",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "fe1489ca-de69-4a92-ab35-545797fdb6d2",
+      "input": "apple",
+      "output": "ap*le",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

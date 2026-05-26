@@ -1,0 +1,33 @@
+{
+  "question_id": "3cb95d76-d9fe-4758-81d0-3fc72fd39aec",
+  "short_text": "Divide 33968 by 176",
+  "content": "Write a program that prints the result when **33968** is divided by **176**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "61109dc9-ef0a-4c5c-9c6e-de3b1e8dc6f0",
+      "code_content": "result = 33968 / 176\n\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "52b21e08-932d-431f-80b7-89d3aaf83c96",
+      "input": "",
+      "output": "193.0",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "1cab5e23-4577-4878-b5ea-7178c46658fe",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

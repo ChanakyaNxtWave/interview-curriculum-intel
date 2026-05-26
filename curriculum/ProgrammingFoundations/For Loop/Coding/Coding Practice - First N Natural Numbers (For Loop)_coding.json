@@ -1,0 +1,68 @@
+{
+  "question_id": "8b895357-6fb9-4e84-a194-0ec53677dcec",
+  "short_text": "First N Natural Numbers (For Loop)",
+  "content": "Write a program that reads a number `N` and prints Natural Numbers from **1** to `N`.\n\n<MultiLineNote>\n* All the positive numbers from **1** are called **Natural Numbers**.\n* Use the **For** loop to iterate over the range of numbers.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should contain all the Natural Numbers from **1** to `N`, each on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 7`,\n\n- The Natural Numbers from **1** to **7** are **1**, **2**, **3**, **4**, **5**, **6** and **7**.\n\nThe output should be,\n\n```\n1\n2\n3\n4\n5\n6\n7\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "91a75433-8294-42bd-aa5e-bdd76c661a6d",
+      "code_content": "number = int(input())\n\nfor each_num in range(1, number + 1):\n    print(each_num)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0fc17bc4-995c-4e60-9547-4cd2803304f7",
+      "input": "2",
+      "output": "1\n2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "36235e4f-34f6-41fd-978c-b095608694bd",
+      "input": "7",
+      "output": "1\n2\n3\n4\n5\n6\n7",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "6b8c79b4-50e6-42c9-b905-a9e78a7efca1",
+      "input": "11",
+      "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "9dd47c34-7d72-455e-96fb-b77e8e666219",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d6ff3785-e285-4a7a-9bed-5aa5d0c9e7b9",
+      "input": "4",
+      "output": "1\n2\n3\n4",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "e16c0b8a-c3c4-4bea-a77c-d8a2c3c3a18c",
+      "input": "5",
+      "output": "1\n2\n3\n4\n5",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ad396947-a6fc-4dc5-b3ec-221c6a4e9d0d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

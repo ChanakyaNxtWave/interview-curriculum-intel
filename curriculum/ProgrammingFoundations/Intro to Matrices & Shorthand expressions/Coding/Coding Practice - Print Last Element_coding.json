@@ -1,0 +1,61 @@
+{
+  "question_id": "aee2e16c-f499-4551-a8d8-76581aefb78d",
+  "short_text": "Print Last Element",
+  "content": "Write a program that reads two integers `M` and `N` from the user, representing the number of rows and columns of a matrix. The program should then read `M x N` elements of the matrix from the user and print the last column of the matrix.\n\n---\n\n#### Input\n\n- The first line should contain the integer `M`, representing the number of rows in the matrix.\n- The second line should contain the integer `N`, representing the number of columns in the matrix.\n- The next `M` lines should each contain `N` integers separated by spaces, representing the elements of the matrix.\n\n---\n\n#### Output\n\nThe output should be all the elements in the last column, printed on separate lines.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\n4 \n4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n```\n\nThe output should be:\n\n```\n4\n8\n12\n16\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "d05f61c8-aa32-4a9b-9465-5541a7d33803",
+      "code_content": "m = int(input())\nn = int(input())\n\nmatrix = []\n\nfor i in range(m):\n    row = input().split()\n    new_row = []\n    for element in row:\n        new_row.append(int(element))\n    matrix.append(new_row)\n\nfor i in range(m):\n    print(matrix[i][n-1])\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00408ab2-2df6-4dab-82ce-b4ddd5d33127",
+      "input": "4\n4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n",
+      "output": "4\n8\n12\n16",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "0c074158-0dd8-4b48-9c42-a5570702b22c",
+      "input": "2\n5\n10 20 30 40 50\n60 70 80 90 100\n",
+      "output": "50\n100",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "100e654d-27fd-4087-bfed-265b7234fe29",
+      "input": "3\n3\n1 1 1\n2 2 2\n3 3 3\n",
+      "output": "1\n2\n3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "22fe8cef-3ed6-4436-a730-5e900bfde570",
+      "input": "1\n1\n42\n",
+      "output": "42",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "65f044a9-fb64-47a5-8941-b63007357fd0",
+      "input": "5\n2\n1 2\n3 4\n5 6\n7 8\n9 10\n",
+      "output": "2\n4\n6\n8\n10",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "a59545d0-e460-46e3-9428-017865545731",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

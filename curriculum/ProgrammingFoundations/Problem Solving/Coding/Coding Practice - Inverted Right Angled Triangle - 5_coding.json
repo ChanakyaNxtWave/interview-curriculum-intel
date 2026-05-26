@@ -1,0 +1,61 @@
+{
+  "question_id": "12eba144-c44e-44aa-b81e-8484aebbe19f",
+  "short_text": "Inverted Right Angled Triangle - 5",
+  "content": "Given a number `N`, write a program to print an **Inverted Right Angled Triangle** of `N` rows using numbers.\n\n```\n3 3 3\n  2 2\n    1\n```\n\n<MultiLineNote>\nThere is a space after every number.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing numbers as an **Inverted Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n- Print the numbers on **4** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-5.png\n' widthPercent='70'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates the two spaces (\"&nbsp;&nbsp;\").\n- The Number in box indicates the number and a space (\"4 \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n4 4 4 4\n  3 3 3\n    2 2\n      1\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "493bffd6-8e8d-4800-bc58-736111b8c2ae",
+      "code_content": "rows = int(input())\n\nfor each_number in range(1, rows + 1):\n    \n    number = (rows + 1) - each_number\n    \n    spaces = \"  \" * (each_number - 1)\n    numbers = (str(number)+ \" \") * number\n    print(spaces + numbers)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "03e1a872-6024-458e-b1fd-be31e8e29265",
+      "input": "9",
+      "output": "9 9 9 9 9 9 9 9 9 \n  8 8 8 8 8 8 8 8 \n    7 7 7 7 7 7 7 \n      6 6 6 6 6 6 \n        5 5 5 5 5 \n          4 4 4 4 \n            3 3 3 \n              2 2 \n                1",
+      "is_hidden": true,
+      "weightage": 15.0
+    },
+    {
+      "test_case_id": "13d9e358-2d54-43e0-9900-1c2744f2b681",
+      "input": "7",
+      "output": "7 7 7 7 7 7 7 \n  6 6 6 6 6 6 \n    5 5 5 5 5 \n      4 4 4 4 \n        3 3 3 \n          2 2 \n            1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8d577518-12a7-4ab0-88e5-a61c3640e997",
+      "input": "4",
+      "output": "4 4 4 4 \n  3 3 3 \n    2 2 \n      1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "afc34f28-484a-4614-806f-6b7b306de1f3",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 14.0
+    },
+    {
+      "test_case_id": "dd1f0b2a-96b0-4188-8d6f-cb80fa7a82df",
+      "input": "8",
+      "output": "8 8 8 8 8 8 8 8 \n  7 7 7 7 7 7 7 \n    6 6 6 6 6 6 \n      5 5 5 5 5 \n        4 4 4 4 \n          3 3 3 \n            2 2 \n              1",
+      "is_hidden": true,
+      "weightage": 14.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

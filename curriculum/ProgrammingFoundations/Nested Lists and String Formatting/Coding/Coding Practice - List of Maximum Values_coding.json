@@ -1,0 +1,61 @@
+{
+  "question_id": "48afc313-2f0a-4c71-a204-109b15996f58",
+  "short_text": "List of Maximum Values",
+  "content": "Write a program to create a list with maximum values in each list.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer N.<br/>The next N lines will contain space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the list of maximum values in each list.<hr><b>Explanation</b><br/><br/>For example, if the given N is 3, read the inputs in the next three lines.<br/>If the given three strings are as the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">1 2 3 4\n10 20 30\n5 10 15 20\n</code></pre><br/>Your code should print the list of maximum values in each list.<br/>So the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[4, 30, 20]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "02b632b8-d8e1-4957-9c25-414107c0506b",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nn = int(input())\nmax_list = []\n\nfor i in range(n):\n    list_a = input().split()\n    list_a = convert_string_to_int(list_a)\n    max_num = max(list_a)\n    max_list.append(max_num)\n\nprint(max_list)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4e04f15f-8eef-4441-90f6-29dd2664fb1f",
+      "input": "1\n-10",
+      "output": "[-10]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "b7175e91-0662-445e-9c10-f21c1d4f863b",
+      "input": "5\n1\n1\n1\n1\n1",
+      "output": "[1, 1, 1, 1, 1]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "b7b0bb07-6a83-4efb-ba72-0d65f9f143b1",
+      "input": "4\n-50 20 3\n88 17\n3 11\n200 1800",
+      "output": "[20, 88, 11, 1800]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d0671f37-4dd5-4424-94de-ce8e2406b5b4",
+      "input": "6\n-50 20 3 88 17 3 11 200 1800\n544 692 701 893 666 690 999 123\n2018 2016 1990 1931 0 -2000\n-232 -789\n1 3 5 7 9\n2 4 6 8 10\n",
+      "output": "[1800, 999, 2018, -232, 9, 10]\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d806c9e1-3892-499e-a103-5242a3f45052",
+      "input": "3\n1 2 3 4\n10 20 30\n5 10 15 20",
+      "output": "[4, 30, 20]\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

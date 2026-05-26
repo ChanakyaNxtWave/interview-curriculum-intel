@@ -1,0 +1,75 @@
+{
+  "question_id": "bd323b63-9c04-45e8-a204-fd2503b512a8",
+  "short_text": "Modifying List",
+  "content": "A list `L` is given in the prefilled code.\n\nGiven an index `I`, and a number `N`, write a program that prints the list by replacing the element at index `I` with the number `N`.\n\n```\nL = [1, 20, 33, 45, 520, 64, 71, 852, 9999, 101010]\n```\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `I`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list obtained by replacing the element at index `I` with the number `N`.\n\n---\n\n#### Explanation\n\nFor example, if the given index is `I = 3` and the number is `N = 100`,\n\n- The elements in the given prefilled list `L` are **1**, **20**, **33**, **45**, **520**, **64**, **71**, **852**, **9999**, and **101010**.\n- The element at index **3** is **45**.\n\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: bold; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">1</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">20</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">33</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;font-weight: 900;\">45</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">520</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">64</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">71</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">852</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">9999</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 0;padding: 8px 12px;\">101010</div>\n</div>\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">3</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">8</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;text-align: center; vertical-align: inherit;border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">9</div>\n</div>\n\n- Replace the number **45** with the number **100**.\n\n<div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: bold; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">1</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: bold;text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">20</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">33</div>\n   <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;font-weight: 900;\">100</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">520</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">64</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">71</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">852</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">9999</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 0;padding: 8px 12px;\">101010</div>\n</div>\n<div style=\"display: table-row;vertical-align: inherit;text-align: center; border-color: inherit;\">\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit; border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n   <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">3</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">5</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">6</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">7</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">8</div>\n   <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 0;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">9</div>\n</div>\n<br>\nThe output should be,\n\n```\n[1, 20, 33, 100, 520, 64, 71, 852, 9999, 101010]\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "c3e0fcf9-eac9-4597-981f-f6969cbd702d",
+      "code_content": "L = [1, 20, 33, 45, 520, 64, 71, 852, 9999, 101010]\n\nindex = int(input())\nnumber = int(input())\n\nL[index] = number\n\nprint(L)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2b7c7a5d-1b7b-4140-b665-5f8d10e8c7c6",
+      "input": "9\n1",
+      "output": "[1, 20, 33, 45, 520, 64, 71, 852, 9999, 1]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "42ce677a-f4c9-4f9a-a3ef-0c999080ab29",
+      "input": "4\n4",
+      "output": "[1, 20, 33, 45, 4, 64, 71, 852, 9999, 101010]",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "93f49b8e-9f87-4429-bd15-8c47928fb164",
+      "input": "5\n-400005",
+      "output": "[1, 20, 33, 45, 520, -400005, 71, 852, 9999, 101010]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bf2e1c52-aad8-478b-b38f-e2604ed20c19",
+      "input": "3\n100",
+      "output": "[1, 20, 33, 100, 520, 64, 71, 852, 9999, 101010]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c34950ad-b418-4640-9c5c-83b8a6b6d0e8",
+      "input": "1\n78",
+      "output": "[1, 78, 33, 45, 520, 64, 71, 852, 9999, 101010]",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "dd418768-0caa-4123-9fab-849b1f5f941e",
+      "input": "0\n-55",
+      "output": "[-55, 20, 33, 45, 520, 64, 71, 852, 9999, 101010]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e8842083-1e09-4e04-bf33-adb87db5b865",
+      "input": "8\n-58",
+      "output": "[1, 20, 33, 45, 520, 64, 71, 852, -58, 101010]",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ba552b22-78fd-4d81-b863-532520ed82ec",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

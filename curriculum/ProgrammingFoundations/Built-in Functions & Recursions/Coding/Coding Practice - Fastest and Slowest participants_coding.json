@@ -1,0 +1,61 @@
+{
+  "question_id": "ec9f0584-fd48-40d5-ac9f-4e8f6b33556d",
+  "short_text": "Fastest and Slowest participants",
+  "content": "In an athletic event, participants record their best times for running different distances. The event organizer wants to find out the fastest and slowest participants.\n\nYour task is to **complete the method `find_fastest_and_slowest()`** that takes a list of recorded times as parameters and returns both the maximum and minimum times taken.\n\n<MultiLineNote>\n\n- Use the **`Built-in`** function to arrange the scores.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes **`times`** a list containing floats representing recorded times in seconds. Each time indicates how long it took a participant to complete a distance.\n\n---\n\n#### Output\n\nThe method should **return a list containing two values**: the time of the fastest completion and the time of the slowest completion.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\n[10.5, 12.0, 9.8, 11.3]\n```\n\nFor the input **[10.5, 12.0, 9.8, 11.3]**, \n\n- Maximum time taken for completion is **12.0** (slowest participants time)\n- Minimum time taken for completion is **9.8** (fastest participants time)\n\n\n\nThe expected output would be :\n\n```\n[12.0, 9.8]\n\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "edce66be-a873-458f-bdf1-555db8b008aa",
+      "code_content": "def find_fastest_and_slowest(times):\n    fastest = max(times)\n    slowest = min(times)\n    res = [fastest,slowest]\n    return res",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0203f0fa-dbd3-479b-a8c2-fb91fc3039af",
+      "input": "15.2 15.4 15.1 15.3 15.5",
+      "output": "[15.5, 15.1]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "324c0684-4913-461b-bdb5-64f954bf6718",
+      "input": "10.5 12.0 9.8 11.3",
+      "output": "[12.0, 9.8]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "65eb8d1a-976f-4009-ba79-8e5302bd5309",
+      "input": "5.0 25.3 17.6 25.3 10.1 22.7",
+      "output": "[25.3, 5.0]",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7cd82b2a-0056-48bc-b5b8-ece5bcaf02d3",
+      "input": "9.99 10.0 9.98",
+      "output": "[10.0, 9.98]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c5aacf02-1789-4094-a511-931f3b3a18cb",
+      "input": "12.5",
+      "output": "[12.5, 12.5]",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "83df0765-d00f-4be4-9557-91ec0ad42c22",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

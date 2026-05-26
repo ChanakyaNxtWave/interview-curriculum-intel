@@ -1,0 +1,33 @@
+{
+  "question_id": "b9e0ea06-fc2f-4f2e-9e7d-2583eefcf20d",
+  "short_text": "Simple Triangle",
+  "content": "Write a program that prints a simple triangle using star (\\*).\n\n---\n\n#### Explanation\n\nPrint a star on the first line and two stars on the second line.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4b1b9bdf-2c81-4318-bb0a-701e45ff1636",
+      "code_content": "print(\"*\")\nprint(\"*\" * 2)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0e255f8f-8f04-46d1-a61b-b09eec09a92e",
+      "input": "",
+      "output": "*\n**",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

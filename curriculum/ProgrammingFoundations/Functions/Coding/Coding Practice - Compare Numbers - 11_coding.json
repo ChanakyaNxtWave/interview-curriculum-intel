@@ -1,0 +1,89 @@
+{
+  "question_id": "88ff0c48-d634-4263-975e-cd3f1e4b4c55",
+  "short_text": "Compare Numbers - 11",
+  "content": "A function is given in the prefilled code that takes two numbers `M` and `N` as arguments.\n\nWrite a program that returns **True** if both the `M` and `N` are greater than **100** and `M` is less than `N`.. Otherwise, return **False**.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if both the `M` and `N` are greater than **100** and `M` is less than `N`. Otherwise, **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 105` and `N = 120`,\n\n✔ The numbers **105** and **120** are greater than **100**.\n✔ The number **105** is less than the number **120**.\n\nThe output should be **True**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0650becd-c4ec-421c-86d6-076bd16c28fa",
+      "code_content": "def compare_numbers(first_number, second_number):\n    greater_than_100 = (first_number > 100) and (second_number > 100)\n    is_less = first_number < second_number\n    \n    if greater_than_100 and is_less:\n        is_valid = True\n    else:\n        is_valid = False\n    \n    return is_valid\n\nfirst_number = int(input())\nsecond_number = int(input())\n\nresult = compare_numbers(first_number, second_number)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10bf148a-de35-40f5-9786-00d8ce35f7d3",
+      "input": "225\n19",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "21b3225e-6dc0-40f9-8ecc-8260545d3022",
+      "input": "105\n120",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "844dd0b1-d8c2-45c0-9e90-b586b15989c9",
+      "input": "3450\n3450",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c4e97075-1596-4236-b979-cfb50d5ffa5a",
+      "input": "100\n115456",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "caacb324-718a-4df9-b099-1d0578b5f58e",
+      "input": "1529\n1455",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d80fa7ed-0633-46f6-8735-f3c9da0bc31a",
+      "input": "100\n100",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d8c12795-f9c7-4fc5-ba6d-2d1d70d92638",
+      "input": "-345\n-6000",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d9cfbd5c-4982-4fa9-a71b-60af613ddde2",
+      "input": "8674903\n87650090",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e961b121-ba77-4db2-a22a-2609ca287412",
+      "input": "45670\n8765420",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c6e45c51-c0aa-4984-8606-c8d4f01b595c",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

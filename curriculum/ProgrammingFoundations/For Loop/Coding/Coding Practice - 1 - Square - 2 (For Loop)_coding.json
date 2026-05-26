@@ -1,0 +1,391 @@
+{
+  "question_id": "83aeda32-4bb9-4821-9be6-1a69fc5bf3f3",
+  "short_text": "Square - 2 (For Loop)",
+  "content": "Write a program that reads a number `M` and prints a **Square** of `M` rows and `M` columns using numbers.\n\n```\n1111\n2222\n3333\n4444\n```\n\n<MultiLineNote>\nUse **For** loop.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `M`.\n\n---\n\n#### Output\n\nThe output should be `M` rows and `M` columns containing numbers as a **Square** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `M = 4`,\n\n- Print the numbers on **4** rows and **4** columns as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/square-2.png' widthPercent='50'/>\n\nThe output should be,\n\n```\n1111\n2222\n3333\n4444\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2ee058e0-c788-4cf3-aefa-045c0b38d5e3",
+      "code_content": "number_of_rows = int(input())\n\nfor each_number in range(1, number_of_rows + 1):\n    row = str(each_number)\n    print(row * number_of_rows)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "3749d637-c75e-4613-a934-b52dd30cefbc",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Input**\n\n```\n111\n222\n333\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 3`,\n\n- Print the numbers on **3** rows and **3** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square_2_1.png' widthPercent='60'/>\n\nThe output should be,\n\n```\n111\n222\n333\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a5e3d17c-4cba-4141-8c15-9eab87be12cb",
+          "short_text": "",
+          "content": "What is the input for the given output?\n\n**Input**\n\n```\n11111\n22222\n33333\n44444\n55555\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 5`,\n\n- Print the numbers on **5** rows and **5** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square_2_2.png' widthPercent='50'/>\n\nThe output should be,\n\n```\n11111\n22222\n33333\n44444\n55555\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d6b888ec-b259-4957-8c3f-0468ed01080b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n6\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "111111\n222222\n333333\n444444\n555555\n666666",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 6`,\n\n- Print the numbers on **6** rows and **6** columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square_2_3.png' widthPercent='60'/>\n\nThe output should be,\n\n```\n111111\n222222\n333333\n444444\n555555\n666666\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "00c2d4c4-bc14-4d46-954a-b12256f64855",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "288013b0-57dc-47e6-bbf6-0b8f121f8148",
+              "content": "The output should be `M` rows and `M` columns containing stars (`+`) as a Square.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6dfad1ae-2c95-4132-8c01-269af7cee5ce",
+              "content": "The output should be `M` rows and `M` columns containing stars (`*`) as a Square.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "710f7b55-a8e3-4c68-8555-54de31bcb66e",
+              "content": "The output should be `M` rows and `M` columns containing numbers as a Square.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9df7a5b4-7644-4961-8ffa-ba4eca79bd9d",
+              "content": "The output should be `M` rows and `M` columns containing stars (`@`) as a Square.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be **M** rows and **M** columns containing numbers as a `Square`.\n\nFor example, if the given number is **2**, \n\n- Print the numbers on `2` rows and `2` columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square_2_4.png' widthPercent='50'/>\n\nThe output should be,\n\n```\n11\n22\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3a27d724-fb49-40a4-9c10-0046e1e440a1",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n8\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "13b47412-94bb-4f92-97ce-34ee7d200788",
+              "content": "```\n1111111\n2222222\n3333333\n4444444\n5555555\n6666666\n7777777\n8888888\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "463b9820-3cec-4ee4-985b-510e1a7b308a",
+              "content": "```\n11111111\n22222222\n33333333\n44444444\n55555555\n66666666\n77777777\n88888888\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5c557a02-388d-4f35-86b1-973105df76e1",
+              "content": "```\n11111111\n22222222\n33333333\n44444444\n55555555\n66666666\n77777777\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e7bba923-6b92-4ad8-bd3a-d95a57be3f6f",
+              "content": "```\n1 1 1 1 1 1 1 1\n2 2 2 2 2 2 2 2\n3 3 3 3 3 3 3 3\n4 4 4 4 4 4 4 4\n5 5 5 5 5 5 5 5\n6 6 6 6 6 6 6 6\n7 7 7 7 7 7 7 7\n8 8 8 8 8 8 8 8\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number `M = 8`,\n\n- Print the numbers on `8` rows and `8` columns as shown in the given image.\n\n<Img imageSrc='https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/square_2_5.png' widthPercent='60'/>\n\nThe output should be,\n\n```\n11111111\n22222222\n33333333\n44444444\n55555555\n66666666\n77777777\n88888888\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "3b36c0d5-1d34-43b4-a276-9f9334e15566",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "412a09a2-8b59-460e-b145-5cc79a315a81",
+              "content": "To print a Square of M rows and M columns using `numbers`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "58f3a5fb-a3d3-46f2-a575-f5e865290889",
+              "content": "To print a rectangle of M rows and M columns using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b47db92d-e651-426a-977d-72ab797bddc6",
+              "content": "To print a circle of M rows and M columns using stars (`*`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e5c4b2a9-00f3-4d1c-b9cb-5b1f961d8a29",
+              "content": "To print a Square of M rows and M columns using stars (`+`).",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `M` and print a `Square` of **M** rows and **M** columns using numbers.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4e01c353-baf1-4af8-9b7d-bc6fe958f04e",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "732bc087-2ddf-4c02-a2be-888e6ed3e6ad",
+              "content": "20",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "bac722c6-4c2d-40e4-a37c-a32d231b60a2",
+              "content": "3 9",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e016a2c7-8d36-4048-af65-c9f5ffdc80aa",
+              "content": "10\n17",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e927389a-4f7f-40ba-a5f1-0735da0342b6",
+              "content": "12",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n12\n```\n\n**Input 2**\n\n```\n20                                           \n```\nThe above two inputs are valid because they consist of a single line containing an integer `M`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "be983b6a-aa10-4fd2-8262-917ab249e155",
+          "short_text": "",
+          "content": "According to the problem description, what is used to print the `Square`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0c78e426-f92d-499c-8f23-efb6b688522e",
+              "content": "`1 to 10`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7d86a1fc-3acf-4109-b6b3-e99c9008232f",
+              "content": "`1 to 5`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9fefe8e8-ad75-4414-a9ab-a1ef3c6f8e43",
+              "content": "`1 to M`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "fc482b83-e9cc-468a-acd0-704955479b18",
+              "content": "`M to 1`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, numbers from **1 to M** are used to print `Square`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bf82842c-9389-45b8-bb9a-9bd9fa0c8429",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4f5a78c8-8d31-4ec3-a547-597c3a02162e",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "91f2f44c-a616-4c51-a05b-24e95e6037c6",
+              "content": "The input will be multiple lines containing integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9558f3e4-b043-4276-bde0-1780459d20e8",
+              "content": "The input will be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "aa55d7fb-91ce-4471-aca0-058588708dc6",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer representing `M`.\n\nFor example, **10**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d0c2e12a-09f6-40b8-a371-c2ca1e163a6e",
+          "short_text": "",
+          "content": "According to the problem description, which loop is to be used?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "375361ab-0c9a-4270-99f2-117e5b2ed01b",
+              "content": "No loop is to be used",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5f9b939d-846b-4b7a-ae85-31305c24a8ee",
+              "content": "While loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "968d1289-9146-4c31-ad7f-e1c5fc1bf70c",
+              "content": "For loop",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f029c087-4035-480c-bca4-2a03bea96bf4",
+              "content": "do-while loop",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, **For** loop is to be used.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "314e014e-a005-4d24-8d75-685f9103a35b",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "34a4dc2c-303f-47de-8ac0-f7929827d4c7",
+      "input": "3",
+      "output": "111\n222\n333",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "38f3ca6f-34a5-43db-bd88-58237f33d65d",
+      "input": "20",
+      "output": "11111111111111111111\n22222222222222222222\n33333333333333333333\n44444444444444444444\n55555555555555555555\n66666666666666666666\n77777777777777777777\n88888888888888888888\n99999999999999999999\n1010101010101010101010101010101010101010\n1111111111111111111111111111111111111111\n1212121212121212121212121212121212121212\n1313131313131313131313131313131313131313\n1414141414141414141414141414141414141414\n1515151515151515151515151515151515151515\n1616161616161616161616161616161616161616\n1717171717171717171717171717171717171717\n1818181818181818181818181818181818181818\n1919191919191919191919191919191919191919\n2020202020202020202020202020202020202020",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "53d45996-6580-46e5-a449-17e79e18eb66",
+      "input": "9",
+      "output": "111111111\n222222222\n333333333\n444444444\n555555555\n666666666\n777777777\n888888888\n999999999",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "53f02e83-e407-4168-b80c-f4b5a7506e8c",
+      "input": "5",
+      "output": "11111\n22222\n33333\n44444\n55555",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7d092c70-9856-4683-bc2d-b165b0982445",
+      "input": "4",
+      "output": "1111\n2222\n3333\n4444",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c3531647-935e-47c4-92b3-ff19089c8b74",
+      "input": "7",
+      "output": "1111111\n2222222\n3333333\n4444444\n5555555\n6666666\n7777777",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

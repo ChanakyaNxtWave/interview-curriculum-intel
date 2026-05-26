@@ -1,0 +1,377 @@
+{
+  "question_id": "afadbb96-c3b3-4a92-ae82-7fffb284dafb",
+  "short_text": "Vote Eligibility",
+  "content": "Write a program that reads the age of a person and checks if the age of the person is **greater than or equal to 18** for eligibility to vote.\r\n\r\nPrint **Eligible** if the age of the person is **greater than or equal to 18**, otherwise print **Not Eligible**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string. **Eligible** should be printed if the age of the person is **greater than or equal to 18**, otherwise **Not Eligible** should be printed.\r\n\r\n<MultiLineNote>\r\nEnsure strings in all print statements are exactly the same as mentioned in the question text to pass all the test cases.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, \r\n\r\nIf the given age of a person is **15**, the output should be **Not Eligible** as **15** is not greater than or equal to **18**.\r\n\r\nIf the given age of a person is **21**, the output should be **Eligible** as **21** is greater than **18**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "675ef90e-57eb-4eb7-8645-b41659f5a6f1",
+      "code_content": "age = int(input())\n\nif age >= 18:\n    print(\"Eligible\")\nelse:\n    print(\"Not Eligible\")\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "4b160b05-3332-4099-9c35-0a0106fe41b2",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n24\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Eligible",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age of a person is **24**, \n\nThe output should be **Eligible** as **24** is greater than **18**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "84b60cc2-6ad0-40ed-a670-a7c17f79fb38",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n19\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Eligible",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age of a person is **19**, \n\nThe output should be **Eligible** as **19** is greater than **18**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ff0b24a0-a7cf-4660-bdca-bf6e195d0395",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n17\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Not Eligible",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age of a person is **17**, \n\nThe output should be **Not Eligible** as **17** is not greater than or equal to **18**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "04ebb451-7531-4f02-a373-764d77d0a412",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n18\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "17538242-d26e-42b7-9a14-a94ce54e4425",
+              "content": "eligible",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "39b1f27b-3c62-485b-ab7e-562ebb9f546f",
+              "content": "Not Eligible",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "45df591f-6553-4ea0-9a8d-2b55d8963df0",
+              "content": "Eligible",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "508e4eb1-7dbe-472e-9ab9-d00fcccdf9dc",
+              "content": "not eligible",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given age of a person is **18**, \n\nThe output should be **Eligible** as **18** is equal to **18**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "173f0b75-84bd-4208-8a15-b883e0a2c531",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "6aa65ff0-043e-4523-b8fe-769ba03c4021",
+              "content": "16",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "6b0ac566-9d01-4bb6-a37d-adfb34d869ab",
+              "content": "28",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "966d402c-a13b-44fd-9970-9853b93754f6",
+              "content": "9.2",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "badf2efe-2acf-4e60-be3b-d51533e38b33",
+              "content": "10\n7",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n16\n```\n\n**Input 2**\n\n```\n28                                                  \n```\nThe above two inputs are valid because they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6baae054-74d9-451d-839c-0948c7502949",
+          "short_text": "",
+          "content": "According to the problem description, what is the program trying to read?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "5dc3647b-ed42-4720-9110-a8ada15d4a53",
+              "content": "The age of the person.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "687a5be3-14ea-40c8-bd80-6fbbf2eb9794",
+              "content": "The height of the person.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6d0a9e92-9930-45f4-ac5d-e5313b2140be",
+              "content": "The weight of the person.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e7f43ecd-d022-475f-9672-e75407956369",
+              "content": "The birth date of the person.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the program is trying to read the `age of the person`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8e5d30bd-0165-4596-ab88-d0f1b1088f71",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "077767c4-5c41-4e23-ab91-03b2b8aaeeff",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "0e3f32e5-cef4-48d4-947c-96ad225b9d1d",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3e7a6648-a12c-44bb-a38d-ea2358eb3c19",
+              "content": "The output should be multiple lines containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "913cc412-9ff1-4acf-9e5b-d1182b13feee",
+              "content": "The output should be multiple lines containing string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a string. **Eligible** should be printed if the age of the person is greater than or equal to **18**, otherwise **Not Eligible** should be printed.\n\nFor example,\n\nIf the given age of a person is **4**, \n\nThe output should be **Not Eligible** as **4** is not greater than or equal to **18**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a7b36e3c-b805-4c88-b789-2e245cde198f",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4032e954-842b-46b5-9228-012fefc57319",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5d213bc4-25b9-46d9-8226-d21759432ea0",
+              "content": "The input will be a single line containing a string.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ab0a7ba2-fd67-412e-bfc8-cce95ca5a436",
+              "content": "The input will be a single line containing a boolean.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "aedb8863-a645-4bc3-bf83-1b6598d1f85e",
+              "content": "The input will be a single line containing a float.\n\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be a single line containing an integer.\n\nFor example, **20**",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b8ad3238-16f7-45ef-8dc4-2a114a2c74d3",
+          "short_text": "",
+          "content": "From your understanding of the problem description, what is the eligible age to vote?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6bce2de8-7500-4ccc-b790-14df82e3c7f7",
+              "content": "Greater than 18",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "899ab526-3213-40f0-80e7-6759e9b2090f",
+              "content": "Less than 18",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c8fe127b-dfc5-42e0-a400-87b034876403",
+              "content": "Equal to 18",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f23ddfea-8ca9-4d06-821e-8344f703d0c5",
+              "content": "Greater than or equal to 18",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, The eligible age to vote is `Greater than or equal to 18`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fd46c9c1-be24-408b-a06a-2ed2829bd341",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "299c3e09-ebc5-445c-bfc8-582898bcd167",
+              "content": "To check if the age of the person is equal to `18` or not.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4aeb32ee-dca2-482f-b1d4-a8ee846a5deb",
+              "content": "To check if the age of the person is greater than or equal to `16`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "60309ffb-4e9d-405b-87cb-414a469dd800",
+              "content": "To check if the age of the person is less than or equal to `18`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6907d29e-f119-411f-adf0-cd8a58d6703f",
+              "content": "To check if the age of the person is greater than or equal to `18`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read the age of a person and check if the age of the person is **greater than or equal to 18** for eligibility to vote.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "134a52c9-5bad-40a4-888d-38b34197cbc9",
+      "input": "21",
+      "output": "Eligible\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a758259d-02f1-41e2-9d9d-164ab4ca280c",
+      "input": "15",
+      "output": "Not Eligible\n",
+      "is_hidden": false,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "b957caa3-23ed-427d-8d17-2392b58fb4e7",
+      "input": "10",
+      "output": "Not Eligible\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e4cfd835-c956-4ac6-8039-19ebe28c784f",
+      "input": "6",
+      "output": "Not Eligible\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e53c8987-d5fb-4ca0-9f6f-1d08a7e59c4b",
+      "input": "18",
+      "output": "Eligible\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f092d9da-616f-4e13-ac18-f24b5a9c46d8",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

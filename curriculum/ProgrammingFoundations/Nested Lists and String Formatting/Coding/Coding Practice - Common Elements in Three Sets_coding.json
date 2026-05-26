@@ -1,0 +1,61 @@
+{
+  "question_id": "4c62688c-e861-4622-98c7-b79d2d2fba40",
+  "short_text": "Common Elements in Three Sets",
+  "content": "Write a program to find the common elements in the three sets.<hr><b>Input</b><br/><br/>The first line of input will contain space-separated integers.<br/>The second line of input will contain space-separated integers.<br/>The third line of input will contain space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing the list of common elements in three sets sorted in ascending order.<hr><b>Explanation</b><br/><br/>For example, if the given three strings are as the following.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">2 4 6 8 10\n4 8 10 12 16\n5 10 15 20\n</code></pre><br/>As 10 is common in all three sets, the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">[10]\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "a9d2f370-a7b0-4138-a2de-a55b5287c264",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nnum_list = []\nfor i in range(3):\n    values_list = input().split()\n    values_list = convert_string_to_int(values_list)\n    values_set = set(values_list)\n    num_list.append(values_set)\n\nintersection_a = num_list[0].intersection(num_list[1])\nintersection_b = intersection_a.intersection(num_list[2])\n\nresult = list(intersection_b)\nresult.sort()\n\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0831acc8-482e-4a97-8945-f6df6964df23",
+      "input": "2 4 6 8 10\n4 8 10 12 16\n5 10 15 20",
+      "output": "[10]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "287edcf9-ec9c-4112-a715-164abad411c1",
+      "input": "2 4 6 8 10\n2 4 6 8 10\n2 4 6 8 10",
+      "output": "[2, 4, 6, 8, 10]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "6fbee53b-0ed3-4f00-8ce7-019d8c55b097",
+      "input": "2 4 6 8 10\n1 3 5 7 9\n11 22 33 44",
+      "output": "[]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "9db7c97a-b6ac-421e-b538-79b28e90846b",
+      "input": "1 1 1 1 1\n1 1 1 1 1\n1 1 1 1 1",
+      "output": "[1]\n",
+      "is_hidden": true,
+      "weightage": 10.0
+    },
+    {
+      "test_case_id": "b87a92dd-d584-44b4-8fa4-93fff9fae6a9",
+      "input": "2 4 6 8 10 12\n2 4 8 12 16\n2 5 10 12 15 20",
+      "output": "[2, 12]\n",
+      "is_hidden": false,
+      "weightage": 10.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "c61903a2-3360-4440-8adc-1ba02d990897",
+  "short_text": "Reversing a Playlist",
+  "content": "In a music streaming app, users have playlists of songs. To provide a different listening experience, the user wants to reverse the order of songs in the playlist.\n\nYour task is to **complete the method `reverse_playlist(titles)`**` that takes a list of song titles (strings) and returns a new list with the titles in reverse order.\n\n<MultiLineNote>\n\n- The method must **use recursion only** to perform its calculations.\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n\n---\n\n#### Input\n\nThe method takes one parameter `titles`, a list of strings, where each string is a song title.\n\n\n---\n\n#### Output:\n\nThe method should **return a list** representing the original list in reverse order.\n\n\n---\n\n#### Explanation\n\nFor example if the input :  \n\n```\nSong1 Song2 Song3\n```\n\n- The last element **Song3** should become the first element in the returned list.\n- The second-to-last element **Song2** should be next, and so on, until all elements are reversed.\n\n- The expected output would be :\n\n```\n['Song3', 'Song2', 'Song1']\n```\n\n\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "09a26bc1-f51a-4424-898d-eaa1c7c65902",
+      "code_content": "def reverse_playlist(titles):\n    if len(titles) <= 1:\n        return titles\n    return [titles[-1]] + reverse_playlist(titles[:-1])",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2ef9611e-a038-4ce3-9399-026d208b74ff",
+      "input": "Echo Solitude Awaken Rapture Desire",
+      "output": "['Desire', 'Rapture', 'Awaken', 'Solitude', 'Echo']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "64f3bdf9-bd1a-45c4-b8ab-833c4d00e722",
+      "input": "Chasing Vortex Euphoria Whisper Journey Crimson",
+      "output": "['Crimson', 'Journey', 'Whisper', 'Euphoria', 'Vortex', 'Chasing']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "721a8b71-a1f1-43a2-a263-3bbde921f3ee",
+      "input": "Song1 Song2 Song3",
+      "output": "['Song3', 'Song2', 'Song1']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "787bf418-db67-4f35-9f63-e710b6755ecc",
+      "input": "Fading Serenity Velocity Eclipse Horizon Shadows Reverie",
+      "output": "['Reverie', 'Shadows', 'Horizon', 'Eclipse', 'Velocity', 'Serenity', 'Fading']",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "950d5b66-618b-429c-afa2-d1831fb25b9d",
+      "input": "Twilight Breathe Waves Midnight",
+      "output": "['Midnight', 'Waves', 'Breathe', 'Twilight']",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "efaa14e6-913e-41ae-b575-e2a588294405",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,391 @@
+{
+  "question_id": "26da5b89-2a7c-49a4-a23e-db9cf113554d",
+  "short_text": "Average of the N Numbers",
+  "content": "Write a program that reads a number `N` and prints the average of `N` numbers from **1**.\n\n<MultiLineNote>\n\nThe average of `N` numbers from **1** can be calculated as,\n\nAverage = Sum of `N` numbers from **1** / Count of numbers (`N`)\n\nExample: If `N = 3`, the average of **3** numbers from **1** \nAverage = (1 + 2 + 3) / 3 = 2.0\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a float that is the average of `N` numbers from **1**.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 4`,\n\n* The **4** numbers from **1** are **1**, **2**, **3** and **4**.\n* The sum of the numbers is **10**. (`1 + 2 + 3 + 4 = 10`)\n* The average of the numbers is **2.5**. (`10 / 4 = 2.5`)\n\nThe output should be **2.5**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "821ea504-8c21-4cf0-af18-9027895b22be",
+      "code_content": "number = int(input())\n\nsum_of_numbers = 0\ncounter = 0\n\nwhile counter < number:\n    counter = counter + 1\n    sum_of_numbers = sum_of_numbers + counter\n\naverage = sum_of_numbers / number\nprint(average)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "9bd7bf9c-61d3-4b1e-ac13-a9cb6fd7f0ec",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n10\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "5.5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 10`,\n\n* The **10** numbers from **1** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9**, and **10**.\n\n* The sum of the numbers is **55**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55`)\n\n* The average of the numbers is **5.5**. (`55 / 10 = 5.5`)\n\nThe output should be **5.5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "aea15631-4443-4a49-8b4f-b56fb20ca621",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n16\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "8.5",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 16`,\n\n* The **16** numbers from **1** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, **8**, **9**, **10**, **11**, **12**, **13**, **14**, **15**, and **16**.\n\n* The sum of the numbers is **136**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 = 136`)\n\n* The average of the numbers is **8.5**. (`136 / 16 = 8.5`)\n\nThe output should be **8.5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e03cd811-a3a9-4143-add6-cb6eb514b74b",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "3.0",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 5`,\n\n* The **5** numbers from **1** are **1**, **2**, **3**, **4**, and **5**.\n\n* The sum of the numbers is **15**. (`1 + 2 + 3 + 4 + 5 = 15`)\n\n* The average of the numbers is **3.0**. (`15 / 5 = 3.0`)\n\nThe output should be **3.0**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "0f5b3d59-d8b3-45bf-b97d-108cbd4a6986",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "3ed31586-2f25-4145-b466-61be3903712a",
+              "content": "The output should be multiple lines containing boolean values.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "41019320-5422-4fa4-a106-b478f10086e0",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ce8f3d0c-af0d-468c-b207-578c330ccf0c",
+              "content": "The output should be a single line containing space-separated float values.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fb16942b-51ad-449a-8b54-248ee5a7681e",
+              "content": "The output should be a single line containing a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a float that is the average of `N` numbers from **1**.\n\nFor example, if the given number is `N = 2`,\n\n* The **2** numbers from **1** are **1** and  **2**.\n* The sum of the numbers is **3**. (`1 + 2 = 3`)\n* The average of the numbers is **1.5**. (`3 / 2 = 1.5`)\n\nThe output should be **1.5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "15c7daf3-2dd1-40dd-a6e4-6f93b840ac96",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n8\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "024d9d77-bf49-410d-b847-817beb65368c",
+              "content": "4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2715c280-9f6e-4405-8d17-64b8fb963ccc",
+              "content": "4.5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5019b7b8-fa2d-4523-ad61-1aba8e797471",
+              "content": "4.6",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7432b0d2-dcb1-4380-ba4d-0698feacbd3b",
+              "content": "5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 8`,\n\n* The **8** numbers from **1** are **1**, **2**, **3**, **4**, **5**, **6**, **7**, and **8**.\n\n* The sum of the numbers is **36**. (`1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36`)\n\n* The average of the numbers is **4.5**. (`36 / 8 = 4.5`)\n\nThe output should be **4.5**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7c18e09e-ae8a-4e4f-9406-aa1f653f0cbb",
+          "short_text": "",
+          "content": "What is the formula to calculate the average of `N` numbers from `1`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "360d7752-55cc-4d5c-a810-a2daffe471a3",
+              "content": "Sum of N numbers from **1** / Count of numbers (`N`)",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5f65b914-fae4-4e11-ae48-f2632982acbd",
+              "content": "Sum of `N` numbers / Count of numbers (`N - 1`)",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "74eba1cf-992f-4390-a79c-67dd344c3824",
+              "content": "Sum of N numbers from **0** / Count of numbers (`N`)",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9c267636-f115-4db6-b868-7d97b0499bcd",
+              "content": "Sum of `N` numbers / Count of numbers (`N`)",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The average of `N` numbers from **1** can be calculated as,\n\nAverage = Sum of `N` numbers from **1** / Count of numbers (`N`)\n\nFor example,\n\nIf `N = 3`, the average of **3** numbers from **1** \nAverage = (1 + 2 + 3) / 3 = 2.0",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "89b4ff2f-4832-43df-9925-57bd418cf2d5",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "76da6b56-731a-4990-8d9c-a9c629152534",
+              "content": "2",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "84a5366d-f0f1-41a6-8e1d-d0042d1d1028",
+              "content": "1\n3",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a6a72034-abe7-45fc-8960-121f3408a221",
+              "content": "17",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "edd4a9e6-d317-4280-9700-180c9bce144e",
+              "content": "8.5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n17\n```\n\n**Input 2**\n\n```\n2\n```\nThe above two inputs are valid because they consist of a single line containing an integer representing `N`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9781703c-7b50-4c04-9a2a-21beb459888c",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1a7cc687-4e98-46ac-bccf-518e8e5483d0",
+              "content": "To find the sum of `N` numbers from **1**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "65a2442f-6d65-4ffc-bbed-189da6987fcc",
+              "content": "To find the average of `N` numbers from **1**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8cf4da00-7467-4b6c-8051-65644c409786",
+              "content": "To find the average of `N` numbers from **2**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dc07a1a9-6c77-4413-a998-a0497bc8e637",
+              "content": "To find the square of the number `N`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and find the average of `N` numbers from **1**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c9de5c04-69af-4dfa-9294-a615c64baf61",
+          "short_text": "",
+          "content": "Which of the following are valid outputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "86640c2b-7e44-494f-b95a-ea71a0cc38ca",
+              "content": "13.0",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "dbf741aa-f80c-41bf-b015-3d745db32975",
+              "content": "17",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f71593e3-d331-4be3-803a-806a16e5d143",
+              "content": "15.5\n20.5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f7f7879d-b06f-41b4-a9e5-67152fde266e",
+              "content": "50.5",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Output 1**\n\n```\n50.5\n```\n\n**Output 2**\n\n```\n13.0\n```\nThe above two outputs are valid because they consist of a single line containing a float value.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "d84a67fe-c1f9-4c69-b93e-373d0b46eb66",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "058d28f9-fd00-410a-9f94-88f344218daf",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "754ab74f-d30e-4399-8e81-977a6317ab1d",
+              "content": "The input will be multiple lines containing two space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d7e21adb-10f5-41d3-a80b-912dcea70902",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dedf91a2-b233-4df2-9b21-4856f5819f4a",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer.\n\nFor example, **30**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "174c60cd-4bd3-46e0-94d5-b10247a09166",
+      "input": "550",
+      "output": "275.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "2050d6a4-0959-4b66-a4bd-7fe3a8655cf4",
+      "input": "7",
+      "output": "4.0",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "568e0d15-04c6-4cd8-9e2a-d4dcba9a4757",
+      "input": "10",
+      "output": "5.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7a981e01-6330-4e54-87c5-5295e9155384",
+      "input": "4",
+      "output": "2.5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "bea1dd90-2d63-4dc7-8e14-fbfcfa44d234",
+      "input": "45",
+      "output": "23.0",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "efae33b8-0c40-4ec7-aba1-e21e371f2be9",
+      "input": "6512312",
+      "output": "3256156.5",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "fabd4723-3552-4058-96ff-0b7471af860c",
+      "input": "10000",
+      "output": "5000.5",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e13a266e-9a81-4716-b44f-893002bc30c0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

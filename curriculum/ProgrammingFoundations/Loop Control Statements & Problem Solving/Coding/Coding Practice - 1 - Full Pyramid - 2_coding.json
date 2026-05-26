@@ -1,0 +1,61 @@
+{
+  "question_id": "259e46a6-417d-4421-a541-cee0ef8df89a",
+  "short_text": "Full Pyramid - 2",
+  "content": "Given the number of rows N, write a program to print the full pyramid pattern similar to the pattern shown below.<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">    1 \n   1 2 \n  1 2 3 \n 1 2 3 4 \n1 2 3 4 5 \n</code></pre><hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be N rows containing the numbers in the full pyramid pattern.<br/>Note: There is a space after each number.<hr><b>Explanation</b><br/><br/>For example, if the given number is 5, the pattern should contain 5 rows as shown below<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">    1 \n   1 2 \n  1 2 3 \n 1 2 3 4 \n1 2 3 4 5 \n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "85703db7-2cbe-45ec-89bf-aa81635b988a",
+      "code_content": "n = int(input())\nfor i in range(1, n+1):\n    left_spaces = \" \" * (n-i)\n    numbers = \"\"\n    for j in range(1, i+1):\n        numbers = numbers + (str(j) + \" \")\n    print(left_spaces + numbers)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2781c7a2-5d69-4f0b-839a-a7a7a7e9dd0c",
+      "input": "14",
+      "output": "             1 \n            1 2 \n           1 2 3 \n          1 2 3 4 \n         1 2 3 4 5 \n        1 2 3 4 5 6 \n       1 2 3 4 5 6 7 \n      1 2 3 4 5 6 7 8 \n     1 2 3 4 5 6 7 8 9 \n    1 2 3 4 5 6 7 8 9 10 \n   1 2 3 4 5 6 7 8 9 10 11 \n  1 2 3 4 5 6 7 8 9 10 11 12 \n 1 2 3 4 5 6 7 8 9 10 11 12 13 \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "2a5e1c1d-4977-4b2b-b724-c779f558dff6",
+      "input": "3",
+      "output": "  1 \n 1 2 \n1 2 3 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "63a30bdd-5d10-4a4f-aed4-dfa45867e2f0",
+      "input": "8",
+      "output": "       1 \n      1 2 \n     1 2 3 \n    1 2 3 4 \n   1 2 3 4 5 \n  1 2 3 4 5 6 \n 1 2 3 4 5 6 7 \n1 2 3 4 5 6 7 8 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "dc6c9885-f1ac-41c1-b365-f31331dba4dc",
+      "input": "11",
+      "output": "          1 \n         1 2 \n        1 2 3 \n       1 2 3 4 \n      1 2 3 4 5 \n     1 2 3 4 5 6 \n    1 2 3 4 5 6 7 \n   1 2 3 4 5 6 7 8 \n  1 2 3 4 5 6 7 8 9 \n 1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 11 \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "eeac1282-e1b9-4c4c-9375-fd02ec9f5291",
+      "input": "5",
+      "output": "    1 \n   1 2 \n  1 2 3 \n 1 2 3 4 \n1 2 3 4 5 \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7fd01c52-e0bb-49e8-b8fd-82ff808825da",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a30ca35a-40f5-4de4-bcfb-cca4adb44f2b",
+  "topic_name": "Loop Control Statements & Problem Solving",
+  "course_title": "Programming Foundations"
+}

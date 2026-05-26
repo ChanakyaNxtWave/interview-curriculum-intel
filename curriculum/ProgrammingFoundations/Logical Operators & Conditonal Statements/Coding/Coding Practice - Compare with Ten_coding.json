@@ -1,0 +1,384 @@
+{
+  "question_id": "d409b4fe-ff7b-4250-868b-3a8e3f765393",
+  "short_text": "Compare with Ten",
+  "content": "Write a program that reads two numbers `A` and `B` and check if any one of the below conditions is satisfied.\r\n\r\n- The sum of `A` and `B` is less than **10**.\r\n- The difference between `A` and `B` is less than **10**.\r\n- `A` is between **5** and **30**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `A`.\r\nThe second line of input contains an integer representing `B`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a boolean. **True** should be printed if any one of the conditions is satisfied, otherwise **False** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given numbers are `A = 12` and `B = 8`,\r\n\r\n✗ The sum of `A` and `B` is less than **10**. (`12 + 8 = 20`, **20** is not less than **10**)\r\n✔ The difference between `A` and `B` is less than **10**. (`12 - 8 = 4`, **4** is less than **10**)\r\n✔ `A` is between **5** and **30**. (**12** is between **5** and **30**)\r\n\r\nThe output should be **True** as one of the conditions is satisfied.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2d7c3867-9249-43a0-bd30-ce32f0e88772",
+      "code_content": "first_number = input()\nfirst_number = int(first_number)\n\nsecond_number = input()\nsecond_number = int(second_number)\n\nsum = first_number + second_number\ndifference = first_number - second_number\n\nfirst_condition = sum < 10\nsecond_condition = difference < 10\nthird_condition = (first_number > 5) and (first_number < 30)\n\nresult = first_condition or second_condition or third_condition\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "8427a9ff-c13e-4a3a-8709-03485273c9b3",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n60\n25\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "False",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 60` and `B = 25`, \n\n✗ The sum of `A` and `B` is less than **10**. (`60 + 25 = 85`, **85** is not less than **10**)\n\n✗ The difference between `A` and `B` is less than **10**. (`60 - 25 = 35`, **35** is not less than **10**)\n\n✗ `A` is between **5** and **30**. ( **60** is not between **5** and **30**)\n\nThe output should be **False** as no conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9bbcd71a-8bf1-485e-b1af-3012ee2f634d",
+          "short_text": null,
+          "content": "What is the output for the given input?\r\n\r\n**Input**\r\n\r\n```\r\n6\r\n5\r\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 6` and `B = 5`, \n\n✗ The sum of `A` and `B` is less than **10**. (`6 + 5 = 11`, **11** is not less than **10**)\n\n✔ The difference between `A` and `B` is less than **10**. (`6 - 5 = 1`, **1** is less than **10**)\n\n✔ `A` is between **5** and **30**. ( **6** is between **5** and **30**)\n\nThe output should be **True** as one of the given conditions is satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e75e5274-b8eb-4fc1-b184-18bc4a0ba5f1",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n13\n6\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "True",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 13` and `B = 6`, \n\n✗ The sum of `A` and `B` is less than **10**. (`13 + 6 = 19`, **19** is not less than **10**)\n\n✔ The difference between `A` and `B` is less than **10**. (`13 - 6 = 7`, **7** is less than **10**)\n\n✔ `A` is between **5** and **30**. ( **13** is between **5** and **30**)\n\nThe output should be **True** as one of the conditions is satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "4f11ae72-44f4-4fa7-9b9e-365009ab25e3",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "7774307b-702c-4f56-8e9b-9ab1a952911f",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bd036111-b305-4e84-a5b5-9182ed875643",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d4fc8e9d-d3b4-4299-be1c-5ac5d9b9f31f",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ee1819f4-886d-476b-b7a3-9b2f091e3553",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output format of the program should be a single line containing a boolean. \n\n- **True** should be printed if any of the given conditions is satisfied.\n- Otherwise, **false** should be printed.\n\nFor example, \n\nIf the given numbers are `A = 30` and `B = 15`, \n\n✗ The sum of `A` and `B` is less than **10**. (`30 + 15 = 45`, **45** is not less than **10**)\n\n✗ The difference between `A` and `B` is less than **10**. (`30 - 15 = 15`, **15** is not less than **10**)\n\n✗ `A` is between **5** and **30**. ( **30** is not between **5** and **30**)\n\nThe output should be **False** as no conditions are satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "53e1572f-f381-4e0d-918c-4e2d67fc4b1a",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n20\n9\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "239e8d0d-1746-49df-a1fb-a772ca108eef",
+              "content": "True",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "23b43e35-8f79-4421-99ff-c7fa7fa6412e",
+              "content": "false",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6bf8cd9f-9bd2-4ba4-9f81-0cf7971be1c8",
+              "content": "true",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bafd0d63-9c04-4986-9be0-6aac9ea00fb4",
+              "content": "False",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 20` and `B = 9`, \n\n✗ The sum of `A` and `B` is less than **10**. (`20 + 9 = 29`, **29** is not less than **10**)\n\n✗ The difference between `A` and `B` is less than **10**. (`20 - 9 = 11`, **11** is not less than **10**)\n\n✔ `A` is between **5** and **30**. (**20** is between **5** and **30**)\n\nThe output should be **True** as one of the given conditions is satisfied.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "81aeda2b-3c59-4a8b-a0d7-e84b4da7965a",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "0847001c-5f1f-4d53-8a33-14a8329b5784",
+              "content": "```\n45\n19\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "08cb869f-fd82-4551-b156-6631a5fe6520",
+              "content": "```\n25\n4\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "92c11008-54dd-43bd-a537-794610997076",
+              "content": "```\n77 53 100\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b561eced-00f8-4af1-8560-8f322a74cb1c",
+              "content": "```\nfifty\nthree\n```                                                ",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n45\n19\n```\n\n**Input 2**\n\n```\n25\n4\n```\n\nThe above two inputs are valid because,\n\n- The first line of the input contains an integer.\n- The second line of the input contains an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8c45d0ef-627e-4470-af39-7c64aea428d1",
+          "short_text": "",
+          "content": "According to the problem description, what is the third condition?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "39a22341-6181-4e60-a7be-7a7bec4a10b1",
+              "content": "`B` is between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "57e35180-e1eb-4803-8fb0-3c23f9b5eaff",
+              "content": "`A` is between **5** and **40**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b7b28610-0d12-4d4f-9bcd-fc6c2020d5db",
+              "content": "`A` is between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b7e1c87c-e3c2-491e-a8ff-7b03f3a17ed7",
+              "content": "The difference between `A` and `B` is less than **10**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the third condition is to check if `A` is between **5** and **30**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "acb10f8e-ab41-4b9f-b3fd-b112c66da6df",
+          "short_text": "",
+          "content": "According to the problem description, what is the first condition?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "08afef44-c65a-47f9-9228-88606ea53ccf",
+              "content": "`A` is between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "0cd5508f-5b8a-496a-818a-c1cb7a485270",
+              "content": "The sum of `A` and `B` is less than **10**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b41c3ef9-6516-4cc3-92ae-87c15286a6ec",
+              "content": "The difference of `A` and `B` is less than **10**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d6510446-541b-40c2-9322-a3faf02265ac",
+              "content": "The sum of `A` and `B` is less than **20**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "According to the problem description, the first condition is to check if the sum of `A` and `B` is less than **10**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "b32a63a3-913c-4f95-85fb-a7f6b941cae5",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "b7bd3f38-ac5f-46b6-a352-1d8395491efc",
+              "content": "To check if all the below conditions are satisfied.  \n\n- The sum `A` and `B` is less than **10**.\n- The difference between `A` and `B` is less than **10**.\n- `A` is between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d6533455-7c6c-43b8-bf00-a25c1e7ebd50",
+              "content": "To check if any one of the below conditions are satisfied.  \n\n- The sum `A` and `B` is less than **10**.\n- The difference between `A` and `B` is less than **10**.\n- `A` is between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "eed99d11-bf75-46e6-8f06-93ed11d35f8a",
+              "content": "To check if any two of the below conditions are satisfied.  \n\n- The sum `A` and `B` is less than **10**.\n- The difference between `A` and `B` is less than **10**.\n- `A` is between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fc54d720-beb7-4dac-8bf6-22323228c5d7",
+              "content": "To check if any one of the given conditions are satisfied.\n\n- The sum `A` and `B` is less than **45**.\n- The difference between `A` and `B` is greater than **10**.\n- `A` is not between **5** and **30**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read two numbers `A`, `B` and check if any one of the below conditions are satisfied.  \n\n- The sum `A` and `B` is less than **10**.\n- The difference between `A` and `B` is less than **10**.\n- `A` is between **5** and **30**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "bbfb4a02-6db1-4490-9d98-308b2b0d9ad4",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "4b46c952-580a-4421-95e6-97094143a306",
+              "content": "The first line of the input contains a boolean.\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9bbe4b33-c5c2-436f-b9cf-d1cc371f6e25",
+              "content": "The first line of the input contains an integer.\nThe second line of input contains a float.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d03f0517-62c7-443a-8039-1912dcf6c254",
+              "content": "The first line of the input contains a string.\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d2d1eb69-eccd-4513-9b5f-e97c596929e3",
+              "content": "The first line of the input contains an integer.\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input format of the program will be,\n\n- The first line of input contains an integer representing `A`.\n- The second line of input conatins an integer representing `B`.\n\nFor example,\n\n```\n100\n70\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0aabbdd4-7875-46bd-abd9-a1a8f1449d7b",
+      "input": "6\n2",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "19c002a4-465e-4f03-a17d-a1e214710603",
+      "input": "50\n15",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3c00126e-f495-438d-a1df-c52958335081",
+      "input": "25\n10",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "56f783a3-acea-4559-9857-2e14fbcc9f1e",
+      "input": "600\n100",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d180b954-7251-4fc1-816f-8ea6656baef1",
+      "input": "30\n5",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "e3dc27eb-b8ba-4b21-ac29-d7b1bfb74d2c",
+      "input": "12\n8",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2352eee0-7db2-4189-b245-bd0246d141ed",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "46dd01d4-3ac4-4e61-ae3b-e2ba87ee354d",
+  "topic_name": "Logical Operators & Conditonal Statements",
+  "course_title": "Programming Foundations"
+}

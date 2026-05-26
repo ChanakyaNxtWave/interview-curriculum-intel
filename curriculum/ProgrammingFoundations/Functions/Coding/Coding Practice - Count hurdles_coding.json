@@ -1,0 +1,61 @@
+{
+  "question_id": "83e82da9-70fd-4ed9-9c93-0b318392ce19",
+  "short_text": "Count hurdles",
+  "content": "In a small village, there is a tradition where children compete in a game called **Jumping Heights**. In this game, each child must jump over a series of hurdles. Each hurdle has a specific height, and the children need to determine how many hurdles they can successfully jump over based on their jumping ability.\n\nThe game is exciting because only the children who can jump over at least a certain number of hurdles will be declared winners.\n\nYour task is to **complete the method `count_hurdles()`**which takes in the number of hurdles, the maximum jump height a child can achieve, and the heights of the hurdles. The method should return the number of hurdles that the child can successfully jump over (the number of hurdles whose height is less than or equal to the child's maximum jump height).\n\n<MultiLineNote>\n\n- Do not change the method name, as the test cases will fail if modified.\n- Reading input is not required; use the parameters passed to the method.\n- No need to print the output, just return the result.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe **`count_hurdles()`** method takes three parameters:\n\n- `N` : An integer representing the number of hurdles.\n- `K` : An integer representing the maximum height the child can jump.\n- `heights` : A list of N integers, where each integer represents the height of a hurdle.\n\n---\n\n#### Output\n\nThe **`count_hurdles()`** method should return a single integer representing the number of hurdles the child can successfully jump over (the number of hurdles whose height is less than or equal to K).\n\n\n---\n\n#### Explanation\n\nFor example if the input :\n\n```\n5 3\n1 2 3 4 5\n```\n\nThe expected output would be :\n\n```\n3\n```\n\nThere are **5** hurdles with heights: **1, 2, 3, 4, and 5**.\nThe child can jump over any hurdle with a height of **3** or **less**.\nThe hurdles with heights **1, 2, and 3** are jumpable, so the output is `3`.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "32ff10ad-a4bc-4af1-8098-dec2c164aef9",
+      "code_content": "def count_hurdles(N, K, heights):\n    count = 0\n    for h in heights:\n        if h <= K:\n            count += 1\n    return count",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2ad42855-0b6e-4995-96b6-df1d8e71b33c",
+      "input": "1 4\n3",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "56836228-e1e2-4930-9df4-726fd872d2af",
+      "input": "3 2\n5 6 7",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d679b826-ea9e-4533-ab3e-458b9af5a41b",
+      "input": "4 6\n1 2 3 4",
+      "output": "4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "da7e7f5c-d0f6-4488-92a9-3a5afd384813",
+      "input": "6 5\n1 2 3 4 6 7",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "df81cedd-36d7-43f6-b72a-f06b811a8d80",
+      "input": "5 3\n1 2 3 4 5",
+      "output": "3",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "36f6b324-5f3c-4392-9acf-5635e753ef93",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,447 @@
+{
+  "question_id": "97c09aca-e950-4641-8555-864e8b938b9d",
+  "short_text": "Denominations - 3",
+  "content": "Write a program that reads an amount `A` and prints the minimum number of **500**, **50**, **10** and **1** rupee notes required for the given amount.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing the amount `A`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string that has the number of **500**, **50**, **10** and **1** rupee notes required for the given amount `A`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\n\r\nFor example, if the given amount `A = 1543`,\r\n\r\n* The number of **500** rupee notes required for **1543** is **3**. (`1543 / 500 = 3.086`)\r\n  * The remaining amount is **43**. (`1543 - (500 * 3) = 43`)\r\n* The number of **50** rupee notes required for **43** is **0**. (`43 / 50 = 0.86`)\r\n* The number of **10** rupee notes required for **43** is **4**. (`43 / 10 = 4.3`)\r\n  * The remaining amount is **3**. (`1543 - (500 * 3) - (10 * 4) = 3`)\r\n* The number of **1** rupee notes required for **3** is **3**. (`3 / 1 = 3`)\r\n\r\nNumber of **500** rupee notes  => 500 x 3 = 1500\r\nNumber of **50** rupee notes    =>    50 x 0 =       0\r\nNumber of **10** rupee notes     =>    10 x 4 =     40\r\nNumber of **1** rupee notes          =>    1 x 3 =       3\r\n--------------------------------------------------\r\nTotal                                           =>                    1543\r\n--------------------------------------------------\r\n\r\nThe output should be `500: 3 50: 0 10: 4 1: 3`.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "757ba431-c770-49c9-9a7b-2ed553edf04e",
+      "code_content": "amount = int(input())\n\nno_of_500s = amount / 500\nno_of_500s = int(no_of_500s)\nremaining_amount = amount % 500\n\nno_of_50s = remaining_amount / 50\nno_of_50s = int(no_of_50s)\nremaining_amount = remaining_amount % 50\n\nno_of_10s = remaining_amount / 10\nno_of_10s = int(no_of_10s)\nremaining_amount = remaining_amount % 10\n\nno_of_1s = remaining_amount\n\nprint(\"500:\" + str(no_of_500s) + \" \" +  \"50:\" + str(no_of_50s) + \" \" + \"10:\" + str(no_of_10s) + \" \" + \"1:\" + str(no_of_1s))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "177f86d2-eb6f-452c-8cb2-b7f2f565708e",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n946\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "500: 1 50: 8 10: 4 1: 6",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 946`,\n\n* The number of **500** rupee notes required for **946** is **1**. (`946 / 500 = 1.892`)\n  * The remaining amount is **446**. (`946 - (500 * 1) = 446`)\n* The number of **50** rupee notes required for **446** is **8**. (`446 / 50 = 8.92`)\n  * The remaining amount is **46**. (`946 - (500 * 1) - (50 * 8) = 46`)\n* The number of **10** rupee notes required for **46** is **4**. (`46 / 10 = 4.6`)\n  * The remaining amount is **6**. (`946 - (500 * 1) - (50 * 8) - (10 * 4) = 6`)\n* The number of **1** rupee notes required for **6** is **6**. (`6 / 1 = 6`)\n\nNumber of **500** rupee notes  => 500 x 1 =     500\nNumber of **50** rupee notes    =>    50 x 8 =    400\nNumber of **10** rupee notes     =>    10 x 4 =      40\nNumber of **1** rupee notes          =>    1 x 6 =        6\n--------------------------------------------------\nTotal                                           =>                    946\n--------------------------------------------------\n\nThe output should be `500: 1 50: 8 10: 4 1: 6`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4a0f3cdb-6461-47e0-ae7d-980321ab4171",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n1063\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "500: 2 50: 1 10: 1 1: 3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 1063`,\n\n* The number of **500** rupee notes required for **1063** is **2**. (`1063 / 500 = 2.126`)\n  * The remaining amount is **63**. (`1063 - (500 * 2) = 63`)\n* The number of **50** rupee notes required for **63** is **1**. (`63 / 50 = 1.26`)\n  * The remaining amount is **13**. (`1063 - (500 * 2) - (50 * 1) = 13`)\n* The number of **10** rupee notes required for **13** is **1**. (`13 / 10 = 1.3`)\n  * The remaining amount is **3**. (`1063 - (500 * 3) - (50 * 1) - (10 * 1) = 3`)\n* The number of **1** rupee notes required for **3** is **3**. (`3 / 1 = 3`)\n\nNumber of **500** rupee notes  => 500 x 2 = 1000\nNumber of **50** rupee notes    =>    50 x 1 =      50\nNumber of **10** rupee notes     =>    10 x 1 =       10\nNumber of **1** rupee notes          =>    1 x 3 =        3\n--------------------------------------------------\nTotal                                           =>                    1063\n--------------------------------------------------\n\nThe output should be `500: 2 50: 1 10: 1 1: 3`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "8aa101c8-152c-47fe-bc6b-6050c5a13a55",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n2023\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "500: 4 50: 0 10: 2 1: 3",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 2023`,\n\n* The number of **500** rupee notes required for **2023** is **4**. (`2023 / 500 = 4.023`)\n  * The remaining amount is **23**. (`2023 - (500 * 4) = 23`)\n* The number of **50** rupee notes required for **23** is **0**. (`23 / 50 = 0.46`)\n  * The remaining amount is **23**. (`2023 - (500 * 4) - (50 * 0) = 23`)\n* The number of **10** rupee notes required for **23** is **2**. (`23 / 10 = 2.3`)\n  * The remaining amount is **3**. (`2023 - (500 * 4) - (50 * 0) - (10 * 2) = 3`)\n* The number of **1** rupee notes required for **3** is **3**. (`3 / 1 = 3`)\n\nNumber of **500** rupee notes  => 500 x 4 =  2000\nNumber of **50** rupee notes    =>    50 x 0 =         0\nNumber of **10** rupee notes     =>    10 x 2 =       20\nNumber of **1** rupee notes          =>    1 x 3 =         3\n--------------------------------------------------\nTotal                                           =>                    2023\n--------------------------------------------------\n\nThe output should be `500: 4 50: 0 10: 2 1: 3`.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "18352381-0236-4138-adb6-ef59e5844fb5",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "20f19d94-7ba7-4cec-b260-a520771519a5",
+              "content": "1200",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "29dc0c69-5994-4d34-974b-ba8de8ed85eb",
+              "content": "1657\n2584",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "7b5ea1cb-56a0-465e-a8b4-11976839f14f",
+              "content": "6584.23",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c5c6ea49-fd7f-450f-8ab5-d0014655f1d5",
+              "content": "1857",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n1200\n```\n\n**Input 2**\n\n```\n1857\n```\nThe above two inputs are valid because they consist of a single line containing an integer `A`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "28da25d6-d021-431f-bbf4-24f6feb7b1b3",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "76b4f06f-cd7d-4abc-8c71-5b29f942d94f",
+              "content": "To calculate the minimum number of **500**, **50**, **10** and **1** rupee notes required for the given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a528b176-acd4-402f-90cd-b68695c47192",
+              "content": "To calculate the minimum number of **1000**, **50**, **10** and **1** rupee notes required for the given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a56bd614-6c59-4aff-8e30-44a4bfb78c91",
+              "content": "To calculate the minimum number of **100**, **20**, **10** and **1** rupee notes required for the given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e193cbfb-fe01-4607-b552-abf12912dc6b",
+              "content": "To calculate the minimum number of **500**, **100**, **10** and **5** rupee notes required for the given amount.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read an amount `A` and calculate the minimum number of **500**, **50**, **10** and **1** rupee notes required for the given amount.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "35767107-20d6-47fe-9ef6-2e7c30924922",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "065f160d-fde6-4357-941e-e2917a4d2013",
+              "content": "The input will be multiple lines containing two space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "1d5417ab-0cc9-4b0f-a5ea-4e75fa87b8ef",
+              "content": "The input will be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "284d40f0-996e-4e19-9b5d-3df1ff249c5f",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ce87c333-40de-4e55-994d-abc372bb331f",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing the amount `A`.\n\nFor example, **1220**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "99615e03-2d36-4ae1-bce6-d604767ad148",
+          "short_text": "",
+          "content": "What is the formula used to calculate the minimum number of 500 rupee notes required for the amount `A`?\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0d45db63-b5d0-4adc-a29c-15a0b62b2e45",
+              "content": "A % 100",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "22cdc690-0447-4ba7-8205-45de2541237d",
+              "content": "A / 500",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "7faf805b-d23d-4a33-8170-47609cd46690",
+              "content": "A * 100",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dca0f459-a016-4798-a643-e72a6cba588f",
+              "content": "A - 100",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The formula used to calculate the minimum number of 500 rupee notes required for the amount `A` is `A / 500`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a0ec9049-f4b4-45a1-b721-9df9b1a7cede",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "15ec1d42-b542-426f-a59b-5926e4e5e8f2",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "3e2ed8b3-0575-49db-8369-053acbcf5445",
+              "content": "The output should be multiple lines containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a8d06c79-0449-4d2c-8040-56ff9e4319be",
+              "content": "The output should be multiple lines containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ae4adcf0-59d0-4e56-ab3d-176aa01a4af3",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string that has the number of **500**, **50**, **10** and **1** rupee notes required for the given amount `A`.\n\nFor example,\n\nIf the given amount `A = 1697`,\n\n* The number of **500** rupee notes required for **1697** is **3**. (`1697 / 500 = 3.394`)\n  * The remaining amount is **197**. (`1697 - (500 * 3) = 197`)\n* The number of **50** rupee notes required for **197** is **3**. (`197 / 50 = 3.94`)\n  * The remaining amount is **47**. (`1697 - (500 * 3) - (50 * 3) = 47`)\n* The number of **10** rupee notes required for **47** is **4**. (`47 / 10 = 4.7`)\n  * The remaining amount is **7**. (`1697 - (500 * 3) - (50 * 3) - (10 * 4) = 7`)\n* The number of **1** rupee notes required for **7** is **7**. (`7 / 1 = 7`)\n\nNumber of **500** rupee notes  => 500 x 3 = 1500\nNumber of **50** rupee notes    =>    50 x 3 =   150\nNumber of **10** rupee notes     =>    10 x 4 =     40\nNumber of **1** rupee notes          =>    1 x 7 =        7\n--------------------------------------------------\nTotal                                           =>                    1697\n--------------------------------------------------\n\nThe output should be `500: 3 50: 3 10: 4 1: 7`.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "a8494fb0-06ca-42e1-8f3d-e7b2e7c6d5bd",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n3568\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6057e508-4654-48fc-b577-e6c318b8cf3d",
+              "content": "500: 8 50: 1 10: 1 1: 7",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8b54c6a4-21e5-4c62-9de7-ac729dc34222",
+              "content": "500: 7 50: 1 10: 1 1: 8",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "93bb1ebc-3385-4419-8f95-85ec8c077d49",
+              "content": "500: 7 50: 3 10: 2 1: 8",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9a7afe2a-30ce-41d4-85dd-c1f9936be215",
+              "content": "500: 8 50: 1 10: 1 1: 9",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given amount `A = 3568`,\n\n* The number of **500** rupee notes required for **3568** is **7**. (`3568 / 500 = 7.136`)\n  * The remaining amount is **68**. (`3568 - (500 * 7) = 68`)\n* The number of **50** rupee notes required for **68** is **1**. (`68 / 50 = 1.36`)\n  * The remaining amount is **18**. (`3568 - (500 * 7) - (50 * 1) = 18`)\n* The number of **10** rupee notes required for **18** is **1**. (`18 / 10 = 1.8`)\n  * The remaining amount is **8**. (`3568 - (500 * 7) - (50 * 1) - (10 * 1) = 8`)\n* The number of **1** rupee notes required for **8** is **8**. (`8 / 1 = 8`)\n\nNumber of **500** rupee notes  => 500 x 7 = 3500\nNumber of **50** rupee notes    =>    50 x 1 =      50\nNumber of **10** rupee notes     =>    10 x 1 =      10\nNumber of **1** rupee notes          =>    1 x 8 =       8\n--------------------------------------------------\nTotal                                           =>                    3568\n--------------------------------------------------\n\nThe output should be `500: 7 50: 1 10: 1 1: 8`.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ad71a795-9cc2-4af8-b7bf-b2ad0ee3de79",
+          "short_text": null,
+          "content": "What is the denomination of the notes used in the problem description?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "108e91af-686f-43c2-b4a2-8efcf3a63900",
+              "content": "200, 100, 50, 10",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "10bbcc47-7c48-4c04-9dfa-3759f43141dc",
+              "content": "100, 50, 20, 10",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "91f72656-9619-4242-864c-48f564f3b998",
+              "content": "500, 50, 10, 1",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "cf1c970f-1080-491f-aee0-fb10896febef",
+              "content": "100, 50, 10, 1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The denomination of the notes used in the problem description is **500**, **100**, **50** and **1**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0122a2b3-7f9e-48e1-8f90-65faa9b28ff1",
+      "input": "1000000",
+      "output": "500: 2000 50: 0 10: 0 1: 0",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "23e324c4-32d0-431c-bdc6-0c47e18dae43",
+      "input": "80",
+      "output": "500: 0 50: 1 10: 3 1: 0",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3b366a29-e221-40c1-aa3a-58f004a05bba",
+      "input": "125",
+      "output": "500: 0 50: 2 10: 2 1: 5",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "3e01f91f-acaa-47e9-9218-766cb8c799ed",
+      "input": "888",
+      "output": "500: 1 50: 7 10: 3 1: 8",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "59f7738b-140c-4b19-aa18-9c2c92bc872f",
+      "input": "1543",
+      "output": "500: 3 50: 0 10: 4 1: 3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5ac4e655-5701-4b2b-8791-c098d5110313",
+      "input": "0",
+      "output": "500: 0 50: 0 10: 0 1: 0",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "5e42ec81-bda6-41bf-a7c9-34d1a43b5518",
+      "input": "1545",
+      "output": "500: 3 50: 0 10: 4 1: 5",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "771e0f85-f3fa-4f2a-9412-7a258ebedd2d",
+      "input": "978",
+      "output": "500: 1 50: 9 10: 2 1: 8",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "7d7762d2-770c-4d62-b512-cd64313cc629",
+      "input": "786",
+      "output": "500: 1 50: 5 10: 3 1: 6",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8dcf85a9-1416-44e6-a936-a8592c9f4131",
+      "input": "632781",
+      "output": "500: 1265 50: 5 10: 3 1: 1",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "b4d604cf-f8fe-4095-a512-a90a8eafa85c",
+      "input": "1259",
+      "output": "500: 2 50: 5 10: 0 1: 9",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c1a1d522-f7ef-4ba8-ab7a-88bc42f1fd4b",
+      "input": "38141",
+      "output": "500: 76 50: 2 10: 4 1: 1",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "c3498af3-446c-479a-937e-610b7bcb5dbf",
+      "input": "48752",
+      "output": "500: 97 50: 5 10: 0 1: 2",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "d0860e0a-8102-46a3-8dd1-7dfdcff27c80",
+      "input": "13",
+      "output": "500: 0 50: 0 10: 1 1: 3",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "d4a7cd72-82c8-4918-b3b4-2fe241378b3b",
+      "input": "5789",
+      "output": "500: 11 50: 5 10: 3 1: 9",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "d2c22172-d19f-4eb4-a7b1-198d2a2faae3",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "682e33b8-285f-4bdc-aedb-1d817a1e8d12",
+  "topic_name": "Nested Conditional Statements & Loops",
+  "course_title": "Programming Foundations"
+}

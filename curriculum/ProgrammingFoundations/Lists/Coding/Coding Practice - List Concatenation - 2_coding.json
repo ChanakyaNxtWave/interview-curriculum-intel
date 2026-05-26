@@ -1,0 +1,68 @@
+{
+  "question_id": "01952514-a133-40ff-be79-873267c10b9e",
+  "short_text": "List Concatenation - 2",
+  "content": "A list `L` is given in the prefilled code.\n\nGiven a number `N`, write a program that reads `N` inputs and prints the list by adding the given `N` inputs at the end of the list `L`.\n\n```\nL = [\"apple\", \"78\", \"970.03\"]\n```\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `N`.\nThe next `N` lines of input contain strings.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list obtained by adding the given `N` inputs at the end of the list `L`.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 2`\n\n- The given **2** inputs are, \n\n```\n38\ngrapes\n```\n\n- The elements in the given prefilled list `L` are **\"apple\"**, **\"78\"**, and **\"970.03\"**.\n- After adding the given **2** inputs at the end of the list `L` is **\"apple\"**, **\"78\"**, **\"970.03\"**, **\"38\"**, and **\"grapes\"**\n\nThe output should be,\n\n```\n['apple', '78', '970.03', '38', 'grapes']\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e386535b-a37c-4b1e-9460-75a7e86bc1c6",
+      "code_content": "L = [\"apple\", \"78\", \"970.03\"]\n\nnumber_of_inputs = int(input())\n\nfor i in range(number_of_inputs):\n    new_item = input()\n    L += [new_item]\n    \nprint(L)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "066c4723-9c26-4a8e-92f3-54a26f2f730c",
+      "input": "1\nlist",
+      "output": "['apple', '78', '970.03', 'list']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "45bdd15d-3709-46be-a8e0-8a9c12cd6d18",
+      "input": "4\nGenerator\n4567\n-978.23\nDeCorATor",
+      "output": "['apple', '78', '970.03', 'Generator', '4567', '-978.23', 'DeCorATor']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "494e58cb-b9e0-4f5b-830f-d5c81ba07b3c",
+      "input": "0",
+      "output": "['apple', '78', '970.03']",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "54b0c883-499e-41f0-8da9-6c529b1b789a",
+      "input": "3\n57.94\ntable\n-990",
+      "output": "['apple', '78', '970.03', '57.94', 'table', '-990']",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a10f7837-41de-4248-8d31-c08e1258910a",
+      "input": "5\n-2213\n44.69\nFIG\nTUPLE\npEaR",
+      "output": "['apple', '78', '970.03', '-2213', '44.69', 'FIG', 'TUPLE', 'pEaR']",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "d8e0521f-330b-4f8d-abd6-540ca823589f",
+      "input": "2\n38\ngrapes",
+      "output": "['apple', '78', '970.03', '38', 'grapes']",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

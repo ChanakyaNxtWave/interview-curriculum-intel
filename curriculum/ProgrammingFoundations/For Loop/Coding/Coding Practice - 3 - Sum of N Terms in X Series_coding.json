@@ -1,0 +1,75 @@
+{
+  "question_id": "21df2b35-074f-4240-bc4c-869047bb61ad",
+  "short_text": "Sum of N Terms in X Series",
+  "content": "Given two numbers `X` and `N`, write a program to print the **sum** of `N` terms in the given series.\n\n**Series:**\n\n<div style=\"background-color: #3c4257; padding: 15px; color: #f8f8f2;border-radius: 4px;margin: 10px;font-size: 18px;font-family:Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace\">\nX, XX, XXX, ... N terms\n</div>\n\n<br/>\n\n**Terms in the given series:**\n\n| Term Number | Term             | Number of X's |\n| ----------- | ---------------- | ------------- |\n| First Term  | X                | 1             |\n| Second Term | XX               | 2             |\n| Third Term  | XXX              | 3             |\n| ..          | ..               | ..            |\n| Nth Term    | XXXX... (upto N) | N             |\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `X`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing an integer that is the **sum** of the series from **First Term** to **Nth Term**.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `X = 7` and `N = 4`,\n\n- The number of terms is **4**.\n- The terms from **First Term** to **Fourth Term** in the given **7** (`X`) series are **7**, **77**, **777**, and **7777**.\n\n  **Terms in the given series:**\n\n  | Term Number | Term | Number of X's (7's) |\n  | ----------- |:----:| ------------------- |\n  | First Term  | 7    | 1                   |\n  | Second Term | 77   | 2                   |\n  | Third Term  | 777  | 3                   |\n  | Fourth Term | 7777 | 4                   |\n\n- The **sum** of the terms from **First Term** to **Fourth Term** is **8638**. (`7 + 77 + 777 + 7777 = 8638`)\n\nThe output should be **8638**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2b2a6616-8054-4e33-aecf-313516b46b1d",
+      "code_content": "x = int(input())\nn = int(input())\n\nsum_of_terms = 0\n\nfor each_number in range(1, n + 1):\n    \n    term = str(x) * each_number\n    sum_of_terms = sum_of_terms + int(term)\n\nprint(sum_of_terms)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "10fd44f3-7ed3-4202-896d-b4daafe2c2d7",
+      "input": "7\n4",
+      "output": "8638",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "2883d405-e79f-41cc-b2be-736c43434397",
+      "input": "7\n20",
+      "output": "86419753086419753070",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "2abb3ed0-8a2c-456f-94e1-997706bc53bd",
+      "input": "6\n2",
+      "output": "72",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "40092fb8-74aa-4a52-b8ef-3bf8224eb8e2",
+      "input": "1\n1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "7f181ce1-2e6e-4f2c-8eb4-90e43449b050",
+      "input": "10\n1",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "aa7b8e9c-1fd7-4a07-ab3e-dd9541e59e05",
+      "input": "0\n1",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e8aa988c-ac98-4c82-9897-e02044b180eb",
+      "input": "245\n7",
+      "output": "245490735981226471715",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "52d26bc5-7e81-4e3d-a4fd-63046263820b",
+  "unit_name": "Coding Practice - 3",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

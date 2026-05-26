@@ -1,0 +1,33 @@
+{
+  "question_id": "59b640d6-81e4-4765-813a-a7efe195a0a2",
+  "short_text": "Simple Square - 2",
+  "content": "Write a program that prints a simple square using star (\\*).\n\n---\n\n#### Explanation\n\nPrint two stars on the first line and two stars on the second line.\n\n<MultiLineNote>\nThere is a space after every star\n</MultiLineNote>",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "642fb1ec-9c07-4424-b245-f1b10a59f65e",
+      "code_content": "print(\"* \" * 2)\nprint(\"* \" * 2)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "afca3f49-5e54-44d2-940b-68ee17b94b7b",
+      "input": "",
+      "output": "* * \n* *",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

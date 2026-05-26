@@ -1,0 +1,359 @@
+{
+  "question_id": "ac230722-8652-4309-a36e-8bb32e841262",
+  "short_text": "Sum of Squares",
+  "content": "Write a program that reads two numbers `A` and `B`, and checks if **A<sup>2</sup> + B <sup>2</sup>** (sum of the square of `A` and the square of `B`) is greater than or equal to **60**.\n\nPrint **Greater than or Equal to 60** if the sum of the square of `A` and the square of `B` is greater than or equal to **60**. Otherwise, print **Less than 60**.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `A`.\nThe second line of input contains an integer representing `B`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Greater than or Equal to 60** should be printed if **A<sup>2</sup> + B <sup>2</sup>** is greater than or equal to **60**. Otherwise, **Less than 60** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `A = 10` and `B = 2`,\n\n- The square of `A` is **100** (**10<sup>2</sup>**).\n- The square of `B` is **4** (**2<sup>2</sup>**).\n- The sum of the square of `A` and the square of `B` is **104** (`100 + 4 = 104`).\n- **104** (sum of the square of `A` and the square of `B`) is greater than or equal to **60**.\n\nThe output should be **Greater than or Equal to 60**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "93fa47a1-3f02-44c5-9352-913b90f80955",
+      "code_content": "first_number = int(input())\nsecond_number = int(input())\n\nfirst_number_square = first_number ** 2\nsecond_number_square = second_number ** 2\n\nsum_of_squares = first_number_square + second_number_square\n\nif sum_of_squares >= 60:\n    print(\"Greater than or Equal to 60\")\nelse:\n    print(\"Less than 60\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "463573ba-573c-4ee0-8e55-058fd5126512",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n6\n7\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Greater than or Equal to 60",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 6` and `B = 7`,\n\n- The square of `A` is **36** (**6<sup>2</sup>**).\n\n- The square of `B` is **49** (**7<sup>2</sup>**).\n\n- The sum of the square of `A` and the square of `B` is **85** (`36 + 49 = 85`).\n\n- **85** (sum of the square of `A` and the square of `B`) is greater than or equal to **60**.\n\nThe output should be **Greater than or Equal to 60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e95ff3e2-5769-4262-8cb5-c951b790e26a",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n2\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Less than 60",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 5` and `B = 2`,\n\n- The square of `A` is **25** (**5<sup>2</sup>**).\n\n- The square of `B` is **4** (**2<sup>2</sup>**).\n\n- The sum of the square of `A` and the square of `B` is **29** (`25 + 4 = 29`).\n\n- **29** (sum of the square of `A` and the square of `B`) is  less than **60**.\n\nThe output should be **Less than 60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "f396fcb8-cbdc-43a0-a279-9a56dd0a5fdd",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n6\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Greater than or Equal to 60",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 5` and `B = 6`,\n\n- The square of `A` is **25** (**5<sup>2</sup>**).\n\n- The square of `B` is **36** (**6<sup>2</sup>**).\n\n- The sum of the square of `A` and the square of `B` is **61** (`25 + 36 = 61`).\n\n- **61** (sum of the square of `A` and the square of `B`) is greater than or equal to **60**.\n\nThe output should be **Greater than or Equal to 60**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "200c6888-9eff-4a90-ad8d-e6a84f48ced7",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "302068b1-5b40-4fed-81ce-68501684c0eb",
+              "content": "```\n12\n14\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "63a998f0-51fc-44be-b183-976e706efd50",
+              "content": "```\n1 8\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6c36c2c2-49fd-491a-8d0b-e530ed49efa6",
+              "content": "```\n5\n5\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "ee11d260-bbae-478d-b47f-43286606ff79",
+              "content": "```\n15,12\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n5\n5\n```\n\n\n**Input 2**\n\n```\n12\n14\n```\n\n\n\nThe above two inputs are valid because,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "21f78467-4d75-4fb0-99a8-85ca2d040cb1",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "9cb07c2a-af05-4670-baf5-80f76419df4b",
+              "content": "The output should be a single line containing a boolean value.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ae15d7bc-829d-441b-bbe0-73326229bd7c",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e1bee910-9ec7-4851-922d-d70b409119a0",
+              "content": "The output should be multiple lines containing strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ee0d6209-934e-4e0d-b9d6-bac15b4a4408",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output should be a single line containing a string. **Greater than or Equal to 60** should be printed if **A<sup>2</sup> + B <sup>2</sup>** is greater than or equal to **60**. Otherwise, **Less than 60** should be printed.\n\nFor example, if the given numbers are `A = 3` and `B = 6`,\n\n- The square of `A` is **9** (**3<sup>2</sup>**).\n\n- The square of `B` is **36** (**6<sup>2</sup>**).\n\n- The sum of the square of `A` and the square of `B` is **45** (`9 + 36 = 45`).\n\n- **45** (sum of the square of `A` and the square of `B`) is Less than **60**.\n\nThe output should be **Less than 60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "53fce490-1abe-4555-9624-380cee29a9b7",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n2\n4\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Less than 60",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 2` and `B = 4`,\n\n- The square of `A` is **4** (**2<sup>2</sup>**).\n\n- The square of `B` is **16** (**4<sup>2</sup>**).\n\n- The sum of the square of `A` and the square of `B` is **20** (`4 + 16 = 20`).\n\n- **20** (sum of the square of `A` and the square of `B`) is less than **60**.\n\nThe output should be **Less than 60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5e1353e0-6b70-4843-a3a7-033a0b07743f",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0d5ab947-6e9d-420a-9de0-f1ff4aa3f9c0",
+              "content": "To check if **A<sup>3</sup> + B <sup>3</sup>** is greater than or equal to **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "36901070-eae8-4f8e-aac9-5fb394e2cd2f",
+              "content": "To check if **A<sup>2</sup> + B <sup>2</sup>** is greater than or equal to **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9a58dff5-658d-443b-84bc-8c4bb394456c",
+              "content": "To check if **A<sup>2</sup> - B <sup>2</sup>**  is greater than or equal to **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a2383a58-0821-4d87-8ebd-93cc22c1ab14",
+              "content": "To check if **A<sup>2</sup> x B <sup>2</sup>** is greater than or equal to **60**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to check if **A<sup>2</sup> + B <sup>2</sup>** (sum of the square of `A` and the square of `B`) is greater than or equal to **60**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "664893ef-81fc-49fc-b591-38a896d1b363",
+          "short_text": "",
+          "content": "What is the output when A<sup>2</sup> + B <sup>2</sup> is greater than or equal to 60?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2bcc44e2-d9b3-42ba-9981-5e381e92d94b",
+              "content": "Less than 60",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "73d1dad2-c23f-4d5a-ad92-6eb99967223c",
+              "content": "Greater than or Equal to 60",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a1bab684-16af-426a-90cd-f725a52d48fd",
+              "content": "Less than or equal to 60",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ea1b09f4-5910-43dc-a697-b4f01569cbde",
+              "content": "Greater than 60",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "When **A<sup>2</sup> + B <sup>2</sup>** is greater than or equal to 60 the output is **Greater than or Equal to 60**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "70306f9e-8940-445c-ac92-4e2759ccaca1",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n2\n8\n```\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "8aba49af-7abb-4b5f-9cf7-a7dd2e60cd6d",
+              "content": "Less than or equal to 60.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b2274234-73a3-419e-8f79-bed9231f42e1",
+              "content": "Less than 60.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c8b5ae34-511c-4b0f-9911-0f86ee46594c",
+              "content": "Greater than 60.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dd4d83fa-2fdc-44b8-ae40-1944314a9fa1",
+              "content": "Greater than or Equal to 60.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given numbers are `A = 2` and `B = 8`,\n\n- The square of `A` is **4** (**2<sup>2</sup>**).\n\n- The square of `B` is **64** (**8<sup>2</sup>**).\n\n- The sum of the square of `A` and the square of `B` is **68** (`4 + 64 = 68`).\n\n- **68** (sum of the square of `A` and the square of `B`) is greater than or equal to **60**.\n\nThe output should be **Greater than or Equal to 60**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e1247632-b35c-4f5a-9776-43effdcc2ef8",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "1261d560-8861-4648-9bcd-69689f49516b",
+              "content": "The first line of input contains a string\n\nThe second line of input contains a string",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2445b011-fc76-42e3-882d-04c831f0e367",
+              "content": "The first line of input contains space-separated strings.\n\nThe second line of input contains space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3ebabdf8-bb43-4b3e-ad16-1ec081c789e3",
+              "content": "The first line of input contains an integer\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "adf166f4-23a4-46c7-8bdb-06928cc04037",
+              "content": "The first line of input contains comma separated integers.\n\nThe second line of input contains comma separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.\n\nFor example,\n\n```\n1\n9\n```",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "7af4acb3-f91b-468b-a510-2e72d9c64ce4",
+      "input": "6\n2",
+      "output": "Less than 60",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9918224d-89ce-4663-b772-c91ba4161e9a",
+      "input": "7\n3",
+      "output": "Less than 60",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "c124f527-01e4-4121-8ce4-7c9a9ec0b57b",
+      "input": "5\n6",
+      "output": "Greater than or Equal to 60",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "e6e8cdba-3f55-4912-b579-367298ab2054",
+      "input": "10\n2",
+      "output": "Greater than or Equal to 60",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "eb884a86-b284-434d-9c8a-3bab15167aee",
+      "input": "1\n3",
+      "output": "Less than 60",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fee73d05-e49c-451a-a399-68762d620bc5",
+      "input": "50\n4",
+      "output": "Greater than or Equal to 60",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

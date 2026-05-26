@@ -1,0 +1,61 @@
+{
+  "question_id": "1bb63428-f405-40db-abc3-0ea04e815884",
+  "short_text": "Filter Numbers",
+  "content": "Complete the function **`filter_negative_numbers`** that filters out all positive numbers from a list of integers. The function should use built-in function to achieve this. The function takes a list of integers as input and returns a new list containing only the negative integers.\n\n---\n\n#### Input\n\nThe **`filter_negative_numbers`** function takes one parameter: a list of integers as input.\n\n---\n\n#### Output\n\nThe **`filter_negative_numbers`**  should return a new list containing only the **negative integers** from the input list.\n\n---\n\n\n#### Explanation\n\nif the given input is\n\n```\n-10 0 5 7 -3\n```\n\nThe function receives the list **[-10, 0, 5, 7, -3]** as input. Using the filter() function:\n\n- **5** and **7** are excluded because they are positive.\n- **0** is excluded because it is neither positive nor negative.\n- **-10** and **-3** are included because they are negative integers.\n\nThe resulting list is **`[-10, -3]`**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9753ed82-8f02-43d3-b739-315f7d59adce",
+      "code_content": "def isNegative(n):\n    return n < 0\n\ndef filter_negative_numbers(numbers):\n    return list(filter(isNegative, numbers))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "05fc430a-f03b-4d16-bef1-a44423213606",
+      "input": "-10 0 5 7 -3",
+      "output": "[-10, -3]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "9222846a-75e1-42b0-bbce-5fe3438df474",
+      "input": "-100 50 -50 100 0",
+      "output": "[-100, -50]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "bea917d4-d7b3-4456-a6ea-5dce3da8d49c",
+      "input": "0",
+      "output": "[]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ea40fc2f-e121-45a2-8e9b-8d24efd4dfa9",
+      "input": "-1 -2 -3 -4",
+      "output": "[-1, -2, -3, -4]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f6842b90-79ef-4a6e-acd2-ad6cbdac6f1f",
+      "input": "0 1 2 3 4",
+      "output": "[]",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "be8d64eb-d56a-40c7-ac7d-fdd7e563e83d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

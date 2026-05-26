@@ -1,0 +1,75 @@
+{
+  "question_id": "35b6facc-8ee4-4440-9623-71edf329003e",
+  "short_text": "Digital Signal Processing System",
+  "content": "You are working on a digital signal processing system, and part of your task involves analyzing binary numbers to determine their **signal strength**. The signal strength is calculated as the number of `1`s present in the binary representation of a given number `N`. Write a program to calculate the **signal strength** for the provided input number `N`.\n\n<MultiLineNote>\n\n- The binary representation of a number is its equivalent value in base-2, consisting only of `0`s and `1`s.\n- For example, the binary representation of `5` is `101`, which contains `2` ones.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing an integer `N`.\n\n---\n\n#### Output\n\nA single line with an integer representing the **signal strength** (number of `1`s in the binary representation of `N`).\n\n---\n\n#### Explanation\n\nIf `N` is `9`, its binary representation is `1001`, which contains **2 ones**. Therefore, the output should be **2**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "353de2ca-674f-4af4-8641-66ba464c65ba",
+      "code_content": "N = int(input())\nbinary_representation = \"\"\nwhile N > 0:\n    binary_representation = str(N % 2) + binary_representation\n    N = N // 2\n\nsignal_strength = 0\nfor digit in binary_representation:\n    if digit == '1':\n        signal_strength += 1\n\nprint(signal_strength)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "26e85240-8355-4b0b-92c8-fe77000dd01d",
+      "input": "1023",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "27463314-4810-41c4-8343-5d589d762620",
+      "input": "15",
+      "output": "4",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "4528ca74-a092-4ea1-9489-1b187d4fee4c",
+      "input": "0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "92c3b5e7-c9c1-4e31-b1d4-8fc74b9a186d",
+      "input": "9",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "afbf637e-8bff-4d98-b64d-93a86f757b8a",
+      "input": "1",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bbeae65c-3d67-4f8c-be2c-89c468c97b8a",
+      "input": "5",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fe3d58a6-82bf-4254-8ec9-0de692812eba",
+      "input": "1048575",
+      "output": "20",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "40f7871e-a9ef-4bdb-a190-a4bc7fa56437",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

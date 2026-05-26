@@ -1,0 +1,54 @@
+{
+  "question_id": "ed77e40a-66c5-4c6e-848d-9ec61e26d6d0",
+  "short_text": " Element in the List",
+  "content": "For this problem, the prefilled code contains a list of 10 numbers.\n\nWrite a program that takes an integer `X` as input and checks if `X` is present in the prefilled list. Print `True` if `X` is present, otherwise print `False`.\n\n---\n\n#### Input\n\n The first line contains the value `X` to check.\n\n---\n\n#### Output\n\n- Print `True` if `X` is present in the list, otherwise `False`.\n\n---\n\n#### Explanation\n\nIf `X=30`, then the output should be:\n\n```\nTrue\n```\n\nThe element is present in the list.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ec15f0d0-88c2-4a40-99c1-38eea029a5c9",
+      "code_content": "list_values = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]\n\n# Write your code here:\nx = int(input())  \nprint(x in list_values)  \n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "93a5b8c8-965d-429b-911c-7ff8345c257b",
+      "input": "110",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ea827ab8-83ee-4128-b87c-432a439842b4",
+      "input": "100",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "eb9734f7-4221-46af-930f-a9a4e6f7a0f8",
+      "input": "30",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "fea0c83e-1b7a-4273-9ac2-1500dd8070b9",
+      "input": "60",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "62237960-515f-4451-8ca9-7bf74bbb4421",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "78784a84-70b2-46a8-b0f5-a1cb62a8baa7",
+  "topic_name": "List Methods and Tuples",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,89 @@
+{
+  "question_id": "3957dc4a-6198-4356-a967-01364fb49d34",
+  "short_text": "Number of Even Digits",
+  "content": "Given a number `N`, write a program to find the count of even digits in `N`.\n\nPrint **Count of even digits is greater than two** if there are more than two even digits in the given number. Otherwise, print **Count of even digits is not greater than two**.\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string. **Count of even digits is greater than two** should be printed if there are more than two even digits in the given number. Otherwise, **Count of even digits is not greater than two** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 2563408`,\n\n- The digits in the given number **2563408** are **2, 5, 6, 3, 4, 0** and **8**.\n- The number of even digits in the given number is **5**. (**2**5**6**3**408**).\n- There are more than **2** even digits in the given number. (`5 > 2`).\n\nThe output should be **Count of even digits is greater than two**, as the given number has more than two even digits.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "38c5c62e-f81c-4603-91f5-a5f8aa5cb38e",
+      "code_content": "n = input()\n\neven_digits_count = 0\n\nfor each_digit in n:\n    each_digit = int(each_digit)\n    if each_digit % 2 == 0:\n        even_digits_count = even_digits_count + 1\n\nif even_digits_count > 2:\n    print(\"Count of even digits is greater than two\")\nelse:\n    print(\"Count of even digits is not greater than two\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0ad79a20-6898-4850-a1a0-fb25f1601512",
+      "input": "20468",
+      "output": "Count of even digits is greater than two",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "10bdfc1b-eeed-43ab-a7c6-75da6ba1f8e0",
+      "input": "5856",
+      "output": "Count of even digits is not greater than two",
+      "is_hidden": true,
+      "weightage": 12.0
+    },
+    {
+      "test_case_id": "32db6b54-7f05-42cf-8405-2f96b856051c",
+      "input": "444444888888886570000000099999999777777",
+      "output": "Count of even digits is greater than two",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "34e8f437-df21-4858-99c6-bd1f2a0dd5dd",
+      "input": "6454",
+      "output": "Count of even digits is greater than two",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "5c8db242-9dc7-48ce-a917-ac7231bb0a4b",
+      "input": "2563408",
+      "output": "Count of even digits is greater than two",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7636872c-b3bf-42f1-964f-fc1161fa0f64",
+      "input": "22567895",
+      "output": "Count of even digits is greater than two",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b63d4a46-8258-4c6b-a211-1bfad0529711",
+      "input": "32",
+      "output": "Count of even digits is not greater than two",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c00aedab-2e6a-4a78-9896-25f4c2c22152",
+      "input": "5973",
+      "output": "Count of even digits is not greater than two",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "de8dfbbc-7a92-407b-b5cc-91cf1f7f9faf",
+      "input": "65",
+      "output": "Count of even digits is not greater than two",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

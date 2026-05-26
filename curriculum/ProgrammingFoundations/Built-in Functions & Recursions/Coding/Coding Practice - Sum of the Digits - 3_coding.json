@@ -1,0 +1,61 @@
+{
+  "question_id": "83159fe0-401a-4def-91fa-fd066f98075e",
+  "short_text": "Sum of the Digits - 3",
+  "content": "Write a program to recursively compute the sum of all the digits in the given number N.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the sum of all the digits in the number.<hr><b>Explanation</b><br/><br/>For example, if the given N is 255, your code should print the sum of all the digits. So the output should be 12.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "7a945fe4-524d-4197-964c-530ad50a7624",
+      "code_content": "def sum_of_the_digits(number):\n    if number < 10:  # Base case\n        return number\n    else:\n        return (number % 10) + sum_of_the_digits(number//10)  # Recursion\n\n\nnumber = int(input())\nresult = sum_of_the_digits(number)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "007b4383-e66c-4153-af08-6915ed868b53",
+      "input": "892",
+      "output": "19\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "20842a44-f82d-4010-a64a-403d70675ff2",
+      "input": "20",
+      "output": "2\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "8ad81bdd-d611-44a0-a0f9-ce1891ea5284",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ea5e5913-0b7f-40c9-8eb5-05c32e777a81",
+      "input": "255",
+      "output": "12\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "fe3b274b-bf49-4411-bdbb-384fbf82f0ac",
+      "input": "111",
+      "output": "3\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

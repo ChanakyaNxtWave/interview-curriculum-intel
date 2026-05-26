@@ -1,0 +1,61 @@
+{
+  "question_id": "0533b29e-d5ac-4810-a9da-7934978a6179",
+  "short_text": "Vegan restaurant filter",
+  "content": "Imagine you are a restaurant manager who wants to improve your menu by offering **vegan-food** options. You have a list of restaurants, each with its own details, including whether they are **vegan-food**, their **price rating**, and how far they are from a specific location. Your task is to filter this list to find only those restaurants that meet your criteria: they must be vegan-food, have a price rating within your budget, and be within a certain distance from your restaurant.\n\n\nWrite a program that reads the input for the number of restaurants and their details. Then, filter out the restaurants that do not meet the following conditions:\n\n- The restaurant must be **vegan-food**.\n- The price rating must be less than or equal to a specified **budget**.\n- The distance must be less than or equal to a specified **maximum distance**.\n\n\n<MultiLineNote>\n- A restaurant is considered vegan-food if it has a value of 1.\n- The price rating is an integer where lower values indicate cheaper prices.\n- The distance is given in kilometers and is a floating-point number.\n</MultiLineNote>\n\n\n---\n\n#### Input\n\n- The first line contains an **integer** `N`, representing the number of restaurants.\n\n- The next `N` lines each contain **three space seperated values**: an integer indicating if the restaurant is **vegan-food (0 or 1)**, an integer for the **price rating (1 to 5)**, and a float for the **distance in kilometers**.\n\n- The last two lines contain **two values**: an integer for the **maximum price** rating and a float for the **maximum distance**.\n\n---\n\n#### Output:\n\nA single line with the count of restaurants that meet all the criteria.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n3\n1 3 2.5\n0 2 1.0\n1 5 4.0\n4\n3.0\n```\n\nIf you have 3 restaurants with details as follows:\n\n- **Vegan-friendly**, Price rating: **3**, Distance: **2.5**\n- **Not vegan-food**, Price rating: **2**, Distance: **1.0**\n- **Vegan-friendly**, Price rating: **5**, Distance: **4.0**\n\n\nAnd if your budget is 4 for price rating and maximum distance is 3.0 km, then the output should be **1** because only the first restaurant meets all the criteria.\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "11794ced-ce35-46e4-bfce-f5b49cd4949f",
+      "code_content": "N = int(input())\n\nrestaurants = []\nfor i in range(N):\n    vegan_food, price_rating, distance = map(str, input().split())\n    restaurants.append((int(vegan_food), int(price_rating), float(distance)))\n\nmax_price_rating = int(input())\nmax_distance = float(input())\n\ndef is_valid_restaurant(restaurant):\n    vegan_food, price_rating, distance = restaurant\n    return vegan_food == 1 and price_rating <= max_price_rating and distance <= max_distance\n\nvalid_restaurant_count = len(list(filter(is_valid_restaurant, restaurants)))\n\nprint(valid_restaurant_count)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "3a206942-c872-48b7-9319-bd60f25ce41d",
+      "input": "3\n1 3 2.5\n0 2 1.0\n1 5 4.0\n4\n3.0",
+      "output": "1",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "86e84d68-d6b7-4792-9e96-f846a7c8be07",
+      "input": "2\n1 1 0.5\n1 2 3.5\n2\n2.5",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a2dd6917-1924-462f-889b-6eebcbe4b173",
+      "input": "5\n1 2 1.5\n0 3 2.0\n1 4 3.0\n1 1 0.5\n0 5 4.0\n3\n2.5",
+      "output": "2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "a63c1f55-47dd-4f5b-873b-f11a4a94407f",
+      "input": "6\n0 1 1.0\n1 2 2.0\n1 5 5.0\n1 3 2.5\n0 4 3.0\n1 2 1.5\n3\n3.0",
+      "output": "3",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "ac77d3e4-3c97-4164-9587-ef87680a89c8",
+      "input": "4\n1 5 2.0\n1 3 4.0\n0 2 1.0\n1 4 3.5\n4\n3.0",
+      "output": "0",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7f68984f-446c-43bc-a2f6-b66d1992c341",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "99024b67-757c-4535-a3b5-334e1a81adfc",
+  "topic_name": "Scopes and Python Libraries",
+  "course_title": "Programming Foundations"
+}

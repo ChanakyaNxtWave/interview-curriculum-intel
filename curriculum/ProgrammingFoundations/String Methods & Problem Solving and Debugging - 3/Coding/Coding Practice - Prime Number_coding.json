@@ -1,0 +1,61 @@
+{
+  "question_id": "bd8479c0-f256-4fbb-9495-9b1f2fb13320",
+  "short_text": "Prime Number",
+  "content": "Write a program to check whether the given number is a Prime number or not.\r\n\r\n<MultiLineNote>\r\nA prime number is a number that has only two factors. The two factors of a prime number are 1 and itself. \r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string.`Prime Number` should be printed if the given number is a prime number. Otherwise `Not a Prime Number` should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is 5,\r\n\r\n- The output should be `Prime Number`, as it is divisible only by itself and one.\r\n\r\nFor example, if the given number is 6,\r\n\r\n- The output should be `Not a Prime Number`, as it is divisible by 1, 2, 3, and 6.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4564db5b-eff9-4be8-aba6-a9a946ac4caf",
+      "code_content": "n = int(input())\n\nif n > 1:\n    factors = 0\nelse:\n    factors = 1\n\nfor i in range(2, n):\n    if (n % i) == 0:\n        factors = factors + 1\n\nif factors == 0:\n    print(\"Prime Number\")\nelse:\n    print(\"Not a Prime Number\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0ad76dab-d836-4f8b-bc18-7249741868f2",
+      "input": "23",
+      "output": "Prime Number\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "1d9acc06-0923-4633-a933-34fd106d7036",
+      "input": "73",
+      "output": "Prime Number\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "3345a618-82b7-4bdb-a13a-86c83c1642be",
+      "input": "6",
+      "output": "Not a Prime Number\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "69d4d18a-25e8-45e5-a4b9-980cf70837f1",
+      "input": "5",
+      "output": "Prime Number\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "781334ab-ac7e-4bc7-b713-ea394a4fb429",
+      "input": "99",
+      "output": "Not a Prime Number\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

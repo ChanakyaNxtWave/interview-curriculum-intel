@@ -1,0 +1,75 @@
+{
+  "question_id": "8abc00b5-8556-4921-adda-3b8e61cfa512",
+  "short_text": "The MaxWidth",
+  "content": "You are designing a digital billboard system for a shopping mall. The billboard displays promotional messages in a visually appealing way. Each message needs to be formatted to fit within a specified width so that all lines align neatly. The words in each line must be evenly spaced, and any extra spaces should be distributed as specified.\n\n<MultiLineNote>\n\n- Each message consists of words made up of lowercase and uppercase English letters.\n- The maximum number of characters in a line is given as `maxWidth`.\n- Words in a line must be separated by at least one space.\n- Extra spaces should be distributed as evenly as possible. If extra spaces cannot be evenly distributed, assign them to the left-most words in the line.\n- The last line should be left-aligned, and no extra spaces should be added between words.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\n- A string consists of space separated strings enclosed with quotes.\n- An integer `maxWidth` representing the maximum number of characters allowed per line.\n\n---\n\n#### Output\n\nThe output is a list of strings, where each string represents a fully justified line of exactly maxWidth characters (including spaces). The last line is left-aligned with no extra spaces between words.\n\n---\n\n#### Explanation\n\nIf the input is `\"Shop now and get amazing discounts on electronics\"` and `maxWidth = 20`,\n\nthe output should be:\n\n```\n\"Shop  now  and  get\namazing discounts on\nelectronics\"\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "88eab654-11b0-4015-bfd6-1be43a2d34ee",
+      "code_content": "words = input().split()\nmaxWidth = int(input())\n\nlines = []\ncurrent_line = []\ncurrent_width = 0\n\nfor word in words:\n    if current_width + len(word) + len(current_line) > maxWidth:\n        lines += [current_line]\n        current_line = []\n        current_width = 0\n    current_line += [word]\n    current_width += len(word)\n\nif len(current_line) > 0:\n    lines += [current_line]\n\nresult = []\n\nfor i in range(len(lines)):\n    line = lines[i]\n    total_length = 0\n    for word in line:\n        total_length += len(word)\n\n    spaces_needed = maxWidth - total_length\n\n    if i == len(lines) - 1:\n        formatted_line = \"\"\n        for j in range(len(line)):\n            if j > 0:\n                formatted_line += \" \"\n            formatted_line += line[j]\n        while len(formatted_line) < maxWidth:\n            formatted_line += \" \"\n        result += [formatted_line]\n    else:\n        if len(line) == 1:\n            formatted_line = line[0]\n            while len(formatted_line) < maxWidth:\n                formatted_line += \" \"\n            result += [formatted_line]\n        else:\n            spaces_between_words = spaces_needed // (len(line) - 1)\n            extra_spaces = spaces_needed % (len(line) - 1)\n            formatted_line = \"\"\n            for j in range(len(line) - 1):\n                formatted_line += line[j]\n                if j < extra_spaces:\n                    formatted_line += \" \" * (spaces_between_words + 1)\n                else:\n                    formatted_line += \" \" * spaces_between_words\n            formatted_line += line[-1]\n            result += [formatted_line]\n\nfor formatted_line in result:\n    print(formatted_line)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1c1bafa9-e4a6-4836-ac57-7ed3ee7f1e4e",
+      "input": "\"Exclusive deals on home appliances now live\"\n35",
+      "output": "\"Exclusive deals on home appliances\nnow live\"",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "30ef60f9-3ea7-4212-952f-0de6d1dbd0c5",
+      "input": "\"Flash deals on your favorite brands\"\n15",
+      "output": "\"Flash deals on\nyour   favorite\nbrands\"",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "66e8d736-e9df-4d37-8520-45874a2e2cb8",
+      "input": "\"Winter sale is here! Avail flat 50% discount\"\n25",
+      "output": "\"Winter   sale  is  here!\nAvail flat 50% discount\"",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "837ae11f-2abb-48cb-aaf7-ed16c1d2e403",
+      "input": "\"Big sale starts now!\"\n5",
+      "output": "\"Big \nsale \nstarts\nnow!\"",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "852d496e-1211-4e55-9b7e-26ec15df7b4c",
+      "input": "\"Shop now and get amazing discounts on electronics\"\n20",
+      "output": "\"Shop  now  and  get\namazing discounts on\nelectronics\"",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "924fdb76-f92d-476d-b3de-fcc9fc94c1d9",
+      "input": "\"Buy one get one free on selected items\"\n30",
+      "output": "\"Buy   one  get  one  free  on\nselected items\"",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "fae8c4df-f09a-48fc-9fef-01a5fb94fa09",
+      "input": "\"Amazing offers on electronics and accessories\"\n40",
+      "output": "\"Amazing   offers   on  electronics  and\naccessories\"",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f8f8d3e6-cb14-4001-8db6-f7641e67532d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

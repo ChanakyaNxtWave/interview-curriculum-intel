@@ -1,0 +1,75 @@
+{
+  "question_id": "10865336-765b-45f1-b6ea-dea2a2ebb41b",
+  "short_text": "Split Numbers",
+  "content": "Given space-separated numbers, write a program to print a list containing the given numbers\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated integers.\n\n---\n\n#### Output\n\nThe output should be a single line containing a list of given integers.\n\n---\n\n#### Explanation\n\nFor example, if the given space-separated numbers are `10 20 30 40 50`,\n\nThe output should be,\n\n```\n[10, 20, 30, 40, 50]\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "2c6eb386-9759-4722-9472-dd005ad3b679",
+      "code_content": "numbers = input()\n\nnumbers_list = numbers.split()\n\nresultant_list = []\n\nfor number in numbers_list:\n    number = int(number)\n\n    resultant_list += [number]\n\nprint(resultant_list)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1566031e-86c3-405e-b7ce-d66cf71a0d32",
+      "input": "12 13 22 33 14 15 44 55",
+      "output": "[12, 13, 22, 33, 14, 15, 44, 55]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "24d18cd4-3592-40ba-9707-723ccd97ef29",
+      "input": "10 20 30 40 50",
+      "output": "[10, 20, 30, 40, 50]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5da3e389-ef1f-4488-914e-4052ff38d99f",
+      "input": "1 2 3 4 5 6 7 8 11 12 10",
+      "output": "[1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 10]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9c73b690-b1cc-488b-bc04-0daf713a0dd0",
+      "input": "-987 -456 -3261 -1",
+      "output": "[-987, -456, -3261, -1]",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "cb80affd-4345-4b67-8840-c3d7c4a5a1bd",
+      "input": "751 -94357 16327 14725 -3 -4785 -452",
+      "output": "[751, -94357, 16327, 14725, -3, -4785, -452]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "de8ecaa4-b2ce-4768-a191-8b8c94c17090",
+      "input": "2084 -4751 95 -1 157 4789",
+      "output": "[2084, -4751, 95, -1, 157, 4789]",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fbb28d6f-2b3b-442a-8b70-4a26e26a474d",
+      "input": "005 950 312",
+      "output": "[5, 950, 312]",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "72b88a6f-9a34-462e-a74c-147f1433c485",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "404af21f-b49e-4a28-a221-3c278e819f6e",
+  "topic_name": "Lists - 2",
+  "course_title": "Programming Foundations"
+}

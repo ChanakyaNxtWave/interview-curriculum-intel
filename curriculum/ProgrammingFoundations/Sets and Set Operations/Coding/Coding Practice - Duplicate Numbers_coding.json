@@ -1,0 +1,61 @@
+{
+  "question_id": "5a3ceae1-c122-4dea-b896-e97c500b8ada",
+  "short_text": "Duplicate Numbers",
+  "content": "In a bustling city, a group of friends decided to organize a treasure hunt. Each friend was given a unique number to identify them during the event. However, some friends accidentally received the same number due to a mix-up. To ensure everyone is accounted for, they need to find out which numbers were assigned to more than one friend. Your task is to help them identify and print the numbers that appear more than once in the list of assigned numbers. If no numbers are repeated, print **No duplicates.**\n\nWrite a program that reads a list of integers representing the assigned numbers and prints the numbers that are repeated in the list, maintaining their first occurrence order. If there are no duplicates, output **No duplicates**.\n\n\n---\n\n#### Input\n\nThe first line contains integers separated by spaces representing assigned numbers.\n\n---\n\n#### Output\n\nThe output should be integers separated by spaces representing assigned numbers in the order of their first appearance. If there are no duplicates, print **`No duplicates`**.\n\n---\n\n#### Explanation\n\nFor example If the input is \n\n```\n4 1 2 1 3 2 4 4\n```\n\nThe task is to identify the numbers that appear more than once in the list, while maintaining the order of their first occurrence.\n\n- **1** : Appears more than once, so it's included.\n- **2** : Appears more than once, so it's included.\n- **4** : Appears more than once, so it's included.\n- **3** : Appears only once, so it is not included.\n\nThe resulting duplicates, in the order of their first appearance, is:\n\n```\n1 2 4\n```\n\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "60784482-cbc6-4418-b965-4f08c83aa5c0",
+      "code_content": "assigned_numbers = input().split()\n\nseen = set()\nduplicates = set()\nordered_duplicates = []\n\nfor number in assigned_numbers:\n    if number in seen:\n        if number not in duplicates:\n            ordered_duplicates.append(number)\n            duplicates.add(number)\n    else:\n        seen.add(number)\n\nif ordered_duplicates:\n    print(\" \".join(ordered_duplicates))\nelse:\n    print(\"No duplicates.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "03480b5a-90a6-4c71-a51f-d5fb62d78db5",
+      "input": "4 1 2 1 3 2 4 4",
+      "output": "1 2 4",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "138f3f8d-f6d5-4c16-929d-5c023956f876",
+      "input": "3 5 4 8 8",
+      "output": "8",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "23396bde-2575-4246-a298-c47752fba030",
+      "input": "1 2 3",
+      "output": "No duplicates.",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "cb4def85-618a-48c9-80dc-c76f3bbb057b",
+      "input": "7 7 7 5",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "d45aa475-34b3-493a-a427-773c9ff7b114",
+      "input": "1 2 3 5 4 5 5 5",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e5e0e9f7-bf83-4d89-b157-6b712762a6e6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

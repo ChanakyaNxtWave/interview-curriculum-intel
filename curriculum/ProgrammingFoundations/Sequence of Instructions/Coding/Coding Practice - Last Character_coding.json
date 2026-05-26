@@ -1,0 +1,61 @@
+{
+  "question_id": "495a0940-ceae-415a-981a-b0015ffbd14a",
+  "short_text": "Last Character",
+  "content": "Write a program which prints the last character of a given word.<hr><b>Input</b><br/><br/>The input will be a single line containing a word.<hr><b>Output</b><br/><br/>The output should be a single line containing the last character of the given word.<hr><b>Explanation</b><br/><br/>For example, if the given input word is &quot;January&quot;, your code should print the last character &quot;y&quot;.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "494ba17f-fbd6-4605-92f6-9608178b74e7",
+      "code_content": "word = input()\nlength_of_the_word = len(word)\nlast_index = length_of_the_word - 1\ncharacter_at_last_index = word[last_index]\nprint(character_at_last_index)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "30170ffd-7ce4-4884-9da1-9ae709f414a5",
+      "input": "Humming Bird",
+      "output": "d\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3b4e4b23-ff2d-4eec-b1fd-cb3213803af2",
+      "input": "Classroom",
+      "output": "m\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4e2045da-8583-4655-925d-084a0fc04952",
+      "input": "January",
+      "output": "y\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b3bb8560-1f6a-4646-986f-ef1ecc53c847",
+      "input": "Music",
+      "output": "c\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f3763652-7f32-400e-87c0-f3d6b63ae25e",
+      "input": "Technologies",
+      "output": "s\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "8d0366c8-a110-49be-bb38-bb2ffebd0dbe",
+  "short_text": "Perimeter of Square",
+  "content": "For this problem, the prefilled code will contain a function. Write a program that the given function will return the perimeter of the square.<br/>The sum of lengths of the four sides of a square is the perimeter of the square.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the perimeter of the square.<hr><b>Explanation</b><br/><br/>For example, if the given number is 3, since the square has the same length of sides, the perimeter of the square is the sum of the four sides&#x27; length. So the output should be 12.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "8b4291f7-755b-4491-a848-b3b7d7c70cc8",
+      "code_content": "def perimeter_of_square(arg_1):\n    perimeter = arg_1*4\n    return perimeter\n\n\nside = int(input())\nresult = perimeter_of_square(side)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "392e447a-b5d6-4b24-89b9-87e0ddf5e1c5",
+      "input": "5",
+      "output": "20\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "561e7eea-47fd-42c1-9f87-9bc531ee0b94",
+      "input": "17",
+      "output": "68\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6986ab75-e025-4e12-82d9-2f113cd0bcc4",
+      "input": "3",
+      "output": "12\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8b7bd300-04e7-4b74-b07f-6b70dcc7bff9",
+      "input": "100",
+      "output": "400\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e2d817c0-7553-481b-9b10-9b4e57fb321b",
+      "input": "25",
+      "output": "100\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

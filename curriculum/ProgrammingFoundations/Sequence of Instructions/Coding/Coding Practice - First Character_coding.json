@@ -1,0 +1,61 @@
+{
+  "question_id": "2e72841c-eea4-454b-9a5b-6280a6f424b6",
+  "short_text": "First Character",
+  "content": "Write a program that reads a word and prints the first character of the word.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that is the first character of the word.\n\n---\n\n#### Explanation\n\nFor example, if the given word is **Python**. The output should be **P** as it is the first character of the given word.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6152bd30-9cd3-4fe1-b239-019c05fec927",
+      "code_content": "word = input()\n\nfirst_character = word[0]\n\nprint(first_character)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "00389c87-3c8c-46bb-85f9-71714c1687de",
+      "input": "Python",
+      "output": "P",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5b214097-531c-400d-b109-d3cf4289691e",
+      "input": "H0P3",
+      "output": "H",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c25a9f32-5ecb-4b31-8d9e-ed5012f78f22",
+      "input": "empower",
+      "output": "e",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d2ebcfab-6cb2-4dd3-90bb-01b931fc376c",
+      "input": "1a2b3c",
+      "output": "1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f898536d-6aaa-4806-b368-717eed25bcd7",
+      "input": "a",
+      "output": "a",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

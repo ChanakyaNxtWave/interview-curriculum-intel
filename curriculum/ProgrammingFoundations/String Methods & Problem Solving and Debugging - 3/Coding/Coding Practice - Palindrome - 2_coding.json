@@ -1,0 +1,82 @@
+{
+  "question_id": "1073d9dc-ae54-425b-8479-c11860dd95be",
+  "short_text": "Palindrome - 2",
+  "content": "You are given a string, write a program to find whether the string is palindrome or not.\n\n`Note:` Treat uppercase letters and lowercase letters as same when comparing letters.\n\n---\n\n#### Input\n\nThe first line of input is a string.\n\n---\n\n#### Output\n\nThe output should be the string `True` or `False`.\n\n---\n\n#### Explanation\n\nIn the given example, the string `Madam` is a palindrome as we are treating `M` and `m` as equal. So, the output should be `True`.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ca7e4e22-30c6-4f3c-a21b-2b58bf07c9c9",
+      "code_content": "string = input()\nstring = string.lower()\n\n\nreverse_string = \"\"\nfor char in string:\n    reverse_string = char + reverse_string\n\nif string == reverse_string:\n    print(\"True\")\nelse:\n    print(\"False\")\n\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "027ed054-246f-498b-a851-977050ccaa6c",
+      "input": "Mam",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "2bc13510-5113-4044-99ff-9d39e4239074",
+      "input": "Rotator",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "32303cc0-926a-4605-98d9-3d2556a050fc",
+      "input": "Racecars",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "458faee3-e48c-4942-a10d-fd38c3f4c78e",
+      "input": "Anna",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "49e32e79-902d-46a2-bea8-97c7a6ac66d5",
+      "input": "Treat",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "5ebd3571-61b5-4fcd-afb0-fbc815cc54c1",
+      "input": "Tenet",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "88856f49-a5df-494d-8c53-66eab8a0cdc2",
+      "input": "Madam",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "ec8a711f-51ec-40f2-9b28-15e6addb8fc3",
+      "input": "Topspot",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

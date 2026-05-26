@@ -1,0 +1,68 @@
+{
+  "question_id": "fe946d0b-531a-4333-949a-437029746267",
+  "short_text": "Sum of Digits",
+  "content": "Write a program to print the sum of all the digits in the given number.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the sum of the digits in the given number.<hr><b>Explanation</b><br/><br/>For example, if the given number is 151893, your code should print the sum of all the digits in the given number (1 + 5 + 1 + 8 + 9 + 3), which is 27.<br/><br/>For example, if the given number is 692, your code should print the sum of all the digits in the given number (6 + 9 + 2 ), which is 17.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "c9245a64-32ea-4ced-b2ad-d8dd81a4e086",
+      "code_content": "number = input()\n\ntotal = 0\nfor digit in number:\n    total = total + int(digit)\n\nprint(total)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "05e305c4-3118-4e6f-a5c2-3dac8a4f2091",
+      "input": "66670189",
+      "output": "43\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "449464c2-9127-430e-b9d2-0d35c0ab3627",
+      "input": "692",
+      "output": "17\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "697ab889-345d-4449-aca4-ab598844a73c",
+      "input": "100000",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "744fe430-48aa-411e-b105-86aada561bfb",
+      "input": "0",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9427c961-74a7-4d8a-b1fe-ea6bb379e12a",
+      "input": "151893",
+      "output": "27\n",
+      "is_hidden": false,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "b4732f83-f4ff-4aa7-a669-9b768a49f18d",
+      "input": "3794",
+      "output": "23\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

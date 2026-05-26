@@ -1,0 +1,398 @@
+{
+  "question_id": "ac3de62a-4f34-49af-a5bd-7718d4ad9c2f",
+  "short_text": "Special Eleven",
+  "content": "Write a program that reads a number `N` and checks if the remainder is **0** or **1** when `N` is divided by **11**.\r\n\r\nPrint **Special Eleven** if the remainder is **0** or **1** when `N` is divided by **11**. Otherwise, print **Normal Number**.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing a string. **Special Eleven** should be printed if the remainder is **0** or **1** when `N` is divided by **11**. Otherwise, **Normal Number** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 22`,\r\n\r\nThe output should be **Special Eleven** as the remainder is **0** when `N` is divided by **11**.\r\n\r\n<br/>\r\n\r\nFor example, if the given number is `N = 23`,\r\n\r\nThe output should be **Special Eleven** as the remainder is **1** when `N` is divided by **11**.\r\n\r\n<br/>\r\n\r\nFor example, if the given number is `N = 15`,\r\n\r\n- The remainder is **4** when `N` is divided by **11**. (**4** is **not** equal to **0** or **1**)\r\n\r\nThe output should be **Normal Number** as the remainder is **4** (**not** equal to **0** or **1**) when `N` is divided by **11**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "0801a133-3e73-4925-b5c1-6ff852ee3c7c",
+      "code_content": "number = int(input())\n\nis_multiple_of_11 = ((number % 11) == 0)\nis_one_more_than_multiple_of_11 = ((number % 11) == 1)\n\nif is_multiple_of_11 or is_one_more_than_multiple_of_11:\n    print(\"Special Eleven\")\nelse:\n    print(\"Normal Number\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "06abcd16-bbfc-499d-91d8-0477422ae720",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\n67\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Special Eleven",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 67`,\n\nThe output should be **Special Eleven** as the remainder is **1** when `N` is divided by **11**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "2f40b8df-bb23-47cd-a55a-8322c1e949b5",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\n33\n```",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Special Eleven",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 33`,\n\nThe output should be **Special Eleven** as the remainder is **0** when `N` is divided by **11**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7cf7c519-0374-4e63-a3e8-57195c90d955",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n\n48\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "Normal Number",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 48`,\n\n- The remainder is **4** when `N` is divided by **11**. (**4** is not equal to **0** or **1**)\n\nThe output should be **Normal Number** as the remainder is **4** (**not** equal to **0** or **1**) when `N` is divided by **11**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "4c8d892a-57c2-4961-9722-8eb02229cbc8",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0b97e5ab-5729-4231-8442-41b3ba4b6c81",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "2be6dd73-4508-471b-844b-93f8b1d16de9",
+              "content": "The output should be a single line containing comma-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "4be7ea7a-3331-44ff-85a9-a424ce7b6b0f",
+              "content": "The output should be a single line containing space-separated strings.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a4b98983-e5c4-4095-bc13-14f02c07e5a2",
+              "content": "The output should be a single line containing an ineteger.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output of the program should be a single line containing a string. \n\n- **Special Eleven** should be printed if the remainder is `0 or 1` when `N` is divided by `11`.\n\n- **Normal Number** should be printed if the remainder is not equal to `0 or 1` when `N` is divided by `11`.\n\nFor example,\n\nIf the given number is `N = 55`,\n\nThe output should be **Special Eleven** as the remainder is **0** when `N` is divided by **11**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "51810a32-3879-49ee-84b4-66a34a710e79",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "abf9db5c-dce0-4203-8464-f60ead7955e9",
+              "content": "10.5",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bb2e0658-cc29-4da3-b54f-4132919321e5",
+              "content": "201",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "dfcbab01-a9f5-4506-b5f1-f7f39ba66cb4",
+              "content": "12\n64",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fa0cc5d3-80a8-4498-bdf9-dc791997e315",
+              "content": "85",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n201\n```\n\n**Input 2**\n\n```\n85\n```\n\nThe above two inputs are valid because, they consist of a single line containing an integer.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "5dc6cb57-62ae-4d90-9376-437ece4b5272",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "8e6d66e7-590a-4b21-9112-18688c76cfd8",
+              "content": "The input will be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a3ce4b37-c7ad-43f1-a83a-d3a2565c0a95",
+              "content": "The input will be a single line containing a string",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d535d03a-bcc3-4bdd-ac65-b3039aae6b18",
+              "content": "The input will be a single line containing comma separated integers.\n",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e132a399-eb77-42c6-adc4-e50cc3b1e61c",
+              "content": "The input will be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be a single line containing an integer representing the number `N`.\n\nFor example,\n\n```\n25\n```\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6541c937-49d1-4e4e-842c-b6bf31afd714",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n\n103\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "78f553d0-42f6-4e4f-a41a-12977529d1fa",
+              "content": "Special Eleven",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8d5000a9-3054-4a14-bc7a-1f548db2aadc",
+              "content": "Normal Number",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a9c4a37b-7de5-4ba5-aa40-2dc83c1500ad",
+              "content": "Special 11",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "bb654f1e-3da3-4fff-85ce-4fc67498690c",
+              "content": "Not a Special Eleven",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given number is `N = 103`,\n\n- The remainder is **3** when `N` is divided by **11**. (**3** is not equal to **0** or **1**)\n\n- The output should be **Normal Number** as the remainder is **3** (**not** equal to **0** or **1**) when `N` is divided by **11**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "78342a19-a2e7-4bb7-ac5e-935b1ad58423",
+          "short_text": "",
+          "content": "What is the remainder when 222 is divided by 11?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "67131c25-cfd6-405c-b485-fd88bc5d6d66",
+              "content": "1",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "733d3f61-0152-4daa-ac4e-932ae914cb70",
+              "content": "4",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "817311f5-8c5b-48ab-8bfa-29b33810507f",
+              "content": "0",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "ddacc6b9-c4d6-453f-bd64-8c51f5a36787",
+              "content": "2",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "When the number **222** is divided by `11`, the remainder is **2**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "c04b6a8c-8e74-427e-9859-26e0ade073ce",
+          "short_text": "",
+          "content": "Considering the given description, what is the definition of Special Eleven?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "42810e62-08ad-4c15-8c1e-fcfb2ff62e3f",
+              "content": "A number that is divisible by both 1 and 11.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "85a7f24d-fa8b-4bce-88f1-0af6768a75d2",
+              "content": "A number that has a remainder of 0 or 2 when divided by 11.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "88b8f08f-75c7-4936-9b1f-8c45bd3a8d3d",
+              "content": "A number that has a remainder of 0 or 1 when divided by 11.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "b316c75b-e910-45af-a707-25e75cb946f1",
+              "content": "A number that can be divided by 11 without a remainder.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Considering the given description, when the given number `N` is divided by `11`, if the remainder is `0 or 1`, then it is considered to be a Special Eleven.\n\nFor example,\n\nIf the given number is `N = 89`,\n\n- The remainder is `1` when `N` is divided by `11`.\n\nThen `N` is considered to be a **Special Eleven**.\n",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "ef641238-2eb4-4bdd-bc44-ad7d1a59457f",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "277bde42-326c-4712-93a3-5bc3b5bb4343",
+              "content": "To check if the remainder is 0 or 1 when N is divided by 111.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "85e99dd8-c6fe-4b85-9ce5-463e1e2edd87",
+              "content": "To check if the remainder is `0 or 1` when `N` is divided by `11`.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "dded1b14-92cc-4df6-b090-93427f094749",
+              "content": "To check if the remainder is `1 or 2` when `N` is divided by `11`.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f748a85d-8df5-4356-a959-d9dfe64a7fb8",
+              "content": "To check if the quotient is 0 or 1 when N is divided by 11.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read a number `N` and check,\n\n- If the remainder is `0 or 1` when `N` is divided by `11`.\n\n- If the remainder is `0 or 1`, print **Special Eleven**. If not, print the **Normal Number**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "0b37ebe6-39df-4a6b-afe7-08d877be8e74",
+      "input": "15",
+      "output": "Normal Number\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "10a380c2-0806-4f0d-85ef-4e7ba4e24259",
+      "input": "56",
+      "output": "Special Eleven\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "24401a33-152c-465e-bb8a-f59ac57fd979",
+      "input": "893",
+      "output": "Normal Number\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "af727e7b-8b2b-49d1-a69f-688c22acf7a6",
+      "input": "100",
+      "output": "Special Eleven\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "cdfc6873-3caa-4163-8037-5ab1d443bc0f",
+      "input": "99",
+      "output": "Special Eleven\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "cf6014b4-6ff5-4800-9fb2-991a0c41b048",
+      "input": "1692",
+      "output": "Normal Number\n",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ec6d6268-048f-408f-ad00-758306b38769",
+      "input": "23",
+      "output": "Special Eleven\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "fc5159a9-a7ed-4566-8e14-dbbfdf8db875",
+      "input": "22",
+      "output": "Special Eleven\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

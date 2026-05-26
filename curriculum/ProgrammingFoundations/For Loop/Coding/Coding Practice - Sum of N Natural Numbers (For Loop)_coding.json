@@ -1,0 +1,61 @@
+{
+  "question_id": "1cb6fcad-9462-4da4-8631-3520d57dc32f",
+  "short_text": "Sum of N Natural Numbers (For Loop)",
+  "content": "Write a program that reads a number `N` and prints the sum of Natural Numbers from **1** to `N`.\r\n\r\n<MultiLineNote>\r\nUse the **For** loop to iterate over the range of numbers.\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer that is the sum of Natural Numbers from **1** to `N`.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 6`,\r\n\r\n- The Natural Numbers from **1** to **6** are **1**, **2**, **3**, **4**, **5**, and **6**.\r\n- The sum of **6** Natural Numbers is **21**. (`1 + 2 + 3 + 4 + 5 + 6 = 21`)\r\n\r\n|Number | Previous Sum | Previous Sum + Number = Current Sum |\r\n|---|---|---|\r\n|1 | 0 | 0 + 1 = 1 |\r\n|2 | 1 | 1 + 2 = 3|\r\n|3 | 3 | 3 + 3 = 6|\r\n|4 | 6 | 6 + 4 = 10|\r\n|5 | 10| 10 + 5 = 15|\r\n|6 | 15 | 15 + 6 = 21|\r\n\r\nThe output should be **21**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f3193234-ee93-4134-ade5-d15cd2e58253",
+      "code_content": "number = int(input())\n\ntotal = 0\nfor counter in range(1, number + 1):\n    total = total + counter\n\nprint(total)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2fc544e7-4685-4812-ace5-cc202e488735",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "451a1e7b-8a94-4164-bf47-6ac896c985ac",
+      "input": "3",
+      "output": "6\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "5d101b32-0c46-4c10-8484-faead3c99276",
+      "input": "3258",
+      "output": "5308911\n",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "64beb2b2-eb02-4666-b64c-27fb52e2ef7c",
+      "input": "94682",
+      "output": "4482387903\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "d2d9cc7b-dee0-4b0f-8504-49f67c1b74ab",
+      "input": "6",
+      "output": "21\n",
+      "is_hidden": false,
+      "weightage": 0.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ad396947-a6fc-4dc5-b3ec-221c6a4e9d0d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

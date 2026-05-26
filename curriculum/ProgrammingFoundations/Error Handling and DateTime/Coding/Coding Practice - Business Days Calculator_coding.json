@@ -1,0 +1,61 @@
+{
+  "question_id": "e6f30c29-d8ae-4f3c-b76c-92303cf18485",
+  "short_text": "Business Days Calculator",
+  "content": "You have to calculate the number of business days between two dates for project planning purposes. This tool will help you understand how many working days are available for tasks and deadlines.\n\nWrite a program that takes two dates as input and calculates the number of business days (Monday to Friday) between them.\n\n---\n\n#### Input\n\n- The first line contains the start date in the format **`YYYY-MM-DD`**.\n- The second line contains the end date in the format **`YYYY-MM-DD`**.\n\n---\n\n#### Output\n\nThe output should display the number of business days between the two dates in the following format:\n\n```\nNumber of business days between [Start Date] and [End Date]: X days.\n```\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n2025-11-01\n2025-11-30\n```\n\nThe expected output is\n\n```\nNumber of business days between 2025-11-01 and 2025-11-30: 20 days.\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a5fcafea-2811-4ed3-b61e-0cf0236f275f",
+      "code_content": "from datetime import datetime, timedelta\n\nstart_date_input = input()\nend_date_input = input()\n\nstart_date = datetime.strptime(start_date_input, \"%Y-%m-%d\")\nend_date = datetime.strptime(end_date_input, \"%Y-%m-%d\")\n\nbusiness_days_count = 0\n\ncurrent_date = start_date\n\nwhile current_date <= end_date:\n    if current_date.weekday() < 5:  # Monday to Friday are considered business days\n        business_days_count += 1\n    current_date += timedelta(days=1)\n\nprint(f\"Number of business days between {start_date_input} and {end_date_input}: {business_days_count} days.\")",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "08412fb3-ffff-43cc-a2f8-787fe5c364e6",
+      "input": "2023-12-25\n2024-01-05",
+      "output": "Number of business days between 2023-12-25 and 2024-01-05: 10 days.",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "23aedb01-d953-412e-9cb3-fdbbed76a986",
+      "input": "2023-09-15\n2023-09-30",
+      "output": "Number of business days between 2023-09-15 and 2023-09-30: 11 days.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "25c8ab44-e6b4-4f0a-bbce-afdc365b6b59",
+      "input": "2024-05-01\n2024-05-31",
+      "output": "Number of business days between 2024-05-01 and 2024-05-31: 23 days.",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5dac5301-64bb-4f46-b4b3-6b5caa3afa6d",
+      "input": "2023-02-01\n2023-02-28",
+      "output": "Number of business days between 2023-02-01 and 2023-02-28: 20 days.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6fb0e54a-c81a-4b78-b176-34049c196cdf",
+      "input": "2025-11-01\n2025-11-30",
+      "output": "Number of business days between 2025-11-01 and 2025-11-30: 20 days.",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "fa01dfac-d860-47cb-afd0-a24a8349ee9b",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "d7bfa935-82c6-4647-b51a-2d53a809bca6",
+  "topic_name": "Error Handling and DateTime",
+  "course_title": "Programming Foundations"
+}

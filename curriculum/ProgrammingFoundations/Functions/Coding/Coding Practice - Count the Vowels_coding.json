@@ -1,0 +1,61 @@
+{
+  "question_id": "510eec7d-37d9-4dee-9834-00c187a73c9f",
+  "short_text": "Count the Vowels",
+  "content": "Write a function with the name count_the_vowels that takes a word as an argument and count the number of vowels in the given word.<br/>The letters (a, e, i, o, u) are considered as vowels.<hr><b>Input</b><br/><br/>The input will be a single line containing a string.<br/>Note: The input word will contain only lowercase letters.<hr><b>Output</b><br/><br/>The output should be a single line containing the count of vowels in the given word.<hr><b>Explanation</b><br/><br/>For example, if the given word is &quot;suggestions&quot;, the vowels in the given word are (u, e, i, o). So the output should be 4.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "60a70622-a116-447a-9c36-d02bcee38937",
+      "code_content": "def count_the_vowels(word):\n    count = 0\n    for letter in word:\n        is_a = letter == 'a'\n        is_e = letter == 'e'\n        is_i = letter == 'i'\n        is_o = letter == 'o'\n        is_u = letter == 'u'\n        is_vowel = ((((is_a or is_e) or is_i) or is_o) or is_u)\n        if is_vowel:\n            count += 1\n    return count\n\n\nword = input()\nresult = count_the_vowels(word)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "41af3b12-08e7-4a09-a1d1-fc252c766988",
+      "input": "education",
+      "output": "5\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "696b8ee3-6e45-4fc5-8355-3b2ceb17c578",
+      "input": "suggestions",
+      "output": "4\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "bbd684c6-d81a-47d8-89a5-b9f21a58014a",
+      "input": "antidisestablishmentarianism",
+      "output": "11\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e31390c1-d264-4cea-a926-8f980f977cd8",
+      "input": "fry",
+      "output": "0\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "eb7aeb32-83a4-4790-a9f2-1510ac33709d",
+      "input": "correctness",
+      "output": "3\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

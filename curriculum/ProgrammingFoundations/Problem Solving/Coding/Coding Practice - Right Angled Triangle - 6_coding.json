@@ -1,0 +1,61 @@
+{
+  "question_id": "9a4655f3-d342-4429-8b11-730284fe17c4",
+  "short_text": "Right Angled Triangle - 6",
+  "content": "Given a number `N`, write a program to print the **Right Angled Triangle** of `N` rows using stars (`*`).\n\n```\n      *\n    * *\n  * * *\n* * * *\n```\n\n<MultiLineNote>\nThere is a space after every star (`*`).\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be `N` rows containing stars (`*`) as the **Right Angled Triangle** shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given number is `N = 6`,\n\n- Print the stars (`*`) on **6** rows as shown in the given image.\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-6.png' widthPercent='60'/>\n\n<MultiLineNote>\n\nIn the given image,\n\n- The Empty box indicates the two spaces (\"&nbsp;&nbsp;\").\n- The Star in box indicates the star and a space (\"* \").\n\n</MultiLineNote>\n\nThe output should be,\n\n```\n          *\n        * *\n      * * *\n    * * * *\n  * * * * *\n* * * * * *\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "52bea931-8588-4d76-98d0-ba699e20c9a8",
+      "code_content": "rows = int(input())\n\nfor each_number in range(1, rows + 1):\n    \n    spaces = \"  \" * (rows - each_number)\n    stars = \"* \" * (each_number)\n    print(spaces + stars)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2f247e06-1b7a-4ce0-bb7b-a3ecf6dee886",
+      "input": "16",
+      "output": "                              * \n                            * * \n                          * * * \n                        * * * * \n                      * * * * * \n                    * * * * * * \n                  * * * * * * * \n                * * * * * * * * \n              * * * * * * * * * \n            * * * * * * * * * * \n          * * * * * * * * * * * \n        * * * * * * * * * * * * \n      * * * * * * * * * * * * * \n    * * * * * * * * * * * * * * \n  * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "5d40553b-f423-40a8-b4e7-165624a96874",
+      "input": "1",
+      "output": "*",
+      "is_hidden": true,
+      "weightage": 11.0
+    },
+    {
+      "test_case_id": "5decffa8-0c56-45a1-8d93-9107bc934784",
+      "input": "8",
+      "output": "              * \n            * * \n          * * * \n        * * * * \n      * * * * * \n    * * * * * * \n  * * * * * * * \n* * * * * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "92382e35-1175-4df6-9eea-74bbf12db0c9",
+      "input": "6",
+      "output": "          * \n        * * \n      * * * \n    * * * * \n  * * * * * \n* * * * * *",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "d73eb35f-1581-4190-a67d-b1daf1e8903f",
+      "input": "21",
+      "output": "                                        * \n                                      * * \n                                    * * * \n                                  * * * * \n                                * * * * * \n                              * * * * * * \n                            * * * * * * * \n                          * * * * * * * * \n                        * * * * * * * * * \n                      * * * * * * * * * * \n                    * * * * * * * * * * * \n                  * * * * * * * * * * * * \n                * * * * * * * * * * * * * \n              * * * * * * * * * * * * * * \n            * * * * * * * * * * * * * * * \n          * * * * * * * * * * * * * * * * \n        * * * * * * * * * * * * * * * * * \n      * * * * * * * * * * * * * * * * * * \n    * * * * * * * * * * * * * * * * * * * \n  * * * * * * * * * * * * * * * * * * * * \n* * * * * * * * * * * * * * * * * * * * *",
+      "is_hidden": true,
+      "weightage": 11.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "986d2486-8aa3-41cf-8bb1-507156be0741",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

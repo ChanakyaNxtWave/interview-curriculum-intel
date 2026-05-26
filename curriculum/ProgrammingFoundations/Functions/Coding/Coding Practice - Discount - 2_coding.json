@@ -1,0 +1,96 @@
+{
+  "question_id": "aa30273b-f35c-4b4e-8d26-51e36f6ea0ce",
+  "short_text": "Discount - 2",
+  "content": "Write a function with the name get_discount that takes the bill amount as an argument.<br/> - If the bill amount is less than 500, the discount should be &quot;5%&quot;.<br/> - If the bill amount is greater than or equal to 500 and less than 2500, the discount should be &quot;10%&quot;.<br/> - If the bill amount is greater than or equal to 2500, the discount should be &quot;20%&quot;.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer.<hr><b>Output</b><br/><br/>The output should be a single line containing the discount according to the above conditions.<hr><b>Explanation</b><br/><br/>For example, if the given bill amount is 1500, the output should be &quot;10%&quot;, as it is greater than 500 and less than 2500<br/><br/>For example, if the given bill amount is 250, the output should be &quot;5%&quot;, as it is less than 500",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "21380c5d-16eb-4eeb-bed6-3c9227396d26",
+      "code_content": "def get_discount(amount):\n    if amount < 500:\n        discount = \"5%\"\n    elif (amount >= 500) and (amount < 2500):\n        discount = \"10%\"\n    else:\n        discount = \"20%\"\n    return discount\n\n\namount = int(input())\nresult = get_discount(amount)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "19a14b33-f59d-4daa-a879-682cdaeb86e8",
+      "input": "499",
+      "output": "5%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "25f612dd-a148-4e24-a0cb-88df9475c1cf",
+      "input": "25000",
+      "output": "20%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "384eb58b-28aa-49f9-92be-1e72f21f65f7",
+      "input": "250",
+      "output": "5%\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "4f298f6b-2fdc-41e2-8714-fd84f4bc929d",
+      "input": "24999",
+      "output": "20%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "58f2c8ef-6f33-4daa-b024-89f04ba8fe6b",
+      "input": "1",
+      "output": "5%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "898d86ba-ca05-4a09-b8ff-07515090b521",
+      "input": "0",
+      "output": "5%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "8dbca469-f81e-413e-a4cb-800c7803f5ab",
+      "input": "1500",
+      "output": "10%\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a0a85927-27d8-46aa-ba91-7550c61c29f5",
+      "input": "501",
+      "output": "10%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e43afe4b-4bc4-43a0-9051-a4a32c1d219a",
+      "input": "500",
+      "output": "10%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "ec8c6276-3322-4b71-b6ad-7f4a4d3770b5",
+      "input": "25001",
+      "output": "20%\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90d18477-0357-455c-b47e-5757522ed40d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "6154c798-3837-49f5-ab80-5b8afd6400b5",
+  "topic_name": "Functions",
+  "course_title": "Programming Foundations"
+}

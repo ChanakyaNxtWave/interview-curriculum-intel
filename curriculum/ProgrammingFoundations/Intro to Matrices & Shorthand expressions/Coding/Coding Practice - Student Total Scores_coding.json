@@ -1,0 +1,61 @@
+{
+  "question_id": "be6c9f64-659b-4690-8b53-d6e51bea0945",
+  "short_text": "Student Total Scores",
+  "content": "A teacher is need to evaluating the overall performance of students in a class based on their scores across various subjects. Each student's scores are organized in a matrix format, where each row corresponds to a student and each column corresponds to a subject. The teacher wants to compute the total score for each student by summing their scores across all subjects. Your task is to write a program that takes this matrix as input and returns a list containing the total score for each student.\n\n---\n\n#### Input\n\nThe input consists of:\n\n- The first line contains two integers separated by a space: **N** (the number of students) and **M** (the number of subjects).\n- The next **N** lines each contain **M** space-separated integers, where each integer represents a student's score in a specific subject.\n\n---\n\n#### Output\n\nThe output should be a **list of integers**, where each integer corresponds to the total score of a student, in the order they appear in the input.\n\n\n---\n\n#### Explanation\n\nIf, the input is\n\n```\n3 3\n85 90 78\n88 76 92\n90 80 85\n```\n\nIn this example, there are three students with scores in three subjects:\n\n- For **Student 1**: Total Score = 85 + 90 + 78 = **253**\n- For **Student 2**: Total Score = 88 + 76 + 92 = **256**\n- For **Student 3**: Total Score = 90 + 80 + 85 = **255**\n\n\nThe output will be a list of total scores:\n\n```\n[253, 256, 255]\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "def6ef98-678e-4cd8-ade1-a0790fd2f1da",
+      "code_content": "def calculate_total_scores(scores):\n    return [sum(row) for row in scores]\n\ninp = input().split()\nN,M = int(inp[0]),int(inp[1])\n\nscores = []\n\nfor i in range(N):\n    row_input = input().split()\n    row = []\n    for num in row_input:\n        row.append(int(num))\n    scores.append(row)\n\nresult = calculate_total_scores(scores)\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "25f09b50-574e-49ea-ab20-266727fb9d80",
+      "input": "4 1\n50\n60\n70\n80",
+      "output": "[50, 60, 70, 80]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "2f7d904d-0b47-4d92-a753-d74cbb34fcce",
+      "input": "2 4\n70 80 90 100\n60 65 70 75",
+      "output": "[340, 270]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7c5bef81-65a6-4743-9037-3693a3f5c4ed",
+      "input": "3 3\n85 90 78\n88 76 92\n90 80 85",
+      "output": "[253, 256, 255]",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7e999e2c-28a0-4e6d-bc27-562e1ecd8154",
+      "input": "3 3\n0 0 0\n0 0 0\n0 0 0",
+      "output": "[0, 0, 0]",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e7ca4346-bdc8-4194-8d3b-fb9442b24ce0",
+      "input": "1 5\n10 20 30 40 50",
+      "output": "[150]",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "677ae02f-bf38-48da-aad5-551072778667",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "3caed1ec-6283-4d3d-930d-296b9da4c793",
+  "topic_name": "Intro to Matrices & Shorthand expressions",
+  "course_title": "Programming Foundations"
+}

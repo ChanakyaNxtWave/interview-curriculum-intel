@@ -1,0 +1,47 @@
+{
+  "question_id": "1f50bc95-2c36-4ae3-a7ff-03f02ecf631c",
+  "short_text": "Vehicle Abstraction",
+  "content": "Complete the given `Vehicle` class along with its subclasses `Car` and `Motorcycle` by implementing the specified features as outlined below. Use abstraction to define common functionalities for vehicles.\n\n<details> \n\n<summary>**Features to be added to the Vehicle class and its subclasses**</summary>\n\n- **Abstract Class**:\n  - Create an abstract class `Vehicle` that inherits from `ABC`.\n- **Attributes for the Vehicle class:**\n  - **`make`**: A string representing the vehicle's manufacturer (public attribute).\n  - **`model`**: A string representing the vehicle's model (public attribute).\n  - **`year`**: An integer representing the year of manufacture (public attribute).\n  - **`__vin`**: A private attribute that holds the vehicle identification number.\n- Abstract Methods for the `Vehicle` class:\n  - **`start()`**: An abstract method that must be implemented by subclasses.\n  - **`stop()`**: An abstract method that must be implemented by subclasses.\n  - **`display_info()`**: A method to display all details of the vehicle.\n\n```\nMake: {make}\nModel: {model}\nYear: {year}\nVIN: {vin}\n```\n\n- **Subclasses to be created**:\n  - **`Car`** class :\n      -  This subclass should inherit from Vehicle and implement the abstract methods. It should also have an additional attribute:\n        - **`trunk_capacity`**: A float representing the trunk capacity in liters.\n      - **`start(self)`** :\n        - Prints a **`Car has started.`** indicating that the car has started.  \n      - **`stop(self)`** :\n        - Prints a **`Car has stopped.`** indicating that the car has stopped.\n      - **`display_info(self)`** :\n        - Calls superclass method to display common vehicle information.\n        - Additionally prints out information about trunk capacity.\n\n        Make: {make}\n        Model: {model}\n        Year: {year}\n        VIN: {vin}\n        Trunk Capacity: {trunk_capacity} liters\n\n\n  - **`Motorcycle`** class :\n      - This subclass should also inherit from Vehicle, implement the abstract methods, and have an additional attribute:\n        - `seat_height`: A float representing the seat height in centimeters.\n      - **`start(self)`** :\n        - Prints a **`Motorcycle has started.`** indicating that the Motorcycle has started.  \n      - **`stop(self)`** :\n        - Prints a **`Motorcycle has stopped.`** indicating that the Motorcycle has stopped.\n      - **`display_info(self)`** :\n        - Calls superclass method to display common vehicle information.\n        - Additionally prints out information about seat height in the below format\n\n```\nMake: {make}\nModel: {model}\nYear: {year}\nVIN: {vin}\nSeat Height: {seat_height} cm\n```\n\n</details> \n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "91e51369-f9f8-43f7-b67c-9aa82c165920",
+      "code_content": "from abc import ABC, abstractmethod\n\nclass Vehicle(ABC):\n    def __init__(self, make, model, year, vin):\n        self.make = make                    # Public attribute for vehicle make\n        self.model = model                  # Public attribute for vehicle model\n        self.year = year                    # Public attribute for year of manufacture\n        self.__vin = vin                    # Private attribute for vehicle identification number\n\n    @abstractmethod\n    def start(self):\n        pass                                # Abstract method to start the vehicle\n\n    @abstractmethod\n    def stop(self):\n        pass                                # Abstract method to stop the vehicle\n\n    def display_info(self):\n        print(f\"Make: {self.make}\")\n        print(f\"Model: {self.model}\")\n        print(f\"Year: {self.year}\")\n        print(f\"VIN: {self.__vin}\")\n\nclass Car(Vehicle):\n    def __init__(self, make, model, year, vin, trunk_capacity):\n        super().__init__(make, model, year, vin)  # Call to superclass constructor\n        self.trunk_capacity = trunk_capacity       # Additional attribute for trunk capacity\n\n    def start(self):\n        print(\"Car has started.\")               # Implementation of start method\n\n    def stop(self):\n        print(\"Car has stopped.\")               # Implementation of stop method\n\n    def display_info(self):\n        super().display_info()                   # Call to display_info method from Vehicle class\n        print(f\"Trunk Capacity: {self.trunk_capacity} liters\")\n\nclass Motorcycle(Vehicle):\n    def __init__(self, make, model, year, vin, seat_height):\n        super().__init__(make, model, year, vin)  # Call to superclass constructor\n        self.seat_height = seat_height            # Additional attribute for seat height\n\n    def start(self):\n        print(\"Motorcycle has started.\")         # Implementation of start method\n\n    def stop(self):\n        print(\"Motorcycle has stopped.\")         # Implementation of stop method\n\n    def display_info(self):\n        super().display_info()                   # Call to display_info method from Vehicle class\n        print(f\"Seat Height: {self.seat_height} cm\")\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    car = Car(\"Toyota\", \"Camry\", 2021, \"1HGBH41JXMN109186\", 500)\n    motorcycle = Motorcycle(\"Harley-Davidson\", \"Street 750\", 2020, \"1HD1KBB14DB123456\", 75)\n    \n    car.start()\n    car.display_info()\n    car.stop()\n    \n    motorcycle.start()\n    motorcycle.display_info()\n    motorcycle.stop()",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0bc51c37-ab88-46bb-8376-57afd27b63a7",
+      "input": "Checking Vehicle Methods",
+      "output": "Motorcycle has started.\nPASS: All methods are working correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "60346626-28d8-4765-9033-82137b26416e",
+      "input": "Checking Vehicle Attributes",
+      "output": "PASS: All attributes are correctly defined.",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "c2f562a8-1a1a-44cb-a42b-fbc689cd3348",
+      "input": "Checking Default Tests",
+      "output": "Car has started.\nMake: Toyota\nModel: Camry\nYear: 2021\nVIN: 1HGBH41JXMN109186\nTrunk Capacity: 500 liters\nCar has stopped.\nMotorcycle has started.\nMake: Harley-Davidson\nModel: Street 750\nYear: 2020\nVIN: 1HD1KBB14DB123456\nSeat Height: 75 cm\nMotorcycle has stopped.",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "58b2257d-4844-4187-b35f-9647a684c87b",
+  "short_text": "Book Rating Aggregator",
+  "content": "You are developing a book rating application where users provide book titles and their corresponding ratings. The program needs to collect input for multiple books and their ratings and produce a dictionary with the book titles as keys and the ratings as lists of integers. If a book title appears multiple times, the program should append the new ratings to the existing list for that book.\n\n---\n\n#### Input\n\nThe input consists of:\n\n- An integer **N**, representing the number of lines of input.\n- The next **N** lines, each containing a book title and its ratings in the format:  **BookTitle : rating1,rating2,...**\n\n\n---\n\n#### Output\n\nThe output should be:\n\n- A dictionary where:\n - **Keys** are the unique book titles.\n - **Values** are lists of integers representing the ratings for the respective book titles.\n\n---\n\n#### Explanation\n\nIf the input is\n\n```\n4  \nBook A : 5,4  \nBook B : 3  \nBook A : 5  \nBook C : 4  \n```\n\n\n- **Line 1**: **Book A** : 5,4 → Add **Book A** with ratings **[5, 4]**.\n- **Line 2**: **Book B** : 3 → Add **Book B** with ratings **[3]**.\n- **Line 3**: **Book A** : 5 → Append rating **[5]** to **Book A**.\n- **Line 4**: **Book C** : 4 → Add **Book C** with ratings **[4]**.\n\nThe output should be\n\n```\n{\n    'Book A': [5, 4, 5], \n    'Book B': [3], \n    'Book C': [4]\n}\n```\n\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "4fc5804a-8fb6-485d-afe7-2df85379a839",
+      "code_content": "def collect_book_ratings(n):\n    book_ratings = {}\n    \n    for i in range(n):\n        book_input = input().strip()\n        title, ratings = book_input.split(\":\")\n        ratings_list = [int(r) for r in ratings.split(\",\")]\n        \n        if title in book_ratings:\n            book_ratings[title].extend(ratings_list)\n        else:\n            book_ratings[title] = ratings_list\n    \n    return book_ratings\n\nn = int(input())\n\nresult = collect_book_ratings(n)\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "605f2f12-9042-4a65-a275-041d1e581494",
+      "input": "2\nBook A : 0\nBook B : 1,2",
+      "output": "{'Book A ': [0], 'Book B ': [1, 2]}",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "654df1d2-a972-434e-9b28-e98be91496b9",
+      "input": "1\nBook A : 10,20,30",
+      "output": "{'Book A ': [10, 20, 30]}",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7d2463ec-6c34-4f46-a587-b580f5a8150b",
+      "input": "5\nBook X : 1,2\nBook Y : 6\nBook Y : 3\nBook X : 3,4\nBook Z : 5",
+      "output": "{'Book X ': [1, 2, 3, 4], 'Book Y ': [6, 3], 'Book Z ': [5]}",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "af20b327-5023-409b-9811-504905f9253f",
+      "input": "3\nBook A : 5\nBook B : 10\nBook C : 15",
+      "output": "{'Book A ': [5], 'Book B ': [10], 'Book C ': [15]}",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "cb423521-d17e-407a-a9da-ea0a4a2776f6",
+      "input": "4\nBook A : 5,4\nBook B : 3\nBook A : 5\nBook C : 4",
+      "output": "{'Book A ': [5, 4, 5], 'Book B ': [3], 'Book C ': [4]}",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f065d38b-746c-48f1-ad2e-95b6dd5b62b4",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

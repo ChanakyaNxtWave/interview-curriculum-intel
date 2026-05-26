@@ -1,0 +1,61 @@
+{
+  "question_id": "d84bf16f-dd5c-4e61-aa8f-65cab8dd1d29",
+  "short_text": "Index of Last Character",
+  "content": "Write a program that reads a word and prints the index of the last character of the word.\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing a string.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer which is the index of the last character of the word.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given word is **Python**, the output should be **5** as the index starts from **0** and the index of the last character is **5**.\r\n\r\n  <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">P</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">y</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">t</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">h</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">o</div>\r\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; padding: 8px 12px;\">n</div>\r\n  </div>\r\n  <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">0</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\r\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\r\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">5</div>\r\n  </div>",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "e08d2656-83ce-433e-a254-8a2dae0d94ac",
+      "code_content": "word = input()\n\nword_length = len(word) \nlast_index = word_length - 1\n\nprint(last_index)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "047a68c9-0487-45d8-b3ec-cf3bfcaaed21",
+      "input": "Python",
+      "output": "5",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "47c21a79-947b-435f-b605-5e03839d9a8f",
+      "input": "Hurray!!",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "913c348d-0c96-4163-aaaa-1a458b0a9228",
+      "input": "Hello World",
+      "output": "10",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e83fe310-516c-4cd3-bf15-5a079713f370",
+      "input": "4 spaces at the end    ",
+      "output": "22",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "f5ad2af4-733d-4712-82ad-0f044d082839",
+      "input": "John123",
+      "output": "6",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3ec2d3fe-0670-4186-83ef-7fc0c70b5d6f",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5dc4536d-8794-43ba-a816-40496e34776c",
+  "topic_name": "Sequence of Instructions",
+  "course_title": "Programming Foundations"
+}

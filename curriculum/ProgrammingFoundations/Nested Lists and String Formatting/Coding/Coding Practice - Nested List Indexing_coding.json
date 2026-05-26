@@ -1,0 +1,61 @@
+{
+  "question_id": "5f44d393-d919-4a92-bc53-38abfda99dc8",
+  "short_text": "Nested List Indexing",
+  "content": "For this problem, the prefilled code will contain a list of tuples. Write a program to print the index of the given number N in the list of tuples.<hr><b>Input</b><br/><br/>The input will be a single line containing an integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing two numbers separated by space.<br/>The first number should be the index of tuples that contain the number N.<br/>The second number should be the index of the number N in the tuple.<hr><b>Explanation</b><br/><br/>For example, if the given N is 4, as it is the second element in the first tuple. So the output should be &quot;0 1&quot;",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "18cb3e1e-efeb-47e6-9ac1-4483a77f740c",
+      "code_content": "num_list = [(2, 4, 6, 8), (5, 15, 25, 35), (7, 14, 21)]\n\nn = int(input())\nfor tuple_a in num_list:\n    is_contain = n in tuple_a\n    if is_contain:\n        tuple_index = num_list.index(tuple_a)\n        n_index = tuple_a.index(n)\n        print(str(tuple_index) + \" \" + str(n_index))\n        break\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "28752f6b-af32-4c69-813d-9da37e32f603",
+      "input": "8",
+      "output": "0 3\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "64ca8ef4-254a-4f4c-934d-ee83dc4e675b",
+      "input": "4",
+      "output": "0 1\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "65a6d741-78c6-4d08-a8e5-a52600368991",
+      "input": "15",
+      "output": "1 1\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "95ee26fc-78a9-4306-86e5-908f57298cfb",
+      "input": "21",
+      "output": "2 2\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "cf903e36-9f0c-492a-b17d-413aba9d372e",
+      "input": "7",
+      "output": "2 0\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e86a3d99-0d48-4c1e-a02e-925e31745580",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

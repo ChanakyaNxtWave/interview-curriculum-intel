@@ -1,0 +1,13 @@
+{
+  "unit_title": "Nested Loops | Reading Material",
+  "content": "# Nested Loops\n\nAn inner loop within the repeating block of an outer loop is called Nested Loop.\n\nThe **Inner Loop** will be executed one time for each iteration of the **Outer Loop.**\n\n\n![](https://res.cloudinary.com/learning-platform/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://nkb-backend-ccbp-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/8eb1b96f-d188-4ef4-8d29-f270a945b489.png)\n  \n\n#### Code\n\n```python\nfor i in range(2):\n  print(\"Outer: \" + str(i))\n  for j in range(2):\n    print(\" Inner: \" + str(j))\n```\n\n#### Output\n\n```\nOuter: 0\n Inner: 0\n Inner: 1\nOuter: 1\n Inner: 0\n Inner: 1\n ```\n\n## Nested Repeating Block\n\nThe one highlighted in the blue dotted line is the **repeating** block of the inner loop.\n\n  \n![](https://res.cloudinary.com/learning-platform/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://nkb-backend-ccbp-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/f5d32b60-693e-4b2a-b65a-3b15c546cf5c.png)\n\n#### Code\n\n```python\nfor i in range(2):\n  print(\"Outer: \" + str(i))\n  for j in range(2):\n    print(\" Inner: \" + str(j))\nprint(\"END\")\n```\n\nIn the above example, the below line is the repeating block of the nested loop.\n\n#### Code\n```python\nprint(\" Inner: \" + str(j))\n```\n\n#### Output\n\n```\nOuter: 0\n Inner: 0\n Inner: 1\nOuter: 1\n Inner: 0\n Inner: 1\nEND\n```\n\n## Examples - Nested Loops\n\n**Example - 1**: While loop inside a For loop\n\n![](https://res.cloudinary.com/learning-platform/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://nkb-backend-ccbp-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/00845cd4-e8ca-4f52-b729-13de7fc86a72.png)\n\n**Example - 2**: While loop inside a while loop\n\n\n![](https://res.cloudinary.com/learning-platform/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://nkb-backend-ccbp-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/b5bbe75b-d0f6-4dd6-ad18-dc7fea759518.png)",
+  "content_type": "MARKDOWN",
+  "learning_resource_id": "c5282be2-e996-44e0-b744-91e9f9a6a5ea",
+  "object_type": "LEARNING_RESOURCE",
+  "unit_id": "0fd800ef-28b4-448d-b554-b707b34ac476",
+  "unit_name": "Nested Loops | Reading Material",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "bc6fe207-bbac-405f-8a54-ec3f0926ea69",
+  "topic_name": "Nested Loops & Problem Solving",
+  "course_title": "Programming Foundations"
+}

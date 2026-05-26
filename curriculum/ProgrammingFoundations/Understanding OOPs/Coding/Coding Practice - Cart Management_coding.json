@@ -1,0 +1,47 @@
+{
+  "question_id": "b5193278-342b-4b6a-ab7b-dfc964589b78",
+  "short_text": "Cart Management",
+  "content": "Complete the given **Cart** class by adding new features by following the given instructions.\n\n**Existing _Cart_ class**:\n\nThe existing **Cart** class has only a _pass_ statement. Remove the _pass_ statement and add the new features as mentioned in the given instructions.\n\n<details>\n\n<summary>**Features to be added to _Cart_ class**</summary>\n\n- **Add below attributes**\n   - The **Cart** class should have the following attribute:\n     - `items`: a dictionary to store items with their names as keys and prices as values.\n\n- **Add below methods**\n   - `add_item(self, item_name, price)`: Adds an item to the cart.\n   - `update_item(self, item_name, price)`: Updates the price of an existing item in the cart.\n   - `show_items(self)`: Prints all items in the cart.\n   - `total_price(self)`: Returns the total price of all items in the cart.\n\n</details>\n\n<MultiLineNote>\n\n- Do not edit the `default_test` function as this will effect the test cases.\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code. Do not **edit or delete** the `default_test` function.\n- This Coding question does not have the usual input/output testcases. The class defined by you will be tested internally whether the attributes are present or not. So in testcases results, you will be shown the rough description of the tests that will be verified.\n</MultiLineNote>\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b05dcb5e-1dda-404e-b398-ef863e18f4da",
+      "code_content": "# Implement the Cart class with the specified attributes and methods\nclass Cart:\n    def __init__(self):\n        self.items = {}\n\n    def add_item(self, item_name, price):\n        self.items[item_name] = price\n\n    def update_item(self, item_name, price):\n        if item_name in self.items:\n            self.items[item_name] = price\n\n    def show_items(self):\n        for item_name, price in self.items.items():\n            print(f\"{item_name}: ${price}\")\n\n    def total_price(self):\n        return sum(self.items.values())\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    cart = Cart()\n    cart.add_item(\"Apple\", 1.5)\n    cart.add_item(\"Banana\", 0.5)\n    cart.update_item(\"Apple\", 2.0)\n    cart.show_items()\n    print(\"Total price:\", cart.total_price())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "359dae2d-3684-4f00-83f2-30f290ce8e9d",
+      "input": "Checking Default Tests",
+      "output": "Apple: $2.0\nBanana: $0.5\nTotal price: 2.5",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "621dc5c7-5da7-42c2-b501-2637f7fe16d0",
+      "input": "Checking if methods work correctly",
+      "output": "PASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "8137a31b-503b-41a2-93a7-453495dbd4a9",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "bc815d70-10d9-4b4a-839e-856131b68997",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "57cce920-7374-44f3-8edf-aa1e848f9bb2",
+  "topic_name": "Understanding OOPs",
+  "course_title": "Programming Foundations"
+}

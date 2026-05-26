@@ -1,0 +1,75 @@
+{
+  "question_id": "32f659b9-eb50-404f-a64e-8d69e005ac61",
+  "short_text": "Print from M to N in Reverse",
+  "content": "Write a program that reads two numbers `M` and `N`, and prints the numbers from `N` to `M`.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should contain all the integers from `N` to `M`, each on a new line.\n\n---\n\n#### Constraints\n\n`N` should be greater than or equal to `M`.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 2` and `N = 5`,\n\n- The numbers from **5** to **2** are **5**, **4**, **3** and **2**.\n\nThe output should be,\n\n```\n5\n4\n3\n2\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9d44892a-f1b6-4a12-8add-6b553bcf4af5",
+      "code_content": "first_number = int(input())\nlast_number = int(input())\n\ntotal_numbers = last_number - first_number\n\nfor i in range(total_numbers + 1):\n    number = last_number - i\n    print(number)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "08073038-6dfb-4fe5-bb4c-549a0ebbf2f9",
+      "input": "2\n5",
+      "output": "5\n4\n3\n2",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "42db8057-b351-46f4-a776-d879f29d1026",
+      "input": "3\n10",
+      "output": "10\n9\n8\n7\n6\n5\n4\n3",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "43af4dca-9b26-4fd7-9daa-bdea50807ff3",
+      "input": "6\n6",
+      "output": "6",
+      "is_hidden": true,
+      "weightage": 17.0
+    },
+    {
+      "test_case_id": "5905e360-e1c7-43df-9548-06037297b7f3",
+      "input": "2\n9",
+      "output": "9\n8\n7\n6\n5\n4\n3\n2",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ba4c42fc-c407-4a0e-97bd-90263d2a498a",
+      "input": "-9\n-2",
+      "output": "-2\n-3\n-4\n-5\n-6\n-7\n-8\n-9",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "c0dadb22-b3d2-4d38-9498-2c106cc29198",
+      "input": "-29\n16",
+      "output": "16\n15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0\n-1\n-2\n-3\n-4\n-5\n-6\n-7\n-8\n-9\n-10\n-11\n-12\n-13\n-14\n-15\n-16\n-17\n-18\n-19\n-20\n-21\n-22\n-23\n-24\n-25\n-26\n-27\n-28\n-29",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fa344522-31df-4991-b253-bccd44cb9201",
+      "input": "23\n50",
+      "output": "50\n49\n48\n47\n46\n45\n44\n43\n42\n41\n40\n39\n38\n37\n36\n35\n34\n33\n32\n31\n30\n29\n28\n27\n26\n25\n24\n23",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7c7f921a-2eed-4e2e-b98a-5580be1d3561",
+  "unit_name": "Coding Practice - 2",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "40a5fffc-5838-4b26-8f2b-8ef1081ff5b5",
+  "short_text": "Create & Print List - 2",
+  "content": "Write a program to print a list with the given N inputs.<hr><b>Input</b><br/><br/>The first line of input will contain a positive integer (N).<br/>The next following N lines will be containing the list elements.<hr><b>Output</b><br/><br/>The output should be a single line containing the list created with the given inputs.<hr><b>Explanation</b><br/><br/>For example, if the given N is 5, read the inputs in the next five lines and print the list containing the given five elements. If the given five inputs are<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">20\nTiger\nCinema\n5.5\n93\n</code></pre><br/> the output should be<br/><pre style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: .85em;margin: 1.2em 0;\"><code style=\"font-family: Roboto Mono,Lucida Sans Typewriter,Lucida Console,monaco,Courrier,monospace;font-size: inherit;background-color: rgba(228, 237, 255,.5);border-radius: 0px;padding: 1em;display: block;-webkit-text-size-adjust: none;overflow-x: auto;white-space: pre;\">['20', 'Tiger', 'Cinema', '5.5', '93']\n</code></pre>",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "6d9e915d-90c3-4cee-8c5b-f9345f6ba7c6",
+      "code_content": "n = int(input())\n\nlist_a = []\nfor i in range(n):\n    value = input()\n    list_a += [value]\n\nprint(list_a)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "8e3c86af-14b5-47c1-bfc4-d7116e67aa57",
+      "input": "10\n-29\n50\n34\n90\n93\n11\n8\n99\n3\n0",
+      "output": "['-29', '50', '34', '90', '93', '11', '8', '99', '3', '0']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "931482c7-6aed-4800-bb23-8e121bcf3cfd",
+      "input": "3\n12\n17\n43.5",
+      "output": "['12', '17', '43.5']\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9680fa8a-4140-47a2-9c84-d8b897b86c8e",
+      "input": "1\nPractice",
+      "output": "['Practice']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "9ac1861d-09b3-4a81-8b44-1673e6bd87d0",
+      "input": "5\n20\nTiger\nCinema\n5.5\n93",
+      "output": "['20', 'Tiger', 'Cinema', '5.5', '93']\n",
+      "is_hidden": false,
+      "weightage": 8.0
+    },
+    {
+      "test_case_id": "ca850ce1-8aa5-4b08-b958-ab5c7c4cf649",
+      "input": "8\nProgramming\n500\n45.5\n20\nHello\nDistance\nSolution\n10000",
+      "output": "['Programming', '500', '45.5', '20', 'Hello', 'Distance', 'Solution', '10000']\n",
+      "is_hidden": true,
+      "weightage": 8.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "c02ce0fb-eb4e-4d44-8a14-8b0d52af718d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "50e40141-2196-4462-a302-584b75ee4b45",
+  "topic_name": "Lists",
+  "course_title": "Programming Foundations"
+}

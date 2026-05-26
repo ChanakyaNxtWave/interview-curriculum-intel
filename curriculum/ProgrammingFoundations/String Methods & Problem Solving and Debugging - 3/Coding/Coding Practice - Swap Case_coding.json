@@ -1,0 +1,61 @@
+{
+  "question_id": "805488d6-b241-42fc-b333-e2b5826060df",
+  "short_text": "Swap Case",
+  "content": "Given a word, write a program to convert all the uppercase letters to lowercase letters and vice versa.<hr><b>Input</b><br/><br/>The input will be a single line containing a string.<hr><b>Output</b><br/><br/>The output should be a single line containing the modified word.<hr><b>Explanation</b><br/><br/>For example, if the given word is &quot;Coding&quot;, your code should print the output by swapping the case of all letters (&quot;cODING&quot;).",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "10d13755-a7cf-4b7a-bc3d-a2ac484c6ce9",
+      "code_content": "word = input()\n\nmodified_word = \"\"\nfor character in word:\n    uppercase_char = character.upper()\n    if uppercase_char == character:\n        modified_word = modified_word + character.lower()\n    else:\n        modified_word = modified_word + character.upper()\n\nprint(modified_word)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "840e5103-cd2a-4195-8bec-5893492abbcb",
+      "input": "Validation",
+      "output": "vALIDATION\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "8e7f5fc2-7f63-436c-a917-719a8dcd781b",
+      "input": "WORLD Cup",
+      "output": "world cUP\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "9862ef40-ce46-4b1d-a3b0-917f96f25272",
+      "input": "Information Technology",
+      "output": "iNFORMATION tECHNOLOGY\n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ed5ed456-ca91-4cb7-a6ac-7876398fe8ca",
+      "input": "HUMANS",
+      "output": "humans\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "fb7f9652-b8eb-413a-b09b-7450247c62ce",
+      "input": "Coding",
+      "output": "cODING\n",
+      "is_hidden": false,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

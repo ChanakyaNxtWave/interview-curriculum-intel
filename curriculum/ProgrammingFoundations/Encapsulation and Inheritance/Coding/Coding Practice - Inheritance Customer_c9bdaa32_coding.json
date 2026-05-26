@@ -1,0 +1,47 @@
+{
+  "question_id": "c9bdaa32-f0df-44c1-9b3a-99ae0c6b5dcd",
+  "short_text": "Inheritance Customer",
+  "content": "Complete the given **Customer** class by adding new features for the **FrequentFlyer** subclass by following the given instructions.\r\n\r\n**Existing _Customer_ class**:\r\n\r\nThe existing **Customer** class has the following attributes: **name**, **address**, and **contact**. It also has a class attribute **bookings** which is a list to store booking information.\r\n\r\n**Existing _FrequentFlyer_ subclass**:\r\n\r\nThe **FrequentFlyer** subclass inherits from the **Customer** class.\r\n\r\n<details>\r\n\r\n<summary>**Features to be added to **_FrequentFlyer_** subclass**</summary>\r\n\r\n- **Add below methods**:\r\n - **`add_points(points)`**: Adds the given number of points to `frequent_flyer_points`.\r\n - **`redeem_points(points)`**: Redeems the given number of points from `frequent_flyer_points`. If the points to redeem are more than the available points, print `Insufficient points`.\r\n</details>\r\n\r\n<MultiLineNote>\r\n\r\n- Do not edit the `default_test` function as this will affect the test cases.\r\n- The output of the testcase **Checking Default Tests** is given by the `default_test` function in the prefilled code.\r\n- This coding question does not have the usual input/output test cases. The class defined by you will be tested internally to check whether the attributes and methods are implemented correctly. The test case results will provide a rough description of the tests being verified.\r\n\r\n</MultiLineNote>\r\n\r\n---",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "09266474-389b-463d-8481-fea61b781b50",
+      "code_content": "class Customer:\n    bookings = []\n\n    def __init__(self, name, address, contact):\n        self.name = name\n        self.address = address\n        self.contact = contact\n\nclass FrequentFlyer(Customer):\n    def __init__(self, name, address, contact):\n        super().__init__(name, address, contact)\n        self.frequent_flyer_points = 0\n        \n    def add_points(self, points):\n        self.frequent_flyer_points += points\n        \n    def redeem_points(self, points):\n        if points <= self.frequent_flyer_points:\n            self.frequent_flyer_points -= points\n        else:\n            print(\"Insufficient points\")\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    frequent_flyer = FrequentFlyer(name=\"Jane Doe\", address=\"123 Main St\", contact=\"9876543210\")\n    print(frequent_flyer.name)\n    print(frequent_flyer.address)\n    print(frequent_flyer.contact)\n    frequent_flyer.add_points(1000)\n    frequent_flyer.redeem_points(500)\n    print(frequent_flyer.frequent_flyer_points)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "46d74aaf-bb32-4c74-bb69-2f102d04bea3",
+      "input": "Checking Default Tests",
+      "output": "Jane Doe\n123 Main St\n9876543210\n500",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "5a7a7ae9-dcd0-41e6-ab55-99235b456a05",
+      "input": "Checking if correct attribute names are used",
+      "output": "PASS: Attribute frequent_flyer_points exists and is initialized correctly.",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a0301104-84a2-4715-aa99-a2fb880861f1",
+      "input": "Checking if methods are implemented correctly",
+      "output": "PASS: Methods add_points and redeem_points are implemented correctly.",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "68869c08-d1ef-4086-94f9-a567b9781d18",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "56b1ad92-19f9-4ffb-9177-aaab1e613c4b",
+  "topic_name": "Encapsulation and Inheritance",
+  "course_title": "Programming Foundations"
+}

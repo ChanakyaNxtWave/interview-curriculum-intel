@@ -1,0 +1,61 @@
+{
+  "question_id": "1ec5a610-d1e4-4e42-9112-fd2013527af8",
+  "short_text": "First Three Characters",
+  "content": "Write a program to read a single line of input and print the first three characters in it.<hr><b>Explanation</b><br/><br/>For example, if the given input is &quot;Four&quot; the first three characters are &quot;Fou&quot;<br/>Similarly, the first three characters of &quot;Strawberry&quot; are &quot;Str&quot;",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "1f0b1d76-d313-4f54-b557-adeb363201ff",
+      "code_content": "message = input()\npart = message[:3]\nprint(part)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "79add60f-6034-40fc-a14e-0a304ffbcaef",
+      "input": "Software",
+      "output": "Sof\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "83f516c8-a49a-412e-880d-7f952ecc7774",
+      "input": "Strawberry",
+      "output": "Str\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9d02ae1d-9a3c-4370-911c-0ac68cc85391",
+      "input": "Engineer",
+      "output": "Eng\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b1625afd-254b-4768-9b2b-cf94aed774c9",
+      "input": "keyboard",
+      "output": "key\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "bb49bfdc-5a99-484d-bff3-6aea9bc0d005",
+      "input": "Four",
+      "output": "Fou\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

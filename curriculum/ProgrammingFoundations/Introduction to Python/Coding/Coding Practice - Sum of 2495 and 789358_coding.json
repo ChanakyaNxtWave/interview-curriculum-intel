@@ -1,0 +1,33 @@
+{
+  "question_id": "e162821d-1ac8-46a2-891c-bd6571f549ca",
+  "short_text": "Sum of 2495 and 789358",
+  "content": "Write a program that prints the sum of two numbers, **2495** and **789358**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "f84f11fd-8716-4f2a-a64b-14a91d243334",
+      "code_content": "result = 2495 + 789358\n\nprint(result)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "1557d7f1-f152-453b-afc9-d5fbd1bb449f",
+      "input": "",
+      "output": "791853",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "6fd19a96-5db6-42a1-8a6d-e53b8b96fce6",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "90c7b574-bd25-4a14-b4ce-8c1bab181236",
+  "topic_name": "Introduction to Python",
+  "course_title": "Programming Foundations"
+}

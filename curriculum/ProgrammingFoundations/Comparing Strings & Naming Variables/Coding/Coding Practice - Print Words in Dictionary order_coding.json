@@ -1,0 +1,82 @@
+{
+  "question_id": "d2c8f1a9-b9e2-4596-bc6e-84e2f1eaf42d",
+  "short_text": "Print Words in Dictionary order",
+  "content": "Given a sentence `S` contains space-separated words, write a program to print the first and the last words of the sentence in dictionary order separated by a space.\n\n<MultiLineNote>\n- Consider both uppercase and lowercase alphabets as the same.\n- Dictionary order is a way of ordering words or sequences of characters based on their alphabetical order.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by joining the first and last words of the sentence in dictionary order with a space.\n\n---\n\n#### Explanation\n\nFor example, if the given sentence is `S = \"to get the Ball rolling\"`,\n\n- The words in the sentence are **to, get, the, Ball,** and **rolling**.\n- The words in dictionary order are **Ball, get, rolling, the,** and **to**.\n- The first word is **Ball**.\n- The last word is **to**.\n\nThe output should be **Ball to**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "ffb09231-70e4-48e8-99dc-fd5a0cd5024c",
+      "code_content": "s = input()\n\nfirst_word = \"z\"\nlast_word = \"a\"\nword = \"\"\nfor i in range(len(s)):\n    char = s[i]\n    if char != \" \":\n     word += char\n    \n    if char == \" \" or i == len(s)-1:\n        if word.lower() < first_word.lower():\n            first_word = word\n        if word.lower() > last_word.lower():\n            last_word = word\n        word = \"\"\n\nfirst_and_last_word = first_word + \" \" + last_word\nprint(first_and_last_word)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "07ee9f54-e9c2-44fe-bcc6-d80e93babb05",
+      "input": "to get the Ball rolling",
+      "output": "Ball to",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "1071be68-87ab-4520-868c-bfb3fdb03c63",
+      "input": "think twice",
+      "output": "think twice",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "13a42ae7-012b-4d35-ab9a-33781e4d41b8",
+      "input": "Got My Mojo Working",
+      "output": "Got Working",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "18181656-0e70-49e0-b3a1-46c094630acf",
+      "input": "Drives me up the wall",
+      "output": "Drives wall",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "621a4ee6-cd85-4332-b411-3c23e542e9f5",
+      "input": "a chink in the armour",
+      "output": "a the",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "658b55eb-d64a-45f9-8e3d-5e7319273271",
+      "input": "Speak of the Devil",
+      "output": "Devil the",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "8c2b0456-13df-4a5c-a361-b0224bc29db8",
+      "input": "Fools rush in where angels fear to tread",
+      "output": "angels where",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a8b4b032-1349-435e-9752-fa3eeadc61bf",
+      "input": "Be Authentic",
+      "output": "Authentic Be",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "7379c1ff-aa0f-4194-8e7c-46c4e6ac6f49",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

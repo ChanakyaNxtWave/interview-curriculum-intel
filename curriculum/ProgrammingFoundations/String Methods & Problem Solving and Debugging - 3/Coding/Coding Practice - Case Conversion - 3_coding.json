@@ -1,0 +1,82 @@
+{
+  "question_id": "5b9208d9-d30e-4dd1-9e13-20e39b7245df",
+  "short_text": "Case Conversion - 3",
+  "content": "Given a title case string, write a program to modifiy the string as given below.\n\n- Add a hyphen(-) before each uppercase character excluding the first uppercase character.\n- Convert all uppercase characters into lowercase characters.\n\n<MultiLineNote>\nTitle case is a writing style where the first letter of every word in a sentence is capitalized, except for certain words like articles and prepositions.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string, as shown in the sample output.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **\"TitleCase\"**,\n\n- The uppercase characters in the given string **TitleCase** are **T** and **C**.\n- The modified string after adding hyphen (**-**) before each uppercase character excluding the first uppercase character is **Title-Case**.\n- The modified string after converting the uppercase characters **T, C** to the lower case characters **t, c** is **title-case**.\n\nThe output should be **\"title-case\"**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "23390f41-c9a4-4ce3-9152-118adcb487a5",
+      "code_content": "s = input()\n\nlen_of_s = len(s)\nfirst_char_lowercase = s[0].lower()\nresult_string = first_char_lowercase\n\nfor index in range(1, len_of_s):\n    uppercase_char = s[index].upper()\n    \n    if s[index] == uppercase_char:\n        lowercase_char = s[index].lower()\n        result_string = result_string + \"-\" + lowercase_char\n    else:\n        result_string = result_string + s[index]\n        \nprint(result_string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "15e38718-4034-43ed-b047-4f94719bc827",
+      "input": "TitleCase",
+      "output": "title-case",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "1a119c5f-17cf-438f-ac03-d05b11214f6f",
+      "input": "AToyStory",
+      "output": "a-toy-story",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "8a979f7f-e8be-49f5-b0cf-d5d1484c3dda",
+      "input": "LearnTheOverviewOfComputerHardwareInFundamentalsOfComputerScience",
+      "output": "learn-the-overview-of-computer-hardware-in-fundamentals-of-computer-science",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "927bae9a-c95e-4cf3-88b5-d935b6a4543e",
+      "input": "ENGLISH",
+      "output": "e-n-g-l-i-s-h",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9ab9b3dc-4954-4dd2-8413-0e2f2ffa50f7",
+      "input": "moon",
+      "output": "moon",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "aec8c07f-5e47-4d45-bfc5-06ec725cefa8",
+      "input": "ThePythonLanguage",
+      "output": "the-python-language",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "e281f223-0c9f-4941-ad1e-90d1472cbb82",
+      "input": "P",
+      "output": "p",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "e82d6380-9823-4dd6-a6dc-4e5f845f757d",
+      "input": "AnApple",
+      "output": "an-apple",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "3a8a5dfe-1f12-4e7c-9c74-8d3112faa95a",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "a4022e41-b632-4392-af4c-ee96867fe4ee",
+  "short_text": "Compare First & Last Letters",
+  "content": "Write a program that reads a word and checks if the first letter and last letter of the word are not the same.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a boolean. **True** should be printed if the first letter and last letter of the word are not the same, otherwise **False** should be printed.\n\n---\n\n#### Explanation\n\nFor example, if the given word is **Python**,\n\n  <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n     <div style=\"font-family: 'Roboto';display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">P</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">y</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell;vertical-align: inherit; font-weight: 900;text-align: center;border-right: 1px solid #dcdcdc;padding: 8px 12px;\">t</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">h</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; border-right: 1px solid #dcdcdc;padding: 8px 12px;\">o</div>\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;font-weight: 900; text-align: center; padding: 8px 12px;\">n</div>\n  </div>\n  <div style=\"display: table-row;vertical-align: inherit; border-color: inherit;\">\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">0</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">1</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">2</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">3</div>\n     <div style=\"font-family: 'Roboto';color: #808080;display: table-cell; vertical-align: inherit;border-right: 1px solid #dcdcdc;padding: 8px 12px;border-top: 1px solid #dcdcdc;\">4</div>\n     <div style=\"font-family: 'Roboto';display: table-cell; vertical-align: inherit;padding: 8px 12px;border-top: 1px solid #dcdcdc;font-weight: 900;\">5</div>\n  </div>\n<br/>\n\n\nThe output should be **True** as the first letter `P` and the last letter `n` of the word are not the same.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "002071f1-2851-4516-ab46-06277af5ec12",
+      "code_content": "word = input()\n\nword_length = len(word)\n\nfirst_letter = word[0]\nlast_letter = word[word_length - 1]\n\nresult = first_letter != last_letter\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "12763704-5cb3-401c-ac15-d40f9dad9801",
+      "input": "Python",
+      "output": "True",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "81b03a63-9e95-416d-af17-dbb52a649d87",
+      "input": "prep",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a1d42777-6287-4ab6-9876-5f3d8fc3c736",
+      "input": "Area",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "a66cce05-ad16-4c55-a1a5-ef0d03da9434",
+      "input": "label",
+      "output": "False",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "c8d322ad-b511-40ab-95a9-1b9aabe796b7",
+      "input": "Dady",
+      "output": "True",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d99c4819-c3dc-4f38-88ac-67cbeca26bd9",
+      "input": "MOM",
+      "output": "False",
+      "is_hidden": true,
+      "weightage": 4.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "9935f186-744c-4b1d-b775-b45056daa899",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

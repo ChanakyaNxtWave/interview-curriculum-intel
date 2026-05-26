@@ -1,0 +1,61 @@
+{
+  "question_id": "f36ca4c0-c4fd-4aa9-8b78-d1aea9653d73",
+  "short_text": "Identify the Mistake - Sum of First N Natural Numb",
+  "content": "Write a program to recursively compute the sum of the numbers from 1 to N.<hr><b>Input</b><br/><br/>The input will be a single line containing a positive integer (N).<hr><b>Output</b><br/><br/>The output should be a single line containing the sum of the first N natural numbers.<hr><b>Explanation</b><br/><br/>For example, if the given N is 4, your code should print the sum of numbers from 1 to 4. So the output should be 10.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "70f92bf5-4924-405c-ab25-82892f4b94f3",
+      "code_content": "def sum_of_numbers(n):\n    if n == 1:  # Base case\n        return 1\n    else:\n        return n + sum_of_numbers(n-1)  # Recursion\n\n\nnum = int(input())\nresult = sum_of_numbers(num)\nprint(result)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "2bce737f-6779-4af7-bd1b-2f2dee9d664b",
+      "input": "1",
+      "output": "1\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "552134b5-ccab-481d-b99e-e19715175520",
+      "input": "9",
+      "output": "45\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "83a6d05a-40cf-4e83-960d-dfe8bad5a107",
+      "input": "5",
+      "output": "15\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "8e46cb46-8a46-4531-8567-10512bb7155b",
+      "input": "7",
+      "output": "28\n",
+      "is_hidden": true,
+      "weightage": 2.0
+    },
+    {
+      "test_case_id": "f54cee63-9362-44a0-905b-b9e834fa7967",
+      "input": "4",
+      "output": "10\n",
+      "is_hidden": false,
+      "weightage": 2.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "2f186190-0094-4436-8501-5d2371b5d84d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13f4205e-ef5d-4bf3-ab6d-cb7b6247bf6e",
+  "topic_name": "Built-in Functions & Recursions",
+  "course_title": "Programming Foundations"
+}

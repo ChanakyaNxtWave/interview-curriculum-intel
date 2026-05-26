@@ -1,0 +1,61 @@
+{
+  "question_id": "7c7ea72a-f755-4885-9343-285eabc5f5b4",
+  "short_text": "Perimeter of Rectangle",
+  "content": "Write a program to calculate the perimeter of a rectangle.<br/>Note: Perimeter of Rectangle = 2(Length of Rectangle + Breadth of Rectangle)<hr><b>Input</b><br/><br/>The first line of input contains the length of the rectangle, which is an integer.<br/>The second line of input contains the breadth of the rectangle, which is an integer.<hr><b>Output</b><br/><br/>Print the Perimeter of the Rectangle<hr><b>Explanation</b><br/><br/>For example, when the length of the rectangle is 3 and breadth is 4, then<br/>Perimeter = 2 x ( 3 + 4 ) = 2 x 7 = 14",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "de15518d-5feb-4bb1-8977-92ba1802d4cb",
+      "code_content": "length = input()\nbreadth = input()\n\nlength = int(length)\nbreadth = int(breadth)\n\nsum_of_two_sides = length + breadth\nperimeter_of_rectangle = sum_of_two_sides * 2\nprint(perimeter_of_rectangle)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0fb86f15-4bcd-41b2-8e3c-5e22aca7d7ef",
+      "input": "100\n10",
+      "output": "220\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "32218d98-d553-406f-b40b-551232f5420c",
+      "input": "8\n10",
+      "output": "36\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "aecd9ba5-17ec-4671-bdee-c4fc498def5f",
+      "input": "5\n3",
+      "output": "16\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c41f7e28-61ee-4411-a3d4-9f37d21e0e71",
+      "input": "3\n4",
+      "output": "14\n",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e71dc776-7069-44dd-a0a4-4c10c50cf6ac",
+      "input": "20\n20",
+      "output": "80\n",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "683b9b75-5fc6-4401-9db1-abe0af1854ad",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "9beb7756-53d0-4f19-8a6d-ad9367116e5b",
+  "topic_name": "Type Conversions",
+  "course_title": "Programming Foundations"
+}

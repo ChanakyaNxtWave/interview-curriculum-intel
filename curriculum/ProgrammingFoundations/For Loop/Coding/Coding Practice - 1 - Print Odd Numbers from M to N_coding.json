@@ -1,0 +1,75 @@
+{
+  "question_id": "d9da937f-e7cd-4bd6-988b-fc16053a0359",
+  "short_text": "Print Odd Numbers from M to N",
+  "content": "Write a program that reads two numbers `M` and `N` and prints odd numbers from `M` to `N` separated by a space.\n\n---\n\n#### Input\n\nThe first line of input contains an integer representing `M`.\nThe second line of input contains an integer representing `N`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string that has odd numbers from `M` to `N` separated by a space.\n\n---\n\n#### Explanation\n\nFor example, if the given numbers are `M = 5` and `N = 10`,\n\n- Numbers from **5** to **10** are **5**, **6**, **7**, **8**, **9**, and **10**.\n- The odd numbers among numbers from **5** to **10** are **5**, **7**, and **9**.\n\nThe output should be **5 7 9**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "055d5c46-944b-40ed-a522-91fe10354eea",
+      "code_content": "start_number = int(input())\nend_number = int(input())\n\nresult = \"\"\n\nfor number in range(start_number, end_number + 1):\n    is_odd = (number % 2 == 1)\n    \n    if is_odd:\n        result = result + str(number) + \" \"\n\nprint(result)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "11fe127f-6811-4fce-9468-9134dfe4da9f",
+      "input": "-101\n0",
+      "output": "-101 -99 -97 -95 -93 -91 -89 -87 -85 -83 -81 -79 -77 -75 -73 -71 -69 -67 -65 -63 -61 -59 -57 -55 -53 -51 -49 -47 -45 -43 -41 -39 -37 -35 -33 -31 -29 -27 -25 -23 -21 -19 -17 -15 -13 -11 -9 -7 -5 -3 -1",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "2d4862ee-8a4a-4895-af77-034b9450355e",
+      "input": "7\n7",
+      "output": "7",
+      "is_hidden": true,
+      "weightage": 16.0
+    },
+    {
+      "test_case_id": "5e4e6846-c07c-4900-bb06-c9795a91e318",
+      "input": "-6\n25",
+      "output": "-5 -3 -1 1 3 5 7 9 11 13 15 17 19 21 23 25",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "891d170f-0ea0-4c86-a7a0-7e6f69a5647e",
+      "input": "9\n21",
+      "output": "9 11 13 15 17 19 21",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "98d6db5d-f57c-46ad-9bfd-dd35d2bcb295",
+      "input": "5\n10",
+      "output": "5 7 9",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f36d3628-bda1-46b5-9f25-879b76c81e19",
+      "input": "-23\n-4",
+      "output": "-23 -21 -19 -17 -15 -13 -11 -9 -7 -5",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "fd366ad9-b2bb-480f-97c8-6c3efb988135",
+      "input": "12\n95",
+      "output": "13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63 65 67 69 71 73 75 77 79 81 83 85 87 89 91 93 95",
+      "is_hidden": true,
+      "weightage": 11.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "8de7fd4f-3c84-4b46-863e-d84c15c03a92",
+  "unit_name": "Coding Practice - 1",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "df6a2aba-d14d-4600-81bd-9017f7c43f60",
+  "topic_name": "For Loop",
+  "course_title": "Programming Foundations"
+}

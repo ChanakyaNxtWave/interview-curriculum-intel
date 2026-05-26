@@ -1,0 +1,75 @@
+{
+  "question_id": "9cd99fc7-ce7d-4591-ad0e-1bbe99d23f52",
+  "short_text": "First Unique Character",
+  "content": "A teacher is assigning unique student IDs based on the first letters of their names. The teacher wants to find the first letter in a given list of names that is not repeated among the other names. Write a program to identify this unique letter. If no such unique letter exists, return `-1`.\n\n<MultiLineNote>\n\n- The string represents the first letters of students' names.\n- A letter is considered unique if it appears only once in the entire string.\n- If the input string is empty, the output should be `-1`.\n\n</MultiLineNote>\n\n---\n\n#### Input\n\nA single line containing a string `S`.\n\n---\n\n#### Output\n\nA single line containing the first unique letter in `S`, or `-1` if no such letter exists.\n\n---\n\n#### Explanation\n\nIf `S` is `\"abac\"`, the first unique letter is `\"b\"` since `\"b\"` appears only once, while `\"a\"` appears twice.\n\nThe output should be `\"b\"`.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "9b398e78-28e2-4869-bb19-9e4213ddc9c1",
+      "code_content": "S = input()\n\nunique_character = -1\nfor i in range(len(S)):\n    is_unique = True\n    for j in range(len(S)):\n        if i != j and S[i] == S[j]:\n            is_unique = False\n            break\n    if is_unique:\n        unique_character = S[i]\n        break\n\nprint(unique_character)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "42329a9d-4d20-455b-90f6-fd5215e17c85",
+      "input": "abcdabcd",
+      "output": "-1",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5f870ed6-e664-4bca-aeed-1344f7b9316d",
+      "input": "aa",
+      "output": "-1",
+      "is_hidden": true,
+      "weightage": 6.0
+    },
+    {
+      "test_case_id": "9302c278-bc5d-4837-90ab-ff4e9d3857a9",
+      "input": "aabb",
+      "output": "-1",
+      "is_hidden": true,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "b3bd1aa2-243c-4df3-9b2d-08dadc99e095",
+      "input": "a",
+      "output": "a",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "d8f363c7-85b3-4cdd-93f6-4f61e0eb75bd",
+      "input": "abcabcabcx",
+      "output": "x",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "df028654-09fd-4dda-9d76-e50e8fecb5a9",
+      "input": "abac",
+      "output": "b",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f0b611ac-51a1-4dce-b49e-e9ca6ccf7bb2",
+      "input": "aabbccdde",
+      "output": "e",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "e12f5290-9206-4570-818e-a229b46db048",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "59299775-57fa-4b36-bb3c-ae731bf61685",
+  "topic_name": "Comparing Strings & Naming Variables",
+  "course_title": "Programming Foundations"
+}

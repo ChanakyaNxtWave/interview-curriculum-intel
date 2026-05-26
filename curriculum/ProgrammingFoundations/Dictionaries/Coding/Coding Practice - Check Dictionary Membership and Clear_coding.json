@@ -1,0 +1,61 @@
+{
+  "question_id": "66bfdee7-4585-45a9-abc6-75d304ccefd6",
+  "short_text": "Check Dictionary Membership and Clear",
+  "content": "Write a program that reads an integer `n`, followed by `n` lines of input, where each line contains a key and a value separated by a space. After creating the dictionary, read a single key and check if this key is present in the dictionary.\n\nIf the key is present, print `Key is present` otherwise, print `Key is not present`. After checking, clear the dictionary, and print the dictionary.\n\n---\n\n#### Input\n- An integer `n` represeting the number of key-value pairs.\n- `n` lines, where each line contains a key and a value separated by a space.\n- A string representing the key to check for membership.\n\n---\n\n#### Output\n- Print `Key is present` or `Key is not present` based on the membership check.\n- Print the cleared dictionary.\n  \n---\n\n#### Explanation\n\n\nFor example, if the given inputs are:\n\n```\n2\nname Teja\nage 15\nname\n```\nThe dictionary is `{'name': 'Teja', 'age': 15}`. The key `name` is checked and found to be present, so `Key is present` is printed. Then, the dictionary is cleared, resulting in `{}`.\n\nThe output should be :\n\n```\nKey is present\n{}\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "37ab18ed-0ed6-40d1-8a20-dbfe55d787a7",
+      "code_content": "n = int(input().strip())\nmy_dict = {}\n\nfor i in range(n):\n    key, value = input().strip().split()\n    my_dict[key] = value\n\ncheck_key = input().strip()\n\nif check_key in my_dict:\n    print(\"Key is present\")\nelse:\n    print(\"Key is not present\")\n\nmy_dict.clear()\nprint(my_dict)\n",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4f5b6f4b-9a33-42e4-bb8f-3b77286c7616",
+      "input": "3\nfruit Apple\ncolor Red\ncount 10\nprice",
+      "output": "Key is not present\n{}",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "64251a98-d48b-4de7-b6e0-81cdb836c661",
+      "input": "2\nkey1 value1\nkey2 value2\nkey3",
+      "output": "Key is not present\n{}",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "707a19f7-6e57-4073-920e-f937b6f0acc2",
+      "input": "4\nitem Book\nquantity 20\nprice 50\ntype Fiction\nquantity",
+      "output": "Key is present\n{}",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "c02d7dba-9084-4a0f-85f3-37d882c2cfdd",
+      "input": "2\nname Teja\nage 15\nname",
+      "output": "Key is present\n{}",
+      "is_hidden": false,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "f0b32e56-706f-4abf-a158-55a480d28861",
+      "input": "1\nbrand Dell\nbrand",
+      "output": "Key is present\n{}",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "b975ce0b-a0f2-41ac-b629-83f4fd930b80",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "a42aeba3-f53b-41c4-bd08-e8d9e9b42a32",
+  "topic_name": "Dictionaries",
+  "course_title": "Programming Foundations"
+}

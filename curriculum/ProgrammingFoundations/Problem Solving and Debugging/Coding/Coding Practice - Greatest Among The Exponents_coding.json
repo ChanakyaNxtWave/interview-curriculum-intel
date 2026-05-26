@@ -1,0 +1,377 @@
+{
+  "question_id": "20c1c400-e695-4520-ae7a-4b06ae51fcd0",
+  "short_text": "Greatest Among The Exponents",
+  "content": "Write a program that reads two numbers `A` and `B` and finds the,\r\n\r\n- Result of `A` power `B` (**A<sup>B</sup>**)\r\n- Result of `B` power `A` (**B<sup>A</sup>**)\r\n\r\nPrint the greatest among the results of `A` power `B` (**A<sup>B</sup>**) and `B` power `A` (**B<sup>A</sup>**).\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe first line of input contains an integer representing `A`.\r\nThe second line of input contains an integer representing `B`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be a single line containing an integer. The result of **A<sup>B</sup>** should be printed if **A<sup>B</sup>** is greater than **B<sup>A</sup>**. Otherwise, the result of **B<sup>A</sup>** should be printed.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given two numbers are `A = 2` and `B = 3`, \r\n\r\n- Result of `A` power `B` (**A<sup>B</sup>**) is **8**. (**2<sup>3</sup> = 8**)\r\n- Result of `B` power `A` (**B<sup>A</sup>**) is **9**. (**3<sup>2</sup> = 9**)\r\n- Greatest among the two results is **9**. (**9** is greater than **8**)\r\n\r\nThe output should be **9**.",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6ae7bbfc-519b-4174-936f-28d1b2194cd9",
+      "code_content": "a = int(input())\nb = int(input())\n\na_power_b = a ** b\nb_power_a = b ** a\n\nis_greater = a_power_b > b_power_a\n\nif is_greater:\n    print(a_power_b)\nelse:\n    print(b_power_a)\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "6fca8442-d83b-469a-8e42-cb63a4449293",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n5\n0\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "1",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given two numbers are `A = 5` and `B = 0`, \n\n- Result of `A` power `B` (**A<sup>B</sup>**) is **1** (**5<sup>0</sup> = 1**).\n\n- Result of `B` power `A` (**B<sup>A</sup>**) is **0** (**0<sup>5</sup> = 0**).\n\n- Greatest among the two results is **1** (**1** is greater than **0**).\n\nThe output should be **1**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e2cf4289-effe-4821-bed1-b1080d6c7344",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n4\n3\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "81",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given two numbers are `A = 4` and `B = 3`, \n\n- Result of `A` power `B` (**A<sup>B</sup>**) is **64** (**4<sup>3</sup> = 64**).\n\n- Result of `B` power `A` (**B<sup>A</sup>**) is **81** (**3<sup>4</sup> = 81**).\n\n- Greatest among the two results is **81** (**81** is greater than **64**).\n\nThe output should be **81**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "e9587070-25c6-4b14-89e6-20de25ab8b58",
+          "short_text": "",
+          "content": "What is the output for the given input?\n\n**Input**\n\n```\n6\n2\n```\n",
+          "question_type": "TEXTUAL",
+          "content_type": "MARKDOWN",
+          "answer": "64",
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given two numbers are `A = 6` and `B = 2`, \n\n- Result of `A` power `B` (**A<sup>B</sup>**) is **36** (**6<sup>2</sup> = 36**).\n\n- Result of `B` power `A` (**B<sup>A</sup>**) is **64** (**2<sup>6</sup> = 64**).\n\n- Greatest among the two results is **64** (**64** is greater than **36**).\n\nThe output should be **64**.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "4bdcf8fb-44a7-4e7b-b6b5-61e0986cf49a",
+          "short_text": "",
+          "content": "Which of the following is the correct output for the given input?\n\n**Input**\n\n```\n10\n2\n```",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0fe99477-d49d-491f-a9a3-3b0def19f476",
+              "content": "1024",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "5576acfc-b17c-4dfd-9b45-f278f627bf4a",
+              "content": "1034",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "60487bbf-e5c5-473d-928d-4fe8adefc64a",
+              "content": "1014",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c445a899-4902-448a-a177-ae8ad10ea7c5",
+              "content": "1022",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given two numbers are `A = 10` and `B = 2`, \n\n- Result of `A` power `B` (**A<sup>B</sup>**) is **100**. (**10<sup>2</sup> = 100**)\n\n- Result of `B` power `A` (**B<sup>A</sup>**) is **1024**. (**2<sup>10</sup> = 1024**)\n\n- Greatest among the two results is **1024**. (**1024** is greater than **100**)\n\nThe output should be **1024**.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "66ae1313-89ba-4759-804d-2ce067e34438",
+          "short_text": "",
+          "content": "Which of the following are valid inputs?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "3aca0943-0842-4136-ad8c-336eda057135",
+              "content": "```\n9 2\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "6dc82793-ae9b-4bdf-9109-1a7fae91e8f8",
+              "content": "```\n12\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "84d4c581-6808-486f-b1b2-5e819b9a3335",
+              "content": "```\n4\n9\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "f37e7927-287e-483e-bbfd-8c1762c6acc8",
+              "content": "```\n1\n7\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "**Input 1**\n\n```\n4\n9\n```\n\n**Input 2**\n\n```\n1\n7\n```\n\nThe above two inputs are valid because,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6c6f1643-d452-4769-a0bc-8b6fdba75506",
+          "short_text": "",
+          "content": "Which mathematical operation is used to calculate the result of `B` to the power of `A`?\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "082c67c7-cdd3-49d5-881a-29b23d85f94f",
+              "content": "Subtraction",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "64ea0b5e-cfd8-489c-8250-f5b92a94134f",
+              "content": "Exponentiation",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "a31b29a6-f60c-4c7e-8884-ba3fc8744106",
+              "content": "Multiplication",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e1c1354e-3178-4de7-b4e5-efb1e63e249b",
+              "content": "Division",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Exponentiation is used to calculate the result of `B` to the power of `A`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6cde99df-d851-4d1c-a1c2-66960dd53f0d",
+          "short_text": "",
+          "content": "What will be the output format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "066a080d-8f25-4438-974c-5b5e04a09816",
+              "content": "The output should be a single line containing an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "1a5e7027-08e4-4d60-8e7f-63c904f9c018",
+              "content": "The output should be a single line containing a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "61cf2004-2aa2-4c66-8580-9a10cfcb7d83",
+              "content": "The output should be a single line containing comma-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "be8d021b-5eff-4735-ac93-cbaa80f331ad",
+              "content": "The output should be a single line containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The output should be a single line containing an integer. The result of **A<sup>B</sup>** should be printed if **A<sup>B</sup>** is greater than **B<sup>A</sup>**. Otherwise, the result of **B<sup>A</sup>** should be printed.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6ff3a592-e5d2-4b0f-ae7a-0a411f392cd4",
+          "short_text": "",
+          "content": "What will be the input format for the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6b5b4f91-d984-4161-8652-857b583c9d5b",
+              "content": "Multiple lines containing space-separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "c696fa5c-0257-42c8-9cc7-9bdda6136a58",
+              "content": "The first line of input contains comma separated integers.\n\nThe second line of input contains comma separated integers.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "eb85094e-9c50-404b-b486-814b892a2a40",
+              "content": "The first line of input contains a string.\n\nThe second line of input contains a string.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "fcf95910-6b84-41f2-b87f-60e3f72ad107",
+              "content": "The first line of input contains an integer.\n\nThe second line of input contains an integer.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The input of the program will be,\n\n- The first line of input contains an integer representing `A`.\n\n- The second line of input contains an integer representing `B`.\n\nFor example,\n\n```\n1\n3\n```",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "706a8160-ddc9-47f6-a670-be4caba6520d",
+          "short_text": "",
+          "content": "What is the main purpose of the program?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "03491d13-d968-45fa-9e7a-de452caa2799",
+              "content": "To find the difference between **A<sup>B</sup>** and **B<sup>A</sup>**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3a84dfb0-63a7-4f15-abf9-65ecb6c7766d",
+              "content": "To find the sum of **A<sup>B</sup>** and **B<sup>A</sup>**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "64120b6b-d919-49d8-94ca-58447d7243e8",
+              "content": "To find the smallest result between **A<sup>B</sup>** and **B<sup>A</sup>**.",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a4aa4c6c-e92f-4cee-b012-faa03f33c287",
+              "content": "To find the greatest result between **A<sup>B</sup>** and **B<sup>A</sup>**.",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The main purpose of the program is to read two numbers `A` and `B` and find the greatest among the results of `A` power `B` (**A<sup>B</sup>**) and `B` power `A` (**B<sup>A</sup>**).",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "7cf3e303-4198-4040-9c52-354c619d3ae4",
+          "short_text": "",
+          "content": "What is the result of `A` power `B` if `A = 5` and `B = 3`?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "08e8cc6e-6338-451e-ad0d-5b0240e5ad0f",
+              "content": "130",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "3be613b5-f102-45ac-9e52-85660d10812b",
+              "content": "125",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "9bd710c0-62f8-439a-b889-5e5a2972d1ac",
+              "content": "225",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f6564fe5-5e9f-4216-a58f-18aefc2b2f9f",
+              "content": "120",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "If the given `A = 5` and `B = 3`\n\n- Result of `A` power `B` (**A<sup>B</sup>**) is **125** (**5<sup>3</sup> = 125**).",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "22a0f519-b55a-44d7-a371-cc14ec4d69ee",
+      "input": "2\n5",
+      "output": "32\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "24a40627-8cb4-4e79-a731-344d759eee91",
+      "input": "3\n1",
+      "output": "3\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "48f864d2-4d7a-4fcc-9ae2-96527398372c",
+      "input": "2\n3",
+      "output": "9\n",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "6b6c2bd6-f621-4228-a90c-d1b2fa7322c3",
+      "input": "10\n11",
+      "output": "100000000000\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "9f17a975-d952-4062-ab8d-f1800489c886",
+      "input": "14\n15",
+      "output": "155568095557812224\n",
+      "is_hidden": true,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "4be4e2a7-d791-43c3-a298-38c62160eecf",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ff7f43bc-4d11-48eb-983e-7ef504aa585c",
+  "topic_name": "Problem Solving and Debugging",
+  "course_title": "Programming Foundations"
+}

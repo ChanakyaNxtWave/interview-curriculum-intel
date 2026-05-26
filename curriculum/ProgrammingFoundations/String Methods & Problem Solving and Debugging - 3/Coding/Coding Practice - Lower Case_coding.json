@@ -1,0 +1,75 @@
+{
+  "question_id": "6ec51c7b-9dea-4dd7-969a-99190a1631d5",
+  "short_text": "Lower Case",
+  "content": "Given a string, write a program to print the string by converting all the characters in the string to **lowercase**.\n\n---\n\n#### Input\n\nThe input will be a single line containing a string.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by converting all the characters in the given string to **lowercase**.\n\n---\n\n#### Explanation\n\nFor example, if the given string is **NOVEMBER**,\n\n- The characters in the string **NOVEMBER** are **N**, **O**, **V**, **E**, **M**, **B**, **E**, **R**.\n- After converting characters into lowercase.\n\nThe output should be **november**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "a13800c7-e6ba-4d21-b6e0-f27ae5fe4dfe",
+      "code_content": "string  = input()\n\nlowercase_string = string.lower()\n\nprint(lowercase_string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "174e622f-d683-488c-95b4-ed581ede0cf2",
+      "input": "visual STUDIO code",
+      "output": "visual studio code",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "5d079864-86c6-40c6-b5a2-1b5079c6698f",
+      "input": "bootcamp",
+      "output": "bootcamp",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "7d743270-e831-4830-a0e2-43d88d948478",
+      "input": "ASSignment",
+      "output": "assignment",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "8be696a6-c5bf-471e-9a30-6925cbd88335",
+      "input": "PYTHON",
+      "output": "python",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "ccc77599-8ca6-48c1-98d1-faabdc773784",
+      "input": "DESTrucTuring MeTHods",
+      "output": "destructuring methods",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "d4141fc9-7d8b-422c-965b-2dbc21e907e0",
+      "input": "NOVEMBER",
+      "output": "november",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "dfa61ce1-9c17-4abe-8504-5fdf8eac5865",
+      "input": "Amazing Journey",
+      "output": "amazing journey",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

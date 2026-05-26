@@ -1,0 +1,68 @@
+{
+  "question_id": "2ec0ba46-8f38-4c84-b4a5-7cd447ca0b3c",
+  "short_text": "Print Words",
+  "content": "A function named `print_words` is given in the prefilled code that takes a list `words` as an argument.\n\nWrite a program that reads a string `S` containing space-separated words as input from the user and uses the `print_words` function in the prefilled code to recursively print each word in the input on a new line.\n\n---\n\n#### Input\n\nThe input will be a single line containing space-separated words.\n\n---\n\n#### Output\n\nThe output should be each word in the input printed on a new line.\n\n---\n\n#### Explanation\n\nFor example, if the given input is:\n\n```\nkotlin hello world recursion is fun\n```\n\nThe output should be:\n\n```\nkotlin\nhello\nworld\nrecursion\nis\nfun\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "404fc6a7-6e72-4947-bd9a-9418e701a98f",
+      "code_content": "def print_words(words):\n    if len(words) == 0:\n        return\n    print(words[0])\n    print_words(words[1:])\n\ns = input().split()\n\nprint_words(s)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "4d6fd494-e9b8-4c57-8a95-cdee6b545ac3",
+      "input": "kotlin java python",
+      "output": "kotlin\njava\npython",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "88638242-aa5b-4974-9fd8-5b10d3b719d5",
+      "input": "singleword",
+      "output": "singleword",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "93a0901b-1a0f-471d-82bd-689ffbc3d251",
+      "input": "apple banana cherry",
+      "output": "apple\nbanana\ncherry",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "9c31d61a-cb7a-4938-a158-c1ef3399e845",
+      "input": "multiple words here",
+      "output": "multiple\nwords\nhere",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "a13bbe8e-bb64-4928-b86f-5e016d7636b0",
+      "input": "one two three four",
+      "output": "one\ntwo\nthree\nfour",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "a63c4e6e-f6e2-4815-9cf6-257daa82b1b5",
+      "input": "kotlin hello world recursion is fun",
+      "output": "kotlin\nhello\nworld\nrecursion\nis\nfun",
+      "is_hidden": false,
+      "weightage": 1.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "90ba8547-9585-47d5-9248-ea6d165e7b01",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "5f87bfcd-6519-4b34-9ca5-3fd5c1d51b1f",
+  "topic_name": "Problem Solving using Recursion",
+  "course_title": "Programming Foundations"
+}

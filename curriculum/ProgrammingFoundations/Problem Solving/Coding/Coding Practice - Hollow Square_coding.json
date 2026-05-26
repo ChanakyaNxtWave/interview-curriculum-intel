@@ -1,0 +1,476 @@
+{
+  "question_id": "a7d21436-d0d5-4911-802e-18071aade530",
+  "short_text": "Hollow Square",
+  "content": "Given a number `N`, write a program to print a **Square** of `N` rows using stars (`*`).\r\n\r\n```\r\n* * * * * * \r\n*         * \r\n*         * \r\n*         * \r\n*         * \r\n* * * * * * \r\n```\r\n\r\n<MultiLineNote>\r\nThere is a space after every star (`*`).\r\n</MultiLineNote>\r\n\r\n---\r\n\r\n#### Input\r\n\r\nThe input will be a single line containing an integer representing `N`.\r\n\r\n---\r\n\r\n#### Output\r\n\r\nThe output should be `N` rows containing stars (`*`) as a **Square** shown in the sample output.\r\n\r\n---\r\n\r\n#### Explanation\r\n\r\nFor example, if the given number is `N = 4`,\r\n\r\n- Print stars (`*`) on **4** rows as shown in the given image.\r\n  - The first row contains **4** stars (`*`).\r\n  - The middle **2** rows contain **2** stars (`*`).\r\n  - The last row contains **4** stars (`*`).\r\n\r\n    <Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>\r\n\r\n<MultiLineNote>\r\n\r\nIn the given image, \r\n\r\n- The Empty box indicates two spaces (\"&nbsp;&nbsp;\").\r\n- The Star in the box indicates star and a space (\"* \").\r\n\r\n</MultiLineNote>\r\n\r\nThe output should be,\r\n\r\n```\r\n* * * * \r\n*     * \r\n*     * \r\n* * * *\r\n```",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "6a87d855-d545-4b23-b492-90705220b794",
+      "code_content": "n = int(input())\n\nprint(\"* \" * n)\n\nfor i in range(1, n - 1):\n    middle_spaces = \"  \" * (n - 2)\n    row = \"* \" + middle_spaces + \"* \"\n    print(row)\n    \nprint(\"* \" * n)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [
+    {
+      "round": 1,
+      "questions": [
+        {
+          "question_id": "01ea6d2d-d524-4669-8cd5-bcf749c71bf6",
+          "short_text": "",
+          "content": "Which of the following code snippets is used to print the first row of the Square when `N` is given as input?\n\nSquare of **4** (`N = 4`) rows:\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "489d7f23-a91f-4b9c-a4b4-346b9c123bb3",
+              "content": "```python\nrow = \"*\" * N\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "5b9e0594-80a5-4a12-a35b-911600e7f457",
+              "content": "```python\nrow = \"*\" * (N - 1)\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a891ca53-e3e8-4169-9ee6-caa3f16f5431",
+              "content": "```python\nrow = \"* \" + N\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "dfd30f81-3844-41ea-a3e4-061b102df54e",
+              "content": "```python\nrow = \"* \" * (N - 1)\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "f1915015-3aea-4662-865f-bdd5c87dac25",
+              "content": "```python\nrow = \"* \" * N\nprint(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The Python code snippet uses '* ' as a string, which includes a star and a space. By using the repetition operator `*`, the string '* ' is repeated `N` times. Hence '* ' * N produces a string that represents the first row of the square with `N` stars and spaces.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "638c0c5d-bf60-4929-94f6-c5fefdf09f51",
+          "short_text": "",
+          "content": "Which of the following code snippets is used to print the second row of the Square when `N` is given as input?\n\nSquare of **4** (`N = 4`) rows:\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6c61dd8c-7df0-4b10-a84e-4328164ed285",
+              "content": "```python\nstar = ...  # string of 1 star\nspaces = ... # string of spaces in the second row\n\nprint(starspaces)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "b1e2c6e3-54d2-4adb-9ff8-d223e6f60955",
+              "content": "```python\nstar = ...  # string of 1 star\nspaces = ... # string of spaces in the second row\n\nprint(star + spaces)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d59e2504-626d-4cf3-9c84-a93a4c0e0e55",
+              "content": "```python\nstar = ...  # string of 1 star\nspaces = ... # string of spaces in the second row\n\nprint(star + star + spaces)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e46ae084-33d8-46a3-906e-22a6b0e6d72d",
+              "content": "```python\nstar = ...  # string of 1 star\nspaces = ... # string of spaces in the second row\n\nprint(star + spaces + star)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "e6445cba-d772-41fc-909b-b324856751b7",
+              "content": "```python\nstar = ...  # string of 1 star\nspaces = ... # string of spaces in the second row\n\nprint(star * spaces * star)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The second row of the square always starts and ends with a star, with `N-2` spaces in between. The Python code snippet prints this row by concatenating a single star string (`star`), a string of `N-2` spaces (`spaces`), and another star string (`star`). This forms the second row of the square.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fc008300-bb64-43d2-81d2-a9f6dfe7845e",
+          "short_text": null,
+          "content": "Which of the following code snippets is used to print the spaces in the second row of the Square when `N` is given as input?\r\n\r\nSquare of **4** (`N = 4`) rows:\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2a06f7f8-e562-4a1f-a10b-24b9d9c66fdc",
+              "content": "```python\r\nsingle_space = \" \"\r\n\r\nmiddle_spaces = single_space * (N - 2)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "8b93a832-ec55-4b3c-8fb6-23b7eea79eba",
+              "content": "```python\r\nsingle_space = \" \"\r\n\r\nmiddle_spaces = single_space * N\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "966ac618-2d9e-4f5d-ab4d-178d7902d3cc",
+              "content": "```python\r\ndouble_space = \"  \"\r\n\r\nmiddle_spaces = double_space * (N - 2)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "d2a8026c-7848-4bb1-a24b-405d19e4a921",
+              "content": "```python\r\ndouble_space = \"  \"\r\n\r\nmiddle_spaces = double_space * N\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "For the middle rows of the square, except for the first and last star, the remaining spaces are printed. As the square has `N` elements in each row and two of them are stars, there are `N-2` spaces in between. The expression `double_space * (N - 2)` will give the required number of spaces between the stars in the middle rows.",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "questions": [
+        {
+          "question_id": "09c88fba-304f-4018-bad0-c2db5edab487",
+          "short_text": "",
+          "content": "Which of the following operators is used for string repetition in Python?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "2c9a95f5-70a4-49de-939a-ae9540d1d1fb",
+              "content": "`+`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "2ddf14ef-d722-489c-ad81-7d06fae133c1",
+              "content": "`/`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "49656bfb-5d0e-43f7-b913-695b449bf4f9",
+              "content": "`*`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "8d9ae178-e58c-41d0-bd80-c8f57bb2b68e",
+              "content": "`-`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9c182d4a-7ee7-4d10-891d-b19c88590057",
+              "content": "`:`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The operator used for string repetition in Python is the `*` (asterisk) operator. When applied to a string, the `*` operator allows you to repeat the string a certain number of times.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "4cb71549-67c1-4d01-8a2c-56d56e7dcbab",
+          "short_text": "",
+          "content": "Which of the following concepts are used to print the given Square when `N` is given as input?\n\nSquare of **4** (`N = 4`) rows:\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "880d9264-af49-4930-9164-5ccef0ccd875",
+              "content": "Loops",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "e6bea10b-a8ab-4b5e-874e-0b04f9c80146",
+              "content": "String Repetition",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "fdfaab78-f936-4ec6-9bdd-deabc8763a57",
+              "content": "String Concatenation",
+              "content_type": "TEXT",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The concept of Loops is used in this problem. Specifically, a for loop is used to iterate through each row of the square. For each iteration (i.e., for each row), the loop decides what to print based on the row number. Thus, loops are a fundamental concept used in printing this square pattern.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "6b255932-f889-466b-9425-0a0efe822777",
+          "short_text": "",
+          "content": "Which of the following operators is used for string concatenation in Python?",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "HTML",
+          "options": [
+            {
+              "option_id": "3d0306f5-dfce-4633-a4d8-bfd4ac47a4f0",
+              "content": "`+`",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "4d3efa1d-69c0-4012-a617-45c96837be12",
+              "content": "`*`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "57491d46-1077-4c0b-8ea4-fb4459d84619",
+              "content": "`:`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "751f2970-830e-4575-addd-76ba6ba0c859",
+              "content": "`-`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "d3c42a76-5427-4a69-b308-a09249ff69d7",
+              "content": "`/`",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "The operator used for string concatenation in Python is the + (plus) operator. When applied to two strings, the + operator combines or concatenates the strings together, resulting in a new string that is the combination of the two original strings.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9b402ad3-6b18-4588-a29f-5a314dded136",
+          "short_text": null,
+          "content": "Considering the given code snippet, which of the following code snippets is used to print the rows in the given Square, when `N` is given as input? \r\n\r\n```python\r\nfor i in range(1, N+1):\r\n    is_first_row = ... # stores True if row is first row\r\n    is_last_row = ... # stores True if row is last row\r\n    is_first_or_last_row = ... # stores True if row is first or last row. Otherwise, stores False\r\n    ...\r\n```  \r\n\r\nSquare of **4** (`N = 4`) rows:\r\n\r\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "2de328d2-a508-4a41-8d66-f43ccdde0a8c",
+              "content": "```python\r\nrow = \"* * * * *\"\r\nmiddle_row = \"*       *\"\r\n\r\nprint(row or middle_row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "31bfb407-f64a-4ffc-b95e-61375e43f7cb",
+              "content": "```python\r\nrow = \"* * * * *\"\r\nmiddle_row = \"*       *\"\r\n\r\nif(is_first_or_last_row):\r\n    print(middle_row)\r\nelse:\r\n    print(row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a8054624-57b2-46cd-beef-87c6ea5f5944",
+              "content": "```python\r\nrow = \"* * * * *\"\r\nmiddle_row = \"*       *\"\r\n\r\nprint(row)\r\n\r\nprint(middle_row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "a8b9d2a4-591e-45ae-b11b-32395e610920",
+              "content": "```python\r\nrow = \"* * * * *\"\r\nmiddle_row = \"*       *\"\r\n\r\nif(is_first_or_last_row):\r\n    print(row)\r\nelse:\r\n    print(middle_row)\r\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In the given Python code snippet, `row` represents a string of stars that should be printed for the first and last rows of the square, while `middle_row` represents the string to be printed for the middle rows. The `if` condition checks whether the current row (`i`) is the first or last row (`is_first_or_last_row`), if true it prints `row`, otherwise it prints `middle_row`.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9de5ae13-e46f-489e-907c-3438c84ba502",
+          "short_text": "",
+          "content": "Considering the given code snippet, which of the following conditions is used to check whether the **row is first row or last row** of the Square when `N` is given as input?\n\nSquare of **4** (`N = 4`) rows:\n\n<Img imageSrc='https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png' widthPercent='50'/>\n\n```python\nfor i in range(1, N + 1):\n    condition = ______\n```\n",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "45a0ef24-3443-4f3d-9c21-f7e57d6e1f1c",
+              "content": "```\ni == 1 or i == N\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "46620098-dc1c-412a-aff1-e76c37197c8e",
+              "content": "```\ni == 0 or i == N - 1\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "9b80b5ab-9eb0-4270-ba36-7dc06bc545a3",
+              "content": "```\ni == 0 or i == N\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e525db37-13a6-4843-a219-7e57addff590",
+              "content": "```\ni == 0 or i == N + 1\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In the for loop, `i` represents the row number. If `i` is equal to `1`, it means we are at the first row of the square. And, if `i` is equal to `N`, it indicates that we are at the last row of the square. So, the condition `i == 1 or i == N` checks for these specific rows.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "9f48d4dc-2d30-4a44-bf85-4cebc58db0a8",
+          "short_text": "",
+          "content": "Which of the following code snippets is used to print `N` rows, where `N` is given as input?",
+          "question_type": "MORE_THAN_ONE_MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "0a423e61-d82d-4c22-a16d-f6fe33d9f23e",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(0, n):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "33e26493-aa7d-4b2d-8a0f-4e25d3c7fa42",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(1, n+1):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            },
+            {
+              "option_id": "37d91c75-f980-4053-ba74-eaacdfa3a787",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(0, n+1):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "42276fe0-fc07-4777-9d87-a0710c1abc5f",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(1, n):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": false
+            },
+            {
+              "option_id": "e0a5ac63-3c0f-408f-b474-34c31e83c98a",
+              "content": "```python\nn = int(input())\n\nrow = \"*\"\n\nfor i in range(n):\n    print(row)\n```",
+              "content_type": "MARKDOWN",
+              "is_correct": true
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "In Python, loops can be created to repeat a block of code a certain number of times. In this case, the range function is used in the for loop to determine the number of iterations. All correct options `range(1, n+1)`, `range(n)`, and `range(0, n)` will result in `n` iterations, hence printing `n` rows. Incorrect options either exclude the first or the last iteration, resulting in printing less or more than `n` rows.",
+            "content_type": "MARKDOWN"
+          }
+        },
+        {
+          "question_id": "fea14cc2-6655-4173-9f41-dddb9f4ae1a4",
+          "short_text": null,
+          "content": "Rearrange the given steps in order to print the Square of `N` rows, where `N` is given as input?\r\n\r\n<b>Step 1:</b> Create a loop to iterate through each row of the Square.\r\n\r\n<b>Step 2:</b>  If the current row is on the border, print a row of stars (`*`) followed by a space. Else, print a row of spaces (\" \") with stars (`*`) at the beginning and end of the row.\r\n\r\n<b>Step 3:</b> Read `N` as input.\r\n\r\n<b>Step 4:</b> Check if the current row is on the border (first or last row) or inside the Square.",
+          "question_type": "MULTIPLE_CHOICE",
+          "content_type": "MARKDOWN",
+          "options": [
+            {
+              "option_id": "6b06e307-6a50-4c74-9777-840b4709bbe1",
+              "content": "Step 2, Step 4, Step 3, Step 1",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "dd1e5a60-2b2d-4413-8dd3-84c6fad5a60b",
+              "content": "Step 3, Step 1, Step 4, Step 2",
+              "content_type": "TEXT",
+              "is_correct": true
+            },
+            {
+              "option_id": "f8f3bbba-0520-4e50-b488-4ce61cb3f96c",
+              "content": "Step 1, Step 2, Step 3, Step 4",
+              "content_type": "TEXT",
+              "is_correct": false
+            },
+            {
+              "option_id": "fc9a9961-1888-4623-9e82-c0c7f30528a0",
+              "content": "Step 3, Step 4, Step 1, Step 2",
+              "content_type": "TEXT",
+              "is_correct": false
+            }
+          ],
+          "object_type": "OBJECTIVE_QUESTIONS",
+          "answer_explanation": {
+            "content": "Initially, `N` is read as input (Step 3). Afterward, a loop is initiated to iterate through each row of the Square (Step 1). Inside the loop, the program checks whether the current row is a border row (first or last) or an inside row (Step 4). Depending on this check, the program prints the corresponding row with stars or spaces (Step 2).",
+            "content_type": "MARKDOWN"
+          }
+        }
+      ]
+    }
+  ],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "5ce808ac-095c-4088-be16-d46b40d44805",
+      "input": "37",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n*                                                                       * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "90f65d36-fd53-42af-8b60-937cf8327ab6",
+      "input": "50",
+      "output": "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n*                                                                                                 * \n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "e0e650a8-c373-47f5-aa16-57ad8d9008fd",
+      "input": "6",
+      "output": "* * * * * * \n*         * \n*         * \n*         * \n*         * \n* * * * * * \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "ef892065-324c-4258-b915-9f6c219950b6",
+      "input": "4",
+      "output": "* * * * \n*     * \n*     * \n* * * * \n",
+      "is_hidden": false,
+      "weightage": 7.0
+    },
+    {
+      "test_case_id": "f2ee5580-e3eb-4608-8dd3-0df312229e66",
+      "input": "10",
+      "output": "* * * * * * * * * * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n*                 * \n* * * * * * * * * * \n",
+      "is_hidden": true,
+      "weightage": 7.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "f1d3382b-c88a-40cb-8947-04bdd1bc36d0",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "8e1cea07-4081-42a4-ac20-13747ada2edc",
+  "topic_name": "Problem Solving",
+  "course_title": "Programming Foundations"
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": "c97bd919-7f4e-450c-98cb-a1023a973006",
+  "short_text": "Set Relation",
+  "content": "For this problem, the prefilled code will contain a set. Write a program to check the following relations with the given set.<br/>   1. Superset<br/>   2. Subset<br/>   3. Disjoint Set<hr><b>Input</b><br/><br/>The input will be a single line containing the space-separated integers.<hr><b>Output</b><br/><br/>The output should be a single line containing either &quot;Superset&quot; or &quot;Subset&quot; or &quot;Disjoint Set&quot;.<hr><b>Explanation</b><br/><br/>For example, if the given string is &quot;2 3 4&quot;, the output should be &quot;Superset&quot;, as all the values in the given set are present in the original set.",
+  "question_type": "CODING",
+  "content_type": "HTML",
+  "codes": [
+    {
+      "code_id": "88d49d3a-9482-47b1-91cf-0483436259a5",
+      "code_content": "def convert_string_to_int(list_a):\n    new_list = []\n    for item in list_a:\n        num = int(item)\n        new_list.append(num)\n    return new_list\n\n\nnum_set = {1, 2, 3, 4, 5, 6, 7, 8, 9}\n\nnum_list = input().split()\nnum_list = convert_string_to_int(num_list)\nset_a = set(num_list)\n\nif num_set.issuperset(set_a):\n    print(\"Superset\")\nelif num_set.issubset(set_a):\n    print(\"Subset\")\nelif num_set.isdisjoint(set_a):\n    print(\"Disjoint Set\")\n",
+      "language": "PYTHON39",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "33fe9cea-0f16-40f0-b013-581749d78d77",
+      "input": "1 2 3 4 5 6 7 8 9 10 11",
+      "output": "Subset\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "72135ee0-4a98-46fc-8d50-79578953edb7",
+      "input": "10 20",
+      "output": "Disjoint Set\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "a9375e1c-cf58-4432-ade2-ce93789343cc",
+      "input": "1 2 3 4 5 6 7 8 9 10 11 12 13 151 17 234",
+      "output": "Subset\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "b4356b05-0857-4752-83ca-13f10ba52a77",
+      "input": "2 3 4",
+      "output": "Superset\n",
+      "is_hidden": false,
+      "weightage": 9.0
+    },
+    {
+      "test_case_id": "d2602460-986d-4cd7-9bef-2677b207797a",
+      "input": "5",
+      "output": "Superset\n",
+      "is_hidden": true,
+      "weightage": 9.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cd9d04a4-db0c-401a-97e3-03fcba814e7d",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "413c7a71-cf16-4c9c-8a7f-874272cf9a23",
+  "topic_name": "Nested Lists and String Formatting",
+  "course_title": "Programming Foundations"
+}

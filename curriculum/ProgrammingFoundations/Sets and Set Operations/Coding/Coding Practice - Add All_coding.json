@@ -1,0 +1,61 @@
+{
+  "question_id": "a9bcc85e-b5af-432e-b164-f22dbc8a94e6",
+  "short_text": "Add All",
+  "content": "Write a program that reads a string `S` containing space-separated strings from the user and form a set from these strings. The program should then read multiple space-separated strings and add them to the set. Finally, it should print the strings of the set as space-separated strings in sorted order.\n\n---\n\n#### Input\n\nThe input consists of two lines:\n\n- The first line contains space-separated strings to form the set.\n- The second line contains space-separated strings to add to the input set.\n\n---\n\n#### Output\n\nThe output should be a single line containing the strings of the updated set as space-separated strings in sorted order.\n\n---\n\n#### Explanation\n\nFor example, if the input is:\n\n```\napple banana orange\nbanana grape kiwi\n```\n\n- In this example, the initial set contains `apple`, `banana`, and `orange`. After adding `banana`, `grape`, and `kiwi`.\n- The program outputs strings in the updated set as space-separated strings in sorted order. `apple banana grape kiwi orange`, without duplicates.\n\nThe output should be:\n\n```\napple banana grape kiwi orange\n```\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "31a4142f-c694-438d-859d-6742c6337b77",
+      "code_content": "s = input().strip().split()\nunique_items = set(s)\nitems_to_add = input().strip().split()\n\nunique_items.update(items_to_add)\n\nupdated_list = []\n\nfor item in unique_items:\n    updated_list.append(item)\n\n\nsorted_list=sorted(updated_list)\n\nprint(\" \".join(sorted_list))",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "04e58ade-3df7-4d3a-9548-8d569ebdfcde",
+      "input": "red blue yellow\nblue red",
+      "output": "blue red yellow",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "24171ee1-d651-4d14-88dd-fd72b147c55e",
+      "input": "apple banana orange\nbanana grape kiwi",
+      "output": "apple banana grape kiwi orange",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "5853930d-90cd-4699-a207-9aaaaf0c5a82",
+      "input": "cat dog\nfish bird",
+      "output": "bird cat dog fish",
+      "is_hidden": true,
+      "weightage": 4.0
+    },
+    {
+      "test_case_id": "6e562750-2f62-4a16-be82-f46af491219f",
+      "input": "grape kiwi\nkiwi mango",
+      "output": "grape kiwi mango",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "f9d937fb-6d1a-48b5-bdce-d3c8cff3f3d9",
+      "input": "1 2 3\n3 4 5",
+      "output": "1 2 3 4 5",
+      "is_hidden": true,
+      "weightage": 6.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "ceb957b7-1aa1-42e3-97ba-77c6e832caae",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "ad66cb99-977c-4882-ba81-561b81948459",
+  "topic_name": "Sets and Set Operations",
+  "course_title": "Programming Foundations"
+}

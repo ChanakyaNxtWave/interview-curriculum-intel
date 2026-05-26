@@ -1,0 +1,47 @@
+{
+  "question_id": "ddba6cb8-1dd7-40fc-aa03-ef441d739110",
+  "short_text": "Library Book Management",
+  "content": "Complete the given **`Library`** class by adding new features as per the instructions below.\n\n\nExisting **`Library`** class:\n\nThe existing Library class has only a **pass** statement. Remove the **pass** statement and implement the new features as mentioned in the given instructions. \n\n<details> \n\n<summary>Features to be added to **`Library`** class</summary>\n\n- **Add below attributes**\n - The **`Library`** class should have the following attributes:\n  - **`books`**: a dictionary to store book titles as keys and their availability (True for available, False for checked out) as values.\n\n- **Add below methods**\n - **`add_book`(book_title)**:\n   -  If the book does not already exist, add it to the books dictionary with its availability set to True (indicating that it is available),  If the book already exists in the library, print **`Book already exists`**.\n - **`remove_book`(book_title)**:\n   - The method should delete the book from the books dictionary,  If the book does not exist, print **`Book not found`**.\n - **`check_out`(book_title)**:\n   - The method should mark the book as checked out by setting the availability as `False`, If the book is not found, print **`Book not found`**, If the book is already checked out, print **`Book not available`**.\n - **`return_book`(book_title)**:\n   - The method marks the book as returned by setting the value as its availability back to **`True`**, If the book is not found, print **`Book not found`**, If the book was not checked out **(availability is already True)**, print **`Book was not checked out`**.\n - **`list_books`()**:\n   - Return a dictionary where keys are book titles and values are strings indicating their status (\"Available\" or \"Checked Out\") the dictionary should be in the below format.\n     - Example Format :- `{'Book A': 'Available', 'Book B': 'Checked Out'}`\n\n  \n</details> \n\n<MultiLineNote>\n\n- Do not edit the **`default_test`** function as this will affect the test cases.\n- The output of the testcase Checking Default Tests is given by the `default_test` function in the prefilled code. Do not edit or delete the `default_test` function.\n- This Coding question does not have the usual input/output test cases. The class defined by you will be tested internally whether the attributes are present or not. So in test case results, you will be shown a rough description of the tests that will be verified.\n</MultiLineNote>",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "53d2df90-dc5b-4056-b7ec-c23e1c39a1bc",
+      "code_content": "class Library:\n    def __init__(self):\n        self.books = {}\n\n    def add_book(self, book_title):\n        if book_title in self.books:\n            print(\"Book already exists\")\n        else:\n            self.books[book_title] = True  # True indicates that the book is available\n\n    def remove_book(self, book_title):\n        if book_title in self.books:\n            del self.books[book_title]\n        else:\n            print(\"Book not found\")\n\n    def check_out(self, book_title):\n        if book_title in self.books:\n            if self.books[book_title]:\n                self.books[book_title] = False  # Mark as checked out (not available)\n            else:\n                print(\"Book not available\")  # Already checked out\n        else:\n            print(\"Book not found\")  # Book does not exist\n\n    def return_book(self, book_title):\n        if book_title in self.books:\n            if not self.books[book_title]:\n                self.books[book_title] = True  # Mark as available (returned)\n            else:\n                print(\"Book was not checked out\")  # Already available\n        else:\n            print(\"Book not found\")  # Book does not exist\n\n    def list_books(self):\n        return {title: \"Available\" if available else \"Checked Out\" for title, available in self.books.items()}\n\n# Do not modify the code below. This function will be called during testing.\ndef default_test():\n    library = Library()\n    library.add_book(\"1984\")\n    library.add_book(\"To Kill a Mockingbird\")\n    library.check_out(\"1984\")\n    print(library.list_books())\n    library.return_book(\"1984\")\n    print(library.list_books())\n    library.remove_book(\"To Kill a Mockingbird\")\n    print(library.list_books())",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "0b41a9a4-97ca-4e50-90a7-4d571c5a10ee",
+      "input": "Checking Library Attributes",
+      "output": "PASS",
+      "is_hidden": true,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a04427b0-54ec-44cb-a876-64983159c430",
+      "input": "Checking Library Methods",
+      "output": "PASS",
+      "is_hidden": false,
+      "weightage": 5.0
+    },
+    {
+      "test_case_id": "a45962e9-c63e-4470-ba71-c8d3bd3749fd",
+      "input": "Checking Default Tests",
+      "output": "{'1984': 'Checked Out', 'To Kill a Mockingbird': 'Available'}\n{'1984': 'Available', 'To Kill a Mockingbird': 'Available'}\n{'1984': 'Available'}",
+      "is_hidden": false,
+      "weightage": 5.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "cc1c2dc7-bb57-422a-b152-848c5b456ab1",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "13ca08b1-6088-4458-b308-ad792c34749e",
+  "topic_name": "Abstraction and Polymorphism",
+  "course_title": "Programming Foundations"
+}

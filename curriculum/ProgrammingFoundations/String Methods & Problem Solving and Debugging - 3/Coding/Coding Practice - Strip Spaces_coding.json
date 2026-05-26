@@ -1,0 +1,82 @@
+{
+  "question_id": "422cd34b-0663-4262-95f7-1c1b164d0231",
+  "short_text": "Strip Spaces",
+  "content": "Given a string `S`, write a program that prints the modified string by removing the leading and trailing spaces from the string `S`.\n\n<MultiLineNote>\n- Leading spaces are any whitespace characters that appear before the first non-whitespace character in a string. \n- Trailing spaces are any whitespace characters that appear after the last non-whitespace character in a string.\n\nFor example, in the string **\"  hello world  \"**, there are two leading spaces before the **h** and two trailing spaces after the **d**.\n</MultiLineNote>\n\n---\n\n#### Input\n\nThe input will be a single line containing a string representing `S`.\n\n---\n\n#### Output\n\nThe output should be a single line containing a string obtained by removing the leading and trailing spaces from the given string.\n\n---\n\n#### Explanation\n\nFor example, if the given string is `S = \"                   practice    \"`.\n\n- `S` has trailing and leading spaces.\n- `S` after removing trailing and leading spaces is **practice**.\n\nThe output should be **practice**.\n",
+  "question_type": "CODING",
+  "content_type": "MARKDOWN",
+  "codes": [
+    {
+      "code_id": "b1b19a82-1d5c-48f9-8b8b-627f481a87ae",
+      "code_content": "string  = input()\n\nstripped_string  = string.strip(\" \")\n\nprint(stripped_string)",
+      "language": "PYTHON",
+      "default_code": true
+    }
+  ],
+  "approach_guiding_questions": [],
+  "question_guiding_questions": [],
+  "test_cases": [
+    {
+      "test_case_id": "24dfc5ee-9042-4888-b391-98bbb10e5e44",
+      "input": "                             plop-version-5                      ",
+      "output": "plop-version-5",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "3cfa07c0-094d-42e5-9c8a-d119b33a673c",
+      "input": "  Tech Foundations  ",
+      "output": "Tech Foundations",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "7517d226-bd6b-429a-98f8-6deaea48a3a3",
+      "input": "  Indian Premier League                      ",
+      "output": "Indian Premier League",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "7bcca1e7-a49f-4355-8eca-236bbc8202a5",
+      "input": "        This string has ten leading spaces.",
+      "output": "This string has ten leading spaces.",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "93bbdad8-c109-4c8c-b5a4-b7f44f176794",
+      "input": "  crash course  ",
+      "output": "crash course",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "b093cc53-d99d-47c7-ab82-2ee0ef1a9a96",
+      "input": "Winner",
+      "output": "Winner",
+      "is_hidden": true,
+      "weightage": 3.0
+    },
+    {
+      "test_case_id": "e54d8aa4-2314-497d-aeb2-fa679c545ba3",
+      "input": "                   practice  ",
+      "output": "practice",
+      "is_hidden": false,
+      "weightage": 1.0
+    },
+    {
+      "test_case_id": "e9867438-6609-4660-8d2a-44ac7b8b5894",
+      "input": "1 2 3 4 5         ",
+      "output": "1 2 3 4 5",
+      "is_hidden": true,
+      "weightage": 3.0
+    }
+  ],
+  "object_type": "CODING_QUESTIONS",
+  "unit_id": "dd73867e-98df-46d3-a6ca-86627d57e5f9",
+  "unit_name": "Coding Practice",
+  "course_id": "c6008f8d-cd91-4843-bb3f-b75d4beca046",
+  "topic_id": "0efd2eb6-d6a3-4c3a-bf0b-deffe7d13fec",
+  "topic_name": "String Methods & Problem Solving and Debugging - 3",
+  "course_title": "Programming Foundations"
+}

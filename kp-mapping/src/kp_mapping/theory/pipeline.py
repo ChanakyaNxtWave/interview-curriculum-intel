@@ -12,12 +12,28 @@ from .store import TheoryStore
 
 logger = logging.getLogger("kp_mapping.theory.pipeline")
 
+# Exposed in eval dashboard; AI paths do not auto-approve (human review required).
+AUTO_APPROVE_CONFIDENCE = 1.0
 
-AUTO_APPROVE_CONFIDENCE = float(os.environ.get("THEORY_AUTO_APPROVE_CONF", "0.85"))
 
-
-def should_auto_approve(verdict: str, confidence: float) -> bool:
-    return confidence >= AUTO_APPROVE_CONFIDENCE
+def _review_status_after_ai(
+    store: TheoryStore,
+    row_key: str,
+    *,
+    trigger: str,
+) -> str:
+    """AI tagging never sets approved — only humans do via the review endpoint."""
+    existing = store.get_tag(row_key)
+    if not existing:
+        return "needs_review"
+    prior = (existing.get("review_status") or "").strip()
+    if prior in ("rejected", "approved"):
+        return prior
+    if existing.get("human_verdict"):
+        return prior or "needs_review"
+    if trigger == "re-tag" and prior in ("pending", "needs_review"):
+        return prior
+    return "needs_review"
 
 
 def derive_can_student_answer(
@@ -197,24 +213,15 @@ def tag_question(
     if not synthesized_answer.strip():
         review_reasons.append("missing_synthesized_answer")
         synth_failed = True
-    auto_ok = (
-        should_auto_approve(verdict, confidence)
-        and not pipeline_failed
-        and not synth_failed
-    )
     if force_human_review:
-        auto_ok = False
         review_reasons.append("forced_human_gate_for_changed_row")
-    review_status = "approved" if auto_ok else "needs_review"
-    if not auto_ok and "below_auto_approve_threshold" not in review_reasons:
-        review_reasons.append(
-            f"below_auto_approve_threshold (conf={confidence:.2f}, verdict={verdict})"
-        )
+    review_status = _review_status_after_ai(store, row_key, trigger=trigger)
+    review_reasons.append("awaiting_human_approval")
 
     prog.emit(
         row_key,
         "gating",
-        note=f"auto_approve={auto_ok} (conf>={AUTO_APPROVE_CONFIDENCE})",
+        note="human review required (AI never auto-approves)",
         review_status=review_status,
     )
     prog.emit(row_key, "persisting")

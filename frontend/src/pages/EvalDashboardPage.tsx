@@ -21,17 +21,17 @@ import type { ImprovementSummary } from '../api/types';
 export default function EvalDashboardPage() {
   const qc = useQueryClient();
   const versionsQ = useQuery({
-    queryKey: ['theory-versions'],
+    queryKey: ['eval-versions'],
     queryFn: fetchPromptVersions,
     refetchInterval: 10_000,
   });
   const runsQ = useQuery({
-    queryKey: ['theory-runs'],
+    queryKey: ['eval-runs'],
     queryFn: () => fetchEvalRuns(20),
     refetchInterval: 10_000,
   });
   const summaryQ = useQuery({
-    queryKey: ['theory-improvement'],
+    queryKey: ['eval-improvement'],
     queryFn: fetchImprovementSummary,
     refetchInterval: 15_000,
   });
@@ -39,20 +39,20 @@ export default function EvalDashboardPage() {
   const evalNow = useMutation({
     mutationFn: runEvalNow,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['theory-runs'] });
+      qc.invalidateQueries({ queryKey: ['eval-runs'] });
     },
   });
   const recomp = useMutation({
     mutationFn: recompile,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['theory-versions'] });
-      qc.invalidateQueries({ queryKey: ['theory-runs'] });
+      qc.invalidateQueries({ queryKey: ['eval-versions'] });
+      qc.invalidateQueries({ queryKey: ['eval-runs'] });
     },
   });
   const activate = useMutation({
     mutationFn: (id: number) => activateVersion(id),
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['theory-versions'] });
+      qc.invalidateQueries({ queryKey: ['eval-versions'] });
     },
   });
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 from pathlib import Path
 from typing import Callable
@@ -16,6 +17,7 @@ from .compile import (
 )
 from .evals import evaluate_pipeline, golds_to_examples
 from .dspy_modules import kp_catalog_prompt
+from ..canonicalize import canonicalize_row_keys
 from .pipeline import AUTO_APPROVE_CONFIDENCE, tag_question
 from . import progress as prog
 from .store import TheoryStore
@@ -29,6 +31,14 @@ class TagPendingPayload(BaseModel):
 
 class TagBatchPayload(BaseModel):
     row_keys: list[str] = Field(default_factory=list)
+
+
+class TagStartResponse(BaseModel):
+    started: bool
+    already_running: bool = False
+    requested_row_key: str
+    tag_row_key: str
+    trigger: str
 
 
 class ReviewPayload(BaseModel):
@@ -83,6 +93,14 @@ def build_theory_router(
 
     # ---------- list / detail ----------
 
+    def _canonicalize_after_tag(row_keys: list[str]) -> None:
+        if not row_keys:
+            return
+        try:
+            canonicalize_row_keys(store=interview_store, row_keys=row_keys)
+        except Exception as exc:
+            logger.exception("Post-tag canonicalize failed: %s", exc)
+
     @router.get(f"/{seg}")
     def list_theory_questions(
         verdict: str | None = None,
@@ -93,13 +111,17 @@ def build_theory_router(
         date_to: str | None = None,
         company_name: str | None = None,
         role: str | None = None,
+        unique: bool = False,
         limit: int = 500,
         offset: int = 0,
     ):
         df, dt = resolve_date_range(
             duration=duration, date_from=date_from, date_to=date_to
         )
-        items = theory_store.list_tags(
+        list_fn = (
+            theory_store.list_tags_unique if unique else theory_store.list_tags
+        )
+        items = list_fn(
             verdict=verdict,
             review_status=review_status,
             q=q,
@@ -110,6 +132,8 @@ def build_theory_router(
             limit=limit,
             offset=offset,
         )
+        if unique:
+            interview_store.enrich_tag_similar_counts(items)
         return {
             "total": sum(theory_store.count_by_status().values()),
             "returned": len(items),
@@ -218,33 +242,71 @@ def build_theory_router(
 
     # ---------- tag ----------
 
-    @router.post(f"/{seg}/{{row_key}}/tag")
-    def tag_one(row_key: str):
-        iq = None
-        for r in interview_store.list_questions(limit=10000):
-            if r.get("row_key") == row_key:
-                iq = r
-                break
+    def _effective_tag_row_key(iq: dict) -> str:
+        return str(iq.get("group_representative_row_key") or iq["row_key"])
+
+    @router.post(f"/{seg}/{{row_key}}/tag", response_model=TagStartResponse)
+    async def tag_one(row_key: str):
+        """Start full DSPy tagging in a worker thread; poll GET .../tag-status for stages."""
+        iq = interview_store.get_question(row_key)
         if iq is None:
             raise HTTPException(404, "interview question not found")
         qt = (iq.get("question_type") or "").upper()
-        # This namespace only tags its own type.
         if qt != NS_QT:
             raise HTTPException(
                 400, f"{seg} handles {NS_QT} only; row is {qt or 'unknown'}"
             )
-        existing = theory_store.get_tag(row_key)
+        effective = _effective_tag_row_key(iq)
+        if prog.is_active(effective) and not prog.is_stale(effective):
+            return TagStartResponse(
+                started=False,
+                already_running=True,
+                requested_row_key=row_key,
+                tag_row_key=effective,
+                trigger="re-tag",
+            )
+        if prog.is_stale(effective):
+            logger.warning("Clearing stale tag progress for %s", effective)
+        # Drop prior completed/stale progress so re-tag polls a fresh run.
+        prog.clear(effective)
+
+        existing = theory_store.get_tag(effective)
         trigger = "re-tag" if existing else "first-tag"
-        saved = tag_question(
-            row_key=row_key,
-            question_text=iq.get("question") or "",
-            store=theory_store,
-            catalog=catalog_provider(),
-            citations_for=citations_for_question_type(qt),
+        force_human = trigger == "re-tag" or bool(existing and existing.get("human_verdict"))
+        catalog = catalog_provider()
+        question_text = iq.get("question") or ""
+
+        def _run() -> None:
+            logger.info("Tag worker started for %s (%s)", effective, trigger)
+            try:
+                tag_question(
+                    row_key=effective,
+                    question_text=question_text,
+                    store=theory_store,
+                    catalog=catalog,
+                    citations_for=citations_for_question_type(qt),
+                    trigger=trigger,
+                    question_type=qt,
+                    force_human_review=force_human,
+                )
+                _canonicalize_after_tag([effective])
+                logger.info("Tag worker finished for %s", effective)
+            except Exception as exc:
+                logger.exception("background tag failed for %s: %s", effective, exc)
+                prog.finish(effective, error=str(exc))
+
+        # Starlette BackgroundTasks on sync routes often never runs heavy DSPy work;
+        # schedule explicitly on the thread pool so the pipeline actually starts.
+        prog.start(effective, trigger=trigger)
+        prog.emit(effective, "start", note="dispatching to worker thread")
+        asyncio.create_task(asyncio.to_thread(_run))
+        return TagStartResponse(
+            started=True,
+            already_running=False,
+            requested_row_key=row_key,
+            tag_row_key=effective,
             trigger=trigger,
-            question_type=qt,
         )
-        return saved
 
     @router.post(f"/{seg}/tag-batch")
     def tag_batch(payload: TagBatchPayload, background_tasks: BackgroundTasks):
@@ -268,6 +330,7 @@ def build_theory_router(
         catalog = catalog_provider()
 
         def _run() -> None:
+            tagged_keys: list[str] = []
             for r in targets:
                 qt = (r.get("question_type") or "").upper()
                 try:
@@ -279,8 +342,10 @@ def build_theory_router(
                         citations_for=citations_for_question_type(qt),
                         question_type=qt,
                     )
+                    tagged_keys.append(r["row_key"])
                 except Exception as exc:
                     logger.exception("batch tag failed for %s: %s", r.get("row_key"), exc)
+            _canonicalize_after_tag(tagged_keys)
 
         background_tasks.add_task(_run)
         return {"enqueued": len(targets)}
@@ -300,6 +365,7 @@ def build_theory_router(
         catalog = catalog_provider()
 
         def _run() -> None:
+            tagged_keys: list[str] = []
             for r in targets:
                 qt = (r.get("question_type") or "").upper()
                 try:
@@ -311,10 +377,12 @@ def build_theory_router(
                         citations_for=citations_for_question_type(qt),
                         question_type=qt,
                     )
+                    tagged_keys.append(r["row_key"])
                 except Exception as exc:
                     logger.exception(
                         "bulk tag failed for %s: %s", r.get("row_key"), exc
                     )
+            _canonicalize_after_tag(tagged_keys)
 
         background_tasks.add_task(_run)
         return {"enqueued": len(targets)}

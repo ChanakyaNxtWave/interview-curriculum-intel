@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import { BookOpen, GraduationCap, Tag, Files, CheckCircle2 } from 'lucide-react';
+import { BookOpen, GraduationCap, Tag, Files, CheckCircle2, Layers, Network } from 'lucide-react';
 import { fetchCourses } from '../api/courses';
 
 export default function CoursesPage() {
@@ -20,30 +20,53 @@ export default function CoursesPage() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data.courses.map((c) => (
-          <Link
-            key={c.course_id}
-            to={`/courses/${c.course_id}`}
-            className="card p-5 hover:bg-bg-hover hover:border-brand/40 transition-colors group"
-          >
-            <div className="flex items-start gap-3">
-              <BookOpen className="w-6 h-6 text-brand mt-0.5" />
-              <div className="flex-1 min-w-0">
-                <div className="font-semibold text-text group-hover:text-brand truncate">
-                  {c.course_title}
+          <div key={c.course_id} className="card p-5 hover:bg-bg-hover hover:border-brand/40 transition-colors group">
+            <Link to={`/courses/${c.course_id}`} className="block">
+              <div className="flex items-start gap-3">
+                <BookOpen className="w-6 h-6 text-brand mt-0.5" />
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-text group-hover:text-brand truncate">
+                    {c.course_title}
+                  </div>
+                  <div className="text-xs text-text-dim mt-0.5">{c.course_id}</div>
                 </div>
-                <div className="text-xs text-text-dim mt-0.5">{c.course_id}</div>
               </div>
-            </div>
-            <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
-              <Stat icon={<Tag className="w-3.5 h-3.5" />} label="KPs" value={c.kp_count} />
-              <Stat icon={<Files className="w-3.5 h-3.5" />} label="Content" value={c.content_count} />
-              <Stat
-                icon={<CheckCircle2 className="w-3.5 h-3.5" />}
-                label="Mapped"
-                value={c.mapped_count}
-              />
-            </div>
-          </Link>
+              <div
+                className={`mt-4 grid gap-2 text-sm ${
+                  c.has_knowledge_graph ? 'grid-cols-5' : 'grid-cols-4'
+                }`}
+              >
+                <Stat icon={<Tag className="w-3.5 h-3.5" />} label="KPs" value={c.kp_count} />
+                <Stat icon={<Files className="w-3.5 h-3.5" />} label="Content" value={c.content_count} />
+                <Stat
+                  icon={<CheckCircle2 className="w-3.5 h-3.5" />}
+                  label="Mapped"
+                  value={c.mapped_count}
+                />
+                <Stat
+                  icon={<Layers className="w-3.5 h-3.5" />}
+                  label="Grouped Qs"
+                  value={c.grouped_question_count ?? 0}
+                />
+                {c.has_knowledge_graph ? (
+                  <Stat
+                    icon={<Network className="w-3.5 h-3.5" />}
+                    label="Graph"
+                    value={c.knowledge_graph_node_count ?? 0}
+                  />
+                ) : null}
+              </div>
+            </Link>
+            {c.has_knowledge_graph ? (
+              <Link
+                to={`/courses/${c.course_id}/knowledge-graph`}
+                className="mt-3 inline-flex items-center gap-1.5 text-sm text-brand hover:underline"
+              >
+                <Network className="w-3.5 h-3.5" />
+                View knowledge graph
+              </Link>
+            ) : null}
+          </div>
         ))}
       </div>
     </div>

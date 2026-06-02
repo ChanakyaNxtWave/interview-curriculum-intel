@@ -625,6 +625,148 @@ class TheoryStore:
             ).fetchall()
         return [self._tag_row_to_dict(r, with_iq=True) for r in rows]
 
+    def list_tags_unique(
+        self,
+        *,
+        verdict: str | None = None,
+        review_status: str | None = None,
+        q: str | None = None,
+        date_from: str | None = None,
+        date_to: str | None = None,
+        company_name: str | None = None,
+        role: str | None = None,
+        limit: int = 500,
+        offset: int = 0,
+    ) -> list[dict]:
+        """One row per global canonical (or company group, or lone tag)."""
+        clauses: list[str] = []
+        params: list[object] = []
+        if verdict:
+            clauses.append("t.verdict = ?")
+            params.append(verdict)
+        if review_status:
+            clauses.append("t.review_status = ?")
+            params.append(review_status)
+        if q:
+            pat = f"%{q}%"
+            clauses.append("(t.question_text LIKE ? OR t.rationale LIKE ?)")
+            params.extend([pat, pat])
+        if date_from:
+            clauses.append("iq.interview_date >= ?")
+            params.append(date_from)
+        if date_to:
+            clauses.append("iq.interview_date <= ?")
+            params.append(date_to)
+        if company_name:
+            clauses.append("iq.company_name = ?")
+            params.append(company_name)
+        if role:
+            clauses.append("iq.role = ?")
+            params.append(role)
+        where_inner = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+        params.extend([limit, offset])
+        dedupe_key = """
+            COALESCE(
+                CASE WHEN cm.canonical_id IS NOT NULL THEN 'c:' || cm.canonical_id END,
+                CASE WHEN iq.group_key IS NOT NULL AND iq.group_key != '' THEN 'g:' || iq.group_key END,
+                'r:' || t.row_key
+            )
+        """
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"""
+                WITH base AS (
+                    SELECT
+                        t.*,
+                        iq.company_name AS iq_company,
+                        iq.role AS iq_role,
+                        iq.question_type AS iq_question_type,
+                        iq.interview_date AS iq_interview_date,
+                        iq.tech_stack AS iq_tech_stack,
+                        iq.group_key AS iq_group_key,
+                        g.member_count AS group_member_count,
+                        g.canonical_question AS group_canonical_question,
+                        g.canonical_slug AS group_canonical_slug,
+                        g.normalized AS group_normalized,
+                        cm.canonical_id AS canonical_id,
+                        cq.canonical_question AS global_canonical_question,
+                        cq.canonical_slug AS global_canonical_slug,
+                        {dedupe_key} AS dedupe_key,
+                        (
+                            SELECT COUNT(DISTINCT iq2.row_key)
+                            FROM canonical_membership cm2
+                            JOIN interview_questions iq2
+                              ON iq2.group_key = cm2.group_key
+                            WHERE cm2.canonical_id = cm.canonical_id
+                        ) AS canonical_member_count
+                    FROM {self.tags_table} t
+                    LEFT JOIN interview_questions iq ON iq.row_key = t.row_key
+                    LEFT JOIN interview_question_groups g
+                      ON g.group_key = iq.group_key
+                     AND (g.merged_into IS NULL OR g.merged_into = '')
+                    LEFT JOIN canonical_membership cm ON cm.group_key = iq.group_key
+                    LEFT JOIN canonical_questions cq ON cq.id = cm.canonical_id
+                    {where_inner}
+                ),
+                ranked AS (
+                    SELECT
+                        base.*,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY dedupe_key
+                            ORDER BY
+                                CASE base.review_status
+                                    WHEN 'approved' THEN 0
+                                    WHEN 'needs_review' THEN 1
+                                    WHEN 'pending' THEN 2
+                                    ELSE 3
+                                END,
+                                base.overall_confidence DESC,
+                                base.updated_at DESC,
+                                base.row_key
+                        ) AS rn,
+                        COUNT(*) OVER (PARTITION BY dedupe_key) AS related_tag_count
+                    FROM base
+                )
+                SELECT
+                    ranked.*,
+                    0 AS similar_count
+                FROM ranked
+                WHERE rn = 1
+                ORDER BY updated_at DESC
+                LIMIT ? OFFSET ?
+                """,
+                params,
+            ).fetchall()
+        out: list[dict] = []
+        for r in rows:
+            d = self._tag_row_to_dict(r, with_iq=True)
+            d["group_key"] = r["iq_group_key"]
+            d["group_member_count"] = r["group_member_count"]
+            d["group_canonical_question"] = (
+                r["global_canonical_question"]
+                or r["group_canonical_question"]
+            )
+            d["group_canonical_slug"] = (
+                r["global_canonical_slug"] or r["group_canonical_slug"]
+            )
+            d["group_normalized"] = bool(r["group_normalized"]) if r["group_normalized"] is not None else None
+            d["canonical_id"] = r["canonical_id"]
+            d["canonical_question"] = r["global_canonical_question"]
+            d["canonical_slug"] = r["global_canonical_slug"]
+            d["similar_count"] = int(r["similar_count"] or 0)
+            d["related_tag_count"] = int(r["related_tag_count"] or 1)
+            for junk in (
+                "iq_group_key",
+                "dedupe_key",
+                "rn",
+                "canonical_member_count",
+                "global_canonical_question",
+                "global_canonical_slug",
+            ):
+                d.pop(junk, None)
+            out.append(d)
+        return out
+
     def count_by_status(self) -> dict[str, int]:
         with self._connect() as conn:
             rows = conn.execute(

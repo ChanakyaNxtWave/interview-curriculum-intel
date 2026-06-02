@@ -15,6 +15,7 @@ from pydantic import BaseModel
 from .env import load_env
 from .interview_store import InterviewStore, resolve_date_range
 from .interview_sync import run_sync
+from .canonicalize import canonicalize_row_keys, canonicalize_pending_groups
 from .kp_catalog import load_catalog
 from .theory.api import build_theory_router
 from .theory.compile import cold_start_if_needed
@@ -24,6 +25,7 @@ from .theory.store import TheoryStore
 
 load_env()
 from .models import ProposedKPTag, ReviewStatus
+from .knowledge_graph import KnowledgeGraphError, knowledge_graph_node_count, load_knowledge_graph
 from .store import MappingStore
 
 logger = logging.getLogger("kp_mapping.server")
@@ -58,6 +60,9 @@ def _scheduled_sync() -> None:
         )
         logger.info("Scheduled interview sync ok: %s", result)
         pending_rows_to_tag = _collect_rows_needing_tagging(result)
+        pending_rows_to_canonicalize = _collect_rows_needing_canonicalization(result)
+        if pending_rows_to_canonicalize:
+            _auto_canonicalize_rows(pending_rows_to_canonicalize)
         if pending_rows_to_tag:
             logger.info(
                 "Auto-tagging %d changed interview rows after scheduled sync",
@@ -93,6 +98,15 @@ def _boot_normalize() -> None:
         logger.exception("Boot normalize failed: %s", exc)
 
 
+def _boot_canonicalize() -> None:
+    """One-shot global canonical linking for any unlinked groups."""
+    try:
+        result = canonicalize_pending_groups(store=interview_store, limit=500)
+        logger.info("Boot canonicalize: %s", result)
+    except Exception as exc:
+        logger.exception("Boot canonicalize failed: %s", exc)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     scheduler = BackgroundScheduler(timezone="UTC")
@@ -114,6 +128,8 @@ async def lifespan(app: FastAPI):
     scheduler.add_job(_cold_start_theory, id="theory_cold_start", replace_existing=True)
     # One-shot semantic normalize for any pending groups (runs after backfill).
     scheduler.add_job(_boot_normalize, id="boot_normalize", replace_existing=True)
+    # One-shot global canonical linking for historical groups.
+    scheduler.add_job(_boot_canonicalize, id="boot_canonicalize", replace_existing=True)
     try:
         yield
     finally:
@@ -216,16 +232,41 @@ def list_courses():
 
     courses = []
     for title in course_titles:
+        course_slug = _slugify_course(title)
+        grouped_total = interview_store.count_course_grouped_questions(course_id=course_slug)
+        grouped_theory = interview_store.count_course_grouped_questions(
+            course_id=course_slug, question_type="THEORY"
+        )
+        grouped_coding = interview_store.count_course_grouped_questions(
+            course_id=course_slug, question_type="CODING"
+        )
+        kg_count = knowledge_graph_node_count(course_slug)
         courses.append(
             {
-                "course_id": _slugify_course(title),
+                "course_id": course_slug,
                 "course_title": title,
                 "kp_count": kp_count,
                 "content_count": _count_content_files(title),
                 "mapped_count": db_summary.get(title, 0),
+                "grouped_question_count": grouped_total,
+                "grouped_theory_count": grouped_theory,
+                "grouped_coding_count": grouped_coding,
+                "has_knowledge_graph": kg_count is not None,
+                "knowledge_graph_node_count": kg_count,
             }
         )
     return {"courses": courses}
+
+
+@app.get("/api/courses/{course_id}/knowledge-graph")
+def get_course_knowledge_graph(course_id: str):
+    try:
+        graph = load_knowledge_graph(course_id)
+    except KnowledgeGraphError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    if graph is None:
+        raise HTTPException(status_code=404, detail="Knowledge graph not found for course")
+    return graph
 
 
 @app.get("/api/kps/with-counts")
@@ -444,6 +485,16 @@ def _auto_tag_pending_rows(row_keys: list[str]) -> None:
             logger.exception("Auto-tag failed for %s: %s", row_key, exc)
 
 
+def _auto_canonicalize_rows(row_keys: list[str]) -> None:
+    if not row_keys:
+        return
+    try:
+        result = canonicalize_row_keys(store=interview_store, row_keys=row_keys)
+        logger.info("Auto-canonicalize result: %s", result)
+    except Exception as exc:
+        logger.exception("Auto-canonicalize failed: %s", exc)
+
+
 @app.get("/api/interview-questions")
 def list_interview_questions(
     q: str | None = None,
@@ -600,6 +651,10 @@ def interview_sync_now(background_tasks: BackgroundTasks):
 
     # Enqueue auto-tagging for changed rows across THEORY + CODING.
     pending_rows_to_tag = _collect_rows_needing_tagging(result)
+    pending_rows_to_canonicalize = _collect_rows_needing_canonicalization(result)
+    if pending_rows_to_canonicalize:
+        background_tasks.add_task(_auto_canonicalize_rows, pending_rows_to_canonicalize)
+        result["auto_canonicalize_enqueued"] = len(pending_rows_to_canonicalize)
     if pending_rows_to_tag:
         background_tasks.add_task(_auto_tag_pending_rows, pending_rows_to_tag)
         result["auto_tag_enqueued"] = len(pending_rows_to_tag)
@@ -623,6 +678,81 @@ def _collect_rows_needing_tagging(sync_result: dict) -> list[str]:
         if rk in rows_by_key and (rows_by_key[rk].get("question_type") or "").upper() in valid_types
     ]
     return out
+
+
+def _collect_rows_needing_canonicalization(sync_result: dict) -> list[str]:
+    inserted = set(sync_result.get("inserted_row_keys") or [])
+    updated = set(sync_result.get("updated_row_keys") or [])
+    candidate = inserted | updated
+    if not candidate:
+        return []
+    rows_by_key = {
+        r.get("row_key"): r for r in interview_store.list_questions(limit=20000) if r.get("row_key")
+    }
+    return [rk for rk in sorted(candidate) if rk in rows_by_key]
+
+
+@app.get("/api/courses/{course_id}/grouped-questions")
+def list_course_grouped_questions(
+    course_id: str,
+    q: str | None = None,
+    company_name: str | None = None,
+    question_type: str | None = None,
+    limit: int = 200,
+    offset: int = 0,
+):
+    items = interview_store.list_course_grouped_questions(
+        course_id=course_id,
+        q=q,
+        company_name=company_name,
+        question_type=question_type,
+        limit=limit,
+        offset=offset,
+    )
+    total = interview_store.count_course_grouped_questions(
+        course_id=course_id,
+        q=q,
+        company_name=company_name,
+        question_type=question_type,
+    )
+    return {
+        "course_id": course_id,
+        "total": total,
+        "returned": len(items),
+        "items": items,
+    }
+
+
+@app.get("/api/courses/{course_id}/grouped-questions/{canonical_id}/members")
+def get_course_group_members(
+    course_id: str,
+    canonical_id: int,
+    representative_row_key: str | None = None,
+    similar_only: bool = False,
+    limit: int = 200,
+):
+    if similar_only or representative_row_key:
+        rep_key = representative_row_key
+        if not rep_key:
+            seed = interview_store.canonical_members(canonical_id, limit=1)
+            rep_key = seed[0]["row_key"] if seed else None
+        members = (
+            interview_store.similar_canonical_members(
+                canonical_id,
+                rep_key,
+                limit=limit,
+            )
+            if rep_key
+            else []
+        )
+    else:
+        members = interview_store.canonical_members(canonical_id, limit=limit)
+    return {
+        "course_id": course_id,
+        "canonical_id": canonical_id,
+        "total": len(members),
+        "members": members,
+    }
 
 
 @app.get("/")

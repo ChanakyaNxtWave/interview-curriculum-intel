@@ -86,6 +86,7 @@ function Breadcrumbs({ segments, params }: { segments: string[]; params: Record<
     const next = segments[i + 1];
     let label = seg;
     if (seg === 'courses') label = 'Courses';
+    else if (seg === 'knowledge-graph') label = 'Knowledge Graph';
     else if (seg === 'kps') label = 'KPs';
     else if (seg === 'content') label = 'Content';
     else if (params.courseId === seg) label = humanizeId(seg);

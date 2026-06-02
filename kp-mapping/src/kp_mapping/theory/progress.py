@@ -90,6 +90,27 @@ def finish(row_key: str, *, result: dict | None = None, error: str | None = None
         rec["events"].append({"stage": rec["stage"], "at_ms": rec["updated_at_ms"]})
 
 
+def is_active(row_key: str) -> bool:
+    """True while a tag job is in flight for this row_key."""
+    with _lock:
+        rec = _progress.get(row_key)
+        return bool(rec and not rec.get("completed"))
+
+
+def is_stale(row_key: str, *, max_idle_ms: int = 60_000) -> bool:
+    """True if progress looks abandoned (e.g. background worker never started)."""
+    with _lock:
+        rec = _progress.get(row_key)
+        if not rec or rec.get("completed"):
+            return False
+        idle = _now_ms() - int(rec.get("updated_at_ms") or rec.get("started_at_ms") or 0)
+        stage = rec.get("stage") or ""
+        # Stuck on initial queue with no pipeline stages emitted.
+        if stage == "start" and idle >= max_idle_ms:
+            return True
+        return False
+
+
 def get(row_key: str) -> dict | None:
     with _lock:
         rec = _progress.get(row_key)

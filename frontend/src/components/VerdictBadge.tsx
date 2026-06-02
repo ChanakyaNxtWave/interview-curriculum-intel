@@ -14,8 +14,17 @@ const STYLE: Record<TheoryVerdict, { cls: string; label: string; icon: React.Rea
   },
 };
 
+function normalizeVerdict(verdict: string): TheoryVerdict {
+  if (verdict === 'covered') return 'covered';
+  // Legacy pipeline values collapse to not_covered in the UI.
+  if (verdict === 'not_covered' || verdict === 'partially_covered' || verdict === 'uncertain') {
+    return 'not_covered';
+  }
+  return 'not_covered';
+}
+
 export default function VerdictBadge({ verdict }: { verdict: TheoryVerdict | string }) {
-  const s = STYLE[(verdict as TheoryVerdict)] ?? STYLE.not_covered;
+  const s = STYLE[normalizeVerdict(verdict)] ?? STYLE.not_covered;
   return (
     <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs border ${s.cls}`}>
       {s.icon}

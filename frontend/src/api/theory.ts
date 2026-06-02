@@ -18,6 +18,7 @@ export interface TheoryListFilters {
   date_to?: string;
   company_name?: string;
   role?: string;
+  unique?: boolean;
   limit?: number;
   offset?: number;
 }
@@ -28,8 +29,16 @@ export const fetchTheoryQuestions = (f: TheoryListFilters = {}) =>
 export const fetchTheoryQuestion = (rowKey: string) =>
   api<TheoryTag>(`/api/theory-questions/${encodeURIComponent(rowKey)}`);
 
+export interface TagStartResponse {
+  started: boolean;
+  already_running: boolean;
+  requested_row_key: string;
+  tag_row_key: string;
+  trigger: string;
+}
+
 export const tagTheoryQuestion = (rowKey: string) =>
-  api<TheoryTag>(`/api/theory-questions/${encodeURIComponent(rowKey)}/tag`, {
+  api<TagStartResponse>(`/api/theory-questions/${encodeURIComponent(rowKey)}/tag`, {
     method: 'POST',
   });
 

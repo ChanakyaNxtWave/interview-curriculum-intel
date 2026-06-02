@@ -73,10 +73,93 @@ export interface Course {
   kp_count: number;
   content_count: number;
   mapped_count: number;
+  grouped_question_count?: number;
+  grouped_theory_count?: number;
+  grouped_coding_count?: number;
+  has_knowledge_graph?: boolean;
+  knowledge_graph_node_count?: number;
 }
 
 export interface CoursesResponse {
   courses: Course[];
+}
+
+export interface KnowledgeGraphNode {
+  knowledge_node_id: string;
+  label: string;
+  description: string;
+  prerequisites: string[];
+  depth_level: number;
+  source_kp_id?: string;
+}
+
+export interface KnowledgeGraphEdge {
+  source: string;
+  target: string;
+}
+
+export interface DepthLevelDefinition {
+  level: number;
+  label: string;
+  node_count: number;
+}
+
+export interface KnowledgeGraphStats {
+  node_count: number;
+  edge_count: number;
+  max_depth: number;
+  depth_counts: Record<string, number>;
+}
+
+export interface KnowledgeGraphResponse {
+  course_id: string;
+  nodes: KnowledgeGraphNode[];
+  edges: KnowledgeGraphEdge[];
+  stats: KnowledgeGraphStats;
+  depth_level_definitions: DepthLevelDefinition[];
+}
+
+export interface CourseGroupedQuestion {
+  canonical_id: number;
+  canonical_question: string;
+  canonical_slug: string;
+  question_type?: string | null;
+  course_id: string;
+  member_count: number;
+  group_count: number;
+  company_count: number;
+  repeated_within_company_count: number;
+  last_seen_at?: string | null;
+  first_interview_date?: string | null;
+  latest_interview_date?: string | null;
+}
+
+export interface CourseGroupedQuestionsResponse {
+  course_id: string;
+  total: number;
+  returned: number;
+  items: CourseGroupedQuestion[];
+}
+
+export interface CourseGroupedQuestionMember {
+  row_key: string;
+  question_uuid?: string | null;
+  question: string;
+  question_type?: string | null;
+  company_name?: string | null;
+  role?: string | null;
+  tech_stack?: string | null;
+  interview_date?: string | null;
+  first_seen_at?: string | null;
+  last_seen_at?: string | null;
+  group_key?: string | null;
+}
+
+export interface CourseGroupedQuestionMembersResponse {
+  course_id: string;
+  canonical_id: number;
+  total: number;
+  members: CourseGroupedQuestionMember[];
 }
 
 export interface KpsWithCountsResponse {
@@ -262,6 +345,11 @@ export interface TheoryTag {
   group_member_count?: number | null;
   group_canonical_question?: string | null;
   group_canonical_slug?: string | null;
+  canonical_id?: number | null;
+  canonical_question?: string | null;
+  canonical_slug?: string | null;
+  similar_count?: number;
+  related_tag_count?: number;
   interview?: {
     company_name?: string | null;
     role?: string | null;

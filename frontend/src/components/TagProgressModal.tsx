@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { CheckCircle2, Loader2, AlertCircle, Clock, Sparkles, X } from 'lucide-react';
-import { fetchActiveContext, fetchTagStatus } from '../api/theory';
-import type { TagProgress } from '../api/theory';
+import { fetchActiveContext, fetchTagStatus, type TagProgress } from '../api/theory';
+import { fetchCodingTagStatus } from '../api/coding';
 
 const STAGE_ORDER = [
   'start',
@@ -45,13 +45,16 @@ const STAGE_LABELS: Record<Stage, { label: string; sub: string }> = {
   judge_done: { label: 'Verdict decided', sub: 'Confidence + accepted citations returned' },
   synthesize_answer: {
     label: 'Synthesize answer (LLM call #3)',
-    sub: 'DSPy AnswerQuestion · only fires for covered / partially_covered',
+    sub: 'DSPy AnswerQuestion · mandatory for every question',
   },
   synthesize_done: {
     label: 'Answer produced',
-    sub: 'synthesis_quality: complete | partial | insufficient',
+    sub: 'synthesis_quality: complete | insufficient',
   },
-  gating: { label: 'Auto-approve gate', sub: 'conf ≥ 0.85 → approved · else needs_review' },
+  gating: {
+    label: 'Human review gate',
+    sub: 'AI output saved; approved/rejected only via human review',
+  },
   persisting: { label: 'Persist tag', sub: 'Save tag row + history snapshot' },
   done: { label: 'Done', sub: 'Result available' },
 };
@@ -65,44 +68,60 @@ interface Props {
   rowKey: string;
   questionText?: string;
   open: boolean;
-  active: boolean; // true while POST in flight
+  /** Poll tag-status while the backend pipeline runs (after POST returns). */
+  tracking: boolean;
+  isCoding?: boolean;
   onClose: () => void;
+  onComplete?: () => void;
 }
 
 export default function TagProgressModal({
   rowKey,
   questionText,
   open,
-  active,
+  tracking,
+  isCoding = false,
   onClose,
+  onComplete,
 }: Props) {
   const [elapsedMs, setElapsedMs] = useState(0);
+  const completedRef = useRef(false);
+
   const ctxQ = useQuery({
-    queryKey: ['theory-active-context'],
+    queryKey: ['eval-active-context'],
     queryFn: fetchActiveContext,
     enabled: open,
     staleTime: 30_000,
   });
+
   const statusQ = useQuery<TagProgress>({
-    queryKey: ['tag-status', rowKey],
-    queryFn: () => fetchTagStatus(rowKey),
-    enabled: open && !!rowKey,
-    refetchInterval: open && active ? 700 : false,
+    queryKey: ['tag-status', rowKey, isCoding],
+    queryFn: () => (isCoding ? fetchCodingTagStatus(rowKey) : fetchTagStatus(rowKey)),
+    enabled: open && !!rowKey && tracking,
+    refetchInterval: open && tracking ? 500 : false,
   });
 
-  // Local ticking elapsed counter while POST is in flight
   useEffect(() => {
-    if (!open || !active) return;
+    if (!open || !tracking) return;
+    completedRef.current = false;
     const start = Date.now();
     setElapsedMs(0);
     const id = setInterval(() => setElapsedMs(Date.now() - start), 200);
     return () => clearInterval(id);
-  }, [open, active, rowKey]);
+  }, [open, tracking, rowKey]);
 
   const status = statusQ.data;
   const currentIdx = stageIdx(status?.stage ?? 'start');
   const isError = status?.stage === 'error' || !!status?.error;
-  const isDone = !active && (status?.completed || status?.stage === 'done');
+  const pipelineDone =
+    status?.completed === true || status?.stage === 'done' || status?.stage === 'error';
+  const isRunning = tracking && !pipelineDone;
+
+  useEffect(() => {
+    if (!tracking || !pipelineDone || completedRef.current) return;
+    completedRef.current = true;
+    onComplete?.();
+  }, [tracking, pipelineDone, onComplete]);
 
   const completedSet = useMemo(() => {
     const set = new Set<string>();
@@ -114,12 +133,13 @@ export default function TagProgressModal({
 
   const ctx = ctxQ.data;
   const apv = ctx?.active_prompt_version;
+  const displayElapsed = isRunning ? elapsedMs : status?.elapsed_ms ?? elapsedMs;
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
       onClick={(e) => {
-        if (e.target === e.currentTarget && !active) onClose();
+        if (e.target === e.currentTarget && !isRunning) onClose();
       }}
     >
       <div className="bg-bg-panel border border-line rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
@@ -127,15 +147,23 @@ export default function TagProgressModal({
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-brand" />
             <h2 className="text-lg font-semibold">
-              {active ? 'Tagging in progress…' : isError ? 'Tagging failed' : 'Tag complete'}
+              {isRunning
+                ? 'Tagging in progress…'
+                : isError
+                ? 'Tagging failed'
+                : 'Tag complete'}
             </h2>
-            {!active && !isError && (
+            {!isRunning && !isError && status?.result?.verdict && (
               <span className="chip-on">
-                <CheckCircle2 className="w-3 h-3" /> {status?.result?.verdict}
+                <CheckCircle2 className="w-3 h-3" /> {status.result.verdict}
               </span>
             )}
           </div>
-          <button className="text-text-muted hover:text-text" onClick={onClose} disabled={active}>
+          <button
+            className="text-text-muted hover:text-text"
+            onClick={onClose}
+            disabled={isRunning}
+          >
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -145,6 +173,13 @@ export default function TagProgressModal({
             <div className="text-sm text-text-muted">
               <span className="font-medium text-text">Q:</span> {questionText.slice(0, 200)}
               {questionText.length > 200 ? '…' : ''}
+            </div>
+          )}
+
+          {status?.stage === 'idle' && tracking && (
+            <div className="text-sm text-text-muted flex items-center gap-2">
+              <Loader2 className="w-4 h-4 animate-spin text-brand" />
+              Starting pipeline…
             </div>
           )}
 
@@ -203,17 +238,15 @@ export default function TagProgressModal({
               </div>
               <div className="flex items-center gap-1 text-xs text-text-muted">
                 <Clock className="w-3 h-3" />
-                {(((active ? elapsedMs : status?.elapsed_ms) ?? 0) / 1000).toFixed(1)}s
-                {status?.trigger && (
-                  <span className="ml-2 chip">{status.trigger}</span>
-                )}
+                {(displayElapsed / 1000).toFixed(1)}s
+                {status?.trigger && <span className="ml-2 chip">{status.trigger}</span>}
               </div>
             </div>
             <ol className="space-y-1">
               {STAGE_ORDER.map((s, i) => {
                 const done = completedSet.has(s) || i < currentIdx;
-                const current = i === currentIdx && !isDone && !isError;
-                const errored = isError && i === currentIdx;
+                const current = i === currentIdx && isRunning && !isError;
+                const errored = isError && (i === currentIdx || s === 'done');
                 return (
                   <li
                     key={s}
@@ -240,7 +273,6 @@ export default function TagProgressModal({
                       <div className="text-sm">{STAGE_LABELS[s].label}</div>
                       <div className="text-xs text-text-muted">{STAGE_LABELS[s].sub}</div>
                     </div>
-                    {/* per-stage metric chips */}
                     {s === 'kps_done' && status?.kps_count != null && (
                       <span className="chip">{status.kps_count} KPs</span>
                     )}
@@ -249,8 +281,7 @@ export default function TagProgressModal({
                     )}
                     {s === 'judge_done' && status?.verdict && (
                       <span className="chip-on">
-                        {status.verdict} ·{' '}
-                        {((status.confidence ?? 0) * 100).toFixed(0)}%
+                        {status.verdict} · {((status.confidence ?? 0) * 100).toFixed(0)}%
                       </span>
                     )}
                   </li>
@@ -268,7 +299,7 @@ export default function TagProgressModal({
             </div>
           )}
 
-          {!active && status?.result && (
+          {!isRunning && status?.result && (
             <div className="card p-3 bg-bg/40">
               <div className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">
                 Result
@@ -292,14 +323,14 @@ export default function TagProgressModal({
         </div>
 
         <div className="border-t border-line p-3 flex justify-end gap-2">
-          {!active && (
+          {!isRunning && (
             <button className="btn btn-primary" onClick={onClose}>
               Close
             </button>
           )}
-          {active && (
+          {isRunning && (
             <span className="text-xs text-text-muted self-center">
-              LLM call running… ~30–60s typical
+              Pipeline running — stages update live (~30–60s typical)
             </span>
           )}
         </div>

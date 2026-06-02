@@ -7,6 +7,7 @@ import { fetchCodingQuestions } from '../api/coding';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
 import VerdictBadge from '../components/VerdictBadge';
+import { effectiveVerdict } from '../lib/verdict';
 import ConfidenceBar from '../components/ConfidenceBar';
 import ReviewStatusBadge from '../components/ReviewStatusBadge';
 import DateRangeFilter, { type DurationPreset } from '../components/DateRangeFilter';
@@ -258,7 +259,7 @@ export default function ReviewQueuePage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-end gap-1 shrink-0 min-w-[180px]">
-                  <VerdictBadge verdict={t.verdict} />
+                  <VerdictBadge verdict={effectiveVerdict(t)} />
                   <ConfidenceBar value={t.overall_confidence} />
                   <ReviewStatusBadge status={t.review_status as ReviewStatus} />
                 </div>

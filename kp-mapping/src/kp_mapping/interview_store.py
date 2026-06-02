@@ -40,6 +40,54 @@ def compute_group_key(question: str | None, company: str | None) -> str:
     return h[:32]
 
 
+def questions_equivalent(a: str | None, b: str | None) -> bool:
+    """True when two question texts differ only by formatting (MCQ markers, case, etc.)."""
+    na = _normalize_for_group(a)
+    nb = _normalize_for_group(b)
+    return bool(na) and na == nb
+
+
+def is_displayable_similar(
+    *,
+    rep_question: str | None,
+    rep_company: str | None,
+    cand_question: str | None,
+    cand_company: str | None,
+) -> bool:
+    """Whether cand should appear as a 'similar' question relative to rep.
+
+  Excludes exact duplicates from the same company (already collapsed at ingest).
+  Includes rephrased questions (any company) and the same question from another company.
+    """
+    if questions_equivalent(rep_question, cand_question):
+        rc = _normalize_for_group(rep_company)
+        cc = _normalize_for_group(cand_company)
+        if rc and rc == cc:
+            return False
+    return True
+
+
+def filter_similar_members(
+    representative: dict,
+    members: list[dict],
+) -> list[dict]:
+    rep_key = representative.get("row_key")
+    rep_q = representative.get("question") or representative.get("question_text") or ""
+    rep_co = representative.get("company_name")
+    out: list[dict] = []
+    for m in members:
+        if m.get("row_key") == rep_key:
+            continue
+        if is_displayable_similar(
+            rep_question=rep_q,
+            rep_company=rep_co,
+            cand_question=m.get("question"),
+            cand_company=m.get("company_name"),
+        ):
+            out.append(m)
+    return out
+
+
 # Reusable across modules (curriculum decisions, frequency, etc.)
 DURATION_PRESETS = {"1m": 1, "3m": 3, "6m": 6, "12m": 12}
 
@@ -177,6 +225,34 @@ class InterviewStore:
                 CREATE INDEX IF NOT EXISTS idx_iqg_normalized ON interview_question_groups(normalized);
                 CREATE INDEX IF NOT EXISTS idx_iqg_merged ON interview_question_groups(merged_into);
                 CREATE INDEX IF NOT EXISTS idx_iqg_slug ON interview_question_groups(canonical_slug);
+
+                CREATE TABLE IF NOT EXISTS canonical_questions (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    canonical_question TEXT NOT NULL,
+                    canonical_slug TEXT NOT NULL UNIQUE,
+                    question_type TEXT,
+                    course_id TEXT NOT NULL DEFAULT 'programming_foundations',
+                    created_at TEXT NOT NULL,
+                    updated_at TEXT NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_cq_type_course
+                    ON canonical_questions(question_type, course_id);
+                CREATE INDEX IF NOT EXISTS idx_cq_course
+                    ON canonical_questions(course_id);
+
+                CREATE TABLE IF NOT EXISTS canonical_membership (
+                    group_key TEXT PRIMARY KEY,
+                    canonical_id INTEGER NOT NULL,
+                    decision_source TEXT NOT NULL DEFAULT 'llm',
+                    confidence REAL NOT NULL DEFAULT 0.0,
+                    model_label TEXT,
+                    reason TEXT,
+                    created_at TEXT NOT NULL,
+                    updated_at TEXT NOT NULL,
+                    FOREIGN KEY(canonical_id) REFERENCES canonical_questions(id)
+                );
+                CREATE INDEX IF NOT EXISTS idx_cm_canonical
+                    ON canonical_membership(canonical_id);
                 """
             )
             self._add_column_if_missing(conn, "interview_questions", "group_key", "TEXT")
@@ -225,6 +301,10 @@ class InterviewStore:
             for sk in stale:
                 conn.execute(
                     "DELETE FROM interview_question_groups WHERE group_key = ?",
+                    (sk,),
+                )
+                conn.execute(
+                    "DELETE FROM canonical_membership WHERE group_key = ?",
                     (sk,),
                 )
 
@@ -473,12 +553,15 @@ class InterviewStore:
                 f"""
                 SELECT iq.*,
                        gc.member_count AS group_member_count,
-                       gc.canonical_question AS group_canonical_question,
-                       gc.canonical_slug AS group_canonical_slug,
+                       COALESCE(cq.canonical_question, gc.canonical_question) AS group_canonical_question,
+                       COALESCE(cq.canonical_slug, gc.canonical_slug) AS group_canonical_slug,
+                       cq.id AS canonical_id,
+                       cq.course_id AS canonical_course_id,
                        gc.representative_row_key AS group_representative_row_key,
                        gc.normalized AS group_normalized,
                        COALESCE(ct.row_key, tt.row_key) AS theory_row_key,
-                       COALESCE(ct.verdict, tt.verdict) AS theory_verdict,
+                       COALESCE(ct.human_verdict, tt.human_verdict) AS theory_human_verdict,
+                       COALESCE(ct.verdict, tt.verdict) AS theory_ai_verdict,
                        COALESCE(ct.overall_confidence, tt.overall_confidence) AS theory_confidence,
                        COALESCE(ct.review_status, tt.review_status) AS theory_review_status,
                        COALESCE(ct.updated_at, tt.updated_at) AS theory_updated_at,
@@ -489,6 +572,10 @@ class InterviewStore:
                 LEFT JOIN interview_question_groups g  ON g.group_key  = iq.group_key
                 LEFT JOIN interview_question_groups gc
                        ON gc.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
+                LEFT JOIN canonical_membership cm
+                       ON cm.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
+                LEFT JOIN canonical_questions cq
+                       ON cq.id = cm.canonical_id
                 LEFT JOIN theory_question_tags tt
                        ON tt.row_key = COALESCE(gc.representative_row_key, iq.row_key)
                 LEFT JOIN coding_question_tags ct
@@ -517,6 +604,22 @@ class InterviewStore:
             d["canonical_slug"] = d.get("group_canonical_slug") or d.get("canonical_slug")
             out.append(d)
         return out
+
+    def get_question(self, row_key: str) -> dict | None:
+        with self._connect() as conn:
+            row = conn.execute(
+                """
+                SELECT iq.*,
+                       gc.representative_row_key AS group_representative_row_key
+                FROM interview_questions iq
+                LEFT JOIN interview_question_groups g ON g.group_key = iq.group_key
+                LEFT JOIN interview_question_groups gc
+                       ON gc.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
+                WHERE iq.row_key = ?
+                """,
+                (row_key,),
+            ).fetchone()
+        return self._row_to_dict_with_extras(row) if row else None
 
     def representative_row_keys(
         self, *, question_type: str | None = None
@@ -622,6 +725,426 @@ class InterviewStore:
                 "updated_at = ? WHERE group_key = ?",
                 (new_count, new_last_seen, now, winner_key),
             )
+            loser_cm = conn.execute(
+                "SELECT canonical_id, confidence, model_label, reason "
+                "FROM canonical_membership WHERE group_key = ?",
+                (loser_key,),
+            ).fetchone()
+            winner_cm = conn.execute(
+                "SELECT canonical_id FROM canonical_membership WHERE group_key = ?",
+                (winner_key,),
+            ).fetchone()
+            if loser_cm and not winner_cm:
+                conn.execute(
+                    "INSERT OR REPLACE INTO canonical_membership ("
+                    "group_key, canonical_id, decision_source, confidence, model_label, reason, "
+                    "created_at, updated_at"
+                    ") VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    (
+                        winner_key,
+                        loser_cm["canonical_id"],
+                        "merge",
+                        float(loser_cm["confidence"] or 0.0),
+                        loser_cm["model_label"],
+                        loser_cm["reason"] or "migrated from merged group",
+                        now,
+                        now,
+                    ),
+                )
+            conn.execute(
+                "DELETE FROM canonical_membership WHERE group_key = ?",
+                (loser_key,),
+            )
+
+    # ---------- global canonical groups ----------
+
+    def list_unlinked_groups(
+        self,
+        *,
+        question_type: str | None = None,
+        limit: int = 200,
+    ) -> list[dict]:
+        params: list[object] = []
+        clauses = [
+            "(g.merged_into IS NULL OR g.merged_into = '')",
+            "cm.group_key IS NULL",
+        ]
+        if question_type:
+            clauses.append("UPPER(iq.question_type) = UPPER(?)")
+            params.append(question_type)
+        params.append(limit)
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"""
+                SELECT
+                    g.group_key,
+                    g.representative_row_key,
+                    g.member_count,
+                    g.company_name,
+                    iq.question,
+                    iq.question_type
+                FROM interview_question_groups g
+                JOIN interview_questions iq
+                  ON iq.row_key = g.representative_row_key
+                LEFT JOIN canonical_membership cm
+                  ON cm.group_key = g.group_key
+                WHERE {' AND '.join(clauses)}
+                ORDER BY g.last_seen_at DESC
+                LIMIT ?
+                """,
+                params,
+            ).fetchall()
+        return [dict(r) for r in rows]
+
+    def list_canonical_candidates(
+        self,
+        *,
+        question_type: str | None = None,
+        course_id: str = "programming_foundations",
+        limit: int = 500,
+    ) -> list[dict]:
+        params: list[object] = [course_id]
+        where = ["course_id = ?"]
+        if question_type:
+            where.append("UPPER(question_type) = UPPER(?)")
+            params.append(question_type)
+        params.append(limit)
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"""
+                SELECT id, canonical_question, canonical_slug, question_type, course_id, updated_at
+                FROM canonical_questions
+                WHERE {' AND '.join(where)}
+                ORDER BY updated_at DESC
+                LIMIT ?
+                """,
+                params,
+            ).fetchall()
+        return [dict(r) for r in rows]
+
+    def upsert_canonical_question(
+        self,
+        *,
+        canonical_question: str,
+        canonical_slug: str,
+        question_type: str | None,
+        course_id: str = "programming_foundations",
+    ) -> dict:
+        now = _utc_now()
+        with self._connect() as conn:
+            existing = conn.execute(
+                "SELECT * FROM canonical_questions WHERE canonical_slug = ?",
+                (canonical_slug,),
+            ).fetchone()
+            if existing:
+                conn.execute(
+                    "UPDATE canonical_questions SET canonical_question = ?, question_type = ?, "
+                    "course_id = ?, updated_at = ? WHERE id = ?",
+                    (canonical_question, question_type, course_id, now, existing["id"]),
+                )
+                row = conn.execute(
+                    "SELECT * FROM canonical_questions WHERE id = ?",
+                    (existing["id"],),
+                ).fetchone()
+            else:
+                cur = conn.execute(
+                    "INSERT INTO canonical_questions ("
+                    "canonical_question, canonical_slug, question_type, course_id, created_at, updated_at"
+                    ") VALUES (?, ?, ?, ?, ?, ?)",
+                    (canonical_question, canonical_slug, question_type, course_id, now, now),
+                )
+                row = conn.execute(
+                    "SELECT * FROM canonical_questions WHERE id = ?",
+                    (cur.lastrowid,),
+                ).fetchone()
+        return dict(row) if row else {}
+
+    def link_group_to_canonical(
+        self,
+        *,
+        group_key: str,
+        canonical_id: int,
+        decision_source: str = "llm",
+        confidence: float = 0.0,
+        model_label: str | None = None,
+        reason: str | None = None,
+    ) -> None:
+        now = _utc_now()
+        with self._connect() as conn:
+            existing = conn.execute(
+                "SELECT created_at FROM canonical_membership WHERE group_key = ?",
+                (group_key,),
+            ).fetchone()
+            created_at = existing["created_at"] if existing else now
+            conn.execute(
+                "INSERT OR REPLACE INTO canonical_membership ("
+                "group_key, canonical_id, decision_source, confidence, model_label, reason, "
+                "created_at, updated_at"
+                ") VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                (
+                    group_key,
+                    canonical_id,
+                    decision_source,
+                    max(0.0, min(1.0, float(confidence or 0.0))),
+                    model_label,
+                    reason,
+                    created_at,
+                    now,
+                ),
+            )
+
+    def get_group_canonical(self, group_key: str) -> dict | None:
+        with self._connect() as conn:
+            row = conn.execute(
+                """
+                SELECT
+                    cm.group_key,
+                    cm.canonical_id,
+                    cm.decision_source,
+                    cm.confidence,
+                    cm.model_label,
+                    cm.reason,
+                    cq.canonical_question,
+                    cq.canonical_slug,
+                    cq.question_type,
+                    cq.course_id
+                FROM canonical_membership cm
+                JOIN canonical_questions cq ON cq.id = cm.canonical_id
+                WHERE cm.group_key = ?
+                """,
+                (group_key,),
+            ).fetchone()
+        return dict(row) if row else None
+
+    def list_course_grouped_questions(
+        self,
+        *,
+        course_id: str = "programming_foundations",
+        question_type: str | None = None,
+        company_name: str | None = None,
+        q: str | None = None,
+        limit: int = 200,
+        offset: int = 0,
+    ) -> list[dict]:
+        clauses = ["cq.course_id = ?"]
+        params: list[object] = [course_id]
+        if question_type:
+            clauses.append("UPPER(cq.question_type) = UPPER(?)")
+            params.append(question_type)
+        if company_name:
+            clauses.append("iq.company_name = ?")
+            params.append(company_name)
+        if q:
+            pattern = f"%{q}%"
+            clauses.append("(cq.canonical_question LIKE ? OR iq.question LIKE ?)")
+            params.extend([pattern, pattern])
+        params.extend([limit, offset])
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"""
+                SELECT
+                    cq.id AS canonical_id,
+                    cq.canonical_question,
+                    cq.canonical_slug,
+                    cq.question_type,
+                    cq.course_id,
+                    COUNT(iq.row_key) AS member_count,
+                    COUNT(DISTINCT cm.group_key) AS group_count,
+                    COUNT(DISTINCT COALESCE(iq.company_name, '')) AS company_count,
+                    (
+                        COUNT(iq.row_key) -
+                        COUNT(DISTINCT (
+                            COALESCE(LOWER(TRIM(iq.company_name)), '') || '|' ||
+                            COALESCE(LOWER(TRIM(iq.question)), '')
+                        ))
+                    ) AS repeated_within_company_count,
+                    MAX(iq.last_seen_at) AS last_seen_at,
+                    MIN(iq.interview_date) AS first_interview_date,
+                    MAX(iq.interview_date) AS latest_interview_date
+                FROM canonical_questions cq
+                JOIN canonical_membership cm
+                  ON cm.canonical_id = cq.id
+                JOIN interview_question_groups g
+                  ON g.group_key = cm.group_key
+                JOIN interview_questions iq
+                  ON iq.group_key = g.group_key
+                WHERE {' AND '.join(clauses)}
+                GROUP BY cq.id
+                ORDER BY member_count DESC, last_seen_at DESC, cq.id DESC
+                LIMIT ? OFFSET ?
+                """,
+                params,
+            ).fetchall()
+        return [dict(r) for r in rows]
+
+    def count_course_grouped_questions(
+        self,
+        *,
+        course_id: str = "programming_foundations",
+        question_type: str | None = None,
+        company_name: str | None = None,
+        q: str | None = None,
+    ) -> int:
+        clauses = ["cq.course_id = ?"]
+        params: list[object] = [course_id]
+        if question_type:
+            clauses.append("UPPER(cq.question_type) = UPPER(?)")
+            params.append(question_type)
+        if company_name:
+            clauses.append("iq.company_name = ?")
+            params.append(company_name)
+        if q:
+            pattern = f"%{q}%"
+            clauses.append("(cq.canonical_question LIKE ? OR iq.question LIKE ?)")
+            params.extend([pattern, pattern])
+        with self._connect() as conn:
+            row = conn.execute(
+                f"""
+                SELECT COUNT(DISTINCT cq.id)
+                FROM canonical_questions cq
+                JOIN canonical_membership cm
+                  ON cm.canonical_id = cq.id
+                JOIN interview_question_groups g
+                  ON g.group_key = cm.group_key
+                JOIN interview_questions iq
+                  ON iq.group_key = g.group_key
+                WHERE {' AND '.join(clauses)}
+                """,
+                params,
+            ).fetchone()
+        return int(row[0] or 0) if row else 0
+
+    def canonical_members(
+        self, canonical_id: int, *, limit: int = 200
+    ) -> list[dict]:
+        with self._connect() as conn:
+            rows = conn.execute(
+                """
+                SELECT
+                    iq.row_key,
+                    iq.question_uuid,
+                    iq.question,
+                    iq.question_type,
+                    iq.company_name,
+                    iq.role,
+                    iq.tech_stack,
+                    iq.interview_date,
+                    iq.first_seen_at,
+                    iq.last_seen_at,
+                    iq.group_key
+                FROM canonical_membership cm
+                JOIN interview_questions iq
+                  ON iq.group_key = cm.group_key
+                WHERE cm.canonical_id = ?
+                ORDER BY iq.interview_date DESC, iq.id DESC
+                LIMIT ?
+                """,
+                (canonical_id, limit),
+            ).fetchall()
+        return [dict(r) for r in rows]
+
+    def _interview_row_as_member(self, row_key: str) -> dict | None:
+        with self._connect() as conn:
+            row = conn.execute(
+                """
+                SELECT row_key, question, company_name, role, interview_date, group_key
+                FROM interview_questions
+                WHERE row_key = ?
+                """,
+                (row_key,),
+            ).fetchone()
+        return dict(row) if row else None
+
+    def canonical_members_by_ids(
+        self, canonical_ids: list[int], *, limit_per_canonical: int = 500
+    ) -> dict[int, list[dict]]:
+        if not canonical_ids:
+            return {}
+        placeholders = ",".join("?" * len(canonical_ids))
+        params: list[object] = list(canonical_ids)
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"""
+                SELECT
+                    cm.canonical_id,
+                    iq.row_key,
+                    iq.question_uuid,
+                    iq.question,
+                    iq.question_type,
+                    iq.company_name,
+                    iq.role,
+                    iq.tech_stack,
+                    iq.interview_date,
+                    iq.first_seen_at,
+                    iq.last_seen_at,
+                    iq.group_key
+                FROM canonical_membership cm
+                JOIN interview_questions iq ON iq.group_key = cm.group_key
+                WHERE cm.canonical_id IN ({placeholders})
+                ORDER BY cm.canonical_id, iq.interview_date DESC, iq.id DESC
+                """,
+                params,
+            ).fetchall()
+        out: dict[int, list[dict]] = {cid: [] for cid in canonical_ids}
+        for r in rows:
+            cid = int(r["canonical_id"])
+            bucket = out.setdefault(cid, [])
+            if len(bucket) < limit_per_canonical:
+                bucket.append(dict(r))
+        return out
+
+    def similar_canonical_members(
+        self,
+        canonical_id: int,
+        representative_row_key: str,
+        *,
+        limit: int = 200,
+    ) -> list[dict]:
+        members = self.canonical_members(canonical_id, limit=max(limit * 5, 200))
+        rep = next(
+            (m for m in members if m.get("row_key") == representative_row_key),
+            None,
+        )
+        if rep is None:
+            rep = self._interview_row_as_member(representative_row_key)
+        if not rep:
+            return []
+        filtered = filter_similar_members(rep, members)
+        return filtered[:limit]
+
+    def count_similar_canonical_members(
+        self, canonical_id: int, representative_row_key: str
+    ) -> int:
+        return len(
+            self.similar_canonical_members(
+                canonical_id, representative_row_key, limit=500
+            )
+        )
+
+    def enrich_tag_similar_counts(self, items: list[dict]) -> None:
+        """Set similar_count on tagged-question rows (mutates items in place)."""
+        canonical_ids = sorted(
+            {int(it["canonical_id"]) for it in items if it.get("canonical_id") is not None}
+        )
+        members_by_canon = self.canonical_members_by_ids(canonical_ids)
+        for it in items:
+            cid = it.get("canonical_id")
+            if cid is None:
+                it["similar_count"] = 0
+                continue
+            members = members_by_canon.get(int(cid), [])
+            rep = next(
+                (m for m in members if m.get("row_key") == it.get("row_key")),
+                None,
+            )
+            if rep is None:
+                interview = it.get("interview") or {}
+                rep = {
+                    "row_key": it.get("row_key"),
+                    "question": it.get("question_text"),
+                    "company_name": interview.get("company_name"),
+                }
+            it["similar_count"] = len(filter_similar_members(rep, members))
 
     def upsert_many(self, rows: list[dict[str, Any]]) -> dict[str, Any]:
         stats: dict[str, Any] = {
@@ -771,11 +1294,14 @@ class InterviewStore:
                 f"""
                 SELECT iq.*,
                        gc.member_count AS group_member_count,
-                       gc.canonical_question AS group_canonical_question,
-                       gc.canonical_slug AS group_canonical_slug,
+                       COALESCE(cq.canonical_question, gc.canonical_question) AS group_canonical_question,
+                       COALESCE(cq.canonical_slug, gc.canonical_slug) AS group_canonical_slug,
+                       cq.id AS canonical_id,
+                       cq.course_id AS canonical_course_id,
                        gc.representative_row_key AS group_representative_row_key,
                        COALESCE(ct.row_key, tt.row_key) AS theory_row_key,
-                       COALESCE(ct.verdict, tt.verdict) AS theory_verdict,
+                       COALESCE(ct.human_verdict, tt.human_verdict) AS theory_human_verdict,
+                       COALESCE(ct.verdict, tt.verdict) AS theory_ai_verdict,
                        COALESCE(ct.overall_confidence, tt.overall_confidence) AS theory_confidence,
                        COALESCE(ct.review_status, tt.review_status) AS theory_review_status,
                        COALESCE(ct.updated_at, tt.updated_at) AS theory_updated_at,
@@ -786,6 +1312,10 @@ class InterviewStore:
                 LEFT JOIN interview_question_groups g  ON g.group_key  = iq.group_key
                 LEFT JOIN interview_question_groups gc
                        ON gc.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
+                LEFT JOIN canonical_membership cm
+                       ON cm.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
+                LEFT JOIN canonical_questions cq
+                       ON cq.id = cm.canonical_id
                 LEFT JOIN theory_question_tags tt
                        ON tt.row_key = COALESCE(gc.representative_row_key, iq.row_key)
                 LEFT JOIN coding_question_tags ct
@@ -976,9 +1506,13 @@ class InterviewStore:
         d = dict(row)
         d.pop("raw_json", None)
         d["interview_round_date"] = d.get("interview_date")
+        human_v = d.pop("theory_human_verdict", None)
+        ai_v = d.pop("theory_ai_verdict", None)
         theory = {
             "row_key": d.pop("theory_row_key", None),
-            "verdict": d.pop("theory_verdict", None),
+            "verdict": human_v or ai_v,
+            "ai_verdict": ai_v,
+            "human_verdict": human_v,
             "overall_confidence": d.pop("theory_confidence", None),
             "review_status": d.pop("theory_review_status", None),
             "updated_at": d.pop("theory_updated_at", None),
@@ -989,4 +1523,6 @@ class InterviewStore:
         # If no tag exists, theory.row_key will be None.
         d["theory"] = theory if theory.get("row_key") else None
         d["group_representative_row_key"] = d.pop("group_representative_row_key", None)
+        d["canonical_id"] = d.pop("canonical_id", None)
+        d["canonical_course_id"] = d.pop("canonical_course_id", None)
         return d

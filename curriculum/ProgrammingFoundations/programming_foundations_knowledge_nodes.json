@@ -1,0 +1,858 @@
+{
+  "knowledge_nodes": [
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "label": "for loop iteration patterns",
+      "description": "Using for loops with range() and iterables to repeat actions a known number of times.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000002",
+      "label": "while loop and condition-based iteration",
+      "description": "Using while loops to repeat actions until a condition becomes false, including counter and sentinel patterns.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000003",
+      "label": "conditional logic in python",
+      "description": "Branching execution using if, elif, and else statements based on boolean conditions.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000034",
+        "a1b2c3d4-0001-4000-8000-000000000037"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000004",
+      "label": "implicit type compatibility",
+      "description": "How Python implicitly converts between compatible numeric types (e.g., int to float) during operations.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000012"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000005",
+      "label": "string indexing and slicing",
+      "description": "Accessing characters and substrings using positive/negative indices and slice notation (start:stop:step).",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000006",
+      "label": "string operations in python",
+      "description": "Concatenation, repetition, length, and basic string manipulations using operators and built-ins.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000005"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000007",
+      "label": "input handling in python",
+      "description": "Reading user input with input() and converting it to the required type for further processing.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000008",
+      "label": "variable assignment in python",
+      "description": "Creating and updating variables using the assignment operator to store values.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000138"
+      ],
+      "depth_level": 1
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000009",
+      "label": "syntax error handling",
+      "description": "Identifying and resolving common Python syntax errors like missing colons, indentation issues, and invalid expressions.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000061"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000010",
+      "label": "output formatting in python",
+      "description": "Producing readable output with print(), f-strings, format(), and separator/end arguments.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000006"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000012",
+      "label": "type conversion in python",
+      "description": "Converting between data types explicitly using int(), float(), str(), bool(), and list().",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000054"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000013",
+      "label": "arithmetic calculations in python",
+      "description": "Performing math operations with +, -, *, /, //, %, ** and understanding operator behavior across numeric types.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000014",
+      "label": "list creation and updates",
+      "description": "Creating lists with literals or list(), and modifying them via assignment, append, insert, and remove.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000015",
+      "label": "list indexing and slicing",
+      "description": "Accessing list elements and sublists with positive/negative indices and slice notation.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000014"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000016",
+      "label": "nested loops in python",
+      "description": "Loops inside loops for processing multi-dimensional data and combinatorial iteration.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000001"
+      ],
+      "depth_level": 6
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000017",
+      "label": "logical error identification",
+      "description": "Tracing code to spot bugs that produce wrong outputs without raising errors.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000018",
+      "label": "recursion and call stack",
+      "description": "Functions that call themselves with a base case and recursive case, and how the call stack manages execution.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000019",
+      "label": "code reading and tracing",
+      "description": "Mentally executing code step by step to predict outputs and understand control flow.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000001",
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 6
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000020",
+      "label": "built-in functions in python",
+      "description": "Using Python's built-in functions like len(), max(), min(), sum(), abs(), and sorted().",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000021",
+      "label": "dictionaries in python",
+      "description": "Storing key-value pairs and accessing, updating, and iterating over them.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000022",
+      "label": "list mutability and references",
+      "description": "How list assignment shares references, and the difference between mutating and rebinding a list.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000015"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000023",
+      "label": "set operations in python",
+      "description": "Creating sets and using union, intersection, difference, and membership for unique collections.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000014"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000024",
+      "label": "string combination operations",
+      "description": "Joining strings using +, *, join(), and format methods.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000006"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000025",
+      "label": "logical operators in python",
+      "description": "Combining boolean expressions with and, or, and not operators.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000034"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000026",
+      "label": "defining and calling functions",
+      "description": "Defining reusable code blocks with def, calling them with arguments, and returning values.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000001",
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 6
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000027",
+      "label": "nested conditionals in python",
+      "description": "Conditional statements inside other conditional statements for multi-criteria branching.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000028",
+      "label": "class hierarchies and inheritance",
+      "description": "Creating subclasses that inherit attributes and methods from parent classes.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000043"
+      ],
+      "depth_level": 9
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000029",
+      "label": "string methods in python",
+      "description": "Using string methods like upper(), lower(), strip(), split(), replace(), and find().",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000006"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000030",
+      "label": "sorting and uniqueness",
+      "description": "Sorting lists with sort() and sorted(), and removing duplicates using sets or unique patterns.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000044"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000031",
+      "label": "class methods in python",
+      "description": "Defining instance methods inside classes that operate on instance data via self.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000035"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000032",
+      "label": "variable scope in python",
+      "description": "Local, enclosing, global, and built-in scopes and how Python resolves variable names.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000034",
+      "label": "boolean logic in python",
+      "description": "True/False values and boolean expressions formed by logical operators and comparisons.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000037"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000035",
+      "label": "class and instance members",
+      "description": "Distinguishing class-level (shared) and instance-level attributes and methods.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000043"
+      ],
+      "depth_level": 9
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000036",
+      "label": "function arguments and parameters",
+      "description": "Passing positional, keyword, and default arguments when calling functions.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000037",
+      "label": "comparison operators in python",
+      "description": "Using ==, !=, <, >, <=, >= to compare values and produce boolean results.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000038",
+      "label": "string comparison logic",
+      "description": "Comparing strings lexicographically using comparison operators and understanding character ordering.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000006",
+        "a1b2c3d4-0001-4000-8000-000000000037"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000039",
+      "label": "python object model",
+      "description": "Everything in Python is an object: identity, type, and value, and how variables reference them.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000043"
+      ],
+      "depth_level": 9
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000040",
+      "label": "set methods in python",
+      "description": "Using set methods like add(), remove(), discard(), union(), intersection(), and difference().",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000023"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000041",
+      "label": "data structures in python",
+      "description": "Choosing among lists, tuples, sets, and dictionaries based on ordering, mutability, and lookup needs.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000014",
+        "a1b2c3d4-0001-4000-8000-000000000021",
+        "a1b2c3d4-0001-4000-8000-000000000023"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000042",
+      "label": "operator precedence in python",
+      "description": "Order of evaluation for arithmetic, comparison, and logical operators in compound expressions.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000013",
+        "a1b2c3d4-0001-4000-8000-000000000025"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000043",
+      "label": "class instantiation and objects",
+      "description": "Creating objects from classes using the constructor and accessing their attributes and methods.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000045"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000044",
+      "label": "list methods in python",
+      "description": "Modifying lists with append(), insert(), remove(), pop(), index(), count(), sort(), and reverse().",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000014"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000045",
+      "label": "object oriented programming fundamentals",
+      "description": "Core OOP concepts: classes, objects, attributes, and methods, and how they model real-world entities.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000046",
+      "label": "working with modules in python",
+      "description": "Importing and using standard library modules and writing your own importable .py files.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000047",
+      "label": "exception handling in python",
+      "description": "Catching and handling runtime errors using try, except, else, and finally blocks.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000049",
+      "label": "encapsulation and access control",
+      "description": "Bundling data and methods together and using naming conventions to signal intended access levels.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000035"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000050",
+      "label": "default and keyword arguments",
+      "description": "Defining parameters with default values and calling functions with keyword arguments for clarity.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000036"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000051",
+      "label": "python keywords and identifiers",
+      "description": "Reserved keywords that cannot be used as variable names, and rules for valid identifiers.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000052",
+      "label": "working with sets in python",
+      "description": "Practical use of sets for deduplication, membership testing, and set algebra.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000023"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000053",
+      "label": "functions and return values",
+      "description": "Returning data from functions using the return statement and using returned values in expressions.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000054",
+      "label": "data types in python",
+      "description": "Built-in data types: int, float, str, bool, list, tuple, set, and dict, and their properties.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000055",
+      "label": "abstract classes and interfaces",
+      "description": "Defining abstract base classes and abstract methods to enforce a contract on subclasses.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000028"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000056",
+      "label": "class attributes and variables",
+      "description": "Class-level attributes shared across all instances vs instance-level attributes unique to each object.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000035"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000057",
+      "label": "membership operators in python",
+      "description": "Using in and not in to test for membership in sequences and collections.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000037"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000058",
+      "label": "method overriding in python",
+      "description": "Subclasses redefining methods inherited from parent classes to change behavior.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000028"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000059",
+      "label": "higher order functions in python",
+      "description": "Functions that take other functions as arguments or return them, like map, filter, and sorted with key.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000060",
+      "label": "class constructors and initialization",
+      "description": "Defining __init__ to initialize new objects with custom attributes when instantiated.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000035"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000061",
+      "label": "python syntax",
+      "description": "Python's grammar rules: indentation, statement separators, line continuation, and code structure.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000138"
+      ],
+      "depth_level": 1
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000062",
+      "label": "comprehensions in python",
+      "description": "Concise list, dict, and set comprehensions for building collections from iterables with optional filtering.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000001",
+        "a1b2c3d4-0001-4000-8000-000000000026"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000063",
+      "label": "list traversal and aggregation",
+      "description": "Iterating over a list to compute summary values like sum, count, max, or filtered subsets.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000001",
+        "a1b2c3d4-0001-4000-8000-000000000015"
+      ],
+      "depth_level": 6
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000064",
+      "label": "type checking and introspection",
+      "description": "Inspecting objects at runtime using type(), isinstance(), and dir() to make type-aware decisions.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000039"
+      ],
+      "depth_level": 10
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000065",
+      "label": "nested lists and matrices",
+      "description": "Lists of lists for representing 2D grids and accessing elements with double indexing.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000015",
+        "a1b2c3d4-0001-4000-8000-000000000016"
+      ],
+      "depth_level": 7
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000066",
+      "label": "sequence unpacking in python",
+      "description": "Assigning multiple variables at once from a list, tuple, or other iterable using unpacking syntax.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000015"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000067",
+      "label": "date and time operations",
+      "description": "Working with dates, times, and durations using the datetime module.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000046"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000068",
+      "label": "augmented assignment operators",
+      "description": "Compound assignment operators like +=, -=, *=, /=, %= for concise update statements.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000013"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000069",
+      "label": "tuple basics in python",
+      "description": "Creating immutable ordered collections with tuples and using them for grouping related values.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000014"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000070",
+      "label": "floating point numbers in python",
+      "description": "Decimal numbers and their representation, precision limits, and arithmetic behavior.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000013"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000071",
+      "label": "character encoding in python",
+      "description": "Working with Unicode characters, ord(), chr(), and string encoding/decoding basics.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000006"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000072",
+      "label": "object composition",
+      "description": "Building complex objects by combining simpler objects as attributes (has-a relationships).",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000043"
+      ],
+      "depth_level": 9
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000073",
+      "label": "variable naming and declaration",
+      "description": "Conventions for choosing readable variable names and Python's rules for valid identifiers.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000008"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000074",
+      "label": "date parsing and formatting",
+      "description": "Converting date strings to datetime objects and formatting datetime objects for display.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000067"
+      ],
+      "depth_level": 9
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000075",
+      "label": "hashability in python",
+      "description": "Which objects can be used as dict keys or set elements, and how hashability relates to immutability.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000021",
+        "a1b2c3d4-0001-4000-8000-000000000023"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000076",
+      "label": "polymorphism in python",
+      "description": "Different classes responding to the same method call in their own way, often via method overriding.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000058"
+      ],
+      "depth_level": 11
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000077",
+      "label": "random number generation in python",
+      "description": "Generating random integers, floats, and choices using the random module.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000020"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000078",
+      "label": "code comments and documentation",
+      "description": "Writing single-line and block comments, and docstrings to document functions and modules.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000061"
+      ],
+      "depth_level": 2
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000079",
+      "label": "collection operations in python",
+      "description": "Common operations across collection types: filtering, mapping, reducing, and aggregating.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000041"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000080",
+      "label": "rounding numbers in python",
+      "description": "Rounding floats with round(), math.floor(), math.ceil(), and controlling decimal precision.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000013"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000081",
+      "label": "python help and documentation",
+      "description": "Using help() and the official Python documentation to look up functions and module behavior.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000046"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000082",
+      "label": "modular programming",
+      "description": "Organizing code into reusable modules and packages for maintainability and reuse.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000046"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000083",
+      "label": "pass statement in python",
+      "description": "Using pass as a placeholder for empty function bodies, class bodies, and conditional branches.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000003"
+      ],
+      "depth_level": 5
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000084",
+      "label": "escape sequences in strings",
+      "description": "Using backslash escape sequences for newline, tab, quotes, and other special characters in strings.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000006"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000085",
+      "label": "decorators in python",
+      "description": "Functions that modify or wrap other functions, applied with @decorator syntax.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000059"
+      ],
+      "depth_level": 8
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000086",
+      "label": "string immutability",
+      "description": "Why strings cannot be modified in place and how operations always return new string objects.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000005"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000087",
+      "label": "stack data structure",
+      "description": "Last-in-first-out (LIFO) data structure typically implemented with lists using append and pop.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000014"
+      ],
+      "depth_level": 3
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000088",
+      "label": "array manipulation techniques",
+      "description": "Common patterns for transforming, filtering, searching, and rearranging elements in a list.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000015"
+      ],
+      "depth_level": 4
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000138",
+      "label": "computing and programming basics",
+      "description": "Foundational concepts of computing, programs, and how code is executed by a computer.",
+      "prerequisites": [],
+      "depth_level": 0
+    },
+    {
+      "knowledge_node_id": "a1b2c3d4-0001-4000-8000-000000000531",
+      "label": "array traversal and indexing",
+      "description": "Iterating through array elements by index and accessing them sequentially.",
+      "prerequisites": [
+        "a1b2c3d4-0001-4000-8000-000000000138"
+      ],
+      "depth_level": 1
+    }
+  ],
+  "depth_level_definitions": [
+    {
+      "level": 0,
+      "label": "Level 0",
+      "node_count": 1
+    },
+    {
+      "level": 1,
+      "label": "Level 1",
+      "node_count": 3
+    },
+    {
+      "level": 2,
+      "label": "Level 2",
+      "node_count": 11
+    },
+    {
+      "level": 3,
+      "label": "Level 3",
+      "node_count": 13
+    },
+    {
+      "level": 4,
+      "label": "Level 4",
+      "node_count": 17
+    },
+    {
+      "level": 5,
+      "label": "Level 5",
+      "node_count": 7
+    },
+    {
+      "level": 6,
+      "label": "Level 6",
+      "node_count": 4
+    },
+    {
+      "level": 7,
+      "label": "Level 7",
+      "node_count": 11
+    },
+    {
+      "level": 8,
+      "label": "Level 8",
+      "node_count": 7
+    },
+    {
+      "level": 9,
+      "label": "Level 9",
+      "node_count": 5
+    },
+    {
+      "level": 10,
+      "label": "Level 10",
+      "node_count": 7
+    },
+    {
+      "level": 11,
+      "label": "Level 11",
+      "node_count": 1
+    }
+  ]
+}

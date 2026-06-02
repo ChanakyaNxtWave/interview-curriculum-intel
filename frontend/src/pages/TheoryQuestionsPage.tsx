@@ -1,18 +1,18 @@
 import { useMemo, useState } from 'react';
 import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { Sparkles, Filter, MessagesSquare } from 'lucide-react';
+import { Sparkles, Filter, MessagesSquare, ChevronDown, ChevronRight } from 'lucide-react';
 import { fetchTheoryQuestions } from '../api/theory';
 import { fetchCodingQuestions } from '../api/coding';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
 import DateRangeFilter, { type DurationPreset } from '../components/DateRangeFilter';
 import VerdictBadge from '../components/VerdictBadge';
+import { effectiveVerdict } from '../lib/verdict';
 import ConfidenceBar from '../components/ConfidenceBar';
 import ReviewStatusBadge from '../components/ReviewStatusBadge';
 import CourseTabs from '../components/CourseTabs';
-import AskedChip from '../components/AskedChip';
-import GroupMembersModal from '../components/GroupMembersModal';
+import SimilarQuestionsPanel from '../components/SimilarQuestionsPanel';
 import ListSkeleton from '../components/ListSkeleton';
 import { InlineSpinner } from '../components/BusyOverlay';
 import { useDebounce } from '../hooks/useDebounce';
@@ -30,7 +30,7 @@ export default function TheoryQuestionsPage() {
   const dateFrom = sp.get('from') ?? '';
   const dateTo = sp.get('to') ?? '';
   const [localQ, setLocalQ] = useState(q);
-  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [expandedKey, setExpandedKey] = useState<string | null>(null);
   const debouncedQ = useDebounce(localQ, 300);
 
   useMemo(() => {
@@ -60,6 +60,7 @@ export default function TheoryQuestionsPage() {
         duration: duration && duration !== 'custom' ? duration : undefined,
         date_from: dateFrom || undefined,
         date_to: dateTo || undefined,
+        unique: true,
         limit: 500,
       }),
   });
@@ -167,68 +168,111 @@ export default function TheoryQuestionsPage() {
       {listQ.error && <div className="text-conf-uncertain">Failed: {String(listQ.error)}</div>}
       {!listQ.isLoading && items.length === 0 && (
         <EmptyState
-          title={isCodingRoute ? 'No coding tags yet' : 'No theory tags yet'}
+          title="No question tags yet"
           hint={
             isCodingRoute
-              ? "Click 'Tag pending' to run the pipeline over CODING questions."
-              : "Click 'Tag pending' to run the pipeline over THEORY questions."
+              ? "Run tagging from Interview Questions (CODING) or use Tag pending."
+              : "Run tagging from Interview Questions (THEORY) or use Tag pending."
           }
         />
       )}
 
       {items.length > 0 && (
         <div className="card divide-y divide-line overflow-hidden">
-          {items.map((t) => (
-            <Link
-              key={t.row_key}
-              to={`/courses/${courseId}/theory-questions/${encodeURIComponent(t.row_key)}${
-                isCodingRoute ? '?type=coding' : ''
-              }`}
-              className="block p-4 hover:bg-bg-hover transition-colors"
-            >
-              <div className="flex items-start gap-3">
-                <MessagesSquare className="w-4 h-4 text-brand mt-1 shrink-0" />
-                <div className="min-w-0 flex-1">
-                  <p className="text-text leading-snug line-clamp-2">{t.question_text}</p>
-                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-text-muted">
-                    {t.interview?.company_name && (
-                      <span className="chip">{t.interview.company_name}</span>
-                    )}
-                    {t.interview?.role && (
-                      <span className="chip max-w-[200px] truncate" title={t.interview.role}>
-                        {t.interview.role}
-                      </span>
-                    )}
-                    {t.interview?.interview_date && (
-                      <span className="chip">{t.interview.interview_date}</span>
-                    )}
-                    {t.required_kps?.length > 0 && (
-                      <span className="chip">{t.required_kps.length} KPs</span>
-                    )}
-                    {t.citations?.length > 0 && (
-                      <span className="chip">{t.citations.length} citations</span>
-                    )}
-                    {t.group_key && (
-                      <AskedChip
-                        count={t.group_member_count}
-                        onClick={() => setOpenGroup(t.group_key as string)}
-                      />
-                    )}
-                  </div>
-                </div>
-                <div className="flex flex-col items-end gap-1 shrink-0 min-w-[180px]">
-                  <VerdictBadge verdict={t.verdict} />
-                  <ConfidenceBar value={t.overall_confidence} />
-                  <ReviewStatusBadge status={t.review_status as ReviewStatus} />
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
+          {items.map((t) => {
+            const expandId =
+              t.canonical_id != null
+                ? `c:${t.canonical_id}`
+                : t.group_key
+                ? `g:${t.group_key}`
+                : t.row_key;
+            const similarCount = t.similar_count ?? 0;
+            const isExpanded = expandedKey === expandId;
+            const displayQuestion =
+              t.canonical_question || t.group_canonical_question || t.question_text;
 
-      {openGroup && (
-        <GroupMembersModal groupKey={openGroup} onClose={() => setOpenGroup(null)} />
+            return (
+              <div key={expandId} className="hover:bg-bg-hover/50 transition-colors">
+                <Link
+                  to={`/courses/${courseId}/theory-questions/${encodeURIComponent(t.row_key)}${
+                    isCodingRoute ? '?type=coding' : ''
+                  }`}
+                  className="block p-4"
+                >
+                  <div className="flex items-start gap-3">
+                    <MessagesSquare className="w-4 h-4 text-brand mt-1 shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-text leading-snug line-clamp-2">{displayQuestion}</p>
+                      {displayQuestion !== t.question_text && (
+                        <p className="text-xs text-text-dim mt-1 line-clamp-1">
+                          Tagged as: {t.question_text}
+                        </p>
+                      )}
+                      <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-text-muted">
+                        {t.interview?.company_name && (
+                          <span className="chip">{t.interview.company_name}</span>
+                        )}
+                        {t.interview?.role && (
+                          <span
+                            className="chip max-w-[200px] truncate"
+                            title={t.interview.role}
+                          >
+                            {t.interview.role}
+                          </span>
+                        )}
+                        {t.interview?.interview_date && (
+                          <span className="chip">{t.interview.interview_date}</span>
+                        )}
+                        {t.required_kps?.length > 0 && (
+                          <span className="chip">{t.required_kps.length} KPs</span>
+                        )}
+                        {t.citations?.length > 0 && (
+                          <span className="chip">{t.citations.length} citations</span>
+                        )}
+                        {t.canonical_slug && (
+                          <span className="chip font-mono">{t.canonical_slug}</span>
+                        )}
+                        {(t.related_tag_count ?? 1) > 1 && (
+                          <span className="chip">{t.related_tag_count} tag variants</span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-end gap-1 shrink-0 min-w-[180px]">
+                      <VerdictBadge verdict={effectiveVerdict(t)} />
+                      <ConfidenceBar value={t.overall_confidence} />
+                      <ReviewStatusBadge status={t.review_status as ReviewStatus} />
+                    </div>
+                  </div>
+                </Link>
+                {similarCount > 0 && (
+                  <div className="px-4 pb-3">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedKey(isExpanded ? null : expandId)
+                      }
+                      className="inline-flex items-center gap-1.5 text-xs text-brand hover:text-brand/80 pl-7"
+                    >
+                      {isExpanded ? (
+                        <ChevronDown className="w-3.5 h-3.5" />
+                      ) : (
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      )}
+                      {similarCount} similar question{similarCount === 1 ? '' : 's'}
+                    </button>
+                  </div>
+                )}
+                {isExpanded && similarCount > 0 && t.canonical_id != null && (
+                  <SimilarQuestionsPanel
+                    courseId={courseId}
+                    canonicalId={t.canonical_id}
+                    representativeRowKey={t.row_key}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       )}
     </div>
   );
@@ -256,7 +300,15 @@ function VerdictTabs({
       {tabs.map((t) => {
         const isActive = current === t.value;
         const count =
-          t.value === '' ? totalAll : counts ? counts[t.value] ?? 0 : 0;
+          t.value === ''
+            ? totalAll
+            : counts
+            ? t.value === 'not_covered'
+              ? (counts.not_covered ?? 0) +
+                (counts.partially_covered ?? 0) +
+                (counts.uncertain ?? 0)
+              : counts[t.value] ?? 0
+            : 0;
         return (
           <button
             key={t.value}

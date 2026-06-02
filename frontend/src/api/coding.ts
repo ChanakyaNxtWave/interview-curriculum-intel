@@ -9,7 +9,12 @@ import type {
   TheoryListResponse,
   TheoryTag,
 } from './types';
-import type { ReviewPayload, FeedbackPayload, TheoryListFilters } from './theory';
+import type {
+  ReviewPayload,
+  FeedbackPayload,
+  TheoryListFilters,
+  TagStartResponse,
+} from './theory';
 
 export const fetchCodingQuestions = (f: TheoryListFilters = {}) =>
   api<TheoryListResponse>(`/api/coding-questions${qs(f)}`);
@@ -18,9 +23,14 @@ export const fetchCodingQuestion = (rowKey: string) =>
   api<TheoryTag>(`/api/coding-questions/${encodeURIComponent(rowKey)}`);
 
 export const tagCodingQuestion = (rowKey: string) =>
-  api<TheoryTag>(`/api/coding-questions/${encodeURIComponent(rowKey)}/tag`, {
+  api<TagStartResponse>(`/api/coding-questions/${encodeURIComponent(rowKey)}/tag`, {
     method: 'POST',
   });
+
+export const fetchCodingTagStatus = (rowKey: string) =>
+  api<import('./theory').TagProgress>(
+    `/api/coding-questions/${encodeURIComponent(rowKey)}/tag-status`,
+  );
 
 export const tagCodingPending = (limit = 50) =>
   api<{ enqueued: number }>(`/api/coding-questions/tag-pending`, {

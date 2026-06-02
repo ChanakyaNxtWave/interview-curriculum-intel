@@ -10,6 +10,7 @@ import TheoryQuestionDetailPage from './pages/TheoryQuestionDetailPage';
 import EvalDashboardPage from './pages/EvalDashboardPage';
 import ReviewQueuePage from './pages/ReviewQueuePage';
 import ReadingMaterialsPage from './pages/ReadingMaterialsPage';
+import KnowledgeGraphPage from './pages/KnowledgeGraphPage';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           element={<TheoryQuestionDetailPage />}
         />
         <Route path="/courses/:courseId/evals" element={<EvalDashboardPage />} />
+        <Route path="/courses/:courseId/knowledge-graph" element={<KnowledgeGraphPage />} />
         {/* Legacy redirects */}
         <Route
           path="/theory-questions"

@@ -18,20 +18,15 @@ import {
   fetchInterviewFacets,
   fetchInterviewQuestions,
   fetchInterviewSyncStatus,
-  fetchNormalizeStatus,
   triggerInterviewSync,
-  triggerNormalize,
   deleteInterviewQuestion,
 } from '../api/interview';
-import { fetchPendingCount, tagBatch, tagPending, tagTheoryQuestion } from '../api/theory';
-import {
-  fetchCodingPendingCount,
-  tagCodingBatch,
-  tagCodingPending,
-  tagCodingQuestion,
-} from '../api/coding';
-import { CheckSquare, Layers, Loader2, Rows, Sparkles, Square, Tag, Wand2 } from 'lucide-react';
+import { tagBatch } from '../api/theory';
+import { tagCodingBatch } from '../api/coding';
+import { useAsyncTag } from '../hooks/useAsyncTag';
+import { CheckSquare, Loader2, Sparkles, Square, Tag } from 'lucide-react';
 import VerdictBadge from '../components/VerdictBadge';
+import { effectiveVerdict } from '../lib/verdict';
 import ConfidenceBar from '../components/ConfidenceBar';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
@@ -56,7 +51,6 @@ export default function InterviewQuestionsPage() {
   const duration = (sp.get('duration') ?? '') as DurationPreset;
   const dateFrom = sp.get('from') ?? '';
   const dateTo = sp.get('to') ?? '';
-  const grouped = sp.get('view') !== 'flat'; // default grouped
   const [localQ, setLocalQ] = useState(q);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const debouncedQ = useDebounce(localQ, 300);
@@ -93,7 +87,6 @@ export default function InterviewQuestionsPage() {
       duration,
       dateFrom,
       dateTo,
-      grouped,
     ],
     queryFn: () =>
       fetchInterviewQuestions({
@@ -106,23 +99,9 @@ export default function InterviewQuestionsPage() {
         duration: duration && duration !== 'custom' ? duration : undefined,
         date_from: dateFrom || undefined,
         date_to: dateTo || undefined,
-        group_by: grouped,
+        group_by: true,
         limit: 1000,
       }),
-  });
-
-  const normalizeStatusQ = useQuery({
-    queryKey: ['normalize-status'],
-    queryFn: fetchNormalizeStatus,
-    refetchInterval: 10_000,
-  });
-
-  const normalizeMutation = useMutation({
-    mutationFn: () => triggerNormalize(100),
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['interview-list'] });
-      qc.invalidateQueries({ queryKey: ['normalize-status'] });
-    },
   });
 
   const syncMutation = useMutation({
@@ -132,8 +111,10 @@ export default function InterviewQuestionsPage() {
       qc.invalidateQueries({ queryKey: ['interview-facets'] });
       qc.invalidateQueries({ queryKey: ['interview-sync-status'] });
       qc.invalidateQueries({ queryKey: ['theory-list'] });
+      qc.invalidateQueries({ queryKey: ['coding-list'] });
       qc.invalidateQueries({ queryKey: ['review-queue'] });
       qc.invalidateQueries({ queryKey: ['review-count'] });
+      qc.invalidateQueries({ queryKey: ['course-grouped-questions'] });
     },
   });
 
@@ -143,6 +124,7 @@ export default function InterviewQuestionsPage() {
       qc.invalidateQueries({ queryKey: ['interview-list'] });
       qc.invalidateQueries({ queryKey: ['interview-facets'] });
       qc.invalidateQueries({ queryKey: ['theory-list'] });
+      qc.invalidateQueries({ queryKey: ['coding-list'] });
       qc.invalidateQueries({ queryKey: ['review-queue'] });
       qc.invalidateQueries({ queryKey: ['review-count'] });
       qc.invalidateQueries({ queryKey: ['theory-pending-count'] });
@@ -150,43 +132,16 @@ export default function InterviewQuestionsPage() {
     },
   });
 
-  const pendingCountQ = useQuery({
-    queryKey: ['theory-pending-count'],
-    queryFn: fetchPendingCount,
-    refetchInterval: 10_000,
-  });
-
-  const codingPendingCountQ = useQuery({
-    queryKey: ['coding-pending-count'],
-    queryFn: fetchCodingPendingCount,
-    refetchInterval: 10_000,
-  });
-
   function invalidateTagging() {
     qc.invalidateQueries({ queryKey: ['theory-list'] });
+    qc.invalidateQueries({ queryKey: ['coding-list'] });
     qc.invalidateQueries({ queryKey: ['review-queue'] });
     qc.invalidateQueries({ queryKey: ['review-count'] });
     qc.invalidateQueries({ queryKey: ['interview-list'] });
-    qc.invalidateQueries({ queryKey: ['theory-pending-count'] });
-    qc.invalidateQueries({ queryKey: ['coding-pending-count'] });
+    qc.invalidateQueries({ queryKey: ['course-grouped-questions'] });
   }
 
-  // "Tag pending" fires BOTH namespaces (split by type server-side) up to `limit` each.
-  const tagMutation = useMutation({
-    mutationFn: async (limit: number) => {
-      const [t, c] = await Promise.all([tagPending(limit), tagCodingPending(limit)]);
-      return { enqueued: (t.enqueued ?? 0) + (c.enqueued ?? 0) };
-    },
-    onSuccess: invalidateTagging,
-  });
-
-  // Per-row Re-tag uses the SYNCHRONOUS single-row endpoint so the user
-  // sees the LLM call complete (BusyOverlay below). Dispatch by question_type.
-  const tagSingle = useMutation({
-    mutationFn: ({ rowKey, qt }: { rowKey: string; qt: string }) =>
-      qt === 'CODING' ? tagCodingQuestion(rowKey) : tagTheoryQuestion(rowKey),
-    onSuccess: invalidateTagging,
-  });
+  const asyncTag = useAsyncTag(invalidateTagging);
 
   // Selected rows may mix types — split and fire each namespace's batch endpoint.
   const tagSelected = useMutation({
@@ -206,11 +161,6 @@ export default function InterviewQuestionsPage() {
   });
 
   const [selected, setSelected] = useState<Set<string>>(new Set());
-  const [bulkLimit, setBulkLimit] = useState<number>(25);
-  const [pendingTagRow, setPendingTagRow] = useState<string | null>(null);
-  const [progressFor, setProgressFor] = useState<{ rowKey: string; question: string } | null>(
-    null,
-  );
 
   function toggleSelect(rowKey: string) {
     setSelected((prev) => {
@@ -283,19 +233,6 @@ export default function InterviewQuestionsPage() {
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <SyncBadge status={statusQ.data} />
-          <NormalizeBadge
-            status={normalizeStatusQ.data}
-            onClick={() => normalizeMutation.mutate()}
-            pending={normalizeMutation.isPending}
-          />
-          <button
-            className="btn disabled:opacity-50"
-            onClick={() => setParam('view', grouped ? 'flat' : '')}
-            title="Toggle grouped vs flat view"
-          >
-            {grouped ? <Layers className="w-3.5 h-3.5" /> : <Rows className="w-3.5 h-3.5" />}
-            {grouped ? 'Grouped' : 'Flat'}
-          </button>
           {selected.size > 0 && (
             <button
               className="btn-primary disabled:opacity-50"
@@ -306,36 +243,6 @@ export default function InterviewQuestionsPage() {
               Tag selected ({selected.size})
             </button>
           )}
-          <div className="inline-flex items-stretch border border-line rounded-md overflow-hidden">
-            <select
-              value={bulkLimit}
-              onChange={(e) => setBulkLimit(Number(e.target.value))}
-              className="bg-bg-panel text-sm text-text px-2 border-r border-line"
-              title="How many pending rows to tag"
-            >
-              {[5, 10, 25, 50, 100, 500].map((n) => (
-                <option key={n} value={n}>
-                  {n}
-                </option>
-              ))}
-            </select>
-            <button
-              className="px-3 py-1.5 text-sm font-medium bg-bg-panel hover:bg-bg-hover disabled:opacity-50 inline-flex items-center gap-1.5"
-              disabled={tagMutation.isPending}
-              onClick={() => tagMutation.mutate(bulkLimit)}
-              title={`Tag up to ${bulkLimit} pending THEORY rows`}
-            >
-              <Sparkles className={`w-3.5 h-3.5 ${tagMutation.isPending ? 'animate-pulse' : ''}`} />
-              {tagMutation.isPending
-                ? 'Enqueuing…'
-                : `Tag pending${(() => {
-                    const t = pendingCountQ.data?.by_type?.THEORY ?? pendingCountQ.data?.pending;
-                    const c = codingPendingCountQ.data?.by_type?.CODING ?? codingPendingCountQ.data?.pending;
-                    if (t == null && c == null) return '';
-                    return ` (${t ?? 0}T · ${c ?? 0}C)`;
-                  })()}`}
-            </button>
-          </div>
           <button
             className="btn-primary disabled:opacity-50"
             disabled={syncMutation.isPending}
@@ -348,28 +255,6 @@ export default function InterviewQuestionsPage() {
           </button>
         </div>
       </div>
-
-      {normalizeMutation.isSuccess && (
-        <div className="mb-3 p-3 rounded-md border border-conf-high/40 bg-conf-high/10 text-sm text-conf-high">
-          Normalize enqueued ({normalizeMutation.data.limit} groups max). Watch status badge.
-        </div>
-      )}
-      {normalizeMutation.isError && (
-        <div className="mb-3 p-3 rounded-md border border-conf-uncertain/40 bg-conf-uncertain/10 text-sm text-conf-uncertain">
-          Normalize failed: {String(normalizeMutation.error)}
-        </div>
-      )}
-
-      {tagMutation.isSuccess && (
-        <div className="mb-3 p-3 rounded-md border border-conf-high/40 bg-conf-high/10 text-sm text-conf-high">
-          Enqueued {tagMutation.data.enqueued} THEORY rows for tagging. Watch the Review Queue.
-        </div>
-      )}
-      {tagMutation.isError && (
-        <div className="mb-3 p-3 rounded-md border border-conf-uncertain/40 bg-conf-uncertain/10 text-sm text-conf-uncertain">
-          Tag failed: {String(tagMutation.error)}
-        </div>
-      )}
 
       {syncMutation.isError && (
         <div className="mb-3 p-3 rounded-md border border-conf-uncertain/40 bg-conf-uncertain/10 text-sm text-conf-uncertain">
@@ -492,8 +377,10 @@ export default function InterviewQuestionsPage() {
             const isTaggable = qt === 'THEORY' || qt === 'CODING';
             const theory = q.theory;
             const isPendingTag =
-              pendingTagRow === q.row_key ||
-              (tagSingle.isPending && tagSingle.variables?.rowKey === q.row_key);
+              asyncTag.pendingRowKey === q.row_key ||
+              asyncTag.session?.requestedRowKey === q.row_key ||
+              (asyncTag.session?.tracking &&
+                asyncTag.session.tagRowKey === (q.theory?.row_key as string | undefined));
             const isSelected = selected.has(q.row_key);
             return (
               <div
@@ -606,7 +493,7 @@ export default function InterviewQuestionsPage() {
                           className="flex flex-col items-end gap-1"
                           title="Open tag detail"
                         >
-                          <VerdictBadge verdict={(theory.verdict ?? 'not_covered') as any} />
+                          <VerdictBadge verdict={effectiveVerdict(theory)} />
                           <ConfidenceBar value={Number(theory.overall_confidence ?? 0)} />
                           <span className="text-[10px] text-text-dim font-mono">
                             {theory.review_status}
@@ -631,14 +518,7 @@ export default function InterviewQuestionsPage() {
                       <button
                         className="btn text-xs disabled:opacity-50 mt-1"
                         disabled={isPendingTag}
-                        onClick={() => {
-                          setPendingTagRow(q.row_key);
-                          setProgressFor({ rowKey: q.row_key, question: q.question || '' });
-                          tagSingle.mutate(
-                            { rowKey: q.row_key, qt },
-                            { onSettled: () => setPendingTagRow(null) },
-                          );
-                        }}
+                        onClick={() => asyncTag.beginTag(q.row_key, qt, q.question || '')}
                         title={theory ? 'Re-tag this question' : 'Tag this question now'}
                       >
                         {isPendingTag ? (
@@ -680,13 +560,15 @@ export default function InterviewQuestionsPage() {
         </div>
       )}
 
-      {progressFor && (
+      {asyncTag.session && (
         <TagProgressModal
-          rowKey={progressFor.rowKey}
-          questionText={progressFor.question}
-          open={!!progressFor}
-          active={tagSingle.isPending}
-          onClose={() => setProgressFor(null)}
+          rowKey={asyncTag.session.tagRowKey}
+          questionText={asyncTag.session.questionText}
+          open
+          tracking={asyncTag.session.tracking}
+          isCoding={asyncTag.session.isCoding}
+          onClose={asyncTag.finishTag}
+          onComplete={asyncTag.finishTag}
         />
       )}
 
@@ -694,30 +576,6 @@ export default function InterviewQuestionsPage() {
         <GroupMembersModal groupKey={openGroup} onClose={() => setOpenGroup(null)} />
       )}
     </div>
-  );
-}
-
-function NormalizeBadge({
-  status,
-  onClick,
-  pending,
-}: {
-  status?: { pending: number; normalized: number; merged: number; total: number };
-  onClick: () => void;
-  pending: boolean;
-}) {
-  if (!status) return null;
-  const hasPending = status.pending > 0;
-  return (
-    <button
-      className={`chip ${hasPending ? 'border-conf-medium/50 text-conf-medium' : 'chip-on'} disabled:opacity-50`}
-      onClick={onClick}
-      disabled={pending}
-      title="Run DSPy semantic normalizer over groups that haven't been canonicalized yet"
-    >
-      <Wand2 className={`w-3 h-3 ${pending ? 'animate-pulse' : ''}`} />
-      {pending ? 'Normalizing…' : `Normalize: ${status.pending} pending · ${status.normalized} done · ${status.merged} merged`}
-    </button>
   );
 }
 

@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   CheckCircle2,
   ExternalLink,
-  Loader2,
   Plus,
   RefreshCw,
   Save,
@@ -14,15 +13,16 @@ import {
 import {
   fetchTheoryQuestion,
   submitReview,
-  tagTheoryQuestion,
   type ReviewPayload,
 } from '../api/theory';
 import {
   fetchCodingQuestion,
   submitCodingReview,
-  tagCodingQuestion,
 } from '../api/coding';
+import { useAsyncTag } from '../hooks/useAsyncTag';
+import TagProgressModal from '../components/TagProgressModal';
 import VerdictBadge from '../components/VerdictBadge';
+import { effectiveVerdict } from '../lib/verdict';
 import ConfidenceBar from '../components/ConfidenceBar';
 import ReviewStatusBadge from '../components/ReviewStatusBadge';
 import ReasoningPanel from '../components/ReasoningPanel';
@@ -61,7 +61,7 @@ export default function TheoryQuestionDetailPage() {
   const isCoding = (sp.get('type') || '').toLowerCase() === 'coding';
   const qc = useQueryClient();
   const detailQ = useQuery({
-    queryKey: ['theory-detail', rowKey, isCoding],
+    queryKey: ['question-detail', rowKey, isCoding],
     queryFn: () => (isCoding ? fetchCodingQuestion(rowKey) : fetchTheoryQuestion(rowKey)),
   });
 
@@ -81,19 +81,17 @@ export default function TheoryQuestionDetailPage() {
     });
   }, [data?.row_key]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const reTag = useMutation({
-    mutationFn: () => (isCoding ? tagCodingQuestion(rowKey) : tagTheoryQuestion(rowKey)),
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['theory-detail', rowKey] });
-    },
+  const asyncTag = useAsyncTag(() => {
+    qc.invalidateQueries({ queryKey: ['question-detail', rowKey, isCoding] });
+    qc.invalidateQueries({ queryKey: ['tag-history', rowKey, isCoding] });
   });
 
   const save = useMutation({
     mutationFn: (payload: ReviewPayload) =>
       isCoding ? submitCodingReview(rowKey, payload) : submitReview(rowKey, payload),
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['theory-detail', rowKey] });
-      qc.invalidateQueries({ queryKey: ['theory-list'] });
+      qc.invalidateQueries({ queryKey: ['question-detail', rowKey] });
+      qc.invalidateQueries({ queryKey: [isCoding ? 'coding-list' : 'theory-list'] });
     },
   });
 
@@ -124,17 +122,24 @@ export default function TheoryQuestionDetailPage() {
     <div>
       <div className="mb-4 flex items-center justify-between flex-wrap gap-2">
         <Link
-          to={`/courses/${courseId}/theory-questions`}
+          to={`/courses/${courseId}/${isCoding ? 'coding-questions' : 'theory-questions'}`}
           className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text"
         >
-          <ArrowLeft className="w-4 h-4" /> Back to theory list
+          <ArrowLeft className="w-4 h-4" />{' '}
+          {isCoding ? 'Back to coding questions' : 'Back to theory questions'}
         </Link>
         <button
           className="btn disabled:opacity-50"
-          disabled={reTag.isPending}
-          onClick={() => reTag.mutate()}
+          disabled={asyncTag.isStarting || Boolean(asyncTag.session?.tracking)}
+          onClick={() =>
+            asyncTag.beginTag(rowKey, isCoding ? 'CODING' : 'THEORY', data?.question_text || '')
+          }
         >
-          <RefreshCw className={`w-3.5 h-3.5 ${reTag.isPending ? 'animate-spin' : ''}`} />
+          <RefreshCw
+            className={`w-3.5 h-3.5 ${
+              asyncTag.isStarting || asyncTag.session?.tracking ? 'animate-spin' : ''
+            }`}
+          />
           Re-tag now
         </button>
       </div>
@@ -162,7 +167,7 @@ export default function TheoryQuestionDetailPage() {
             </div>
           </div>
           <div className="flex flex-col items-end gap-1 shrink-0 min-w-[180px]">
-            <VerdictBadge verdict={data.verdict} />
+            <VerdictBadge verdict={effectiveVerdict(data)} />
             <ConfidenceBar value={data.overall_confidence} />
             <ReviewStatusBadge status={data.review_status as ReviewStatus} />
           </div>
@@ -296,16 +301,16 @@ export default function TheoryQuestionDetailPage() {
 
       <TagHistory rowKey={rowKey} isCoding={isCoding} />
 
-      {reTag.isPending && (
-        <div className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm flex items-center justify-center pointer-events-none">
-          <div className="card px-5 py-4 flex items-center gap-3 shadow-2xl">
-            <Loader2 className="w-5 h-5 text-brand animate-spin" />
-            <div>
-              <div className="text-text font-medium">Re-tagging…</div>
-              <div className="text-xs text-text-dim">DSPy pipeline running — Sonnet via OpenRouter</div>
-            </div>
-          </div>
-        </div>
+      {asyncTag.session && (
+        <TagProgressModal
+          rowKey={asyncTag.session.tagRowKey}
+          questionText={asyncTag.session.questionText}
+          open
+          tracking={asyncTag.session.tracking}
+          isCoding={asyncTag.session.isCoding}
+          onClose={asyncTag.finishTag}
+          onComplete={asyncTag.finishTag}
+        />
       )}
 
       {openGroup && (

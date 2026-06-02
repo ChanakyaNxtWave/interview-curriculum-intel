@@ -14,8 +14,20 @@ def _utc_now() -> str:
 class TheoryStore:
     """SQLite store for theory question tagging + coverage + evals + DSPy versions."""
 
-    def __init__(self, db_path: Path) -> None:
+    def __init__(
+        self,
+        db_path: Path,
+        *,
+        tags_table: str = "theory_question_tags",
+        history_table: str = "theory_tag_history",
+    ) -> None:
         self.db_path = db_path
+        # Per-instance tag + history table names. A second instance pointed at
+        # coding_question_tags / coding_tag_history physically separates CODING
+        # tags from THEORY while sharing the same DB file and the same eval /
+        # feedback / prompt-version tables (those remain hard-coded below).
+        self.tags_table = tags_table
+        self.history_table = history_table
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_db()
 
@@ -32,10 +44,17 @@ class TheoryStore:
             conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {ddl}")
 
     def _init_db(self) -> None:
+        tags = self.tags_table
+        history = self.history_table
+        # Sanitize for use in index identifiers (table names are code-controlled,
+        # but keep the derived index name a clean identifier regardless).
+        tag_ix = tags.replace('"', "")
+        hist_ix = history.replace('"', "")
         with self._connect() as conn:
+            # Per-instance tag + history tables (theory_* or coding_*).
             conn.executescript(
-                """
-                CREATE TABLE IF NOT EXISTS theory_question_tags (
+                f"""
+                CREATE TABLE IF NOT EXISTS {tags} (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     row_key TEXT NOT NULL UNIQUE,
                     question_text TEXT NOT NULL,
@@ -57,9 +76,34 @@ class TheoryStore:
                     created_at TEXT NOT NULL,
                     updated_at TEXT NOT NULL
                 );
-                CREATE INDEX IF NOT EXISTS idx_tqt_status ON theory_question_tags(review_status);
-                CREATE INDEX IF NOT EXISTS idx_tqt_verdict ON theory_question_tags(verdict);
+                CREATE INDEX IF NOT EXISTS idx_{tag_ix}_status ON {tags}(review_status);
+                CREATE INDEX IF NOT EXISTS idx_{tag_ix}_verdict ON {tags}(verdict);
 
+                CREATE TABLE IF NOT EXISTS {history} (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    row_key TEXT NOT NULL,
+                    prompt_version TEXT NOT NULL,
+                    ai_model TEXT,
+                    verdict TEXT NOT NULL,
+                    overall_confidence REAL NOT NULL,
+                    required_kps_json TEXT NOT NULL,
+                    citations_json TEXT NOT NULL,
+                    candidate_citations_json TEXT NOT NULL,
+                    rejected_candidates_json TEXT NOT NULL DEFAULT '[]',
+                    rationale TEXT,
+                    judge_reasoning TEXT,
+                    kp_identifier_reasoning TEXT,
+                    review_reasons_json TEXT NOT NULL DEFAULT '[]',
+                    created_at TEXT NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_{hist_ix}_row ON {history}(row_key);
+                CREATE INDEX IF NOT EXISTS idx_{hist_ix}_version ON {history}(prompt_version);
+                """
+            )
+            # Shared tables (single set, regardless of which store instance) —
+            # evals, feedback, prompt versions, eval runs.
+            conn.executescript(
+                """
                 CREATE TABLE IF NOT EXISTS theory_question_evals (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     row_key TEXT NOT NULL,
@@ -120,36 +164,16 @@ class TheoryStore:
                 );
                 CREATE INDEX IF NOT EXISTS idx_trf_row ON theory_review_feedback(row_key);
                 CREATE INDEX IF NOT EXISTS idx_trf_severity ON theory_review_feedback(severity);
-
-                CREATE TABLE IF NOT EXISTS theory_tag_history (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    row_key TEXT NOT NULL,
-                    prompt_version TEXT NOT NULL,
-                    ai_model TEXT,
-                    verdict TEXT NOT NULL,
-                    overall_confidence REAL NOT NULL,
-                    required_kps_json TEXT NOT NULL,
-                    citations_json TEXT NOT NULL,
-                    candidate_citations_json TEXT NOT NULL,
-                    rejected_candidates_json TEXT NOT NULL DEFAULT '[]',
-                    rationale TEXT,
-                    judge_reasoning TEXT,
-                    kp_identifier_reasoning TEXT,
-                    review_reasons_json TEXT NOT NULL DEFAULT '[]',
-                    created_at TEXT NOT NULL
-                );
-                CREATE INDEX IF NOT EXISTS idx_tth_row ON theory_tag_history(row_key);
-                CREATE INDEX IF NOT EXISTS idx_tth_version ON theory_tag_history(prompt_version);
                 """
             )
             self._add_column_if_missing(
-                conn, "theory_question_tags", "rejected_candidates_json", "TEXT NOT NULL DEFAULT '[]'"
+                conn, tags, "rejected_candidates_json", "TEXT NOT NULL DEFAULT '[]'"
             )
             self._add_column_if_missing(
-                conn, "theory_question_tags", "kp_identifier_reasoning", "TEXT"
+                conn, tags, "kp_identifier_reasoning", "TEXT"
             )
             self._add_column_if_missing(
-                conn, "theory_question_tags", "judge_reasoning", "TEXT"
+                conn, tags, "judge_reasoning", "TEXT"
             )
             self._add_column_if_missing(
                 conn, "theory_question_evals", "feedback_weight", "INTEGER NOT NULL DEFAULT 1"
@@ -157,6 +181,47 @@ class TheoryStore:
             self._add_column_if_missing(
                 conn, "theory_question_evals", "feedback_ids_json", "TEXT NOT NULL DEFAULT '[]'"
             )
+            # Stage 3 — AnswerSynthesizer + question_type generalization
+            for table in (tags, history):
+                self._add_column_if_missing(
+                    conn, table, "question_type", "TEXT NOT NULL DEFAULT 'THEORY'"
+                )
+                self._add_column_if_missing(conn, table, "synthesized_answer", "TEXT")
+                self._add_column_if_missing(
+                    conn, table, "answer_grounding_json", "TEXT NOT NULL DEFAULT '[]'"
+                )
+                self._add_column_if_missing(
+                    conn, table, "synthesis_quality", "TEXT NOT NULL DEFAULT 'skipped'"
+                )
+                self._add_column_if_missing(
+                    conn, table, "synthesis_confidence", "REAL NOT NULL DEFAULT 0"
+                )
+                self._add_column_if_missing(conn, table, "synthesis_reasoning", "TEXT")
+                self._add_column_if_missing(conn, table, "match_strategy", "TEXT")
+            # One-time idempotent migration: collapse legacy verdicts to binary.
+            self._migrate_binary_verdicts(conn)
+
+    def _migrate_binary_verdicts(self, conn: sqlite3.Connection) -> None:
+        """Collapse partially_covered → not_covered and uncertain → not_covered in all tables."""
+        old = ("'partially_covered'", "'uncertain'")
+        old_sql = ", ".join(old)
+        for table in (self.tags_table, self.history_table):
+            existing = {
+                row[0]
+                for row in conn.execute(
+                    "SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table,)
+                ).fetchall()
+            }
+            if table not in existing:
+                continue
+            conn.execute(
+                f"UPDATE {table} SET verdict='not_covered' WHERE verdict IN ({old_sql})"
+            )
+        # Also collapse shared evals table (runs once regardless of which instance boots).
+        conn.execute(
+            f"UPDATE theory_question_evals SET gold_verdict='not_covered'"
+            f" WHERE gold_verdict IN ({old_sql})"
+        )
 
     # ---------- tags ----------
 
@@ -179,20 +244,34 @@ class TheoryStore:
         review_reasons: list[str],
         review_status: str,
         can_student_answer: bool,
+        question_type: str = "THEORY",
+        synthesized_answer: str = "",
+        answer_grounding: list[dict] | None = None,
+        synthesis_quality: str = "skipped",
+        synthesis_confidence: float = 0.0,
+        synthesis_reasoning: str = "",
+        match_strategy: str = "",
     ) -> dict:
         now = _utc_now()
         rejected = rejected_candidates or []
+        grounding = answer_grounding or []
         with self._connect() as conn:
             conn.execute(
-                """
-                INSERT INTO theory_question_tags (
+                f"""
+                INSERT INTO {self.tags_table} (
                     row_key, question_text, required_kps_json, citations_json,
                     candidate_citations_json, rejected_candidates_json,
                     verdict, can_student_answer, rationale,
                     kp_identifier_reasoning, judge_reasoning,
                     overall_confidence, ai_model, prompt_version,
-                    review_reasons_json, review_status, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    review_reasons_json, review_status,
+                    question_type, synthesized_answer, answer_grounding_json,
+                    synthesis_quality, synthesis_confidence, synthesis_reasoning,
+                    match_strategy,
+                    created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+                          ?, ?, ?, ?, ?, ?, ?,
+                          ?, ?)
                 ON CONFLICT(row_key) DO UPDATE SET
                     question_text = excluded.question_text,
                     required_kps_json = excluded.required_kps_json,
@@ -209,6 +288,13 @@ class TheoryStore:
                     prompt_version = excluded.prompt_version,
                     review_reasons_json = excluded.review_reasons_json,
                     review_status = excluded.review_status,
+                    question_type = excluded.question_type,
+                    synthesized_answer = excluded.synthesized_answer,
+                    answer_grounding_json = excluded.answer_grounding_json,
+                    synthesis_quality = excluded.synthesis_quality,
+                    synthesis_confidence = excluded.synthesis_confidence,
+                    synthesis_reasoning = excluded.synthesis_reasoning,
+                    match_strategy = excluded.match_strategy,
                     updated_at = excluded.updated_at
                 """,
                 (
@@ -228,18 +314,31 @@ class TheoryStore:
                     prompt_version,
                     json.dumps(review_reasons),
                     review_status,
+                    question_type,
+                    synthesized_answer,
+                    json.dumps(grounding),
+                    synthesis_quality,
+                    synthesis_confidence,
+                    synthesis_reasoning,
+                    match_strategy,
                     now,
                     now,
                 ),
             )
             conn.execute(
-                """
-                INSERT INTO theory_tag_history (
+                f"""
+                INSERT INTO {self.history_table} (
                     row_key, prompt_version, ai_model, verdict, overall_confidence,
                     required_kps_json, citations_json, candidate_citations_json,
                     rejected_candidates_json, rationale, judge_reasoning,
-                    kp_identifier_reasoning, review_reasons_json, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    kp_identifier_reasoning, review_reasons_json,
+                    question_type, synthesized_answer, answer_grounding_json,
+                    synthesis_quality, synthesis_confidence, synthesis_reasoning,
+                    match_strategy,
+                    created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+                          ?, ?, ?, ?, ?, ?, ?,
+                          ?)
                 """,
                 (
                     row_key,
@@ -255,6 +354,13 @@ class TheoryStore:
                     judge_reasoning,
                     kp_identifier_reasoning,
                     json.dumps(review_reasons),
+                    question_type,
+                    synthesized_answer,
+                    json.dumps(grounding),
+                    synthesis_quality,
+                    synthesis_confidence,
+                    synthesis_reasoning,
+                    match_strategy,
                     now,
                 ),
             )
@@ -329,7 +435,7 @@ class TheoryStore:
     def list_tag_history(self, row_key: str, *, limit: int = 50) -> list[dict]:
         with self._connect() as conn:
             rows = conn.execute(
-                "SELECT * FROM theory_tag_history WHERE row_key = ? ORDER BY id DESC LIMIT ?",
+                f"SELECT * FROM {self.history_table} WHERE row_key = ? ORDER BY id DESC LIMIT ?",
                 (row_key, limit),
             ).fetchall()
         out: list[dict] = []
@@ -341,6 +447,7 @@ class TheoryStore:
                 "candidate_citations_json",
                 "rejected_candidates_json",
                 "review_reasons_json",
+                "answer_grounding_json",
             ):
                 raw = d.pop(key, None)
                 short = key.removesuffix("_json")
@@ -366,7 +473,7 @@ class TheoryStore:
             gold_by_row = {g["row_key"]: g["gold_verdict"] for g in golds}
             hist_rows = conn.execute(
                 "SELECT row_key, prompt_version, verdict, created_at "
-                "FROM theory_tag_history ORDER BY id ASC"
+                f"FROM {self.history_table} ORDER BY id ASC"
             ).fetchall()
         per_row: dict[str, list[dict]] = {}
         for r in hist_rows:
@@ -403,17 +510,17 @@ class TheoryStore:
         }
 
     def delete_tag(self, row_key: str) -> bool:
-        """Remove a stale theory_question_tags row (e.g. after group merge)."""
+        """Remove a stale tag row (e.g. after group merge)."""
         with self._connect() as conn:
             cur = conn.execute(
-                "DELETE FROM theory_question_tags WHERE row_key = ?", (row_key,)
+                f"DELETE FROM {self.tags_table} WHERE row_key = ?", (row_key,)
             )
             return cur.rowcount > 0
 
     def get_tag(self, row_key: str) -> dict | None:
         with self._connect() as conn:
             row = conn.execute(
-                "SELECT * FROM theory_question_tags WHERE row_key = ?",
+                f"SELECT * FROM {self.tags_table} WHERE row_key = ?",
                 (row_key,),
             ).fetchone()
         return self._tag_row_to_dict(row) if row else None
@@ -467,7 +574,7 @@ class TheoryStore:
                        iq.question_type AS iq_question_type,
                        iq.interview_date AS iq_interview_date,
                        iq.tech_stack AS iq_tech_stack
-                FROM theory_question_tags t
+                FROM {self.tags_table} t
                 LEFT JOIN interview_questions iq ON iq.row_key = t.row_key
                 {where}
                 ORDER BY t.updated_at DESC
@@ -480,14 +587,14 @@ class TheoryStore:
     def count_by_status(self) -> dict[str, int]:
         with self._connect() as conn:
             rows = conn.execute(
-                "SELECT review_status, COUNT(*) FROM theory_question_tags GROUP BY review_status"
+                f"SELECT review_status, COUNT(*) FROM {self.tags_table} GROUP BY review_status"
             ).fetchall()
         return {r[0]: r[1] for r in rows}
 
     def count_by_verdict(self) -> dict[str, int]:
         with self._connect() as conn:
             rows = conn.execute(
-                "SELECT verdict, COUNT(*) FROM theory_question_tags GROUP BY verdict"
+                f"SELECT verdict, COUNT(*) FROM {self.tags_table} GROUP BY verdict"
             ).fetchall()
         return {r[0]: r[1] for r in rows}
 
@@ -507,8 +614,8 @@ class TheoryStore:
         now = _utc_now()
         with self._connect() as conn:
             conn.execute(
-                """
-                UPDATE theory_question_tags SET
+                f"""
+                UPDATE {self.tags_table} SET
                     human_required_kps_json = ?,
                     human_citations_json = ?,
                     human_verdict = ?,
@@ -754,9 +861,11 @@ class TheoryStore:
             "required_kps_json",
             "citations_json",
             "candidate_citations_json",
+            "rejected_candidates_json",
             "human_required_kps_json",
             "human_citations_json",
             "review_reasons_json",
+            "answer_grounding_json",
         ):
             raw = d.get(key)
             if raw:

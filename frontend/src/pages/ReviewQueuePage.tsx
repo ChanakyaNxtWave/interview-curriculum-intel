@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Inbox, Filter, MessagesSquare, ChevronRight } from 'lucide-react';
 import { fetchTheoryQuestions } from '../api/theory';
+import { fetchCodingQuestions } from '../api/coding';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
 import VerdictBadge from '../components/VerdictBadge';
@@ -52,11 +53,12 @@ export default function ReviewQueuePage() {
 
   const presetDef = FILTER_PRESETS.find((p) => p.value === preset) ?? FILTER_PRESETS[0];
 
-  // Fetch with optional server-side review_status filter; client-side filter for 'open'
+  // Fetch with optional server-side review_status filter; client-side filter for 'open'.
+  // THEORY and CODING tags live in separate tables/namespaces — fetch both and merge.
   const listQ = useQuery({
     queryKey: ['review-queue', preset, verdict, debouncedQ, duration, dateFrom, dateTo],
-    queryFn: () =>
-      fetchTheoryQuestions({
+    queryFn: async () => {
+      const filters = {
         review_status: presetDef.statusFilter,
         verdict: verdict || undefined,
         q: debouncedQ || undefined,
@@ -64,7 +66,24 @@ export default function ReviewQueuePage() {
         date_from: dateFrom || undefined,
         date_to: dateTo || undefined,
         limit: 1000,
-      }),
+      };
+      const [theory, coding] = await Promise.all([
+        fetchTheoryQuestions(filters),
+        fetchCodingQuestions(filters),
+      ]);
+      const mergeCount = (a: Record<string, number> = {}, b: Record<string, number> = {}) => {
+        const out: Record<string, number> = { ...a };
+        for (const [k, v] of Object.entries(b)) out[k] = (out[k] ?? 0) + v;
+        return out;
+      };
+      return {
+        items: [...(theory.items ?? []), ...(coding.items ?? [])],
+        stats: {
+          by_status: mergeCount(theory.stats?.by_status, coding.stats?.by_status),
+          by_verdict: mergeCount(theory.stats?.by_verdict, coding.stats?.by_verdict),
+        },
+      };
+    },
   });
 
   function setParam(key: string, val: string) {
@@ -163,9 +182,7 @@ export default function ReviewQueuePage() {
         >
           <option value="">Verdict: any</option>
           <option value="covered">covered</option>
-          <option value="partially_covered">partially_covered</option>
           <option value="not_covered">not_covered</option>
-          <option value="uncertain">uncertain</option>
         </select>
         <select
           value={sort}
@@ -200,7 +217,9 @@ export default function ReviewQueuePage() {
           {items.map((t) => (
             <Link
               key={t.row_key}
-              to={`/courses/${COURSE_ID}/theory-questions/${encodeURIComponent(t.row_key)}`}
+              to={`/courses/${COURSE_ID}/theory-questions/${encodeURIComponent(t.row_key)}${
+                (t.question_type || '').toUpperCase() === 'CODING' ? '?type=coding' : ''
+              }`}
               className="block p-4 hover:bg-bg-hover transition-colors"
             >
               <div className="flex items-start gap-3">

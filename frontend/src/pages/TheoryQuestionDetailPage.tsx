@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   ArrowLeft,
@@ -17,12 +17,19 @@ import {
   tagTheoryQuestion,
   type ReviewPayload,
 } from '../api/theory';
+import {
+  fetchCodingQuestion,
+  submitCodingReview,
+  tagCodingQuestion,
+} from '../api/coding';
 import VerdictBadge from '../components/VerdictBadge';
 import ConfidenceBar from '../components/ConfidenceBar';
 import ReviewStatusBadge from '../components/ReviewStatusBadge';
 import ReasoningPanel from '../components/ReasoningPanel';
 import FeedbackPanel from '../components/FeedbackPanel';
 import TagHistory from '../components/TagHistory';
+import ParseFailureBanner from '../components/ParseFailureBanner';
+import SynthesizedAnswerPanel from '../components/SynthesizedAnswerPanel';
 import AskedChip from '../components/AskedChip';
 import GroupMembersModal from '../components/GroupMembersModal';
 import { useDebounce } from '../hooks/useDebounce';
@@ -44,15 +51,18 @@ interface DraftState {
   rationale: string;
 }
 
-const VERDICTS: TheoryVerdict[] = ['covered', 'partially_covered', 'not_covered', 'uncertain'];
+const VERDICTS: TheoryVerdict[] = ['covered', 'not_covered'];
 const STATUSES: ReviewStatus[] = ['pending', 'needs_review', 'approved', 'rejected'];
 
 export default function TheoryQuestionDetailPage() {
   const { rowKey = '', courseId = '' } = useParams();
+  const [sp] = useSearchParams();
+  // CODING rows are linked with ?type=coding so we hit the coding namespace.
+  const isCoding = (sp.get('type') || '').toLowerCase() === 'coding';
   const qc = useQueryClient();
   const detailQ = useQuery({
-    queryKey: ['theory-detail', rowKey],
-    queryFn: () => fetchTheoryQuestion(rowKey),
+    queryKey: ['theory-detail', rowKey, isCoding],
+    queryFn: () => (isCoding ? fetchCodingQuestion(rowKey) : fetchTheoryQuestion(rowKey)),
   });
 
   const data = detailQ.data;
@@ -72,14 +82,15 @@ export default function TheoryQuestionDetailPage() {
   }, [data?.row_key]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const reTag = useMutation({
-    mutationFn: () => tagTheoryQuestion(rowKey),
+    mutationFn: () => (isCoding ? tagCodingQuestion(rowKey) : tagTheoryQuestion(rowKey)),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['theory-detail', rowKey] });
     },
   });
 
   const save = useMutation({
-    mutationFn: (payload: ReviewPayload) => submitReview(rowKey, payload),
+    mutationFn: (payload: ReviewPayload) =>
+      isCoding ? submitCodingReview(rowKey, payload) : submitReview(rowKey, payload),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['theory-detail', rowKey] });
       qc.invalidateQueries({ queryKey: ['theory-list'] });
@@ -164,16 +175,29 @@ export default function TheoryQuestionDetailPage() {
           </div>
         )}
 
+        <SynthesizedAnswerPanel
+          answer={data.synthesized_answer}
+          grounding={data.answer_grounding}
+          quality={data.synthesis_quality}
+          confidence={data.synthesis_confidence}
+          reasoning={data.synthesis_reasoning}
+          questionType={data.question_type}
+          matchStrategy={data.match_strategy}
+        />
+
         {data.review_reasons?.length > 0 && (
-          <div className="mt-3 p-3 rounded-md border border-status-needs/40 bg-status-needs/10 text-sm">
-            <div className="text-xs font-semibold text-status-needs uppercase tracking-wide mb-1">
-              Flagged for review
+          <div className="mt-3 space-y-2">
+            <ParseFailureBanner reasons={data.review_reasons} />
+            <div className="p-3 rounded-md border border-status-needs/40 bg-status-needs/10 text-sm">
+              <div className="text-xs font-semibold text-status-needs uppercase tracking-wide mb-1">
+                Flagged for review
+              </div>
+              <ul className="text-text-muted list-disc list-inside space-y-0.5">
+                {data.review_reasons.map((r, i) => (
+                  <li key={i}>{r}</li>
+                ))}
+              </ul>
             </div>
-            <ul className="text-text-muted list-disc list-inside space-y-0.5">
-              {data.review_reasons.map((r, i) => (
-                <li key={i}>{r}</li>
-              ))}
-            </ul>
           </div>
         )}
       </div>
@@ -186,7 +210,7 @@ export default function TheoryQuestionDetailPage() {
         rejectedCandidates={(data as any).rejected_candidates ?? []}
       />
 
-      <FeedbackPanel rowKey={rowKey} activePromptVersion={data.prompt_version} />
+      <FeedbackPanel rowKey={rowKey} activePromptVersion={data.prompt_version} isCoding={isCoding} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <KpEditor
@@ -270,7 +294,7 @@ export default function TheoryQuestionDetailPage() {
         </div>
       </div>
 
-      <TagHistory rowKey={rowKey} />
+      <TagHistory rowKey={rowKey} isCoding={isCoding} />
 
       {reTag.isPending && (
         <div className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm flex items-center justify-center pointer-events-none">

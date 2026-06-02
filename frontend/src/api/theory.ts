@@ -46,9 +46,11 @@ export const tagBatch = (rowKeys: string[]) =>
   });
 
 export const fetchPendingCount = () =>
-  api<{ pending: number; total_representatives: number }>(
-    `/api/theory-questions/pending-count`,
-  );
+  api<{
+    pending: number;
+    by_type?: { THEORY?: number; CODING?: number };
+    total_representatives: number;
+  }>(`/api/theory-questions/pending-count`);
 
 export interface ReviewPayload {
   human_required_kps: { source_kp_id: string; confidence?: string; rationale?: string }[];

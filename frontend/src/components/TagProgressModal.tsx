@@ -13,6 +13,8 @@ const STAGE_ORDER = [
   'citations_done',
   'judge_coverage',
   'judge_done',
+  'synthesize_answer',
+  'synthesize_done',
   'gating',
   'persisting',
   'done',
@@ -33,14 +35,22 @@ const STAGE_LABELS: Record<Stage, { label: string; sub: string }> = {
   kps_done: { label: 'KPs picked', sub: 'Required knowledge points extracted' },
   retrieve_citations: {
     label: 'Retrieve citations (SQL)',
-    sub: 'Pull approved KP-tagged content',
+    sub: 'Pull approved KP-tagged content (reading or coding)',
   },
-  citations_done: { label: 'Citation candidates ready', sub: 'Deduped, ranked, snippets attached' },
+  citations_done: { label: 'Citation candidates ready', sub: 'Deduped, ranked, full bodies attached' },
   judge_coverage: {
     label: 'Judge coverage (LLM call #2)',
     sub: 'DSPy JudgeCoverage · ChainOfThought',
   },
   judge_done: { label: 'Verdict decided', sub: 'Confidence + accepted citations returned' },
+  synthesize_answer: {
+    label: 'Synthesize answer (LLM call #3)',
+    sub: 'DSPy AnswerQuestion · only fires for covered / partially_covered',
+  },
+  synthesize_done: {
+    label: 'Answer produced',
+    sub: 'synthesis_quality: complete | partial | insufficient',
+  },
   gating: { label: 'Auto-approve gate', sub: 'conf ≥ 0.85 → approved · else needs_review' },
   persisting: { label: 'Persist tag', sub: 'Save tag row + history snapshot' },
   done: { label: 'Done', sub: 'Result available' },

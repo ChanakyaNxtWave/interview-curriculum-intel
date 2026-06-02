@@ -15,6 +15,8 @@ STAGES: list[str] = [
     "citations_done",
     "judge_coverage",
     "judge_done",
+    "synthesize_answer",
+    "synthesize_done",
     "gating",
     "persisting",
     "done",

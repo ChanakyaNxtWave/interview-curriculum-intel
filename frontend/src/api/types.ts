@@ -116,6 +116,15 @@ export interface InterviewQuestion {
     overall_confidence?: number | null;
     review_status?: ReviewStatus | string | null;
     updated_at?: string | null;
+    question_type?: 'THEORY' | 'CODING' | string | null;
+    synthesis_quality?:
+      | 'complete'
+      | 'partial'
+      | 'insufficient'
+      | 'skipped'
+      | string
+      | null;
+    match_strategy?: string | null;
   } | null;
   first_seen_at?: string;
   last_seen_at?: string;
@@ -197,7 +206,7 @@ export interface InterviewSyncStatus {
   schedule: { hour_utc: number; minute_utc: number; trigger: string };
 }
 
-export type TheoryVerdict = 'covered' | 'partially_covered' | 'not_covered' | 'uncertain';
+export type TheoryVerdict = 'covered' | 'not_covered';
 
 export interface TheoryRequiredKp {
   source_kp_id: string;
@@ -234,6 +243,14 @@ export interface TheoryTag {
   rejected_candidates?: TheoryCitation[];
   kp_identifier_reasoning?: string | null;
   judge_reasoning?: string | null;
+  // Stage 3 — AnswerSynthesizer
+  question_type?: 'THEORY' | 'CODING' | string;
+  synthesized_answer?: string | null;
+  answer_grounding?: { claim: string; content_ids: string[] }[];
+  synthesis_quality?: 'complete' | 'partial' | 'insufficient' | 'skipped' | string;
+  synthesis_confidence?: number;
+  synthesis_reasoning?: string | null;
+  match_strategy?: 'exact_match' | 'partial_match' | 'combined' | 'none' | '' | string;
   human_required_kps: TheoryRequiredKp[];
   human_citations: TheoryCitation[];
   human_verdict?: TheoryVerdict | null;
@@ -291,6 +308,13 @@ export interface TagHistoryEntry {
   judge_reasoning?: string | null;
   kp_identifier_reasoning?: string | null;
   review_reasons: string[];
+  question_type?: 'THEORY' | 'CODING' | string;
+  synthesized_answer?: string | null;
+  answer_grounding?: { claim: string; content_ids: string[] }[];
+  synthesis_quality?: 'complete' | 'partial' | 'insufficient' | 'skipped' | string;
+  synthesis_confidence?: number;
+  synthesis_reasoning?: string | null;
+  match_strategy?: string | null;
   created_at: string;
 }
 

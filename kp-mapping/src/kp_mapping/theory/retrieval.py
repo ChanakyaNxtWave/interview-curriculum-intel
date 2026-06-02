@@ -20,14 +20,19 @@ TOTAL_BODY_BYTES_BUDGET = 60_000
 def build_citations_fn(
     mapping_store: MappingStore,
     *,
-    per_kp_limit: int = 5,
+    per_kp_limit: int = 50,
     total_cap: int = 8,
+    content_type: str = "reading_material",
 ):
     """Return a function (required_kp_ids -> list[citation_dict]) for use by TheoryPipeline.
 
     Citation snippet contains the FULL body of each content piece (no truncation),
     with title + topic inlined as a header. Total bytes are capped via
     TOTAL_BODY_BYTES_BUDGET to keep judge prompt within model context.
+
+    `content_type` selects which curriculum pieces are eligible:
+      • 'reading_material' (default) — for THEORY interview questions.
+      • 'coding_question' — for CODING interview questions.
     """
     body_cache: dict[str, str] = {}
 
@@ -42,49 +47,90 @@ def build_citations_fn(
         body_cache[file_path] = text
         return text
 
+    def _build_citation(m, kp_id: str) -> dict:
+        tag_role = "explain"
+        for t in m.ai_result.proposed_tags:
+            if t.source_kp_id == kp_id:
+                tag_role = t.tag_role.value
+                break
+        else:
+            for t in m.human_tags:
+                if t.source_kp_id == kp_id:
+                    tag_role = t.tag_role.value
+                    break
+        body = _body_for(m.file_path)
+        snippet = f"[{m.title}]\n{m.topic_name}\n\n{body}".strip()
+        return {
+            "content_id": m.content_id,
+            "title": m.title,
+            "topic_name": m.topic_name,
+            "kp_id": kp_id,
+            "tag_role": tag_role,
+            "snippet": snippet,
+            "content_type": m.content_type,
+        }
+
     def citations_for(required_kp_ids: Iterable[str]) -> list[dict]:
-        # Collect candidates ordered: reading_material first, then others.
-        all_candidates: list[dict] = []
-        seen: set[str] = set()
-        for kp_id in required_kp_ids:
-            if not kp_id:
-                continue
+        # Pull approved mappings for every required KP, then rank candidates
+        # by how many of the required KPs they overlap with. Pieces tagged on
+        # multiple required KPs (e.g. "Valid Password - 3" tagged on KPs
+        # 0001/0003/0025/0034 — overlap=4 with a 9-KP question) win over
+        # narrowly-tagged practice problems that match only one KP. Within
+        # same overlap count, prefer the earliest matched KP (preserves the
+        # interview's KP order priority).
+        required = [k for k in required_kp_ids if k]
+        if not required:
+            return []
+        required_set = set(required)
+        kp_priority = {k: i for i, k in enumerate(required)}
+
+        per_content: dict[str, dict] = {}
+        for kp_id in required:
             rows = mapping_store.list_mappings(
                 kp_id=kp_id,
                 review_status=ReviewStatus.APPROVED,
-                content_type="reading_material",
+                content_type=content_type,
                 limit=per_kp_limit,
             )
             for m in rows:
-                if m.content_id in seen:
-                    continue
-                seen.add(m.content_id)
-                tag_role = "explain"
-                for t in m.ai_result.proposed_tags:
-                    if t.source_kp_id == kp_id:
-                        tag_role = t.tag_role.value
-                        break
-                else:
-                    for t in m.human_tags:
-                        if t.source_kp_id == kp_id:
-                            tag_role = t.tag_role.value
-                            break
-                body = _body_for(m.file_path)
-                snippet = f"[{m.title}]\n{m.topic_name}\n\n{body}".strip()
-                all_candidates.append(
-                    {
-                        "content_id": m.content_id,
-                        "title": m.title,
-                        "topic_name": m.topic_name,
-                        "kp_id": kp_id,
-                        "tag_role": tag_role,
-                        "snippet": snippet,
-                        "content_type": m.content_type,
+                if m.content_id not in per_content:
+                    per_content[m.content_id] = {
+                        "mapping": m,
+                        "matched_kps": set(),
+                        "first_kp": kp_id,
                     }
-                )
+                per_content[m.content_id]["matched_kps"].add(kp_id)
+                if kp_priority[kp_id] < kp_priority[per_content[m.content_id]["first_kp"]]:
+                    per_content[m.content_id]["first_kp"] = kp_id
 
-        # Enforce total_cap first
-        all_candidates = all_candidates[:total_cap]
+        # Cross-check: a candidate's full tag set (from ai + human) may overlap
+        # additional required KPs beyond the ones whose list_mappings pulled it.
+        for content_id, entry in per_content.items():
+            m = entry["mapping"]
+            tag_kps: set[str] = set()
+            for t in getattr(m.ai_result, "proposed_tags", []) or []:
+                if t.source_kp_id in required_set:
+                    tag_kps.add(t.source_kp_id)
+            for t in getattr(m, "human_tags", []) or []:
+                if t.source_kp_id in required_set:
+                    tag_kps.add(t.source_kp_id)
+            entry["matched_kps"].update(tag_kps)
+            entry["overlap"] = len(entry["matched_kps"])
+
+        ranked = sorted(
+            per_content.values(),
+            key=lambda e: (-e["overlap"], kp_priority.get(e["first_kp"], 999)),
+        )
+
+        all_candidates: list[dict] = []
+        for entry in ranked:
+            if len(all_candidates) >= total_cap:
+                break
+            m = entry["mapping"]
+            # Citation's "kp_id" reflects the FIRST required KP this piece
+            # matches in the interview's priority order (so the judge sees the
+            # most-relevant association).
+            all_candidates.append(_build_citation(m, entry["first_kp"]))
 
         # Then enforce byte budget — drop trailing candidates until under.
         out: list[dict] = []

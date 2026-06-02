@@ -82,11 +82,12 @@ def normalize_pending_groups(
     *,
     limit: int = 50,
     theory_store: TheoryStore | None = None,
+    coding_store: TheoryStore | None = None,
 ) -> dict:
     """Normalize up to `limit` pending groups. Merge semantically-equivalent ones.
 
     When a group is merged into a winner, also delete the loser group's
-    representative theory_question_tags row (if any) so that the JOIN displays
+    representative tag row (THEORY or CODING) so that the JOIN displays
     the winner's verdict.
     """
     pending = store.pending_normalization_groups(limit=limit)
@@ -131,11 +132,13 @@ def normalize_pending_groups(
                 winner_key=winner["group_key"],
                 normalizer_version=NORMALIZER_VERSION,
             )
-            # Drop the loser group's theory tag so the JOIN surfaces the winner's
-            if theory_store is not None:
-                loser_rep = grp.get("representative_row_key")
-                if loser_rep:
+            # Drop the loser group's tag (either table) so the JOIN surfaces the winner's
+            loser_rep = grp.get("representative_row_key")
+            if loser_rep:
+                if theory_store is not None:
                     theory_store.delete_tag(loser_rep)
+                if coding_store is not None:
+                    coding_store.delete_tag(loser_rep)
             merged_count += 1
             logger.info(
                 "Merged group %s -> %s (slug %s ~= %s)",

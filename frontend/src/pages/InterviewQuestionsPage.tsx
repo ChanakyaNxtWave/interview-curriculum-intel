@@ -22,6 +22,12 @@ import {
   triggerNormalize,
 } from '../api/interview';
 import { fetchPendingCount, tagBatch, tagPending, tagTheoryQuestion } from '../api/theory';
+import {
+  fetchCodingPendingCount,
+  tagCodingBatch,
+  tagCodingPending,
+  tagCodingQuestion,
+} from '../api/coding';
 import { CheckSquare, Layers, Loader2, Rows, Sparkles, Square, Tag, Wand2 } from 'lucide-react';
 import VerdictBadge from '../components/VerdictBadge';
 import ConfidenceBar from '../components/ConfidenceBar';
@@ -44,6 +50,7 @@ export default function InterviewQuestionsPage() {
   const qtype = sp.get('type') ?? '';
   const tech = sp.get('tech') ?? '';
   const product = sp.get('product') ?? '';
+  const stage = sp.get('stage') ?? '';
   const duration = (sp.get('duration') ?? '') as DurationPreset;
   const dateFrom = sp.get('from') ?? '';
   const dateTo = sp.get('to') ?? '';
@@ -134,29 +141,50 @@ export default function InterviewQuestionsPage() {
     refetchInterval: 10_000,
   });
 
+  const codingPendingCountQ = useQuery({
+    queryKey: ['coding-pending-count'],
+    queryFn: fetchCodingPendingCount,
+    refetchInterval: 10_000,
+  });
+
   function invalidateTagging() {
     qc.invalidateQueries({ queryKey: ['theory-list'] });
     qc.invalidateQueries({ queryKey: ['review-queue'] });
     qc.invalidateQueries({ queryKey: ['review-count'] });
     qc.invalidateQueries({ queryKey: ['interview-list'] });
     qc.invalidateQueries({ queryKey: ['theory-pending-count'] });
+    qc.invalidateQueries({ queryKey: ['coding-pending-count'] });
   }
 
+  // "Tag pending" fires BOTH namespaces (split by type server-side) up to `limit` each.
   const tagMutation = useMutation({
-    mutationFn: (limit: number) => tagPending(limit),
+    mutationFn: async (limit: number) => {
+      const [t, c] = await Promise.all([tagPending(limit), tagCodingPending(limit)]);
+      return { enqueued: (t.enqueued ?? 0) + (c.enqueued ?? 0) };
+    },
     onSuccess: invalidateTagging,
   });
 
   // Per-row Re-tag uses the SYNCHRONOUS single-row endpoint so the user
-  // sees the LLM call complete (BusyOverlay below).
+  // sees the LLM call complete (BusyOverlay below). Dispatch by question_type.
   const tagSingle = useMutation({
-    mutationFn: (rowKey: string) => tagTheoryQuestion(rowKey),
+    mutationFn: ({ rowKey, qt }: { rowKey: string; qt: string }) =>
+      qt === 'CODING' ? tagCodingQuestion(rowKey) : tagTheoryQuestion(rowKey),
     onSuccess: invalidateTagging,
   });
 
+  // Selected rows may mix types — split and fire each namespace's batch endpoint.
   const tagSelected = useMutation({
-    mutationFn: (rowKeys: string[]) => tagBatch(rowKeys),
-    onSuccess: (_data, _vars) => {
+    mutationFn: async (rows: { rowKey: string; qt: string }[]) => {
+      const theoryKeys = rows.filter((r) => r.qt !== 'CODING').map((r) => r.rowKey);
+      const codingKeys = rows.filter((r) => r.qt === 'CODING').map((r) => r.rowKey);
+      const calls: Promise<{ enqueued: number }>[] = [];
+      if (theoryKeys.length) calls.push(tagBatch(theoryKeys));
+      if (codingKeys.length) calls.push(tagCodingBatch(codingKeys));
+      const res = await Promise.all(calls);
+      return { enqueued: res.reduce((n, r) => n + (r.enqueued ?? 0), 0) };
+    },
+    onSuccess: () => {
       setSelected(new Set());
       invalidateTagging();
     },
@@ -202,9 +230,28 @@ export default function InterviewQuestionsPage() {
   }
 
   const facets = facetsQ.data;
-  const items = listQ.data?.items ?? [];
+  const rawItems = listQ.data?.items ?? [];
+  const items = useMemo(() => {
+    if (!stage) return rawItems;
+    return rawItems.filter((q) => {
+      const status = q.theory?.review_status;
+      if (stage === 'untagged') return !status;
+      return status === stage;
+    });
+  }, [rawItems, stage]);
   const applied = listQ.data?.applied_date_range;
   const last = statusQ.data?.last;
+
+  // row_key -> question_type, for dispatching tag calls to the right namespace.
+  const qtByRow = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const it of rawItems) {
+      if (it.row_key) m.set(it.row_key, (it.question_type || '').toUpperCase());
+    }
+    return m;
+  }, [rawItems]);
+  const rowsForKeys = (keys: string[]) =>
+    keys.map((rowKey) => ({ rowKey, qt: qtByRow.get(rowKey) || 'THEORY' }));
 
   return (
     <div>
@@ -238,7 +285,7 @@ export default function InterviewQuestionsPage() {
             <button
               className="btn-primary disabled:opacity-50"
               disabled={tagSelected.isPending}
-              onClick={() => tagSelected.mutate(Array.from(selected))}
+              onClick={() => tagSelected.mutate(rowsForKeys(Array.from(selected)))}
             >
               <Sparkles className={`w-3.5 h-3.5 ${tagSelected.isPending ? 'animate-pulse' : ''}`} />
               Tag selected ({selected.size})
@@ -266,9 +313,12 @@ export default function InterviewQuestionsPage() {
               <Sparkles className={`w-3.5 h-3.5 ${tagMutation.isPending ? 'animate-pulse' : ''}`} />
               {tagMutation.isPending
                 ? 'Enqueuing…'
-                : `Tag pending${
-                    pendingCountQ.data ? ` (${pendingCountQ.data.pending})` : ''
-                  }`}
+                : `Tag pending${(() => {
+                    const t = pendingCountQ.data?.by_type?.THEORY ?? pendingCountQ.data?.pending;
+                    const c = codingPendingCountQ.data?.by_type?.CODING ?? codingPendingCountQ.data?.pending;
+                    if (t == null && c == null) return '';
+                    return ` (${t ?? 0}T · ${c ?? 0}C)`;
+                  })()}`}
             </button>
           </div>
           <button
@@ -382,7 +432,15 @@ export default function InterviewQuestionsPage() {
             </option>
           ))}
         </Select>
-        {(q || company || role || qtype || tech || product) && (
+        <Select value={stage} onChange={(v) => setParam('stage', v)}>
+          <option value="">Stage: any</option>
+          <option value="approved">Approved</option>
+          <option value="needs_review">Needs review</option>
+          <option value="pending">Pending</option>
+          <option value="rejected">Rejected</option>
+          <option value="untagged">Untagged</option>
+        </Select>
+        {(q || company || role || qtype || tech || product || stage) && (
           <button className="btn" onClick={clearAll}>
             <Filter className="w-3.5 h-3.5" /> Clear
           </button>
@@ -404,11 +462,12 @@ export default function InterviewQuestionsPage() {
       {items.length > 0 && (
         <div className="card divide-y divide-line overflow-hidden">
           {items.map((q) => {
-            const isTheory = (q.question_type || '').toUpperCase() === 'THEORY';
+            const qt = (q.question_type || '').toUpperCase();
+            const isTaggable = qt === 'THEORY' || qt === 'CODING';
             const theory = q.theory;
             const isPendingTag =
               pendingTagRow === q.row_key ||
-              (tagSingle.isPending && tagSingle.variables === q.row_key);
+              (tagSingle.isPending && tagSingle.variables?.rowKey === q.row_key);
             const isSelected = selected.has(q.row_key);
             return (
               <div
@@ -418,7 +477,7 @@ export default function InterviewQuestionsPage() {
                 }`}
               >
                 <div className="flex items-start gap-3">
-                  {isTheory ? (
+                  {isTaggable ? (
                     <button
                       onClick={() => toggleSelect(q.row_key)}
                       className="mt-1 text-text-dim hover:text-brand"
@@ -441,10 +500,30 @@ export default function InterviewQuestionsPage() {
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-text leading-relaxed whitespace-pre-wrap break-words">
-                      {q.question}
-                    </p>
+                    {isTaggable ? (
+                      <Link
+                        to={`/courses/programming_foundations/theory-questions/${encodeURIComponent(
+                          q.row_key,
+                        )}${qt === 'CODING' ? '?type=coding' : ''}`}
+                        className="block text-text leading-relaxed whitespace-pre-wrap break-words hover:text-brand"
+                        title="Open detail (AI reasoning, citations, synthesized answer)"
+                      >
+                        {q.question}
+                      </Link>
+                    ) : (
+                      <p className="text-text leading-relaxed whitespace-pre-wrap break-words">
+                        {q.question}
+                      </p>
+                    )}
                     <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-text-muted">
+                      {q.interview_date && (
+                        <span
+                          className="chip border-brand/40 text-brand bg-brand/5 font-medium"
+                          title={q.interview_date}
+                        >
+                          <Calendar className="w-3 h-3" /> {fmtInterviewDate(q.interview_date)}
+                        </span>
+                      )}
                       {q.company_name && (
                         <span className="chip">
                           <Building2 className="w-3 h-3" /> {q.company_name}
@@ -456,11 +535,6 @@ export default function InterviewQuestionsPage() {
                         </span>
                       )}
                       {q.question_type && <span className="chip">{q.question_type}</span>}
-                      {q.interview_date && (
-                        <span className="chip">
-                          <Calendar className="w-3 h-3" /> {q.interview_date}
-                        </span>
-                      )}
                       {q.tech_stack && (
                         <span className="chip max-w-[260px] truncate" title={q.tech_stack}>
                           {q.tech_stack}
@@ -496,21 +570,36 @@ export default function InterviewQuestionsPage() {
                       </div>
                     )}
                   </div>
-                  {isTheory && (
+                  {isTaggable && (
                     <div className="flex flex-col items-end gap-1.5 shrink-0 min-w-[170px]">
                       {theory ? (
                         <Link
                           to={`/courses/programming_foundations/theory-questions/${encodeURIComponent(
                             theory.row_key as string,
-                          )}`}
+                          )}${qt === 'CODING' ? '?type=coding' : ''}`}
                           className="flex flex-col items-end gap-1"
                           title="Open tag detail"
                         >
-                          <VerdictBadge verdict={(theory.verdict ?? 'uncertain') as any} />
+                          <VerdictBadge verdict={(theory.verdict ?? 'not_covered') as any} />
                           <ConfidenceBar value={Number(theory.overall_confidence ?? 0)} />
                           <span className="text-[10px] text-text-dim font-mono">
                             {theory.review_status}
                           </span>
+                          {theory.synthesis_quality &&
+                            theory.synthesis_quality !== 'skipped' && (
+                              <span
+                                className={`text-[10px] font-mono ${
+                                  theory.synthesis_quality === 'complete'
+                                    ? 'text-conf-covered'
+                                    : theory.synthesis_quality === 'partial'
+                                    ? 'text-conf-medium'
+                                    : 'text-conf-uncertain'
+                                }`}
+                                title="Synthesizer quality"
+                              >
+                                synth: {theory.synthesis_quality}
+                              </span>
+                            )}
                         </Link>
                       ) : null}
                       <button
@@ -519,9 +608,10 @@ export default function InterviewQuestionsPage() {
                         onClick={() => {
                           setPendingTagRow(q.row_key);
                           setProgressFor({ rowKey: q.row_key, question: q.question || '' });
-                          tagSingle.mutate(q.row_key, {
-                            onSettled: () => setPendingTagRow(null),
-                          });
+                          tagSingle.mutate(
+                            { rowKey: q.row_key, qt },
+                            { onSettled: () => setPendingTagRow(null) },
+                          );
                         }}
                         title={theory ? 'Re-tag this question' : 'Tag this question now'}
                       >
@@ -630,4 +720,16 @@ function fmtDate(iso: string | null | undefined) {
   } catch {
     return iso;
   }
+}
+
+function fmtInterviewDate(s: string | null | undefined) {
+  if (!s) return '';
+  const t = s.length >= 10 ? s.slice(0, 10) : s;
+  const d = new Date(t);
+  if (isNaN(d.getTime())) return s;
+  return d.toLocaleDateString(undefined, {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  });
 }

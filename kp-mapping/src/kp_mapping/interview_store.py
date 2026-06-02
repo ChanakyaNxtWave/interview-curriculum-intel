@@ -274,8 +274,8 @@ class InterviewStore:
                         ),
                     )
 
-            # 5) Drop theory tags whose row_key is no longer the representative of
-            #    any canonical (un-merged) group. Reviewer evals survive.
+            # 5) Drop tags (theory AND coding) whose row_key is no longer the
+            #    representative of any canonical (un-merged) group. Reviewer evals survive.
             canonical_reps = {
                 row[0]
                 for row in conn.execute(
@@ -283,18 +283,27 @@ class InterviewStore:
                     "WHERE g.merged_into IS NULL OR g.merged_into = ''"
                 ).fetchall()
             }
-            stale_tags = [
+            existing_tables = {
                 row[0]
                 for row in conn.execute(
-                    "SELECT row_key FROM theory_question_tags"
+                    "SELECT name FROM sqlite_master WHERE type='table'"
                 ).fetchall()
-                if row[0] not in canonical_reps
-            ]
-            for rk in stale_tags:
-                conn.execute(
-                    "DELETE FROM theory_question_tags WHERE row_key = ?",
-                    (rk,),
-                )
+            }
+            for tag_table in ("theory_question_tags", "coding_question_tags"):
+                if tag_table not in existing_tables:
+                    continue  # not created yet on very first boot
+                stale_tags = [
+                    row[0]
+                    for row in conn.execute(
+                        f"SELECT row_key FROM {tag_table}"
+                    ).fetchall()
+                    if row[0] not in canonical_reps
+                ]
+                for rk in stale_tags:
+                    conn.execute(
+                        f"DELETE FROM {tag_table} WHERE row_key = ?",
+                        (rk,),
+                    )
 
     # ---------- group queries ----------
 
@@ -387,17 +396,22 @@ class InterviewStore:
                        gc.canonical_slug AS group_canonical_slug,
                        gc.representative_row_key AS group_representative_row_key,
                        gc.normalized AS group_normalized,
-                       t.row_key AS theory_row_key,
-                       t.verdict AS theory_verdict,
-                       t.overall_confidence AS theory_confidence,
-                       t.review_status AS theory_review_status,
-                       t.updated_at AS theory_updated_at
+                       COALESCE(ct.row_key, tt.row_key) AS theory_row_key,
+                       COALESCE(ct.verdict, tt.verdict) AS theory_verdict,
+                       COALESCE(ct.overall_confidence, tt.overall_confidence) AS theory_confidence,
+                       COALESCE(ct.review_status, tt.review_status) AS theory_review_status,
+                       COALESCE(ct.updated_at, tt.updated_at) AS theory_updated_at,
+                       COALESCE(ct.question_type, tt.question_type) AS theory_question_type,
+                       COALESCE(ct.synthesis_quality, tt.synthesis_quality) AS theory_synthesis_quality,
+                       COALESCE(ct.match_strategy, tt.match_strategy) AS theory_match_strategy
                 FROM interview_questions iq
                 LEFT JOIN interview_question_groups g  ON g.group_key  = iq.group_key
                 LEFT JOIN interview_question_groups gc
                        ON gc.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
-                LEFT JOIN theory_question_tags t
-                       ON t.row_key = COALESCE(gc.representative_row_key, iq.row_key)
+                LEFT JOIN theory_question_tags tt
+                       ON tt.row_key = COALESCE(gc.representative_row_key, iq.row_key)
+                LEFT JOIN coding_question_tags ct
+                       ON ct.row_key = COALESCE(gc.representative_row_key, iq.row_key)
                 {where}
                 ORDER BY COALESCE(iq.interview_date, '') DESC, iq.id DESC
                 LIMIT ? OFFSET ?
@@ -665,17 +679,22 @@ class InterviewStore:
                        gc.canonical_question AS group_canonical_question,
                        gc.canonical_slug AS group_canonical_slug,
                        gc.representative_row_key AS group_representative_row_key,
-                       t.row_key AS theory_row_key,
-                       t.verdict AS theory_verdict,
-                       t.overall_confidence AS theory_confidence,
-                       t.review_status AS theory_review_status,
-                       t.updated_at AS theory_updated_at
+                       COALESCE(ct.row_key, tt.row_key) AS theory_row_key,
+                       COALESCE(ct.verdict, tt.verdict) AS theory_verdict,
+                       COALESCE(ct.overall_confidence, tt.overall_confidence) AS theory_confidence,
+                       COALESCE(ct.review_status, tt.review_status) AS theory_review_status,
+                       COALESCE(ct.updated_at, tt.updated_at) AS theory_updated_at,
+                       COALESCE(ct.question_type, tt.question_type) AS theory_question_type,
+                       COALESCE(ct.synthesis_quality, tt.synthesis_quality) AS theory_synthesis_quality,
+                       COALESCE(ct.match_strategy, tt.match_strategy) AS theory_match_strategy
                 FROM interview_questions iq
                 LEFT JOIN interview_question_groups g  ON g.group_key  = iq.group_key
                 LEFT JOIN interview_question_groups gc
                        ON gc.group_key = COALESCE(NULLIF(g.merged_into, ''), g.group_key)
-                LEFT JOIN theory_question_tags t
-                       ON t.row_key = COALESCE(gc.representative_row_key, iq.row_key)
+                LEFT JOIN theory_question_tags tt
+                       ON tt.row_key = COALESCE(gc.representative_row_key, iq.row_key)
+                LEFT JOIN coding_question_tags ct
+                       ON ct.row_key = COALESCE(gc.representative_row_key, iq.row_key)
                 {where}
                 ORDER BY COALESCE(iq.interview_date, '') DESC, iq.id DESC
                 LIMIT ? OFFSET ?
@@ -860,6 +879,9 @@ class InterviewStore:
             "overall_confidence": d.pop("theory_confidence", None),
             "review_status": d.pop("theory_review_status", None),
             "updated_at": d.pop("theory_updated_at", None),
+            "question_type": d.pop("theory_question_type", None),
+            "synthesis_quality": d.pop("theory_synthesis_quality", None),
+            "match_strategy": d.pop("theory_match_strategy", None),
         }
         # If no tag exists, theory.row_key will be None.
         d["theory"] = theory if theory.get("row_key") else None

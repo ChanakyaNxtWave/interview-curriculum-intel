@@ -83,7 +83,7 @@ def _boot_normalize() -> None:
     try:
         from .normalize import normalize_pending_groups
         result = normalize_pending_groups(
-            interview_store, limit=200, theory_store=theory_store
+            interview_store, limit=200, theory_store=theory_store, coding_store=coding_store
         )
         logger.info("Boot normalize: %s", result)
     except Exception as exc:
@@ -126,7 +126,28 @@ interview_store = InterviewStore(
 theory_store = TheoryStore(
     Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB)))
 )
-citations_for = build_citations_fn(store)
+# CODING tags live in their own physical tables, same DB file. Shares the eval /
+# feedback / prompt-version tables (those names are hard-coded inside TheoryStore).
+coding_store = TheoryStore(
+    Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB))),
+    tags_table="coding_question_tags",
+    history_table="coding_tag_history",
+)
+citations_for = build_citations_fn(store)  # default: reading_material
+citations_for_coding = build_citations_fn(store, content_type="coding_question")
+
+
+def citations_for_question_type(qt: str):
+    if (qt or "").upper() == "CODING":
+        return citations_for_coding
+    return citations_for
+
+
+def store_for(qt: str) -> TheoryStore:
+    """Pick the tag store for a question_type."""
+    return coding_store if (qt or "").upper() == "CODING" else theory_store
+
+
 catalog = None
 
 
@@ -356,19 +377,38 @@ def update_mapping(content_id: str, payload: HumanReviewPayload):
     return updated.model_dump(mode="json")
 
 
+# THEORY namespace — owns the shared /api/theory/* singletons.
 app.include_router(
     build_theory_router(
         theory_store=theory_store,
         interview_store=interview_store,
         catalog_provider=get_catalog,
         citations_for=citations_for,
+        citations_for_question_type=citations_for_question_type,
         seed_path=SEED_PATH,
+        route_segment="theory-questions",
+        question_type="THEORY",
+        register_shared=True,
+    )
+)
+# CODING namespace — physically separate tables, skips the shared singletons.
+app.include_router(
+    build_theory_router(
+        theory_store=coding_store,
+        interview_store=interview_store,
+        catalog_provider=get_catalog,
+        citations_for=citations_for,
+        citations_for_question_type=citations_for_question_type,
+        seed_path=SEED_PATH,
+        route_segment="coding-questions",
+        question_type="CODING",
+        register_shared=False,
     )
 )
 
 
 def _auto_tag_new_theory(row_keys: list[str]) -> None:
-    """Background task: tag a batch of THEORY rows."""
+    """Background task: tag a batch of new interview rows (THEORY or CODING)."""
     if not row_keys:
         return
     try:
@@ -376,7 +416,6 @@ def _auto_tag_new_theory(row_keys: list[str]) -> None:
     except Exception as exc:
         logger.exception("Cannot load catalog for auto-tag: %s", exc)
         return
-    # Map row_key -> question
     iq_by_key: dict[str, dict] = {}
     for r in interview_store.list_questions(limit=10000):
         if r.get("row_key") in row_keys:
@@ -385,15 +424,17 @@ def _auto_tag_new_theory(row_keys: list[str]) -> None:
         iq = iq_by_key.get(row_key)
         if not iq:
             continue
-        if (iq.get("question_type") or "").upper() != "THEORY":
+        qt = (iq.get("question_type") or "").upper()
+        if qt not in {"THEORY", "CODING"}:
             continue
         try:
             tag_question(
                 row_key=row_key,
                 question_text=iq.get("question") or "",
-                store=theory_store,
+                store=store_for(qt),
                 catalog=cat,
-                citations_for=citations_for,
+                citations_for=citations_for_question_type(qt),
+                question_type=qt,
             )
         except Exception as exc:
             logger.exception("Auto-tag failed for %s: %s", row_key, exc)
@@ -491,7 +532,7 @@ def normalize_now(background_tasks: BackgroundTasks, limit: int = 50):
     def _run() -> None:
         try:
             result = normalize_pending_groups(
-                interview_store, limit=limit, theory_store=theory_store
+                interview_store, limit=limit, theory_store=theory_store, coding_store=coding_store
             )
             logger.info("Normalize run: %s", result)
         except Exception as exc:

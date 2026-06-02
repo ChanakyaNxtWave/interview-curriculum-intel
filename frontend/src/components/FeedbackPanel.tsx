@@ -6,6 +6,7 @@ import {
   submitFeedback,
   type FeedbackPayload,
 } from '../api/theory';
+import { fetchCodingFeedback, submitCodingFeedback } from '../api/coding';
 import type { FeedbackEntry, FeedbackSeverity, FeedbackType } from '../api/types';
 
 const TYPES: { value: FeedbackType; label: string }[] = [
@@ -26,9 +27,11 @@ const SEVERITIES: { value: FeedbackSeverity; label: string; cls: string }[] = [
 export default function FeedbackPanel({
   rowKey,
   activePromptVersion,
+  isCoding = false,
 }: {
   rowKey: string;
   activePromptVersion?: string;
+  isCoding?: boolean;
 }) {
   const qc = useQueryClient();
   const [type, setType] = useState<FeedbackType>('wrong_verdict');
@@ -36,15 +39,16 @@ export default function FeedbackPanel({
   const [text, setText] = useState('');
 
   const listQ = useQuery({
-    queryKey: ['feedback', rowKey],
-    queryFn: () => fetchFeedback(rowKey),
+    queryKey: ['feedback', rowKey, isCoding],
+    queryFn: () => (isCoding ? fetchCodingFeedback(rowKey) : fetchFeedback(rowKey)),
   });
 
   const submit = useMutation({
-    mutationFn: (payload: FeedbackPayload) => submitFeedback(rowKey, payload),
+    mutationFn: (payload: FeedbackPayload) =>
+      isCoding ? submitCodingFeedback(rowKey, payload) : submitFeedback(rowKey, payload),
     onSuccess: () => {
       setText('');
-      qc.invalidateQueries({ queryKey: ['feedback', rowKey] });
+      qc.invalidateQueries({ queryKey: ['feedback', rowKey, isCoding] });
     },
   });
 

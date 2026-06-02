@@ -53,13 +53,37 @@ def build_theory_router(
     interview_store: InterviewStore,
     catalog_provider: Callable[[], KPCatalog],
     citations_for: Callable[[list[str]], list[dict]],
+    citations_for_question_type: Callable[[str], Callable[[list[str]], list[dict]]] | None = None,
     seed_path: Path,
+    route_segment: str = "theory-questions",
+    question_type: str = "THEORY",
+    register_shared: bool = True,
 ) -> APIRouter:
-    router = APIRouter(prefix="/api", tags=["theory"])
+    """Build the tagging router for ONE question_type namespace.
+
+    Called once per type from server.py:
+      - THEORY:  store=theory_store, route_segment="theory-questions", qt="THEORY",
+                 register_shared=True  (owns the shared /api/theory/* singletons).
+      - CODING:  store=coding_store, route_segment="coding-questions", qt="CODING",
+                 register_shared=False (skips the shared singletons).
+
+    `theory_store` here is the per-namespace tag/history store. Shared eval /
+    feedback / prompt-version tables are reachable through it regardless (those
+    table names are hard-coded inside TheoryStore).
+    """
+    # Fallback: if caller didn't wire per-type dispatch, always use the default
+    # (reading_material) retriever. Keeps backward compat with older callers.
+    if citations_for_question_type is None:
+        def citations_for_question_type(_qt: str):  # type: ignore[misc]
+            return citations_for
+    # This namespace only ever tags one question_type.
+    NS_QT = (question_type or "THEORY").upper()
+    seg = route_segment
+    router = APIRouter(prefix="/api", tags=[seg])
 
     # ---------- list / detail ----------
 
-    @router.get("/theory-questions")
+    @router.get(f"/{seg}")
     def list_theory_questions(
         verdict: str | None = None,
         review_status: str | None = None,
@@ -101,8 +125,9 @@ def build_theory_router(
             },
         }
 
-    @router.get("/theory/active-context")
-    def active_context():
+    if register_shared:
+      @router.get("/theory/active-context")
+      def active_context():
         """Snapshot of what the pipeline currently uses on a (re-)tag run."""
         active = theory_store.get_active_prompt_version()
         gold_total = theory_store.count_evals_since(None)
@@ -138,26 +163,34 @@ def build_theory_router(
             "model": "anthropic/claude-sonnet-4.5",
         }
 
-    @router.get("/theory-questions/{row_key}/tag-status")
+    @router.get(f"/{seg}/{{row_key}}/tag-status")
     def tag_status(row_key: str):
         rec = prog.get(row_key)
         if not rec:
             return {"row_key": row_key, "stage": "idle", "completed": False}
         return rec
 
-    @router.get("/theory-questions/pending-count")
-    def pending_theory_count_alias():
-        """Pending count — duplicated route earlier in registration order so FastAPI
-        matches it before the generic /{row_key} pattern."""
-        reps = set(interview_store.representative_row_keys(question_type="THEORY"))
+    def _pending_count_payload() -> dict:
+        """Pending count for THIS namespace's question_type only."""
         approved = {
             t["row_key"]
             for t in theory_store.list_tags(limit=10000)
             if t.get("review_status") == "approved"
         }
-        return {"pending": len(reps - approved), "total_representatives": len(reps)}
+        reps = set(interview_store.representative_row_keys(question_type=NS_QT))
+        pending = len(reps - approved)
+        return {
+            "pending": pending,
+            "by_type": {NS_QT: pending},
+            "total_representatives": len(reps),
+        }
 
-    @router.get("/theory-questions/{row_key}")
+    # Registered before the generic /{row_key} pattern so FastAPI matches it first.
+    @router.get(f"/{seg}/pending-count")
+    def pending_count_alias():
+        return _pending_count_payload()
+
+    @router.get(f"/{seg}/{{row_key}}")
     def get_theory_question(row_key: str):
         row = theory_store.get_tag(row_key)
         if not row:
@@ -181,7 +214,7 @@ def build_theory_router(
 
     # ---------- tag ----------
 
-    @router.post("/theory-questions/{row_key}/tag")
+    @router.post(f"/{seg}/{{row_key}}/tag")
     def tag_one(row_key: str):
         iq = None
         for r in interview_store.list_questions(limit=10000):
@@ -190,8 +223,12 @@ def build_theory_router(
                 break
         if iq is None:
             raise HTTPException(404, "interview question not found")
-        if (iq.get("question_type") or "").upper() != "THEORY":
-            raise HTTPException(400, "row is not THEORY")
+        qt = (iq.get("question_type") or "").upper()
+        # This namespace only tags its own type.
+        if qt != NS_QT:
+            raise HTTPException(
+                400, f"{seg} handles {NS_QT} only; row is {qt or 'unknown'}"
+            )
         existing = theory_store.get_tag(row_key)
         trigger = "re-tag" if existing else "first-tag"
         saved = tag_question(
@@ -199,28 +236,17 @@ def build_theory_router(
             question_text=iq.get("question") or "",
             store=theory_store,
             catalog=catalog_provider(),
-            citations_for=citations_for,
+            citations_for=citations_for_question_type(qt),
             trigger=trigger,
+            question_type=qt,
         )
         return saved
 
-    @router.get("/theory-questions/pending-count")
-    def pending_theory_count():
-        """Return how many representative THEORY rows still need tagging."""
-        reps = set(interview_store.representative_row_keys(question_type="THEORY"))
-        approved = {
-            t["row_key"]
-            for t in theory_store.list_tags(limit=10000)
-            if t.get("review_status") == "approved"
-        }
-        return {"pending": len(reps - approved), "total_representatives": len(reps)}
-
-    @router.post("/theory-questions/tag-batch")
+    @router.post(f"/{seg}/tag-batch")
     def tag_batch(payload: TagBatchPayload, background_tasks: BackgroundTasks):
         keys = [k for k in payload.row_keys if k]
         if not keys:
             return {"enqueued": 0}
-        # Resolve each key to its group representative (if any)
         all_iq = {r["row_key"]: r for r in interview_store.list_questions(limit=20000)}
         rep_map: dict[str, dict] = {}
         for k in keys:
@@ -230,18 +256,24 @@ def build_theory_router(
             rep_key = iq.get("group_representative_row_key") or k
             rep = all_iq.get(rep_key) or iq
             rep_map[rep["row_key"]] = rep
-        targets = [v for v in rep_map.values() if (v.get("question_type") or "").upper() == "THEORY"]
+        # Only this namespace's type — callers split row_keys by type client-side.
+        targets = [
+            v for v in rep_map.values()
+            if (v.get("question_type") or "").upper() == NS_QT
+        ]
         catalog = catalog_provider()
 
         def _run() -> None:
             for r in targets:
+                qt = (r.get("question_type") or "").upper()
                 try:
                     tag_question(
                         row_key=r["row_key"],
                         question_text=r.get("question") or "",
                         store=theory_store,
                         catalog=catalog,
-                        citations_for=citations_for,
+                        citations_for=citations_for_question_type(qt),
+                        question_type=qt,
                     )
                 except Exception as exc:
                     logger.exception("batch tag failed for %s: %s", r.get("row_key"), exc)
@@ -249,10 +281,10 @@ def build_theory_router(
         background_tasks.add_task(_run)
         return {"enqueued": len(targets)}
 
-    @router.post("/theory-questions/tag-pending")
+    @router.post(f"/{seg}/tag-pending")
     def tag_pending(payload: TagPendingPayload, background_tasks: BackgroundTasks):
-        # Only THEORY representative rows that aren't yet approved
-        reps = interview_store.representative_row_keys(question_type="THEORY")
+        # Representative rows of THIS namespace's type that aren't yet approved.
+        reps = interview_store.representative_row_keys(question_type=NS_QT)
         already_tagged_ok = {
             t["row_key"]
             for t in theory_store.list_tags(limit=10000)
@@ -265,13 +297,15 @@ def build_theory_router(
 
         def _run() -> None:
             for r in targets:
+                qt = (r.get("question_type") or "").upper()
                 try:
                     tag_question(
                         row_key=r["row_key"],
                         question_text=r.get("question") or "",
                         store=theory_store,
                         catalog=catalog,
-                        citations_for=citations_for,
+                        citations_for=citations_for_question_type(qt),
+                        question_type=qt,
                     )
                 except Exception as exc:
                     logger.exception(
@@ -283,7 +317,7 @@ def build_theory_router(
 
     # ---------- review ----------
 
-    @router.put("/theory-questions/{row_key}/review")
+    @router.put(f"/{seg}/{{row_key}}/review")
     def review_theory_question(
         row_key: str,
         payload: ReviewPayload,
@@ -292,12 +326,7 @@ def build_theory_router(
         existing = theory_store.get_tag(row_key)
         if not existing:
             raise HTTPException(404, "tag not found")
-        if payload.human_verdict not in {
-            "covered",
-            "partially_covered",
-            "not_covered",
-            "uncertain",
-        }:
+        if payload.human_verdict not in {"covered", "not_covered"}:
             raise HTTPException(400, "invalid verdict")
         if payload.review_status not in {
             "pending",
@@ -364,7 +393,7 @@ def build_theory_router(
 
     # ---------- feedback / history / improvement ----------
 
-    @router.post("/theory-questions/{row_key}/feedback")
+    @router.post(f"/{seg}/{{row_key}}/feedback")
     def submit_feedback(row_key: str, payload: FeedbackPayload):
         existing = theory_store.get_tag(row_key)
         if not existing:
@@ -395,13 +424,17 @@ def build_theory_router(
         )
         return {"feedback": theory_store.list_feedback(row_key)}
 
-    @router.get("/theory-questions/{row_key}/feedback")
+    @router.get(f"/{seg}/{{row_key}}/feedback")
     def list_feedback(row_key: str):
         return {"feedback": theory_store.list_feedback(row_key)}
 
-    @router.get("/theory-questions/{row_key}/history")
+    @router.get(f"/{seg}/{{row_key}}/history")
     def get_history(row_key: str, limit: int = 50):
         return {"items": theory_store.list_tag_history(row_key, limit=limit)}
+
+    # ---------- shared singletons (registered once, under the theory namespace) ----------
+    if not register_shared:
+        return router
 
     @router.get("/theory/improvement-summary")
     def improvement_summary():

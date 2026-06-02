@@ -2,15 +2,23 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { History, Loader2, X } from 'lucide-react';
 import { fetchHistory } from '../api/theory';
+import { fetchCodingHistory } from '../api/coding';
 import VerdictBadge from './VerdictBadge';
 import ConfidenceBar from './ConfidenceBar';
+import ParseFailureBanner from './ParseFailureBanner';
 import type { TagHistoryEntry } from '../api/types';
 
-export default function TagHistory({ rowKey }: { rowKey: string }) {
+export default function TagHistory({
+  rowKey,
+  isCoding = false,
+}: {
+  rowKey: string;
+  isCoding?: boolean;
+}) {
   const [selected, setSelected] = useState<TagHistoryEntry | null>(null);
   const { data, isLoading, error } = useQuery({
-    queryKey: ['tag-history', rowKey],
-    queryFn: () => fetchHistory(rowKey),
+    queryKey: ['tag-history', rowKey, isCoding],
+    queryFn: () => (isCoding ? fetchCodingHistory(rowKey) : fetchHistory(rowKey)),
   });
 
   const items = data?.items ?? [];
@@ -125,6 +133,33 @@ function SnapshotModal({
             <Block title="Coverage judge reasoning">{entry.judge_reasoning}</Block>
           )}
           {entry.rationale && <Block title="Final rationale">{entry.rationale}</Block>}
+          {entry.synthesis_quality && entry.synthesis_quality !== 'skipped' && (
+            <div>
+              <div className="text-xs text-text-dim uppercase tracking-wide mb-1 flex items-center gap-2">
+                <span>Synthesized answer</span>
+                <span
+                  className={`chip text-[10px] ${
+                    entry.synthesis_quality === 'complete'
+                      ? 'border-conf-covered/50 text-conf-covered bg-conf-covered/10'
+                      : entry.synthesis_quality === 'partial'
+                      ? 'border-conf-medium/50 text-conf-medium bg-conf-medium/10'
+                      : 'border-conf-uncertain/50 text-conf-uncertain bg-conf-uncertain/10'
+                  }`}
+                >
+                  {entry.synthesis_quality}
+                </span>
+                {entry.match_strategy && entry.match_strategy !== 'none' && (
+                  <span className="chip text-[10px] border-brand/40 text-brand bg-brand/5">
+                    {entry.match_strategy}
+                  </span>
+                )}
+              </div>
+              <div className="rounded-md border border-line bg-bg-panel p-3 text-sm text-text whitespace-pre-wrap leading-relaxed">
+                {(entry.synthesized_answer || '').slice(0, 600)}
+                {(entry.synthesized_answer || '').length > 600 ? '…' : ''}
+              </div>
+            </div>
+          )}
           {entry.required_kps?.length > 0 && (
             <div>
               <div className="text-xs text-text-dim uppercase tracking-wide mb-1">
@@ -155,15 +190,18 @@ function SnapshotModal({
             </div>
           )}
           {entry.review_reasons?.length > 0 && (
-            <div>
-              <div className="text-xs text-text-dim uppercase tracking-wide mb-1">
-                Review flags
+            <div className="space-y-2">
+              <ParseFailureBanner reasons={entry.review_reasons} compact />
+              <div>
+                <div className="text-xs text-text-dim uppercase tracking-wide mb-1">
+                  Review flags
+                </div>
+                <ul className="text-sm text-text-muted list-disc list-inside">
+                  {entry.review_reasons.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
               </div>
-              <ul className="text-sm text-text-muted list-disc list-inside">
-                {entry.review_reasons.map((r, i) => (
-                  <li key={i}>{r}</li>
-                ))}
-              </ul>
             </div>
           )}
         </div>

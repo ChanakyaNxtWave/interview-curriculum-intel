@@ -10,7 +10,7 @@ from .dspy_modules import TheoryPipeline
 from .store import TheoryStore
 
 
-VERDICTS = {"covered", "partially_covered", "not_covered", "uncertain"}
+VERDICTS = {"covered", "not_covered"}
 
 
 def load_seed_into_store(seed_path: Path, store: TheoryStore) -> int:
@@ -28,6 +28,9 @@ def load_seed_into_store(seed_path: Path, store: TheoryStore) -> int:
                 continue
             rec = json.loads(line)
             verdict = rec["gold_verdict"]
+            # Collapse legacy 4-verdict values to binary.
+            if verdict in {"partially_covered", "uncertain"}:
+                verdict = "not_covered"
             assert verdict in VERDICTS, f"Bad verdict in seed line {i}: {verdict}"
             row_key = rec.get("row_key", f"seed-{i}")
             if row_key in existing_keys:
@@ -86,28 +89,22 @@ def kp_set(kps: list[dict]) -> set[str]:
 
 
 def verdict_match_metric(example, prediction, trace=None) -> float:
-    """Composite metric: verdict match + KP set Jaccard + consistency checks.
+    """Composite metric: verdict match + KP set Jaccard + consistency check.
+
+    Binary verdict system: only covered | not_covered.
 
     Returns 0.0 (hard reject) for:
-      • verdict='uncertain' with overall_confidence > 0.5
       • verdict='covered' with no accepted_citations
       • verdict mismatch with gold
 
     Otherwise:
       1.0 if KP Jaccard >= 0.5
       0.5 if KP Jaccard low
-
-    BootstrapFewShot uses this signal to refuse demos that emit contradictory
-    or unsupported outputs — fixes the prior issue where high-confidence
-    uncertain verdicts and zero-citation 'covered' verdicts were learned.
     """
-    pred_verdict = getattr(prediction, "verdict", "uncertain")
-    pred_conf = _safe_conf(getattr(prediction, "overall_confidence", 0.0))
+    pred_verdict = getattr(prediction, "verdict", "not_covered")
     pred_accepted = list(getattr(prediction, "accepted_citations", []) or [])
 
-    # Consistency penalties — reject before considering verdict match
-    if pred_verdict == "uncertain" and pred_conf > 0.5:
-        return 0.0
+    # Consistency penalty: covered without citations is invalid.
     if pred_verdict == "covered" and not pred_accepted:
         return 0.0
 
@@ -157,9 +154,9 @@ def evaluate_pipeline(
         if pred.verdict == ex.verdict:
             verdict_agree += 1
         else:
-            if pred.verdict == "covered" and ex.verdict in {"partially_covered", "not_covered"}:
+            if pred.verdict == "covered" and ex.verdict == "not_covered":
                 false_covered += 1
-            if pred.verdict == "not_covered" and ex.verdict in {"covered", "partially_covered"}:
+            if pred.verdict == "not_covered" and ex.verdict == "covered":
                 false_not_covered += 1
         pred_kps = kp_set(getattr(pred, "required_kps", []) or [])
         gold_kps = kp_set(ex.required_kps or [])

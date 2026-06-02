@@ -163,6 +163,10 @@ def build_theory_router(
             "model": "anthropic/claude-sonnet-4.5",
         }
 
+      @router.get("/evals/active-context")
+      def active_context_alias():
+        return active_context()
+
     @router.get(f"/{seg}/{{row_key}}/tag-status")
     def tag_status(row_key: str):
         rec = prog.get(row_key)
@@ -440,9 +444,17 @@ def build_theory_router(
     def improvement_summary():
         return theory_store.improvement_summary()
 
+    @router.get("/evals/improvement-summary")
+    def improvement_summary_alias():
+        return improvement_summary()
+
     @router.get("/theory/eval-runs")
     def list_eval_runs(limit: int = 50):
         return {"items": theory_store.list_eval_runs(limit=limit)}
+
+    @router.get("/evals/runs")
+    def list_eval_runs_alias(limit: int = 50):
+        return list_eval_runs(limit=limit)
 
     @router.post("/theory/eval-now")
     def eval_now():
@@ -473,6 +485,10 @@ def build_theory_router(
         )
         return {"version": version, "metrics": metrics, "devset_size": len(dev_rows)}
 
+    @router.post("/evals/run")
+    def eval_now_alias():
+        return eval_now()
+
     @router.post("/theory/recompile")
     def recompile():
         try:
@@ -486,9 +502,17 @@ def build_theory_router(
             raise HTTPException(500, f"compile failed: {exc}") from exc
         return result
 
+    @router.post("/evals/recompile")
+    def recompile_alias():
+        return recompile()
+
     @router.get("/theory/prompt-versions")
     def list_versions():
         return {"items": theory_store.list_prompt_versions()}
+
+    @router.get("/evals/prompt-versions")
+    def list_versions_alias():
+        return list_versions()
 
     @router.post("/theory/prompt-versions/{version_id}/activate")
     def activate(version_id: int):
@@ -496,6 +520,10 @@ def build_theory_router(
         if not ok:
             raise HTTPException(404, "version not found")
         return {"active": theory_store.get_active_prompt_version()}
+
+    @router.post("/evals/prompt-versions/{version_id}/activate")
+    def activate_alias(version_id: int):
+        return activate(version_id)
 
     @router.post("/theory/cold-start")
     def cold_start():

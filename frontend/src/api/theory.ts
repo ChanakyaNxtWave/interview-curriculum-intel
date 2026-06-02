@@ -68,10 +68,10 @@ export const submitReview = (rowKey: string, payload: ReviewPayload) =>
   );
 
 export const fetchEvalRuns = (limit = 50) =>
-  api<{ items: TheoryEvalRun[] }>(`/api/theory/eval-runs${qs({ limit })}`);
+  api<{ items: TheoryEvalRun[] }>(`/api/evals/runs${qs({ limit })}`);
 
 export const runEvalNow = () =>
-  api<{ version: string; metrics: any; devset_size: number }>(`/api/theory/eval-now`, {
+  api<{ version: string; metrics: any; devset_size: number }>(`/api/evals/run`, {
     method: 'POST',
   });
 
@@ -84,14 +84,14 @@ export const recompile = () =>
     metrics: any;
     trainset_size: number;
     devset_size: number;
-  }>(`/api/theory/recompile`, { method: 'POST' });
+  }>(`/api/evals/recompile`, { method: 'POST' });
 
 export const fetchPromptVersions = () =>
-  api<{ items: TheoryPromptVersion[] }>(`/api/theory/prompt-versions`);
+  api<{ items: TheoryPromptVersion[] }>(`/api/evals/prompt-versions`);
 
 export const activateVersion = (versionId: number) =>
   api<{ active: TheoryPromptVersion }>(
-    `/api/theory/prompt-versions/${versionId}/activate`,
+    `/api/evals/prompt-versions/${versionId}/activate`,
     { method: 'POST' },
   );
 
@@ -119,7 +119,7 @@ export const fetchHistory = (rowKey: string) =>
   );
 
 export const fetchImprovementSummary = () =>
-  api<ImprovementSummary>(`/api/theory/improvement-summary`);
+  api<ImprovementSummary>(`/api/evals/improvement-summary`);
 
 export interface TagProgressEvent {
   stage: string;
@@ -175,4 +175,4 @@ export interface TheoryActiveContext {
 }
 
 export const fetchActiveContext = () =>
-  api<TheoryActiveContext>(`/api/theory/active-context`);
+  api<TheoryActiveContext>(`/api/evals/active-context`);

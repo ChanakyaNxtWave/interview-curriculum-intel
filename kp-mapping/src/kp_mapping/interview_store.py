@@ -315,6 +315,87 @@ class InterviewStore:
             ).fetchone()
         return dict(row) if row else None
 
+    def delete_question(self, row_key: str) -> dict[str, Any] | None:
+        """Delete an interview question and all rows in its group.
+
+        Returns:
+          {
+            "deleted_row_keys": [...],
+            "group_key": "...",
+          }
+        or None if row_key not found.
+        """
+        now = _utc_now()
+        with self._connect() as conn:
+            row = conn.execute(
+                "SELECT group_key FROM interview_questions WHERE row_key = ?",
+                (row_key,),
+            ).fetchone()
+            if not row:
+                return None
+            group_key = row["group_key"]
+            if group_key:
+                keys = conn.execute(
+                    "SELECT row_key FROM interview_questions WHERE group_key = ?",
+                    (group_key,),
+                ).fetchall()
+                deleted_row_keys = [k["row_key"] for k in keys]
+                conn.execute("DELETE FROM interview_questions WHERE group_key = ?", (group_key,))
+            else:
+                deleted_row_keys = [row_key]
+                conn.execute("DELETE FROM interview_questions WHERE row_key = ?", (row_key,))
+            if group_key:
+                agg = conn.execute(
+                    """
+                    SELECT COUNT(*) AS n, MAX(last_seen_at) AS last_seen
+                    FROM interview_questions
+                    WHERE group_key = ?
+                    """,
+                    (group_key,),
+                ).fetchone()
+                remaining = int(agg["n"] or 0)
+                if remaining == 0:
+                    conn.execute(
+                        "DELETE FROM interview_question_groups WHERE group_key = ?",
+                        (group_key,),
+                    )
+                else:
+                    rep = conn.execute(
+                        """
+                        SELECT row_key, question, company_name, first_seen_at
+                        FROM interview_questions
+                        WHERE group_key = ?
+                        ORDER BY id ASC
+                        LIMIT 1
+                        """,
+                        (group_key,),
+                    ).fetchone()
+                    if rep:
+                        conn.execute(
+                            """
+                            UPDATE interview_question_groups
+                            SET representative_row_key = ?,
+                                exact_question = ?,
+                                company_name = ?,
+                                member_count = ?,
+                                first_seen_at = ?,
+                                last_seen_at = ?,
+                                updated_at = ?
+                            WHERE group_key = ?
+                            """,
+                            (
+                                rep["row_key"],
+                                rep["question"],
+                                rep["company_name"],
+                                remaining,
+                                rep["first_seen_at"],
+                                agg["last_seen"],
+                                now,
+                                group_key,
+                            ),
+                        )
+            return {"deleted_row_keys": deleted_row_keys, "group_key": group_key}
+
     def list_groups(
         self,
         *,
@@ -413,7 +494,13 @@ class InterviewStore:
                 LEFT JOIN coding_question_tags ct
                        ON ct.row_key = COALESCE(gc.representative_row_key, iq.row_key)
                 {where}
-                ORDER BY COALESCE(iq.interview_date, '') DESC, iq.id DESC
+                ORDER BY
+                    CASE
+                        WHEN iq.interview_date IS NULL OR iq.interview_date = '' THEN 1
+                        ELSE 0
+                    END ASC,
+                    iq.interview_date DESC,
+                    iq.id DESC
                 LIMIT ? OFFSET ?
                 """,
                 params,
@@ -536,8 +623,14 @@ class InterviewStore:
                 (new_count, new_last_seen, now, winner_key),
             )
 
-    def upsert_many(self, rows: list[dict[str, Any]]) -> dict[str, int]:
-        stats = {"inserted": 0, "updated": 0, "unchanged": 0}
+    def upsert_many(self, rows: list[dict[str, Any]]) -> dict[str, Any]:
+        stats: dict[str, Any] = {
+            "inserted": 0,
+            "updated": 0,
+            "unchanged": 0,
+            "inserted_row_keys": [],
+            "updated_row_keys": [],
+        }
         now = _utc_now()
         columns = (
             "question_uuid",
@@ -586,6 +679,7 @@ class InterviewStore:
                         ),
                     )
                     stats["inserted"] += 1
+                    stats["inserted_row_keys"].append(row_key)
                     grp = conn.execute(
                         "SELECT member_count FROM interview_question_groups WHERE group_key = ?",
                         (group_key,),
@@ -642,6 +736,7 @@ class InterviewStore:
                             ),
                         )
                         stats["updated"] += 1
+                        stats["updated_row_keys"].append(row_key)
         return stats
 
     def list_questions(
@@ -696,7 +791,13 @@ class InterviewStore:
                 LEFT JOIN coding_question_tags ct
                        ON ct.row_key = COALESCE(gc.representative_row_key, iq.row_key)
                 {where}
-                ORDER BY COALESCE(iq.interview_date, '') DESC, iq.id DESC
+                ORDER BY
+                    CASE
+                        WHEN iq.interview_date IS NULL OR iq.interview_date = '' THEN 1
+                        ELSE 0
+                    END ASC,
+                    iq.interview_date DESC,
+                    iq.id DESC
                 LIMIT ? OFFSET ?
                 """,
                 params,
@@ -867,12 +968,14 @@ class InterviewStore:
     def _row_to_dict(self, row: sqlite3.Row) -> dict:
         d = dict(row)
         d.pop("raw_json", None)
+        d["interview_round_date"] = d.get("interview_date")
         return d
 
     def _row_to_dict_with_extras(self, row: sqlite3.Row) -> dict:
         """Helper for joined queries — keeps theory + group columns as a nested 'theory' obj."""
         d = dict(row)
         d.pop("raw_json", None)
+        d["interview_round_date"] = d.get("interview_date")
         theory = {
             "row_key": d.pop("theory_row_key", None),
             "verdict": d.pop("theory_verdict", None),

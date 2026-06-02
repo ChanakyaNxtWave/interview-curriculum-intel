@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Sparkles, Filter, MessagesSquare } from 'lucide-react';
 import { fetchTheoryQuestions } from '../api/theory';
+import { fetchCodingQuestions } from '../api/coding';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
 import DateRangeFilter, { type DurationPreset } from '../components/DateRangeFilter';
@@ -19,6 +20,8 @@ import type { ReviewStatus } from '../api/types';
 
 export default function TheoryQuestionsPage() {
   const { courseId = '' } = useParams();
+  const location = useLocation();
+  const isCodingRoute = location.pathname.includes('/coding-questions');
   const [sp, setSp] = useSearchParams();
   const q = sp.get('q') ?? '';
   const verdict = sp.get('verdict') ?? '';
@@ -40,9 +43,17 @@ export default function TheoryQuestionsPage() {
   }, [debouncedQ]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const listQ = useQuery({
-    queryKey: ['theory-list', debouncedQ, verdict, status, duration, dateFrom, dateTo],
+    queryKey: [
+      isCodingRoute ? 'coding-list' : 'theory-list',
+      debouncedQ,
+      verdict,
+      status,
+      duration,
+      dateFrom,
+      dateTo,
+    ],
     queryFn: () =>
-      fetchTheoryQuestions({
+      (isCodingRoute ? fetchCodingQuestions : fetchTheoryQuestions)({
         q: debouncedQ || undefined,
         verdict: verdict || undefined,
         review_status: status || undefined,
@@ -84,7 +95,9 @@ export default function TheoryQuestionsPage() {
       <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-brand" />
-          <h1 className="text-xl font-semibold">Theory Questions</h1>
+          <h1 className="text-xl font-semibold">
+            {isCodingRoute ? 'Coding Questions' : 'Theory Questions'}
+          </h1>
           <span className="text-text-muted text-sm">{items.length}</span>
         </div>
         {stats && (
@@ -127,9 +140,7 @@ export default function TheoryQuestionsPage() {
         >
           <option value="">Verdict: any</option>
           <option value="covered">covered</option>
-          <option value="partially_covered">partially_covered</option>
           <option value="not_covered">not_covered</option>
-          <option value="uncertain">uncertain</option>
         </select>
         <select
           value={status}
@@ -156,8 +167,12 @@ export default function TheoryQuestionsPage() {
       {listQ.error && <div className="text-conf-uncertain">Failed: {String(listQ.error)}</div>}
       {!listQ.isLoading && items.length === 0 && (
         <EmptyState
-          title="No theory tags yet"
-          hint="Click 'Tag pending (50)' to run the pipeline over THEORY questions."
+          title={isCodingRoute ? 'No coding tags yet' : 'No theory tags yet'}
+          hint={
+            isCodingRoute
+              ? "Click 'Tag pending' to run the pipeline over CODING questions."
+              : "Click 'Tag pending' to run the pipeline over THEORY questions."
+          }
         />
       )}
 
@@ -166,7 +181,9 @@ export default function TheoryQuestionsPage() {
           {items.map((t) => (
             <Link
               key={t.row_key}
-              to={`/courses/${courseId}/theory-questions/${encodeURIComponent(t.row_key)}`}
+              to={`/courses/${courseId}/theory-questions/${encodeURIComponent(t.row_key)}${
+                isCodingRoute ? '?type=coding' : ''
+              }`}
               className="block p-4 hover:bg-bg-hover transition-colors"
             >
               <div className="flex items-start gap-3">
@@ -229,9 +246,7 @@ function VerdictTabs({
   const tabs: { value: string; label: string; cls: string }[] = [
     { value: '', label: 'All', cls: '' },
     { value: 'covered', label: 'Covered', cls: 'text-conf-high' },
-    { value: 'partially_covered', label: 'Partial', cls: 'text-conf-medium' },
     { value: 'not_covered', label: 'Not Covered', cls: 'text-conf-uncertain' },
-    { value: 'uncertain', label: 'Uncertain', cls: 'text-status-pending' },
   ];
   const totalAll = counts
     ? Object.values(counts).reduce((a, b) => a + b, 0)

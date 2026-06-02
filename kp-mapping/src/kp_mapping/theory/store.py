@@ -417,6 +417,26 @@ class TheoryStore:
             for r in rows
         )
 
+    def global_feedback_patterns(self, *, limit: int = 20) -> str:
+        """Recent high-signal review feedback across rows for prompt steering."""
+        with self._connect() as conn:
+            rows = conn.execute(
+                """
+                SELECT feedback_type, feedback_text, severity
+                FROM theory_review_feedback
+                ORDER BY id DESC
+                LIMIT ?
+                """,
+                (limit,),
+            ).fetchall()
+        if not rows:
+            return ""
+        return "\n".join(
+            f"[{(r['severity'] or 'medium').upper()}] {r['feedback_type']}: {r['feedback_text'].strip()}"
+            for r in rows
+            if (r["feedback_text"] or "").strip()
+        )
+
     def feedback_weight_for(self, row_key: str) -> tuple[int, list[int]]:
         with self._connect() as conn:
             rows = conn.execute(
@@ -516,6 +536,27 @@ class TheoryStore:
                 f"DELETE FROM {self.tags_table} WHERE row_key = ?", (row_key,)
             )
             return cur.rowcount > 0
+
+    def delete_row_workflow_data(self, row_key: str) -> None:
+        """Delete tag + history + feedback/eval artifacts for a row_key."""
+        with self._connect() as conn:
+            conn.execute(
+                f"DELETE FROM {self.tags_table} WHERE row_key = ?",
+                (row_key,),
+            )
+            conn.execute(
+                f"DELETE FROM {self.history_table} WHERE row_key = ?",
+                (row_key,),
+            )
+            # Shared workflow tables
+            conn.execute(
+                "DELETE FROM theory_review_feedback WHERE row_key = ?",
+                (row_key,),
+            )
+            conn.execute(
+                "DELETE FROM theory_question_evals WHERE row_key = ?",
+                (row_key,),
+            )
 
     def get_tag(self, row_key: str) -> dict | None:
         with self._connect() as conn:

@@ -65,7 +65,7 @@ export default function EvalDashboardPage() {
       <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
         <div className="flex items-center gap-2">
           <GitCommitVertical className="w-5 h-5 text-brand" />
-          <h1 className="text-xl font-semibold">Theory Eval Dashboard</h1>
+          <h1 className="text-xl font-semibold">Eval Dashboard</h1>
         </div>
         <div className="flex items-center gap-2">
           <button
@@ -124,7 +124,7 @@ export default function EvalDashboardPage() {
                   }`}
                 >
                   <div className="flex items-center justify-between flex-wrap gap-2">
-                    <div className="font-mono text-sm">{v.version}</div>
+                    <div className="font-mono text-sm">{normalizeVersionName(v.version)}</div>
                     <div className="flex items-center gap-2">
                       {v.is_active ? (
                         <span className="chip-on">active</span>
@@ -178,7 +178,7 @@ export default function EvalDashboardPage() {
                 <div key={r.id} className="p-3 rounded-md border border-line bg-bg-panel">
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <div className="font-mono text-xs text-text-muted">
-                      {r.prompt_version} · {r.trigger}
+                      {normalizeVersionName(r.prompt_version)} · {r.trigger}
                     </div>
                     <span
                       className={`chip ${
@@ -283,7 +283,7 @@ function TrendChart({ trend }: { trend: ImprovementSummary['trend'] }) {
           <g key={i}>
             <circle cx={x} cy={ys[i]} r={3.5} fill="#7c9cff" />
             <title>
-              {trend[i].prompt_version} · {(trend[i].agreement_rate * 100).toFixed(1)}% ·{' '}
+              {normalizeVersionName(trend[i].prompt_version)} · {(trend[i].agreement_rate * 100).toFixed(1)}% ·{' '}
               {trend[i].trigger} · {new Date(trend[i].created_at).toLocaleString()}
             </title>
           </g>
@@ -291,4 +291,9 @@ function TrendChart({ trend }: { trend: ImprovementSummary['trend'] }) {
       </svg>
     </div>
   );
+}
+
+function normalizeVersionName(version: string) {
+  if (!version) return version;
+  return version.replace(/^theory-/, 'eval-');
 }

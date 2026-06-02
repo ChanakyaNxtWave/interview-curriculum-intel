@@ -107,6 +107,8 @@ def run_sync(
             "sync_id": sync_id,
             "fetched_rows": len(rows),
             **upsert_stats,
+            "inserted_row_keys": upsert_stats.get("inserted_row_keys", []),
+            "updated_row_keys": upsert_stats.get("updated_row_keys", []),
             "duration_ms": duration_ms,
         }
     except Exception as exc:

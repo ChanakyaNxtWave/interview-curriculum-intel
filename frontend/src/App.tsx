@@ -24,6 +24,8 @@ export default function App() {
         <Route path="/review" element={<ReviewQueuePage />} />
         <Route path="/courses/:courseId/reading-materials" element={<ReadingMaterialsPage />} />
         <Route path="/courses/:courseId/theory-questions" element={<TheoryQuestionsPage />} />
+        <Route path="/courses/:courseId/coding-questions" element={<TheoryQuestionsPage />} />
+        <Route path="/courses/:courseId/projects" element={<ReadingMaterialsPage />} />
         <Route
           path="/courses/:courseId/theory-questions/:rowKey"
           element={<TheoryQuestionDetailPage />}

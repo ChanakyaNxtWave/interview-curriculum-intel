@@ -69,7 +69,7 @@ class JudgeCoverage(dspy.Signature):
         If no candidate fully fits, choose not_covered.
       • Use ONLY the provided candidate_citations to support the answer; do not invent.
       • prior_feedback (if non-empty) contains reviewer corrections from previous
-        tagging passes on THIS row. Treat it as a hint, not a rule. Override
+        tagging passes and global reviewer patterns. Treat it as a hint, not a rule. Override
         feedback when the CURRENT candidate_citations clearly contradict it.
         Specifically: if prior_feedback says "no citations exist / curriculum
         does not cover this" but the current candidate_citations contain
@@ -237,56 +237,54 @@ class TheoryPipeline(dspy.Module):
         accepted = [c for c in candidates if c["content_id"] in accepted_set]
         rejected = [c for c in candidates if c["content_id"] not in accepted_set]
 
-        # Stage 3 — AnswerSynthesizer. Fires whenever ≥1 citation was accepted,
-        # regardless of judge verdict. The synthesis quality becomes the final
-        # authenticity check: complete → covered, insufficient/partial → not_covered.
+        # Stage 3 — AnswerSynthesizer (MANDATORY for every question). The synthesis
+        # quality becomes the final authenticity check.
         synthesized_answer = ""
         grounding: list[Any] = []
-        synthesis_quality = "skipped"
+        synthesis_quality = "insufficient"
         synthesis_confidence = 0.0
         synthesis_reasoning = ""
         match_strategy = ""
-        if accepted:
-            synth_module = (
-                self.synth_coding if question_format == "coding" else self.synth_theory
+        synth_module = (
+            self.synth_coding if question_format == "coding" else self.synth_theory
+        )
+        accepted_json = json.dumps(
+            [
+                {
+                    "content_id": c["content_id"],
+                    "title": c["title"],
+                    "topic_name": c.get("topic_name", ""),
+                    "snippet": c["snippet"],
+                }
+                for c in accepted
+            ],
+            ensure_ascii=False,
+        )
+        try:
+            synth_pred = synth_module(
+                question=question,
+                accepted_citations_json=accepted_json,
+                verdict_hint=verdict,
             )
-            accepted_json = json.dumps(
-                [
-                    {
-                        "content_id": c["content_id"],
-                        "title": c["title"],
-                        "topic_name": c.get("topic_name", ""),
-                        "snippet": c["snippet"],
-                    }
-                    for c in accepted
-                ],
-                ensure_ascii=False,
+            synthesized_answer = str(synth_pred.synthesized_answer or "").strip()
+            grounding = _safe_json_array(getattr(synth_pred, "grounding_json", ""))
+            synthesis_quality = _normalize_quality(
+                getattr(synth_pred, "synthesis_quality", "")
             )
-            try:
-                synth_pred = synth_module(
-                    question=question,
-                    accepted_citations_json=accepted_json,
-                    verdict_hint=verdict,
-                )
-                synthesized_answer = str(synth_pred.synthesized_answer or "").strip()
-                grounding = _safe_json_array(getattr(synth_pred, "grounding_json", ""))
-                synthesis_quality = _normalize_quality(
-                    getattr(synth_pred, "synthesis_quality", "")
-                )
-                synthesis_confidence = _safe_float(
-                    getattr(synth_pred, "synthesis_confidence", 0.0)
-                )
-                synthesis_reasoning = str(
-                    getattr(synth_pred, "reasoning", "") or ""
-                ).strip()
-                match_strategy = (
-                    str(getattr(synth_pred, "match_strategy", "") or "")
-                    .strip()
-                    .lower()
-                )
-            except Exception as exc:
-                synthesis_quality = "skipped"
-                synthesis_reasoning = f"synthesizer_error: {exc}"
+            synthesis_confidence = _safe_float(
+                getattr(synth_pred, "synthesis_confidence", 0.0)
+            )
+            synthesis_reasoning = str(
+                getattr(synth_pred, "reasoning", "") or ""
+            ).strip()
+            match_strategy = (
+                str(getattr(synth_pred, "match_strategy", "") or "")
+                .strip()
+                .lower()
+            )
+        except Exception as exc:
+            synthesis_quality = "insufficient"
+            synthesis_reasoning = f"synthesizer_error: {exc}"
 
         return dspy.Prediction(
             required_kps=req_kps,

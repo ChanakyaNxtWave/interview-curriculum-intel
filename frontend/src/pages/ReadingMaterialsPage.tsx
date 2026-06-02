@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useLocation } from 'react-router-dom';
 import {
   BookOpen,
+  FolderGit2,
   FileText,
   Filter,
   Loader2,
@@ -18,6 +20,9 @@ import { fetchMappings, fetchFacets } from '../api/mappings';
 import { fetchContentBody } from '../api/mappings';
 
 export default function ReadingMaterialsPage() {
+  const location = useLocation();
+  const isProjectsRoute = location.pathname.includes('/projects');
+  const contentType = isProjectsRoute ? 'project' : 'reading_material';
   const [q, setQ] = useState('');
   const [topic, setTopic] = useState('');
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -29,10 +34,10 @@ export default function ReadingMaterialsPage() {
   });
 
   const listQ = useQuery({
-    queryKey: ['reading-materials', debouncedQ, topic],
+    queryKey: [isProjectsRoute ? 'projects' : 'reading-materials', debouncedQ, topic],
     queryFn: () =>
       fetchMappings({
-        content_type: 'reading_material',
+        content_type: contentType,
         q: debouncedQ || undefined,
         topic_name: topic || undefined,
         limit: 1000,
@@ -57,13 +62,23 @@ export default function ReadingMaterialsPage() {
       <CourseTabs />
 
       <div className="flex items-center gap-2 mb-4">
-        <BookOpen className="w-5 h-5 text-brand" />
-        <h1 className="text-xl font-semibold">Reading Materials</h1>
+        {isProjectsRoute ? (
+          <FolderGit2 className="w-5 h-5 text-brand" />
+        ) : (
+          <BookOpen className="w-5 h-5 text-brand" />
+        )}
+        <h1 className="text-xl font-semibold">
+          {isProjectsRoute ? 'Projects' : 'Reading Materials'}
+        </h1>
         <span className="text-text-muted text-sm">{items.length}</span>
       </div>
 
       <div className="card p-3 mb-4 flex flex-wrap items-center gap-2">
-        <SearchBox value={q} onChange={setQ} placeholder="Search title or topic…" />
+        <SearchBox
+          value={q}
+          onChange={setQ}
+          placeholder={isProjectsRoute ? 'Search project title or topic…' : 'Search title or topic…'}
+        />
         <select
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
@@ -94,7 +109,10 @@ export default function ReadingMaterialsPage() {
         <div className="text-conf-uncertain">Failed: {String(listQ.error)}</div>
       )}
       {!listQ.isLoading && items.length === 0 && (
-        <EmptyState title="No reading materials" hint="Try clearing filters." />
+        <EmptyState
+          title={isProjectsRoute ? 'No projects found' : 'No reading materials'}
+          hint="Try clearing filters."
+        />
       )}
 
       {items.length > 0 && (

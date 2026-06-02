@@ -97,6 +97,7 @@ export interface InterviewQuestion {
   tech_stack?: string | null;
   optional_skills?: string | null;
   interview_date?: string | null;
+  interview_round_date?: string | null;
   product?: string | null;
   job_type?: string | null;
   job_id?: string | null;

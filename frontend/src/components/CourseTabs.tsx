@@ -28,13 +28,11 @@ export default function CourseTabs() {
       to: `${base}/coding-questions`,
       label: 'Coding Questions',
       icon: <Code2 className="w-4 h-4" />,
-      disabled: true,
     },
     {
       to: `${base}/projects`,
       label: 'Projects',
       icon: <FolderGit2 className="w-4 h-4" />,
-      disabled: true,
     },
     {
       to: `${base}/evals`,

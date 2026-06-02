@@ -41,6 +41,7 @@ def tag_question(
     citations_for: Callable[[list[str]], list[dict]],
     trigger: str = "manual",
     question_type: str = "THEORY",
+    force_human_review: bool = False,
 ) -> dict:
     """Run pipeline on one question, persist tag row, return summary dict.
 
@@ -48,12 +49,15 @@ def tag_question(
     """
     prog.start(row_key, trigger=trigger)
     review_reasons: list[str] = []
-    prior_feedback = store.latest_feedback_text(row_key)
-    if prior_feedback:
+    row_feedback = store.latest_feedback_text(row_key)
+    global_feedback = store.global_feedback_patterns(limit=20)
+    feedback_context_parts = [p for p in (row_feedback, global_feedback) if p]
+    prior_feedback = "\n".join(feedback_context_parts)
+    if row_feedback:
         prog.emit(
             row_key,
             "start",
-            note=f"inlining {prior_feedback.count(chr(10)) + 1} reviewer feedback item(s)",
+            note=f"inlining {row_feedback.count(chr(10)) + 1} reviewer feedback item(s)",
         )
     try:
         prog.emit(row_key, "load_active_prompt", note="loading compiled prompt + fewshot demos")
@@ -118,23 +122,22 @@ def tag_question(
             verdict=verdict,
             confidence=confidence,
         )
-        if synthesis_quality != "skipped":
-            prog.emit(
-                row_key,
-                "synthesize_answer",
-                note=(
-                    "DSPy AnswerCodingQuestion (CoT)"
-                    if question_format == "coding"
-                    else "DSPy AnswerTheoryQuestion (CoT)"
-                ),
-            )
-            prog.emit(
-                row_key,
-                "synthesize_done",
-                synthesis_quality=synthesis_quality,
-                synthesis_confidence=synthesis_confidence,
-                match_strategy=match_strategy,
-            )
+        prog.emit(
+            row_key,
+            "synthesize_answer",
+            note=(
+                "DSPy AnswerCodingQuestion (CoT)"
+                if question_format == "coding"
+                else "DSPy AnswerTheoryQuestion (CoT)"
+            ),
+        )
+        prog.emit(
+            row_key,
+            "synthesize_done",
+            synthesis_quality=synthesis_quality,
+            synthesis_confidence=synthesis_confidence,
+            match_strategy=match_strategy,
+        )
     except Exception as exc:
         logger.exception("Pipeline failed for row_key=%s: %s", row_key, exc)
         required_kps, candidates, accepted, rejected = [], [], [], []
@@ -145,7 +148,7 @@ def tag_question(
         judge_reasoning = ""
         synthesized_answer = ""
         answer_grounding = []
-        synthesis_quality = "skipped"
+        synthesis_quality = "insufficient"
         synthesis_confidence = 0.0
         synthesis_reasoning = ""
         match_strategy = ""
@@ -186,12 +189,22 @@ def tag_question(
         r == "no_kps_identified" or r.startswith("pipeline_error")
         for r in review_reasons
     )
-    synth_failed = synthesis_quality == "insufficient"
+    synth_failed = synthesis_quality in {"insufficient", "partial"}
+    if synthesis_quality not in {"complete", "partial", "insufficient"}:
+        review_reasons.append(f"invalid_synthesis_quality:{synthesis_quality}")
+        synthesis_quality = "insufficient"
+        synth_failed = True
+    if not synthesized_answer.strip():
+        review_reasons.append("missing_synthesized_answer")
+        synth_failed = True
     auto_ok = (
         should_auto_approve(verdict, confidence)
         and not pipeline_failed
         and not synth_failed
     )
+    if force_human_review:
+        auto_ok = False
+        review_reasons.append("forced_human_gate_for_changed_row")
     review_status = "approved" if auto_ok else "needs_review"
     if not auto_ok and "below_auto_approve_threshold" not in review_reasons:
         review_reasons.append(

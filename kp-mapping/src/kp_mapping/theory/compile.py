@@ -24,11 +24,14 @@ logger = logging.getLogger("kp_mapping.theory.compile")
 
 COMPILE_THRESHOLD = int(os.environ.get("THEORY_COMPILE_THRESHOLD", "20"))
 DEV_AGREEMENT_GATE = float(os.environ.get("THEORY_DEV_AGREEMENT_GATE", "0.85"))
+DEV_SYNTHESIS_PRESENCE_GATE = float(
+    os.environ.get("THEORY_DEV_SYNTHESIS_PRESENCE_GATE", "1.0")
+)
 
 
 def _next_version_name(store: TheoryStore) -> str:
     versions = store.list_prompt_versions()
-    return f"theory-v{len(versions) + 1}-bootstrap"
+    return f"eval-v{len(versions) + 1}-bootstrap"
 
 
 def compile_and_maybe_activate(
@@ -67,7 +70,11 @@ def compile_and_maybe_activate(
     eval_target = devset if devset else trainset
     metrics = evaluate_pipeline(compiled, eval_target)
     devset_agreement = metrics["agreement_rate"]
-    activate = force_activate or devset_agreement >= DEV_AGREEMENT_GATE
+    synthesis_ok = metrics.get("synthesis_presence_rate", 0.0) >= DEV_SYNTHESIS_PRESENCE_GATE
+    policy_clean = int(metrics.get("policy_violations", 0)) == 0
+    activate = force_activate or (
+        devset_agreement >= DEV_AGREEMENT_GATE and synthesis_ok and policy_clean
+    )
 
     state = compiled.dump_state()
     version = _next_version_name(store)
@@ -90,7 +97,12 @@ def compile_and_maybe_activate(
             fewshot_count=max_bootstrapped_demos,
             gold_count_at_compile=len(train_rows),
             devset_agreement=devset_agreement,
-            notes=f"trigger={trigger}; below gate, not activated",
+            notes=(
+                f"trigger={trigger}; below gate, not activated; "
+                f"agreement={devset_agreement:.3f}; "
+                f"synthesis_presence={metrics.get('synthesis_presence_rate', 0.0):.3f}; "
+                f"policy_violations={int(metrics.get('policy_violations', 0))}"
+            ),
             activate=False,
         )
         active = store.get_active_prompt_version()

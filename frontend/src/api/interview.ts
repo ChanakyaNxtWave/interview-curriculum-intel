@@ -52,3 +52,15 @@ export const fetchGroupMembers = (groupKey: string) =>
   api<{ group: QuestionGroup; members: QuestionGroupMember[] }>(
     `/api/interview-question-groups/${encodeURIComponent(groupKey)}/members`,
   );
+
+export const deleteInterviewQuestion = (rowKey: string) =>
+  api<{
+    deleted: boolean;
+    row_key: string;
+    deleted_row_keys?: string[];
+    deleted_count?: number;
+    group_key?: string | null;
+  }>(
+    `/api/interview-questions/${encodeURIComponent(rowKey)}`,
+    { method: 'DELETE' },
+  );

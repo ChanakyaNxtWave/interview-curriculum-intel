@@ -140,6 +140,9 @@ def evaluate_pipeline(
     false_not_covered = 0
     jaccards: list[float] = []
     confidences: list[float] = []
+    synthesis_complete = 0
+    synthesis_present = 0
+    synthesis_required_failures = 0
     for ex in devset:
         try:
             pred = pipeline(
@@ -165,6 +168,16 @@ def evaluate_pipeline(
             union = len(pred_kps | gold_kps)
             jaccards.append(inter / union if union else 0.0)
         confidences.append(float(getattr(pred, "overall_confidence", 0.0)))
+        synth_quality = str(getattr(pred, "synthesis_quality", "") or "").strip().lower()
+        synth_answer = str(getattr(pred, "synthesized_answer", "") or "").strip()
+        if synth_quality in {"complete", "partial", "insufficient"}:
+            synthesis_present += 1
+        else:
+            synthesis_required_failures += 1
+        if synth_quality == "complete":
+            synthesis_complete += 1
+        if not synth_answer:
+            synthesis_required_failures += 1
 
     agreement_rate = verdict_agree / total if total else 0.0
     return {
@@ -175,4 +188,7 @@ def evaluate_pipeline(
         "kp_jaccard_avg": sum(jaccards) / len(jaccards) if jaccards else 0.0,
         "avg_confidence": sum(confidences) / len(confidences) if confidences else 0.0,
         "agreement_rate": agreement_rate,
+        "synthesis_presence_rate": (synthesis_present / total) if total else 0.0,
+        "synthesis_complete_rate": (synthesis_complete / total) if total else 0.0,
+        "policy_violations": synthesis_required_failures,
     }

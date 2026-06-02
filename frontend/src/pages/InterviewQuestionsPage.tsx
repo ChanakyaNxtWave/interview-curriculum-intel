@@ -9,6 +9,7 @@ import {
   Briefcase,
   Code2,
   Calendar,
+  Trash2,
   CheckCircle2,
   AlertCircle,
   Clock,
@@ -20,6 +21,7 @@ import {
   fetchNormalizeStatus,
   triggerInterviewSync,
   triggerNormalize,
+  deleteInterviewQuestion,
 } from '../api/interview';
 import { fetchPendingCount, tagBatch, tagPending, tagTheoryQuestion } from '../api/theory';
 import {
@@ -132,6 +134,19 @@ export default function InterviewQuestionsPage() {
       qc.invalidateQueries({ queryKey: ['theory-list'] });
       qc.invalidateQueries({ queryKey: ['review-queue'] });
       qc.invalidateQueries({ queryKey: ['review-count'] });
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: (rowKey: string) => deleteInterviewQuestion(rowKey),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['interview-list'] });
+      qc.invalidateQueries({ queryKey: ['interview-facets'] });
+      qc.invalidateQueries({ queryKey: ['theory-list'] });
+      qc.invalidateQueries({ queryKey: ['review-queue'] });
+      qc.invalidateQueries({ queryKey: ['review-count'] });
+      qc.invalidateQueries({ queryKey: ['theory-pending-count'] });
+      qc.invalidateQueries({ queryKey: ['coding-pending-count'] });
     },
   });
 
@@ -361,6 +376,17 @@ export default function InterviewQuestionsPage() {
           Sync failed: {String(syncMutation.error)}
         </div>
       )}
+      {deleteMutation.isError && (
+        <div className="mb-3 p-3 rounded-md border border-conf-uncertain/40 bg-conf-uncertain/10 text-sm text-conf-uncertain">
+          Delete failed: {String(deleteMutation.error)}
+        </div>
+      )}
+      {deleteMutation.isSuccess && (
+        <div className="mb-3 p-3 rounded-md border border-conf-high/40 bg-conf-high/10 text-sm text-conf-high">
+          Deleted {deleteMutation.data.deleted_count ?? 1} interview question row
+          {(deleteMutation.data.deleted_count ?? 1) > 1 ? 's' : ''}.
+        </div>
+      )}
       {syncMutation.isSuccess && (
         <div className="mb-3 p-3 rounded-md border border-conf-high/40 bg-conf-high/10 text-sm text-conf-high">
           Sync ok: fetched {syncMutation.data.fetched_rows} · inserted{' '}
@@ -521,7 +547,7 @@ export default function InterviewQuestionsPage() {
                           className="chip border-brand/40 text-brand bg-brand/5 font-medium"
                           title={q.interview_date}
                         >
-                          <Calendar className="w-3 h-3" /> {fmtInterviewDate(q.interview_date)}
+                          <Calendar className="w-3 h-3" /> Interview round: {fmtInterviewDate(q.interview_date)}
                         </span>
                       )}
                       {q.company_name && (
@@ -621,6 +647,21 @@ export default function InterviewQuestionsPage() {
                           <Tag className="w-3 h-3" />
                         )}
                         {isPendingTag ? 'Tagging…' : theory ? 'Re-tag' : 'Tag now'}
+                      </button>
+                      <button
+                        className="btn text-xs text-conf-uncertain border-conf-uncertain/40 hover:bg-conf-uncertain/10 disabled:opacity-50"
+                        disabled={deleteMutation.isPending}
+                        onClick={() => {
+                          const ok = window.confirm(
+                            'Delete this interview question and its related tagging/workflow records?',
+                          );
+                          if (!ok) return;
+                          deleteMutation.mutate(q.row_key);
+                        }}
+                        title="Delete before approving/tagging"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                        Delete
                       </button>
                     </div>
                   )}

@@ -57,10 +57,13 @@ def _scheduled_sync() -> None:
             json_snapshot_path=INTERVIEW_JSON_SNAPSHOT,
         )
         logger.info("Scheduled interview sync ok: %s", result)
-        pending_theory = _collect_theory_rows_needing_tag()
-        if pending_theory:
-            logger.info("Auto-tagging %d new THEORY rows after scheduled sync", len(pending_theory))
-            _auto_tag_new_theory(pending_theory)
+        pending_rows_to_tag = _collect_rows_needing_tagging(result)
+        if pending_rows_to_tag:
+            logger.info(
+                "Auto-tagging %d changed interview rows after scheduled sync",
+                len(pending_rows_to_tag),
+            )
+            _auto_tag_pending_rows(pending_rows_to_tag)
     except Exception as exc:
         logger.exception("Scheduled interview sync failed: %s", exc)
 
@@ -407,8 +410,8 @@ app.include_router(
 )
 
 
-def _auto_tag_new_theory(row_keys: list[str]) -> None:
-    """Background task: tag a batch of new interview rows (THEORY or CODING)."""
+def _auto_tag_pending_rows(row_keys: list[str]) -> None:
+    """Background task: tag changed interview rows (THEORY and CODING)."""
     if not row_keys:
         return
     try:
@@ -435,6 +438,7 @@ def _auto_tag_new_theory(row_keys: list[str]) -> None:
                 catalog=cat,
                 citations_for=citations_for_question_type(qt),
                 question_type=qt,
+                force_human_review=True,
             )
         except Exception as exc:
             logger.exception("Auto-tag failed for %s: %s", row_key, exc)
@@ -486,6 +490,24 @@ def list_interview_questions(
             "date_from": resolved_from,
             "date_to": resolved_to,
         },
+    }
+
+
+@app.delete("/api/interview-questions/{row_key}")
+def delete_interview_question(row_key: str):
+    deleted = interview_store.delete_question(row_key)
+    if deleted is None:
+        raise HTTPException(404, "interview question not found")
+    # Remove all related tagging/workflow records for deleted interview rows.
+    for rk in deleted["deleted_row_keys"]:
+        theory_store.delete_row_workflow_data(rk)
+        coding_store.delete_row_workflow_data(rk)
+    return {
+        "deleted": True,
+        "row_key": row_key,
+        "deleted_row_keys": deleted["deleted_row_keys"],
+        "deleted_count": len(deleted["deleted_row_keys"]),
+        "group_key": deleted.get("group_key"),
     }
 
 
@@ -576,27 +598,30 @@ def interview_sync_now(background_tasks: BackgroundTasks):
     except Exception as exc:
         raise HTTPException(500, f"Sync failed: {exc}") from exc
 
-    # Enqueue auto-tagging for THEORY rows lacking an approved tag
-    pending_theory = _collect_theory_rows_needing_tag()
-    if pending_theory:
-        background_tasks.add_task(_auto_tag_new_theory, pending_theory)
-        result["theory_auto_tag_enqueued"] = len(pending_theory)
+    # Enqueue auto-tagging for changed rows across THEORY + CODING.
+    pending_rows_to_tag = _collect_rows_needing_tagging(result)
+    if pending_rows_to_tag:
+        background_tasks.add_task(_auto_tag_pending_rows, pending_rows_to_tag)
+        result["auto_tag_enqueued"] = len(pending_rows_to_tag)
     return result
 
 
-def _collect_theory_rows_needing_tag() -> list[str]:
-    approved = {
-        t["row_key"]
-        for t in theory_store.list_tags(limit=10000)
-        if t.get("review_status") == "approved"
+def _collect_rows_needing_tagging(sync_result: dict) -> list[str]:
+    """Rows requiring re-tag after sync: newly inserted or updated rows only."""
+    inserted = set(sync_result.get("inserted_row_keys") or [])
+    updated = set(sync_result.get("updated_row_keys") or [])
+    candidate = inserted | updated
+    if not candidate:
+        return []
+    valid_types = {"THEORY", "CODING"}
+    rows_by_key = {
+        r.get("row_key"): r for r in interview_store.list_questions(limit=20000) if r.get("row_key")
     }
-    out: list[str] = []
-    for r in interview_store.list_questions(limit=10000):
-        if (r.get("question_type") or "").upper() != "THEORY":
-            continue
-        rk = r.get("row_key")
-        if rk and rk not in approved:
-            out.append(rk)
+    out = [
+        rk
+        for rk in sorted(candidate)
+        if rk in rows_by_key and (rows_by_key[rk].get("question_type") or "").upper() in valid_types
+    ]
     return out
 
 

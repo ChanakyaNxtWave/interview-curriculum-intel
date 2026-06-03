@@ -25,6 +25,8 @@ from .theory.store import TheoryStore
 
 load_env()
 from .models import ProposedKPTag, ReviewStatus
+from .kg_expansion.api import register_kg_expansion_routes
+from .kg_expansion.store import KgExpansionStore
 from .knowledge_graph import KnowledgeGraphError, knowledge_graph_node_count, load_knowledge_graph
 from .store import MappingStore
 
@@ -152,6 +154,9 @@ coding_store = TheoryStore(
     tags_table="coding_question_tags",
     history_table="coding_tag_history",
 )
+kg_expansion_store = KgExpansionStore(
+    Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB)))
+)
 citations_for = build_citations_fn(store)  # default: reading_material
 citations_for_coding = build_citations_fn(store, content_type="coding_question")
 
@@ -267,6 +272,15 @@ def get_course_knowledge_graph(course_id: str):
     if graph is None:
         raise HTTPException(status_code=404, detail="Knowledge graph not found for course")
     return graph
+
+
+register_kg_expansion_routes(
+    app,
+    expansion_store=kg_expansion_store,
+    theory_store=theory_store,
+    coding_store=coding_store,
+    catalog_provider=get_catalog,
+)
 
 
 @app.get("/api/kps/with-counts")
@@ -449,8 +463,6 @@ app.include_router(
         register_shared=False,
     )
 )
-
-
 def _auto_tag_pending_rows(row_keys: list[str]) -> None:
     """Background task: tag changed interview rows (THEORY and CODING)."""
     if not row_keys:

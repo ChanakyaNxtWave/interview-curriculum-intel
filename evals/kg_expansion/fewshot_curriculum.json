@@ -1,0 +1,114 @@
+{
+  "description": "Curriculum-aligned examples for gap KP proposal. prerequisite_skill_ids lists existing catalog source_kp_id values (and optional LTA skill_ids among new_kps).",
+  "covered_curriculum_examples": [
+    {
+      "question": "What is a variable in Python?",
+      "tagged_catalog_kps": [
+        {
+          "source_kp_id": "KP_GLOBAL_0008",
+          "label": "variable assignment in python",
+          "prerequisite_skill_ids": []
+        }
+      ],
+      "required_catalog_kp_ids": [],
+      "why_good": "Entry topic: catalog KP only, no new KP. prerequisite_skill_ids may be empty only for course-entry topics."
+    },
+    {
+      "question": "What is the purpose of the break keyword in Python?",
+      "tagged_catalog_kps": [
+        {
+          "source_kp_id": "KP_GLOBAL_0720",
+          "label": "loop break continue pass statements",
+          "prerequisite_skill_ids": ["KP_GLOBAL_0001", "KP_GLOBAL_0002"]
+        }
+      ],
+      "required_catalog_kp_ids": ["KP_GLOBAL_0001", "KP_GLOBAL_0002"],
+      "why_good": "Single loop-control KP with direct existing loop KPs as prerequisites."
+    },
+    {
+      "question": "Explain nested loops in Python with an example like a multiplication table.",
+      "tagged_catalog_kps": [
+        {
+          "source_kp_id": "KP_GLOBAL_0016",
+          "label": "nested loops in python",
+          "prerequisite_skill_ids": ["KP_GLOBAL_0001"]
+        }
+      ],
+      "required_catalog_kp_ids": ["KP_GLOBAL_0001"],
+      "why_good": "Pattern-level KP; prerequisites are for-loop basics from the catalog."
+    }
+  ],
+  "uncovered_gap_examples": [
+    {
+      "question": "Explain how Python decorators work, including @functools.wraps and use of *args/**kwargs.",
+      "good_new_kps": [
+        {
+          "label": "apply advanced decorator patterns in python",
+          "description": "Use @ syntax with functools.wraps, nested decorators, and *args/**kwargs when defining decorator factories.",
+          "prerequisite_skill_ids": ["KP_GLOBAL_0026", "KP_GLOBAL_0085"]
+        }
+      ],
+      "good_catalog_matches": [
+        {
+          "source_kp_id": "KP_GLOBAL_0085",
+          "prerequisite_skill_ids": ["KP_GLOBAL_0026"]
+        }
+      ],
+      "required_catalog_kp_ids": ["KP_GLOBAL_0026", "KP_GLOBAL_0085"],
+      "why_good": "New KP only where the gap exceeds the catalog; prerequisite_skill_ids chain to existing function and decorator KPs."
+    },
+    {
+      "question": "What is a lambda function in Python?",
+      "good_new_kps": [
+        {
+          "label": "define lambda expressions in python",
+          "description": "Create anonymous one-expression functions with lambda and use them where a short callable is needed.",
+          "prerequisite_skill_ids": ["KP_GLOBAL_0026"]
+        }
+      ],
+      "good_catalog_matches": [],
+      "required_catalog_kp_ids": ["KP_GLOBAL_0026"],
+      "why_good": "No catalog KP for lambda; new KP must list function-definition catalog KP as prerequisite."
+    }
+  ],
+  "bad_patterns": [
+    {
+      "pattern": "over_granular",
+      "question": "Explain how Python decorators work.",
+      "bad_new_kps": [
+        {"label": "identify at-symbol in decorator syntax"},
+        {"label": "recall functools module name"},
+        {"label": "distinguish args from kwargs"},
+        {"label": "execute wrapper function call"},
+        {"label": "monitor decorator output"}
+      ],
+      "why_bad": "Splits one teachable capability into tiny cognitive micro-steps. Prefer one consolidated KP."
+    },
+    {
+      "pattern": "prerequisite_dump",
+      "question": "Explain class inheritance with method overriding.",
+      "bad_new_kp": {
+        "label": "apply method overriding in subclasses",
+        "prerequisite_skill_ids": [
+          "KP_GLOBAL_0008",
+          "KP_GLOBAL_0003",
+          "KP_GLOBAL_0026",
+          "KP_GLOBAL_0035",
+          "KP_GLOBAL_0036",
+          "KP_GLOBAL_0001",
+          "KP_GLOBAL_0002"
+        ]
+      },
+      "why_bad": "Lists tangential catalog KPs not on the direct dependency chain. Include only KPs a learner must master immediately before this skill."
+    },
+    {
+      "pattern": "missing_prerequisites",
+      "question": "What is a lambda function in Python?",
+      "bad_new_kp": {
+        "label": "define lambda expressions in python",
+        "prerequisite_skill_ids": []
+      },
+      "why_bad": "Every new KP must include prerequisite_skill_ids with relevant existing catalog KPs (e.g. KP_GLOBAL_0026 for functions)."
+    }
+  ]
+}

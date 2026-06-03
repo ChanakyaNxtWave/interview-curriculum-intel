@@ -91,6 +91,10 @@ export interface KnowledgeGraphNode {
   prerequisites: string[];
   depth_level: number;
   source_kp_id?: string;
+  origin?: 'baseline' | 'proposed';
+  touch_count?: number;
+  proposed_kp_id?: string;
+  run_id?: number;
 }
 
 export interface KnowledgeGraphEdge {
@@ -117,6 +121,137 @@ export interface KnowledgeGraphResponse {
   edges: KnowledgeGraphEdge[];
   stats: KnowledgeGraphStats;
   depth_level_definitions: DepthLevelDefinition[];
+  expansion?: KgExpansionOverlay;
+}
+
+export interface KgExpansionDiffNode {
+  knowledge_node_id: string;
+  label: string;
+  touch_count: number;
+  proposed_kp_id?: string;
+}
+
+export interface KgExpansionDiff {
+  baseline_node_count: number;
+  expanded_node_count: number;
+  added_node_count: number;
+  added_nodes: KgExpansionDiffNode[];
+  unchanged_node_ids: string[];
+}
+
+export interface KgUnmatchedSkill {
+  normalized_statement?: string;
+  touch_count?: number;
+  best_similarity?: number;
+}
+
+export interface KgMatchedCatalogKp {
+  source_kp_id?: string;
+  label?: string;
+  knowledge_node_id?: string;
+  touch_count?: number;
+}
+
+export interface KgExpansionOverlay {
+  run_id: number;
+  proposed_kps?: KgProposedKp[];
+  proposed_nodes?: KgProposedNode[];
+  unmatched_skills: KgUnmatchedSkill[];
+  matched_catalog_kps: KgMatchedCatalogKp[];
+  unmatched_skill_count?: number;
+  matched_catalog_count?: number;
+  diff?: KgExpansionDiff;
+}
+
+export interface KgProposedKp {
+  id?: number;
+  run_id: number;
+  proposed_kp_id: string;
+  label: string;
+  description: string;
+  knowledge_node_id: string;
+  touch_count: number;
+}
+
+export interface KgProposedNode {
+  id?: number;
+  run_id: number;
+  knowledge_node_id: string;
+  label: string;
+  description: string;
+  prerequisites: string[];
+  touch_count: number;
+  proposed_kp_id?: string;
+}
+
+export type KgExpansionRunStatus = 'pending' | 'running' | 'completed' | 'failed';
+
+export interface KgExpansionRun {
+  id: number;
+  course_id: string;
+  status: KgExpansionRunStatus;
+  question_limit?: number | null;
+  processed_count: number;
+  total_questions: number;
+  error_message?: string | null;
+  stats: Record<string, number | string>;
+  model_label?: string | null;
+  created_at: string;
+  updated_at: string;
+  completed_at?: string | null;
+}
+
+export interface UncoveredQuestion {
+  row_key: string;
+  question_type: string;
+  question_text: string;
+  verdict?: string;
+  review_status?: string;
+}
+
+export interface KgExpansionViewResponse {
+  course_id: string;
+  baseline: KnowledgeGraphResponse;
+  expanded: KnowledgeGraphResponse | null;
+  run: KgExpansionRun | null;
+  uncovered_questions: { total: number; items: UncoveredQuestion[] };
+}
+
+export interface KgExpansionRunDetailResponse {
+  run: KgExpansionRun;
+  questions: KgExpansionQuestionResult[];
+  proposed_kps: KgProposedKp[];
+  proposed_nodes: KgProposedNode[];
+}
+
+export interface KgExpansionQuestionResult {
+  id?: number;
+  run_id: number;
+  row_key: string;
+  question_type: string;
+  question_text: string;
+  ipa: { reasoning_steps?: { step_number: number; cognitive_action: string; description: string }[] };
+  lta: { skills?: { skill_id: string; statement: string; prerequisites: string[] }[] };
+  normalized: { normalized_skills?: { skill_id: string; normalized_statement: string }[] };
+  mappings: KgSkillMapping[];
+  error_message?: string | null;
+}
+
+export interface KgSkillMapping {
+  skill_id: string;
+  normalized_statement: string;
+  match_type:
+    | 'existing_catalog'
+    | 'unmatched'
+    | 'new'
+    | 'existing_proposed'
+    | 'required_catalog';
+  prerequisite_skill_ids?: string[];
+  similarity?: number;
+  source_kp_id?: string;
+  knowledge_node_id?: string;
+  proposed_kp_id?: string;
+  label?: string;
 }
 
 export interface CourseGroupedQuestion {

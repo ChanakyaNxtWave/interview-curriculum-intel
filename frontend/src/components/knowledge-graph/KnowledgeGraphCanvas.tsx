@@ -51,9 +51,14 @@ function buildFlowElements(
         data: {
           label: n.label,
           depthLevel: n.depth_level,
-          color: depthLevelColor(n.depth_level, maxDepth),
+          color:
+            n.origin === 'proposed'
+              ? '#f59e0b'
+              : depthLevelColor(n.depth_level, maxDepth),
           dimmed: Boolean(q && !matchesSearch),
           highlighted: selectedId === n.knowledge_node_id,
+          isProposed: n.origin === 'proposed',
+          touchCount: n.touch_count,
         } satisfies KgNodeData,
       };
     });

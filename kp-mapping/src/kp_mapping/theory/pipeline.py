@@ -83,16 +83,23 @@ def tag_question(
         catalog_text = kp_catalog_prompt(catalog)
         # Wrap citations_for so we can capture the candidate stage timing.
         def _retrieve_with_progress(kp_ids: list[str]) -> list[dict]:
-            prog.emit(
-                row_key,
-                "retrieve_citations",
-                note=f"retrieving citations for {len(kp_ids)} KP(s)",
-            )
+            note = f"retrieving citations for {len(kp_ids)} KP(s)"
+            meta_before = getattr(citations_for, "last_meta", None) or {}
+            if meta_before.get("retrieval_strategy"):
+                note += (
+                    f"; strategy={meta_before.get('retrieval_strategy')}"
+                )
+            prog.emit(row_key, "retrieve_citations", note=note)
             out = citations_for(kp_ids)
+            meta = getattr(citations_for, "last_meta", None) or {}
             prog.emit(
                 row_key,
                 "citations_done",
                 candidates_count=len(out),
+                kg_tiers=meta.get("tiers_processed"),
+                kg_pool_size=meta.get("pool_size"),
+                kg_stop_reason=meta.get("stop_reason"),
+                kg_retrieval_strategy=meta.get("retrieval_strategy"),
             )
             return out
 

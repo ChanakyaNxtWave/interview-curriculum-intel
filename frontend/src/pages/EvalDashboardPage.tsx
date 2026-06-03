@@ -16,6 +16,7 @@ import {
   runEvalNow,
 } from '../api/theory';
 import CourseTabs from '../components/CourseTabs';
+import StickyPageChrome from '../components/StickyPageChrome';
 import type { ImprovementSummary } from '../api/types';
 
 export default function EvalDashboardPage() {
@@ -61,31 +62,33 @@ export default function EvalDashboardPage() {
 
   return (
     <div>
-      <CourseTabs />
-      <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
-        <div className="flex items-center gap-2">
-          <GitCommitVertical className="w-5 h-5 text-brand" />
-          <h1 className="text-xl font-semibold">Eval Dashboard</h1>
+      <StickyPageChrome>
+        <CourseTabs />
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-2">
+            <GitCommitVertical className="w-5 h-5 text-brand" />
+            <h1 className="text-xl font-semibold">Eval Dashboard</h1>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              className="btn disabled:opacity-50"
+              disabled={evalNow.isPending}
+              onClick={() => evalNow.mutate()}
+            >
+              <Play className={`w-3.5 h-3.5 ${evalNow.isPending ? 'animate-spin' : ''}`} />
+              Run eval now
+            </button>
+            <button
+              className="btn-primary disabled:opacity-50"
+              disabled={recomp.isPending}
+              onClick={() => recomp.mutate()}
+            >
+              <RotateCw className={`w-3.5 h-3.5 ${recomp.isPending ? 'animate-spin' : ''}`} />
+              Recompile DSPy
+            </button>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            className="btn disabled:opacity-50"
-            disabled={evalNow.isPending}
-            onClick={() => evalNow.mutate()}
-          >
-            <Play className={`w-3.5 h-3.5 ${evalNow.isPending ? 'animate-spin' : ''}`} />
-            Run eval now
-          </button>
-          <button
-            className="btn-primary disabled:opacity-50"
-            disabled={recomp.isPending}
-            onClick={() => recomp.mutate()}
-          >
-            <RotateCw className={`w-3.5 h-3.5 ${recomp.isPending ? 'animate-spin' : ''}`} />
-            Recompile DSPy
-          </button>
-        </div>
-      </div>
+      </StickyPageChrome>
 
       {recomp.isError && (
         <div className="mb-3 p-3 rounded-md border border-conf-uncertain/40 bg-conf-uncertain/10 text-sm text-conf-uncertain">

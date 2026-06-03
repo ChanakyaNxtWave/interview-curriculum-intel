@@ -75,13 +75,13 @@ class JudgeCoverage(dspy.Signature):
         does not cover this" but the current candidate_citations contain
         practice problems whose solutions DO demonstrate the technique, the
         feedback is stale — assess on the actual citations, not on the feedback.
-      • question_format='coding': candidate citations are practice problems
-        WITH full solutions. tag_role='practice' is normal — coding curriculum has
-        no 'explain' role. A practice problem whose solution fully demonstrates
-        the same technique the question requires IS valid evidence (covered).
-        A partial-overlap match (similar problem, same idiom but not identical)
-        is NOT sufficient — use not_covered for partial matches.
-        Reject a citation only if the technique itself is absent from its solution.
+      • question_format='coding': candidate citations may include both
+        content_type='coding_question' (practice problems with full solutions)
+        and content_type='reading_material' (conceptual prose). Either can
+        support verdict='covered' if the body directly demonstrates the technique.
+        tag_role='practice' is normal on coding questions. A partial-overlap match
+        (similar problem, same idiom but not identical) is NOT sufficient — use
+        not_covered for partial matches. Reject only if the technique is absent.
     """
 
     question: str = dspy.InputField()
@@ -218,6 +218,7 @@ class TheoryPipeline(dspy.Module):
                         "title": c["title"],
                         "kp_id": c["kp_id"],
                         "tag_role": c["tag_role"],
+                        "content_type": c.get("content_type", ""),
                         "snippet": c["snippet"],
                     }
                     for c in candidates
@@ -248,6 +249,14 @@ class TheoryPipeline(dspy.Module):
         synth_module = (
             self.synth_coding if question_format == "coding" else self.synth_theory
         )
+        accepted_for_synth = accepted
+        if question_format == "coding":
+            accepted_for_synth = [
+                c
+                for c in accepted
+                if (c.get("content_type") or "coding_question")
+                == "coding_question"
+            ]
         accepted_json = json.dumps(
             [
                 {
@@ -256,7 +265,7 @@ class TheoryPipeline(dspy.Module):
                     "topic_name": c.get("topic_name", ""),
                     "snippet": c["snippet"],
                 }
-                for c in accepted
+                for c in accepted_for_synth
             ],
             ensure_ascii=False,
         )

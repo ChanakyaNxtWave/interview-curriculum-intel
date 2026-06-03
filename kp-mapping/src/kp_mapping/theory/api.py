@@ -18,6 +18,7 @@ from .compile import (
 from .evals import evaluate_pipeline, golds_to_examples
 from .dspy_modules import kp_catalog_prompt
 from ..canonicalize import canonicalize_row_keys
+from .kg_citation_retrieval import DEFAULT_COURSE_ID
 from .pipeline import AUTO_APPROVE_CONFIDENCE, tag_question
 from . import progress as prog
 from .store import TheoryStore
@@ -63,7 +64,8 @@ def build_theory_router(
     interview_store: InterviewStore,
     catalog_provider: Callable[[], KPCatalog],
     citations_for: Callable[[list[str]], list[dict]],
-    citations_for_question_type: Callable[[str], Callable[[list[str]], list[dict]]] | None = None,
+    citations_for_question_type: Callable[..., Callable[[list[str]], list[dict]]]
+    | None = None,
     seed_path: Path,
     route_segment: str = "theory-questions",
     question_type: str = "THEORY",
@@ -284,7 +286,10 @@ def build_theory_router(
                     question_text=question_text,
                     store=theory_store,
                     catalog=catalog,
-                    citations_for=citations_for_question_type(qt),
+                    citations_for=citations_for_question_type(
+                        qt,
+                        course_id=iq.get("canonical_course_id") or DEFAULT_COURSE_ID,
+                    ),
                     trigger=trigger,
                     question_type=qt,
                     force_human_review=force_human,
@@ -339,7 +344,11 @@ def build_theory_router(
                         question_text=r.get("question") or "",
                         store=theory_store,
                         catalog=catalog,
-                        citations_for=citations_for_question_type(qt),
+                        citations_for=citations_for_question_type(
+                            qt,
+                            course_id=r.get("canonical_course_id")
+                            or DEFAULT_COURSE_ID,
+                        ),
                         question_type=qt,
                     )
                     tagged_keys.append(r["row_key"])
@@ -374,7 +383,11 @@ def build_theory_router(
                         question_text=r.get("question") or "",
                         store=theory_store,
                         catalog=catalog,
-                        citations_for=citations_for_question_type(qt),
+                        citations_for=citations_for_question_type(
+                            qt,
+                            course_id=r.get("canonical_course_id")
+                            or DEFAULT_COURSE_ID,
+                        ),
                         question_type=qt,
                     )
                     tagged_keys.append(r["row_key"])

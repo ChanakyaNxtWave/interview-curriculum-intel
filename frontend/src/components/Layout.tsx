@@ -1,12 +1,26 @@
+import { useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ChevronRight, BookOpen, GraduationCap, MessagesSquare, Inbox } from 'lucide-react';
 import { fetchTheoryQuestions } from '../api/theory';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const headerRef = useRef<HTMLElement>(null);
   const loc = useLocation();
   const params = useParams();
   const segments = loc.pathname.split('/').filter(Boolean);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const sync = () => {
+      document.documentElement.style.setProperty('--app-header-height', `${el.offsetHeight}px`);
+    };
+    sync();
+    const ro = new ResizeObserver(sync);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const reviewQ = useQuery({
     queryKey: ['review-count'],
     queryFn: () => fetchTheoryQuestions({ limit: 1 }),
@@ -19,7 +33,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b border-line bg-bg-panel/80 backdrop-blur sticky top-0 z-10">
+      <header
+        ref={headerRef}
+        className="border-b border-line bg-bg-panel/95 backdrop-blur sticky top-0 z-20"
+      >
         <div className="max-w-screen-2xl mx-auto px-6 py-3 flex items-center gap-4 flex-wrap">
           <Link to="/" className="flex items-center gap-2 text-text font-semibold">
             <BookOpen className="w-5 h-5 text-brand" />

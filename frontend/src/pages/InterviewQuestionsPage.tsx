@@ -36,6 +36,7 @@ import GroupMembersModal from '../components/GroupMembersModal';
 import ListSkeleton from '../components/ListSkeleton';
 import { InlineSpinner } from '../components/BusyOverlay';
 import TagProgressModal from '../components/TagProgressModal';
+import StickyPageChrome from '../components/StickyPageChrome';
 import { useDebounce } from '../hooks/useDebounce';
 
 export default function InterviewQuestionsPage() {
@@ -220,41 +221,121 @@ export default function InterviewQuestionsPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-        <div className="flex items-center gap-2">
-          <MessagesSquare className="w-5 h-5 text-brand" />
-          <h1 className="text-xl font-semibold">Interview Questions</h1>
-          <span className="text-text-muted text-sm">
-            {items.length} / {listQ.data?.filtered_total ?? 0}
-            {listQ.data && listQ.data.filtered_total !== listQ.data.total && (
-              <span className="text-text-dim"> (of {listQ.data.total} total)</span>
+      <StickyPageChrome>
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <MessagesSquare className="w-5 h-5 text-brand" />
+            <h1 className="text-xl font-semibold">Interview Questions</h1>
+            <span className="text-text-muted text-sm">
+              {items.length} / {listQ.data?.filtered_total ?? 0}
+              {listQ.data && listQ.data.filtered_total !== listQ.data.total && (
+                <span className="text-text-dim"> (of {listQ.data.total} total)</span>
+              )}
+            </span>
+          </div>
+          <div className="flex items-center gap-3 flex-wrap">
+            <SyncBadge status={statusQ.data} />
+            {selected.size > 0 && (
+              <button
+                className="btn-primary disabled:opacity-50"
+                disabled={tagSelected.isPending}
+                onClick={() => tagSelected.mutate(rowsForKeys(Array.from(selected)))}
+              >
+                <Sparkles className={`w-3.5 h-3.5 ${tagSelected.isPending ? 'animate-pulse' : ''}`} />
+                Tag selected ({selected.size})
+              </button>
             )}
-          </span>
-        </div>
-        <div className="flex items-center gap-3 flex-wrap">
-          <SyncBadge status={statusQ.data} />
-          {selected.size > 0 && (
             <button
               className="btn-primary disabled:opacity-50"
-              disabled={tagSelected.isPending}
-              onClick={() => tagSelected.mutate(rowsForKeys(Array.from(selected)))}
+              disabled={syncMutation.isPending}
+              onClick={() => syncMutation.mutate()}
             >
-              <Sparkles className={`w-3.5 h-3.5 ${tagSelected.isPending ? 'animate-pulse' : ''}`} />
-              Tag selected ({selected.size})
+              <RefreshCw
+                className={`w-3.5 h-3.5 ${syncMutation.isPending ? 'animate-spin' : ''}`}
+              />
+              {syncMutation.isPending ? 'Syncing…' : 'Sync now'}
+            </button>
+          </div>
+        </div>
+
+        <div className="card p-3">
+          <DateRangeFilter
+            value={{ duration, from: dateFrom, to: dateTo }}
+            onChange={setDateRange}
+          />
+          {applied && (applied.date_from || applied.date_to) && (
+            <div className="mt-2 text-xs text-text-dim flex items-center gap-2 flex-wrap">
+              <span>Applied:</span>
+              <span className="chip">
+                {applied.date_from ?? '…'} → {applied.date_to ?? '…'}
+              </span>
+              <span>·</span>
+              <span>{listQ.data?.filtered_total ?? 0} match the range</span>
+            </div>
+          )}
+        </div>
+
+        <div className="card p-3 flex flex-wrap items-center gap-2">
+          <SearchBox
+            value={localQ}
+            onChange={setLocalQ}
+            placeholder="Search question, company, role, tech…"
+          />
+          <Select value={company} onChange={(v) => setParam('company', v)}>
+            <option value="">Company: any</option>
+            {facets?.companies.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </Select>
+          <Select value={role} onChange={(v) => setParam('role', v)}>
+            <option value="">Role: any</option>
+            {facets?.roles.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </Select>
+          <Select value={qtype} onChange={(v) => setParam('type', v)}>
+            <option value="">Type: any</option>
+            {facets?.question_types.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </Select>
+          <Select value={tech} onChange={(v) => setParam('tech', v)}>
+            <option value="">Tech: any</option>
+            {facets?.tech_stacks.map((t) => (
+              <option key={t} value={t}>
+                {t.length > 40 ? t.slice(0, 40) + '…' : t}
+              </option>
+            ))}
+          </Select>
+          <Select value={product} onChange={(v) => setParam('product', v)}>
+            <option value="">Product: any</option>
+            {facets?.products.map((p) => (
+              <option key={p} value={p}>
+                {p.length > 40 ? p.slice(0, 40) + '…' : p}
+              </option>
+            ))}
+          </Select>
+          <Select value={stage} onChange={(v) => setParam('stage', v)}>
+            <option value="">Stage: any</option>
+            <option value="approved">Approved</option>
+            <option value="needs_review">Needs review</option>
+            <option value="pending">Pending</option>
+            <option value="rejected">Rejected</option>
+            <option value="untagged">Untagged</option>
+          </Select>
+          {(q || company || role || qtype || tech || product || stage) && (
+            <button className="btn" onClick={clearAll}>
+              <Filter className="w-3.5 h-3.5" /> Clear
             </button>
           )}
-          <button
-            className="btn-primary disabled:opacity-50"
-            disabled={syncMutation.isPending}
-            onClick={() => syncMutation.mutate()}
-          >
-            <RefreshCw
-              className={`w-3.5 h-3.5 ${syncMutation.isPending ? 'animate-spin' : ''}`}
-            />
-            {syncMutation.isPending ? 'Syncing…' : 'Sync now'}
-          </button>
         </div>
-      </div>
+      </StickyPageChrome>
 
       {syncMutation.isError && (
         <div className="mb-3 p-3 rounded-md border border-conf-uncertain/40 bg-conf-uncertain/10 text-sm text-conf-uncertain">
@@ -279,84 +360,6 @@ export default function InterviewQuestionsPage() {
           {syncMutation.data.unchanged}
         </div>
       )}
-
-      <div className="card p-3 mb-3">
-        <DateRangeFilter
-          value={{ duration, from: dateFrom, to: dateTo }}
-          onChange={setDateRange}
-        />
-        {applied && (applied.date_from || applied.date_to) && (
-          <div className="mt-2 text-xs text-text-dim flex items-center gap-2 flex-wrap">
-            <span>Applied:</span>
-            <span className="chip">
-              {applied.date_from ?? '…'} → {applied.date_to ?? '…'}
-            </span>
-            <span>·</span>
-            <span>{listQ.data?.filtered_total ?? 0} match the range</span>
-          </div>
-        )}
-      </div>
-
-      <div className="card p-3 mb-4 flex flex-wrap items-center gap-2">
-        <SearchBox
-          value={localQ}
-          onChange={setLocalQ}
-          placeholder="Search question, company, role, tech…"
-        />
-        <Select value={company} onChange={(v) => setParam('company', v)}>
-          <option value="">Company: any</option>
-          {facets?.companies.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </Select>
-        <Select value={role} onChange={(v) => setParam('role', v)}>
-          <option value="">Role: any</option>
-          {facets?.roles.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </Select>
-        <Select value={qtype} onChange={(v) => setParam('type', v)}>
-          <option value="">Type: any</option>
-          {facets?.question_types.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </Select>
-        <Select value={tech} onChange={(v) => setParam('tech', v)}>
-          <option value="">Tech: any</option>
-          {facets?.tech_stacks.map((t) => (
-            <option key={t} value={t}>
-              {t.length > 40 ? t.slice(0, 40) + '…' : t}
-            </option>
-          ))}
-        </Select>
-        <Select value={product} onChange={(v) => setParam('product', v)}>
-          <option value="">Product: any</option>
-          {facets?.products.map((p) => (
-            <option key={p} value={p}>
-              {p.length > 40 ? p.slice(0, 40) + '…' : p}
-            </option>
-          ))}
-        </Select>
-        <Select value={stage} onChange={(v) => setParam('stage', v)}>
-          <option value="">Stage: any</option>
-          <option value="approved">Approved</option>
-          <option value="needs_review">Needs review</option>
-          <option value="pending">Pending</option>
-          <option value="rejected">Rejected</option>
-          <option value="untagged">Untagged</option>
-        </Select>
-        {(q || company || role || qtype || tech || product || stage) && (
-          <button className="btn" onClick={clearAll}>
-            <Filter className="w-3.5 h-3.5" /> Clear
-          </button>
-        )}
-      </div>
 
       {listQ.isLoading && <ListSkeleton rows={6} />}
       {listQ.isFetching && !listQ.isLoading && (

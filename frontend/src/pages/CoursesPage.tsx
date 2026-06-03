@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { BookOpen, GraduationCap, Tag, Files, CheckCircle2, Layers, Network } from 'lucide-react';
 import { fetchCourses } from '../api/courses';
+import StickyPageChrome from '../components/StickyPageChrome';
 
 export default function CoursesPage() {
   const { data, isLoading, error } = useQuery({ queryKey: ['courses'], queryFn: fetchCourses });
@@ -13,11 +14,13 @@ export default function CoursesPage() {
 
   return (
     <div>
-      <div className="flex items-center gap-2 mb-4">
-        <GraduationCap className="w-5 h-5 text-brand" />
-        <h1 className="text-xl font-semibold">Courses</h1>
-        <span className="text-text-muted text-sm">({data.courses.length})</span>
-      </div>
+      <StickyPageChrome>
+        <div className="flex items-center gap-2">
+          <GraduationCap className="w-5 h-5 text-brand" />
+          <h1 className="text-xl font-semibold">Courses</h1>
+          <span className="text-text-muted text-sm">({data.courses.length})</span>
+        </div>
+      </StickyPageChrome>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data.courses.map((c) => (
           <div key={c.course_id} className="card p-5 hover:bg-bg-hover hover:border-brand/40 transition-colors group">

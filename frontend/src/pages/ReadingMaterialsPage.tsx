@@ -12,6 +12,7 @@ import {
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import CourseTabs from '../components/CourseTabs';
+import StickyPageChrome from '../components/StickyPageChrome';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
 import ListSkeleton from '../components/ListSkeleton';
@@ -59,50 +60,52 @@ export default function ReadingMaterialsPage() {
 
   return (
     <div>
-      <CourseTabs />
+      <StickyPageChrome>
+        <CourseTabs />
 
-      <div className="flex items-center gap-2 mb-4">
-        {isProjectsRoute ? (
-          <FolderGit2 className="w-5 h-5 text-brand" />
-        ) : (
-          <BookOpen className="w-5 h-5 text-brand" />
-        )}
-        <h1 className="text-xl font-semibold">
-          {isProjectsRoute ? 'Projects' : 'Reading Materials'}
-        </h1>
-        <span className="text-text-muted text-sm">{items.length}</span>
-      </div>
+        <div className="flex items-center gap-2">
+          {isProjectsRoute ? (
+            <FolderGit2 className="w-5 h-5 text-brand" />
+          ) : (
+            <BookOpen className="w-5 h-5 text-brand" />
+          )}
+          <h1 className="text-xl font-semibold">
+            {isProjectsRoute ? 'Projects' : 'Reading Materials'}
+          </h1>
+          <span className="text-text-muted text-sm">{items.length}</span>
+        </div>
 
-      <div className="card p-3 mb-4 flex flex-wrap items-center gap-2">
-        <SearchBox
-          value={q}
-          onChange={setQ}
-          placeholder={isProjectsRoute ? 'Search project title or topic…' : 'Search title or topic…'}
-        />
-        <select
-          value={topic}
-          onChange={(e) => setTopic(e.target.value)}
-          className="input text-sm max-w-[260px]"
-        >
-          <option value="">Topic: all</option>
-          {facets?.topics.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-        {(q || topic) && (
-          <button
-            className="btn"
-            onClick={() => {
-              setQ('');
-              setTopic('');
-            }}
+        <div className="card p-3 flex flex-wrap items-center gap-2">
+          <SearchBox
+            value={q}
+            onChange={setQ}
+            placeholder={isProjectsRoute ? 'Search project title or topic…' : 'Search title or topic…'}
+          />
+          <select
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+            className="input text-sm max-w-[260px]"
           >
-            <Filter className="w-3.5 h-3.5" /> Clear
-          </button>
-        )}
-      </div>
+            <option value="">Topic: all</option>
+            {facets?.topics.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+          {(q || topic) && (
+            <button
+              className="btn"
+              onClick={() => {
+                setQ('');
+                setTopic('');
+              }}
+            >
+              <Filter className="w-3.5 h-3.5" /> Clear
+            </button>
+          )}
+        </div>
+      </StickyPageChrome>
 
       {listQ.isLoading && <ListSkeleton rows={6} />}
       {listQ.error && (

@@ -20,6 +20,10 @@ from .kp_catalog import load_catalog
 from .theory.api import build_theory_router
 from .theory.compile import cold_start_if_needed
 from .theory.pipeline import tag_question
+from .theory.kg_citation_retrieval import (
+    DEFAULT_COURSE_ID,
+    build_coding_interview_citations_fn,
+)
 from .theory.retrieval import build_citations_fn
 from .theory.store import TheoryStore
 
@@ -157,13 +161,13 @@ coding_store = TheoryStore(
 kg_expansion_store = KgExpansionStore(
     Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB)))
 )
-citations_for = build_citations_fn(store)  # default: reading_material
-citations_for_coding = build_citations_fn(store, content_type="coding_question")
+citations_for = build_citations_fn(store)  # default: reading_material (THEORY)
 
 
-def citations_for_question_type(qt: str):
+def citations_for_question_type(qt: str, *, course_id: str | None = None):
+    cid = (course_id or DEFAULT_COURSE_ID).strip() or DEFAULT_COURSE_ID
     if (qt or "").upper() == "CODING":
-        return citations_for_coding
+        return build_coding_interview_citations_fn(store, course_id=cid)
     return citations_for
 
 
@@ -489,7 +493,10 @@ def _auto_tag_pending_rows(row_keys: list[str]) -> None:
                 question_text=iq.get("question") or "",
                 store=store_for(qt),
                 catalog=cat,
-                citations_for=citations_for_question_type(qt),
+                citations_for=citations_for_question_type(
+                    qt,
+                    course_id=iq.get("canonical_course_id") or DEFAULT_COURSE_ID,
+                ),
                 question_type=qt,
                 force_human_review=True,
             )

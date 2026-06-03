@@ -12,6 +12,7 @@ import { effectiveVerdict } from '../lib/verdict';
 import ConfidenceBar from '../components/ConfidenceBar';
 import ReviewStatusBadge from '../components/ReviewStatusBadge';
 import CourseTabs from '../components/CourseTabs';
+import StickyPageChrome from '../components/StickyPageChrome';
 import SimilarQuestionsPanel from '../components/SimilarQuestionsPanel';
 import ListSkeleton from '../components/ListSkeleton';
 import { InlineSpinner } from '../components/BusyOverlay';
@@ -92,43 +93,44 @@ export default function TheoryQuestionsPage() {
 
   return (
     <div>
-      <CourseTabs />
-      <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5 text-brand" />
-          <h1 className="text-xl font-semibold">
-            {isCodingRoute ? 'Coding Questions' : 'Theory Questions'}
-          </h1>
-          <span className="text-text-muted text-sm">{items.length}</span>
-        </div>
-        {stats && (
-          <span className="text-xs text-text-muted">
-            {Object.entries(stats.by_status)
-              .map(([k, n]) => `${k}: ${n}`)
-              .join(' · ')}
-          </span>
-        )}
-      </div>
-
-      <VerdictTabs
-        current={verdict}
-        counts={stats?.by_verdict}
-        onChange={(v) => setParam('verdict', v)}
-      />
-
-      <div className="card p-3 mb-3">
-        <DateRangeFilter
-          value={{ duration, from: dateFrom, to: dateTo }}
-          onChange={setDateRange}
-        />
-        {applied && (applied.date_from || applied.date_to) && (
-          <div className="mt-2 text-xs text-text-dim">
-            {applied.date_from ?? '…'} → {applied.date_to ?? '…'}
+      <StickyPageChrome>
+        <CourseTabs />
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-brand" />
+            <h1 className="text-xl font-semibold">
+              {isCodingRoute ? 'Coding Questions' : 'Theory Questions'}
+            </h1>
+            <span className="text-text-muted text-sm">{items.length}</span>
           </div>
-        )}
-      </div>
+          {stats && (
+            <span className="text-xs text-text-muted">
+              {Object.entries(stats.by_status)
+                .map(([k, n]) => `${k}: ${n}`)
+                .join(' · ')}
+            </span>
+          )}
+        </div>
 
-      <div className="card p-3 mb-4 flex flex-wrap items-center gap-2">
+        <VerdictTabs
+          current={verdict}
+          counts={stats?.by_verdict}
+          onChange={(v) => setParam('verdict', v)}
+        />
+
+        <div className="card p-3">
+          <DateRangeFilter
+            value={{ duration, from: dateFrom, to: dateTo }}
+            onChange={setDateRange}
+          />
+          {applied && (applied.date_from || applied.date_to) && (
+            <div className="mt-2 text-xs text-text-dim">
+              {applied.date_from ?? '…'} → {applied.date_to ?? '…'}
+            </div>
+          )}
+        </div>
+
+        <div className="card p-3 flex flex-wrap items-center gap-2">
         <SearchBox
           value={localQ}
           onChange={setLocalQ}
@@ -159,7 +161,8 @@ export default function TheoryQuestionsPage() {
             <Filter className="w-3.5 h-3.5" /> Clear
           </button>
         )}
-      </div>
+        </div>
+      </StickyPageChrome>
 
       {listQ.isLoading && <ListSkeleton rows={6} />}
       {listQ.isFetching && !listQ.isLoading && (

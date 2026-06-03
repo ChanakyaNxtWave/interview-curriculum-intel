@@ -16,6 +16,7 @@ import GroupMembersModal from '../components/GroupMembersModal';
 import ListSkeleton from '../components/ListSkeleton';
 import { InlineSpinner } from '../components/BusyOverlay';
 import { useDebounce } from '../hooks/useDebounce';
+import StickyPageChrome from '../components/StickyPageChrome';
 import type { ReviewStatus, TheoryTag } from '../api/types';
 
 // Pilot: all theory rows belong to Programming Foundations.
@@ -130,36 +131,37 @@ export default function ReviewQueuePage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-        <div className="flex items-center gap-2">
-          <Inbox className="w-5 h-5 text-brand" />
-          <h1 className="text-xl font-semibold">Review Queue</h1>
-          <span className="text-text-muted text-sm">
-            {items.length} shown
-            {openCount > 0 && (
-              <span className="ml-2 chip-on">{openCount} open</span>
-            )}
-          </span>
-        </div>
-        {stats && (
-          <div className="text-xs text-text-muted flex flex-wrap gap-2">
-            {Object.entries(stats.by_status).map(([k, n]) => (
-              <span key={k} className="chip">
-                {k}: {n}
-              </span>
-            ))}
+      <StickyPageChrome>
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <Inbox className="w-5 h-5 text-brand" />
+            <h1 className="text-xl font-semibold">Review Queue</h1>
+            <span className="text-text-muted text-sm">
+              {items.length} shown
+              {openCount > 0 && (
+                <span className="ml-2 chip-on">{openCount} open</span>
+              )}
+            </span>
           </div>
-        )}
-      </div>
+          {stats && (
+            <div className="text-xs text-text-muted flex flex-wrap gap-2">
+              {Object.entries(stats.by_status).map(([k, n]) => (
+                <span key={k} className="chip">
+                  {k}: {n}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
 
-      <div className="card p-3 mb-3">
-        <DateRangeFilter
-          value={{ duration, from: dateFrom, to: dateTo }}
-          onChange={setDateRange}
-        />
-      </div>
+        <div className="card p-3">
+          <DateRangeFilter
+            value={{ duration, from: dateFrom, to: dateTo }}
+            onChange={setDateRange}
+          />
+        </div>
 
-      <div className="card p-3 mb-4 flex flex-wrap items-center gap-2">
+        <div className="card p-3 flex flex-wrap items-center gap-2">
         <SearchBox
           value={localQ}
           onChange={setLocalQ}
@@ -199,7 +201,8 @@ export default function ReviewQueuePage() {
             <Filter className="w-3.5 h-3.5" /> Clear
           </button>
         )}
-      </div>
+        </div>
+      </StickyPageChrome>
 
       {listQ.isLoading && <ListSkeleton rows={6} />}
       {listQ.isFetching && !listQ.isLoading && (

@@ -46,7 +46,7 @@ export default function CourseTabs() {
     },
   ];
   return (
-    <nav className="card p-1 mb-4 inline-flex flex-wrap gap-1">
+    <nav className="card p-1 inline-flex flex-wrap gap-1">
       {tabs.map((t) =>
         t.disabled ? (
           <span

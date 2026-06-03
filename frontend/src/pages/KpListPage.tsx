@@ -11,6 +11,7 @@ import { fetchInterviewFacets } from '../api/interview';
 import SearchBox from '../components/SearchBox';
 import EmptyState from '../components/EmptyState';
 import CourseTabs from '../components/CourseTabs';
+import StickyPageChrome from '../components/StickyPageChrome';
 import { useDebounce } from '../hooks/useDebounce';
 import type { KnowledgePointWithCounts, TagRole } from '../api/types';
 
@@ -121,16 +122,17 @@ export default function KpListPage() {
 
   return (
     <div>
-      <CourseTabs />
-      <div className="flex items-center gap-2 mb-4">
-        <Tag className="w-5 h-5 text-brand" />
-        <h1 className="text-xl font-semibold">Knowledge Points</h1>
-        <span className="text-text-muted text-sm">
-          {filtered.length} / {data?.count ?? 0}
-        </span>
-      </div>
+      <StickyPageChrome>
+        <CourseTabs />
+        <div className="flex items-center gap-2">
+          <Tag className="w-5 h-5 text-brand" />
+          <h1 className="text-xl font-semibold">Knowledge Points</h1>
+          <span className="text-text-muted text-sm">
+            {filtered.length} / {data?.count ?? 0}
+          </span>
+        </div>
 
-      <div className="card p-3 mb-4 flex flex-wrap items-center gap-2">
+        <div className="card p-3 flex flex-wrap items-center gap-2">
         <SearchBox value={localQ} onChange={setLocalQ} placeholder="Search label, id, description…" />
         <Select value={hasMapped} onChange={(v) => setParam('has_mapped', v)} placeholder="Mapped?" >
           <option value="">Mapped: any</option>
@@ -177,7 +179,8 @@ export default function KpListPage() {
             <Filter className="w-3.5 h-3.5" /> Clear
           </button>
         )}
-      </div>
+        </div>
+      </StickyPageChrome>
 
       {filtered.length === 0 ? (
         <EmptyState title="No KPs match" hint="Adjust search or filters." />

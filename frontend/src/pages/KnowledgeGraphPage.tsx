@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { AlertTriangle, GitBranch, Network, Sparkles } from 'lucide-react';
 import CourseTabs from '../components/CourseTabs';
+import StickyPageChrome from '../components/StickyPageChrome';
 import SearchBox from '../components/SearchBox';
 import KnowledgeGraphCanvas from '../components/knowledge-graph/KnowledgeGraphCanvas';
 import NodeDetailPanel from '../components/knowledge-graph/NodeDetailPanel';
@@ -58,16 +59,17 @@ export default function KnowledgeGraphPage() {
 
   return (
     <div>
-      <CourseTabs />
-      <div className="flex items-center gap-2 mb-4">
-        <Network className="w-5 h-5 text-brand" />
-        <h1 className="text-xl font-semibold">Knowledge Graph</h1>
-        <span className="text-text-muted text-sm">
-          {data.stats.node_count} nodes · {data.stats.edge_count} edges · depth 0–{maxDepth}
-        </span>
-      </div>
+      <StickyPageChrome>
+        <CourseTabs />
+        <div className="flex items-center gap-2">
+          <Network className="w-5 h-5 text-brand" />
+          <h1 className="text-xl font-semibold">Knowledge Graph</h1>
+          <span className="text-text-muted text-sm">
+            {data.stats.node_count} nodes · {data.stats.edge_count} edges · depth 0–{maxDepth}
+          </span>
+        </div>
 
-      <nav className="card p-1 mb-4 inline-flex flex-wrap gap-1">
+        <nav className="card p-1 inline-flex flex-wrap gap-1">
         <button
           type="button"
           onClick={() => setKgTab('current')}
@@ -103,13 +105,10 @@ export default function KnowledgeGraphPage() {
             In testing
           </span>
         </button>
-      </nav>
+        </nav>
 
-      {kgTab === 'expansion' ? (
-        <GapExpansionPanel courseId={courseId} baselineGraph={data} />
-      ) : (
-        <>
-          <div className="card p-4 mb-4 space-y-3">
+        {kgTab === 'current' && (
+          <div className="card p-4 space-y-3">
             <div className="flex flex-wrap items-center gap-3">
               <div className="max-w-xs flex-1">
                 <SearchBox
@@ -154,7 +153,13 @@ export default function KnowledgeGraphPage() {
               </div>
             </div>
           </div>
+        )}
+      </StickyPageChrome>
 
+      {kgTab === 'expansion' ? (
+        <GapExpansionPanel courseId={courseId} baselineGraph={data} />
+      ) : (
+        <>
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1 min-w-0">
               <KnowledgeGraphCanvas

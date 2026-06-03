@@ -29,9 +29,9 @@ from .theory.store import TheoryStore
 
 load_env()
 from .models import ProposedKPTag, ReviewStatus
-from .kg_expansion.api import register_kg_expansion_routes
-from .kg_expansion.store import KgExpansionStore
 from .knowledge_graph import KnowledgeGraphError, knowledge_graph_node_count, load_knowledge_graph
+from .node_tagger.api import register_node_tagger_routes
+from .node_tagger.store import NodeTaggerStore
 from .store import MappingStore
 
 logger = logging.getLogger("kp_mapping.server")
@@ -158,7 +158,7 @@ coding_store = TheoryStore(
     tags_table="coding_question_tags",
     history_table="coding_tag_history",
 )
-kg_expansion_store = KgExpansionStore(
+node_tagger_store = NodeTaggerStore(
     Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB)))
 )
 citations_for = build_citations_fn(store)  # default: reading_material (THEORY)
@@ -278,12 +278,24 @@ def get_course_knowledge_graph(course_id: str):
     return graph
 
 
-register_kg_expansion_routes(
+_KG_JSON_PATH = (
+    REPO_ROOT
+    / "curriculum"
+    / "ProgrammingFoundations"
+    / "programming_foundations_knowledge_nodes.json"
+)
+
+
+def _kg_path_provider():
+    return _KG_JSON_PATH
+
+
+register_node_tagger_routes(
     app,
-    expansion_store=kg_expansion_store,
+    node_tagger_store=node_tagger_store,
     theory_store=theory_store,
     coding_store=coding_store,
-    catalog_provider=get_catalog,
+    kg_path_provider=_kg_path_provider,
 )
 
 

@@ -1,18 +1,18 @@
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { AlertTriangle, GitBranch, Network, Sparkles } from 'lucide-react';
+import { GitBranch, Network, Sparkles } from 'lucide-react';
 import CourseTabs from '../components/CourseTabs';
 import StickyPageChrome from '../components/StickyPageChrome';
 import SearchBox from '../components/SearchBox';
 import KnowledgeGraphCanvas from '../components/knowledge-graph/KnowledgeGraphCanvas';
 import NodeDetailPanel from '../components/knowledge-graph/NodeDetailPanel';
-import GapExpansionPanel from '../components/knowledge-graph/GapExpansionPanel';
+import NodeTaggerPanel from '../components/knowledge-graph/NodeTaggerPanel';
 import { fetchCourseKnowledgeGraph } from '../api/courses';
 import { depthLevelColor } from '../lib/knowledgeGraphLayout';
 import type { KnowledgeGraphNode } from '../api/types';
 
-type KgTab = 'current' | 'expansion';
+type KgTab = 'current' | 'node-tagger';
 
 export default function KnowledgeGraphPage() {
   const { courseId = '' } = useParams();
@@ -70,41 +70,30 @@ export default function KnowledgeGraphPage() {
         </div>
 
         <nav className="card p-1 inline-flex flex-wrap gap-1">
-        <button
-          type="button"
-          onClick={() => setKgTab('current')}
-          className={
-            kgTab === 'current'
-              ? 'inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm bg-brand/15 text-brand'
-              : 'inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm text-text-muted hover:text-text hover:bg-bg-hover'
-          }
-        >
-          <Network className="w-4 h-4" />
-          Current graph
-        </button>
-        <button
-          type="button"
-          onClick={() => setKgTab('expansion')}
-          title="In testing"
-          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm relative group ${
-            kgTab === 'expansion'
-              ? 'bg-brand/15 text-brand'
-              : 'text-text-muted hover:text-text hover:bg-bg-hover'
-          }`}
-        >
-          <Sparkles className="w-4 h-4" />
-          Gap expansion
-          <AlertTriangle
-            className="w-3.5 h-3.5 text-status-needs shrink-0"
-            aria-label="In testing"
-          />
-          <span
-            role="tooltip"
-            className="pointer-events-none absolute left-1/2 top-full z-10 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md border border-status-needs/40 bg-bg-card px-2 py-1 text-xs text-status-needs opacity-0 shadow-md transition-opacity group-hover:opacity-100"
+          <button
+            type="button"
+            onClick={() => setKgTab('current')}
+            className={
+              kgTab === 'current'
+                ? 'inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm bg-brand/15 text-brand'
+                : 'inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm text-text-muted hover:text-text hover:bg-bg-hover'
+            }
           >
-            In testing
-          </span>
-        </button>
+            <Network className="w-4 h-4" />
+            Current graph
+          </button>
+          <button
+            type="button"
+            onClick={() => setKgTab('node-tagger')}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm ${
+              kgTab === 'node-tagger'
+                ? 'bg-brand/15 text-brand'
+                : 'text-text-muted hover:text-text hover:bg-bg-hover'
+            }`}
+          >
+            <Sparkles className="w-4 h-4" />
+            Uncovered KPs
+          </button>
         </nav>
 
         {kgTab === 'current' && (
@@ -156,8 +145,8 @@ export default function KnowledgeGraphPage() {
         )}
       </StickyPageChrome>
 
-      {kgTab === 'expansion' ? (
-        <GapExpansionPanel courseId={courseId} baselineGraph={data} />
+      {kgTab === 'node-tagger' ? (
+        <NodeTaggerPanel courseId={courseId} baselineGraph={data} />
       ) : (
         <>
           <div className="flex flex-col lg:flex-row gap-4">

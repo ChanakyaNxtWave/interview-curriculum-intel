@@ -93,6 +93,7 @@ export interface KnowledgeGraphNode {
   source_kp_id?: string;
   origin?: 'baseline' | 'proposed';
   touch_count?: number;
+  companies?: string[];
   proposed_kp_id?: string;
   run_id?: number;
 }
@@ -583,6 +584,104 @@ export interface TheoryPromptVersion {
   is_active: number;
   created_at: string;
 }
+
+// ------------------------------------------------------------------ node-tagger
+
+export type NodeTaggerRunStatus = 'pending' | 'running' | 'completed' | 'failed';
+
+export interface NodeTaggerRun {
+  id: number;
+  course_id: string;
+  status: NodeTaggerRunStatus;
+  question_limit?: number | null;
+  processed_count: number;
+  total_questions: number;
+  error_message?: string | null;
+  stats: Record<string, number | string>;
+  model_label?: string | null;
+  created_at: string;
+  updated_at: string;
+  completed_at?: string | null;
+}
+
+export type NodeTaggerApprovalStatus = 'pending' | 'approved' | 'rejected';
+
+export interface NodeTaggerProposedNode {
+  id?: number;
+  run_id: number;
+  knowledge_node_id: string;
+  label: string;
+  description: string;
+  prerequisites: string[];
+  depth_level: number;
+  /** Number of unique companies whose questions require this KP. */
+  touch_count: number;
+  companies: string[];
+  question_row_keys?: string[];
+  approval_status: NodeTaggerApprovalStatus;
+  approved_at?: string | null;
+  /** Resolved question previews for the sidebar UI. */
+  question_previews?: { row_key: string; question_type: string; question_text: string }[];
+  created_at?: string;
+}
+
+export interface NodeTaggerCanonicalNode {
+  id?: number;
+  knowledge_node_id: string;
+  label: string;
+  description: string;
+  prerequisites: string[];
+  depth_level: number;
+  source_run_id?: number | null;
+  approved_at: string;
+  created_at?: string;
+}
+
+export interface NodeTaggerQuestionResult {
+  id?: number;
+  run_id: number;
+  row_key: string;
+  question_type: string;
+  question_text: string;
+  coverage_status?: string | null;
+  existing_node_ids: string[];
+  /** Resolved labels for existing_node_ids — added by the API layer. */
+  existing_node_labels?: string[];
+  new_nodes: {
+    knowledge_node_id: string;
+    label: string;
+    description: string;
+    prerequisites: string[];
+    depth_level: number;
+  }[];
+  /** Labels of new nodes proposed for this question — added by the API layer. */
+  new_node_labels?: string[];
+  reasoning?: string | null;
+  error_message?: string | null;
+  created_at?: string;
+}
+
+export interface NodeTaggerViewResponse {
+  course_id: string;
+  baseline: KnowledgeGraphResponse;
+  expanded: KnowledgeGraphResponse | null;
+  run: NodeTaggerRun | null;
+  uncovered_questions: { total: number; items: UncoveredQuestion[] };
+}
+
+export interface NodeTaggerRunDetailResponse {
+  run: NodeTaggerRun;
+  questions: NodeTaggerQuestionResult[];
+  proposed_nodes: NodeTaggerProposedNode[];
+}
+
+export interface NodeTaggerCanonicalNodesResponse {
+  course_id: string;
+  total: number;
+  nodes: NodeTaggerCanonicalNode[];
+}
+
+// ------------------------------------------------------------------ end node-tagger
 
 export interface TheoryEvalRun {
   id: number;

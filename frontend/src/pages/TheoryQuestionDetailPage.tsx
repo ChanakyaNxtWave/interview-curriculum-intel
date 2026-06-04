@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   ArrowLeft,
   CheckCircle2,
+  ChevronDown,
   ExternalLink,
   Plus,
   RefreshCw,
@@ -57,8 +58,11 @@ const STATUSES: ReviewStatus[] = ['pending', 'needs_review', 'approved', 'reject
 export default function TheoryQuestionDetailPage() {
   const { rowKey = '', courseId = '' } = useParams();
   const [sp] = useSearchParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   // CODING rows are linked with ?type=coding so we hit the coding namespace.
   const isCoding = (sp.get('type') || '').toLowerCase() === 'coding';
+  const fromLabel = (location.state as any)?.fromLabel as string | undefined;
   const qc = useQueryClient();
   const detailQ = useQuery({
     queryKey: ['question-detail', rowKey, isCoding],
@@ -68,6 +72,16 @@ export default function TheoryQuestionDetailPage() {
   const data = detailQ.data;
   const [draft, setDraft] = useState<DraftState | null>(null);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [collapsed, setCollapsed] = useState({
+    reasoning: true,
+    feedback: true,
+    kpCitations: false,
+    review: false,
+    history: true,
+  });
+  function toggleSection(k: keyof typeof collapsed) {
+    setCollapsed((p) => ({ ...p, [k]: !p[k] }));
+  }
 
   useEffect(() => {
     if (!data) return;
@@ -121,13 +135,13 @@ export default function TheoryQuestionDetailPage() {
   return (
     <div>
       <div className="mb-4 flex items-center justify-between flex-wrap gap-2">
-        <Link
-          to={`/courses/${courseId}/${isCoding ? 'coding-questions' : 'theory-questions'}`}
+        <button
+          onClick={() => navigate(-1)}
           className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text"
         >
-          <ArrowLeft className="w-4 h-4" />{' '}
-          {isCoding ? 'Back to coding questions' : 'Back to theory questions'}
-        </Link>
+          <ArrowLeft className="w-4 h-4" />
+          {fromLabel ? `Back to ${fromLabel}` : isCoding ? 'Back to coding questions' : 'Back to theory questions'}
+        </button>
         <button
           className="btn disabled:opacity-50"
           disabled={asyncTag.isStarting || Boolean(asyncTag.session?.tracking)}
@@ -207,29 +221,36 @@ export default function TheoryQuestionDetailPage() {
         )}
       </div>
 
-      <ReasoningPanel
-        kpReasoning={(data as any).kp_identifier_reasoning}
-        judgeReasoning={(data as any).judge_reasoning}
-        rationale={data.rationale}
-        requiredKps={data.required_kps}
-        rejectedCandidates={(data as any).rejected_candidates ?? []}
-      />
-
-      <FeedbackPanel rowKey={rowKey} activePromptVersion={data.prompt_version} isCoding={isCoding} />
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <KpEditor
-          kps={draft.kps}
-          onChange={(v) => setDraft({ ...draft, kps: v })}
+      <SectionToggle title="AI Reasoning" open={!collapsed.reasoning} onToggle={() => toggleSection('reasoning')}>
+        <ReasoningPanel
+          kpReasoning={(data as any).kp_identifier_reasoning}
+          judgeReasoning={(data as any).judge_reasoning}
+          rationale={data.rationale}
+          requiredKps={data.required_kps}
+          rejectedCandidates={(data as any).rejected_candidates ?? []}
         />
-        <CitationEditor
-          citations={draft.citations}
-          candidates={data.candidate_citations ?? []}
-          onChange={(v) => setDraft({ ...draft, citations: v })}
-        />
-      </div>
+      </SectionToggle>
 
-      <div className="card p-4 mt-4">
+      <SectionToggle title="Reviewer Feedback" open={!collapsed.feedback} onToggle={() => toggleSection('feedback')}>
+        <FeedbackPanel rowKey={rowKey} activePromptVersion={data.prompt_version} isCoding={isCoding} />
+      </SectionToggle>
+
+      <SectionToggle title="KPs & Citations" open={!collapsed.kpCitations} onToggle={() => toggleSection('kpCitations')}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <KpEditor
+            kps={draft.kps}
+            onChange={(v) => setDraft({ ...draft, kps: v })}
+          />
+          <CitationEditor
+            citations={draft.citations}
+            candidates={data.candidate_citations ?? []}
+            onChange={(v) => setDraft({ ...draft, citations: v })}
+          />
+        </div>
+      </SectionToggle>
+
+      <SectionToggle title="Review" open={!collapsed.review} onToggle={() => toggleSection('review')}>
+      <div className="card p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="text-xs text-text-dim block mb-1">Verdict</label>
@@ -298,8 +319,11 @@ export default function TheoryQuestionDetailPage() {
           )}
         </div>
       </div>
+      </SectionToggle>
 
-      <TagHistory rowKey={rowKey} isCoding={isCoding} />
+      <SectionToggle title="Tag History" open={!collapsed.history} onToggle={() => toggleSection('history')}>
+        <TagHistory rowKey={rowKey} isCoding={isCoding} />
+      </SectionToggle>
 
       {asyncTag.session && (
         <TagProgressModal
@@ -523,6 +547,36 @@ function CitationEditor({
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function SectionToggle({
+  title,
+  open,
+  onToggle,
+  children,
+}: {
+  title: string;
+  open: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="mb-4">
+      <button
+        type="button"
+        className="flex items-center gap-2 w-full text-left mb-2 group"
+        onClick={onToggle}
+      >
+        <ChevronDown
+          className={`w-4 h-4 text-text-muted transition-transform ${open ? '' : '-rotate-90'}`}
+        />
+        <span className="text-xs font-semibold text-text-muted uppercase tracking-wide group-hover:text-text">
+          {title}
+        </span>
+      </button>
+      {open && children}
     </div>
   );
 }

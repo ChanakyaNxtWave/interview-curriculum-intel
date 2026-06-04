@@ -85,6 +85,23 @@ class KgExpansionStore:
                     UNIQUE (run_id, knowledge_node_id),
                     FOREIGN KEY (run_id) REFERENCES kg_expansion_runs(id)
                 );
+
+                CREATE TABLE IF NOT EXISTS kg_expansion_feedback (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    run_id INTEGER NOT NULL,
+                    row_key TEXT NOT NULL,
+                    proposed_kp_label TEXT,
+                    feedback_type TEXT NOT NULL,
+                    feedback_text TEXT,
+                    severity TEXT NOT NULL DEFAULT 'medium',
+                    human_verdict TEXT NOT NULL,
+                    added_by TEXT NOT NULL DEFAULT 'reviewer',
+                    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+                    FOREIGN KEY (run_id) REFERENCES kg_expansion_runs(id)
+                );
+                CREATE INDEX IF NOT EXISTS idx_kgef_run ON kg_expansion_feedback(run_id);
+                CREATE INDEX IF NOT EXISTS idx_kgef_verdict ON kg_expansion_feedback(human_verdict);
+                CREATE INDEX IF NOT EXISTS idx_kgef_type ON kg_expansion_feedback(feedback_type);
                 """
             )
 
@@ -399,6 +416,95 @@ class KgExpansionStore:
             "proposed_kps": n_kps,
             "proposed_nodes": n_nodes,
         }
+
+    # ---------- expansion feedback ----------
+
+    def save_expansion_feedback(
+        self,
+        *,
+        run_id: int,
+        row_key: str,
+        proposed_kp_label: str | None,
+        feedback_type: str,
+        feedback_text: str | None,
+        severity: str = "medium",
+        human_verdict: str,
+        added_by: str = "reviewer",
+    ) -> int:
+        now = _utc_now()
+        with self._connect() as conn:
+            cur = conn.execute(
+                """
+                INSERT INTO kg_expansion_feedback (
+                    run_id, row_key, proposed_kp_label, feedback_type,
+                    feedback_text, severity, human_verdict, added_by, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (run_id, row_key, proposed_kp_label, feedback_type,
+                 feedback_text, severity, human_verdict, added_by, now),
+            )
+            return cur.lastrowid or 0
+
+    def list_expansion_feedback(self, run_id: int) -> list[dict]:
+        with self._connect() as conn:
+            rows = conn.execute(
+                "SELECT * FROM kg_expansion_feedback WHERE run_id = ? ORDER BY id DESC",
+                (run_id,),
+            ).fetchall()
+        return [dict(r) for r in rows]
+
+    def get_rejection_patterns(self, *, limit: int = 20) -> str:
+        """Recent rejected KP labels grouped by feedback_type — injected into KP proposal prompt."""
+        from collections import defaultdict
+        with self._connect() as conn:
+            rows = conn.execute(
+                """
+                SELECT feedback_type, proposed_kp_label, severity
+                FROM kg_expansion_feedback
+                WHERE human_verdict = 'rejected' AND proposed_kp_label IS NOT NULL
+                ORDER BY id DESC
+                LIMIT ?
+                """,
+                (limit * 4,),
+            ).fetchall()
+        if not rows:
+            return ""
+        groups: dict[str, list[str]] = defaultdict(list)
+        seen: set[str] = set()
+        for r in rows:
+            ft = r["feedback_type"] or "general"
+            label = (r["proposed_kp_label"] or "").strip()
+            if not label:
+                continue
+            key = f"{ft}:{label.lower()}"
+            if key in seen:
+                continue
+            seen.add(key)
+            if len(groups[ft]) < 5:
+                groups[ft].append(label)
+        if not groups:
+            return ""
+        lines: list[str] = []
+        for ft, labels in sorted(groups.items()):
+            lines.append(f"[{ft}]")
+            for lb in labels:
+                lines.append(f"  - {lb}")
+        return "\n".join(lines)
+
+    def count_new_feedback_since(self, iso_dt: str | None) -> int:
+        """Count rejected feedback rows newer than iso_dt (or all if None)."""
+        with self._connect() as conn:
+            if iso_dt is None:
+                row = conn.execute(
+                    "SELECT COUNT(*) FROM kg_expansion_feedback WHERE human_verdict = 'rejected'"
+                ).fetchone()
+            else:
+                row = conn.execute(
+                    "SELECT COUNT(*) FROM kg_expansion_feedback "
+                    "WHERE human_verdict = 'rejected' AND created_at > ?",
+                    (iso_dt,),
+                ).fetchone()
+        return row[0] if row else 0
 
     @staticmethod
     def _run_row(row: sqlite3.Row) -> dict:

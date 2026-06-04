@@ -10,9 +10,9 @@ from ..theory.store import TheoryStore
 from .matcher import KpMatcher
 from .prompts import (
     IPA_SYSTEM_PROMPT,
-    KP_PROPOSAL_SYSTEM_PROMPT,
     LTA_SYSTEM_PROMPT,
     NORMALIZATION_SYSTEM_PROMPT,
+    get_kp_proposal_system_prompt,
 )
 from .store import KgExpansionStore
 
@@ -63,6 +63,7 @@ def run_kp_proposal(
     normalized_skills: list[dict],
     matcher: KpMatcher,
     model: str | None = None,
+    feedback_context: str = "",
 ) -> tuple[dict, str]:
     user = (
         f"Question:\n{question_text.strip()}\n\n"
@@ -70,7 +71,9 @@ def run_kp_proposal(
         f"Catalog excerpt:\n{matcher.catalog_prompt_excerpt()}\n\n"
         "Return JSON with catalog_matches and new_kps."
     )
-    return _llm_json(KP_PROPOSAL_SYSTEM_PROMPT, user, model=model)
+    return _llm_json(
+        get_kp_proposal_system_prompt(feedback_context), user, model=model
+    )
 
 
 def _skill_id_to_proposed_node(
@@ -298,6 +301,7 @@ def process_question(
     question_text: str,
     matcher: KpMatcher,
     model: str | None = None,
+    feedback_context: str = "",
 ) -> tuple[dict, dict, dict, dict, list[dict], str]:
     ipa, model_label = run_ipa(question_text, model=model)
     reasoning_steps = ipa.get("reasoning_steps") or []
@@ -313,6 +317,7 @@ def process_question(
         normalized_skills=normalized_skills,
         matcher=matcher,
         model=model,
+        feedback_context=feedback_context,
     )
     mappings, proposal = apply_kp_proposal(
         proposal,
@@ -356,6 +361,12 @@ def run_expansion(
     model: str | None = None,
     on_progress: Callable[[int, int], None] | None = None,
 ) -> dict:
+    from .fewshot import maybe_update_fewshot
+    # Apply any pending fewshot updates before the run so current prompts benefit.
+    maybe_update_fewshot(expansion_store)
+    # Load rejection context once per run; injected into every KP proposal call.
+    feedback_context = expansion_store.get_rejection_patterns(limit=20)
+
     matcher = KpMatcher(catalog)
     expansion_store.update_run(run_id, status="running")
     processed = 0
@@ -375,6 +386,7 @@ def run_expansion(
                     question_text=question_text,
                     matcher=matcher,
                     model=model,
+                    feedback_context=feedback_context,
                 )
                 for m in mappings:
                     mt = m.get("match_type")

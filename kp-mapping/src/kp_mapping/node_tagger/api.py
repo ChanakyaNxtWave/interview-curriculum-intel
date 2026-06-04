@@ -7,6 +7,7 @@ from typing import Callable, Literal
 from fastapi import BackgroundTasks, FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
+from ..kg_expansion.store import KgExpansionStore
 from ..knowledge_graph import KnowledgeGraphError, load_knowledge_graph, load_knowledge_graph_raw
 from ..theory.store import TheoryStore
 from .pipeline import (
@@ -18,6 +19,14 @@ from .store import NodeTaggerStore
 
 logger = logging.getLogger("kp_mapping.node_tagger.api")
 
+_REJECTION_REASON_TO_FEEDBACK_TYPE = {
+    "too_granular": "over_granular",
+    "duplicate": "label_quality",
+    "out_of_scope": "label_quality",
+    "wrong_level": "missing_prereq",
+    "other": "general",
+}
+
 
 class StartNodeTaggerPayload(BaseModel):
     question_limit: int = Field(default=25, ge=1, le=200)
@@ -28,6 +37,8 @@ class StartNodeTaggerPayload(BaseModel):
 
 class ApprovalPayload(BaseModel):
     approval_status: Literal["approved", "rejected"]
+    rejection_reason: Literal["too_granular", "duplicate", "out_of_scope", "wrong_level", "other"] | None = None
+    notes: str | None = None
 
 
 def _build_node_label_map(kg_path: Path) -> dict[str, str]:
@@ -59,6 +70,7 @@ def register_node_tagger_routes(
     theory_store: TheoryStore,
     coding_store: TheoryStore,
     kg_path_provider: Callable[[], Path],
+    expansion_store: KgExpansionStore | None = None,
 ) -> None:
     """Register node-tagger API routes on the main FastAPI app."""
 
@@ -202,15 +214,45 @@ def register_node_tagger_routes(
     def set_node_approval(
         course_id: str, run_id: int, knowledge_node_id: str, payload: ApprovalPayload
     ):
-        """Approve or reject a proposed KP node. Approved → saved to canonical_nodes."""
+        """Approve or reject a proposed KP node. Approved → saved to canonical_nodes.
+        Rejected → rejection_reason stored; wired to KG expansion feedback if expansion_store available.
+        """
         run = node_tagger_store.get_run(run_id)
         if not run or run.get("course_id") != course_id:
             raise HTTPException(404, "run not found")
         updated = node_tagger_store.set_node_approval(
-            run_id, knowledge_node_id, payload.approval_status
+            run_id,
+            knowledge_node_id,
+            payload.approval_status,
+            rejection_reason=payload.rejection_reason,
+            rejection_notes=payload.notes,
         )
         if updated is None:
             raise HTTPException(404, "proposed node not found")
+
+        # Wire rejection to KG expansion feedback so it informs future fewshot updates.
+        if payload.approval_status == "rejected" and expansion_store is not None:
+            latest_kg_run = expansion_store.get_latest_completed_run(course_id)
+            if latest_kg_run:
+                feedback_type = _REJECTION_REASON_TO_FEEDBACK_TYPE.get(
+                    payload.rejection_reason or "other", "general"
+                )
+                try:
+                    expansion_store.save_expansion_feedback(
+                        run_id=int(latest_kg_run["id"]),
+                        row_key=knowledge_node_id,
+                        proposed_kp_label=updated.get("label"),
+                        feedback_type=feedback_type,
+                        feedback_text=payload.notes,
+                        severity="medium",
+                        human_verdict="rejected",
+                        added_by="node_tagger_reviewer",
+                    )
+                except Exception as exc:
+                    logger.warning(
+                        "Failed to save node-tagger rejection to expansion feedback: %s", exc
+                    )
+
         return {"node": updated, "canonical_nodes_count": len(node_tagger_store.list_canonical_nodes())}
 
     @app.get(

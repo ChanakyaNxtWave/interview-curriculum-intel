@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { AlertTriangle, GitBranch, Play, RefreshCw, Sparkles } from 'lucide-react';
+import { AlertTriangle, Check, GitBranch, Play, RefreshCw, Sparkles, X } from 'lucide-react';
 import {
+  fetchExpansionFeedback,
   fetchKgExpansionRuns,
   fetchKgExpansionView,
   startKgExpansionRun,
+  submitExpansionFeedback,
 } from '../../api/kgExpansion';
+import type { ExpansionFeedbackType, ExpansionFeedbackPayload } from '../../api/kgExpansion';
 import KnowledgeGraphCanvas from './KnowledgeGraphCanvas';
 import type { KgExpansionRun, KgProposedKp, UncoveredQuestion } from '../../api/types';
 
@@ -226,6 +229,8 @@ export default function GapExpansionPanel({ courseId, baselineGraph }: GapExpans
               items={expansion?.proposed_kps ?? []}
               diff={expansion?.diff}
               hasRun={hasCompletedRun}
+              courseId={courseId}
+              runId={activeRun?.id}
             />
           )}
           {sideTab === 'unmatched' && (
@@ -280,15 +285,57 @@ function RunStatusBanner({ run }: { run: KgExpansionRun }) {
   );
 }
 
+const REJECTION_REASONS: { value: ExpansionFeedbackType; label: string }[] = [
+  { value: 'over_granular', label: 'Too granular' },
+  { value: 'missing_prereq', label: 'Missing prereqs' },
+  { value: 'prereq_dump', label: 'Prereq dump' },
+  { value: 'wrong_catalog_match', label: 'Wrong catalog match' },
+  { value: 'label_quality', label: 'Label quality' },
+  { value: 'general', label: 'Other' },
+];
+
 function ProposedKpsPanel({
   items,
   diff,
   hasRun,
+  courseId,
+  runId,
 }: {
   items: KgProposedKp[];
   diff?: { added_node_count?: number; baseline_node_count?: number; expanded_node_count?: number };
   hasRun: boolean;
+  courseId: string;
+  runId: number | undefined;
 }) {
+  const qc = useQueryClient();
+  const [openRejectId, setOpenRejectId] = useState<string | null>(null);
+  const [rejectReason, setRejectReason] = useState<ExpansionFeedbackType>('over_granular');
+  const [rejectNotes, setRejectNotes] = useState('');
+
+  const feedbackQ = useQuery({
+    queryKey: ['kg-expansion-feedback', courseId, runId],
+    queryFn: () => (runId ? fetchExpansionFeedback(courseId, runId) : null),
+    enabled: !!runId && hasRun,
+  });
+
+  const feedbackByLabel = useMemo(() => {
+    const map: Record<string, string> = {};
+    for (const fb of (feedbackQ.data?.feedback ?? []) as Array<{ proposed_kp_label?: string; human_verdict?: string }>) {
+      if (fb.proposed_kp_label) map[fb.proposed_kp_label] = fb.human_verdict ?? '';
+    }
+    return map;
+  }, [feedbackQ.data]);
+
+  const submitFb = useMutation({
+    mutationFn: (payload: ExpansionFeedbackPayload) =>
+      runId ? submitExpansionFeedback(courseId, runId, payload) : Promise.reject('no run'),
+    onSuccess: () => {
+      setOpenRejectId(null);
+      setRejectNotes('');
+      qc.invalidateQueries({ queryKey: ['kg-expansion-feedback', courseId, runId] });
+    },
+  });
+
   if (!hasRun) {
     return (
       <div className="card p-4 text-sm text-text-muted">
@@ -296,6 +343,7 @@ function ProposedKpsPanel({
       </div>
     );
   }
+
   return (
     <div className="card p-4 text-sm max-h-[50vh] overflow-y-auto">
       {diff && (
@@ -308,20 +356,124 @@ function ProposedKpsPanel({
         <p className="text-text-muted text-xs">No new KPs proposed — catalog covered all gaps.</p>
       ) : (
         <ul className="space-y-2">
-          {items.map((row) => (
-            <li
-              key={row.proposed_kp_id}
-              className="p-2 rounded border border-status-needs/30 bg-status-needs/5"
-            >
-              <div className="font-medium capitalize text-xs">{row.label}</div>
-              {row.description && (
-                <p className="text-[10px] text-text-muted mt-1 line-clamp-2">{row.description}</p>
-              )}
-              <div className="text-[10px] text-text-dim mt-1 font-mono">
-                {row.proposed_kp_id} · {row.touch_count} question(s)
-              </div>
-            </li>
-          ))}
+          {items.map((row) => {
+            const verdict = feedbackByLabel[row.label];
+            const isRejecting = openRejectId === row.proposed_kp_id;
+            return (
+              <li
+                key={row.proposed_kp_id}
+                className={`p-2 rounded border ${
+                  verdict === 'approved'
+                    ? 'border-conf-covered/40 bg-conf-covered/5'
+                    : verdict === 'rejected'
+                      ? 'border-conf-uncertain/40 bg-conf-uncertain/5 opacity-60'
+                      : 'border-status-needs/30 bg-status-needs/5'
+                }`}
+              >
+                <div className="flex items-start justify-between gap-1">
+                  <div className="font-medium capitalize text-xs flex-1">{row.label}</div>
+                  {verdict ? (
+                    <span
+                      className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${
+                        verdict === 'approved'
+                          ? 'bg-conf-covered/20 text-conf-covered'
+                          : 'bg-conf-uncertain/20 text-conf-uncertain'
+                      }`}
+                    >
+                      {verdict}
+                    </span>
+                  ) : (
+                    runId && (
+                      <div className="flex gap-1 shrink-0">
+                        <button
+                          type="button"
+                          title="Approve"
+                          className="p-0.5 rounded text-conf-covered hover:bg-conf-covered/10"
+                          onClick={() =>
+                            submitFb.mutate({
+                              row_key: row.proposed_kp_id,
+                              proposed_kp_label: row.label,
+                              feedback_type: 'approved',
+                              human_verdict: 'approved',
+                            })
+                          }
+                        >
+                          <Check className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          title="Reject"
+                          className="p-0.5 rounded text-conf-uncertain hover:bg-conf-uncertain/10"
+                          onClick={() => {
+                            setOpenRejectId(row.proposed_kp_id);
+                            setRejectReason('over_granular');
+                          }}
+                        >
+                          <X className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    )
+                  )}
+                </div>
+                {row.description && (
+                  <p className="text-[10px] text-text-muted mt-1 line-clamp-2">{row.description}</p>
+                )}
+                <div className="text-[10px] text-text-dim mt-1 font-mono">
+                  {row.proposed_kp_id} · {row.touch_count} question(s)
+                </div>
+                {isRejecting && (
+                  <div className="mt-2 space-y-1.5 border-t border-line pt-2">
+                    <select
+                      className="input text-[11px] w-full py-1"
+                      value={rejectReason}
+                      onChange={(e) => setRejectReason(e.target.value as ExpansionFeedbackType)}
+                    >
+                      {REJECTION_REASONS.map((r) => (
+                        <option key={r.value} value={r.value}>
+                          {r.label}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="text"
+                      className="input text-[11px] w-full py-1"
+                      placeholder="Notes (optional)"
+                      value={rejectNotes}
+                      onChange={(e) => setRejectNotes(e.target.value)}
+                    />
+                    <div className="flex gap-1">
+                      <button
+                        type="button"
+                        className="btn btn-primary text-[11px] py-0.5 px-2"
+                        disabled={submitFb.isPending}
+                        onClick={() =>
+                          submitFb.mutate({
+                            row_key: row.proposed_kp_id,
+                            proposed_kp_label: row.label,
+                            feedback_type: rejectReason,
+                            feedback_text: rejectNotes || undefined,
+                            human_verdict: 'rejected',
+                          })
+                        }
+                      >
+                        Confirm reject
+                      </button>
+                      <button
+                        type="button"
+                        className="btn text-[11px] py-0.5 px-2"
+                        onClick={() => setOpenRejectId(null)}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                    {submitFb.isError && (
+                      <p className="text-[10px] text-conf-uncertain">{String(submitFb.error)}</p>
+                    )}
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

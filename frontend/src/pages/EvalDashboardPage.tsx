@@ -225,6 +225,25 @@ function ImprovementCard({ data }: { data: ImprovementSummary }) {
         <Stat label="Regressed" value={data.regressed} cls="text-conf-uncertain" />
         <Stat label="Trend points" value={trend.length} cls="text-text" />
       </div>
+      {(data.regressed_row_keys ?? []).length > 0 && (
+        <div className="mb-3">
+          <p className="text-xs font-medium text-conf-uncertain mb-1.5">
+            Regressed rows — send to review queue:
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {(data.regressed_row_keys ?? []).map((rk) => (
+              <a
+                key={rk}
+                href={`/review?row_key=${encodeURIComponent(rk)}`}
+                className="chip text-[10px] font-mono hover:bg-conf-uncertain/10 hover:text-conf-uncertain transition-colors"
+                title={`Review ${rk}`}
+              >
+                {rk}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
       {trend.length > 0 ? (
         <TrendChart trend={trend} />
       ) : (

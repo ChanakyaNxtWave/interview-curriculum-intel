@@ -198,6 +198,10 @@ class TheoryStore:
                 )
                 self._add_column_if_missing(conn, table, "synthesis_reasoning", "TEXT")
                 self._add_column_if_missing(conn, table, "match_strategy", "TEXT")
+            # Eval run verdict (ship | hold | collect_more_gold)
+            self._add_column_if_missing(
+                conn, "theory_eval_runs", "human_verdict", "TEXT"
+            )
             # One-time idempotent migration: collapse legacy verdicts to binary.
             self._migrate_binary_verdicts(conn)
 
@@ -404,21 +408,35 @@ class TheoryStore:
             ).fetchall()
         return [dict(r) for r in rows]
 
-    def latest_feedback_text(self, row_key: str, *, limit: int = 3) -> str:
-        """Severity-tagged most-recent reviewer feedback, joined for inline use
-        in the judge prompt. Empty string if no feedback exists for this row.
-        """
+    def latest_feedback_text(self, row_key: str, *, limit: int = 5) -> str:
+        """Severity-tagged reviewer feedback grouped by type for inline judge prompt use."""
+        from collections import defaultdict
         rows = self.list_feedback(row_key)[:limit]
         if not rows:
             return ""
-        return "\n".join(
-            f"[{(r.get('severity') or 'medium').upper()}] {r.get('feedback_type','general')}: "
-            f"{r.get('feedback_text','').strip()}"
-            for r in rows
-        )
+        groups: dict[str, list[str]] = defaultdict(list)
+        for r in rows:
+            ft = r.get("feedback_type") or "general"
+            sev = (r.get("severity") or "medium").upper()
+            txt = (r.get("feedback_text") or "").strip()
+            if txt:
+                groups[ft].append(f"[{sev}] {txt}")
+        if not groups:
+            return ""
+        lines: list[str] = []
+        for ft, items in sorted(groups.items()):
+            lines.append(f"[{ft}]")
+            for item in items:
+                lines.append(f"  - {item}")
+        return "\n".join(lines)
 
     def global_feedback_patterns(self, *, limit: int = 20) -> str:
-        """Recent high-signal review feedback across rows for prompt steering."""
+        """Recent reviewer feedback grouped by type with dedup — used for prompt steering.
+
+        Groups by feedback_type, deduplicates text (case-insensitive), caps 5 items per
+        group. Prevents prompt pollution when many identical feedbacks accumulate.
+        """
+        from collections import defaultdict
         with self._connect() as conn:
             rows = conn.execute(
                 """
@@ -427,15 +445,32 @@ class TheoryStore:
                 ORDER BY id DESC
                 LIMIT ?
                 """,
-                (limit,),
+                (limit * 4,),  # fetch more so dedup doesn't starve groups
             ).fetchall()
         if not rows:
             return ""
-        return "\n".join(
-            f"[{(r['severity'] or 'medium').upper()}] {r['feedback_type']}: {r['feedback_text'].strip()}"
-            for r in rows
-            if (r["feedback_text"] or "").strip()
-        )
+        groups: dict[str, list[tuple[str, str]]] = defaultdict(list)
+        seen: set[str] = set()
+        for r in rows:
+            ft = r["feedback_type"] or "general"
+            txt = (r["feedback_text"] or "").strip()
+            sev = (r["severity"] or "medium").upper()
+            if not txt:
+                continue
+            dedup_key = f"{ft}:{txt.lower()}"
+            if dedup_key in seen:
+                continue
+            seen.add(dedup_key)
+            if len(groups[ft]) < 5:
+                groups[ft].append((sev, txt))
+        if not groups:
+            return ""
+        lines: list[str] = []
+        for ft, items in sorted(groups.items()):
+            lines.append(f"[{ft}]")
+            for sev, txt in items:
+                lines.append(f"  - [{sev}] {txt}")
+        return "\n".join(lines)
 
     def feedback_weight_for(self, row_key: str) -> tuple[int, list[int]]:
         with self._connect() as conn:
@@ -501,6 +536,7 @@ class TheoryStore:
         fixed = 0
         regressed = 0
         rows_with_history = 0
+        regressed_row_keys: list[str] = []
         for row_key, gold_v in gold_by_row.items():
             entries = per_row.get(row_key, [])
             if len(entries) < 2:
@@ -512,9 +548,11 @@ class TheoryStore:
                 fixed += 1
             elif prev == gold_v and latest != gold_v:
                 regressed += 1
+                regressed_row_keys.append(row_key)
         return {
             "fixed": fixed,
             "regressed": regressed,
+            "regressed_row_keys": regressed_row_keys,
             "rows_with_history": rows_with_history,
             "total_golds": len(gold_by_row),
             "trend": [
@@ -1035,6 +1073,15 @@ class TheoryStore:
                 (limit,),
             ).fetchall()
         return [dict(r) for r in rows]
+
+    def set_eval_run_verdict(self, run_id: int, human_verdict: str) -> bool:
+        """Set reviewer verdict on an eval run (ship | hold | collect_more_gold)."""
+        with self._connect() as conn:
+            cur = conn.execute(
+                "UPDATE theory_eval_runs SET human_verdict = ? WHERE id = ?",
+                (human_verdict, run_id),
+            )
+            return cur.rowcount > 0
 
     # ---------- row -> dict helpers ----------
 

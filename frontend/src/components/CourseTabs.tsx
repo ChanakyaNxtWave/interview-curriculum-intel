@@ -1,5 +1,5 @@
 import { NavLink, useParams } from 'react-router-dom';
-import { BookOpen, Tag, Sparkles, Code2, FolderGit2, GitCommitVertical, Network } from 'lucide-react';
+import { BookOpen, Tag, Sparkles, Code2, GitCommitVertical, Network } from 'lucide-react';
 
 interface TabDef {
   to: string;
@@ -33,11 +33,6 @@ export default function CourseTabs() {
       to: `${base}/coding-questions`,
       label: 'Coding Questions',
       icon: <Code2 className="w-4 h-4" />,
-    },
-    {
-      to: `${base}/projects`,
-      label: 'Projects',
-      icon: <FolderGit2 className="w-4 h-4" />,
     },
     {
       to: `${base}/evals`,

@@ -32,6 +32,8 @@ from .models import ProposedKPTag, ReviewStatus
 from .knowledge_graph import KnowledgeGraphError, knowledge_graph_node_count, load_knowledge_graph
 from .node_tagger.api import register_node_tagger_routes
 from .node_tagger.store import NodeTaggerStore
+from .kg_expansion.api import register_kg_expansion_routes
+from .kg_expansion.store import KgExpansionStore
 from .store import MappingStore
 
 logger = logging.getLogger("kp_mapping.server")
@@ -159,6 +161,9 @@ coding_store = TheoryStore(
     history_table="coding_tag_history",
 )
 node_tagger_store = NodeTaggerStore(
+    Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB)))
+)
+expansion_store = KgExpansionStore(
     Path(os.environ.get("KP_MAPPING_DB", str(DEFAULT_DB)))
 )
 citations_for = build_citations_fn(store)  # default: reading_material (THEORY)
@@ -296,6 +301,15 @@ register_node_tagger_routes(
     theory_store=theory_store,
     coding_store=coding_store,
     kg_path_provider=_kg_path_provider,
+    expansion_store=expansion_store,
+)
+
+register_kg_expansion_routes(
+    app,
+    expansion_store=expansion_store,
+    theory_store=theory_store,
+    coding_store=coding_store,
+    catalog_provider=get_catalog,
 )
 
 

@@ -112,6 +112,12 @@ class NodeTaggerStore:
             self._add_column_if_missing(
                 conn, "node_tagger_proposed_nodes", "approved_at", "TEXT"
             )
+            self._add_column_if_missing(
+                conn, "node_tagger_proposed_nodes", "rejection_reason", "TEXT"
+            )
+            self._add_column_if_missing(
+                conn, "node_tagger_proposed_nodes", "rejection_notes", "TEXT"
+            )
 
     # ------------------------------------------------------------------ runs
 
@@ -336,6 +342,8 @@ class NodeTaggerStore:
         run_id: int,
         knowledge_node_id: str,
         status: str,
+        rejection_reason: str | None = None,
+        rejection_notes: str | None = None,
     ) -> dict | None:
         """Set approval_status on a proposed node. If approved, copy to canonical_nodes."""
         now = _utc_now()
@@ -349,8 +357,15 @@ class NodeTaggerStore:
                 return None
             conn.execute(
                 "UPDATE node_tagger_proposed_nodes"
-                " SET approval_status = ?, approved_at = ? WHERE id = ?",
-                (status, now if status == "approved" else None, row["id"]),
+                " SET approval_status = ?, approved_at = ?, rejection_reason = ?, rejection_notes = ?"
+                " WHERE id = ?",
+                (
+                    status,
+                    now if status == "approved" else None,
+                    rejection_reason if status == "rejected" else None,
+                    rejection_notes if status == "rejected" else None,
+                    row["id"],
+                ),
             )
             if status == "approved":
                 try:

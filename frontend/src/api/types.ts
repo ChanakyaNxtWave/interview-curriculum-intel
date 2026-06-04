@@ -554,6 +554,7 @@ export interface ImprovementTrendPoint {
 export interface ImprovementSummary {
   fixed: number;
   regressed: number;
+  regressed_row_keys?: string[];
   rows_with_history: number;
   total_golds: number;
   trend: ImprovementTrendPoint[];

@@ -400,6 +400,33 @@ def build_theory_router(
         background_tasks.add_task(_run)
         return {"enqueued": len(targets)}
 
+    # ---------- shared helpers ----------
+
+    def _retag_stale_pending() -> None:
+        """Re-tag all pending rows so a newly activated prompt version applies immediately."""
+        try:
+            catalog = catalog_provider()
+            pending = theory_store.list_tags(review_status="pending", limit=500)
+            for tag in pending:
+                rk = tag.get("row_key") or ""
+                if not rk:
+                    continue
+                qt = NS_QT
+                try:
+                    tag_question(
+                        row_key=rk,
+                        question_text=tag.get("question_text") or "",
+                        store=theory_store,
+                        catalog=catalog,
+                        citations_for=citations_for_question_type(qt, course_id=DEFAULT_COURSE_ID),
+                        trigger="post_compile_retag",
+                        question_type=qt,
+                    )
+                except Exception as exc:
+                    logger.warning("Post-compile re-tag failed for %s: %s", rk, exc)
+        except Exception as exc:
+            logger.exception("Post-compile pending re-tag sweep failed: %s", exc)
+
     # ---------- review ----------
 
     @router.put(f"/{seg}/{{row_key}}/review")
@@ -458,7 +485,7 @@ def build_theory_router(
                 added_by="reviewer",
             )
 
-        # Check compile trigger in background
+        # Check compile trigger in background; re-tag pending rows if a new version activates.
         def _maybe_compile() -> None:
             try:
                 result = check_compile_trigger(
@@ -468,6 +495,8 @@ def build_theory_router(
                 )
                 if result:
                     logger.info("Auto-compile triggered: %s", result)
+                    if result.get("activated"):
+                        _retag_stale_pending()
             except Exception as exc:
                 logger.exception("Auto-compile check failed: %s", exc)
 
@@ -479,7 +508,9 @@ def build_theory_router(
     # ---------- feedback / history / improvement ----------
 
     @router.post(f"/{seg}/{{row_key}}/feedback")
-    def submit_feedback(row_key: str, payload: FeedbackPayload):
+    def submit_feedback(
+        row_key: str, payload: FeedbackPayload, background_tasks: BackgroundTasks
+    ):
         existing = theory_store.get_tag(row_key)
         if not existing:
             raise HTTPException(404, "tag not found")
@@ -507,6 +538,24 @@ def build_theory_router(
             human_verdict=payload.human_verdict,
             added_by="reviewer",
         )
+
+        # Re-tag immediately so the new feedback context is applied on the next pipeline run.
+        def _retag_with_feedback() -> None:
+            try:
+                tag_question(
+                    row_key=row_key,
+                    question_text=existing.get("question_text") or "",
+                    store=theory_store,
+                    catalog=catalog_provider(),
+                    citations_for=citations_for_question_type(NS_QT, course_id=DEFAULT_COURSE_ID),
+                    trigger="feedback_retag",
+                    question_type=NS_QT,
+                    force_human_review=True,
+                )
+            except Exception as exc:
+                logger.warning("Feedback re-tag failed for %s: %s", row_key, exc)
+
+        background_tasks.add_task(_retag_with_feedback)
         return {"feedback": theory_store.list_feedback(row_key)}
 
     @router.get(f"/{seg}/{{row_key}}/feedback")
@@ -614,6 +663,28 @@ def build_theory_router(
             catalog=catalog_provider(),
             citations_for=citations_for,
         )
+
+    @router.patch("/evals/runs/{run_id}/verdict")
+    def set_eval_run_verdict(run_id: int, verdict: str):
+        """Set human verdict on an eval run: ship | hold | collect_more_gold."""
+        valid = {"ship", "hold", "collect_more_gold"}
+        if verdict not in valid:
+            raise HTTPException(400, f"verdict must be one of {sorted(valid)}")
+        ok = theory_store.set_eval_run_verdict(run_id, verdict)
+        if not ok:
+            raise HTTPException(404, "eval run not found")
+        if verdict == "hold":
+            theory_store.insert_feedback(
+                row_key=f"eval_run:{run_id}",
+                prompt_version="eval_run",
+                feedback_type="general",
+                feedback_text=f"Eval run {run_id} held by reviewer (human_verdict=hold)",
+                severity="medium",
+                ai_verdict_at_time=None,
+                human_verdict=None,
+                added_by="reviewer",
+            )
+        return {"run_id": run_id, "human_verdict": verdict}
 
     return router
 

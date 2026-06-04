@@ -63,18 +63,30 @@ export const purgeNodeTaggerData = (courseId: string) =>
     { method: 'POST' },
   );
 
+export type NodeRejectionReason =
+  | 'too_granular'
+  | 'duplicate'
+  | 'out_of_scope'
+  | 'wrong_level'
+  | 'other';
+
 export const setNodeApproval = (
   courseId: string,
   runId: number,
   knowledgeNodeId: string,
   approvalStatus: NodeTaggerApprovalStatus,
+  opts?: { rejection_reason?: NodeRejectionReason; notes?: string },
 ) =>
   api<{ node: import('./types').NodeTaggerProposedNode; canonical_nodes_count: number }>(
     `/api/courses/${encodeURIComponent(courseId)}/knowledge-graph/node-tagger/runs/${runId}/nodes/${encodeURIComponent(knowledgeNodeId)}`,
     {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ approval_status: approvalStatus }),
+      body: JSON.stringify({
+        approval_status: approvalStatus,
+        rejection_reason: opts?.rejection_reason,
+        notes: opts?.notes,
+      }),
     },
   );
 

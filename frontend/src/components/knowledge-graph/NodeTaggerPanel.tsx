@@ -19,6 +19,7 @@ import {
   setNodeApproval,
   startNodeTaggerRun,
 } from '../../api/nodeTagger';
+import type { NodeRejectionReason } from '../../api/nodeTagger';
 import KnowledgeGraphCanvas from './KnowledgeGraphCanvas';
 import type {
   KnowledgeGraphResponse,
@@ -123,11 +124,15 @@ export default function NodeTaggerPanel({ courseId, baselineGraph }: NodeTaggerP
       runId,
       nodeId,
       status,
+      rejection_reason,
+      notes,
     }: {
       runId: number;
       nodeId: string;
       status: 'approved' | 'rejected';
-    }) => setNodeApproval(courseId, runId, nodeId, status),
+      rejection_reason?: NodeRejectionReason;
+      notes?: string;
+    }) => setNodeApproval(courseId, runId, nodeId, status, { rejection_reason, notes }),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['node-tagger-detail', courseId, selectedRunId] });
       qc.invalidateQueries({ queryKey: ['node-tagger-canonical', courseId] });
@@ -294,9 +299,9 @@ export default function NodeTaggerPanel({ courseId, baselineGraph }: NodeTaggerP
               diff={expansion?.diff}
               hasRun={hasCompletedRun}
               runId={selectedRunId}
-              onApprove={(nodeId, status) =>
+              onApprove={(nodeId, status, rejection_reason, notes) =>
                 selectedRunId != null &&
-                approveMutation.mutate({ runId: selectedRunId, nodeId, status })
+                approveMutation.mutate({ runId: selectedRunId, nodeId, status, rejection_reason, notes })
               }
               isApproving={approveMutation.isPending}
             />
@@ -349,6 +354,14 @@ function RunStatusBanner({ run }: { run: NodeTaggerRun }) {
 
 // ── Proposed KPs panel ───────────────────────────────────────────────────────
 
+const NODE_REJECTION_REASONS: { value: NodeRejectionReason; label: string }[] = [
+  { value: 'too_granular', label: 'Too granular' },
+  { value: 'duplicate', label: 'Duplicate' },
+  { value: 'out_of_scope', label: 'Out of scope' },
+  { value: 'wrong_level', label: 'Wrong level' },
+  { value: 'other', label: 'Other' },
+];
+
 function ProposedNodesPanel({
   items,
   diff,
@@ -361,10 +374,13 @@ function ProposedNodesPanel({
   diff?: { added_node_count?: number; baseline_node_count?: number; expanded_node_count?: number };
   hasRun: boolean;
   runId?: number;
-  onApprove: (nodeId: string, status: 'approved' | 'rejected') => void;
+  onApprove: (nodeId: string, status: 'approved' | 'rejected', rejection_reason?: NodeRejectionReason, notes?: string) => void;
   isApproving: boolean;
 }) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [openRejectId, setOpenRejectId] = useState<string | null>(null);
+  const [rejectReason, setRejectReason] = useState<NodeRejectionReason>('too_granular');
+  const [rejectNotes, setRejectNotes] = useState('');
 
   if (!hasRun) {
     return (
@@ -391,16 +407,24 @@ function ProposedNodesPanel({
       ) : (
         sorted.map((node) => {
           const isOpen = expandedId === node.knowledge_node_id;
+          const isRejecting = openRejectId === node.knowledge_node_id;
           const status = node.approval_status ?? 'pending';
           return (
             <ProposedNodeCard
               key={node.knowledge_node_id}
               node={node}
               isOpen={isOpen}
+              isRejecting={isRejecting}
+              rejectReason={rejectReason}
+              rejectNotes={rejectNotes}
               status={status}
               onToggle={() => setExpandedId(isOpen ? null : node.knowledge_node_id)}
               onApprove={() => onApprove(node.knowledge_node_id, 'approved')}
-              onReject={() => onApprove(node.knowledge_node_id, 'rejected')}
+              onStartReject={() => { setOpenRejectId(node.knowledge_node_id); setRejectReason('too_granular'); setRejectNotes(''); }}
+              onCancelReject={() => setOpenRejectId(null)}
+              onConfirmReject={() => { onApprove(node.knowledge_node_id, 'rejected', rejectReason, rejectNotes || undefined); setOpenRejectId(null); }}
+              onRejectReasonChange={setRejectReason}
+              onRejectNotesChange={setRejectNotes}
               isApproving={isApproving}
             />
           );
@@ -413,18 +437,32 @@ function ProposedNodesPanel({
 function ProposedNodeCard({
   node,
   isOpen,
+  isRejecting,
+  rejectReason,
+  rejectNotes,
   status,
   onToggle,
   onApprove,
-  onReject,
+  onStartReject,
+  onCancelReject,
+  onConfirmReject,
+  onRejectReasonChange,
+  onRejectNotesChange,
   isApproving,
 }: {
   node: NodeTaggerProposedNode;
   isOpen: boolean;
+  isRejecting: boolean;
+  rejectReason: NodeRejectionReason;
+  rejectNotes: string;
   status: string;
   onToggle: () => void;
   onApprove: () => void;
-  onReject: () => void;
+  onStartReject: () => void;
+  onCancelReject: () => void;
+  onConfirmReject: () => void;
+  onRejectReasonChange: (r: NodeRejectionReason) => void;
+  onRejectNotesChange: (n: string) => void;
   isApproving: boolean;
 }) {
   const borderColor =
@@ -460,7 +498,7 @@ function ProposedNodeCard({
         </span>
 
         {/* Approve / Reject buttons — only if pending */}
-        {status === 'pending' && (
+        {status === 'pending' && !isRejecting && (
           <div className="flex gap-1 shrink-0">
             <button
               type="button"
@@ -475,7 +513,7 @@ function ProposedNodeCard({
               type="button"
               title="Reject"
               className="w-6 h-6 rounded flex items-center justify-center bg-conf-uncertain/10 hover:bg-conf-uncertain/20 text-conf-uncertain"
-              onClick={(e) => { e.stopPropagation(); onReject(); }}
+              onClick={(e) => { e.stopPropagation(); onStartReject(); }}
               disabled={isApproving}
             >
               <X className="w-3 h-3" />
@@ -492,6 +530,45 @@ function ProposedNodeCard({
 
       {/* Description */}
       <p className="text-[10px] text-text-muted mt-1 ml-4 line-clamp-2">{node.description}</p>
+
+      {/* Rejection reason form */}
+      {isRejecting && (
+        <div className="mt-2 ml-4 space-y-1.5 border-t border-line pt-2">
+          <select
+            className="input text-[11px] w-full py-1"
+            value={rejectReason}
+            onChange={(e) => onRejectReasonChange(e.target.value as NodeRejectionReason)}
+          >
+            {NODE_REJECTION_REASONS.map((r) => (
+              <option key={r.value} value={r.value}>{r.label}</option>
+            ))}
+          </select>
+          <input
+            type="text"
+            className="input text-[11px] w-full py-1"
+            placeholder="Notes (optional)"
+            value={rejectNotes}
+            onChange={(e) => onRejectNotesChange(e.target.value)}
+          />
+          <div className="flex gap-1">
+            <button
+              type="button"
+              className="btn btn-primary text-[11px] py-0.5 px-2"
+              disabled={isApproving}
+              onClick={(e) => { e.stopPropagation(); onConfirmReject(); }}
+            >
+              Confirm reject
+            </button>
+            <button
+              type="button"
+              className="btn text-[11px] py-0.5 px-2"
+              onClick={(e) => { e.stopPropagation(); onCancelReject(); }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Expanded detail */}
       {isOpen && (

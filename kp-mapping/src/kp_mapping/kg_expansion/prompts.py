@@ -2,8 +2,6 @@
 
 from .fewshot import format_fewshot_for_prompt
 
-_FEWSHOT_BLOCK = format_fewshot_for_prompt()
-
 IPA_SYSTEM_PROMPT = """You are an instructional design expert performing Information Processing Analysis (IPA).
 Your task is to analyze a programming question and describe the mental steps an expert performs to solve it.
 Follow the Information Processing Analysis method.
@@ -77,7 +75,7 @@ Respond with JSON only:
   ]
 }"""
 
-KP_PROPOSAL_SYSTEM_PROMPT = f"""You propose Knowledge Points (KPs) for uncovered interview questions in Programming Foundations.
+_KP_PROPOSAL_TEMPLATE = """You propose Knowledge Points (KPs) for uncovered interview questions in Programming Foundations.
 
 You receive:
 - The interview question
@@ -104,8 +102,8 @@ Anti-patterns (do NOT do these):
 - missing_prerequisites: new_kp with empty prerequisite_skill_ids when catalog prerequisites exist
 
 Curriculum few-shot examples:
-{_FEWSHOT_BLOCK}
-
+{fewshot_block}
+{feedback_section}
 Respond with JSON only:
 {{
   "required_catalog_kp_ids": ["KP_GLOBAL_0026"],
@@ -126,3 +124,25 @@ Respond with JSON only:
   ],
   "rejected_micro_skills": ["optional list of normalized skills merged away"]
 }}"""
+
+
+def get_kp_proposal_system_prompt(feedback_context: str = "") -> str:
+    """Build the KP proposal system prompt, optionally injecting reviewer rejection patterns.
+
+    Calls format_fewshot_for_prompt() at call-time so cache clears (after fewshot updates)
+    are picked up on the next run without restarting the process.
+    """
+    fewshot_block = format_fewshot_for_prompt()
+    feedback_section = (
+        f"\n## Recent reviewer rejections — avoid proposing these KP patterns:\n{feedback_context}\n"
+        if feedback_context
+        else ""
+    )
+    return _KP_PROPOSAL_TEMPLATE.format(
+        fewshot_block=fewshot_block,
+        feedback_section=feedback_section,
+    )
+
+
+# Backward-compat alias used by existing imports; resolves at import time (no feedback context).
+KP_PROPOSAL_SYSTEM_PROMPT = get_kp_proposal_system_prompt()

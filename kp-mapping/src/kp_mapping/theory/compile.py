@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime
 import json
 import logging
 import os
@@ -23,6 +24,7 @@ logger = logging.getLogger("kp_mapping.theory.compile")
 
 
 COMPILE_THRESHOLD = int(os.environ.get("THEORY_COMPILE_THRESHOLD", "20"))
+COMPILE_COOLDOWN_HOURS = float(os.environ.get("THEORY_COMPILE_COOLDOWN_HOURS", "6"))
 DEV_AGREEMENT_GATE = float(os.environ.get("THEORY_DEV_AGREEMENT_GATE", "0.85"))
 DEV_SYNTHESIS_PRESENCE_GATE = float(
     os.environ.get("THEORY_DEV_SYNTHESIS_PRESENCE_GATE", "1.0")
@@ -164,11 +166,31 @@ def check_compile_trigger(
     citations_for: Callable[[list[str]], list[dict]],
     threshold: int = COMPILE_THRESHOLD,
 ) -> dict | None:
-    """If enough new golds accumulated since last compile, run compile."""
+    """If enough new golds accumulated since last compile, run compile.
+
+    Respects THEORY_COMPILE_COOLDOWN_HOURS (default 6h) to prevent rapid
+    back-to-back compiles when reviewers submit many corrections at once.
+    """
     last = store.last_compile_at()
     new_count = store.count_evals_since(last)
     if new_count < threshold:
         return None
+    if last and COMPILE_COOLDOWN_HOURS > 0:
+        try:
+            last_dt = datetime.datetime.fromisoformat(last.replace("Z", "+00:00"))
+            if last_dt.tzinfo is None:
+                last_dt = last_dt.replace(tzinfo=datetime.timezone.utc)
+            now_dt = datetime.datetime.now(datetime.timezone.utc)
+            hours_since = (now_dt - last_dt).total_seconds() / 3600
+            if hours_since < COMPILE_COOLDOWN_HOURS:
+                logger.info(
+                    "Compile cooldown active: %.1fh since last compile (gate %.1fh); skipping",
+                    hours_since,
+                    COMPILE_COOLDOWN_HOURS,
+                )
+                return None
+        except (ValueError, TypeError) as exc:
+            logger.warning("Failed to parse last_compile_at %r: %s", last, exc)
     return compile_and_maybe_activate(
         store=store,
         catalog=catalog,

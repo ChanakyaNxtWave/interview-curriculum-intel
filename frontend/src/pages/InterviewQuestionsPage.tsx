@@ -416,11 +416,12 @@ export default function InterviewQuestionsPage() {
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
-                    {isTaggable ? (
+                    {isTaggable && theory ? (
                       <Link
                         to={`/courses/programming_foundations/theory-questions/${encodeURIComponent(
-                          q.row_key,
+                          theory.row_key as string,
                         )}${qt === 'CODING' ? '?type=coding' : ''}`}
+                        state={{ fromLabel: 'Interview Questions' }}
                         className="block text-text leading-relaxed whitespace-pre-wrap break-words hover:text-brand"
                         title="Open detail (AI reasoning, citations, synthesized answer)"
                       >
@@ -493,6 +494,7 @@ export default function InterviewQuestionsPage() {
                           to={`/courses/programming_foundations/theory-questions/${encodeURIComponent(
                             theory.row_key as string,
                           )}${qt === 'CODING' ? '?type=coding' : ''}`}
+                          state={{ fromLabel: 'Interview Questions' }}
                           className="flex flex-col items-end gap-1"
                           title="Open tag detail"
                         >

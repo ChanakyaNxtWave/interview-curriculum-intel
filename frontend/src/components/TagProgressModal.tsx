@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { CheckCircle2, Loader2, AlertCircle, Clock, Sparkles, X } from 'lucide-react';
+import { CheckCircle2, Loader2, AlertCircle, Clock, Sparkles, X, ChevronDown } from 'lucide-react';
 import { fetchActiveContext, fetchTagStatus, type TagProgress } from '../api/theory';
 import { fetchCodingTagStatus } from '../api/coding';
 
@@ -85,6 +85,7 @@ export default function TagProgressModal({
   onComplete,
 }: Props) {
   const [elapsedMs, setElapsedMs] = useState(0);
+  const [showContext, setShowContext] = useState(false);
   const completedRef = useRef(false);
 
   const ctxQ = useQuery({
@@ -183,50 +184,60 @@ export default function TagProgressModal({
             </div>
           )}
 
-          <div className="card p-3 bg-bg/40">
-            <div className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">
+          <div className="card bg-bg/40 overflow-hidden">
+            <button
+              className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-text-muted uppercase tracking-wide hover:bg-bg-hover"
+              onClick={() => setShowContext((v) => !v)}
+            >
               What this re-tag considers
-            </div>
-            {ctxQ.isLoading ? (
-              <div className="text-sm text-text-muted">Loading context…</div>
-            ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
-                <Stat
-                  label="Active prompt"
-                  value={apv?.version ?? 'uninitialized'}
-                  sub={apv ? `compiled ${new Date(apv.created_at).toLocaleDateString()}` : ''}
-                />
-                <Stat
-                  label="Few-shot demos"
-                  value={String(apv?.fewshot_count ?? 0)}
-                  sub="bootstrapped from gold"
-                />
-                <Stat
-                  label="Gold set"
-                  value={String(ctx?.gold_set_total ?? 0)}
-                  sub={`@ compile: ${apv?.gold_count_at_compile ?? 0}`}
-                />
-                <Stat
-                  label="Reviewer feedback"
-                  value={String(ctx?.feedback_total ?? 0)}
-                  sub={Object.entries(ctx?.feedback_by_severity ?? {})
-                    .map(([k, v]) => `${k}:${v}`)
-                    .join(' · ')}
-                />
-                <Stat
-                  label="Dev agreement"
-                  value={
-                    apv?.devset_agreement != null
-                      ? `${(apv.devset_agreement * 100).toFixed(0)}%`
-                      : 'n/a'
-                  }
-                  sub="on holdout golds"
-                />
-                <Stat
-                  label="KP catalog"
-                  value={String(ctx?.kp_catalog_size ?? 0)}
-                  sub={ctx?.model ?? ''}
-                />
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform ${showContext ? '' : '-rotate-90'}`}
+              />
+            </button>
+            {showContext && (
+              <div className="px-3 pb-3">
+                {ctxQ.isLoading ? (
+                  <div className="text-sm text-text-muted">Loading context…</div>
+                ) : (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                    <Stat
+                      label="Active prompt"
+                      value={apv?.version ?? 'uninitialized'}
+                      sub={apv ? `compiled ${new Date(apv.created_at).toLocaleDateString()}` : ''}
+                    />
+                    <Stat
+                      label="Few-shot demos"
+                      value={String(apv?.fewshot_count ?? 0)}
+                      sub="bootstrapped from gold"
+                    />
+                    <Stat
+                      label="Gold set"
+                      value={String(ctx?.gold_set_total ?? 0)}
+                      sub={`@ compile: ${apv?.gold_count_at_compile ?? 0}`}
+                    />
+                    <Stat
+                      label="Reviewer feedback"
+                      value={String(ctx?.feedback_total ?? 0)}
+                      sub={Object.entries(ctx?.feedback_by_severity ?? {})
+                        .map(([k, v]) => `${k}:${v}`)
+                        .join(' · ')}
+                    />
+                    <Stat
+                      label="Dev agreement"
+                      value={
+                        apv?.devset_agreement != null
+                          ? `${(apv.devset_agreement * 100).toFixed(0)}%`
+                          : 'n/a'
+                      }
+                      sub="on holdout golds"
+                    />
+                    <Stat
+                      label="KP catalog"
+                      value={String(ctx?.kp_catalog_size ?? 0)}
+                      sub={ctx?.model ?? ''}
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -273,11 +284,11 @@ export default function TagProgressModal({
                       <div className="text-sm">{STAGE_LABELS[s].label}</div>
                       <div className="text-xs text-text-muted">{STAGE_LABELS[s].sub}</div>
                     </div>
-                    {s === 'kps_done' && status?.kps_count != null && (
-                      <span className="chip">{status.kps_count} KPs</span>
+                    {s === 'kps_done' && (status?.kps_count ?? 0) > 0 && (
+                      <span className="chip">{status!.kps_count} KPs</span>
                     )}
-                    {s === 'citations_done' && status?.candidates_count != null && (
-                      <span className="chip">{status.candidates_count} candidates</span>
+                    {s === 'citations_done' && (status?.candidates_count ?? 0) > 0 && (
+                      <span className="chip">{status!.candidates_count} candidates</span>
                     )}
                     {s === 'judge_done' && status?.verdict && (
                       <span className="chip-on">
